@@ -1,0 +1,114 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+
+{% if is_admin %}
+<script type="text/javascript">
+    $(document).editablepage({
+        page_name : "{{page.name}}",
+        page_keywords : "{{page.keywords}}",
+        page_uri : " {{ site_base }}",
+        body_url : site_base + "/page/{{ site_base }}/body"
+    });
+</script>
+{% else %}
+<script type="text/javascript">
+    $(document).loadpagecontent({
+        body_url : site_base + "/page/{{ site_base }}/body",
+        page_uri : "{{ page.uri }}"
+    });
+</script>
+
+{% end %}
+
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+
+{% block body %}
+<div class="header-contact "></div>
+    <div id="wrap">
+         <div class="col-md-12">
+           <a href="">
+           <div class="pos">
+              <h1 class="name-box">NICOLAS EMDEN</h1>
+           </div>
+           </a>
+    </div>
+     <div style="position: relative;">
+        {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_suc">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_suc" name="image" id="img_banner_suc" >
+               </div>
+        {% end %}
+               <img id="{{ site.name }}_banner_suc" src="{{ read_image(site.name + '_banner_suc', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_suc',500) }}'" class="banner-success" alt="item">
+
+           <!--  <img class="desaturada banner-dos" src="https://7static.loadingplay.com/static/images/11d155a100169c20f91239e4e0114d40_Banner2.png"> -->
+<!-- 
+            <div class="row">
+               <div class="col-md-12">
+                  <h2 class="wa {{editabletext}}" text-id="{{ site.name + '_desa_1' }}"> {{ read_text(site.name +  '_desa_1') }}</h2>
+                  <p class="wo {{editabletext}}" text-id="{{ site.name + '_desa_2' }}"> {{ read_text(site.name +  '_desa_2') }}</p>
+              </div>
+           </div> -->
+    </div>
+
+        <!-- registration -->
+        <div class="clearfix su-fix"> </div>
+        <div class="container productlist">
+            <div class="row pages-caption" >
+                <div class="container-fluid-art text-center">
+                <h1>
+                {% if is_admin %}
+                <span class="success editabletext" text-id="{{ site.name + '-contact-success-title' }}" >{{ read_text(site.name +'-contact-success-title') }}</span>
+                {% else %}
+                <span  class="success">{{ read_text(site.name +'-contact-success-title') }}</span>
+                {% end %}
+                </h1>
+                </div>
+            </div>
+
+            <div class="row pages-caption" >
+                <div class="container text-center bu">
+               <div class="sucess_dos {{editabletext}}" text-id="{{ site.name + '_suuuu' }}" > {{ read_text(site.name +  '_suuuu') }}</div>
+                </div>
+            </div>
+
+            <!-- raw 1 -->
+            <div class="row content-body">
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% include '../home/footer.html' %}
+
+{% end %}

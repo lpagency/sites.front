@@ -1,0 +1,157 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $(document).on("click", '.little', function(){
+            console.log($(this).attr("src"));
+            $("#img_detail").attr("src", $(this).attr('src'));
+        });
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+    
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com'
+    );
+    
+    var app_public = $.environmentVar(33,33,33);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            onLoad: function(product){
+                // console.log(product);
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+        };
+    });
+
+</script>
+
+<script type="text/template" id="product_detail" >
+
+    <div class="col-md-12 col-sm-12 space160 h_detail_prod1" >
+
+        <div class="col-md-8 col-sm-8">
+            <ul class="thumbnails box pad0 img-contenedor">
+                <img id="img_detail" src="{{! images[0]['thumb_500'] }}" data-zoom-image="{{! images[0]['thumb_500'] }}" alt="" class="img-responsive img_detail" style="display: block;">
+            </ul>
+        </div>
+        <div class="col-md-1 col-xs-12">
+            <div id="gallery_01" class="image_little pad0">
+             
+                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little" src="{{! images[3]['thumb_500'] }}" onload="this.src={{! images[3]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[4]['thumb_1']|hide_if_empty}} little" src="{{! images[4]['thumb_500'] }}" onload="this.src={{! images[4]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[5]['thumb_1']|hide_if_empty}} little" src="{{! images[5]['thumb_500'] }}" onload="this.src={{! images[5]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[6]['thumb_1']|hide_if_empty}} little" src="{{! images[6]['thumb_500'] }}" onload="this.src={{! images[6]['thumb_500']}}" />
+
+            </div>
+        </div>
+
+            
+        <div class="col-md-3 col-sm-3 lad">
+            <h1 class="title-detail">{{! name }}</h1>
+             <div class="price_detail">
+                <span class="price-p">{{! main_price|money }}</span>
+                <br>
+            </div>
+                <h5 class="descrip_detail1 ellipsis multiline">{{!bullet_1}}</h5>
+           
+            <div class="cart2">
+                <div>
+                    <!-- <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button> -->
+                    <!-- <button type="button" class="btn btn-default btn-nutr {{! bullet_1 |hide_if_empty}}" data-toggle="modal" data-target="#myModal_detail">Información</button> -->
+
+                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" data-target="#myModal" >Comprar</button>
+                </div>
+
+            </div>
+        </div>
+    </div> 
+    <div class="clearfix"></div>
+
+    <div class="col-md-12 col-sm-12 mbtm100 margin_movil">
+        <div align="center">
+            <div class="fin text-center"> Descripción del producto en detalle </div>
+                <hr class="hr_prod">
+                    <h3 class="descr_prod_detail ellipsis multiline"> 
+                    {{! description }}
+                    </h3>
+        </div>
+
+    </div>
+    <div class="clearfix"></div>
+
+<div class="modal fade" id="myModal_detail" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title ">Información</h4>
+                </div>
+                <div class="modal-body">
+                   <h5 class="descrip_detail1_modal ellipsis multiline">{{!bullet_1}}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+<div class="clearfix"></div>
+</script>
+
+{% end %}
+{% block body %} 
+<div id="content" class="container space60 space-container">
+</div>
+{% include '../home/footer.html' %}
+{% end %}

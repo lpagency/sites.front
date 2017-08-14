@@ -1,0 +1,228 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<!-- mostrar lista productos -->
+<div class="back-title-banner ">
+    {% if is_admin %}
+        <div class="image-upload">
+            <!-- id input debe ir en for de label -->
+            <label for="{{ site.name }}_banner_products">
+            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_products" name="image" id="{{ site.name }}_banner_products" >
+        </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_products" src="{{ read_image(site.name + '_banner_products', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_products',500) }}'" class="img-responsive b-produ" alt="item" style="height: 100%;">
+
+ 
+
+    <div class="container2">
+        <div class="row">
+            <div class="space100"></div>
+            <!-- <h1 class="text-product">Área de juegos</h1> -->
+                {% if is_admin %}
+                    <h1 class="product_title"><span class="editabletext" text-id="{{ site.name + '_titulo_til_img' }}" >{{ read_text(site.name + '_titulo_til_img') }}</span></h1>
+                {% else %}
+                   <h1 class="product_title"> {{ read_text(site.name + '_titulo_til_img') }} </h1>
+                {% end %}
+            <!-- <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
+            {% if is_admin %}
+                <p class="sub-ti"><span class="editabletext" text-id="{{ site.name + '_titulo_til2_img' }}" >{{ read_text(site.name + '_titulo_til2_img') }}</span></p>
+            {% else %}
+               <p class="sub-ti"> {{ read_text(site.name + '_titulo_til3') }} </p>
+            {% end %}
+        </div>
+    </div>
+
+
+<div class="container">
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_1' }}" >{{ read_text(site.name + 'new_1') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_1' }}" content="{{ read_link(site.name + '_div_new_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                 {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_1">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_1" name="image" id="img_new_1" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div_new_1' }}" href="{{ read_link(site.name + '_div_new_1') }}">
+                <img id="{{ site.name }}_new_1" src="{{ read_image(site.name + '_new_1', 1) }}" onload="this.src='{{ read_image(site.name + '_new_1', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+                <!-- <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+     
+
+     
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_2' }}" >{{ read_text(site.name + 'new_2') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_2' }}" content="{{ read_link(site.name + '_div_new_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                  {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_2">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_2" name="image" id="img_new_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_new_2' }}" href="{{ read_link(site.name + '_div_new_2') }}">
+                <img id="{{ site.name }}_new_2" src="{{ read_image(site.name + '_new_2', 1) }}" onload="this.src='{{ read_image(site.name + '_new_2', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+               <!--  <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+     
+
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_3' }}" >{{ read_text(site.name + 'new_3') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_3' }}" content="{{ read_link(site.name + '_div_new_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                  {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_3">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_3" name="image" id="img_new_3" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_new_3' }}" href="{{ read_link(site.name + '_div_new_3') }}">
+                <img id="{{ site.name }}_new_3" src="{{ read_image(site.name + '_new_3', 1) }}" onload="this.src='{{ read_image(site.name + '_new_3', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+              <!--   <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+     
+
+
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_4' }}" >{{ read_text(site.name + 'new_4') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_4' }}" content="{{ read_link(site.name + '_div_new_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                 {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_4">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_4" name="image" id="img_new_4" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_new_4' }}" href="{{ read_link(site.name + '_div_new_4') }}">
+                <img id="{{ site.name }}_new_4" src="{{ read_image(site.name + '_new_4', 1) }}" onload="this.src='{{ read_image(site.name + '_new_4', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+                <!-- <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+     
+
+
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_5' }}" >{{ read_text(site.name + 'new_5') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_5' }}" content="{{ read_link(site.name + '_div_new_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                 {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_5">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_5" name="image" id="img_new_5" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_new_5' }}" href="{{ read_link(site.name + '_div_new_5') }}">
+                <img id="{{ site.name }}_new_5" src="{{ read_image(site.name + '_new_5', 1) }}" onload="this.src='{{ read_image(site.name + '_new_5', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+                <!-- <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+     
+
+     <div class="col-md-4 text-center height-product">
+        <div class="container-fluid-new">
+            <div class="row-fluid-new opaque-background">
+                <div class="offset3 span6 centering">
+                    <div class="medio {{editabletext}}" text-id="{{ site.name + 'new_6' }}" >{{ read_text(site.name + 'new_6') }}</div>
+                </div>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div_new_6' }}" content="{{ read_link(site.name + '_div_new_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+         </div>
+            <div class="div-img-prod">
+                 {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_new_6">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_new_6" name="image" id="img_new_6" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_new_6' }}" href="{{ read_link(site.name + '_div_new_6') }}">
+                <img id="{{ site.name }}_new_6" src="{{ read_image(site.name + '_new_6', 1) }}" onload="this.src='{{ read_image(site.name + '_new_6', 200) }}'" class="img-responsive product-image img-edit" alt="item" style="height: 100%;">
+                </a>
+               <!--  <img src="https://7static.loadingplay.com/static/images/baef5187972df2e3ee360022f7015d90_img2.png" class="img-responsive product-image img-edit" alt="item"> -->
+          </div>                
+    </div>
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}
+

@@ -1,0 +1,503 @@
+.navbar-default {
+    width: 100%;
+    left: 0px;
+    background-color: white;
+    border-color: transparent;
+    z-index: 1030;
+    top: 69px;
+    position: relative;
+    height: 33px;
+    min-height: 40px;
+    border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: gray;
+}
+
+.cuadro-blanco{
+    width: 100%;
+    height: 75px;
+    background-color:white;
+    position: relative;
+    z-index: 1000;
+    top: -57px;
+    left: -6px;
+}
+
+.logo-desk {
+    float: left;
+    padding: 0px;
+    bottom: 0px;
+    width: 240px;
+    /* height: 62px; */
+    margin-left: 0.5%;
+    object-fit: cover;
+}
+
+.caja-log {
+    width: 300px;
+    float: left;
+    margin-top: 1px;
+    margin-bottom: 21px;
+    position: absolute;
+    z-index: 1030;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: -126px;
+   margin-top: -38px;
+}
+
+.navbar-nav.navbar-right.dos:last-child {
+    margin-right: 42px;
+}
+
+.icon{
+    top: 23px;
+    left: 18px;
+    color: gray;
+    font-weight: 400;
+    font-size: 13px;
+}
+
+.sig{
+	top: 12px;
+	left: 15px;
+}
+
+.com{
+	top: 13px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+color: gray;
+background-color: transparent;
+text-decoration: underline;
+outline:none !important;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;
+
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: gray;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.dropdown-menu {
+    top:96%;
+    border-radius: 0px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: transparent;
+    color: gray;
+}
+
+.img-bolsa{
+    width: 21%;
+    position: relative;
+    left: 8px;
+    top: 12px;
+    float: left;
+    cursor: pointer;
+}
+
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 29px;
+    font-weight: 400;
+    font-size: 13px;
+    margin-bottom: -2px;
+}
+
+.fa-angle-up{
+    float: left;
+    color: rgba(128, 128, 128, 0.28);
+    text-align: center;
+    left: 71px;
+    position: relative;
+    font-size: 24px !important;
+    top: -22px;
+    margin-bottom: -24px;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: gray;
+    white-space: nowrap;
+    font-size: 12px;
+    outline: none !important;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color:rgb(38, 38, 38);
+    text-decoration: none;
+    background-color: white;
+    font-weight: 500;
+    outline: none !important;
+}
+
+header.fixtop {
+    background: white;
+    position: fixed;
+    z-index: 1030;
+    top: 0%;
+    width: 100%;
+}
+#lapimport .affix {
+    background: transparent !important;
+}
+
+.affix {
+    top: -3px !important;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    border-color: #e7e7e7;
+    border-top: 1px solid rgba(128, 128, 128, 0.68);
+}
+/*---------------------------------------------Responsive---------------------------------*/
+@media (max-width: 1199px){
+    .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 19px;
+    font-weight: 400;
+    font-size: 11px;
+}
+
+}
+
+@media (max-width: 991px){
+    .nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 9px;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.icon {
+    top: 26px;
+    left: 18px;
+    color: gray;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+}
+
+
+@media (max-width: 911px){
+.navbar-nav.navbar-right:last-child {
+    margin-right: -94px;
+    margin-top: -38px;
+}
+
+.img-bolsa {
+    width: 15%;
+    position: relative;
+    left: 21px;
+    top: 19px;
+    float: left;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 893px){
+	.nav>li>a {
+    font-size: 12px;
+}
+
+.icon {
+    font-size: 12px;
+}
+
+}
+
+@media (max-width: 819px){
+	.nav>li>a {
+    font-size: 11px;
+}
+
+.icon {
+    font-size: 11px;
+}
+
+}
+
+@media (max-width: 781px){
+
+}
+
+
+@media (max-width: 768px){
+.nav>li>a {
+    font-size: 10px;
+}
+    
+}
+
+@media (max-width: 767px){
+	.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.cuadro-blanco {
+    height: 62px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 85%;
+}
+
+.img-mobile {
+    margin-top: -24px !important;
+}
+
+.icon {
+    top: 15px;
+    left: 25px;
+    float: right;
+}
+
+.fa-shopping-cart{
+   font-size: 30px !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: gray;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: gray;
+    font-size: 14px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: gray;
+    background-color: transparent;
+    text-decoration: underline;
+}
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: gray;
+    background-color: transparent;
+    text-decoration: underline;
+}
+
+.dropdown-menu {
+    min-width: 100%;
+    text-align: center;
+    overflow-y:hidden; 
+}
+
+.navbar-collapse.in {
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 350px;
+    background-color: white;
+}
+
+.navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+    z-index: 1;
+    top: 0px;
+    min-height: 50px;
+    height:72px;
+}
+
+.img-bolsa {
+    width: 22%;
+    position: relative;
+    left: 160px;
+    top: 2px;
+    float: left;
+    cursor: pointer;
+}
+
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+    background-color: white;
+}
+
+#lapimport .affix {
+    background: white !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 0px;
+    margin-top: -4px;
+    margin-left: 0px;
+}
+
+}
+
+@media (max-width: 650px){
+	.icon {
+    top: 12px;
+    left: 0px;
+    float: right;
+}
+
+.img-bolsa {
+    width: 26%;
+    position: relative;
+    left: 100px;
+    top: -1px;
+    float: left;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 511px){
+    .cuadro-blanco {
+    height: 62px;
+    background-color: white;
+    position: absolute;
+    top: 0px;
+    z-index: 1;
+    width: 80%;
+}
+
+}
+
+@media (max-width: 470px){
+.cuadro-blanco {
+    z-index: 1;
+    width: 86%;
+    background-color: transparent;
+}
+
+.icon {
+    top: 14px;
+    left: 19px;
+    float: right;
+}
+
+}
+
+@media (max-width: 414px){
+	.caja-log {
+    width: 240px;
+    float: left;
+    margin-top: 14px;
+    margin-bottom: 21px;
+    position: absolute;
+    z-index: 1030;
+}
+
+.img-bolsa {
+    width: 20%;
+    position: relative;
+    left: 120px;
+    top: 4px;
+    float: left;
+    cursor: pointer;
+}
+
+.cuadro-blanco{
+    overflow: hidden;
+}
+
+
+}
+
+@media (max-width: 375px){
+    .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 20px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    left: 11px;
+}
+
+.img-bolsa {
+    width: 18%;
+    position: relative;
+    left: 131px;
+    top: 8px;
+    float: left;
+    cursor: pointer;
+}
+
+.caja-log {
+    width: 213px;
+    float: left;
+    margin-top: 14px;
+    margin-bottom: 21px;
+    position: absolute;
+    z-index: 1030;
+}
+
+.logo-desk {
+    float: left;
+    padding: 0px;
+    bottom: -5px;
+    width: 179px;
+    height: 44px;
+    margin-left: 0.5%;
+    object-fit: scale-down;
+}
+
+.cuadro-blanco{
+    overflow: hidden;
+}
+
+}
+
+@media (max-width: 320px){
+	.caja-log {
+    width: 192px;
+    float: left;
+    margin-top: 14px;
+    margin-bottom: 21px;
+    position: absolute;
+    z-index: 1030;
+}
+
+.cuadro-blanco{
+   overflow: hidden;
+}
+
+}
+
+

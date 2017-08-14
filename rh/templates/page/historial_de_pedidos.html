@@ -1,0 +1,89 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="container">
+
+        <ul class="breadcrumb">
+          <li><a href="#"><i class="icon ion-ios-home-outline"></i></a></li>
+          <li><a href="#">Account</a></li>
+          <li><a href="#">Order History</a></li>
+        </ul>
+
+        <div class="row">
+          <div id="content" class="col-sm-12">
+            <h1>Order History</h1>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <td class="text-right">Order ID</td>
+                    <td class="text-left">Order Status</td>
+                    <td class="text-left">Date Added</td>
+                    <td class="text-right">No. of Products</td>
+                    <td class="text-left">Customer</td>
+                    <td class="text-right">Total</td>
+                    <td></td>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-right">#1</td>
+                    <td class="text-left">Pending</td>
+                    <td class="text-left">11/05/2015</td>
+                    <td class="text-right">3</td>
+                    <td class="text-left">John Doe</td>
+                    <td class="text-right">$374.00</td>
+                    <td class="text-right">
+                      <a href="#" data-toggle="tooltip" title="View" class="btn btn-danger"><i class="icon ion-ios-eye-outline"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-right">#2</td>
+                    <td class="text-left">Pending</td>
+                    <td class="text-left">11/05/2015</td>
+                    <td class="text-right">3</td>
+                    <td class="text-left">John Doe</td>
+                    <td class="text-right">$374.00</td>
+                    <td class="text-right">
+                      <a href="#" data-toggle="tooltip" title="View" class="btn btn-danger"><i class="icon ion-ios-eye-outline"></i></a>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="text-right">#3</td>
+                    <td class="text-left">Pending</td>
+                    <td class="text-left">11/05/2015</td>
+                    <td class="text-right">3</td>
+                    <td class="text-left">John Doe</td>
+                    <td class="text-right">$374.00</td>
+                    <td class="text-right">
+                      <a href="#" data-toggle="tooltip" title="View" class="btn btn-danger"><i class="icon ion-ios-eye-outline"></i></a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="buttons clearfix">
+              <div class="pull-right"><a href="#" class="btn btn-default">Continue</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+{% include '../home/footer.html' %}
+{% end %}
+

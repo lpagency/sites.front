@@ -1,0 +1,642 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>Family Market</title>
+        <meta charset="utf-8">
+        <meta name="description" content="StellaShop - Elegant E-Commerce Theme from angelostudio.net">
+        <meta name="author" content="ANGELOSTUDIO.NET">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700,600,300' rel='stylesheet' type='text/css' rel='stylesheet' type='text/css'>
+                <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+                    <link rel="stylesheet" href="/static/cssbt/style.css?v=5">
+                    <link rel="stylesheet" href="/static/cssbt/icomoon/style.css">
+                    <link rel="shortcut icon" href="/static/imgbt/ico/32.png" sizes="32x32" type="/static/imagebt/png"/>
+                    <link rel="apple-touch-icon-precomposed" href="imgbt/ico/60.png" type="image/png"/>
+                    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/imgbt/ico/72.png" type="image/png"/>
+                    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/static/imgbt/ico/120.png" type="image/png"/>
+                    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/static/imgbt/ico/152.png" type="image/png"/>
+                    <link rel="stylesheet" type="text/css" href="/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+                    <link rel="stylesheet" href="/static/css/custom_bootstrap.css">
+                    <!-- menu editor css -->
+                    <link rel="stylesheet" href="/static/menu/css/main.css" type="text/css">
+                    <link rel="stylesheet" href="/static/menu/css/wallop-slider--slide.css">
+                    <link rel="stylesheet" href="/static/menu/css/wallop-slider.css">
+                    <link rel="stylesheet" href="/static/menu/css/colpick.css">
+                    <!-- menu editor css -->
+                    <!-- <link rel="stylesheet" href="/static/css/simple_tab.css">
+                    <link rel="stylesheet" href="/static/css/detalle-producto.css">
+                    <link href='http://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'> -->
+                        <!--[if lt IE 9]>
+                        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+                        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+                        <![endif]-->
+                    </head>
+                    <body id="home">
+                        <!-- editor menu -->
+                        <div id="carro-home" class="carro-lateral"style="">
+                            <div class="container-fluid title">
+                                <div class="row" style="margin-top:10px;">
+                                    <div class="col-sm-12">
+                                        <div id="close-cart" class="btn btn-outline" style="width:100%;" >Cerrar</div>
+                                        <!-- <div style="text-align:right;"><i class="icon-close"></i></div> -->
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <p style="font-size: 20px; font-weight: 400;">Carrito de Compra</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid cart-list" ng-controller="">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Nombre</th>
+                                                    <th>Precio</th>
+                                                    <th class="text-center">Cant</th>
+                                                    <th class="text-right"></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <td class="vert-align">Producto</td>
+                                                <td class="vert-align">$47.000</td>
+                                                <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                                                <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                                            </tr>
+                                        </tbody>
+                                        <tbody>
+                                            <td class="vert-align">Producto</td>
+                                            <td class="vert-align">$47.000</td>
+                                            <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                                            <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                                        </tr>
+                                    </tbody>
+                                    <tbody>
+                                        <td class="vert-align">Producto</td>
+                                        <td class="vert-align">$47.000</td>
+                                        <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                                        <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <td class="vert-align">Producto</td>
+                                    <td class="vert-align">$47.000</td>
+                                    <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                                    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                                </tr>
+                            </tbody>
+                            <tbody>
+                                <td class="vert-align">Producto</td>
+                                <td class="vert-align">$47.000</td>
+                                <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                                <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <td class="vert-align">Producto</td>
+                            <td class="vert-align">$47.000</td>
+                            <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                            <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                        </tr>
+                    </tbody>
+                    <tbody>
+                        <td class="vert-align">Producto</td>
+                        <td class="vert-align">$47.000</td>
+                        <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                        <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <td class="vert-align">Producto</td>
+                    <td class="vert-align">$47.000</td>
+                    <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+                </tr>
+            </tbody>
+            <tbody>
+                <td class="vert-align">Producto</td>
+                <td class="vert-align">$47.000</td>
+                <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+                <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+            </tr>
+        </tbody>
+        <tbody>
+            <td class="vert-align">Producto</td>
+            <td class="vert-align">$47.000</td>
+            <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+            <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+        </tr>
+    </tbody>
+    <tbody>
+        <td class="vert-align">Producto</td>
+        <td class="vert-align">$47.000</td>
+        <td class="text-center vert-align"><!-- <input type="number" min="1" max="9" ng:model="" ng:required class="form-control form-control-inline" style="width: 52px!important;"> --> 2</td>
+        <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+    </tr>
+</tbody>
+</table>
+</div>
+<div class="col-sm-12 " ng-if="">
+<table class="table">
+<thead>
+    <tr>
+        <th colspan="3" class="text-center">Resumen Pedido</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td>Sub total:</td>
+        <td></td>
+        <td class="text-right"><b>$47.000</b></td>
+    </tr>
+    <!-- <tr>
+        <td>Shipping cost:</td>
+        <td></td>
+        <td class="text-right"></td>
+    </tr>
+    <tr>
+        <td>Tax:</td>
+        <td></td>
+        <td class="text-right"></td>
+    </tr> -->
+    <tr>
+        <td>Total:</td>
+        <td></td>
+        <td id="total" class="text-right">$47.000</td>
+    </tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12 text-center show-more" >
+<a href="/checkout/address" class="btn btn-right" style="float: right; width:48%;">Checkout</a>
+<a onclick="location.href='/cart/getbyuserid?user_id='+localStorage.user_id+'&ajax=0'" class="btn btn-right" style="float: left; width:48%;">Ir al carro</a>
+</div>
+</div>
+</div>
+</div>
+<button class="button-nav-toggle menu-8" style="color:white !important;"><i class="icon-menu"></i> </button>
+<div class="menu">
+<nav class="nav-main">
+<div class="nav-container">
+<ul>
+<li class="menu-st" ><a href="{{ site.url }}auth/login">Iniciar sesión</a></li>
+<li class="menu-st"><a>Sitio</a></li>
+<li class="menu-te"> <a href="#">Tienda</a>
+<!-- <ul>
+    <li class="menu-ti" ><a href="#" class="back"><strong>Tipos de menu</strong></a></li>
+    <li class="menu-te"><a href="#" >Menu 1</a></li>
+    <li class="menu-te"><a href="#">menu 2</a></li>
+</ul> -->
+</li>
+<li class="menu-te"> <a href="/contact">Tu pedido</a></li>
+<li class="menu-te"> <a href="/contact">Novedades</a></li>
+<li class="menu-te"> <a href="/contact">Contacto</a></li>
+<!-- <li class="menu-st"> <a>Categorías</a></li>
+<li class="menu-te"> <a href="#">Ofertas</a></li>
+<li class="menu-te"> <a href="#">Purina</a></li>
+<li class="menu-te"> <a href="#">Dog chow</a></li>
+<li class="menu-te"> <a href="#">Doko</a></li>
+<li class="menu-te"> <a href="#">Dog chow light</a></li>
+<li class="menu-te"> <a href="#">Execellent</a></li> -->
+</div>
+</nav>
+</div>
+<img class="foto-header-desk" src="/static/images/004.png">
+<img class="foto-header-movil" src="/static/images/003.png">
+<div id="fixed-menu-top-int" class="fixed-menu-top" style="">
+<ul class="nav-list text-center effect menu-7" >
+<a href="/" class="hide-show" style="">Family<span>Market</span></a>
+</ul>
+<a href="/" class="nav-brand logo-page show-hide" style="">Family<span>Market</span></a>
+<ul class="nav-list text-center effect menu-5" style="margin-top:10px;">
+<!-- <li><a href="/contact">Novedades</a></li> -->
+<li><a href="/">Tienda</a></li>
+<li><a href="/contact">Tus pedidos</a></li>
+<li><a href="/contact">Contacto</a></li>
+<li><a href="/auth/login">Iniciar sesión</a></li>
+</ul>
+<img class="foto-header-desk" style="position: absolute !important;" src="/static/images/004.png">
+</div>
+<div id="open-cart" class="absolute-cart-box" >
+<div class="sqs-pill-shopping-cart">
+<div class="sqs-pill-shopping-cart-content">
+<div class="dark"><i class="icon-cart"></i></div>
+<div class="details">
+Carrito&nbsp;-&nbsp;
+<span class="total-quantity"></span>
+<span class="suffix">Productos</span>
+</div>
+<span class="subtotal">
+<span class="price">
+<span class="sqs-money-native"></span>
+</span>
+</span>
+</div>
+</div>
+</div>
+<!-- editor menu -->
+<div id="wrap" style="z-index:0;">
+<!-- registration -->
+<!-- <div class="registroopciones clearfix">
+<div class="opcionesregistro clearfix">
+<p class="text">mi perfil</p>
+<p class="text header-clearfix">mis direcciones</p>
+<p class="text header-clearfix">mis compras</p>
+<p class="text header-clearfix">cerrar sesión</p>
+</div>
+<div class="flecharegistro clearfix">
+<img class="image" src="/static/images/flecha(2)-15x15.png" data-rimage data-src="/static/images/flecha(2)-15x15.png">
+</div>
+</div> -->
+<!-- producto bt -->
+<div class="top-distance-content">
+<div class="container-fluid hidden-xs" >
+<div class="row">
+<ol class="breadcrumb">
+    <li><a href="/store">Tienda</a></li>
+    <li class="active">Teque</li>
+</ol>
+</div>
+</div>
+<div class="container-fluid product" style="text-align:left;">
+<div class="row visible-xs product-mobile" style="color: white;">
+<div class="col-xs-12 text-center">
+    <h2 class="product-title" >Teque</h2>
+    <div class="">
+        <span class="">$26.900</span>
+    </div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-8 ">
+    <img src="/static/images/005.png" class="product-img img-responsive" alt="item">
+    <img src="/static/images/005.png" class="product-img img-responsive" alt="item">
+</div>
+<div class="col-sm-4 fondo-blanco-movil">
+    <h2 class="product-title hidden-xs " style="font-weight: 700; font-size: 30px;">Teque</h2>
+    <div class=" hidden-xs">
+        <span class="" style="font-size:30px;">$ 26.900</span>
+    </div>
+    <div class="product-detail">
+        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <form action="product1.html" method="POST" class="myform">
+        <div class="form-group clearfix">
+            <label class="control-label">Size</label>
+            <select class="form-control _select _select-1" id="size" sku="GDF-OI14-7841-18-C2">
+                <option value="38.0">38.0</option>
+                <option value="39.0">39.0</option>
+                <option value="40.0">40.0</option>
+            </select>
+            <select class="form-control _select _select-2 margin-top-1" id="quantity">
+            </select>
+        </div>
+        <button type="button" class="btn btn-right-1 add-to-cart" product-id="7">A&ntilde;adir al carro</button>
+    </div>
+    <!-- <ul class="product-colors">
+        <li class="selected"><a class="white" style="background-color:#FFF"> </a></li>
+        <li class=""><a style="background-color:#000"> </a></li>
+        <li class=""><a style="background-color:#49A3F1"> </a></li>
+        <li class=""><a style="background-color:#FF6279"> </a></li>
+    </ul> -->
+</form>
+</div>
+</div>
+</div>
+<!-- <div class="row">
+<div class="col-sm-8 ">
+<div class="paging clearfix">
+<a class="btn btn-outline pull-left" href="product2.html"><i class="icon-arrow-left2 left"></i><span>Previous</span><span class="hidden-xs"> Product</span></a>
+</div>
+</div>
+</div> -->
+<!-- producto bt -->
+<!-- producto giani
+<div class="cuerpo clearfix">
+<div class="cuerpo-categorias clearfix">
+<div class="categorias clearfix">
+<p class="titulo-categorias"><span>Más combinaciones</span></p>
+<div class="container">
+    <a href="/product/Botin/Teque/richato negro">
+    <img class="image image-7 otro-angulo-mas-combinaciones" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=159" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=159">
+    </a>
+</div>
+<div class="container">
+    <a href="/product/Botin/Teque/croco café/cuero café">
+    <img class="image image-7 otro-angulo-mas-combinaciones" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C1.png?mw=159" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C1.png?mw=159">
+    </a>
+</div>
+</div>
+</div>
+<div class="cuerpo-producto clearfix">
+<div class="producto-foto">
+<img class="foto-producto" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=547" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=547">
+</div>
+<div class="producto-info">
+<div class="container">
+    <img class="image image-10 otro-angulo" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=75" data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-18-C2.png?mw=547">
+</div>
+</div>
+</div>
+<div class="container container-10 clearfix">
+<div class="producto-info clearfix">
+<p class="producto-nombre producto-nombre-1">Teque</p>
+<div class="megusta clearfix">
+    <div class="fotomegusta enabled" onclick="votar(7)"><img src="/static/images/corazon.png"></div>
+    <p class="text" id="votes-quantity">0</p>
+</div>
+<p class="producto-nombre producto-nombre-2">Línea de producto</p>
+<p class="producto-nombre producto-nombre-3">Color : <span>richato negro</span></p>
+<p class="producto-nombre producto-nombre-3">
+En stock
+</p>
+<div class="container container-11 clearfix">
+    <div class="selects">
+        <select class="_select _select-1" id="size" sku="GDF-OI14-7841-18-C2">
+            <option value="38.0">38.0</option>
+            <option value="39.0">39.0</option>
+            <option value="40.0">40.0</option>
+        </select>
+        <select class="_select _select-2" id="quantity">
+        </select>
+    </div>
+    <div class="container container-12 clearfix">
+        <p class="producto-nombre producto-nombre-4">Talla</p>
+        <p class="producto-nombre producto-nombre-5">Cantidad</p>
+    </div>
+</div>
+<p class="producto-precio">26.900</p>
+</div>
+<button class="_button add-to-cart" product-id="7">
+<p>AGREGAR AL CARRO</p>
+</button>
+<div class="container container-13">
+<div class="container container-14 clearfix">
+    <div id="tabs-container">
+        <ul class="tabs-menu">
+            <li class="current"><a href="#tab-1">Descripci&oacute;n</a></li>
+            <li><a href="#tab-2">Delivery</a></li>
+            <li><a href="#tab-3">Cu&aacute;l es tu talla</a></li>
+        </ul>
+        <div class="tab">
+            <div id="tab-1" class="tab-content">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div id="tab-2" class="tab-content">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+            <div id="tab-3" class="tab-content">
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="container container-16 clearfix">
+<p class="text text-6">Productos Relacionados</p>
+<a href="/product/Botin/Huala/reno choco/anaconda choco/lanovil café">
+<div class="container container-17 clearfix">
+<div class="container container-18 otro-angulo-mas-combinaciones">
+    <img class="image image-15" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-29-C1.png?mw=165" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-29-C1.png?mw=165">
+</div>
+<p class="text text-7">Huala</p>
+<p class="text text-8">28.500</p>
+</div>
+</a>
+<a href="/product/Botin/Quetzal/reno suel.5">
+<div class="container container-17 clearfix">
+<div class="container container-18 otro-angulo-mas-combinaciones">
+    <img class="image image-15" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-28-C2.png?mw=165" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-28-C2.png?mw=165">
+</div>
+<p class="text text-7">Quetzal</p>
+<p class="text text-8">24.900</p>
+</div>
+</a>
+<a href="/product/Botin/Canastero/reno azul">
+<div class="container container-17 clearfix">
+<div class="container container-18 otro-angulo-mas-combinaciones">
+    <img class="image image-15" src="http://bgiani.ondev.today/image/0_GDF-OI14-7739-11-C1.png?mw=165" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7739-11-C1.png?mw=165">
+</div>
+<p class="text text-7">Canastero</p>
+<p class="text text-8">23.500</p>
+</div>
+</a>
+<a href="/product/Botin/Queltehue/reno/mimbre/ploter café">
+<div class="container container-17 clearfix">
+<div class="container container-18 otro-angulo-mas-combinaciones">
+    <img class="image image-15" src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-34-C2.png?mw=165" data-rimage data-src="http://bgiani.ondev.today/image/0_GDF-OI14-7841-34-C2.png?mw=165">
+</div>
+<p class="text text-7">Queltehue</p>
+<p class="text text-8">28.200</p>
+</div>
+</a>
+s
+</div>
+</div>
+producto giani -->
+<div class="carritoproductos clearfix">
+<div class="flecha clearfix">
+<!-- <img class="image" src="/static/images/flecha-15x15.png" data-rimage data-src="/static/images/flecha-15x15.png"> -->
+</div>
+<!-- <div class="carritoinfo clearfix">
+<div class="productosencola clearfix">
+<div class="fotoproductoencola">
+    <img class="image" src="/static/images/producto-70x70.png" data-rimage data-src="/static/images/producto-70x70.png">
+</div>
+<p class="nombreproductoencola">nombre productos</p>
+<p class="color">color: chucao30</p>
+<button class="eliminarproducto">X</button>
+<p class="talla">talla 39</p>
+<p class="cantidad">x1</p>
+<p class="precio">$ 00.0</p>
+</div>
+<div class="total clearfix">
+<p class="totalcarrrito">total &nbsp;$ 00.0</p>
+</div>
+<div class="acciones clearfix">
+<button class="iralcarro">
+<p>ir al carro</p>
+<p></p>
+</button>
+<button class="comprar">
+<p>comprar</p>
+<p></p>
+</button>
+</div>
+</div> -->
+</div>
+<footer>
+<div class="container-fluid">
+<div class="row">
+<div class="col-sm-3">
+    <ul class="social-links">
+        <li><a href="/"><i class="icon-twitter"></i></a></li>
+        <li><a href="/"><i class="icon-facebook"></i></a></li>
+        <li><a href="/"><i class="icon-pinterest"></i></a></li>
+    </ul>
+</div>
+<div class="col-sm-3 footer-top" style="text-align:left;">
+    <ul class="nav-list effect textos-footer ">
+        <li><P><span>Categoria</span></P></li>
+    </ul>
+    <ul class="nav-list effect textos-footer ">
+        <li><a href="/">Despacho & Devoluciones</a></li>
+        <li><a href="/">Terminos & Condiciones</a></li>
+        <li><a href="/">Privacidad</a></li>
+        <li><a href="/">FAQ</a></li>
+    </ul>
+</div>
+<div class="col-sm-3" style="text-align:left;">
+    <ul class="nav-list effect textos-footer ">
+        <li><P><span>Categoria</span></P></li>
+    </ul>
+    <ul class="nav-list effect textos-footer ">
+        <li><a href="/">Despacho & Devoluciones</a></li>
+        <li><a href="/">Terminos & Condiciones</a></li>
+        <li><a href="/">Privacidad</a></li>
+        <li><a href="/">FAQ</a></li>
+    </ul>
+</div>
+<div class="col-sm-3" style="text-align:left;">
+    <ul class="nav-list effect textos-footer ">
+        <li><P><span>Categoria</span></P></li>
+    </ul>
+    <ul class="nav-list effect textos-footer ">
+        <li><a href="/">Despacho & Devoluciones</a></li>
+        <li><a href="/">Terminos & Condiciones</a></li>
+        <li><a href="/">Privacidad</a></li>
+        <li><a href="/">FAQ</a></li>
+    </ul>
+</div>
+<div class="col-sm-12" style="margin-top: 15px;">
+    <ul class="nav-list effect ">
+        <p>Ecommerce<b>tienda</b> &copy; 2014. Designed by <a href="" target="_blank">Loadingplay.com</a>.</p>
+    </ul>
+</div>
+</div>
+</div>
+</footer>
+<!--
+<div class="footer clearfix">
+<div class="footer-left-cont clearfix">
+<a href="/"><img class="image logo-footer" src="/static/images/logo001-50x50.png" data-rimage data-src="/static/images/logo001-50x50.png"></a>
+<img class="image right-arrow-footer" src="/static/images/flechas-15x15-5.png" data-rimage data-src="/static/images/flechas-15x15-5.png">
+<a class="text first-text-items-footer" href="/store/getproductsbytags?tags=lo nuevo">¿Qu&eacute; es lo nuevo?</a>
+<img class="image right-arrow-footer-2" src="/static/images/flechas-15x15-4.png" data-rimage data-src="/static/images/flechas-15x15-4.png">
+<a class="text text-items-footer" href="/store/getproductsbytags?tags=zapatos">Zapatos</a>
+<img class="image right-arrow-footer-2" src="/static/images/flechas-15x15-3.png" data-rimage data-src="/static/images/flechas-15x15-3.png">
+<a class="text text-items-footer" href="/store/getproductsbytags?tags=campaña">Campa&ntilde;as</a>
+<img class="image right-arrow-footer-2" src="/static/images/flechas-15x15-2.png" data-rimage data-src="/static/images/flechas-15x15-2.png">
+<a class="text text-items-footer" href="#">Nosotros</a>
+<img class="image right-arrow-footer-2" src="/static/images/flechas-15x15-1.png" data-rimage data-src="/static/images/flechas-15x15-1.png">
+<a class="text text-items-footer" href="#">Historia</a>
+<img class="image right-arrow-footer-2" src="/static/images/flechas-15x15.png" data-rimage data-src="/static/images/flechas-15x15.png">
+<a class="text last-text-items-footer" href="#">Estilo de vida</a>
+<a class="_button" href="/contact">
+<p>CONTACTO</p>
+</a>
+</div>
+<div class="footer-left-center-cont clearfix">
+<button class="_button">VENTA MAYORISTA</button>
+<p class="text">Pronto...</p>
+</div>
+<div class="footer-right-center-cont clearfix">
+<button class="_button" onclick="location.href='/store'">
+<p></p>
+<p>TIENDA</p>
+</button>
+<img class="image" src="/static/images/zapato-giani-100x100.png" data-rimage data-src="/static/images/zapato-giani-100x100.png">
+</div>
+<div class="footer-right-cont clearfix">
+<p class="text">SÍGUENOS</p>
+<div class="footer-redes clearfix">
+<a href="http://www.pinterest.com/search/pins/?q=giani%20da%20firenze" target="_blank" > <img class="image image-23" src="/static/images/giani-pint-50x50.png" data-rimage data-src="/static/images/giani-pint-50x50.png"> </a>
+<a href="https://www.facebook.com/giani.dafirenze" target="_blank" > <img class="image image-24" src="/static/images/giani-face-50x50.png" data-rimage data-src="/static/images/giani-face-50x50.png"> </a>
+<a href="http://instagram.com/gianidafirenze" target="_blank" > <img class="image image-25" src="/static/images/giani-inst-50x50.png" data-rimage data-src="/static/images/giani-inst-50x50.png"> </a>
+<a href="https://twitter.com/GianidaFirenze" target="_blank" > <img class="image image-26" src="/static/images/giani-tweet-50x50.png" data-rimage data-src="/static/images/giani-tweet-50x50.png"> </a>
+</div>
+</div>
+<div class="text footer-contact-text">
+<p>Giani Da Firenze 2014 ® Santa Elena, 1328, Santiago, Chile. Teléfono (+56) 2 2555 0328. Desarrollado por <a href="http://loadingplay.com" target="_blank">LoadingPlay</a></p>
+</div>
+</div>
+-->
+</div>
+<!-- <script src="/static/js/rimages.js"></script> -->
+<!--<script src="/static/js/fix_ie9.js"></script>-->
+<script type="text/javascript" src="/static/js/jquery-min.js"></script>
+<script type="text/javascript" src="/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+<script src="/static/js/giani_functions.js"></script>
+<script src="/static/js/giani.js"></script>
+<!-- bt inicio -->
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/static/jsbt/placeholders.min.js"></script>
+<script type="text/javascript" src="/static/jsbt/custom.js"></script>
+<script type="text/javascript" src="/static/jsbt/ga.js"></script>
+<!-- bt fin -->
+<!-- menu editor js -->
+<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="/static/menu/js/modernizr.js"></script>
+<script src="/static/menu/js/main.js"></script>
+<script src="/static/menu/js/WallopSlider.js"></script>
+<script src="/static/menu/js/script.js"></script>
+<script src="/static/menu/js/colpick.js"></script>
+<!-- menu editor js -->
+<script src="/static/js/detalle-producto.js"></script>
+<script type="text/javascript" src="/static/js/simple.tab.js" ></script>
+<script type="text/javascript">
+ifvoted(7);
+</script>
+<script type="text/javascript">
+$('#picker').colpick({
+flat:true,
+layout:'hex',
+submit:0
+});
+</script>
+<script>
+window.fbAsyncInit = function() {
+FB.init({
+appId : '348231912006000',
+xfbml : true,
+version : 'v2.1'
+});
+};
+(function(d, s, id){
+var js, fjs = d.getElementsByTagName(s)[0];
+if (d.getElementById(id)) {return;}
+js = d.createElement(s); js.id = id;
+js.src = "//connect.facebook.net/en_US/sdk.js";
+fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+$(window).scroll(function() {
+var scroll = $(window).scrollTop();
+if (scroll >= 0) {
+$("#fixed-resume-total").addClass("fixed-resume");
+} else {
+$("#fixed-resume-total").removeClass("fixed-resume");
+}
+//home
+if (scroll >= 450) {
+$(".fixed-menu-top").addClass("sombra");
+} else {
+$(".fixed-menu-top").removeClass("sombra");
+}
+//otras paginas
+if (scroll >= 50) {
+$("#fixed-menu-top-int").addClass("sombra");
+} else {
+$("#fixed-menu-top-int").removeClass("sombra");
+}
+});
+</script>
+</body>
+</html>

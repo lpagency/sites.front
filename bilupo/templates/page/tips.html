@@ -1,0 +1,149 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript">
+ $(document).ready(function()
+{
+     $('.font-menu').removeClass('activado');
+     $('.tips').addClass("activado");
+     $('.tips').removeClass('barras');
+
+ });
+</script>
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/tips.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+  @media only screen and (max-width: 1200px) {
+    /* For mobile phones: */
+    [class*="imagenTips"] {
+      float: left !important;
+      margin-left: 20% !important;
+      margin-right: 0px !important;
+    }
+    [class*="imagen2"]{
+      position: relative !important;
+      margin-left: 0% !important;
+    }
+}
+</style>
+<div class="container contenedor">
+<div style="padding-top: 120px;padding-left: 10%;padding-right: 10%;padding-bottom: 20px;">
+      {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="left: 400px; top: 150px; z-index: 0;">
+    <label for="img_titulo_tips">
+        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+    </label>
+    <input type="file" class="editableimage" image-id="{{ site.name }}titulo_tips" name="image" id="img_titulo_tips"  />
+</div>
+{% end %}
+<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item" style="width: 232px; height: 137px; object-fit: scale-down; margin-left: 5%;">
+  <button type="subbmit" alt="Enviar" class="buscarBoton" style="float: right;margin-top: 5%"><span class="fa fa-search"></span></button><input type="text" name="tBuscar" placeholder="Buscar" style="float: right; height: 60%; margin-top: 5%">
+</div>
+<div style="padding: 50px; background-color: rgba(238, 248, 255, 0.9);">
+  <div class="imagenPrincipal" style=";float: left;">
+  {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="margin-left:30%;width: 67%; margin-top: 22%; z-index: 0;">
+         <label for="img_tips1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}tips1" name="image" id="img_tips1" />
+       </div>
+       {% end %}
+       
+        <img id="{{ site.name }}tips1" src="{{ read_image(site.name + 'tips1', 1) }}" onload="this.src='{{ read_image(site.name + 'tips1',) }}'" class="cuadros-home" alt="item" style="margin-left: 35%; width: 415px; height: 434px; object-fit: scale-down;">
+  </div>
+  <div class="contenidoRol" style="width: 60%; float: right;">
+    <h1 class="text_main text-left {{editabletext}} tituloRol" text-id="{{ site.name + 'text_tips2' }}" id="fuente" style="color: red;     margin-left: 16%; margin-top: 5%;margin-bottom: -4.7%">{{ read_text(site.name +  'text_tips2') }}</h1>
+    <br>
+    <hr class="hrTips" style="background-color:lightblue; height: 3px;width: 500px;position: absolute;left: 47.3%;" />
+    <p class="indiceBil" style="font-size: small; color: lightblue;float:left; margin-left: 16%;margin-top: 4%"><i>por<b> Biluppo</b></i></p><p class="indiceBil2" style="font-size: small; color: lightblue;float: right;margin-right: 20%;margin-top: 4%"><b>1 de Enero, 2017</b></p>
+    <div class="text_main text-left {{editabletext}} textoTip" text-id="{{ site.name + 'text_tips1' }}"><a href="{{site_base}}/rolPadres" style="color: black !important" }><b>
+    {{ read_text(site.name +  'text_tips1') }}</b></a>
+    </div>
+  </div>
+<div class="clearfix">
+</div>
+</div>
+<div class="clearfix"></div>
+  <div class="imagenTips" style="float: left; width: 300px; position: relative; margin-left: 5%;">
+    {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="left: 360px;top: 10%; z-index: 1">
+         <label for="img_tips2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}tips2" name="image" id="img_tips2" style="width: 307px; height: 205px; object-fit: scale-down;" />
+       </div>
+       {% end %}
+       
+        <img id="{{ site.name }}tips2" src="{{ read_image(site.name + 'tips2', 1) }}" onload="this.src='{{ read_image(site.name + 'tips2',) }}'" class="cuadros-home imagen2" alt="item" style="margin-left: 32%; margin-top: 10%; width: 307px; height: 205px; object-fit: scale-down;">
+    <br>
+    <h3 class="text_main text-left {{editabletext}} deja" text-id="{{ site.name + 'text_tips3' }}" style="margin-left: 32%; width: 300px;"><a href="#"  class="rojo">{{ read_text(site.name +  'text_tips3') }}</a></h3>
+    <h5 class="porBil" style="margin-left: 32%; color: lightblue"><b><i>Por BILUPPO</i></b></h5>
+  </div>
+  <div class="imagenTips" style="float: left; margin-left: 7%;margin-top: -0.1%; position: relative; width: 300px">
+  {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="left: 300px; top: 9%; z-index: 1">
+         <label for="img_tips3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage " image-id="{{ site.name }}tips3" name="image" id="img_tips3" style="width: 307px; height: 205px; object-fit: scale-down;" />
+       </div>
+       {% end %}
+       
+        <img id="{{ site.name }}tips3" src="{{ read_image(site.name + 'tips3', 1) }}" onload="this.src='{{ read_image(site.name + 'tips3',) }}'" class="cuadros-home imagen2" alt="item" style="margin-left: 15%; margin-top: 10%; width: 307px; height: 205px; object-fit: scale-down;">
+    <br>
+    <h3 class="text_main text-left {{editabletext}} deja" text-id="{{ site.name + 'text_tips4' }}" style="margin-left: 14%"><a href="#"  class="rojo">{{ read_text(site.name +  'text_tips4') }}</a></h3>
+    <h5 class="porBil" style="margin-left: 15%; color: lightblue"><b><i>Por BILUPPO</i></b></h5>
+  </div>
+  <div class="imagenTips" style="float: right; margin-right: 15%; margin-top: 0.3%; width: 250px; position: relative;">
+    {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="top:9%; left:260px; z-index: 1">
+         <label for="img_tips4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage " image-id="{{ site.name }}tips4" name="image" id="img_tips4" style="width: 307px; height: 205px; object-fit: scale-down;" />
+       </div>
+       {% end %}
+       
+        <img id="{{ site.name }}tips4" src="{{ read_image(site.name + 'tips4', 1) }}" onload="this.src='{{ read_image(site.name + 'tips4',) }}'" class="cuadros-home imagen2" alt="item" style="margin-top: 10%; width: 307px; height: 205px; object-fit: scale-down;">
+    <br>
+    <h3 class="text_main text-left {{editabletext}} deja" text-id="{{ site.name + 'text_tips5' }}" style="margin-left: 0%"><a href="#" class="rojo">{{ read_text(site.name +  'text_tips5') }}</a></h3>
+    <h5 class="porBil" style="color: lightblue"><b><i>Por BILUPPO</i></b></h5>
+  </div>
+<div class="pad" style="padding: 200px;">
+</div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

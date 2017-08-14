@@ -1,0 +1,8 @@
+<ul>
+
+{% for i in pages %}
+    <li><a href="{{ site_base }}/{{ i[0] }}" target="_blank">{{ i[0] }} || {{ i[2] }}</a>&nbsp;&nbsp;<a href="{{ site_base }}/page/archive/{{ i[0] }}">X</a>&nbsp;&nbsp;<a href="{{ site_base }}/page/toggle/{{ i[0] }}" >toggle</a>
+    </li>
+{% end %}
+
+</ul>

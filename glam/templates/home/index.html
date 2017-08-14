@@ -1,0 +1,307 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgxgscsLlZS4fq_oQ_6jVS-CZqRzpDzCU"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/map.home.js"></script>
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+
+            $(document).on("submit", "#newsletter", function(ev){
+              ev.preventDefault();
+
+              var message = "Nombre: "+$("#newsletter input[name]").val()+"<br>";
+              message += "Apellido: "+ $("#itApellido").val() +"<br>";
+              message += "Email: "+ $("#itMail").val() +"<br>";
+              message += "Mensaje: "+$("#itComentario").val();
+
+              $.ajax({
+                  url: $(this).attr("action"),
+                  type: 'post',
+                  data: $(this).serialize() + '&ajax=True&message='+message,
+                  success: function(data) {
+                      console.log(data);
+                      if (data === 'ok'){
+                        $(".fondo-for").addClass("hidden", {duration:1000,effect:'blind'});
+                        $(".fondo-dos").removeClass("hidden", {duration:1000,effect:'blind'});
+                        $(".fondo-dos").addClass("visible");
+                      }
+                  }
+              });
+
+
+
+            });
+
+
+        });//ready
+</script>
+
+<script type="text/javascript">
+    // video sound
+    var muted = true;
+
+    $(document).ready(function()
+    {
+        var renderButtons = function(muted)
+        {
+            if (muted) 
+            {
+                // show muted button
+                $('.img-no-sonido').css('display', 'inherit');
+                $('.img-sonido').css('display', 'none');
+            }
+            else
+            {
+                // show unmuted button
+                $('.img-sonido').css('display', 'inherit');
+                $('.img-no-sonido').css('display', 'none');
+            }
+        }
+
+        $(document).on('click', '.toggle-sound', function()
+        {
+            muted = !muted;
+
+            var vid = document.getElementById("video1");
+            vid.muted = muted;
+            renderButtons(muted);
+        });
+
+        renderButtons(muted);
+    });
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- 
+{% import random %}
+
+{% set videos = [
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808',
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808',
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808'
+    ] %}
+{% set poster = [
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad',
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad',
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad'
+    ] %}
+{% set selected = random.choice([0,1,2]) %}
+ -->
+
+<section> 
+   <div class="container">
+ <!--    <video 
+        src="{{ videos[selected] }}" 
+        poster="{{ poster[selected] }}" width="100%" height="auto" class="fondo" controls autoplay="autoplay" loop="loop" >
+    </video>
+    <div class="video-overlay" ></div> -->
+    <!-- editar imagen -->
+    <div align="center">
+        <div class="" style="position:relative;">
+        <video
+          id="video1"
+          class="banner-one hide-on-mobile"
+          src="https://player.vimeo.com/external/203472529.hd.mp4?s=c93c8a5a3bb2c5162058144b9e8b09f462bac8ba&profile_id=174"
+          poster="https://player.vimeo.com/external/203472529.hd.mp4?s=c93c8a5a3bb2c5162058144b9e8b09f462bac8ba&profile_id=174" width="100%" height="auto" muted autoplay="autoplay" loop="loop" >         
+        </video>
+
+         {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+          <label for="img_one">
+            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+          </label>
+          <input type="file" class="editableimage" image-id="{{ site.name }}_one" name="image" id="img_one" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_one" src="{{ read_image(site.name + '_one', 1) }}" onload="this.src='{{ read_image(site.name + '_one',500) }}'" class="banner-one show-on-mobile" alt="item" />
+     </div>
+     <img class="img-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/b015dfd6668b05e05dc57f68983e273b_SONIDO.png">
+     <img class="img-no-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/03627aeb4f602374ed2db198a380d010_SILCENCIO.png">
+     </div>
+  </div>
+</section>
+
+
+  
+
+<section>
+  <div class="container">
+    <div class="col-md-12">
+      <div align="center">
+
+       <div class="col-md-4">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+          <label for="img_for">
+            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+          </label>
+          <input type="file" class="editableimage" image-id="{{ site.name }}_for" name="image" id="img_for" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_for" src="{{ read_image(site.name + '_for', 1) }}" onload="this.src='{{ read_image(site.name + '_for',500) }}'" class="img-for" alt="item" />
+        
+      </div>
+      <div class="col-md-8">
+     <!--  *Mensaje recibido oculto* -->
+        <div class="fondo-dos hidden">
+           <div class="col-md-12">
+              <div class="texto-edi text-center {{editabletext}}" text-id="{{ site.name + '_p_ja' }}">{{ read_text(site.name +  '_p_ja') }}</div>
+          </div>
+        </div>
+    <!--   *-* -->
+       <div class="fondo-for">
+        <div class="col-md-6">
+          <div class="texto-for text-center"> HABLEMOS!</div>
+        </div>
+        <div class="col-md-6">
+          <div class="texto-for-2 text-center"> TU OPINIÓN NOS IMPORTA</div>
+        </div>
+
+        <div align="center">
+          <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
+
+            <div class="col-xs-12 col-sm-10">
+              <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                  <input name="name" placeholder="NOMBRE" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                </div>
+                <span id="helpBlock2" class="hidden help-block help-nombre">NOMBRE</span>
+              </div>
+              <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                  <input name="lastname" placeholder="APELLIDO" class="form-control input-lg requiredField" type="text" id="itApellido" data-error-invalid="Invalid email address" data-error-empty="Ingrese apellido">
+                </div>
+                <span id="helpBlock22" class="hidden help-block help-nombre">APELLIDO</span>
+              </div>
+              <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                  <input name="email" placeholder="EMAIL" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                  <input type="hidden" name="subject2" value="Nuevo mensaje desde sitio web www.glamcolombia.com" />
+                </div>
+                <span id="helpBlock3" class="hidden help-block help-mail">EMAIL</span>
+              </div>
+            </div>  
+            <div align="center">
+              <div class="form-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                  <textarea name="message" placeholder="COMENTARIO" class="form-control com input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-comentario">COMENTARIO</span>
+              </div>
+              <p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">ENVIAR </button></p>
+              <input type="hidden" name="submitted" id="submitted3" value="true">
+            </div>
+          </form> 
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- ***********MAPA********* -->
+
+<section>
+
+     <div class="container">
+       <div class="visit text-center {{editabletext}}" text-id="{{ site.name + '_p_v' }}">{{ read_text(site.name +  '_p_v') }}</div>
+       <hr>
+       <hr class="der">
+       <div align="center">
+           <div id="map" style="height: 450px; width:87%;  margin-bottom: 65px;"></div>
+       </div>
+     </div>
+ 
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,135 @@
+
+<!-- <ul class="topnav" id="myTopnav" style="height: 300px;"> -->
+<!-- *********LOGO EN MOVIL*************** -->
+<!-- <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_logo' }}" href="#">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                </a>
+            </div> -->
+
+            <!-- *********LOGO EN MOVIL*************** -->
+
+   <!--  <li><a href="#"></a></li>
+    <li><a href="#">CALIDAD</a></li>
+    <li><a href="#">ORIGEN</a></li>
+    <li><a href="#">VENTAJAS NUTRICIONALES</a></li>
+    <li><a href="#">CONTROLES NUTRICIONALES</a></li>
+    <li><a href="#">RECETAS</a></li>
+    <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+    </li>
+</ul> -->
+
+
+<nav class="navbar patagonia-menu hidden-sm hidden-md hidden-xs" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- LOGO -->
+        <div class="logo_wrapper navbar-brand hidden-lg hidden-md- hidden-sm visible-xs " style="">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+            </a>
+        </div>
+    <!-- /LOGO -->
+   
+    <div class="collapse navbar-collapse navbar-ex1-collapse box-menu pad0">
+        <ul class="nav navbar-nav col-md-5 pad0">
+            <li >
+                <a href="http://patagonia3.lpe.cl/article/detail/%E5%85%B3%E4%BA%8E%E6%88%91%E4%BB%AC/1704">巴塔哥尼亚贻贝</a>
+            </li>
+            <li class="">
+                <a href="http://patagonia3.lpe.cl/gallery/detail/%E8%B4%BB%E8%B4%9D%E6%95%85%E4%B9%A1/1705"> 贻贝故乡</a>
+            </li>
+            <li class="">
+                <a href="http://patagonia3.lpe.cl/gallery/detail/%E4%BC%98%E8%B4%A8%E4%BA%A7%E5%93%81/1706">优质产品</a>
+            </li>
+            <li>
+                <a href="http://patagonia3.lpe.cl/article/detail/%E8%90%A5%E5%85%BB%E4%BB%B7%E5%80%BC/1707">营养价值</a>
+            </li>
+             <li >
+                <a href="{{ site_base }}/listado_recetas">精彩食谱</a>
+            </li>
+            <li >
+                <a href="{{ site_base }}/world">世界足迹</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav col-md-2 pad0">
+            <!-- LOGO -->
+            <div class="logo_wrapper navbar-brand hidden-xs">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a href="#">
+                    <div class="container_header">
+                        <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- /LOGO -->
+        </ul>
+        <ul class="nav navbar-nav col-md-5 pad0 cero">
+           <!--  <li >
+                <a href="{{ site_base }}/listado_recetas">RECETAS</a>
+            </li> -->
+            <li class="">
+                <a href="http://patagonia3.lpe.cl/gallery/detail/%E9%A3%9F%E5%93%81%E5%AE%89%E5%85%A8/1739">安全可靠</a>
+            </li>
+            <li >
+                <a href="{{ site_base }}/videos">视频展示</a>
+            </li>
+            <li>
+                <a href="{{ site_base }}/videos_document">产品手册</a>
+            </li>
+            <li>
+                <a href="{{ site_base }}/prensa">最新消息</a>
+            </li>
+             <li><a href="" class="dropdown-toggle" data-toggle="dropdown">语言<b class="caret"></b></a> 
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.patagoniamussel.com/">英语</a></li>
+                  <li><a href="http://www.patagoniamussel.cl/">西班牙语</a></li>
+                  <li><a href="http://cn.patagoniamussel.cl/">葡萄牙语</a></li>
+              </ul>
+            </li>
+            <li class="" style="position: relative;display: inline-flex;" data-toggle="modal" data-target="#myModal-wechat">
+                <a >
+                <img class="redes-menu" src="https://84static.loadingplay.com/static/images/fda651769ac8a932e04af1bb1fd11da5_image.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://weibo.com/u/6173806472" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/9a1dbb772000bb4ae673f54311237a28_image002.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

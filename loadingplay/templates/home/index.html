@@ -1,0 +1,83 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type='text/javascript'>
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+    $(document).ready(function(){
+        // banner 1
+            // $(".we, .wi").mouseover(function(){
+            //     $(".video-article").removeClass("desaturada");
+            //     $(".video-article").addClass("me-hover");
+            // });
+            // $(".we, .wi").mouseout(function(){
+            //     $(".video-article").removeClass("me-hover");
+            //     $(".video-article").addClass("desaturada");
+            // });
+        // banner 2
+             $(".wa, .wo").mouseover(function(){
+                $(".banner-dos").removeClass("desaturada");
+                $(".banner-dos").addClass("desaturada-hover");
+            });
+            $(".wa, .wo").mouseout(function(){
+                $(".banner-dos").removeClass("desaturada-hover");
+                $(".banner-dos").addClass("desaturada");
+            });
+              $(".we, .wi").mouseover(function(){
+                $(".banner-one").removeClass("desaturada");
+                $(".banner-one").addClass("desaturada-hover");
+            });
+            $(".we, .wi").mouseout(function(){
+                $(".banner-one").removeClass("desaturada-hover");
+                $(".banner-one").addClass("desaturada");
+            });
+        });
+    
+    (function ($) {
+    $(document).ready(function() {
+        $('*[data-toggle="collapse"]').addClass('cursor-pointer');
+    });
+});
+
+
+
+</script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<section>
+{% include '../home/banner_one.html' %}
+</section>
+<section>
+{% include '../home/box-two.html' %}
+</section>
+<section>
+  {% include '../home/banner_desarrollo.html' %}
+</section>
+<section>
+  {% include '../home/box.html' %}
+</section>
+<section>
+{% include '../home/contactanos.html' %}
+</section>
+<section>
+{% include '../home/footer.html' %}
+</section>
+{% end %}

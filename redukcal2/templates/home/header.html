@@ -1,0 +1,137 @@
+<section id="first-page-scroll"  class="color-header">
+   <div class="col-md-4">
+     <a href="">
+     <img class="logo-header" src="https://84static.loadingplay.com/static/images/18a24a23da18e68c6d8f329618bfeedd_logo.png">
+     </a>
+   </div>
+   <div class="col-md-8">
+     <div class="contenedor-img">
+        <div class="col-md-3 col-sm-3 col-xs-3 kas">
+      
+          {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+          <label for="img_he_1">
+              <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_he_1" name="image" id="img_he_1" >
+          </div>
+          {% end %}
+
+         <a href="https://www.instagram.com/redukcal/?hl=en" target="blank">
+          <img id="{{ site.name }}_he_1" src="{{ read_image(site.name + '_he_1', 1) }}" onload="this.src='{{ read_image(site.name + '_he_1',500) }}'" class="iconos-header-1" alt="item" />
+         </a>
+
+        <!-- <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 kas">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+          <label for="img_he_2">
+              <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_he_2" name="image" id="img_he_2" >
+          </div>
+          {% end %}
+        
+         <a href="https://www.facebook.com/Redukcal" target="blank">
+          <img id="{{ site.name }}_he_2" src="{{ read_image(site.name + '_he_2', 1) }}" onload="this.src='{{ read_image(site.name + '_he_2',500) }}'" class="iconos-header-1" alt="item" />
+         </a>
+      <!--   <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-3 kas">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+          <label for="img_he_3">
+              <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_he_3" name="image" id="img_he_3" >
+          </div>
+          {% end %}
+
+        <a href="https://twitter.com/ReduKcal" target="blank">
+          <img id="{{ site.name }}_he_3" src="{{ read_image(site.name + '_he_3', 1) }}" onload="this.src='{{ read_image(site.name + '_he_3',500) }}'" class="iconos-header-1" alt="item" />
+        </a>
+       <!--  <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+        </div>
+     </div>
+   </div>
+</section>
+
+<nav class="navbar navbar-default" role="navigation">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+<!--     <a class="navbar-brand" href="#">Logotipo</a> -->
+  </div>
+ 
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav">
+      <li class=""><a href="#" class="font-menu inicio">INICIO</a></li>
+         <li class="pip hidden-xs"> | </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle font-menu metodos" data-toggle="dropdown">
+          MÉTODO RDK <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="{{ site_base }}/metodo_RDK#metodo">¿Qué es?</a></li>
+          <li><a  href="{{site_base }}/metodo_RDK#grande" >Fases</a></li>
+          <li><a href="{{site_base }}/metodo_RDK#beneficios">Beneficios</a></li>
+          <li><a href="{{site_base}}/blog_preguntas_frecuentes">Preguntas frecuentes</a></li>
+        </ul>
+            <li class="pip hidden-xs"> | </li>
+      </li>
+          <li class="dropdown">
+        <a href="{{site_base}}/productos" class="font-menu productos">
+          PRODUCTOS 
+        </a>
+        <ul class="dropdown-menu">
+       <!--    <li><a href="{{site_base}}/productos">Productos</a></li> -->
+          <!-- <li><a href="#">Acción #2</a></li>
+          <li><a href="#">Acción #3</a></li>
+          <li><a href="#">Acción #4</a></li>
+          <li><a href="#">Acción #5</a></li> -->
+        </ul>
+            <li class="pip hidden-xs"> | </li>
+      </li>
+        
+        <li class="">
+        <a href="{{site_base}}/planes" class="font-menu planes" data-toggle="">
+          PLANES
+        </a>
+       <!--  <ul class="dropdown-menu">
+          <li><a href="">Planes Mujer</a></li>
+          <li><a href="">Planes Hombre</a></li>
+        </ul> -->
+            <li class="pip hidden-xs"> | </li>
+      </li>
+      <li class="dropdown">
+        <a href="{{site_base}}/blog" class="dropdown-toggle font-menu blog" data-toggle="dropdown" >
+         BLOG <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><a href="{{site_base}}/consejos">Consejos</a></li>
+          <li><a href="{{site_base}}/blog">Noticias y más</a></li>
+          <!-- <li><a href="">Acción #4</a></li>
+          <li><a href="#">Acción #5</a></li> -->
+        </ul>
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="icon" id="open-cart" data-toggle="modal" data-target="#myModal" >
+       <i class="fa fa-shopping-cart" aria-hidden="true"></i><span> CARRITO | <span class="units-total"></span> de <strong class="rdk">50</strong>
+       
+      </li> 
+    </ul>
+ 
+  </div>
+</nav>

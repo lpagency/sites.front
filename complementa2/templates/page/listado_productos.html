@@ -1,0 +1,81 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('.font-menu').removeClass('active');
+      $('.amort').addClass("active");
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(15,15,15);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'products_per_page' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'infinite_scroll': true,
+            'onLoad':function(){
+                 $('.ellipsis').ellipsis();
+                 // $('.spinner').css("display", "none")
+             },
+             'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.products').ecommerce(config);
+
+
+    });
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="">
+    <div class="container-fluid col-md-12 col-sm-12 col-xs-12" style="padding-top: 1em;">
+<!--         <div id="header-top"></div> -->
+        <div>
+            <h1 class="text-title">ACCESORIOS</h1>
+        </div>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="almohada" role="button">ALMOHADA</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="cascabel" role="button">CASCABEL</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="cascabel peluche" role="button">CASCABEL PELUCHE</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="pantuflas" role="button">PANTUFLAS</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="peluche" role="button">PELUCHE</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="portachupete" role="button">PORTACHUPETE</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="tuto" role="button">TUTO</a>
+        <a href="#" class="btn btn-subcateg mbtm5" tag="tuto grande" role="button">TUTO GRANDE</a>
+    </div>
+    <div class=" product-grid products clearfix" >
+
+            <!-- Aqui van los productos -->
+            
+    </div>
+</div>
+
+{% end %}

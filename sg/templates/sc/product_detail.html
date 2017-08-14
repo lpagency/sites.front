@@ -1,0 +1,92 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+
+{% block javascript %}
+        <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+        <script type="text/javascript" > ifvoted(7);</script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        <script type="text/x-template" id = "product_template" > </script> 
+
+        <script type="text/x-template" id="tag_template" > 
+        <li> 
+            <a href="/sample/tag.html?tag={{! id }}" > 
+            {{!name}} 
+            </a>
+        </li > 
+        </script> 
+
+        <script type="text/javascript" >
+        $(document).ready(function() 
+        {
+            $(document).ecommerce('product_detail', {
+                'app_public' : 5,
+                'base_url' : 'http://apibodegas.ondev.today/',
+                'product_id' : {{ product_id }}
+            });
+        });
+        </script>
+
+{% end %}
+
+
+{% block body %}
+        <div class="container top-distance-content container-fluid-product">
+                    <script type="text/x-template" id="product_detail" >
+            <div class="container-fluid-product hidden-xs" >
+                <div class="row">
+                    <ol class="breadcrumb">
+                        <li><a href="/store">Tienda</a></li>
+                        <li class="active">{{! name }}</li>
+                    </ol>
+                </div>
+            </div>
+            <div class="container-fluid-product product" style="text-align:left;">
+                <div class="row visible-xs product-mobile" style="color: white;">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="product-title" >{{! name }}</h2>
+                        <div class="">
+                            <span class="">${{! main_price }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="fm-content-img-prod">
+                        <img src="" class="fm-image-products image" alt="item">
+                        </div>
+                    </div>
+                    <form action="product1.html" method="POST" class="myform">
+                        <div class="col-sm-4 fondo-blanco-movil col-sm-offset-2">
+                            <h2 class="product-title hidden-xs " style="font-weight: 700; font-size: 30px;">{{! name }}</h2>
+                            <div class=" hidden-xs">
+                                <span class="" style="font-size:30px;">$ {{! main_price }}</span>
+                            </div>
+                            <div class="product-detail">
+                                <p>{{! description }}</p>
+                            </div>
+                            <div class="form-group clearfix">
+                                <label class="control-label">Size</label>
+                                <select class="form-control _select _select-1" id="size" sku="GDF-OI14-7841-18-C2">
+                                    <option value="38.0">38.0</option>
+                                    <option value="39.0">39.0</option>
+                                    <option value="40.0">40.0</option>
+                                </select>
+                                <select class="form-control _select _select-2 margin-top-1" id="quantity">
+                                </select>
+                            </div>
+                            <button type="button" class="btn btn-right-1 add-to-cart" product-id="7">A&ntilde;adir al carro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </script>
+        </div>
+        {% include '../home/footer.html' %}
+
+{% end %}

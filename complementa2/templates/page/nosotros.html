@@ -1,0 +1,98 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section style="height: 160px;">
+    <div class="col-md-12">
+        {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_nosotros">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_nosotros" name="image" id="img_nosotros" >
+           </div>
+           {% end %}
+            <img id="{{ site.name }}_img_nosotros" src="{{ read_image(site.name + '_img_nosotros', 1) }}" onload="this.src='{{ read_image(site.name + '_img_nosotros',500) }}'" class=".img-responsive banner_nosotros" alt="item">
+            <div class="box">
+                <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_nosotros' }}"> 
+                {{ read_text(site.name +  '_text_nosotros') }}
+                </h1>
+            </div>
+    </div>
+</section>
+
+<!-- TEXTO DEBAJO DEL BANNER -->
+<div class="container-fluid text-center container-fluid-magle" style="display: inherit;">
+    <div class="row">
+        <div class="col-sm-8 mlb-text" style="float: none; margin: 30px auto;">
+            <p> 
+                {% if is_admin %}
+                <p class="editabletext" text-id="{{ site.name + '_aboutus_tit' }}" >{{ read_text(site.name + '_aboutus_tit') }}</p>
+                {% else %}
+                {{ read_text(site.name + '_aboutus_tit') }}
+                {% end %}
+            </p>
+        </div>
+    </div>
+</div>
+
+<!-- TEXTO Y IMAGEN -->
+<div class="container-fluid text-right container-fluid-magle" style="display: inherit; margin: 60px auto; overflow: hidden;">
+    <div class="row">
+        <div class="col-sm-6 mlb-text especial" style="padding-right: 40px !important; margin-bottom: 40px;">
+            <div class="col-sm-12 especial movil-nosotros3" data-sr="enter left">
+                <h2>                
+                    {% if is_admin %}
+                    <span class="editabletext" text-id="{{ site.name + '_aboutus_tit2' }}" >{{ read_text(site.name + '_aboutus_tit2') }}</span>
+                    {% else %}
+                    {{ read_text(site.name + '_aboutus_tit2') }}
+                    {% end %}
+                </h2>
+                <p>___________</p>
+                <p>             
+                    {% if is_admin %}
+                    <p class="editabletext" text-id="{{ site.name + '_aboutus_desc2' }}" >{{ read_text(site.name + '_aboutus_desc2') }}</p>
+                    {% else %}
+                    {{ read_text(site.name + '_aboutus_desc2') }}
+                    {% end %}
+                </p>
+            </div>
+        </div>
+        <div class="col-sm-6 mlb-text especial" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_nosotros2">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_nosotros2" name="image" id="img_nosotros2" >
+           </div>
+           {% end %}
+            <img id="{{ site.name }}_img_nosotros2" src="{{ read_image(site.name + '_img_nosotros2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_nosotros2',500) }}'" class="img-responsive imag-nosotros" alt="item">
+            <!--<img class="img-responsive"src="{{ site_base }}/static/img/mlb-aboutus-detail.png"> -->
+        </div>
+    </div>
+</div>
+
+
+{% end %}

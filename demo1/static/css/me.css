@@ -1,0 +1,342 @@
+
+/* centering image viewer */
+.g-foto-miniatura 
+{
+    width:60px;
+    height:60px; 
+    position: relative; 
+    background-color: rgb(177, 177, 177); 
+    color: white; 
+    margin:10px 5px 5px 5px; 
+    text-align: right; 
+    padding: 7px;
+    font-size: 18px;
+    line-height: 0.4;
+    float: left;
+}
+.
+
+/* fixed navigation */
+#main-nav-fixed-navigation
+{
+    margin-top : -150px;
+
+}
+
+.archives-stuff
+{
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    list-style: none;
+    float: left;
+}
+.archives-stuff li
+{
+    width: 100%;
+    float: left;
+    border: 1px solid rgb(226, 226, 226);
+    background-color: rgb(244, 244, 244);
+    border-radius: 3px;
+    padding: 5px;
+    display: table;
+}
+.archives-stuff li p
+{
+
+    display: table-cell;
+    vertical-align: middle;
+    
+
+}
+.archives-stuff li button
+{
+    float: right;
+    background-color: rgb(203, 199, 199);
+}
+.archives-stuff li button:hover
+{
+    background-color: gray;
+    
+}
+.archives-stuff li button a
+{
+    color: white !important;
+}
+.content-archives-no-public
+{
+    margin: 0px 0px 10px 0px;
+    
+    position: relative;
+    float: left;
+    width: 100%;
+}
+.g-header-form
+{
+    width:100%;
+    float:left;
+    margin-bottom: 30px;
+}
+.g-header-button
+{
+    width:50%; 
+    float:left; 
+}
+.g-header-button-active
+{
+    border-radius: 3px;
+    background-color: rgb(234, 234, 234);  
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.41); -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.41); box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.41);
+}
+.g-alert
+{
+    color: red; 
+    text-align: left; 
+    font-style: italic;
+    display: none;
+}
+
+.g-pages-cont
+{
+position: absolute;
+display: table;
+height: 100%;
+margin: 0 auto;
+width: 50%;
+}
+.g-pages
+{
+    width: 300px;
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+
+
+    /* margin: 0 auto; */
+}
+.g-pages input
+{
+    height:50px;
+    width: 100%;
+    position: relative;
+}
+.g-pages-button
+{
+ opacity: 0;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100%;
+}
+.g-pages-button:hover
+{
+
+}
+/* fotmularios */
+.form-group
+{
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+.form-group label
+{
+    width: 100%;
+    text-align: left;
+    color: rgb(170, 170, 170);
+    font-weight: 300;
+}
+.form-control
+{
+    -webkit-box-shadow: inset 0px 2px 5px -200px rgba(0,0,0,0.41) !important; 
+    -moz-box-shadow: inset 0px 2px 5px -200px rgba(0,0,0,0.41) !important; 
+    box-shadow: inset 0px 2px 5px -200px rgba(0,0,0,0.41) !important;
+    border: 0 !important;
+    border-bottom: 1px solid rgb(236, 236, 236) !important;
+    border-radius: 0px !important;
+    padding: 6px 0px !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    color: rgb(53, 47, 47) !important;
+}
+.form-control:focus
+{
+    -webkit-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0.41) !important;
+    -moz-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0.41) !important;
+    box-shadow: 0px 2px 5px -200px rgba(0,0,0,0.41) !important;
+    border-color: #66afe9 !important;
+    outline: 0 !important;
+    border-bottom: 2px solid #66afe9 !important;
+}
+.form-add-image
+{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: rgb(234, 81, 81);
+    float: left;
+    margin: 11px;
+    position: relative;
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.41);   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.41);   
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.41);
+    -webkit-transition: all .2s ease-in-out;
+      -moz-transition: all .2s ease-in-out;
+      -o-transition: all .2s ease-in-out;
+      transition: all .2s ease-in-out;
+}
+.form-add-image:hover
+{
+    background-color: rgb(201, 39, 39);
+}
+.form-added-image
+{
+    float: left;
+    height : 60px;
+    width : 60px;
+    background-color : gray;
+    color : white;
+    font-size : 18px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+.form-added-image-gallery
+{
+    float: left;
+    height : 60px;
+    width : 60px;
+    background-color : gray;
+    color : white;
+    font-size : 18px;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin-right: 10px;
+}
+.form-input-hided
+{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+}
+.image-preview-container
+{
+   
+}
+.form-added-image i,
+.form-added-image-gallery i
+{
+   
+      position: absolute;
+      font-size: 20px;
+      float: right;
+      right: 6px;
+      z-index: 1;
+      top: 4px;
+}
+.image-preview-container img
+{
+   
+}
+
+.image-center-helper 
+{
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.image-preview
+{
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    left: 0;
+}
+
+.img-article-detail
+{
+    width: 100%;
+    min-height: 100px;
+}
+.icon-generic
+{
+    color: white;
+    margin: 30% 34%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 16px;
+}
+.selectize-input
+{
+    border: 0px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+    border-radius: 0px;
+    text-align: left;
+    padding: 0px;
+    margin-top: 10px;
+    font-weight: 400;
+    
+}
+.selectize-input:focus
+{
+      -webkit-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0); 
+      -moz-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0);
+      box-shadow: 0px 2px 5px -200px rgba(0,0,0,0); 
+      border-color: #66afe9;
+      outline: 0;
+      border-bottom: 2px solid #66afe9;
+}
+.selectize-input.focus
+{
+    -webkit-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0); 
+      -moz-box-shadow: 0px 2px 5px -200px rgba(0,0,0,0);
+      box-shadow: 0px 2px 5px -200px rgba(0,0,0,0); 
+      border-bottom: 2px solid #66afe9;
+}
+.selectize-input input
+{
+    /* color: black; */
+
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    rgb(119, 119, 119);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    rgb(119, 119, 119);
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    rgb(119, 119, 119);
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    rgb(119, 119, 119);
+}
+
+/*object-fit: cover; centra imagenes vertical u horizontal */
+.img-responsive
+{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*.slider{
+    display: none;
+}*/
+
+.mlb-img{
+    width: auto;
+    height: auto;
+    opacity: 0;
+    font-size: 21px;
+    text-align: center;
+    /*display: none;*/
+}

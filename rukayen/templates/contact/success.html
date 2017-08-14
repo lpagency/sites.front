@@ -1,0 +1,68 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+
+{% block body %}
+
+                <div style="background-color:#0B610B;color:white;height:200px;position:relative;">
+                    <div style="position:relative; top: 120px;">
+                        <h1 style="margin-top: 0;">
+                           
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name }}-contact-success-title" >{{ read_text(site.name + '-contact-success-title') }}</span>
+                {% else %}
+                <span>{{ read_text(site.name + '-contact-success-title') }}</span>
+                {% end %}
+                
+                        </h1>
+                    </div>
+                </div>
+                
+                </div>
+            </div>
+
+            <div class="row pages-caption" >
+                <div class="container-fluid-art space50">
+                <p>
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name }}-contact-success-p" >{{ read_text(site.name + '-contact-success-p') }}</span>
+                {% else %}
+                <span>{{ read_text(site.name + '-contact-success-p') }}</span>
+                {% end %}
+                </p>
+                </div>
+            </div>
+
+            <!-- raw 1 -->
+            <div class="row content-body">
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+
+
+{% end %}

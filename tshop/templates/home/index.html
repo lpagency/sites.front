@@ -1,0 +1,297 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script>
+        paceOptions = {
+            elements: true
+        };
+    </script>
+<script src="{{site_base}}/static/js/pace.min.js"></script>
+<script type="text/javascript">
+function swapStyleSheet(sheet){
+document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script> 
+
+ <script type="x-text/template" id="product_template" >
+    <div class="product-item item-flat pos col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+        <div class="section-content">
+      <div class="row has-equal-height-child">
+        <div class="product product-item-inner">
+           
+            <div class="imageHover hasCart">
+                <a href="{{ site_base }}/sc/product/detail/{{!name|friendly}}/{{!id}}">
+                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0][3] }}"></a>
+                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0][3] }}"></a>
+                    <div class="product-btn-box">
+                        <a class="btn btn-product-flat btn-primary">
+                            <span class="add2cart add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="prod-details">
+                    <p class="title">
+                        <a href="product-details-style5-4.1-with-zoom.html" title="title">{{!name}}</a>
+                    </p>
+                    <p class="product-flat-info">
+                        <span class="product-curreent-price">
+                           {{! main_price}}
+                        </span>
+                        &nbsp;|&nbsp;
+                    </p>
+                </div>
+            </div>
+     </div>
+   </div>
+    </script>    
+    
+
+
+     <script type="text/javascript">
+  var base_url = 'https://apibodegas.loadingplay.com/',
+ checkout_url = 'https://checkout.loadingplay.com/';
+  var app_public = 7;
+
+    function isLocalHost() {
+      return document.location.href.indexOf('localhost') != -1;
+    }
+
+    function isDevelopment() {
+      return document.location.href.indexOf('ondev.today') != -1;
+    }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public= 7;
+    } 
+    else if ( isDevelopment() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public = 7;
+    }
+
+    $(document).ready(function()
+    {
+
+        var facade = $(document).ecommerce(
+         {
+          'app_public' : app_public,
+          'animation' : 'basic',
+          'ignore_stock':true,
+          'base_url' : base_url,
+          'checkout_url': checkout_url
+        });
+
+    });
+    </script>
+
+{% end %}
+
+{% block css %}
+
+<style>.themeControll{background:#2d3e50;height:auto;width:100px;position:fixed;left:0;padding:20px;top:20%;z-index:999999;-webkit-transform:translateX(0);-moz-transform:translateX(0);-o-transform:translateX(0);-ms-transform:translateX(0);transform:translateX(0);opacity:1;-ms-filter:none;filter:none;-webkit-transition:opacity .5s linear,-webkit-transform .7s cubic-bezier(.56,.48,0,.99);-moz-transition:opacity .5s linear,-moz-transform .7s cubic-bezier(.56,.48,0,.99);-o-transition:opacity .5s linear,-o-transform .7s cubic-bezier(.56,.48,0,.99);-ms-transition:opacity .5s linear,-ms-transform .7s cubic-bezier(.56,.48,0,.99);transition:opacity .5s linear,transform .7s cubic-bezier(.56,.48,0,.99);}.themeControll.active{display:block;-webkit-transform:translateX(-100px);-moz-transform:translateX(-100px);-o-transform:translateX(-100px);-ms-transform:translateX(-1020px);transform:translateX(-100px);-webkit-transition:opacity .5s linear,-webkit-transform .7s cubic-bezier(.56,.48,0,.99);-moz-transition:opacity .5s linear,-moz-transform .7s cubic-bezier(.56,.48,0,.99);-o-transition:opacity .5s linear,-o-transform .7s cubic-bezier(.56,.48,0,.99);-ms-transition:opacity .5s linear,-ms-transform .7s cubic-bezier(.56,.48,0,.99);transition:opacity .5s linear,transform .7s cubic-bezier(.56,.48,0,.99);}.themeControll a{border-radius:3px;clear:both;display:block;height:25px;margin-bottom:4px;width:50px;}.tbtn{background:#2D3E50;color:#FFFFFF!important;font-size:30px;height:auto;padding:10px;position:absolute;right:-40px;top:0;width:40px;cursor:pointer;}@media (max-width: 780px) {.themeControll{display:none;}}
+</style>
+{% end %}
+
+
+{% block body %}
+
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+ 
+<!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+ 
+ <!-- **colores tabala izquierda** -->
+
+    <!-- <div class="themeControll">
+        <h3 style="width: 60px; font-size: 10px; line-height: 12px;" class="uppercase color-white text-center"> Choose your colour </h3>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-1.css')" style="background:#4ec67f;border-top: 12px solid #27AE60;"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-8.css')" style="background:#3BCA95;border-top: 12px solid #34BC8A"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-2.css')" style="background:#1ABC9C;border-top: 12px solid #16A085"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-3.css')" style="background:#3498DB;border-top: 12px solid #2980B9"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-4.css')" style="background:#9B59B6;border-top: 12px solid #9149AF"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-5.css')" style="background:#E74C3C;border-top: 12px solid #C0392B"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-7.css')" style="background:#95A5A6;border-top: 12px solid #7F8C8D"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-9.css')" style="background:#F7B529;border-top: 12px solid #E78E00"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-10.css')" style="background:#F17370;border-top: 12px solid #F26663"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-11.css')" style="background:#273646;border-top: 12px solid #2ECC71"> </a>
+        <a onclick="swapStyleSheet('{{site_base}}/static/css/skin-6.css')" style="background:#34495E;border-top: 12px solid #283949"> </a>
+        <h3 style="width: 60px; font-size: 10px; line-height: 12px;" class="uppercase color-white text-center">
+            <br>
+            <a style="color:#fff" href="../index.html"><i class="fa fa-angle-double-left"></i> Theme Chooser </a> </h3>
+            <p class="tbtn"> <i class="fa fa-angle-double-left"></i></p>
+   </div>
+     -->
+
+
+
+    <section class="slider-hero-wrapper">
+        <div class="slider-hero scrollme">
+            <a class="arrow-left" href="#"></a> <a class="arrow-right" href="#"></a>
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slider-hero-bg" style="background-image: url({{ read_image(site.name + '_ind_parall', 500) }})">
+                    {% if is_admin %}
+                        <div class="image-upload">
+                            <label for="img_ind_parall">
+                            <img class="change-image pencil-ed" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_ind_parall" name="image" id="img_ind_parall" >
+                        </div>
+                    {% end %}
+                        <div class="slider-hero-content has-overly-shade hw100">
+                            <div class="display-table hw100">
+                                <div class="display-table-cell hw100">
+                                    <div class="container ">
+                                        <div class="slider-hero-caption has-dark-bg max-60 center-block text-center animateme" data-when="span" data-from="0" data-to="0.7" data-opacity="0" data-translatey="200" scale="0" data-crop="true">
+                                            <h5 class="slide-caption-subtitle top uppercase {{editabletext}}"  text-id="{{ site.name + '_texto-fot' }}">  {{ read_text(site.name + '_texto-fot') }}</h5>
+                                            <h2 class="slide-caption-title  oswald sale uppercase {{editabletext}}"  text-id="{{ site.name + '_texto-fot2' }}">  {{ read_text(site.name + '_texto-fot2') }}<br> 
+                                            </h2>
+                                            <h5 class="slide-caption-subtitle bottom uppercase {{editabletext}}"  text-id="{{ site.name + '_texto-fot3' }}">  {{ read_text(site.name + '_texto-fot3') }}</h5>
+                                                <div class="slide-caption-text">
+                                                    <a href="#" class="btn btn-stroke lite {{editabletext}}"  text-id="{{ site.name + '_texto-fot4' }}">  {{ read_text(site.name + '_texto-fot4') }}<i class="fa fa-caret-right"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide slider-hero-bg " style="background-image: url({{ read_image(site.name + '_ind_parall2', 500) }})">
+                        {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_ind_parall2">
+                                <img class="change-image pencil-ed" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_ind_parall2" name="image" id="img_ind_parall2" >
+                            </div>
+                       {% end %}
+                            <div class="slider-hero-content has-overly-shade  hw100" style="background-color: rgba(0, 0, 0, 0.1);">
+                                <div class="display-table hw100">
+                                    <div class="display-table-cell hw100">
+                                        <div class="container ">
+                                            <div class="slider-hero-caption has-dark-bg text-left animateme" data-when="span" data-from="0" data-to="0.7" data-opacity="0" data-translatey="200" scale="0" data-crop="true">
+                                                <h2 class="slide-caption-title {{editabletext}}"  text-id="{{ site.name + '_texto-fot5' }}">  {{ read_text(site.name + '_texto-fot5') }} <span class="lighter">  </span></h2>
+                                                <div class="slide-caption-text">
+                                                    <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-fot6' }}">  {{ read_text(site.name + '_texto-fot6') }} </p>
+                                                    <a href="category.html" class="btn btn-stroke lite {{editabletext}}"  text-id="{{ site.name + '_texto-fot7' }}">  {{ read_text(site.name + '_texto-fot7') }}</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="swiper-slide slider-hero-bg" style="background-image: url({{ read_image(site.name + '_ind_parall3', 500) }})">
+                        {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_ind_parall3">
+                                <img class="change-image pencil-ed" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_ind_parall3" name="image" id="img_ind_parall3" >
+                            </div>
+                       {% end %}
+
+                            <div class="slider-hero-content  hw100">
+                                <div class="display-table hw100">
+                                    <div class="display-table-cell hw100">
+                                        <div class="container ">
+                                            <div class="slider-hero-caption has-light-bg   max-60  text-left animateme" data-when="span" data-from="0" data-to="0.7" data-opacity="0" data-translatey="200" scale="0" data-crop="true">
+                                                <h2 class="slide-caption-title {{editabletext}}"  text-id="{{ site.name + '_texto-fot8' }}">  {{ read_text(site.name + '_texto-fot8') }} </h2>
+                                                <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-fot9' }}">  {{ read_text(site.name + '_texto-fot9') }} </p>
+                                                    <div class="slide-caption-text">
+                                                        <a href="category.html" class="btn btn-dark lite {{editabletext}}"  text-id="{{ site.name + '_texto-fot9' }}">  {{ read_text(site.name + '_texto-fot9') }}</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide slider-hero-bg " style="background-image: url({{ read_image(site.name + '_ind_parall4', 500) }})">
+                            {% if is_admin %}
+                                <div class="image-upload">
+                                    <label for="img_ind_parall4">
+                                    <img class="change-image pencil-ed" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                    </label>
+                                    <input type="file" class="editableimage" image-id="{{ site.name }}_ind_parall4" name="image" id="img_ind_parall4" >
+                                </div>
+                           {% end %}
+
+                                <div class="slider-hero-content has-overly-shade  hw100" style="background-color: rgba(0, 0, 0, 0.1);">
+                                    <div class="display-table hw100">
+                                        <div class="display-table-cell hw100">
+                                            <div class="container ">
+                                                <div class="slider-hero-caption has-dark-bg text-left animateme" data-when="span" data-from="0" data-to="0.7" data-opacity="0" data-translatey="200" scale="0" data-crop="true">
+                                                    <h2 class="slide-caption-title slide-caption-title-2 uppercase {{editabletext}}"  text-id="{{ site.name + '_texto-fot10' }}">  {{ read_text(site.name + '_texto-fot10') }} 
+                                                         </h2>
+                                                        <div class="slide-caption-text">
+                                                            <h5 class="slide-caption-subtitle bottom {{editabletext}}"  text-id="{{ site.name + '_texto-fot11' }}">  {{ read_text(site.name + '_texto-fot11') }} </h5>
+                                                                <a href="category.html" class="btn btn-stroke lite {{editabletext}}" text-id="{{ site.name + '_texto-fot12' }}">  {{ read_text(site.name + '_texto-fot12') }}</a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide slider-hero-bg " style="background-image: url({{ read_image(site.name + '_ind_parall5', 500) }}">
+                                    {% if is_admin %}
+                                        <div class="image-upload">
+                                            <label for="img_ind_parall5">
+                                            <img class="change-image pencil-ed" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                            </label>
+                                            <input type="file" class="editableimage" image-id="{{ site.name }}_ind_parall5" name="image" id="img_ind_parall5" >
+                                        </div>
+                                    {% end %}
+
+                                        <div class="slider-hero-content has-overly-shade  hw100" style="background-color: rgba(0, 0, 0, 0.1);">
+                                            <div class="display-table hw100">
+                                                <div class="display-table-cell hw100">
+                                                    <div class="container ">
+                                                        <div class="slider-hero-caption has-dark-bg text-cener animateme" data-when="span" data-from="0" data-to="0.7" data-opacity="0" data-translatey="200" scale="0" data-crop="true">
+                                                            <h3 class="slide-caption-title-3 {{editabletext}}"  text-id="{{ site.name + '_texto-fot13' }}">  {{ read_text(site.name + '_texto-fot13') }}<a class="link">
+                                                                 </a> <br> 
+                                                            </h3>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-pagination swiper-pagination-v"></div>
+                            </div>
+                        </div>
+                    </section>
+{% include '../home/box-products.html' %}
+<div class="products"> </div>
+ <div class="clearfix pos"></div>
+{% include '../home/favorite.category.html' %}
+{% include '../home/banner_summer.html' %}
+{% include '../home/footer.html' %}
+{% end %}

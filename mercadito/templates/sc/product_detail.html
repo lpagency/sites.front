@@ -1,0 +1,161 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+             <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+            <!-- // <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+            <!-- // <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+<!--             // <script type="text/javascript" src="{{ site_base }}/static/css/js/placeholders.min.js"></script>
+            // <script type="text/javascript" src="{{ site_base }}/static/css/js/custom.js"></script>
+            // <script type="text/javascript" src="{{ site_base }}/static/css/js/ga.js"></script> -->
+
+
+            <script type="x-text/template" id="product_detail" >
+<div class="row visible-xs product-mobile">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="product-title">{{! name}}</h2>
+                        <div class="product-price">
+                            <span class="price">{{! main_price}}</span>
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-sm-8 ">
+                        <img class="product-img img-responsive image" src="{{! images[0][2] }}"  alt="item">
+                    </div>
+                    <div class="col-sm-4 ">
+                        <h2 class="product-title hidden-xs">{{! name}}</h2>
+                        <div class="product-price hidden-xs">
+                            <span class="price">{{! main_price}}</span>
+                        </div>
+                        <div class="product-detail">
+                            <p>{{! description}}</p>
+                        </div>
+                        <button type="button" class="btn add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" >Añadir al carro</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 ">
+                        <div class="paging clearfix">
+                            <a class="btn btn-outline pull-left" href="{{ site_base }}/"><i class="icon-arrow-left2 left"></i><span>Previous</span><span class="hidden-xs"> Product</span></a>
+                        </div>
+                    </div>
+                </div>
+
+    </script>    
+    
+<!--     // <script src="bower_components/bodegas.cliente.js/dist/bodegas.client.min.js"></script>
+    // <script src="bower_components/jquery.cookie/jquery.cookie.js"></script> -->
+
+     <script type="text/javascript">
+            // iniciaiza el ecommerce
+        $(document).ready(function() 
+            {
+                $(document).ecommerce('product_detail', {
+                    'app_public' : 7,
+                    'base_url' :'http://apibodegas.ondev.today/',
+                    'checkout_url': 'http://lpcheckout.ondev.today/',
+                    'product_id' :1251,
+                });
+
+        });
+    </script>
+
+
+    <!-- // <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script> -->
+    
+    <!-- // <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+
+    <!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+{% end %}
+
+{% block body %}
+   <!--   <div id="wrap">    -->
+      <!--   <div class="container-fluid hidden-xs">
+                <div class="row">
+                    <ol class="breadcrumb">
+                      <li><a href="index.html">Shop</a></li>
+                      <li class="active">Tuscan urns</li>
+                    </ol>
+                </div>
+            </div>
+
+            <div class="container-fluid product">
+                <div class="row visible-xs product-mobile">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="product-title">Tuscan urns</h2>
+                        <div class="product-price">
+                            <span class="price">14.00</span>
+                        </div>
+                    </div>
+                </div>  
+                <div class="row">
+                    <div class="col-sm-8 ">
+                        <img src="https://84static.loadingplay.com/static/images/2e0bc33131b734728aa1cb74b6825089_vase_1a.png" class="product-img img-responsive" alt="item">
+                        <img src="https://7static.loadingplay.com/static/images/f126b7e4719778e91c7085c488e2878b_vase_1b.png" class="product-img img-responsive" alt="item">
+                        <img src="https://84static.loadingplay.com/static/images/7fc9afc8611cfcd5c6f5b7e5f6493570_vase_1c.png" class="product-img img-responsive" alt="item">
+                    </div>
+                    <div class="col-sm-4 ">
+                        <h2 class="product-title hidden-xs">Tuscan urns</h2>
+                        <div class="product-price hidden-xs">
+                            <span class="price">14.00</span>
+                        </div>
+                        <div class="product-detail">
+                            <p>Collect all of our hand-thrown vessels for endless arrangement possibilities, whether filled with flowers or dressed with beads.</p>
+                            <ul>
+                                <li>Holds objects, collections of stones or shells, or candles (sold separately) for a striking display.</li>
+                                <li>Weighty bases are designed to counterbalance top-heavy stems.</li>
+                                <li>Fluid design is finished with a cut rim.</li>
+                                <li>Monogramming is available at an additional charge.</li>
+                                <li>Monogram will be centered on the side of the bowl.</li>
+                                <li>Small: 6.5" diameter, 7" high</li>
+                            </ul>
+                        </div>
+                        <form  action="product1.html" method="POST" class="myform">
+                            <div class="form-group clearfix">
+                                <label class="control-label">Size</label>
+                                <select class="form-control">
+                                    <option value="XS">XS</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>  
+
+                            <ul class="product-colors">
+                              <li class="selected"><a class="white" style="background-color:#FFF"> </a></li>
+                              <li class=""><a style="background-color:#000"> </a></li>
+                              <li class=""><a style="background-color:#49A3F1"> </a></li>
+                              <li class=""><a style="background-color:#FF6279"> </a></li>
+                            </ul>
+
+                            <div class="product-btn">
+                                <a href="" class="btn">Add To Cart</a>
+                            </div>  
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 ">
+                        <div class="paging clearfix">
+                            <a class="btn btn-outline pull-left" href="{{ site_base }}/"><i class="icon-arrow-left2 left"></i><span>Previous</span><span class="hidden-xs"> Product</span></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div> -->
+       <!--  </div> -->
+
+<div class="container"></div>
+
+
+{% include '../home/footer.html' %}
+{% end %}

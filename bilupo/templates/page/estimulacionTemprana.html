@@ -1,0 +1,157 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script> 
+ <script type="text/javascript">
+ $(document).ready(function()
+{
+     $('.font-menu').removeClass('activado');
+     $('.estimulacion').addClass("activado");
+     $('.estimulacion').removeClass('barras');
+
+ });
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/scroll.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/estimulacion.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+	.imagQla{
+		 -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+	}
+    .titulo_estimulacion{
+        background-image: url("https://84static.loadingplay.com/static/images/abe246e4f2209153d8bfe2e4678d30d0_Pattern_Amarillo.png"); 
+    }
+
+
+</style>
+<div class="contenedor" style="margin-left: auto; margin-right: auto;position: relative;">
+<div style="padding: 25px">
+</div>
+<div class="titulo_estimulacion">
+<div class="container" style="position: relative;">
+	<img src="https://84static.loadingplay.com/static/images/2d3f65f0d99ea1793e5d1434bce88085_Estimulaciontemprana_nino.png" style="width: 100%">
+	<div class="text_est text-center {{editabletext}}" text-id="{{ site.name + '_text_est' }}" id="titulo_est"> {{ read_text(site.name +  '_text_est') }} </div>
+	<div class="text_est2 text-center {{editabletext}}" text-id="{{ site.name + '_text_est2' }}" id="titulo_est2"> {{ read_text(site.name +  '_text_est2') }} </div>
+    </div>
+	<div class="col-md-12" style="margin-bottom: -50px;z-index: 10;">
+   <div align="center">
+     <a href="#first-page-scroll" class="anchorLink">
+       <div class="contenedor-circulo hidden-sm hidden-xs hidden-md">
+         <div  class="circulo-bajada" style="margin-top: -4%" >
+          <i class="fa fa-angle-down onclick"  aria-hidden="true" style="font-size: 50px;color: white;"></i> 
+        </div>
+
+      </div>
+    </a>
+  </div>
+</div>
+</div>
+
+<div id="first-page-scroll" class="container" style="position: relative;">
+	<img src="https://84static.loadingplay.com/static/images/53460d902c1e84b0996dc20c6e151327_Biluppo_PNGs_Web_7-27.png"  class="desc1 hidden-xs hidden-md hidden-sm">
+	<!--<div class="clearfix visible-xs visible-md visible-sm" style="height: 1900px"></div>-->
+	<img src="https://84static.loadingplay.com/static/images/6b1b45e43f2f881ffe7bf596dd9c2820_nina.png" class="hidden-lg niñaBil" style="margin-left: 30%;margin-top: 10%;">
+	<h3 id="titulo_desc" class="titulo1">Las experiencias de la infancia <br>
+	influyen para toda la vida</h3>
+	<img src="https://7static.loadingplay.com/static/images/5980d6a7bfbbccae07a63abaac6588c5_Biluppo_PNGs_Web_7-37.png" class="hidden-lg" style="width: 90%;margin-top: -17%;">
+	<h5 class="descripcion" id="descripcion1">En los primeros años de la infancia las experiencias influyen
+	sobre la manera en que se desarrolla el cerebro del niño. La
+	manera en que el niño se desarrolla durante este período,
+	prepara el terreno para el posterior ingreso al colegio, la
+	adolescencia y la edad adulta.</h5>
+	<h3 id="titulo_desc" class="titulo2">El juego es el<br>
+	primer lenguaje del niño</h3>
+	<img src="https://7static.loadingplay.com/static/images/fcf1de6ca91b1a0d278a1cbd7188921a_Biluppo_PNGs_Web_7-29.png" class="hidden-lg blah" style="margin-top: 31%;margin-bottom: 203%;margin-left: -14%;">
+	<img src="https://7static.loadingplay.com/static/images/5980d6a7bfbbccae07a63abaac6588c5_Biluppo_PNGs_Web_7-37.png" class="hidden-lg imagQla linea3" style="    width: 90%;margin-top: 65%;position: absolute;left: 5%;">
+	<h5 class="descripcion" id="descripcion2">Por medio de la actividad lúdica los pequeños
+	interactúan con los objetos, desarrollan sus
+	sentidos, adquieren habilidades, expresan
+	fantasías, sentimientos, se relacionan con otras
+	personas, adquieren pautas de conducta e imitan.
+	A través del juego interiorizan la realidad y
+	expresan su mundo interior.</h5>
+	<h1 id="titulo_desc" class="titulo3">¿Cómo
+	estimulamos
+	a los niños en
+	la casa?</h1>
+	<img src="https://7static.loadingplay.com/static/images/5980d6a7bfbbccae07a63abaac6588c5_Biluppo_PNGs_Web_7-37.png" class="hidden-lg imagQla linea2" style="    width: 90%;margin-top: 113%;position: absolute;left: 5%;">
+	<h2 class="numeritos visible-lg dos">2</h2>
+	<img src="https://7static.loadingplay.com/static/images/ce0f73bbaba82cd4bc883237667d4bc4_Biluppo_PNGs_Web_7-30.png" class="hidden-lg sol" style="float: left;margin-top: 140%;margin-left: 19%;">
+	<h6 class="descripcion" id="descripcion3">Mantener los materiales y
+	juguetes al alcance de los niños,
+	por ejemplo en repisas bajas.</h6>
+	<h2 class="numeritos visible-lg uno">1</h2>
+	<img src="https://84static.loadingplay.com/static/images/0154a9ff4db09301d44dd0611c8e24e8_Biluppo_PNGs_Web_.png" class="hidden-lg mano" style="float: left;margin-left: -8%;margin-top: 166%;">
+	<h6 class="descripcion" id="descripcion4">A la hora de jugar o hacer actividades con
+	nuestros niños, lo ideal es mantener un
+	ambiente apropiado en temperatura, luz y
+	sin distracciones.</h6>
+	<h2 class="numeritos visible-lg tres">3</h2>
+	<img src="https://84static.loadingplay.com/static/images/f21ee93dac5604ede910ca427709b233_Biluppo_PNGs_Web_.png" class="hidden-lg flechas" style="float: left;margin-left: -7%;margin-top: 184%;">
+	<h6 class="descripcion" id="descripcion5">Renovar juguetes cada cierto tiempo,
+	para despertar interés en los niños.</h6>
+	<h2 class="numeritos visible-lg cuatro">4</h2>
+	<img src="https://84static.loadingplay.com/static/images/c05289ffe65a255424ebfd2d5ab4b541_Biluppo_PNGs_Web_.png" class="hidden-lg cuadrados" style="float: left;margin-left: -9%;margin-top: 202%;">
+	<h6 class="descripcion" id="descripcion6">Agrupar los juguetes y / o
+	materiales en distintos
+	criterios, ya que esto
+	favorece la clasificación,
+	mayor orden y desarrollo
+	de la autonomía.</h6>
+	<img src="https://7static.loadingplay.com/static/images/67cc85d860780b50add53b95b757a9a5_Biluppo_PNGs_Web_7-32.png" class="hidden-lg ojo" style="float: left;margin-left: -11%;margin-top: 228%;">
+	<h2 class="numeritos visible-lg cinco">5</h2>
+	<h6 class="descripcion" id="descripcion7">Dejar que el niño escoja el
+	material y/o juguete con el que
+	quiere jugar, para que este sea
+	de su interés y por lo tanto el
+	aprendizaje sea significativo.</h6>
+	<img src="https://7static.loadingplay.com/static/images/4fee26aa0ff6aafe52342a3af410540f_Biluppo_PNGs_Web_7-34.png" class="hidden-lg comic" style="float: left;margin-left: -11%;margin-top: 248%;">
+	<h2 class="numeritos visible-lg seis">6</h2>
+	<h6 class="descripcion" id="descripcion8">Guiar a nuestros niños con
+	preguntas acerca del juego,
+	como por ejemplo: De qué color
+	es el autito? Cuantos autitos
+	tienes? Que vas a hacer? Etc.</h6>
+    <div class="clearfix"></div>
+</div>
+{% include '../home/carrito_compra.html' %}
+
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}

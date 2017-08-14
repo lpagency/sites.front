@@ -1,0 +1,15 @@
+  <!--logo -->
+  <div class="container-fluid-magle" style="position: relative;">
+        <a href="{{ site_base }}"  >
+            {% if is_admin %}
+            <div class="image-upload header">
+                <label for="img_logo_header">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_logo_header" name="image" id="img_logo_header" >
+            </div>
+            {% end %}
+            <img id="mlb_logo_header" class="mlb-logo-header" src="{{ read_image(site.name + '_logo_header') }}" class="img-responsive" alt="item">
+            
+        </a>
+        </div>

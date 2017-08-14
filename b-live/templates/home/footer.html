@@ -1,0 +1,92 @@
+<div id="footer">
+  <div class="col-md-2 col-sm-4 col-xs-12">
+      <div class="text-left fot">
+        <div class="clearfix"></div>
+        <div class="caja-logo">
+          <a href="{{ site_base }}">
+            <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
+            {% if is_admin %}
+              <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                <label for="{{ site.name }}_site_logo">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+              </div>
+            {% end %}
+            <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo-footer" alt="item">
+          </a>
+        </div>
+      </div>
+  </div>
+</div>
+           
+  <div class="col-md-1 col-sm-2 col-xs-12">
+    <div class="inform-comerc text-left">
+      <div class="clearfix"></div>
+      <ul class="no-dot">
+        <li class="{{editabletext}}" text-id="{{ site.name + '_footer_son_1' }}"> {{ read_text(site.name +  '_footer_son_1') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1 col-sm-2 col-xs-12">
+    <div class="inform-comerc text-left">
+      <div class="clearfix"></div>
+      <ul class="no-dot">
+        <li class="{{editabletext}}" text-id="{{ site.name + '_footer_son_2' }}"> {{ read_text(site.name +  '_footer_son_2') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1 col-sm-2 col-xs-12">
+    <div class="inform-comerc text-left">
+      <div class="clearfix"></div>
+      <ul class="no-dot">
+        <li class="{{editabletext}}" text-id="{{ site.name + '_footer_son_3' }}"> {{ read_text(site.name +  '_footer_son_3') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1 col-sm-2 col-xs-12">
+    <div class="inform-comerc text-left">
+      <div class="clearfix"></div>
+      <ul class="no-dot">
+        <li class="{{editabletext}}" text-id="{{ site.name + '_footer_son_4' }}"> {{ read_text(site.name +  '_footer_son_4') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-md-1 col-sm-2 col-xs-12">
+    <div class="inform-comerc text-left">
+      <div class="clearfix"></div>
+      <ul class="no-dot">
+        <li class="{{editabletext}}" text-id="{{ site.name + '_footer_son_5' }}"> {{ read_text(site.name +  '_footer_son_5') }}
+        </li>
+      </ul>
+    </div>
+  </div>
+
+          <div class="col-md-4 col-sm-3 col-md-offset-1 col-xs-12">
+            <div class="inform-comerc-2 text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot op">
+                        <li class="ul-2 {{editabletext}}" text-id="{{ site.name + '_footer_ex_1' }}"> {{ read_text(site.name +  '_footer_ex_1') }}
+                        </li>
+                         <li class="pas-3 {{editabletext}}" text-id="{{ site.name + '_footer_ex_2' }}"> {{ read_text(site.name +  '_footer_ex_2') }}
+                        </li>
+                         <li class="pas-3 {{editabletext}}" text-id="{{ site.name + '_footer_ex_3' }}"> {{ read_text(site.name +  '_footer_ex_3') }}
+                        </li>
+                        <p class="pas-4">
+                           {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                                Logout</a>
+                           {% end %}
+                        </p> 
+
+                    </ul>
+            </div>
+          </div>
+    </div>

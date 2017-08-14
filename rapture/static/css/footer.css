@@ -1,0 +1,167 @@
+#footer {
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    height: auto;
+    padding: 0;
+    background-color:#666969;
+}
+
+.caja-fo{
+    height: 51px;
+    width: 300px;
+    float: left;
+    margin-top: 42px;
+    margin-bottom: 21px;
+}
+
+.img-foot{
+    height: 102px;
+    width: 235px;
+    float: right;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    left: 100px;
+    position: relative;
+}
+
+.box-footer{
+	color: white;
+	margin-top: 30px;
+	margin-bottom: 0px;
+	 -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.box-footer-dos{
+    color: white;
+    margin-top: 15px;
+    margin-bottom: -13px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: relative;
+    top: 17px;
+    left: 150px;
+}
+
+.ter{
+    color: white;
+    margin-top: -6px;
+    margin-bottom: 0px;
+     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fez{
+    margin-bottom: 100px;
+}
+
+
+/*---------------------Responsive-----------------------*/
+
+@media (max-width: 1243px){
+	.img-foot {
+    height: 102px;
+    width: 235px;
+    float: right;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    left: 60px;
+    position: relative;
+}
+
+}
+
+@media (max-width: 1123px){
+	.img-foot {
+    height: 102px;
+    width: 235px;
+    float: right;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    left:0px;
+    position: relative;
+}
+
+}
+
+@media (max-width: 991px){
+    .box-footer-dos {
+    left: 100px;
+}
+
+}
+
+@media (max-width: 943px){
+    .caja-fo {
+    height: 51px;
+    width: 260px;
+    float: left;
+    margin-top: 42px;
+    margin-bottom: 21px;
+}
+
+}
+
+@media (max-width: 823px){
+    .box-footer-dos {
+    left: 50px;
+    }
+
+    .caja-fo {
+    height: 51px;
+    width: 220px;
+    float: left;
+    margin-top: 42px;
+    margin-bottom: 21px;
+}
+
+}
+
+@media (max-width: 767px){
+    .box-footer{
+        text-align: center;
+        margin-bottom: 70px;
+}
+
+    .box-footer-dos{
+        text-align: center;
+        left: 0px;
+}
+
+    .caja-fo {
+    height: 51px;
+    width: 220px;
+    float: initial;
+    margin-top: 72px;
+    margin-bottom: 73px;
+    left: 0px;
+    position: relative;
+}
+
+.img-foot {
+    height: 102px;
+    width: 235px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+.ter{
+    text-align: center;
+}
+
+.pas-4{
+    text-align: center;
+}
+
+}
+
+@media (max-width: 700px){
+
+}
+

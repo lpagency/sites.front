@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript">
+ $(document).ready(function()
+{
+     $('.font-menu').removeClass('activado');
+     $('.contacto').addClass("activado");
+     $('.contacto').removeClass('barras');
+
+ });
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/style.css" >
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+
+#fondo_detalle{
+    background-image: url("https://84static.loadingplay.com/static/images/5a39274ffd3e2ee89e6c73862211ef6a_Biluppo_PNGs_Web_7-24.png");
+}
+</style>
+<div class="contenedor" id="fondo_detalle">
+<div style="padding: 30px">
+</div>
+<div style="padding: 150px">
+<h4 style=" right: 67%; color: grey;position: absolute; top: 190px; letter-spacing: 0.1em;font-size: 15px;font-weight: bold;">CONTACTO</h4>
+<img class="ardilla" src="https://84static.loadingplay.com/static/images/873e6b4433ba88028c57a777e4f195c4_Biluppo_PNGs_Web_7-15.png" style="position: absolute;z-index: 1;top: 160px;width: 125px;left: 700px;">
+<hr style="width: 680px; height: 1px; background-color: grey">
+<br>
+<br>
+<h1 class="parrafoContacto">Ya nos llegó tu mensaje, gracias!<br>
+Te vamos a responder lo antes posible</h1>
+</div>
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,117 @@
+{% extends "../base.html" %}
+
+{% block css %}
+<link rel='stylesheet' href='{{ site_base }}/static/fullcalendar-2.5.0/fullcalendar.css' />
+<style type='text/css'>
+    #calendar {
+        width: 90%;
+        margin: 0 auto;
+        position: relative;
+        text-transform:uppercase;
+    }
+
+    .fc-toolbar{
+        position: relative;
+        background-color: #02A092;
+        margin-bottom: 0px;
+        padding-top:30px;
+        padding-bottom: 30px;
+        border:1px solid #fff;
+        color:#fff;
+    }
+
+    .fc-head{
+        background-color: #04867A;
+        color:#fff;
+    }
+
+    .fc-prev-button{
+        position: absolute !important;
+        left: 15%;
+    }
+
+    .fc-next-button{
+        position: absolute !important;
+        right: 15%;
+    }
+
+    .fc-button, .fc-state-default{
+        background-color: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        background-image: none;
+        color:#fff;
+    }
+
+    .space100{
+        margin-top: 100px;
+    }
+
+    .dayslot {
+      float: left;
+      margin-left: 2px;
+    }
+
+    .fc-agenda-slots .unavailable{
+      background-color: #e6e6e6;
+
+    }
+
+    @media (max-width: 700px) { 
+    .fc-prev-button{
+        left: 5%;
+    }
+
+    .fc-next-button{
+        right: 5%;
+    }
+    }
+
+</style>
+{% end %}
+
+{% block javascript %}
+        <!--Full Calendar-->
+        <!-- // <script src='{{ site_base }}/static/fullcalendar-2.5.0/lib/jquery.min.js'></script> -->
+        <script src='{{ site_base }}/static/fullcalendar-2.5.0/lib/moment.min.js'></script>
+        <script src='{{ site_base }}/static/fullcalendar-2.5.0/fullcalendar.js'></script>
+        <script src='{{ site_base }}/static/fullcalendar-2.5.0/lang-all.js'></script>
+        <script src='{{ site_base }}/static/fullcalendar-2.5.0/gcal.js'></script>
+        <script src='{{ site_base }}/static/js/calendar.js'></script>
+        <!--End Full Calendar-->
+        <script type="text/javascript" >
+        
+        </script>
+{% end %}
+
+
+
+
+{% block body %}
+<div class="row space100">
+    <div class="col-sm-8">
+    <div id="calendar" class="calendar space80"></div>
+    </div>
+    <div class="col-sm-4">
+    <h3>Tu reserva está casi lista!</h3>
+    <div id="day"></div><br>
+    <h4>Elije tu horario:</h4>
+    <form id="business-hour" role="form">
+<!--       <div class="radio">
+          <label><input type="radio" name="optradio" id="third" hour="16:30">16:30 a 18:30</label>
+      </div>
+      <div class="radio">
+          <label><input type="radio" name="optradio" id="second" hour="13:30">13:30 a 15:30</label>
+      </div>
+      <div class="radio">
+          <label><input type="radio" name="optradio" id="first" hour="10:30">10:30 a 12:30</label>
+      </div> -->
+  </form>
+    <button class="reservebtn whiteclr compra reserve">
+    RESERVAR
+    <i class="fa fa-arrow-circle-right"></i>
+    </button>
+</div>
+</div>
+
+{% end %}

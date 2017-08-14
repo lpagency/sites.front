@@ -1,0 +1,147 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css"> -->
+{% end %}
+
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(20,20,20);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template_home',
+                'tag' : tag,
+                'ignore_stock' : true,
+                'onLoad':function()
+                {
+                    // $('.ellipsis').ellipsis();
+                }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+    });
+
+</script>
+
+<script type="text/javascript"> 
+    $(document).ready(function()
+    {
+        $(document).on("click", ".anchorLink", function(e) {
+            e.preventDefault();
+
+            elementClick = $(this).attr("href");
+            console.log(elementClick);
+            destination = $(elementClick).offset().top;
+            console.log(destination);
+            $("html:not(:animated),body:not(:animated)").animate({
+                scrollTop: destination
+            },800);
+            return false;
+        });
+    });
+</script>
+
+
+
+<script type="text/template" id="product_detail">
+    <section>
+        <div style="position: relative;">
+            <img src="{{! images[1]['thumb_500'] }}" title="" alt="" class="fondo-detalle">
+            <div class="container">
+                <h1 class="name texto-detalle text-left" class="line" href="#">{{! name }}</h1>
+            </div>
+        </div>
+    </section>
+
+
+        <div class="container">
+        <div class="container-fluid">
+            <div class="col-md-12" >
+                <div class="box-det">
+                    <div class="col-md-6 col-sm-8 col-xs-12">
+                        <div align="center">
+                            <img id="img_detail" src="{{! images[0]['thumb_200'] }}" title="" alt="" class="img_prod_detail">
+                        </div>
+                    </div>
+                    <div id="product-detail-id" class="col-md-6 col-sm-6 col-xs-12">
+                        <div align="center">
+                            <h1 class="name name_prod_detail" class="line" href="#">{{! name }}</h1>
+                            <h3 class="descr_prod_detail ellipsis multiline"> 
+                      {{! description }}</h3>
+                            <div class="product-price-2">{{! main_price|money }} </div>
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar ahora </button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</script>
+
+
+{% end %}
+{% block body %}
+
+
+<div class="product-detail"></div>
+<!--  <div class="fin text-center {{editabletext}}" text-id="{{ site.name + '_ple' }}"> {{ read_text(site.name +  '_ple') }}</div> -->
+<!-- ***productos relacionados** -->
+
+<div class="container dano">
+ <!--    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div> -->
+</div>
+
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

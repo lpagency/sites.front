@@ -1,0 +1,163 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block javascript %}
+
+
+
+    <!-- Google Code for contacto Conversion Page -->
+    <script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 957309316;
+    var google_conversion_language = "en";
+    var google_conversion_format = "3";
+    var google_conversion_color = "ffffff";
+    var google_conversion_label = "KMPSCOjI_mUQhMO9yAM";
+    var google_remarketing_only = false;
+    /* ]]> */
+    </script>
+    <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+    </script>
+    <noscript>
+    <div style="display:inline;">
+    <img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/957309316/?label=KMPSCOjI_mUQhMO9yAM&amp;guid=ON&amp;script=0"/>
+    </div>
+    </noscript>
+
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+
+<div style="background-color:#0B610B;color:white;height:200px;position:relative;">
+	<div style="position:relative; top: 120px;">
+		<h1 style="margin-top: 0;">CONTACTO</h1>
+	</div>
+</div>
+
+   <div class="container-fluid title text-left container-fluid-magle" style="display: inherit;">
+   	<div class="row">
+   		<div class="col-sm-12">
+   			<h2>
+   				{% if is_admin %}
+   				<span class="editabletext" text-id="{{ site.name + '_tit' }}" >{{ read_text(site.name + '_tit') }}</span>
+   				{% else %}
+   				{{ read_text(site.name + '_tit') }}
+   				{% end %}</h2>
+   			</div>
+   		</div>
+   	</div>
+			
+			<div class="container-fluid contact product text-left container-fluid-magle" style="display: inherit;">
+				<div class="row">		
+					<div class="col-xs-12 col-sm-4">
+						<address>
+							<br>
+							<strong>
+							{% if is_admin %}
+			                	<span class="editabletext" text-id="{{ site.name + '_name' }}" >{{ read_text(site.name + '_name') }}</span>
+			                {% else %}
+			                	{{ read_text(site.name + '_name') }}
+			                {% end %}
+			                </strong><br>
+							{% if is_admin %}
+			                	<span class="editabletext" text-id="{{ site.name + '_address' }}" >{{ read_text(site.name + '_address') }}</span>
+			                {% else %}
+			                	{{ read_text(site.name + '_address') }}
+			                {% end %}
+			                <br>
+							{% if is_admin %}
+			                	<span class="editabletext" text-id="{{ site.name + '_city' }}" >{{ read_text(site.name + '_city') }}</span>
+			                {% else %}
+			                	{{ read_text(site.name + '_city') }}
+			                {% end %}<br>
+							{% if is_admin %}
+			                	<span class="editabletext" text-id="{{ site.name + '_phone' }}" >{{ read_text(site.name + '_phone') }}</span>
+			                {% else %}
+			                	{{ read_text(site.name + '_phone') }}
+			                {% end %}<br>
+							{% if is_admin %}
+			                	<span class="editabletext" text-id="{{ site.name + '_email' }}" >{{ read_text(site.name + '_email') }}</span>
+			                {% else %}
+			                	{{ read_text(site.name + '_email') }}
+			                {% end %}<br>
+						</address>
+					</div>
+					<div class="col-xs-12 col-sm-8">
+<!-- 						<form action="{{ site_base }}/contact" class="contact-add-form" method="post" novalidate id="newsletter">
+                            <div class="form-group">
+                                <div class="col-sm-6">
+                                    <div class=" controls">
+                                        <input name="name" placeholder="Tu nombre" class="form-control input-lg requiredField" required type="email" >
+                                        <div id="error_contact_name" for="name" class="error g-alert" >Ingrese su nombre</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class=" controls">
+                                        <input name="email" placeholder="Tu correo" class="form-control input-lg requiredField" required type="email" >
+                                        <div id="error_contact_email" for="email" class="error g-alert" >Ingrese su e-mail</div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12">
+                                    <div class="controls">
+                                        <textarea name="message" required placeholder="Escribe aquí tu mensaje" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+                                        <div id="error_contact_message" for="message" class="error g-alert" >Su mensaje no puede estar vacío</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p>
+                                <button name="submit" type="submit" class="btn btn-store btn-block btn-contact-submit" disabled>Enviar correo</button>
+                            </p>
+                        </form> -->
+						<form action="{{ site_base }}/contact" class="contact-add-form" method="post" novalidate id="newsletter">
+							<div class="row clearfix">
+								<div class="col-xs-12 col-sm-12">
+								<div class="form-group">
+										<label class="control-label">Nombre</label>
+										<div class=" controls">
+											<input name="name" placeholder="Tu nombre" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+										</div>
+									</div>
+									<div class="form-group">
+										<label class="control-label">Email</label>
+										<div class=" controls">
+											<input name="email" placeholder="Tu email" class="form-control input-lg requiredField" type="email" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+										</div>
+									</div>
+								</div>	
+							</div>	
+							<div class="form-group">
+								<label class="control-label">Mensaje</label>
+								<div class="controls">
+									<textarea name="message" placeholder="Escribe aquí tu mensaje" class="form-control input-lg requiredField" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+								</div>
+							</div>
+							<p><button name="submit" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar Mensaje</button></p>
+							<input type="hidden" name="submitted" id="submitted3" value="true">
+						</form>	
+					</div>		
+				
+				</div>	
+			</div>
+			{% include '../home/footer.html' %}
+			
+{% end %}

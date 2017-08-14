@@ -1,0 +1,132 @@
+<header class="grin">
+    <div class="menu">
+        <div class="navbar mbtm0" role="navigation">
+            <div class="container min">   
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" >
+                             <div style="position:relative">
+                                 <div class="col-md-8">
+                                     <div class="caja-logo">
+                                         {% if is_admin %}
+                                         <div class="image-upload lapiz visible-movil">
+                                            <label for="img_header_logo">
+                                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                           </label>
+                                           <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                                       </div>
+                                       {% end %}
+                                       <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                                   </div>
+                               </div>
+
+                           </div>
+                       </a>
+                   </div>
+                        <div class="navbar-collapse collapse">
+                    
+                            <ul class="nav navbar-nav navbar-right  hidden-sm hidden-xs">
+                                <li>
+                                    <a class="tag" href="">INDUCROM</a>
+                                </li>
+                                <li>
+                                    <a  href="{{ site_base}}/listado_productos" class="">PRODUCTOS</a>
+                                </li>
+                                <li>
+                                    <a href="{{ site_base}}/clientes">CLIENTES</a>
+                                </li>
+                               
+                                <li>
+                                    <a class="tag" href="{{ site_base}}/listado_articulos">NOTICIAS</a>
+                                </li>
+                                 <li>
+                                    <a class="tag" href="{{ site_base}}/catalogos">CATÁLOGOS</a>
+                                </li> 
+                                <li>
+                                    <a class="tag" href="{{ site_base}}/detalle_cotizacion">COTIZACIÓN</a>
+                                </li> 
+                                <li>
+                                    <a class="tag" href="{{ site_base}}/contact">CONTACTO</a>
+                                </li>
+                                <li>
+                                    <a class="tag" href="{{ site_base}}/listado_productos?tag=tienda">TIENDA</a>
+                                </li> 
+                                <li>
+                                    <a> | <img class="img-carrito" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png" /></a>
+                                </li>
+
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- ***********MENU MOVIL************** -->
+<div class="container min">
+   <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="margin-top: -19px;">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <a href="#">
+                       Menu
+                    </a>
+                </li>
+                <li>
+                    <a href="#">INDUCROM</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/listado_productos">PRODUCTOS</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/clientes">CLIENTES</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/listado_articulos">NOTICIAS</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/catalogos">CATÁLOGOS</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/detalle_cotizacion">COTIZACIÓN</a>
+                </li>
+                                  <li>
+                    <a href="{{ site_base}}/contact">CONTACTO</a>
+                </li>
+                <li>
+                    <a href="">TU COMPRA</a>
+                </li>
+                <li>
+                    <a href="{{ site_base}}/listado_productos?tag=tienda" class="">TIENDA</a>
+                     <img class="img-carrito-lateral" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png">
+                </li>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+            <div id="page-content-wrapper">
+                    <a href="" class="btn btn-default uni" id="menu-toggle">
+                     <i class="fa fa-bars" aria-hidden="true"></i>
+                   </a>
+            </div>
+    </div>
+  </div>
+
+<!-- ****************FIN MENU MOVIL***************** -->
+
+</header>
+
+

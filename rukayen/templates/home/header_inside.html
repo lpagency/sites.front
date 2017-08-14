@@ -1,0 +1,75 @@
+<header  class="nofixtop" data-spy="affix" data-offset-top="400">
+  <div class="menu"><!-- start menu -->
+    <div class="navbar mbtm0 header img-header" role="navigation">
+
+      <div class="container2"> 
+        <div class="row">
+          <div class="col-md-12">
+           <nav class="navbar navbar-default">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand navbar-logo" href="{{ site_base }}/" > 
+              {% if is_admin %}
+                  <div class="image-upload">
+                      <!-- id input debe ir en for de label -->
+                      <label for="{{ site.name }}_site_logo">
+                      <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                      </label>
+                      <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                  </div>
+              {% end %}
+              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
+
+    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" class="img-responsive logo"  alt="logo" width="150"> --></a>
+
+            </div>
+            <div class="navbar-collapse collapse "  id="bs-example-navbar-collapse-1">
+
+              <!-- Left nav -->
+              <ul class="nav navbar-nav navbar-right color-menu">
+                <li><a href="{{ site_base }}/">HOME</a></li>
+                <li>
+                  <a href="http://rukayen.cl/article/detail/cumpleanios/733">Cumpleaños </a>
+                </li>
+                <li><a href="http://rukayen.cl/products?tag=talleres" class="">Talleres</a></li>
+                <li><a href="#map-canvas" class=""> Dónde Estamos</a></li>
+                <li><a href="http://rukayen.cl/article/detail/area_de_juegos/734" class="">Área de Juegos </a></li>
+                <li><a href="http://rukayen.cl/products" class="">Compra online</a></li>
+                <!-- <li>
+                  <a href="#"  class="reservebtn backgreen whiteclr" data-toggle="modal" data-target="#myModal1">
+                    Paga tu reserva
+                    <i class="fa fa-arrow-circle-right"></i>
+                  </a>
+                </li> -->
+                <!-- <li><i class="icon-search" id="toogle_search_bar"></i></li> -->
+              </ul>
+              <!--<ul class="top_search_bar">
+                  <li class="site_search">
+                  </li>
+              </ul>-->
+            </div><!--/.nav-collapse -->
+</nav>
+          </div>
+        </div>
+      </div>  
+
+    </div>   
+  </div><!-- end menu -->
+</header>
+
+<script type="template" id="site_search_template">
+    <form class="search_form" action="{{ site.search_url }}">
+
+        <div class="search_bar_inputs row">
+            <input class="busqueda-header col-sm-6" type="search" name="search_query" value="{{! search_query }}" onsearch="$(this).closest('.search_form').submit()">
+            <button class="boton-bus-header btn-search col-sm-2" onclick="">buscar</button>
+            <div class="boto-bus-header-movil col-sm-1" onclick=""> <i class="icon-search" onclick=""></i></div>
+            <span class="hide-search-bar col-sm-1" onclick=""><i class="icon-remove" onclick=""></i></span>
+        </div>
+    </form>
+</script>

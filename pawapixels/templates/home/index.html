@@ -1,0 +1,177 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+
+
+{% block header %}
+{% if  read_text(site.name + 'select_header') == '1' %}
+    {% include '../home/header_banner.html' %}
+{% else %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% if is_admin %}
+<p>Si desea banner con imagen guarde 1 y si desea sin imagen guarde 2 
+
+<span class="cambio editabletext" text-id="{{ site.name + 'select_header' }}" >
+     {{read_text(site.name +  'select_header')}}
+</span>
+</p>
+{% end %}
+{% end %}
+
+{% block javascript %}
+    <script type="x-text/template" id="product_template" >
+                <div class="productlist">
+                    <div class="col-sm-6">
+                        <a href="{{ site_base }}/sc/product/detail/10_tickets/1252">
+                            <img src="{{! images[0][2] }}"  class="img-responsive box-img" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">{{! main_price}}</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+              </div>
+    </script>    
+    
+
+
+     <script type="text/javascript">
+        // inicializa jquery
+        $(document).ready(function()
+        {
+
+            // iniciaiza el ecommerce
+            $(document).ecommerce({
+                'app_public' : '11',
+                'base_url' : 'https://apibodegas.loadingplay.com/'
+            });
+
+        });
+    </script>
+
+
+    <!-- // <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script> -->
+    
+
+{% end %}
+
+{% block body %}
+
+   <!-- <div class="container-fluid productlist"> -->
+               <!--  <div class="row">
+                    <div class="col-sm-8">
+                        <a href="product_detail.html">
+                            <img src="https://84static.loadingplay.com/static/images/2e0bc33131b734728aa1cb74b6825089_vase_1a.png" class="img-responsive" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">14.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="product2.html">
+                            <img src="https://7static.loadingplay.com/static/images/53a50e4638fa28768eb70171cfe53bdc_vase_2a.png"  class="img-responsive" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">28.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="product3.html">
+                            <img src="https://84static.loadingplay.com/static/images/1424cd16928bfcbcf81ae41b706c9d20_vase_3a.png"  class="img-responsive" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">24.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 special">
+                        <div class="col-sm-12">
+                            <a href="product4.html">
+                                <img src="https://7static.loadingplay.com/static/images/1ce42d20de2db2120424a4b5317af8a1_vase_4a.png"  class="img-responsive" alt="item">
+                                <span class="productlist-price-container">
+                                    <span class="product-price">
+                                        <span class="price">16.00</span>
+                                    </span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="product5.html">
+                                <img src="https://84static.loadingplay.com/static/images/5959389678bd35d3784070432e935b17_vase_5a.png"  class="img-responsive" alt="item">
+                                <div class="productlist-label">
+                                    <span class="sale-label">Sale</span>
+                                </div>
+                                <span class="productlist-price-container">
+                                    <span class="product-price">
+                                        <span class="price">54.00</span>
+                                        <span class="original-price">
+                                            <span class="price">65.00</span>
+                                        </span>
+                                    </span>
+                                </span>
+                            </a>                        
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <a href="product6.html">
+                            <img src="https://7static.loadingplay.com/static/images/5492a560e33720fe8bf5ba1e3b1e51b1_vase_6a.png" class="img-responsive" alt="item">
+                            <div class="productlist-label">
+                                <span class="sold-out-label">Sold Out</span>
+                            </div>
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">38.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="row" id="more-items">
+                    <div class="col-sm-6">
+                            <img src="https://84static.loadingplay.com/static/images/1424cd16928bfcbcf81ae41b706c9d20_vase_3a.png"  class="img-responsive" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">17.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="product8.html">
+                            <img src="https://84static.loadingplay.com/static/images/1424cd16928bfcbcf81ae41b706c9d20_vase_3a.png"  class="img-responsive" alt="item">
+                            <span class="productlist-price-container">
+                                <span class="product-price">
+                                    <span class="price">21.00</span>
+                                </span>
+                            </span>
+                        </a>
+                    </div>
+                </div> -->
+              <!--   <div class="row">
+                    <div class="col-sm-12 text-center show-more">
+                        <a href="#" class="btn btn-outline" id="showmore">Show more</a>
+                    </div>  
+                </div>   -->
+            <!-- </div> -->
+           
+
+            <div class="container-fluid products" style="height:100%">
+            </div>
+    
+<div class="clearfix"></div>
+{% include '../home/footer.html' %}
+</div>
+{% end %}

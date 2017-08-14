@@ -1,0 +1,103 @@
+
+
+    <footer class="color-fondo">
+        <div class="col-lg-12  col-sm-12 col-xs-12 black">
+            <div class="col-md-3 col-xs-12">
+               <div align="center">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_logo_footer">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_logo_footer" name="image" id="img_logo_footer" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_logo_footer" src="{{ read_image(site.name + '_logo_footer', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_footer',500) }}'" class="col-md-5 logo-footer" alt="item" />
+               <!--  <img class="col-md-5 logo-footer" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png"> -->        
+                <p class="foo">
+                   
+                    {% if user is None %}
+                  <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                  {% else %}
+                  <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                    Logout</a>
+                    {% end %}
+
+                </p> 
+
+
+               </div>
+            </div>
+             <div class="col-md-3 col-sm-12 col-xs-12">
+                 <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+                 <style type="text/css">
+                    #mc_embed_signup{clear:left; font-size:14px; width:100%; }
+                    / Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+                    We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. /
+                </style>
+                <div id="mc_embed_signup">
+                    <form action="//nutriacademia.us14.list-manage.com/subscribe/post?u=e65f0b3938816467cf7e77c70&amp;id=74e24ea47f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div id="mc_embed_signup_scroll">
+                            <label for="mce-EMAIL">Quiero suscribirme al Newsletter de Nutriacademia</label>
+                          <!--   <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required> -->
+                           <input name="email" placeholder="Email address" class="form-control" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                            <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_e65f0b3938816467cf7e77c70_74e24ea47f" tabindex="-1" value=""></div>
+                            <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="inform-comerc text-center">
+                <div class="clearfix fo"></div>
+                    <ul class="no-dot">
+                        <a href="{{site_base}}/etapa_concep">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_1' }}"> {{ read_text(site.name +  '_footer_1') }}
+                        </li>
+                        </a>
+                        <a href="{{site_base}}/etapa_emba">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_2' }}"> {{ read_text(site.name +  '_footer_2') }}
+                        </li>
+                        </a>
+                        <a href="{{site_base}}/etapa_gua">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_3' }}"> {{ read_text(site.name +  '_footer_3') }}
+                        </li>
+                        </a>
+                        <a href="{{site_base}}/etapa_creci">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_4' }}"> {{ read_text(site.name +  '_footer_4') }}
+                        </li>
+                        </a>
+                        <a href="{{site_base}}/los_primeros_mil">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_5' }}"> {{ read_text(site.name +  '_footer_5') }}
+                        </li>
+                        </a>
+                    </ul>
+                  </div>
+            </div>
+             <div class="col-md-3 col-sm-12 col-xs-12">
+                <div class="inform-comerc text-center">
+                <div class="clearfix fo"></div>
+                    <ul class="no-dot-2">
+                        <li>  <a href="{{ site_base }}/contact" class=" {{editabletext}}" text-id="{{ site.name + '_footer_6' }}"> {{ read_text(site.name +  '_footer_6') }}
+                        </a></li>
+                        </a>
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_7' }}"> {{ read_text(site.name +  '_footer_7') }}
+                        </li>
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_8' }}"> {{ read_text(site.name +  '_footer_8') }}
+                        </li>
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_9' }}"> {{ read_text(site.name +  '_footer_9') }}
+                        </li>
+                    </ul>
+                  </div>
+            </div>
+
+          </div>
+
+    
+    </footer>
+
+
+
+
+

@@ -1,0 +1,45 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+{% include '../home/menu_fixed.html' %}
+<section style="position: relative;bottom: 30px;">
+    <!--banner grande-->
+        {% if is_admin %}
+        <div class="">
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_success">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_success" name="image" id="img_success">
+               </div>
+                {% end %}
+                <img id="{{ site.name }}_success" src="{{ read_image(site.name + '_success', 1) }}" onload="this.src='{{ read_image(site.name + '_success',500) }}'" class="desaturada img_success" alt="item">
+
+        </div>
+
+</section>
+<section>
+    <div class="container">
+        <div class="col-md-12">
+            <h1 class="col-md-12 col-xs-12 text-success text-center {{editabletext}}" text-id="{{ site.name + '_text-success' }}"> {{ read_text(site.name +  '_text-success') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+{% include '../home/footer.html' %}
+{% end %}

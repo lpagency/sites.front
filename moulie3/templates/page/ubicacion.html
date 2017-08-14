@@ -1,0 +1,225 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(38,38,38);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.ubicacion').addClass("active");
+
+  });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+<section>
+  <div>
+    <div>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_ubicacion',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_ubicacion">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_ubicacion" name="image" id="img_ubicacion" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_ubicacion" src="{{ read_image(site.name + '_ubicacion', 1) }}" onload="this.src='{{ read_image(site.name + '_ubicacion',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+ </div>
+</div>
+</section>
+
+
+<!-- **locales** -->
+
+<section id="cont"> 
+ <div class="container">
+   <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="texto-locales {{editabletext}}" text-id="{{ site.name + '_loc' }}"> {{ read_text(site.name +  '_loc') }}</div>
+      <hr class="ubicacion">
+   </div>
+
+    <div class="div-ubi" style"">
+    <div class="col-md-4">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_1" name="image" id="img_box_ubicacion_1" >
+       </div>
+       {% end %}
+       <a href="{{ site_base }}/local_vitacura">
+       <img id="{{ site.name }}_box_ubicacion_1" src="{{ read_image(site.name + '_box_ubicacion_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_1') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1' }}"> {{ read_text(site.name +  '_loc_1') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1_1' }}"> {{ read_text(site.name +  '_loc_1_1') }}</div>
+      <hr class="textos"> 
+
+    </div>
+    
+     <div class="col-md-4">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_2" name="image" id="img_box_ubicacion_2" >
+       </div>
+       {% end %}
+
+      <a href="{{ site_base }}/local_lo_barnechea">
+       <img id="{{ site.name }}_box_ubicacion_2" src="{{ read_image(site.name + '_box_ubicacion_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_2') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2' }}"> {{ read_text(site.name +  '_loc_2') }}</div>
+       <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2_2' }}"> {{ read_text(site.name +  '_loc_2_2') }}</div>
+        <hr class="textos"> 
+    </div>
+
+     <div class="col-md-4">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_3" name="image" id="img_box_ubicacion_3" >
+       </div>
+       {% end %}
+      
+      <a href="{{ site_base }}/local_parque_arauco">
+       <img id="{{ site.name }}_box_ubicacion_3" src="{{ read_image(site.name + '_box_ubicacion_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_3') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3' }}"> {{ read_text(site.name +  '_loc_3') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3_3' }}"> {{ read_text(site.name +  '_loc_3_3') }}</div>
+       <hr class="textos"> 
+
+    </div>
+
+    <div class="col-md-4">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_4" name="image" id="img_box_ubicacion_4" >
+       </div>
+       {% end %}
+      
+      <a href="{{ site_base }}/local_portal_la_dehesa">
+       <img id="{{ site.name }}_box_ubicacion_4" src="{{ read_image(site.name + '_box_ubicacion_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_4') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_4' }}"> {{ read_text(site.name +  '_loc_4') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_4_4' }}"> {{ read_text(site.name +  '_loc_4_4') }}</div>
+       <hr class="textos"> 
+
+    </div>
+
+      <div class="col-md-4">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_5">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_5" name="image" id="img_box_ubicacion_5" >
+       </div>
+       {% end %}
+      
+      <a href="{{ site_base }}/local_alto_las_condes">
+       <img id="{{ site.name }}_box_ubicacion_5" src="{{ read_image(site.name + '_box_ubicacion_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_5') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5' }}"> {{ read_text(site.name +  '_loc_5') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5_5' }}"> {{ read_text(site.name +  '_loc_5_5') }}</div>
+       <hr class="textos"> 
+
+    </div>
+</div>
+
+ </div>
+
+</section>
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

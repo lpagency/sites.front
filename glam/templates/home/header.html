@@ -1,0 +1,56 @@
+<section>
+     <div class="color-header"> 
+       <div class="container">
+       <div class="col-md-4 col-sm-4 col-xs-4">
+          <div align="center">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+            <label for="img_logo">
+                <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+              </label>
+              <input type="file" class="editableimage" image-id="{{ site.name }}_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_logo',500) }}'" class="logo-header" alt="item" />
+         <!--      <img class="logo-header" src="https://84static.loadingplay.com/static/images/c91f2d23e84ffdb7e5f6cc3d2450addc_logo_Glam_header.png"> -->
+          </div>
+       </div>
+   <!--     <div class="col-md-6"> -->
+          <div class="texto-redes {{editabletext}}" text-id="{{ site.name + '_p_1' }}">{{ read_text(site.name +  '_p_1') }}</div>
+          
+          <div class="col-md-4 col-sm-4 col-xs-4">   
+           {% if is_admin %}
+           <div class="image-upload dos lapiz visible-movil">
+           <label for="img_icono_uno">
+              <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_icono_uno" name="image" id="img_icono_uno" >
+          </div>
+          {% end %}
+          <a href="https://www.facebook.com/GlamCoColombia/" target="blank">
+          <img id="{{ site.name }}_icono_uno" src="{{ read_image(site.name + '_icono_uno', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_uno',500) }}'" class="iconos-redes" alt="item" />
+               <!--  <img class="iconos-redes" src="https://84static.loadingplay.com/static/images/9919b5e12c871e50f9906155747198b5_facebook.png"> -->
+               </a>
+          </div>
+          
+          <div class="col-md-3 col-sm-4 col-xs-3"> 
+           {% if is_admin %}
+           <div class="image-upload lapiz visible-movil">
+           <label for="img_icono_dos">
+              <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_icono_dos" name="image" id="img_icono_dos" >
+          </div>
+          {% end %}
+         <a href="https://www.instagram.com/glamco_colombia/" target="blank">
+          <img id="{{ site.name }}_icono_dos" src="{{ read_image(site.name + '_icono_dos', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_dos',500) }}'" class="iconos-redes-dos" alt="item" />  
+               <!--  <img class="iconos-redes" src="https://84static.loadingplay.com/static/images/7be2221f50467be7b8ed229022ac2cf7_instagram.png"> -->
+            </a>
+          </div>
+          </div>
+             
+           
+      <!--  </div> -->
+     </div>
+
+</section>

@@ -1,0 +1,135 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<div type="template" id="product_loading" style="display:none;" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config2.js"></script>
+
+<!-- <script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        var tag = '';
+
+        try
+        {
+            tag = Utils.getUrlParameter('tag');
+        }
+        catch(ex)
+        {
+            // nothing here... 
+        }
+
+        $("#"+tag).addClass("active");
+        if (tag === undefined || tag === 'todos'){
+            $("#todos").addClass("active");
+        }
+
+        // base_url = 'http://localhost:8520/';
+        // checkout_url = 'http://localhost:8522/';
+        // base_url = 'http://apibodegas.ondev.today/';
+        // checkout_url = 'http://lpcheckout.ondev.today/';
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://localhost:8522/',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(13,13,13);
+
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'products_per_page' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : tag,
+            'ignore_stock' : true,
+            'infinite_scroll': true,
+            'onLoad':function(products)
+            {
+                console.log(products);
+                // $('.ellipsis').ellipsis();
+            },
+            'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.products').ecommerce(config);
+
+        $(document).on("click", ".subcateg2", function(ev)
+        {
+            ev.stopPropagation();
+            ev.preventDefault();
+
+            if (tag === $(this).attr('tag')){
+                config.tag = tag;
+                config.operator = "or";
+            }else{
+                if(tag === undefined){
+                    var multiple_tag = $(this).attr('tag');
+                    config.tag = multiple_tag;
+                    config.operator = "or";
+                    console.log(config.tag, config.operator);
+                }
+            }
+        
+            $(".products").html("");
+            $(document).ecommerce('destroy');
+            $(document).ecommerce(config);
+        });
+
+        // // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+
+    });
+</script> -->
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+{% include '../home/menu_fixed.html' %}
+{% include '../home/banner_one.html' %}
+<section>
+{% include '../home/solicitud_clave.html' %}
+<div class="clearfix"></div>
+</section>
+<section>
+{% include '../home/banner_producto.html' %}
+<div class="clearfix"></div>
+</section>
+<section>
+{% include '../home/categoria_productos.html' %}
+<div class="clearfix space100"></div>
+</section>
+<section>
+{% include '../home/footer.html' %}
+</section>
+{% end %}

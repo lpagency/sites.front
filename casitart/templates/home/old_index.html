@@ -1,0 +1,98 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+{% block scripts %}
+
+<div type="template" id="product_loading" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+<div type="template" id="product_template">
+<div class="col-sm-4">
+    <div class="product-limit-image">
+        <a href="{{ site_base }}/sc/product/detail/{{! name }}/{{! id }}">
+            <div class="col-xs-6 especial">
+            <img src="https://static.loadingplay.com/static/images/default.png" class="img-responsive product-image" alt="item">
+            </div>
+            <span class="col-sm-6 col-xs-6 texts-products especial">
+                <span class="text-nom-prod ">{{! name }}</span>
+                <span class="text-cant-prod">{{! manufacturer }}</span>
+                <span class="text-price-prod money">{{! main_price }}</span>
+                <span class="add-cart-prod add-to-cart" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" > <i class="icons-cart" style="margin-right: 13px;"></i> Agregar</span>
+            </span>
+        </a>
+    </div>
+</div>
+</div>
+
+<div type="template" id="tag_template" >
+    <li><a href="/sample/tag.html?tag={{! id }}" >{{! name }}</a></li>
+</div>
+
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).ecommerce(
+        {
+            'app_public' : 6,
+            'products_per_page' : 3,
+            'base_url' : 'http://apibodegas.ondev.today/'
+        });
+
+    });
+</script>
+{% end %}
+{% block body %}
+    <div id="wrap" style="z-index: 0;">
+        <!-- registration -->
+        <!-- <div class="container-fluid productlist"> -->
+        <!-- raw 1 -->
+        <!-- <div class="row">
+            {{ content }}
+        </div>
+        <div class="carritoproductos clearfix">
+            <div class="flecha clearfix">
+            </div>
+        </div>
+    </div> -->
+    <!-- comienzo contenido FM -->
+    <div class="top-products">
+        <div class="container-fluid productlist">
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="titulo-ofertas-dest">Ofertas destacadas</h1>
+                </div>
+            </div>
+            <!-- row 4 -->
+            <div class="row products">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+            <!-- row 4 -->
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% end %}

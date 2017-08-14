@@ -1,0 +1,80 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
+<script type="text/javascript">
+
+</script>
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="distancia-2"></div>  
+
+<section class="container-g">
+<section class="h-banner-one" style="position: relative;width: 100%;">
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+        <label for="img_historia">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_historia" name="image" id="img_historia" >
+    </div>
+    {% end %}
+    <div class="box-historias">
+        <img id="{{ site.name }}_historia" src="{{ read_image(site.name + '_historia', 1) }}" onload="this.src='{{ read_image(site.name + '_historia',500) }}'" class="img_historia desaturada" alt="item">
+    </div>
+
+    <div class="clearfix" ></div>
+</section>
+
+<section class="h_first_text pad0">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_nuestra_historia1 text-center {{editabletext}}" text-id="{{ site.name + '_text_historia1' }}"> {{ read_text(site.name +  '_text_historia1') }}
+        </h1>
+    </div>
+</section>
+
+<section class="h_first_text pad0">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_nuestra_historia2 text-center {{editabletext}}" text-id="{{ site.name + '_text_historia2' }}"> {{ read_text(site.name +  '_text_historia2') }}
+        </h1>
+    </div>
+</section>
+
+<section class="h-historia-img">
+    <div class="col-md-12">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_historia2">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_historia2" name="image" id="img_historia2" >
+        </div>
+        {% end %}
+        <div class="box-historias">
+            <img id="{{ site.name }}_historia" src="{{ read_image(site.name + '_historia2', 1) }}" onload="this.src='{{ read_image(site.name + '_historia2',500) }}'" class="img_historia2 desaturada" alt="item">
+        </div>
+    </div>
+    <div class="clearfix" ></div>
+</section>
+</section>
+
+{% include '../home/footer.html' %}
+{% end %}

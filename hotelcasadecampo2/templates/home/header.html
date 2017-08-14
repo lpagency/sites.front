@@ -1,0 +1,103 @@
+
+<header class="fixtop" data-spy="affix" data-offset-top="60">
+    <div class="menu">
+        <div class="navbar mbtm0" role="navigation">
+
+            <div class="container-fluid">   
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header"  style="width:37%;">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" style="width:70%;" >
+                               <div style="position:relative">
+                               <div class="col-md-8">
+                               <div class="caja-logo">
+                               {% if is_admin %}
+                               <div class="image-upload lapiz visible-movil">
+                                <label for="img_header_logo">
+                                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                 </label>
+                                 <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                             </div>
+                             {% end %}
+                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                             </div>
+                             </div>
+
+                         </div>
+                               </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                    
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a class="tag" href="http://hotelcasadecampo.cl/listado_productos">Para Dormir</a>
+                                </li>
+                                <li>
+                                    <a  href="http://hotelcasadecampo.cl/article/detail/%C2%BFcomo_comenzo/1525" class="">La Historia</a>
+                                </li>
+                                <li>
+                                    <a href="http://hotelcasadecampo.cl/gallery/detail/espacios_en_hotel_casa_de_campo/1515">El hotel</a>
+                                </li>
+                               
+                                <li>
+                                    <a class="tag" href="http://hotelcasadecampo.cl/gallery/detail/exquisitas_comidas_y_vinos/1522">El vino</a>
+                                </li>
+                             <!--     <li>
+                                    <a class="tag" href="http://hotelcasadecampo.cl/gallery/detail/%C2%A1ven_y_descansa_de_la_ciudad!/1523">La cocina</a>
+                                </li>  -->
+                                <li>
+                                    <a class="tag" href="http://hotelcasadecampo.cl/gallery/detail/actividades_para_disfrutar_del_valle_de_colchagua/1520">El valle</a>
+                                </li> 
+                                <li>
+                                    <a class="tag" href="https://www.tripadvisor.com/Hotel_Review-g303682-d1386348-Reviews-Hotel_Casa_de_Campo-Santa_Cruz_O_Higgins_Region.htmlL" target="_blank">Los pasajeros</a>
+                                </li> 
+                              
+
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="bot hidden-xs"> 
+        <ul id="lista" class="nav uno" >
+            <li>
+                <a class="tag" href="">Santa Cruz, Ruta L-50. Km.40</a>
+            </li>
+            <li>
+                <a  href="" class="">Reservas aquí </a>
+            </li>
+            <li>
+                <a href="{{site_base}}/contact"> - Contáctenos</a>
+            </li>
+        </ul>
+
+        <ul id="lista" class="nav dos">
+            <li>
+                <a class="tag" href="https://www.tripadvisor.cl/Hotel_Review-g303682-d1386348-Reviews-Hotel_Casa_de_Campo-Santa_Cruz_O_Higgins_Region.html" target="_blank">  Tripadvisor 
+                <img class="img-hed-1" src="https://84static.loadingplay.com/static/images/9243798654cbc1ef25d8a3f75b370072_tripadvisor.png">
+                </a>
+            </li>
+            <li>
+                <a  href="https://www.instagram.com/hcasadecampo/" class="" target="_blank"> Instagram
+                <img class="img-hed-2" src="https://84static.loadingplay.com/static/images/495fbed6c62581c29484de609aa10fed_insta.png">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/hotelcasadecamposantacruz/" target="_blank"> Facebook 
+                <img class="img-hed-3" src="https://84static.loadingplay.com/static/images/5be74c964ecca324a1528d38990976c3_face.png">
+                 </a>
+            </li>
+        </ul>
+    </div>
+</header>
+

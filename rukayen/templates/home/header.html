@@ -1,0 +1,160 @@
+{% import random %}
+
+{% set videos = [
+        'https://player.vimeo.com/external/146055212.sd.mp4?s=6c7c9efe56eee54c9682242513673a6516168cf7&profile_id=112&oauth2_token_id=387155985',
+        'https://player.vimeo.com/external/152743167.sd.mp4?s=d41838f0c426828ea0c34435549a782b9ec8c19d&profile_id=112&oauth2_token_id=387155985',
+        'https://player.vimeo.com/external/152743169.sd.mp4?s=770daed6d3fe72dda5692f838853035dc39f4249&profile_id=112&oauth2_token_id=387155985'
+    ] %}
+{% set poster = [
+        'https://i.vimeocdn.com/video/544661433_640x360.jpg?r=pad',
+        'https://i.vimeocdn.com/video/552819269_640x360.jpg?r=pad',
+        'https://i.vimeocdn.com/video/552819193_640x360.jpg?r=pad'
+    ] %}
+{% set selected = random.choice([0,1,2]) %}
+
+
+<!-- log in - register -->
+<!-- menú laterla movil -->
+<!-- alerta calendario eventos -->
+    <div id="custom-event" class="hidden" >
+<!--     <div class="back_div">
+    </div> -->
+    <div class="row cont_div">
+        <div class="col-md-11 col-sm-11 col-xs-11">
+        <p>
+            <div class="name-event"></div>
+            <!-- Cumpleaños exclusivo CERRADO <span class="name-day"></span> de <span class="hour-start"></span> a <span class="hour-end"></span> Hrs. -->
+        </p>
+
+        </div>
+        <div class="col-md-1 col-sm-1 col-xs-1">
+            <span class="close_btn right"><img src="{{ site_base }}/static/img/X.png"></span>
+        </div>
+
+        </div>
+    </div>
+<div class="header_wrapper"> 
+    <video 
+        src="{{ videos[selected] }}" 
+        poster="{{ poster[selected] }}" width="100%" height="auto" class="fondo" controls autoplay="autoplay" loop="loop" >
+    </video>
+    <div class="video-overlay" ></div>
+    <!-- editar imagen -->
+    {% if is_admin %}
+    <div class="image-upload lapiz">
+        <label for="img_banner_1">
+            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
+    </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1',500) }}'" class="img-responsive visible-movil" alt="item" style="height: 100%;">
+    <!-- fin editar imagen -->
+    <!-- <img class="fondo" src="{{! site_base }}/static/img/home.jpg"> -->
+    <div class="top_wrapper">
+      <div class="container">
+          <div class="row">
+            <div class="logo_wrapper col-md-3 col-sm-4 col-xs-12">
+                <a href="{{ site_base }}">
+                    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
+     <!--                {% if is_admin %}
+                        <div class="image-upload">
+                           
+                            <label for="{{ site.name }}_site_logo">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                        </div>
+                    {% end %} -->
+                    <img class="img-responsive img-logo" src="https://7static.loadingplay.com/static/images/01a2ece901322e7e11f9d785da96a49f_logorukayen.png">
+                </a>
+            </div>
+            <div class="menu_wrapper col-md-9 col-sm-8 col-xs-12">
+                <div class="row">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed segundo " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav navbar-right nav1 adaptable">                               
+                                <li><a href="http://rukayen.cl/article/detail/cumpleanios/733" class=""> Cumpleaños</a></li>
+                                <li><a href="http://rukayen.cl/products?tag=talleres" class="">Talleres</a></li>
+                                <li><a href="#map-canvas" class=""> Dónde Estamos</a></li>
+                                <li><a href="http://rukayen.cl/article/detail/area_de_juegos/734" class="">Área de Juegos </a></li>
+                                <li><a href="http://rukayen.cl/products" class="">Compra online</a></li>
+                                
+                                
+                                <!-- <li>
+                                    <a href="#"  class="reservebtn backgreen whiteclr" data-toggle="modal" data-target="#myModal1">
+                                        Paga tu reserva
+                                        <i class="fa fa-arrow-circle-right"></i>
+                                    </a>
+                                </li> -->
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- PONER EL HIDDEN AL TERMINAR -->
+<div id="alert_hour" class="purpl_div hidden">
+    <div class="back_div">
+    </div>
+    <div class="row cont_div">
+        <div class="col-md-8 col-sm-6 col-xs-12 pad-movil">
+            <div class="col-md-2 col-xs-12 col-sm-3" style="padding-top:5px;"><img src="{{ site_base }}/static/img/notofication_2.png"></div>
+            <div class="col-md-10 col-xs-12 col-sm-9">
+                <p>
+                    Cumpleaños exclusivo CERRADO <span class="name-day"></span> en los siguientes horarios: <span class="times" ></span>
+                    <!-- de <span class="hour-start"></span> a <span class="hour-end"></span> Hrs. -->
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 col-sm-6 col-xs-12">
+            <span class="close_btn right"><img src="{{ site_base }}/static/img/X.png"></span>
+        </div>
+
+        </div>
+    </div>
+    <div class="txt_wrapper">
+        <div class="container">
+            <div class="row home-title">
+                <!-- <h2>Juegos, Cumpleaños y Café</h2> -->
+                {% if is_admin %}
+                <h2><span class="editabletext" text-id="{{ site.name + '_texto1' }}" >{{ read_text(site.name + '_texto1') }}</span></h2>
+                {% else %}
+                <h2> {{ read_text(site.name + '_texto1') }} </h2>
+                {% end %}
+                <!-- <p>Todo para ti y tu hijo</p> -->
+                {% if is_admin %}
+                <p><span class="editabletext" text-id="{{ site.name + '_texto2' }}" >{{ read_text(site.name + '_texto2') }}</span></p>
+                {% else %}
+                <p> {{ read_text(site.name + '_texto2') }} </p>
+                {% end %}
+                <div class="clearfix"></div>
+                <div class="search_wrapper row" >
+                    <!-- <input type="text" class="search_txt col-md-9" placeholder="Buscar servicios, dirección o lo que necesites aquí" >
+                    <button class="col-md-3" >Buscar</button>
+                    <div class="clearfix"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- div class="next_down">
+    <img src="{{ site_base }}/static/img/dwn.png">
+</div> -->
+<div class="cart_wrap">
+    <!--img src="{{ site_base }}/static/img/cart.png"-->
+    <div class="background"></div>
+    <span class="cart"></span>
+
+</div>
+
+</div>

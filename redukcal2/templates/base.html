@@ -1,0 +1,498 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- head bt inicio -->
+    <title>Redukcal - ¿Ya sabes cuantos kilos quieres perder? </title>
+    <base href="{{ site_base }}/">
+    <meta charset="utf-8">
+    <meta name="description" content="¿Ya sabes cuantos kilos quieres perder?">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="og:title" content="Redukcal" />
+    <meta name="og:image" content="http://redukcal.cl/static/img/logo.png" />
+    <meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/metodo_rdk.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/productos.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/blog.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/planes.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/formularios.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/checkout2.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Q.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Q+.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/U.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/U+.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/P.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/P+.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/L.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/L+.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/L_L.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/other.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/font/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css" />
+    <link rel="stylesheet" href="{{ site_base }}/static/font/fonts/pe-icon-7-stroke/css/helper.css"/>
+    <link rel="stylesheet" href="{{ site_base }}/static/css/simple-sidebar.css">
+    <link rel="shortcut icon" href="{{ site_base }}/static/imgbt/ico/favicon-32x32.png" sizes="32x32" type="{{ site_base }}/static/imagebt/ico" />
+    <link rel="apple-touch-icon-precomposed" href="imgbt/ico/apple-icon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_base }}/static/imgbt/ico/apple-icon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site_base }}/static/imgbt/ico/apple-icon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site_base }}/static/imgbt/ico/apple-icon-152x152.png" type="image/png" />
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <!-- aqui se ponen los demas css -de las paginas -->
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <!-- autocomplete
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-autocomplete -->
+    <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.css">
+    <!-- <link rel="stylesheet" href="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.css?v=2.1.5"> -->
+    <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css"/> -->
+    {% block css %}{% end %} 
+
+</head>
+<body>
+
+    {% include 'product/product_box.html' %} 
+    {% include 'product/product_home.html' %} 
+        {% if is_admin %}
+        {% set editabletext = 'editabletext' %}
+        {% else %}
+        {% set editabletext = '' %} 
+    {% end %}
+
+    {% block header %}{% end %} {% block body %}{% end %}
+    <!-- Modal -->
+    <div align="center">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <!-- <h4 class="modal-title ">Resumen de tu compra</h4> -->
+                    </div>
+                    <div class="modal-body mlb-btn">
+                        <div class="container-fluid cart-list" ng-controller="">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                          <!--   <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th class="text-center">Cant</th>
+                                            <th class="text-right"></th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="shopping-cart">
+                                    </tbody>
+                                </table>
+                                <div class="checkout-form"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- gif loading editableimage -->
+    <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+    <script type="text/javascript">
+    var site_base = "{{site_base}}";
+    </script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+    <script type="text/javascript" src="{{ site_base }}/static/js/redukcal2.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/plans.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/form-contact.js"></script>
+    <!-- <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script> -->
+    <!--         <script src="/path/to/parallax.js"></script> -->
+    <!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+
+    <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <!-- <script src="/node_modules/readmore-js/readmore.min.js"></script> -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+    <!-- {%!  end %} -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+    <!-- carga de productos -->
+    <!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
+    <!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
+    <!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script> -->
+<!--     // <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script> -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
+
+    <!--         <div type="template" id="product_loading" style="display:none;" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        $(".fancybox").fancybox({
+            'width': 800,
+            'height': 630,
+            'autoSize': false,
+            'autoScale': false,
+            'padding': 0,
+            'helpers': {
+                overlay: {
+                    locked: false
+                }
+            }
+        });
+    });
+    </script>
+    <!--         <script type="text/x-template" id="shopping-cart-total" >
+</script> -->
+    <!-- este es el script para unidades -->
+    <script type="text/x-template" id="shopping-cart-units-total" >
+        <span> {{! upp_total }}</span>
+    </script>
+    <script type="text/x-template" id="shopping-cart-product">
+      
+        <tr>
+            <td>
+             <img src="{{! images[0][2] }}" alt="" class="img-cart">
+            </td>
+            
+            <td>
+            <div class="ellipsis multiline vert-align text-left nam-car">{{! name }}</div>
+            <div class="vert-align up-car">{{! upp }}</div>
+            <div class="vert-align sob">Sobres</div>
+            <div class="vert-align money mon-car">{{! price }}</div>
+            <div class="equis">x</div>
+            <div class="vert-align number-car">
+                <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+                {{! quantity }}
+                <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+                <i class="fa fa-trash two remove-from-cart" product-id="{{! id }}" aria-hidden="true"></i>
+            </td>
+                     
+        </tr>
+    </script>
+    <script type="text/x-template" id="shopping-cart-total">
+     <thead>
+        <tr>
+           <!--  <th colspan="3" class="text-center">Resumen Pedido</th> -->
+
+        </tr>
+        </thead>
+        <tr>
+            <td class="to">TOTAL:</td>
+            <td id="total" class="text-center money cen">{{! total }}</td>
+            <td></td>
+        </tr>
+
+    </script>
+    <script type="text/x-template" id="shopping-cart-checkout-form">
+        <div class=""> 
+            <a href="{{site_base}}/productos">
+               <button type="submit" class="btn" style="
+                background-color: rgba(69, 139, 34, 0.68); color:white; width:100%;border-radius: 8px;   margin-bottom: 6px;">Seguir Comprando
+               </button>
+           </a>
+         
+        </div>
+        <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+            <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+            <div class="form-group mod text-center">
+
+                <button type="submit" class="btn fin" style="
+                background-color:rgba(69, 139, 34, 0.68); color:white; width:100%; border-radius: 8px;">Finalizar compra</button>
+           </div>
+        </form>
+    <div class="row">
+      <div class="col-sm-12 text-center show-more" >
+          <!-- <a href="{{ site_base }}/checkout" class="btn btn-right" style="float: right; width:48%;">Checkout</a> -->
+          <div class="checkout-form"></div>
+
+              <p class="checkbox fsize8">
+                  <label><input class="term_cond" type="checkbox" name="terminos" style="display:block;">Acepto cumplir con las condiciones para realizar el Método RDK ®. <button class="ver-l"> Ver </button></label>
+              </p>
+      </div>
+  </div>
+    </script>
+    <!-- termino carrito de compra -->
+    {% block javascript %}{% end %}
+
+    <script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+                var fono = $("#itFono").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if(fono == ""){
+                    $("#itFono").parents(".form-group").addClass("has-error");
+                    $(".help-fono").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itFono").parents(".form-group").removeClass("has-error");
+                    $(".help-fono").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+    </script>
+
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '348231912006000',
+            xfbml: true,
+            version: 'v2.1'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {% if is_admin %}
+    <script type="text/javascript">
+    var site_name = "{{site.name}}";
+    </script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js"></script>
+    {% end %}
+    <script type="text/javascript" src "https://clouddelivery.textbox.io/1/getEditor?apiKey=1wugguwjiatkm69xmt7w1den1mpvqkxi75mwfmb49lz89o4r">
+    </script>
+    <script>
+    /*            $(document).ajaxComplete(function()
+                {
+                    var hash = window.location.hash;
+                    // window.location.href= hash;
+                    
+                    if (hash !== "") 
+                    {
+                        $('html,body').animate({
+                            scrollTop: $(hash).offset().top
+                        });
+                    }
+                });
+                */
+    </script>
+    <script type="text/javascript">
+    /* detect touch */
+    if ("ontouchstart" in window) {
+        document.documentElement.className = document.documentElement.className + " touch";
+    }
+    if (!$("html").hasClass("touch")) {
+        /* background fix */
+        $(".parallax").css("background-attachment", "fixed");
+    }
+
+    /* fix vertical when not overflow
+    call fullscreenFix() if .fullscreen content changes */
+    function fullscreenFix() {
+        var h = $('body').height();
+        // set .fullscreen height
+        $(".content-b").each(function(i) {
+            if ($(this).innerHeight() > h) {
+                $(this).closest(".fullscreen").addClass("overflow");
+            }
+        });
+    }
+    $(window).resize(fullscreenFix);
+    fullscreenFix();
+
+    /* resize background images */
+    function backgroundResize() {
+        var windowH = 642; //***********
+        $(".background").each(function(i) {
+            var path = $(this);
+            // variables
+            var contW = path.width();
+            var contH = path.height();
+            var imgW = path.attr("data-img-width");
+            var imgH = path.attr("data-img-height");
+            var ratio = imgW / imgH;
+            // overflowing difference
+            var diff = parseFloat(path.attr("data-diff"));
+            diff = diff ? diff : 0;
+            // remaining height to have fullscreen image only on parallax
+            var remainingH = 0;
+            if (path.hasClass("parallax") && !$("html").hasClass("touch")) {
+                var maxH = contH > windowH ? contH : windowH;
+                remainingH = windowH - contH;
+            }
+            // set img values depending on cont
+            imgH = contH + remainingH + diff;
+            imgW = imgH * ratio;
+            // fix when too large
+            if (contW > imgW) {
+                imgW = contW;
+                imgH = imgW / ratio;
+            }
+            //
+            path.data("resized-imgW", imgW);
+            path.data("resized-imgH", imgH);
+            // path.css("background-size", imgW + "px " + imgH + "px");
+        });
+    }
+    $(window).resize(backgroundResize);
+    $(window).focus(backgroundResize);
+    backgroundResize();
+
+    /* set parallax background-position */
+    function parallaxPosition(e) {
+        var heightWindow = 642;
+        var topWindow = $(window).scrollTop();
+        var bottomWindow = topWindow + heightWindow;
+        var currentWindow = (topWindow + bottomWindow) / 2;
+        $(".parallax").each(function(i) {
+            var path = $(this);
+            var height = path.height();
+            var top = path.offset().top;
+            var bottom = top + height;
+            // only when in range
+            if (bottomWindow > top && topWindow < bottom) {
+                var imgW = path.data("resized-imgW");
+                var imgH = path.data("resized-imgH");
+                // min when image touch top of window
+                var min = 0;
+                // max when image touch bottom of window
+                var max = -imgH + heightWindow;
+                // overflow changes parallax
+                var overflowH = height < heightWindow ? imgH - height : imgH - heightWindow; // fix height on overflow
+                top = top - overflowH;
+                bottom = bottom + overflowH;
+                // value with linear interpolation
+                var value = min + (max - min) * (currentWindow - top) / (bottom - top);
+                // set background-position
+                var orizontalPosition = path.attr("data-oriz-pos");
+                orizontalPosition = orizontalPosition ? orizontalPosition : "50%";
+                // $(this).css("background-position", orizontalPosition + " " + value + "px");
+            }
+        });
+    }
+    if (!$("html").hasClass("touch")) {
+        $(window).resize(parallaxPosition);
+        //$(window).focus(parallaxPosition);
+        $(window).scroll(parallaxPosition);
+        parallaxPosition();
+    }
+    </script>
+
+
+
+<script> 
+function revisar() { 
+if(formulario.nombre == "") { alert('Debes poner el nombre') ; return false ; } 
+if(formulario.pais == "") { alert('Debes poner el país') ; return false ; } 
+if(formulario.email == "") { alert('Debes poner el email') ; return false ; } 
+} 
+</script> 
+
+<script type="text/javascript">
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', '{{ get_config("analytics") }}', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+
+</body>
+
+</html>

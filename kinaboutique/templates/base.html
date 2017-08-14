@@ -1,0 +1,242 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- head bt inicio -->
+        <title>Kina boutique - {% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="description">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+        <link href="{{site_base}}/static/bootstrap/css/bootstrap.css" rel="stylesheet">
+ 
+        <link id="pagestyle" rel="stylesheet" type="text/css" href="{{site_base}}/static/css/skin-1.css">
+        
+        <link rel="stylesheet" href="{{site_base}}/static/css/smoothproducts.css">
+        <link href="{{site_base}}/static/plugins/rating/bootstrap-rating.css" rel="stylesheet">
+         
+        <link href="{{site_base}}/static/plugins/swiper-master/css/swiper.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{site_base}}/static/css/smoothproducts.css">
+        <link href="{{site_base}}/static/plugins/rating/bootstrap-rating.css" rel="stylesheet">
+         
+        <link href="{{site_base}}/static/css/style.css" rel="stylesheet">
+        <link href="{{site_base}}/static/css/home-v7.css" rel="stylesheet">
+        <link href="{{site_base}}/static/css/cart-nav.css" rel="stylesheet">
+        <link href="{{site_base}}/static/css/owl.carousel.css" rel="stylesheet">
+        
+        
+
+        {% block css %}{% end %}
+
+
+    </head>
+
+        {% block header %}{% end %}
+
+        {% block body %}
+        <body id="home">
+        {% end %}
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script type="text/javascript" src="{{site_base}}/static/js/jquery/jquery-1.10.1.min.js"></script>
+
+         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        <script src="{{site_base}}/static/bootstrap/js/bootstrap.min.js"></script>
+        <script src="{{site_base}}/static/plugins/swiper-master/js/swiper.jquery.min.js"></script>
+       
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        <script>
+
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: '.swiper-pagination',
+                nextButton: '.arrow-right',
+                prevButton: '.arrow-left',
+                // effect: 'cube',
+                keyboardControl: true,
+                parallax: true,
+                speed: 600,
+                spaceBetween: 0
+            });
+
+
+        </script>
+         
+        <script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script> 
+        
+        <script src="{{site_base}}/static/js/jquery.cycle2.min.js"></script>
+         
+        <script src="{{site_base}}/static/js/jquery.easing.1.3.js"></script>
+         
+        <script type="text/javascript" src="{{site_base}}/static/js/jquery.parallax-1.1.js"></script>
+         
+        <script type="text/javascript" src="{{site_base}}/static/js/helper-plugins/jquery.mousewheel.min.js"></script>
+         
+        <script type="text/javascript" src="{{site_base}}/static/js/jquery.mCustomScrollbar.js"></script>
+         
+        <script type="text/javascript" src="{{site_base}}/static/plugins/icheck-1.x/icheck.min.js"></script>
+         
+        <script src="{{site_base}}/static/js/grids.js"></script>
+         
+        <script src="{{site_base}}/static/js/owl.carousel.min.js"></script>
+         
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+
+        <script type="text/javascript" src="{{site_base}}/static/js/smoothproducts.min.js"></script>
+         
+        <script src="{{site_base}}/static/js/bootstrap.touchspin.js"></script>
+         
+        <script src="{{site_base}}/static/js/home.js"></script>
+         
+        <script src="{{site_base}}/static/js/script.js"></script>
+        <script src="{{site_base}}/static/js/sidebar-nav.js"></script>
+         
+        <script src="{{site_base}}/static/js/jquery.scrollme.min.js"></script>
+
+        <script type="template" id="shopping-cart-product">
+                <tr class="miniCartProduct">
+                    <td class="miniCartProductThumb" style="20%">
+                        <div> <img alt="img" src="{{! images[0][2]}}" class="image">
+                        </div>
+                    </td>
+                    <td style="40%">
+                        <div class="miniCartDescription">
+                            <h4><a href="product-details.html"> {{! name }} </a></h4>
+                            <span class="size"> {{! bullet_1}} </span>
+                            <div class=" price"><span class="money">{{! price }}</span></div>
+                        </div>
+                    </td>
+                    <td class="delete" style="20%">
+                        <!-- <button type="button" class="close"><span aria-hidden="true">x</span></button> -->
+                        <button class="remove-from-cart" product-id="{{ id }}"><span aria-hidden="true">x</span></button>
+                    </td>
+                </tr>
+        </script>
+
+
+        <script type="text/x-template" id="shopping-cart-total" >
+        <h3 class="text-right subtotal"> Subtotal: <span id="total" class="text-right money">{{! total }}</span> </h3>
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span> {{! upp_total }}</span>
+        </script>
+
+        <!-- template de checkout -->
+        <script type="text/x-template" id="shopping-cart-checkout-form" >
+        <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+            <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+ 
+                    <div class="col-sm-6 ">
+                        <a class="btn btn-danger  btn-block">
+                            <i class="fa fa-shopping-cart"> </i> VIEW CART </a>
+                    </div>
+                    <div class="col-sm-6 form-group">
+                        <button type="submit" class="btn  btn-primary btn-block ">
+                            CHECKOUT </button>
+                    </div>
+
+
+        </form>
+        </script>
+
+        <script type="text/javascript">
+
+
+            $(function () {
+                var target = $("div.has-overly-shade"),
+                        targetHeight = target.outerHeight();
+                $(document).scroll(function () {
+                    var scrollPercent = (targetHeight - window.scrollY) / targetHeight;
+                    scrollPercent >= 0 && (target.css("background-color", "rgba(0,0,0," + (1.1 - scrollPercent) + ")"))
+                })
+            });
+
+
+            $(function () {
+                if (navigator.userAgent.match(/(iPod|iPhone|iPad|Android)/)) {
+                    $('#ios-notice').removeClass('hidden');
+                    $('.parallax-container').height($(window).height() * 0.5 | 0);
+                } else {
+                    $(window).resize(function () {
+                        var parallaxHeight = Math.max($(window).height() * 0.7, 200) | 0;
+                        $('.parallax-container').height(parallaxHeight);
+                    }).trigger('resize');
+                }
+            });
+
+
+            $(document).ready(function () {
+                var isMobile = function () {
+                    //console.log("Navigator: " + navigator.userAgent);
+                    return /(iphone|ipod|ipad|android|blackberry|windows ce|palm|symbian)/i.test(navigator.userAgent);
+                };
+
+                if (isMobile()) {
+                    // For  mobile , ipad, tab
+                    $('.animateme').removeClass('animateme');
+                    $('.if-is-mobile').addClass('ismobile');
+
+                } else {
+                }
+
+
+            }); // end
+
+
+        </script>
+
+        {% block javascript %}{% end %}
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '348231912006000',
+                xfbml: true,
+                version: 'v2.1'
+            });
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+        var site_name="{{site.name}}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+        {% end %}
+    </body>
+</html>

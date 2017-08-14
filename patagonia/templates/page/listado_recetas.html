@@ -1,0 +1,92 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(13,13,13);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'products_per_page' : 9,
+            // 'maxProducts' : 3,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+             'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.product-list').ecommerce( config);
+      });
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section style="height: 510px;position: relative;width: 100%;">
+<div>
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_recipe">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_recipe" name="image" id="img_recipe" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_recipe" src="{{ read_image(site.name + '_recipe', 1) }}" onload="this.src='{{ read_image(site.name + '_recipe',500) }}'" class="decolor img_recetas" alt="item">
+        <div class="box" >
+            <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_recipe' }}"> {{ read_text(site.name +  '_text_recipe') }}
+            </h1>
+        </div>
+</div> 
+</section>
+
+<section style="height: 20px;">
+    
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            {{ getArticleList(tag="recetas", html="content/receta.html") }}
+        </div>
+    </div>
+
+</section>
+
+<section style="height: 220px;">
+    <div class="col-md-12 col-sm-12 box" >
+        <h1 class=" text-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_recipe2' }}"> {{ read_text(site.name +  '_text_recipe2') }}
+        </h1>
+    </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}    
+{% end %}

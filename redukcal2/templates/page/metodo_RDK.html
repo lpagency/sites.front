@@ -1,0 +1,594 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.metodos').addClass("active");
+
+  });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() 
+{
+   $('.carousel').carousel({
+  interval: 1000 * 10
+});
+
+  });
+</script>
+
+<script type="text/javascript">
+
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    $('#datepicker').datepicker({
+      inline:true
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- ********Contenido******* -->
+  <section id="first-page-scroll"> 
+     <div class="mobile-ho" style="background:url('{{ read_image(site.name + '_banner_metodo') }}'); height:450px; background-size:cover; filter: grayscale(0%) brightness(65%); margin-top: -20px;
+    -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+  " data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+          <div class="image-upload part1 lapiz visible-movil">
+              <label for="img_banner_metodo">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_metodo" name="image" id="img_banner_metodo" >
+          </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_metodo" src="{{ read_image(site.name + '_banner_metodo', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_metodo',500) }}'" class="banner_metodo hidden" alt="item">      
+       </div>
+       <div class="container">
+        <div class="col-md-6">
+         <div class="cuadro-text">
+           <div class="texto-cuadro {{editabletext}}" text-id="{{ site.name + '_til_met' }}"> {{ read_text(site.name +  '_til_met') }}</div>
+           <hr class="r-ban">
+           <div class="texto-bajo {{editabletext}}" text-id="{{ site.name + '_til_met_dos' }}"> {{ read_text(site.name +  '_til_met_dos') }}</div>
+         </div>
+       </div>
+     </div> 
+
+      
+</section>
+
+<section class="metodo">
+  <div class="container">
+      <div align="center">
+            <div class="col-md-6 col-sm-6">
+               <div id="metodo" class="box-metodo" >
+                 {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_box">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_box" name="image" id="img_icono_box" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_box" src="{{ read_image(site.name + '_icono_box', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_box',500) }}'" class="icono-box" alt="item" />
+
+              <!--   <img class="icono-box" src="https://84static.loadingplay.com/static/images/f530d15ee219ec5d6a9385217839d0d6_gearsYellow.png"> -->
+                 <div class="text-box-met {{editabletext}}" text-id="{{ site.name + '_tip_met' }}"> {{ read_text(site.name +  '_tip_met') }}</div> 
+                 <hr class="dos">
+                  <div class="inf-met {{editabletext}}" text-id="{{ site.name + '_tip_met_2' }}"> {{ read_text(site.name +  '_tip_met_2') }}</div> 
+               </div>
+            </div>
+         <div class="col-md-6 col-sm-6">
+               <div class="box-metodo bo-on">
+                 <div class="text-box-met-2 {{editabletext}}" text-id="{{ site.name + '_tip_met_3' }}"> {{ read_text(site.name +  '_tip_met_3') }}</div> 
+                 <hr>
+
+                <div class="circles-1">  </div> 
+                  <div class="text-cir-1 {{editabletext}}" text-id="{{ site.name + '_lis_1' }}"> {{ read_text(site.name +  '_lis_1') }}</div>
+
+
+                 <div class="circles-2"> </div> 
+                     <div class="text-cir-2 {{editabletext}}" text-id="{{ site.name + '_lis_2' }}"> {{ read_text(site.name +  '_lis_2') }}</div>
+                 
+
+                 <div class="circles-3"> </div> 
+                 <div class="text-cir-3 {{editabletext}}" text-id="{{ site.name + '_lis_3' }}"> {{ read_text(site.name +  '_lis_3') }}</div>
+
+
+                 <div class="circles-4"> </div> 
+                 <div class="text-cir-4 {{editabletext}}" text-id="{{ site.name + '_lis_4' }}"> {{ read_text(site.name +  '_lis_4') }}</div>
+                 
+
+                 <div class="circles-5"> </div>
+                 <div class="text-cir-5 {{editabletext}}" text-id="{{ site.name + '_lis_5' }}"> {{ read_text(site.name +  '_lis_5') }}</div> 
+                 
+                 <div class="circles-6"> </div> 
+                 <div class="text-cir-6 {{editabletext}}" text-id="{{ site.name + '_lis_6' }}"> {{ read_text(site.name +  '_lis_6') }}</div>
+                 
+
+                 <div class="circles-7"> </div>
+                 <div class="text-cir-7 {{editabletext}}" text-id="{{ site.name + '_lis_7' }}"> {{ read_text(site.name +  '_lis_7') }}</div> 
+                 
+
+                 <div class="circles-8"> </div> 
+                 <div class="text-cir-8 {{editabletext}}" text-id="{{ site.name + '_lis_8' }}"> {{ read_text(site.name +  '_lis_8') }}</div>
+                 
+
+                 <div class="circles-9">  </div> 
+                 <div class="text-cir-9 {{editabletext}}" text-id="{{ site.name + '_lis_9' }}"> {{ read_text(site.name +  '_lis_9') }}</div>
+                 
+
+                 <div class="circles-10"> </div> 
+                <div class="text-cir-10 {{editabletext}}" text-id="{{ site.name + '_lis_10' }}"> {{ read_text(site.name +  '_lis_10') }}</div>
+
+               </div> 
+            </div>
+   </div>
+     
+   <div align="center">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="cuadro-grande">
+            <div  class="titulo-metodo text-center {{editabletext}}" text-id="{{ site.name + '_lis_11' }}"> {{ read_text(site.name +  '_lis_11') }} </div>
+            <hr class="met">
+            
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                     {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                  <label for="img_icono_met_1">
+                      <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                  </label>
+                  <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_1" name="image" id="img_icono_met_1" >
+              </div>
+              {% end %}
+              <img id="{{ site.name }}_icono_met_1" src="{{ read_image(site.name + '_icono_met_1', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_1',500) }}'" class="img-circles-met" alt="item" />
+
+                      <!-- <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                      <hr class="iconos-hr">
+                      <div class="letter {{editabletext}}" text-id="{{ site.name + '_lis_12' }}"> {{ read_text(site.name +  '_lis_12') }}</div>
+                      <div class="com {{editabletext}}" text-id="{{ site.name + '_lis_12_2' }}"> {{ read_text(site.name +  '_lis_12_2') }}</div>
+                </div> 
+          
+          <div class="col-md-2 col-sm-2 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_2">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_2" name="image" id="img_icono_met_2" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_2" src="{{ read_image(site.name + '_icono_met_2', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_2',500) }}'" class="img-circles-met" alt="item" />
+                    <!-- <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr">
+                     <div class="letter {{editabletext}}" text-id="{{ site.name + '_lis_13' }}"> {{ read_text(site.name +  '_lis_13') }}</div>
+                      <div class="com {{editabletext}}" text-id="{{ site.name + '_lis_13_2' }}"> {{ read_text(site.name +  '_lis_13_2') }}</div>
+            </div> 
+            
+
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_3">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_3" name="image" id="img_icono_met_3" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_3" src="{{ read_image(site.name + '_icono_met_3', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_3',500) }}'" class="img-circles-met" alt="item" />
+         <!--            <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr">
+                     <div class="letter {{editabletext}}" text-id="{{ site.name + '_lis_14' }}"> {{ read_text(site.name +  '_lis_14') }}</div>
+                      <div class="com {{editabletext}}" text-id="{{ site.name + '_lis_14_2' }}"> {{ read_text(site.name +  '_lis_14_2') }}</div>
+            </div> 
+            
+
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_4">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_4" name="image" id="img_icono_met_4" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_4" src="{{ read_image(site.name + '_icono_met_4', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_4',500) }}'" class="img-circles-met" alt="item" />
+                   <!--  <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr">
+                    <div class="letter {{editabletext}}" text-id="{{ site.name + '_lis_15' }}"> {{ read_text(site.name +  '_lis_15') }} </div>
+                     <div class="com {{editabletext}}" text-id="{{ site.name + '_lis_15_2' }}"> {{ read_text(site.name +  '_lis_15_2') }}</div>
+            </div> 
+            
+
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_5">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_5" name="image" id="img_icono_met_5" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_5" src="{{ read_image(site.name + '_icono_met_5', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_5',500) }}'" class="img-circles-met" alt="item" />
+                   <!--  <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr">
+                     <div class="letter {{editabletext}}" text-id="{{ site.name + '_lis_16' }}"> {{ read_text(site.name +  '_lis_16') }} </div>
+                      <div class="com {{editabletext}}" text-id="{{ site.name + '_lis_16_2' }}"> {{ read_text(site.name +  '_lis_16_2') }}</div>
+              </div> 
+        
+        </div>
+   </div>
+
+</div>
+
+<!-- **segundo cuadro grande** -->
+
+ <div align="center">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <div id="grande" class="cuadro-grande">
+            <div class="titulo-metodo-2 text-center {{editabletext}}" text-id="{{ site.name + '_lis_titulo_or' }}"> {{ read_text(site.name +  '_lis_titulo_or') }} </div>
+            <hr class="met">
+            
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                     {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                  <label for="img_icono_met_or_1">
+                      <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                  </label>
+                  <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_or_1" name="image" id="img_icono_met_or_1" >
+              </div>
+              {% end %}
+              <img id="{{ site.name }}_icono_met_or_1" src="{{ read_image(site.name + '_icono_met_or_1', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_or_1',500) }}'" class="img-circles-met-or" alt="item" />
+
+                      <!-- <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                      <hr class="iconos-hr-or">
+                      <div class="letter-or {{editabletext}}" text-id="{{ site.name + '_lis_or' }}"> {{ read_text(site.name +  '_lis_or') }}</div>
+                      <div class="com-or {{editabletext}}" text-id="{{ site.name + '_lis_li' }}"> {{ read_text(site.name +  '_lis_li') }}</div>
+                      <div class="wi {{editabletext}}" text-id="{{ site.name + '_lis_we' }}"> {{ read_text(site.name +  '_lis_we') }}</div>
+                </div> 
+          
+          <div class="col-md-3 col-sm-3 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_or_2">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_or_2" name="image" id="img_icono_met_or_2" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_or_2" src="{{ read_image(site.name + '_icono_met_or_2', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_or_2',500) }}'" class="img-circles-met-or" alt="item" />
+                    <!-- <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr-or">
+                     <div class="letter-or {{editabletext}}" text-id="{{ site.name + '_lis_or_1' }}"> {{ read_text(site.name +  '_lis_or_1') }}</div>
+                      <div class="com-or {{editabletext}}" text-id="{{ site.name + '_lis_lii' }}"> {{ read_text(site.name +  '_lis_lii') }}</div>
+                       <div class="wi {{editabletext}}" text-id="{{ site.name + '_lis_woo' }}"> {{ read_text(site.name +  '_lis_woo') }}</div>
+            </div> 
+            
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_or_3">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_or_3" name="image" id="img_icono_met_or_3" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_or_3" src="{{ read_image(site.name + '_icono_met_or_3', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_or_3',500) }}'" class="img-circles-met-or" alt="item" />
+         <!--            <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr-or">
+                     <div class="letter-or {{editabletext}}" text-id="{{ site.name + '_lis_or_2' }}"> {{ read_text(site.name +  '_lis_or_2') }}</div>
+                      <div class="com-or {{editabletext}}" text-id="{{ site.name + '_lis_la' }}"> {{ read_text(site.name +  '_lis_la') }}</div>
+                       <div class="wi {{editabletext}}" text-id="{{ site.name + '_lis_wii' }}"> {{ read_text(site.name +  '_lis_wii') }}</div>
+            </div> 
+            
+
+            <div class="col-md-3 col-sm-3 col-xs-6">
+                            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_icono_met_or_4">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_icono_met_or_4" name="image" id="img_icono_met_or_4" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_icono_met_or_4" src="{{ read_image(site.name + '_icono_met_or_4', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_met_or_4',500) }}'" class="img-circles-met-or" alt="item" />
+                   <!--  <img class="img-circles-met" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                    <hr class="iconos-hr-or">
+                    <div class="letter-or {{editabletext}}" text-id="{{ site.name + '_lis_or_3' }}"> {{ read_text(site.name +  '_lis_or_3') }} </div>
+                     <div class="com-or {{editabletext}}" text-id="{{ site.name + '_lis_lu' }}"> {{ read_text(site.name +  '_lis_lu') }}</div>
+                      <div class="wi {{editabletext}}" text-id="{{ site.name + '_lis_wee' }}"> {{ read_text(site.name +  '_lis_wee') }}</div>
+            </div> 
+        
+        </div>
+   </div>
+
+</div>
+</div>
+</section>
+
+
+<!-- *****************slider metodo********** -->
+
+<section id="beneficios">
+<div id="myCarousel" class="carousel met slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active" > </li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner carou-metodo" role="listbox">
+      <div class="item mov-ban active" style="background:url('{{ read_image(site.name + '_img_slider_1',500) }}'); height: 460px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center;" data-img-width="1600" data-img-height="890" data-diff="100">
+          {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_slider_1">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_1" name="image" id="img_slider_1" >
+           </div>
+           {% end %}
+            <div align="center">
+                  <div class="note-test {{editabletext}}" text-id="{{ site.name + '_inf_met' }}"> {{ read_text(site.name +  '_inf_met') }} </div>
+              <div class="cuadro-col">
+                  <div class="text-slider-met  {{editabletext}}" text-id="{{ site.name + '_in_sli' }}"> {{ read_text(site.name +  '_in_sli') }} </div>
+                  <hr class="met-slider">
+
+                  <div class="text-sli-2 {{editabletext}}" text-id="{{ site.name + '_in_sli_2' }}"> {{ read_text(site.name +  '_in_sli_2') }} </div>
+              </div>    
+             </div>  
+
+      </div>
+
+      <div class="item mov-ban" style="background:url('{{ read_image(site.name + '_img_slider_2',500) }}'); height:460px; width:100%;  background-repeat:no-repeat; background-size:cover; background-position:center;" data-img-width="1600" data-img-height="890" data-diff="100">
+             {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_slider_2">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_2" name="image" id="img_slider_2" >
+           </div>
+           {% end %}
+              <div align="center">
+                  <div class="note-test {{editabletext}}" text-id="{{ site.name + '_inf_met_2' }}"> {{ read_text(site.name +  '_inf_met_2') }} </div>
+               <div class="cuadro-col">
+                  <div class="text-slider-met {{editabletext}}" text-id="{{ site.name + '_in_slii' }}"> {{ read_text(site.name +  '_in_slii') }} </div>
+                  <hr class="met-slider">
+
+                  <div class="text-sli-2 {{editabletext}}" text-id="{{ site.name + '_in_sli_22' }}"> {{ read_text(site.name +  '_in_sli_22') }} </div>
+                </div>
+             </div> 
+
+
+      </div>
+
+    
+      <div class="item mov-ban" style="background:url('{{ read_image(site.name + '_img_slider_3',500) }}'); height:460px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center;" data-img-width="1600" data-img-height="890" data-diff="100">
+      
+         {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_slider_3">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_3" name="image" id="img_slider_3" >
+           </div>
+           {% end %}
+            <div align="center">
+                  <div class="note-test {{editabletext}}" text-id="{{ site.name + '_inf_met_sli' }}"> {{ read_text(site.name +  '_inf_met_sli') }} </div>
+
+                <div class="cuadro-col">
+                  <div class="text-slider-met {{editabletext}}" text-id="{{ site.name + '_in_slli' }}"> {{ read_text(site.name +  '_in_slli') }} </div>
+                  <hr class="met-slider">
+
+                  <div class="text-sli-2 {{editabletext}}" text-id="{{ site.name + '_ini_sli_2' }}"> {{ read_text(site.name +  '_ini_sli_2') }} </div>
+                </div>  
+             </div> 
+   
+      </div>
+
+      <div  class="item mov-ban" style="background:url('{{ read_image(site.name + '_img_slider_4',500) }}'); height:460px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center;" data-img-width="1600" data-img-height="890" data-diff="100">
+         {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_slider_4">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_4" name="image" id="img_slider_4" >
+           </div>
+           {% end %}
+                <div align="center">
+                  <div class="note-test {{editabletext}}" text-id="{{ site.name + '_inf_met_o' }}"> {{ read_text(site.name +  '_inf_met_o') }} </div>
+              <div class="cuadro-col">
+                  <div class="text-slider-met  {{editabletext}}" text-id="{{ site.name + '_in_2_sli' }}"> {{ read_text(site.name +  '_in_2_sli') }} </div>
+                  <hr class="met-slider">
+
+                  <div class="text-sli-2 {{editabletext}}" text-id="{{ site.name + '_in_3_sli_2' }}"> {{ read_text(site.name +  '_in_3_sli_2') }} </div>
+              </div>    
+             </div> 
+
+        </div>
+         <div  class="item mov-ban" style="background:url('{{ read_image(site.name + '_img_slider_5',500) }}'); height:460px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center;" data-img-width="1600" data-img-height="890" data-diff="100">
+         {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_slider_5">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_5" name="image" id="img_slider_5" >
+           </div>
+           {% end %}
+            <div align="center">
+                  <div class="note-test {{editabletext}}" text-id="{{ site.name + '_inf_met_w' }}"> {{ read_text(site.name +  '_inf_met_w') }} </div>
+              <div class="cuadro-col">
+                  <div class="text-slider-met {{editabletext}}" text-id="{{ site.name + '_in_sli_yu' }}"> {{ read_text(site.name +  '_in_sli_yu') }} </div>
+                  <hr class="met-slider">
+
+                  <div class="text-sli-2 {{editabletext}}" text-id="{{ site.name + '_in_sli_re' }}"> {{ read_text(site.name +  '_in_sli_re') }} </div>
+              </div>    
+             </div> 
+
+        </div>
+    </div>
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+

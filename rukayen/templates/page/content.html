@@ -1,0 +1,46 @@
+{% extends "../base.html" %}
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/jquery.js"></script>
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/bootstrap.js"></script> -->
+<script type="text/javascript" src="{{ site_base }}/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/fancybox/jquery.fancybox.js"></script>
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<div class="back-title-top">
+    <div class="title-top">
+        <h1 style="margin-top: 0;">
+        <p class="{{editabletext}} text-center" text-id="{{ site.name + '_politicas_tit' }}">{{ read_text(site.name + '_politicas_tit')}}</p>
+        </h1>
+    </div>
+</div>
+
+<div class="container text-cont">
+    <div class="space50"> </div>
+    <!-- <h1>PRONTO</h1> -->
+    <p class="{{editabletext}}" text-id="{{ site.name + '_politicas_desc' }}">{{ read_text(site.name + '_politicas_desc')}}
+    </p>
+    <div class="space100"> </div>
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}

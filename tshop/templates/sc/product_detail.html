@@ -1,0 +1,267 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+<style type="text/css">
+/*      body{
+        background: transparent;
+      }
+      ::-webkit-scrollbar { 
+    display: none; 
+
+}*/
+</style>
+{% end %}
+
+{% block javascript %}
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/tika_tag_group.js"></script> -->
+  <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+  <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script type="text/javascript">
+
+  
+  var base_url = 'https://apibodegas.loadingplay.com/',
+ checkout_url = 'https://checkout.loadingplay.com/';
+  var app_public = 7;
+
+    function isLocalHost() {
+      return document.location.href.indexOf('localhost') != -1;
+    }
+
+    function isDevelopment() {
+      return document.location.href.indexOf('ondev.today') != -1;
+    }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public= 7;
+    } 
+    else if ( isDevelopment() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public = 7;
+    }
+
+    $(document).ready(function()
+    {
+
+        var facade = $(document).ecommerce('product_detail', {
+          'app_public' : app_public,
+          'animation' : 'basic',
+          'base_url' : base_url,
+          'checkout_url': checkout_url,
+          'product_id' : {{ product_id }},
+          'onLoad' : function()
+          {
+            $(document).smooth_product();
+          }
+        });
+
+    });
+
+          $(function () {
+
+        $('.rating-tooltip-manual').rating({
+            extendSymbol: function () {
+                var title;
+                $(this).tooltip({
+                    container: 'body',
+                    placement: 'bottom',
+                    trigger: 'manual',
+                    title: function () {
+                        return title;
+                    }
+                });
+                $(this).on('rating.rateenter', function (e, rate) {
+                    title = rate;
+                    $(this).tooltip('show');
+                })
+                        .on('rating.rateleave', function () {
+                            $(this).tooltip('hide');
+                        });
+            }
+        });
+
+    });
+
+  </script>
+
+<script type="text/template" id="product_detail">
+<div class="container main-container headerOffset">
+    <div class="row">
+      
+    </div>
+    <div class="row transitionfx">
+
+     
+        <div class="col-lg-6 col-md-6 col-sm-6">
+        
+            <div class="main-image sp-wrap col-lg-12 no-padding">
+
+                <a href="{{! images[0]['thumb_500'] }}">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive">
+                </a>
+                <a href="{{! images[0]['thumb_500'] }}">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive"> 
+                </a>
+                <a href="{{! images[0]['thumb_500'] }}">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                </a>
+                <a href="{{! images[0]['thumb_500'] }}">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                </a>
+            </div>
+        </div>
+  
+        <div class="col-lg-6 col-md-6 col-sm-5 wid">
+            <h1 class="product-title">{{! name }}</h2>
+
+
+                <div class="product-price"><span class="price">{{! main_price}} </span>
+                </div>
+                <div class="description">{{! description }}
+                    <p></p>
+                </div>
+              
+        <!--select-->
+             
+
+                <div class="cart-actions">
+                    <div class="addto row">
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <button onclick="productAddToCartForm.submit(this);"
+                                    class="button btn-block btn-cart cart first btn add-to-cart" title="Add to Cart" type="button" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" >Agregar al carro
+                            </button>
+                        </div>
+                       
+                    </div>
+                    <div style="clear:both"></div>
+                    <h3 class="incaps"><i class="fa fa fa-check-circle-o color-in"></i> En stock</h3>
+
+                    <h3 style="display:none" class="incaps"><i class="fa fa-minus-circle color-out"></i> Out of stock
+                    </h3>
+
+                    <h3 class="incaps"><i class="glyphicon glyphicon-lock"></i>Compra blindada</h3>
+                </div>
+             
+
+                <div class="clear"></div>
+                <div class="product-tab w100 clearfix">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#details" data-toggle="tab">Details</a></li>
+                        <li><a href="#size" data-toggle="tab">Size</a></li>
+                        <li><a href="#shipping" data-toggle="tab">Shipping</a></li>
+                    </ul>
+
+              
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="details"> {{! bullet_1}}
+                          
+                        </div>
+                        <div class="tab-pane" id="size"> {{! bullet_2}}<br>
+                          
+                        </div>
+                        <div class="tab-pane" id="shipping">
+                            {{! bullet_3}}
+                        </div>
+                    </div>
+        
+
+                </div>
+             
+
+                <div style="clear:both"></div>
+                <div class="product-share clearfix">
+                    <p> SHARE </p>
+
+                    <div class="socialIcon"><a href="#"> <i class="fa fa-facebook"></i></a> <a href="#"> <i
+                            class="fa fa-twitter"></i></a> <a href="#"> <i class="fa fa-google-plus"></i></a> <a
+                            href="#">
+                        <i class="fa fa-pinterest"></i></a></div>
+                </div>
+            
+
+        </div>
+     
+
+    </div>
+   
+
+   
+
+
+
+
+
+</script>
+
+{% end %}
+
+{% block body %}
+
+is_admin
+{{ current_user }}
+
+{% if is_admin %}
+
+
+   <div class="image-upload lapiz visible-movil">
+       <label for="img_banner_detalle-prod">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+       </label>
+       <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle-prod" name="image" id="img_banner_detalle-prod" >
+   </div>
+   {% end %}
+<div style="position:relative">
+   <img id="{{ site.name }}_banner_detalle-prod" src="{{ read_image(site.name + '_banner_detalle-prod', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle-prod',500) }}'" class="fondo-banner" alt="item" style="position:relative;">
+</div>
+<div class="container space50"  style="margin-left:0px;">
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+
+
+
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-offset-1 col-md-10 col-md-offset-1 tikas-recetas">
+    
+      <!-- <div class="row">
+        <div class="col-sm-12">
+
+          {% if is_admin %}
+          <h1 class="text-detal"  style="text-align:left;"><span class="editabletext" text-id="{{ site.name + '_texto-detalle-prod' }}" >{{ read_text(site.name + '_texto-detalle-prod') }}</span></h1>
+          {% else %}
+          <h1 class="text-detal" style="text-align:left;"> {{ read_text(site.name + '_texto-detalle-prod') }} </h1>
+          {% end %}
+        </div>
+      </div>
+      -->
+    </div>
+  </div>
+</div>
+
+<div class="space70 clearfix"></div>
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,128 @@
+/*
+.patagonia-menu {
+    z-index: 1000;
+    position: absolute;
+    width: 100%;
+    background: white;
+    border-radius: 1px;
+}
+
+.logo {
+   max-width: 100%;
+    background: white;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    padding: 15px;
+    border-radius: 60%;
+}
+
+
+}
+
+
+.navbar-nav li a {
+    font-size: 16px;
+    color:rgba(169, 66, 74, 0.92);
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+    letter-spacing: 0px;
+}
+
+.nav>li>a:hover {
+    text-decoration: none;
+    background-color: rgba(0,0,0,.075);
+}
+.box-menu{
+    margin: auto;
+/*    max-width: 80%;*/
+}
+
+/**********************************
+Responsive navbar-brand image CSS
+- Remove navbar-brand padding for firefox bug workaround
+- add 100% height and width auto ... similar to how bootstrap img-responsive class works
+***********************************/
+.navbar {
+     margin-bottom: 0px!important; 
+}
+
+.text-header{
+    color: rgba(130, 82, 19, 0.63);
+    font-weight: 400;
+}
+
+.logo {
+    width: 200px;
+    background: white;
+    position: relative;
+    display: block;
+    margin: 0 auto;
+    /* padding: 15px; */
+    border-radius: 50%;
+    margin-top: 28px;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+/* EXAMPLE 9 - Center with Flexbox and Text*/
+.brand-centered {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.brand-centered .navbar-brand {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
+
+
+
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+  top: 50%;
+  display: block;
+  position: relative;
+  height: auto;
+  -webkit-transform: translate(0,-50%);
+          transform: translate(0,-50%);
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+
+
+
+
+.navbar-nav>li>.dropdown-menu {
+  z-index: 9999;
+}

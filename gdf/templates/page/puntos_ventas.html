@@ -1,0 +1,115 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="distancia-2"></div>  
+<section class="container-g">
+
+<section class="h-banner-one" style="position: relative;width: 100%;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_puntos">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_puntos" name="image" id="img_puntos">
+        </div>
+        {% end %}
+        <div>
+            <img id="{{ site.name }}_puntos" src="{{ read_image(site.name + '_puntos', 1) }}" onload="this.src='{{ read_image(site.name + '_puntos',500) }}'" class="img_banner desaturada" alt="item">
+        </div>
+</section>
+
+<div class="container-fluid home">
+    <div class="space50"> </div>
+    
+      
+    <div class="col-md-12  col-sm-12 col-xs-12">
+        <a href="" style="color:rgba(204, 108, 78, 1) !important;" class="text_puntos text-center {{editabletext}}" text-id="{{ site.name + '_text_puntos' }}"> 
+    {{ read_text(site.name +  '_text_puntos') }}</a>
+    </div>
+
+    <div class="col-md-12  col-sm-12  col-xs-12">
+       <div class="text-p {{editabletext}}" text-id="{{ site.name + '_text_puntos_2' }}"> 
+    {{ read_text(site.name +  '_text_puntos_2') }}</div>
+    </div>
+
+    <div class="col-md-3 col-sm-3 col-xs-12">
+       <div class="enlaces {{editabletext}}" text-id="{{ site.name + '_text_puntos_3' }}"> 
+        {{ read_text(site.name +  '_text_puntos_3') }} </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="enlaces-2 {{editabletext}}" text-id="{{ site.name + '_text_puntos_4' }}"> 
+        {{ read_text(site.name +  '_text_puntos_4') }} </div>
+    </div>
+
+     <div class="col-md-12  col-sm-12  col-xs-12">
+       <div class="text-p {{editabletext}}" text-id="{{ site.name + '_text_puntos_5' }}"> 
+    {{ read_text(site.name +  '_text_puntos_5') }}</div>
+    </div>
+
+       <div class="col-md-3 col-sm-3 col-xs-12">
+       <div class="enlaces {{editabletext}}" text-id="{{ site.name + '_text_puntos_6' }}"> 
+        {{ read_text(site.name +  '_text_puntos_6') }} </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="enlaces-2 {{editabletext}}" text-id="{{ site.name + '_text_puntos_7' }}"> 
+        {{ read_text(site.name +  '_text_puntos_7') }} </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12"></div>
+    
+    <div class="col-md-3 col-sm-3 col-xs-12">
+       <div class="enlaces {{editabletext}}" text-id="{{ site.name + '_text_puntos_8' }}"> 
+        {{ read_text(site.name +  '_text_puntos_8') }} </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="enlaces-2 {{editabletext}}" text-id="{{ site.name + '_text_puntos_9' }}"> 
+        {{ read_text(site.name +  '_text_puntos_9') }} </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12"></div>
+
+   <div class="col-md-3 col-sm-3 col-xs-12">
+       <div class="enlaces {{editabletext}}" text-id="{{ site.name + '_text_puntos_10' }}"> 
+        {{ read_text(site.name +  '_text_puntos_10') }} </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="enlaces-2 {{editabletext}}" text-id="{{ site.name + '_text_puntos_11' }}"> 
+        {{ read_text(site.name +  '_text_puntos_11') }} </div>
+    </div>
+    
+    
+
+
+  <!-- **para terminos*** -->
+
+</div>
+
+</section>
+{% include '../home/footer.html' %}
+{% end %}

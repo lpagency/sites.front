@@ -1,0 +1,636 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript">
+var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  if ($('#imgChica').hasClass('hidden')) {
+    $('#imgChica').style.display = "none";
+  }
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+     x[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+     dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+  }
+  x[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " w3-opacity-off";
+  
+}
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+
+    /*** used by cart config **/
+    var slideIndex = 1;
+    var plusDivs = function(n) 
+    {
+        showDivs(slideIndex += n);
+    };
+    var showDivs = function(n) 
+    {
+        // define some vars
+        var i;
+        var x = $('.mySlides:not(.hidden)');
+        var next;
+
+        // set current index
+        if (n > x.length)
+        {
+            slideIndex = 1
+        }
+
+        // set limit conditions
+        if (n < 1)
+        {
+            slideIndex = x.length
+        }
+
+        // hide all images
+        x.css('display', 'none');
+
+        // show the current
+        next = $(x[slideIndex-1]);
+        next.css('display', 'block');
+    };
+
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        '/bilupo/checkout',
+        '/checkout',
+        '/checkout');
+    var app_public = $.environmentVar(42, 42, 42);
+
+    var config = {
+        'app_public': app_public,
+        'base_url': base_url,
+        'products_per_page': 9,
+        'ignore_stock': false,
+        'infinite_scroll': true,
+        'animation': 'ghost',
+        'product_id' : {{ product_id }},
+        // 'maxProducts': 100,
+        'checkout_url': checkout_url,
+        'operator': 'or',
+        'container': '.product-detail',
+        'onLoad': function(products) {
+            // if (products.length === 0) {
+            //     $(".products").html("no hay productos con estos filtros");
+            // }
+            showDivs(slideIndex);
+
+            // init slide button
+            $('#boton_slide').on('click', function()
+            {
+                plusDivs(1);
+            });
+        }
+    };
+
+    $('.product-detail').ecommerce("product_detail", config);
+});
+</script>
+<script type="text/template" id="product_detail">
+    <div class="col-md-6 col-xs-9 w3-content w3-display-container Det">
+        <img src="{{! images [0]['thumb_200'] }}" class="mySlides imagenesDetalle" style=" height: 200px; object-fit: contain; float:right; max-width:300px; width:100%; object-position: 100%;">
+        <img src="{{! images [1]['thumb_200'] }}" class="mySlides imagenesDetalle" style=" height: 200px; object-fit:contain; float:right; max-width:300px; width:100%;object-position: 100%;">
+        <img src="{{! images [2]['thumb_200'] }}" class="mySlides imagenesDetalle" style=" height: 200px; object-fit: contain; float:right; max-width:300px; width:100%;object-position: 100%; ">
+        <img src="{{! images [3]['thumb_200'] }}" class="mySlides imagenesDetalle" style=" height: 200px; object-fit: contain; float:right; max-width:300px; width:100%;object-position: 100%;">
+        <img src="{{! images [4]['thumb_200'] }}" class="mySlides imagenesDetalle" style=" height: 200px; object-fit: contain; float:right; max-width:300px; width:100%;object-position: 100%;">
+        <div class="w3-row-padding w3-section">
+    <div class="w3-col s4" style="margin-left: 52%; margin-top: 2%">
+      <img class="demo w3-opacity w3-hover-opacity-off imagenesChicas {{! images[0]['thumb_200']|hide_if_empty }}" src="{{! images [0]['thumb_200'] }}" id="imgChica" onclick="currentDiv(1)">
+      <img class="demo w3-opacity w3-hover-opacity-off imagenesChicas {{! images[1]['thumb_200']|hide_if_empty }}" src="{{! images [1]['thumb_200'] }}" id="imgChica" onclick="currentDiv(2)">
+      <img class="demo w3-opacity w3-hover-opacity-off imagenesChicas {{! images[2]['thumb_200']|hide_if_empty }}" src="{{! images [2]['thumb_200'] }}" id="imgChica" onclick="currentDiv(3)">
+      <img class="demo w3-opacity w3-hover-opacity-off imagenesChicas {{! images[3]['thumb_200']|hide_if_empty }}" src="{{! images [3]['thumb_200'] }}" id="imgChica" onclick="currentDiv(4)">
+      <img class="demo w3-opacity w3-hover-opacity-off imagenesChicas {{! images[4]['thumb_200']|hide_if_empty }}" src="{{! images [4]['thumb_200'] }}" id="imgChica" onclick="currentDiv(5)">
+    </div>
+  </div>
+  <div class="clearfix imgPeque" style="padding-top: 100px;padding-right: 57px;">
+        <div class="categoriasProd mik" style="color:#E53623;font-weight: bold;font-size: 12px;font-family: 'Open Sans', sans-serif;text-align: right;width: 29%;float: right;margin-right: -65px;;margin-top: 88px;">{{!bullet_1}} > {{!bullet_2}}</div>
+        <a href="{{ site_base }}/listado_productos"><img src="https://84static.loadingplay.com/static/images/7a9c37e1825084cf323282aa81028076_flecha.png" class="flecha hidden-md hidden-sm hidden-xs"></a>
+    </div>
+    </div>
+    <div class="visible-xs hidden clearfix" style="padding: 10px"></div>
+    <div class="col-md-6 col-xs-12 w3-desc detallesDesc" style="top: 0px; left: 0px;">
+        <div class="alinear" style="font-family: 'Open Sans', sans-serif;font-size: 22px;font-weight: 100;letter-spacing: 1px; color: grey;text-transform: uppercase;">{{! name }}</div>
+        <div class="alinear">
+        	<h6 class="toy" style="color: #E53623;font-family: 'Open Sans', sans-serif;font-size: 11px; letter-spacing: 1px;margin-top: 0px; height: 15px;"><b>{{! brand }}</b></h6>
+        	<img src="https://84static.loadingplay.com/static/images/fa65c44bd728c4c17f6c8a4b06dd136d_Biluppo_PNGs_Web_7-12.png" class="hidden-md hidden-xs hidden-sm" style="position: absolute;z-index: 1;top: 50px;  left: 220px">
+        </div>
+        <br>
+        <div class="precioDetalle">
+        	<h3 class="alinear" style="color: #E53623; font-family: 'Open Sans', sans-serif; font-size: 17px;letter-spacing: 1px;margin-top: 23px"><b>{{! main_price|money }}</b></h3>
+        </div>
+        <br>
+        <input type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" id="busca" data-toggle="modal" class="add-to-cart comp boton-comprar-detalle" data-target="#myModal" value="COMPRAR" style="width: 130px;height: 27px; font-size: 12px; letter-spacing: 1px;bottom:15px; ">
+        &nbsp;&nbsp;
+        <button 
+            product-id="{{! id }}" 
+            product-name="{{! name }}" 
+            product-price="{{! main_price }}" 
+            product-upp="{{! upp }}" 
+            product-img="{{! images[0]['thumb_200'] }}"
+            class="add-to-cart add-to-cart-animation carroComprar" 
+            data-toggle="modal" 
+            data-target="#myModal" 
+            id="busca" 
+            style="width: 141px;height: 27px; padding:auto; position: relative;z-index: 10; font-size: 12px; letter-spacing: 1px;" >
+                AGREGAR 
+                <img src="https://84static.loadingplay.com/static/images/c8c7cab7f120bafec2ff2da558ed7e1a_Biluppo_PNGs_Web_7-18.png" style="margin-top: -5%">
+        </button>
+        <div class="clearfix cu" style="padding-top: 44px">
+            <div id="desc1" class="cont" style="margin-right: 30%;"><p class="ellipsis multiline" style=" font-family: 'Open Sans', sans-serif; height: 107px; overflow: hidden; font-size: 13px;margin-bottom: 0px;text-overflow: ellipsis; -webkit-line-clamp: 6;display: -webkit-box;-webkit-box-orient: vertical;">{{! description}}</p></div><input type="submit" name="submit" id="sb" data-toggle="modal" data-target="#myModal2" value="ver más" class="cil ver-mas-desc" style="font-size: 13px; letter-spacing: 1px;height: 27px; width: 100px; margin-top: 5%">
+            <br>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="modal fade" id="myModal2" role="dialog" style="background-color: rgba(132, 226, 255, 0.5)">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">DESCRIPCION DEL PRODUCTO</h4>
+            </div>
+            <div class="modal-body" style="font-family: 'Open Sans', sans-serif;">
+            {{! description }}
+            </div>
+            <div class="modal-footer">
+            <div style="float: left"><button type="button" data-dismiss="modal" id="busca2">VOLVER</button></div>
+            </div>
+        </div>
+    </div>
+</script>
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity">{{! units_total }}</span>
+</script>
+<script type="text/x-template" id="shopping-cart-checkout-form">
+    <form action="{{!checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+        <input name="checkout" class="form-control required" type="hidden" value="{{!checkout_url}}" />
+        <input name="site_id" class="form-control required" type="hidden" value="{{!site_id}}" />
+        <input name="cart_id" class="form-control required" type="hidden" value="{{!cart_id}}" />
+        <input name="session_id" class="form-control required" type="hidden" value="{{!session_id}}" />
+        <input name="success_url" class="form-control required" type="hidden" value="{{!success_url}}" />
+        <input name="failure_url" class="form-control required" type="hidden" value="{{!failure_url}}" />
+        <input name="webpay_url" class="form-control required" type="hidden" value="{{!webpay_url}}" />
+        <input type="submit" class="form-group text-center botones compra" id="busca2" value="COMPRAR" style="margin-right: 5%; " />
+    </form>
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/style.css" >
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/busca.css" >
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style>
+.mySlides {display:none}
+.demo {cursor:pointer}
+</style>
+<style type="text/css">
+#sb{
+    background:#94b7bb; 
+    border: 0px;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+}
+#sb:hover{
+    background-color: #E53623;
+}
+#fondo_detalle{
+    background-image: url("https://84static.loadingplay.com/static/images/5a39274ffd3e2ee89e6c73862211ef6a_Biluppo_PNGs_Web_7-24.png");
+}
+
+.imagenesChicas{
+ /*   width: 100px;
+    height: 100px;
+    object-fit: scale-down;*/
+    width: 62px;
+    height: 59px;
+    object-fit: cover;
+    margin-left: 2px;
+    margin-top: 20px;
+    float: right;
+}
+@media only screen and (max-width:1200px) {
+
+/*    [class*="Det"]{
+        margin-left: 14%;
+    }
+    .categoriasProd{
+        margin-top: 83% !important;
+        margin-left: 14% !important;
+    }
+    .detallesDesc{
+        width: 85%;
+        top: 0 !important;
+        left: 0!important;
+    }
+    .alinear{
+        text-align: center;
+    }
+    .comp{
+        margin-left: 32% !important;
+    }
+    .cont{
+        margin-right: 0 !important;
+        text-align: center;
+    }
+    #sb{
+        margin-left: 43%;
+        margin-top: 0 !important;
+    }*/
+
+    .product-detail.container{
+      margin-left: 6% !important;
+    }
+
+    .imagenesChicas {
+    width: 49px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 9px;
+    margin-top: 20px;
+    }
+
+    .w3-col.s4{
+       margin-left: 54% !important;
+    }
+
+    .categoriasProd.mik{
+    font-size: 11px !important; 
+    width: 43% !important;
+    margin-bottom: 19px !important;
+    }
+
+
+}
+@media only screen and (max-width: 1030px){
+    .detallesDesc{
+        margin-left: 26.5% !important;
+    }
+    .precioDetalle{
+        margin-left: 32%;
+    }
+    .boton-comprar-detalle{
+        margin-left: 9% !important;
+    }
+    .cont{
+        margin-right: 15% !important;
+
+    }
+    .ver-mas-desc{
+        margin-left: 28% !important;
+    }
+}
+@media only screen and (max-width:768px) {
+    .comp {
+        margin-left: 3% !important;
+    }
+    .Det{
+        margin-left: 5% !important;
+    }
+    .categoriasProd{
+        margin-left: 26% !important;
+        margin-top: 67% !important;
+    }
+    .product-detail{
+        margin-left: 0 !important;
+    }
+    .cont {
+        margin-right: 48% !important;
+    }
+    .imagenesDetalle{
+        margin-right: 24%;
+    }
+    .imagenesChicas{
+        float: inherit !important;
+    }
+    .imgPeque{
+        display: none !important;
+    }
+    .detallesDesc{
+        top: 30px !important;
+        margin-left: 21.5% !important;
+    }
+    .precioDetalle{
+        margin-left: 18% !important;
+    }
+    .ver-mas-desc {
+        margin-left: 16% !important;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    .imagenesDetalle {
+        margin-right: 11%;
+    }
+    .categoriasProd {
+        margin-left: 26% !important;
+        margin-top: 3% !important;
+    }
+    .detallesDesc{
+        margin-left: 17.5% !important;
+    }
+    .precioDetalle {
+        margin-left: 23% !important;
+    }
+    .comp {
+        margin-left: 8% !important;
+    }
+
+    .cont {
+        margin-left: 8% !important;
+    }
+
+    .Det {
+        margin-left: -2% !important;
+    }
+    .ver-mas-desc {
+        margin-left: 21% !important;
+    }
+}
+
+@media only screen and (max-width: 700px){
+.imagenesDetalle {
+    margin-right: 6%;
+}
+
+.w3-col.s4 {
+    margin-left: 56% !important;
+}
+
+.detallesDesc {
+    margin-left: 0.5% !important;
+}
+
+.precioDetalle {
+    margin-left: 2% !important;
+}
+
+.cont {
+    margin-right: 21% !important;
+    margin-left: 20% !important;
+}
+
+.alinear{
+  text-align: center;
+}
+
+.product-detail.container {
+    margin-left: 0% !important;
+}
+
+.toy{
+    text-align: center !important;
+}
+
+.cu{
+    text-align: center !important;
+}
+
+.ver-mas-desc {
+    margin-left: 3.5% !important;
+}
+
+input.cil{
+    text-align: center !important;
+    left: 0px !important;
+    position: relative !important;
+}
+
+.comp {
+    margin-left: 25% !important;
+}
+
+.categoriasProd.mik {
+  text-align: center !important;
+}
+
+}
+
+@media only screen and (max-width: 568px){
+    #boton_slide{
+        width: 10% !important;
+        left: 71.4% !important;
+    }
+    .Det {
+        margin-left: 0% !important;
+    }
+    .w3-col.s4 {
+        margin-left: 49% !important;
+    }
+    .categoriasProd{
+        margin-left: -52% !important;
+    }
+    .comp{
+        margin-left: 20% !important;
+    }
+    .detallesDesc{
+        width: 90% !important;
+        margin-left: 3.5% !important;
+    }
+    .cont{
+        margin-left: 20% !important;
+    }
+    #sb{
+        margin-left: 1.5% !important;
+    }
+    .carroComprar{
+        right: 1px !important;
+        top: 1px !important;
+    }
+}
+@media only screen and (max-width: 550px){
+    .comp{
+        margin-left: 20% !important;
+    }
+    .Det {
+    margin-left: 16% !important;
+    }
+    .categoriasProd {
+    margin-top: 5% !important;
+    margin-left: -12% !important;
+    }
+
+    .cont {
+    margin-left: 13% !important;
+    width: 77%;
+    }
+}
+
+@media only screen and (max-width: 480px){
+.w3-col.s4 {
+    margin-left: 26% !important;
+}
+
+#sb {
+    margin-left: 0% !important;
+}
+
+.carroComprar {
+    right: -115px !important;
+    top: 6px !important;
+    width: 131px!important;
+}
+
+.comp {
+    margin-left: 0% !important;
+}
+
+.categoriasProd.mik {
+    text-align: center !important;
+    width: 100% !important;
+}
+.precioDetalle {
+    margin-left: 0% !important;
+}
+}
+
+@media only screen and (max-width: 440px){
+   .carroComprar {
+    right: -103px !important;
+    top: 6px !important;
+    width: 131px!important;
+}
+
+.categoriasProd.mik {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+}
+
+@media only screen and (max-width: 414px){
+    .carroComprar {
+        right: -18px !important;
+    top: 0px !important;
+    width: 131px!important;
+}
+
+.categoriasProd.mik {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+}
+
+@media only screen and (max-width: 400px){
+    .carroComprar {
+    right: -92px !important;
+    top: 6px !important;
+    width: 131px!important;
+}
+
+.categoriasProd.mik {
+    text-align: center !important;
+    width: 100% !important;
+}
+
+}
+
+@media only screen and (max-width: 375px){
+    .carroComprar{
+        right: -150px !important;
+        top: -26px !important;
+    }
+    .Det {
+    margin-left: 18% !important;
+    }
+    .categoriasProd{
+        margin-left: -68% !important;
+    }
+    .comp {
+        margin-left: 0% !important;
+    }
+    .imagenesDetalle {
+    margin-right: 14%;
+}
+.w3-col.s4 {
+    margin-left: 12% !important;
+}
+.detallesDesc{
+    margin-left: 4.5% !important;
+}
+}
+@media only screen and (max-width: 320px){
+    .imagenesDetalle {
+    margin-right: -16% !important;
+    width: 150% !important;
+    }
+    .comp{
+        width: 40% !important;
+        font-size: 11px !important;
+    }
+    .Det{
+        margin-left: 0% !important;
+    }
+    .w3-col.s4 {
+        margin-left: 34% !important;
+    }
+    .imagenesChicas {
+    width: 49px;
+    height: 50px;
+    object-fit: cover;
+    margin-left: 9px;
+    margin-top: 10px;
+    }
+    .comp {
+    margin-left: 29% !important;
+   }
+
+   .carroComprar {
+    width: 41% !important;
+    right: -66px !important;
+    top: 5px !important;
+    font-size: 9px !important;
+    }
+}
+</style>
+<div class="contenedor" id="fondo_detalle" style="max-width: 1280px">
+    <div class="clearfix" style="padding-top:85px"></div>
+    <div class="product-detail container" style="padding-top: 100px;margin-left: 4%">
+    </div>
+    <div class="clearfix" style="padding-bottom: 150px"></div></div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

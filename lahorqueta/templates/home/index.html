@@ -1,0 +1,169 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $("#OpenAlert").click();
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com',
+        'http:s//pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(50,50,50);
+    var config = {
+        'app_public' : app_public,
+        'base_url' : base_url,
+        'checkout_url': checkout_url,
+        'products_per_page' : 4,
+        'templateOrigin' : '#product_template_home',
+        'tag' : '',
+        'ignore_stock' : false,
+        'infinite_scroll': false,
+        'onLoad':function(products)
+        {
+          $('.products .art-hi').removeClass('col-md-4')
+          $('.products .art-hi').addClass('col-md-3')
+
+          $(".ellipsis").dotdotdot();
+        }
+    };
+    $('.products').ecommerce(config);
+  });
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+ <body class="theme--boxed" data-reveal-selectors="section:not(.masonry):not(:first-of-type):not(.parallax)">
+
+
+    <div class="main-container">
+        
+    <section class="height-100 imagebg cover cover-4 parallax" data-overlay="4">
+                    <div class="background-image-holder background--bottom">
+                        <img alt="image" src="https://7static.loadingplay.com/static/images/8f5aaedeaf6a710b2421b7bb6ecaa605_agency.png">
+                    </div>
+                    <div class="container pos-vertical-center">
+                        <div class="row">
+                            <div class="text-center col-md-11 col-sm-11 col-md-11">
+                                <h1>
+                                    Decorar es vivir&nbsp;</h1>
+                                <p class="lead">Hermosos productos para tu casa</p>
+                                <div>
+                                    <a class="btn" href="#purchase-template">
+                                        <span class="btn__text">
+                                            Conoce nuestros productos</span>
+                                    </a>
+                                    <div class="modal-instance modal-video-1">
+                                        <div class="video-play-icon video-play-icon--sm modal-trigger"></div>
+                                        <span class="h6">Watch Overview</span>
+                                        <div class="modal-container">
+                                            <div class="modal-content bg-dark" data-width="60%" data-height="60%">
+                                                <iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/4QUVRm4UZA4?autoplay=1"></iframe>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-8 col-sm-offset-2 text-center">
+                                <h3>Esta es una frase inspiradora</h3>
+                                <p class="lead">
+                                    Our diverse team comprises talent from a range of design disciplines working together to deliver effective solutions
+                                </p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </section>
+                <section class="embedded-video-3">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-xs-12">
+                                <div class="video-cover box-shadow-wide">
+                                    <div class="background-image-holder">
+                                        <img alt="image" src="{{ site_base }}/static/img/startup-3.jpg">
+                                    </div>
+                                    <div class="video-play-icon"></div>
+                                    <iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/4QUVRm4UZA4?autoplay=1"></iframe>
+                                </div>
+                            </div>
+                            <div class="col-md-5 col-md-offset-1 col-sm-6">
+                                <div class="text">
+                                    <h3>Esta es una noticia muy importante</h3>
+                                    <p>
+                                        Pillar is a remarkably flexible and feature-complete HTML template built for modern startups, creatives, bloggers and more. Including tons of uniquely styled pages, Pillar combines aesthetic beauty with high-quality, semantic markup.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                </section>
+
+
+<section class="masonry-contained">
+   <div class="container">
+    <div class="row">
+           <div align="center"> 
+              <div class="products">
+                  <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+              </div>
+            <div class="col-xs-12">
+              <div style="margin-top:45px;"></div>
+             <!--  <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button> -->
+            </div>
+          </div> 
+
+    </div>
+    </div>
+</section>
+
+</div>
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

@@ -1,0 +1,84 @@
+<nav class="navbar patagonia-menu" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle toggle hidden-xs" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- LOGO -->
+    <ul>
+        <div class="logo_wrapper navbar-brand hidden-lg hidden-md hidden-sm visible-xs" style="">
+             <div class="caja-log">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+                <img class="logo-mov" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+            </a>
+        </div>
+    </div>
+    </ul>
+    <!-- /LOGO -->
+   
+    <div class="collapse navbar-collapse navbar-ex1-collapse box-menu pad0">
+        <ul class="nav navbar-nav col-md-5 col-sm-5 col-xs-5 pad0">
+    <!--         <li >
+                <a href="{{ site_base}}/historia">Historia</a>
+            </li>
+            <li class="">
+                <a href="{{ site_base}}/concepto">Concepto</a>
+            </li>
+            <li class="">
+                <a href="{{ site_base}}/quienes_somos">Quiénes somos</a>
+            </li>
+            <li>
+                <a href="{{ site_base}}/listado_productos">Productos</a>
+            </li> -->
+        </ul>
+        <ul class="nav navbar-nav col-md-2 col-sm-2 col-xs-2 pad0">
+            <!-- LOGO -->
+            <div class="logo_wrapper navbar-brand">
+            <div class="caja-log">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a href="#">
+                    <div class="container_header">
+                        <img class="logo-desk" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    </div>
+                </a>
+                </div>
+            </div>
+
+
+            <!-- /LOGO -->
+        </ul>
+        <ul class="nav navbar-nav col-md-3 col-sm-3 col-xs-3 pad0 cero">
+
+     <!--        <li class="icon" id="open-cart" data-toggle="modal" data-target="#myModal">
+                <span> Tu Compra </span> <span class="units-total">0</span> 
+            </li>
+            <li class="sig hidden-xs-sm">
+                <a href=""> | </a>
+            </li>
+            
+            <li class="" style="float: right;">
+                <a href=""> Total Compra </a>
+            </li> -->
+
+        </ul>
+    </div>
+</nav>

@@ -1,0 +1,52 @@
+<footer>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-sm-3">
+        <ul class="social-links">
+          <li><a href="/"><i class="icon-twitter"></i></a></li>
+          <li><a href="/"><i class="icon-facebook"></i></a></li>
+        </ul>
+      </div>
+      <div class="col-sm-3 footer-top" style="text-align:left;">
+        <ul class="nav-list effect textos-footer ">
+          <li><P><span>HOME</span></P></li>
+        </ul>
+        <ul class="nav-list effect textos-footer ">
+          <li><a href="{{ site_base }}/">Condiciones y Zonas de despacho</a></li>
+          <li><a href="{{ site_base }}/terms">T&eacute;rminos & Condiciones</a></li>
+          <li><a href="{{ site_base }}/faq">Preguntas Frecuentes</a></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-3" style="text-align:left;">
+        <ul class="nav-list effect textos-footer ">
+          <li><P><span>CATEGOR&Iacute;AS</span></P></li>
+        </ul>
+        <ul class="nav-list effect textos-footer ">
+          <li><a href="{{ site_base }}?tag=gato">Alimento Gatos</a></li>
+          <li><a href="{{ site_base }}?tag=perro">Alimento Perros</a></li>
+        </ul>
+        
+      </div>
+      <div class="col-sm-3" style="text-align:left;">
+        <ul class="nav-list effect textos-footer ">
+          <li><P><span>CONTACTO</span></P></li>
+        </ul>
+        <ul class="nav-list effect textos-footer ">
+            {% if is_admin %}
+            <span class="editabletext" text-id="{{ site.name + '_contact_footer' }}" >{{ read_text(site.name + '_contact_footer') }}</span>
+            {% else %}
+            {{ read_text(site.name + '_contact_footer') }}
+            {% end %}
+        </ul>
+        
+      </div>
+      <div class="col-sm-12" style="margin-top: 15px;">
+        <ul class="nav-list effect ">
+          <p>Family Market <b>ecommerce</b> &copy; 2015. Designed by <a href="http://www.loadingplay.com" target="_blank">Loadingplay.com</a>.</p>
+        </ul>
+      </div>
+    </div>
+    
+  </div>
+</footer>

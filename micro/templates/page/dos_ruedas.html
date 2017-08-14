@@ -1,0 +1,249 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    {% block active %}
+    // productos
+    $('.font_tag').removeClass('active');
+    $('.adultos').addClass("active");
+    {% end %}
+
+    $(document).ready(function()
+    {
+        $(document).on("click", ".subcateg", function(ev)
+        {
+            $(".subcateg").removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="h_unoymas">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_dos_ruedas">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas" name="image" id="img_dos_ruedas" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_dos_ruedas" src="{{ read_image(site.name + '_dos_ruedas', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas',500) }}'" class=" img_banner_list desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas' }}"> 
+            {{ read_text(site.name +  '_text_dos_ruedas') }}
+            </h1>
+        </div>
+    <div class="clearfix" ></div>
+</section>
+
+<section class="clearfix" style="height:100px;">
+    
+</section>
+
+<section class="h_group3">
+    <div class="container-fluid">
+        <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper" >
+            <!-- <div class="box_img3"> -->
+                <div class="box-background">
+                    {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                        <label for="img_dos_ruedas1">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas1" name="image" id="img_dos_ruedas1" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_img_dos_ruedas1') }}">
+                        <img id="{{ site.name }}_dos_ruedas1" src="{{ read_image(site.name + '_dos_ruedas1', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas1',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                    
+                    
+                </div>
+                <div class="box-text vertical-center">
+                    <div class="tex-group3 text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas1' }}"> {{ read_text(site.name +  '_text_dos_ruedas1') }}</div>
+                </div>
+                </a>
+                <!--editable link-->
+                    {% if is_admin %}
+                    <img class="change-image editablelink " link-id="{{ site.name + '_img_dos_ruedas1' }}" content="{{ read_link(site.name + '_img_dos_ruedas1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                    {% end %}
+            <!-- </div> -->
+            
+        </div>
+
+             <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper">
+                <div class="box-background">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_dos_ruedas2">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas2" name="image" id="img_dos_ruedas2" >
+                        </div>
+                        {% end %}
+                        <a id="{{ site.name + '_img_dos_ruedas2' }}" href="{{ read_link(site.name + '_img_dos_ruedas2') }}">
+                            <img id="{{ site.name }}_dos_ruedas2" src="{{ read_image(site.name + '_dos_ruedas2', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas2',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                        
+
+                       
+                </div>
+                     <div class="box-text vertical-center">
+                        <div class="tex-group3 text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas2' }}"> {{ read_text(site.name +  '_text_dos_ruedas2') }}</div>
+                    </div>
+                    </a>
+                     <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_dos_ruedas2' }}" content="{{ read_link(site.name + '_img_dos_ruedas2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+            </div>
+
+            <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper">
+                <div class="box-background">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_dos_ruedas3">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas3" name="image" id="img_dos_ruedas3" >
+                        </div>
+                        {% end %}
+                        <a id="{{ site.name + '_img_dos_ruedas3' }}" href="{{ read_link(site.name + '_img_dos_ruedas3') }}">
+                            <img id="{{ site.name }}_dos_ruedas3 desaturada" src="{{ read_image(site.name + '_dos_ruedas3', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas3',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                        
+
+                        
+                </div>
+                <div class="box-text vertical-center">
+                    <div class="tex-group3 text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas3' }}"> {{ read_text(site.name +  '_text_dos_ruedas3') }}</div>
+                </div>
+                </a>
+                <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_dos_ruedas3' }}" content="{{ read_link(site.name + '_img_dos_ruedas3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+            </div>
+
+             
+    </div>
+</section>
+
+
+<section class="h_group3">
+    <div class="container-fluid">
+         <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper" >
+            <div class="box-background">
+                {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                        <label for="img_dos_ruedas4">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas4" name="image" id="img_dos_ruedas4" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_img_dos_ruedas4') }}">
+                    <img id="{{ site.name }}_dos_ruedas4" src="{{ read_image(site.name + '_dos_ruedas4', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas4',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                
+            </div>
+            <div class="box-text vertical-center">
+                <div class="tex-group3 text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas4' }}"> {{ read_text(site.name +  '_text_dos_ruedas4') }}</div>
+            </div>
+            </a>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_dos_ruedas4' }}" content="{{ read_link(site.name + '_img_dos_ruedas4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                {% end %}
+        </div>
+
+        <!-- SEGUNDA IMAGEN -->
+         <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper" >
+            <div class="box-background">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                   <label for="img_dos_ruedas5">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas5" name="image" id="img_dos_ruedas5" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_img_dos_ruedas5' }}" href="{{ read_link(site.name + '_img_dos_ruedas5') }}">
+                    <img id="{{ site.name }}_dos_ruedas5" src="{{ read_image(site.name + '_dos_ruedas5', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas5',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                
+            </div>
+           <div class="box-text vertical-center">
+                <div class="tex-group3 text-center {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas5' }}"> {{ read_text(site.name +  '_text_dos_ruedas5') }}</div>
+            </div>
+            </a>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_dos_ruedas5' }}" content="{{ read_link(site.name + '_img_dos_ruedas5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                {% end %}
+        </div>
+
+        <!-- TERCERCA IMAGEN -->
+         <div class="col-md-4 col-sm-6 col-xs-12 box-wrapper" >
+            <div class="box-background">
+                {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                       <label for="img_dos_ruedas6">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_dos_ruedas6" name="image" id="img_dos_ruedas6" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_img_dos_ruedas6' }}" href="{{ read_link(site.name + '_img_dos_ruedas6') }}">
+                    <img id="{{ site.name }}_dos_ruedas6" src="{{ read_image(site.name + '_dos_ruedas6', 1) }}" onload="this.src='{{ read_image(site.name + '_dos_ruedas6',500) }}'" class="img-responsive img_group3 desaturada" alt="item">
+                
+                
+            </div>
+            <div class="box-text vertical-center">
+                <div class="tex-group3 text-center  {{editabletext}}" text-id="{{ site.name + '_text_dos_ruedas6' }}"> {{ read_text(site.name +  '_text_dos_ruedas6') }}</div>
+            </div>
+            </a>
+            <!--editable link-->
+                {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_dos_ruedas6' }}" content="{{ read_link(site.name + '_img_dos_ruedas6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+               {% end %}
+        </div>
+
+            
+    </div>
+</section>
+
+{% include '../home/footer.html' %}
+{% end %}

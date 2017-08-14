@@ -1,0 +1,94 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+
+{% block body %}
+    <!-- nuevo login -->
+<div class="top-distance-content">
+<div class="container-fluid-product cart-list" >
+	<div class="row">
+		<div class="col-sm-6">
+			<form action="" method="post" novalidate  class="form-login">
+
+				<h2 class="text-center titulos-alternativos">Iniciar sesión para comprar</h2>
+				<!-- <h3 class="text-center">Login to shop</h3> -->
+			
+				<div class="form-group">
+					<label class="control-label">Correo</label>
+					<input name="email" placeholder="Email" class="form-control" type="text">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Contraseña</label>
+					<input name="password" placeholder="Password" class="form-control" type="password">
+				</div>
+				<div class="form-group">
+					<div>
+					  <label>
+					    <input type="checkbox" name="stay-logged" class="radio">
+					      <span style="font-size: 12px; line-height: 16px;">Seguir conectado</span>
+					  </label>
+					</div>
+				</div>
+				
+				<input type="hidden" name="user_id" value="" id="user_id">
+				<a class="parent-link" href="/auth/recuperar-contrasena">Olvidé mi contraseña</a>
+				<p><button name="submit" type="submit" class="btn btn-store btn-block margin-top-2">Iniciar sesión</button></p>
+				
+			
+			</form>
+
+			
+		<p><a href="" class="btn btn-store btn-block btn-facebook"> Conectar con facebook</a></p>
+
+		</div>				
+		<div class="col-sm-6">
+			<form action="" method="post" class="form-register">
+				<h2 class="text-center titulos-alternativos">Crear una cuenta</h2>
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="form-group">
+							<label class="control-label">Nombre</label>
+							<input name="name" placeholder="First Name" class="form-control" type="text">
+						</div>
+					</div>
+				</div>
+				
+				<div class="form-group">
+					<label class="control-label" >Correo</label>
+					<input name="email" placeholder="Email" class="form-control" type="text">
+				</div>
+				<div class="form-group">
+					<label class="control-label">Contraseña</label>
+					<input name="password" placeholder="Password" class="form-control" type="password">
+				</div>
+				<div class="form-group">	
+				    <input  placeholder="Re-Password" type="password" name="re-password" required class="form-control">
+				</div>
+				<div class="form-group">
+					<label class="control-label">
+						<input class="radio" type="checkbox" name="tos">
+						<span class="point-text">
+							<font color="#4d4d4d">
+								<span style="font-size: 12px; line-height: 16px;">Estoy de acuerdo con las condiciones</span>
+							</font>
+						</span>	
+		           </label>
+				</div>
+				<p><button name="submit" type="submit" class="btn btn-store btn-block ">Crear una cuenta</button></p>
+			</form>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-12 text-center show-more">
+			<a href="/" class="btn btn-outline ">Cancelar y volver a la tienda</a>
+		</div>	
+	</div>	
+</div>
+</div>
+{% include '../home/footer.html' %}
+{% end %}

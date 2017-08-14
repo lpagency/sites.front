@@ -1,0 +1,41 @@
+{% extends "servicios.base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://bodegas.loadingplay.com/static/js/lpapi.js" ></script>
+<script type="text/javascript" src="https://bodegas.loadingplay.com/static/js/product/calendarproduct.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $.fn.calendarproduct.defaults.functions.get_selected_site = function()
+        {
+            return '{{ site.name }}';
+        };
+
+        $('.calendar-list').calendarproduct('list');
+    });
+</script>
+<script type="text/template" class="calendarproduct-list-item">
+    <a href="{{ site_base }}/week?sku={{! sku }}" class="btn btn-default" >{{! sku }}</a>
+</script>
+{% end %}
+
+{% block body_servicios %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-12" >
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_welcome_message_title' }}"> {{ read_text(site.name +  '_welcome_message_title') }} </div>
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_welcome_message' }}"> {{ read_text(site.name +  '_welcome_message') }} </div>
+    </div>
+</div>
+
+{% end %}

@@ -1,0 +1,25 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-12" >
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_mision_message_title' }}"> {{ read_text(site.name +  '_mision_message_title') }} </div>
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_mision_message' }}"> {{ read_text(site.name +  '_mision_message') }} </div>
+    </div>
+</div>
+
+{% end %}

@@ -1,0 +1,307 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="container chek"> 
+  <div class="row step-margin-top">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="vitrin"> < Seguir vitriniando </div>
+      <div class="div-1">MI PEDIDO</div>
+      <hr class="cheki">
+    </div>
+    </div>
+
+    <div class="col-md-8">
+      <table style="width:100%;">
+        <tbody class="tabla-1"><tr>
+          <th style="">PRODUCTO</th>
+          <th style="">DETALLE DE PRODUCTO</th>
+          <th style="">CANTIDAD</th>
+          <th style="">PRECIO</th>
+          <th style="">SUBTOTAL</th>
+          <th style="">ELIMINAR</th>
+        </tr>
+      </tbody>
+      <tr class="info-tr">
+         <td class="td-img"><img src="https://84static.loadingplay.com/static/images/b6ae5ae3628eb2c612efeb332f2f917b__bedecbaedade_AnoukWomenBlackPrintedStraightKurtajpg.png" alt="" class="img-cart"></td>
+        <td class="nomb">Calandria C4 <div class="tal">Talla:37</div> <div class="col">Color: Gris</div> </td>
+        <td>14</td>
+        <td>$79.000</td>
+        <td class="subi">$79.990</td>
+        <td>x</td>
+      </tr>
+    </table>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <hr class="h-1">
+    </div>
+    <div class="col-md-6">
+          <button type="button" class="btn btn-default chek"> COMPRAR COMO INVITADO</button>
+    </div>
+    <div class="col-md-6">
+          <a href="" data-toggle="modal" data-target="#myModal-login" data-dismiss="modal">
+          <button type="button" class="btn btn-default chek-c">COMPRAR CON MI SESION</button> </a>
+          <a href="" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">
+          <div class="mensaje"> SOY NUEVO, QUIERO REGISTRARME</div> </a>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <hr class="h-2">
+    </div>
+    </div>
+
+
+<!-- ***cuadro resumen que deberia quedar fixed*** -->
+    <div class="col-lg-4 col-md-3 col-sm-5 rightSidebar">
+      <div class="contentBox">
+        <div class="w100 costDetails">
+          <div class="table-block" id="order-detail-content">
+            <div class="w100 cartMiniTable">
+              <table id="cart-summary" class="std table">
+                <tbody>
+                  <tr>
+                    <td class="resu">RESUMEN DE COMPRA</td>
+                  </tr>
+                  <tr>
+                    <td class="box-sub">SUBTOTAL</td>
+                  </tr>
+                  <tr>
+                    <td class="box-sub">$219.700</td>
+                  </tr>
+                  <tr>
+                    <td class="box-sub">DESPACHO</td>
+                  </tr>
+                  <tr>
+                    <td class="box-sub">$219.700</td>
+                  </tr>
+
+                  <tr>
+                    <td class="box-tol"> TOTAL </td>
+                  </tr>
+                    <tr>
+                      <td class="price-che" id="total-price">$219.700</td>
+                    </tr>
+
+              </tbody>
+              <tbody>
+        </tbody>
+        </table>
+
+        <a class="btn btn-primary btn-lg" title="checkout" onclick="checkStock()" style="margin-bottom:20px"> PAGAR &nbsp;</a>
+
+        <!-- ****ESTOS TENGOS VAN SEGÚN.... VA UNO, NUNCA LOS DOS******** -->
+        <div align="center">
+             <div class="t-1">YA CASI SON TUYOS!</div>
+             <div class="t-1">REVISA TU INFORMACIÓN ANTES DE PAGAR</div>
+        </div>
+        <!-- ****FIN ESTOS TENGOS VAN SEGÚN.... VA UNO, NUNCA LOS DOS******** -->
+        </div>
+        </div>
+  </div>
+  </div>
+</div>
+<!-- **fin cuadro resumen**** -->
+
+<!-- ****Parte informacion de despacho**** -->
+<div class="col-md-8 col-sm-8 col-xs-12">
+  <div class="info-despacho">INFORMACIÓN DE DESPACHO</div>
+      <form>
+          <div class="col-md-6 form-line">
+              <div class="form-group">
+                <input type="text" class="form-control checkout" id="" placeholder="NOMBRE*">
+              </div>
+                <div class="form-group">
+                <input type="text" class="form-control checkout" id="" placeholder="APELLIDO*">
+              </div> 
+              <div class="form-group">
+                <input type="tel" class="form-control checkout" id="telephone" placeholder="CELULAR*">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control checkout" id="exampleInputEmail" placeholder="EMAIL*">
+              </div>
+              <div class="form-group">
+                <input type="email" class="form-control checkout" id="exampleInputEmail" placeholder="CONFIRMAR EMAIL">
+              </div> 
+              <div>
+                <button type="button" class="btn btn-default submit complete">COMPLETA TUS DATOS</button>
+                <button type="button" class="btn btn-default submit complete hidden">GUARDADOS!</button>
+                <!-- **BOTON QUE APARECE AL GUARDA LOS DATOS** -->
+              </div>
+            </div>
+        </form>
+
+        <form>
+          <div class="col-md-6 form-line  corri">
+            <div class="texto-a">QUIERO DESPACHO A*</div>
+            <form>
+              <div class="rad">
+              <label class="radio-inline">
+                <input type="radio" name="optradio">DOMICILIO
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">SUCURSAL CHILEXPRESS
+              </label>
+              <label class="radio-inline">
+                <input type="radio" name="optradio">RETIRO EN TIENDA
+              </label>
+              </div>
+            </form>
+
+            <!-- ***texto que aparece al colocar retiro en tienda*** -->
+            <div class="advertencia-tienda">IMPORTANTE: Nosotros te avisaremoss cuando tu zapato esté disponible para retiro en tienda. Demora entre 5 y 7 días hábiles</div>
+
+            <div class="advertencia-chilexpress">IMPORTANTE: Una vez que tu pedido llega a la sucursal debes retirarlo antes de 5 días hábiles, sino será devuelto.</div>
+
+            <div class="advertencia-domicilio">IMPORTANTE: Chilexpress no avisa antes de despachar tu pedido, por lo que debe haber alguien durante el día para recibirlo</div>
+
+            <div class="saludo"> !QUE ENTRETENIDO CONOCERTE!</div>
+            <div class="recado"> Te enviaremos un mail cuando tus zapatos lleguen a la tienda. (tiempo aproximado: 5 a 7 días hábiles)</div>
+            <div class="ir"> <strong>DIRECCIÓN:</strong> NUEVA COSTANERA #3900 LOCAL 224, VITACURA.</div>
+              <!-- ***fin texto que aparece al colocar retiro en tienda*** -->
+
+              <div class="form-group">
+                <input type="text" class="form-control checkout" id="" placeholder="DIRECCION*">
+              </div>
+              <div class="form-group">
+               <i class="fa fa-caret-down chek" aria-hidden="true"></i>
+                <select class="form-control comu" id="sel1">
+                  <option>COMUNA*</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <i class="fa fa-caret-down chek" aria-hidden="true"></i>
+                 <select class="form-control comu" id="sel1">
+                  <option>CIUDAD*</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                </select>
+                </div>
+              
+                <div class="form-group">
+                <i class="fa fa-caret-down chek" aria-hidden="true"></i>
+                <select name="Sl_region_region" onchange="asigna_region('_region',this)" id="Sl_region_region" class="form-control comu">
+                    <option value="0" selected="selected">REGION*</option>
+                    <option value="01">Tarapaca</option>
+                    <option value="02">Antofagasta</option>
+                    <option value="03">Atacama</option>
+                    <option value="04">Coquimbo</option>
+                    <option value="05">Valparaiso</option>
+                    <option value="06">Del Libertador Bdo O'Higgins</option>
+                    <option value="07">Del Maule</option>
+                    <option value="08">Del Bio Bio</option>
+                    <option value="09">Araucania</option>
+                    <option value="10">Los Lagos</option>
+                    <option value="11">Coyhaique</option>
+                    <option value="12">Magallanes y la Ant. Chilena</option>
+                    <option value="13">Metropolitana</option>
+                    <option value="14">De Los Rios</option>
+                    <option value="15">Arica y Parinacota</option>
+                  </select>
+                </div>
+            </div>
+        </form>
+</div>
+
+<!-- ****Parte Cupon**** -->
+
+<div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+      <hr class="h-2">
+    </div>
+  <div class="info-cupon">INGRESA CUPÓN DE DESCUENTO</div>
+     <div class="form-group">
+       <input class="form-control input-sm" id="inputsm" type="text">
+       <button type="button" class="btn btn-default usar">USAR</button>
+    </div>
+</div>
+
+
+<!-- ****Parte pago**** -->
+
+<div class="col-md-8 col-sm-8 col-xs-12">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+      <hr class="h-2">
+    </div>
+    <div class="info-pago">PAGO</div>
+
+    <form id="payment-type" method="post" novalidate="" class="myform">
+      <div class="col-md-8 col-sm-8">
+        <label class="payment-label" payment-type="webpay">
+          <input type="checkbox" name="payment_type" value="webpay">  WEBPAY 
+          <a href="/tos" class="ter-chek">
+            (Acepto términos y condiciones) </a>
+          </label>
+        <div class="">
+          <img src="https://7static.loadingplay.com/static/images/1ce48f3f3a634c3f648fc9fe82d35643_logo_webpay.png" class="logo_webpay-dos">
+        </div>
+        </div>
+
+        <div class="col-md-8 col-sm-8">
+          <label class="payment-label" payment-type="transferencia">
+            <input type="checkbox" name="payment_type" value="transferencia">
+            TRANSFERENCIA  <a href="/tos" class="ter-chek-2">
+            (Acepto términos y condiciones) </a> <div class="suger">*Si vas a pagar con transferencia debes terminar todo el proceso de compra, si no NO podremos <br> despachar tu pedido.</div>
+          </label>
+        </div>
+
+
+        <div class="col-md-8 col-sm-8">
+         <div class="texto-datos"> DATOS PARA LA TRANSFERENCIA </div>
+         <div class="box-chekk">
+          <div class="texto-trans">Cuenta corriente </div>
+          <div class="texto-trans">Giani Da Firenze SpA </div>
+          <div class="texto-trans">Rut: 76.290.674-0</div>
+          <div class="texto-trans">Banco Estado</div>
+          <div class="texto-trans">CTA 1286463</div>
+          <div class="texto-trans">Mail: contacto@gianidafirenze.cl</div>
+        </div>
+
+        <div class="col-md-8 col-sm-8">
+          <div class="form-group form-moulie">
+            <label class="control-label tra">ADJUNTAR COMPROBANTE</label>
+            <input type="text" name="file" class="imgup-add-input" style="visibility: hidden;">
+            <div class="imageuploader-container">
+              <div class="imgup" name="THEY HATIIN">             
+                <ul class="img-ulist" name="THEY SEE ME ROOOLLIN">            
+                   <li class="imgup-add-input-container"> <input type="file" class="imgup-add-input"> </li>
+                 </ul>      
+               </div>
+               </div>
+          </div>
+        </div>
+      </div>
+    </form>
+</div>
+
+    <div class="col-md-8 col-sm-8 col-xs-8">
+      <hr class="h-2">
+    </div>
+
+</div><!-- /.main-container -->
+<div style="margin-bottom:100px;"></div>
+{% include '../home/footer.html' %}
+{% end %}
+
+

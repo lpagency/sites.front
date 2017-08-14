@@ -1,0 +1,135 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+
+
+{% end %}
+{% block body %}
+<!-- *****************slider metodo********** -->
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+<section>
+      <div class="mo" style="background:url('{{ read_image(site.name + '_ellos',500) }}');height:570px; background-size:cover; filter: grayscale(0%) brightness(65%);-webkit-filter: grayscale(0%) brightness(65%);
+    -moz-filter: grayscale(0%) brightness(65%);-ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; position:relative;  margin-top: -74px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+               <div class="image-upload ge visible-movil">
+                   <label for="img_ellos">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_ellos" name="image" id="img_ellos" >
+               </div>
+        {% end %}
+                <img id="{{ site.name }}_ellos" src="{{ read_image(site.name + '_ellos', 1) }}" onload="this.src='{{ read_image(site.name + '_ellos',500) }}'" class="banner_uno_list hidden" alt="item">
+
+       </div>
+
+                <div class="col-md-12">
+                    <h1 class="text-center til-art {{editabletext}}" text-id="{{ site.name + '_ellos_5' }}"> {{ read_text(site.name +  '_ellos_5') }}</h1>
+                </div>
+</section>
+
+<section>
+  <!--   <div class="row"> -->
+  <div align="center">
+        <div class="col-md-12">
+            <div class="gu text-center {{editabletext}}" text-id="{{ site.name + '_blen_el_1' }}"> {{ read_text(site.name +  '_blen_el_1') }} </div>
+        </div>
+    </div>
+<!--     </div> -->
+
+</section>
+
+<section style="margin-bottom:74px;">
+    <!-- *articulos* -->
+
+     <div class="container">
+        <!--   <div class="row"> -->
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='ellos,posicion 1') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='ellos,posicion 2') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='ellos,posicion 3') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='ellos,posicion 4') }}
+        <!--  </div> -->
+    </div>
+        
+  
+</section>
+
+<!-- 
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-xs-12">
+                <img class="img-responsive img-1" src="https://7static.loadingplay.com/static/images/19729ec1fa62f98c3fe0454154017acb_skinface.png">
+                <p class="inf">contenido</p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+                <img class="img-responsive img-2" src="https://7static.loadingplay.com/static/images/19729ec1fa62f98c3fe0454154017acb_skinface.png">
+                <p class="inf">contenido</p>
+            </div>
+            <div class="col-md-3 col-xs-12">
+                <img class="img-responsive img-3" src="https://7static.loadingplay.com/static/images/19729ec1fa62f98c3fe0454154017acb_skinface.png">
+                <p class="inf2">contenido</p>
+            </div>
+             <div class="col-md-3 col-xs-12">
+                <img class="img-responsive img-3" src="https://7static.loadingplay.com/static/images/19729ec1fa62f98c3fe0454154017acb_skinface.png">
+                <p class="inf2">contenido</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- <section>
+
+    <div align="center">
+        <div class="col-md-12">
+            <div class="en text-center {{editabletext}}" text-id="{{ site.name + '_blen_art' }}"> {{ read_text(site.name +  '_blen_art') }} </div>
+        </div>
+      </div>
+
+
+</section> -->
+
+<section id="contenedor">
+    <div class="container">
+        <div class="row">
+          <!--   {{ getArticleList(tag='ellos,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }} -->
+        </div>
+    </div>
+
+</section>
+
+
+
+
+
+{% include '../home/footer.html' %}
+
+{% end %}
+
+
+
+
+<div class="clearfix-fun"></div>
+
+
+{% include '../home/footer.html' %}
+{% end %}

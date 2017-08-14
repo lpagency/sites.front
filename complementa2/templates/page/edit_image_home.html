@@ -1,0 +1,110 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+              
+            <!-- PRIMER SLIDER -->
+              {% if is_admin %}
+              <div class="col-sm-6" style="position: relative;">
+                  <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide1" style="display: block">
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide1" name="image" id="img_slide1">
+                       </div>
+
+                {% end %}
+
+                        <img id="{{ site.name }}_slide1" src="{{ read_image(site.name + '_slide1', 1) }}"  onload="this.src='{{ read_image(site.name + '_slide1',500) }}'" class="slider" alt="item">
+               
+
+                <!-- <img src="https://7static.loadingplay.com/static/images/87b28a8975c052b1f9c299167f05319d_HOME1-1280x1024.png" alt="Slider 6" longdesc="https://7static.loadingplay.com/static/images/87b28a8975c052b1f9c299167f05319d_HOME1-1280x1024.png" /> -->
+                </div>
+
+                <!-- SEGUNDO SLIDER -->
+                <div class="col-sm-6" style="position: relative;">
+                {% if is_admin %}
+                       <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide2">
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide2" name="image" id="img_slide2">
+                       </div>
+                {% end %}
+                        <img id="{{ site.name }}_slide2" src="{{ read_image(site.name + '_slide2', 1) }}" onload="this.src='{{ read_image(site.name + '_slide2',500) }}'" class="slider" alt="item">
+
+                <!-- <img src="https://84static.loadingplay.com/static/images/ccb2e9fcfddefe71e008eb49b464db52_slide-07-1280x1024.png" alt="Slide 5" longdesc="https://84static.loadingplay.com/static/images/ccb2e9fcfddefe71e008eb49b464db52_slide-07-1280x1024.png" /> -->
+                </div>
+
+                <!-- TERCER SLIDER -->
+                <div class="col-sm-6" style="position: relative;">
+                {% if is_admin %}
+
+                       <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide3">
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide3" name="image" id="img_slide3">
+                       </div>
+                        {% end %}
+                        <img id="{{ site.name }}_slide3" src="{{ read_image(site.name + '_slide3', 1) }}" onload="this.src='{{ read_image(site.name + '_slide3',500) }}'" class="slider" alt="item">
+                </div>
+
+                <!-- CUARTO SLIDER -->
+                <div class="col-sm-6" style="position: relative;">
+                {% if is_admin %}
+
+                       <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide4">
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide4" name="image" id="img_slide4">
+                       </div>
+                        {% end %}
+                        <img id="{{ site.name }}_slide4" src="{{ read_image(site.name + '_slide4', 1) }}" onload="this.src='{{ read_image(site.name + '_slide4',500) }}'" class="slider" alt="item">
+
+                <!-- <img src="http://complementadiseno.cl/tienda/image/cache/data/Banner home/slide-01-1280x1024.jpg" alt="Slide 01" longdesc="http://complementadiseno.cl/tienda/image/cache/data/Banner home/slide-01-1280x1024.jpg"> -->
+                </div>
+
+                <!-- QUINTO SLIDER -->
+                <div class="col-sm-6" style="position: relative;">
+                {% if is_admin %}
+
+                       <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide5">
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide5" name="image" id="img_slide5">
+                       </div>
+                        {% end %}
+                        <img id="{{ site.name }}_slide5" src="{{ read_image(site.name + '_slide5', 1) }}" onload="this.src='{{ read_image(site.name + '_slide5',500) }}'" class="slider" alt="item">
+
+
+                <!-- <img src="https://7static.loadingplay.com/static/images/348f409693f0af54fe61f00f9d3696bc_slide-02-1280x1024.png" alt="Slide 02" longdesc="https://7static.loadingplay.com/static/images/348f409693f0af54fe61f00f9d3696bc_slide-02-1280x1024.png" /> -->
+                </div>
+
+                <!-- SECTO SLIDER -->
+                <div class="col-sm-6" style="position: relative;">
+                {% if is_admin %}
+
+                       <div class="image-upload lapiz visible-movil">
+                           <label for="img_slide6" >
+                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           </label>
+                           <input type="file" class="editableimage" image-id="{{ site.name }}_slide6" name="image" id="img_slide6">
+                       </div>
+                        {% end %}
+                        <img id="{{ site.name }}_slide6" src="{{ read_image(site.name + '_slide6', 1) }}" onload="this.src='{{ read_image(site.name + '_slide6',500) }}'" class="slider" alt="item">
+
+                <!-- <img src="https://84static.loadingplay.com/static/images/cb6b839e3ab435d2529737755ca52daa_slide-06-1280x1024.png" alt="Slide 03" longdesc="https://84static.loadingplay.com/static/images/cb6b839e3ab435d2529737755ca52daa_slide-06-1280x1024.png" /> -->
+                </div>
+{% end %}

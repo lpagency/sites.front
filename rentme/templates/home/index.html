@@ -1,0 +1,144 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<script type='text/javascript'>
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+</script>
+
+<script type="text/javascript">
+
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- *contenido* -->
+
+<section>
+  
+<div class="container">
+   <div class="col-md-12">
+      <div class="texto-prin text-center {{editabletext}}" text-id="{{ site.name + '_one_re' }}"> {{ read_text(site.name +  '_one_re') }} </div>
+   </div>
+
+   <div class="col-md-12 col-sm-12 col-xs-12"> 
+   	<div align="center">
+   		<div class="mo" style="position:relative; width: 49%;">
+   			{% if is_admin %}
+   			<div class="image-upload lapiz visible-movil">
+   				<label for="img_box_ren">
+   					<img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+   				</label>
+   				<input type="file" class="editableimage" image-id="{{ site.name }}_box_ren" name="image" id="img_box_ren" >
+   			</div>
+   			{% end %}
+   			<a id="{{ site.name + '_box_ren' }}" href="{{ read_link(site.name + '_box_ren') }}">
+   				<img id="{{ site.name }}_box_ren" src="{{ read_image(site.name + '_box_ren', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ren',) }}'" class="box-ren" alt="item">
+   			</a>
+   			{% if is_admin %}
+   			<img class="change-image editablelink" link-id="{{ site.name + '_box_ren' }}" content="{{ read_link(site.name + '_box_ren') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+   			{% end %}
+   		</div>
+
+   	</div>
+   </div>
+
+   <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="contenedor">
+     <div class="text-img text-center {{editabletext}}" text-id="{{ site.name + '_box_texto' }}"> {{ read_text(site.name +  '_box_texto') }}</div>
+     </div>
+   </div>
+
+
+ <div class="col-md-12 col-sm-12 col-xs-12"> 
+   	<div align="center">
+   		<div class="mo" style="position:relative; width: 49%;">
+   			{% if is_admin %}
+   			<div class="image-upload lapiz visible-movil">
+   				<label for="img_box_ren_2">
+   					<img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+   				</label>
+   				<input type="file" class="editableimage" image-id="{{ site.name }}_box_ren_2" name="image" id="img_box_ren_2" >
+   			</div>
+   			{% end %}
+   			<a id="{{ site.name + '_box_ren_2' }}" href="{{ read_link(site.name + '_box_ren_2') }}">
+   				<img id="{{ site.name }}_box_ren_2" src="{{ read_image(site.name + '_box_ren_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ren_2',) }}'" class="box-ren" alt="item">
+   			</a>
+   			{% if is_admin %}
+   			<img class="change-image editablelink" link-id="{{ site.name + '_box_ren_2' }}" content="{{ read_link(site.name + '_box_ren_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+   			{% end %}
+   		</div>
+
+   	</div>
+   </div>
+
+     <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="contenedor">
+     <div class="text-img text-center {{editabletext}}" text-id="{{ site.name + '_box_texto_2' }}"> {{ read_text(site.name +  '_box_texto_2') }}</div>
+     </div>
+   </div>
+
+
+
+ <div class="col-md-12 col-sm-12 col-xs-12"> 
+   	<div align="center">
+   		<div class="mo" style="position:relative; width: 49%;">
+   			{% if is_admin %}
+   			<div class="image-upload lapiz visible-movil">
+   				<label for="img_box_ren_3">
+   					<img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+   				</label>
+   				<input type="file" class="editableimage" image-id="{{ site.name }}_box_ren_3" name="image" id="img_box_ren_3" >
+   			</div>
+   			{% end %}
+   			<a id="{{ site.name + '_box_ren_3' }}" href="{{ read_link(site.name + '_box_ren_3') }}">
+   				<img id="{{ site.name }}_box_ren_3" src="{{ read_image(site.name + '_box_ren_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ren_3',) }}'" class="box-ren" alt="item">
+   			</a>
+   			{% if is_admin %}
+   			<img class="change-image editablelink" link-id="{{ site.name + '_box_ren_3' }}" content="{{ read_link(site.name + '_box_ren_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+   			{% end %}
+   		</div>
+
+   	</div>
+   </div>
+
+     <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="contenedor">
+     <div class="text-img text-center {{editabletext}}" text-id="{{ site.name + '_box_texto_3' }}"> {{ read_text(site.name +  '_box_texto_3') }}</div>
+     </div>
+   </div>
+
+
+</div>
+
+
+<div class="clearfix"></div>
+
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

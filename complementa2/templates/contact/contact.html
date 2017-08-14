@@ -1,0 +1,193 @@
+{% extends "../base.html" %}
+
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+        $('.list-menu').removeClass('active');
+        $('.contacto').addClass("active");
+</script>
+{% end %}
+
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+<div class="container-fluid title text-left container-fluid-magle" style="display: inherit;">
+    <div class="row">
+        <div class="col-sm-4 col-xs-12">
+            <h2 class="space_title_contact">
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_tit' }}" >{{ read_text(site.name + '_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_tit') }}
+                {% end %}
+            </h2>
+
+        </div>
+        <h2 class="col-sm-8 col-xs-12 only-movil">
+            {% if is_admin %}
+            <span class="editabletext" text-id="{{ site.name + '_contact' }}" >{{ read_text(site.name + '_contact') }}</span>
+            {% else %}
+            {{ read_text(site.name + '_contact') }}
+            {% end %}
+            </h2>
+    </div>
+</div>
+            
+            <div class="container-fluid contact product text-left container-fluid-magle" style="display: inherit;">
+                <div class="row">       
+                    <div class="col-xs-12 col-sm-4">
+                        <address class="space_address">
+                            {% if is_admin %}
+                                <span class="editabletext" text-id="{{ site.name + '_address' }}" >{{ read_text(site.name + '_address') }}</span>
+                            {% else %}
+                                {{ read_text(site.name + '_address') }}
+                            {% end %}
+                            <br>
+                            {% if is_admin %}
+                                <span class="editabletext" text-id="{{ site.name + '_city' }}" >{{ read_text(site.name + '_city') }}</span>
+                            {% else %}
+                                {{ read_text(site.name + '_city') }}
+                            {% end %}<br>
+                            {% if is_admin %}
+                                <span class="editabletext" text-id="{{ site.name + '_phone' }}" >{{ read_text(site.name + '_phone') }}</span>
+                            {% else %}
+                                {{ read_text(site.name + '_phone') }}
+                            {% end %}<br>
+                            {% if is_admin %}
+                                <span class="editabletext" text-id="{{ site.name + '_email' }}" >{{ read_text(site.name + '_email') }}</span>
+                            {% else %}
+                                {{ read_text(site.name + '_email') }}
+                            {% end %}<br>
+                        </address>
+                    </div>
+
+                    <div class="col-xs-12 col-sm-8">
+                        <form action="{{ site_base }}/contact" class="contact-add-form" method="post" novalidate id="newsletter">
+                            <div class="row clearfix">
+                                <div class="col-xs-12 ">
+                                
+                                <div class="form-group box-contact">
+                                        <label class="control-label">Nombre</label>
+                                        <div class=" controls">
+                                            <input name="name" placeholder="Tu Nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                        </div>
+                                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+                                </div>
+                                    <div class="form-group box-contact">
+                                        <label class="control-label">Email</label>
+                                        <div class=" controls">
+                                            <input name="Tu Email" placeholder="Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input type="hidden" name="subject" value="contactanos" />
+                                        </div>
+                                        <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
+                                    </div>
+                                </div>  
+                            </div>  
+                            <div class="form-group box-contact">
+                                <label class="control-label">Mensaje</label>
+                                <div class="controls">
+                                    <textarea name="message" placeholder="Escribe aqui tu mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                </div>
+                                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Comentario</span>
+                            </div>
+                            <p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Send Message</button></p>
+                            <input type="hidden" name="submitted" id="submitted3" value="true">
+                        </form> 
+                    </div>      
+                
+                </div>  
+            </div>
+            
+{% end %}

@@ -1,0 +1,250 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+{% end %}
+{% block body %}
+<!-- 2page -->
+	<section class="pdf-bg padbottom50">
+		<center>
+			<div class="mar-org">
+				<div class="container">
+					<div class="row">
+						<div class="details-org">
+							<h1>Estás pasado en 7kg</h1>
+						</div>
+						<div class="details-wht">
+							<p>Los valores entregados en esta tabla sobre pérdida de peso, son sólo referenciales</p>
+							<p>y requieren de la evaluación y cálculo de un  especialista.</p>
+							<h2>PARA ALCANZAR SU PESO IDEAL TE RECOMENDAMOS USAR NUESTRO MÉTODO RDK A CONTINUACIÓN</h2>
+						</div>
+
+						<div class="details-wht2 space10">
+							<h3>Detalles del plan</h3>
+
+							<div class="row">
+								<div class="col-md-6">
+									<div class="line">
+										<h4>Etapas del plan</h4>
+											<div class="row">
+												<div class="col-md-6 col-sm-6 col-xs-6">
+													<div class="details-plan">
+														<ul>
+															<li>Inicio</li>
+															<li>Adelgazamiento</li>
+															<li>Reabilitación</li>
+															<li>Transición</li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-6 col-xs-6">
+													<div class="details-plan pull-right">
+														<ul>
+															<span><li>08 días</li></span>
+															<span><li>06 días</li></span>
+															<span><li>02 días</li></span>
+															<span><li>12 días</li></span>
+														</ul>
+													</div>
+												</div>
+											</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<h4>Redukcales por comida</h4>
+									<div class="row">
+												<div class="col-md-6 col-sm-6 col-xs-6">
+													<div class="details-plan">
+														<ul>
+															<li>Desayuno</li>
+															<li>Media mañana</li>
+															<li>Almuerzo</li>
+															<li>Media tarde</li>
+															<li>Comida</li>
+														</ul>
+													</div>
+												</div>
+												<div class="col-md-6 col-sm-6 col-xs-6">
+													<div class="details-plan pull-right">
+														<ul>
+															<span><li>8 Rdk</li></span>
+															<span><li>6 Rdk</li></span>
+															<span><li>2 Rdk</li></span>
+															<span><li>3 Rdk</li></span>
+															<span><li>3 Rdk</li></span>
+														</ul>
+													</div>
+												</div>
+											</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="details-wht2 space10">
+							<div class="row">
+								<div class="col-md-9">
+									<div class="txt">
+										<p>Nececitas un total de  <span>24</span> redukcales para tu plan</p>
+									</div>
+								</div>
+								<div class="col-md-3">
+									<button type="button" class="comprar-btn " data-toggle="button" aria-pressed="false" autocomplete="off">
+									Comprar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="space10"></div>
+					<p class="text-left marginL14">Descarga la ficha informativa de este plan en <a href="#">PDF</a></p>
+				</div>
+			</div>
+		</center>
+	</section>
+	
+
+	<!-- orange bg -->
+	<section class="org-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="fsize26 space10">Otros planes que te pueden interesar</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+<!-- image section -->
+	<div class="container">
+		<div class="row space70">
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img1.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>0-3<span>kg</span></p>
+						</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img2.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>3-5<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img3.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>3-7<span>kg</span></p>
+						</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row space40">
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img4.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>0-0<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img5.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>1-1<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img8.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>2-2<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="row space40">
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img7.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>3-3<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img6.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>5-5<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-sm-4">
+				<div class="image">
+					<a href="#"><img src="static/img/plan-img9.jpg" class="img-responsive" width="100%" alt=".."></a>
+					<div class="circle">
+						<div class="gray-circle">
+						<p>6-6<span>kg</span></p>
+					</div>
+						<h3 class="text-center">Nombre plan</h3>
+						<h4 class="text-center">detalle del plan.</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% include 'footer.html' %}
+{% end %}

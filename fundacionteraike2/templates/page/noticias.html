@@ -1,0 +1,53 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+{% end %}
+
+{% block body %}
+<div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="col-md-offset-2">
+            <div class="banner-below-text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_bannerNoticias' }}">{{ read_text(site.name +  'text_bannerNoticias') }}</div>
+          </div>
+        </div>
+      </div>
+	  
+	  <div class="div">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          {{ getArticleList(html="page/noticias_home.html",tag="noticia") }}
+          </div>
+        </div>
+      </div>
+</div>
+{% include ../home/footer.html %}
+{% end %}

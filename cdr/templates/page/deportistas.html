@@ -1,0 +1,48 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<style type="text/css">
+    .nopadding 
+    {
+       padding: 0 !important;
+       margin: 0 !important;
+    }
+
+    .bottom-space-10
+    {
+        margin-bottom: 10px;
+    }
+
+</style>
+
+<div class="container">
+    <div class="col-md-12" >
+
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + 'deportitsta_title' }}"> {{ read_text(site.name +   'deportitsta_title') }} </div>
+
+        <!--
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + 'deportista_content' }}"> {{ read_text(site.name +  'deportista_content') }} </div>
+        -->
+
+        {{ getArticleList(limit=100, html="page/profile.html", tag="deportista") }}
+
+        <div class="clearfix"></div>
+
+    </div>
+</div>
+
+{% end %}

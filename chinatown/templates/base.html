@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>Family Market - {% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="Family Market">
+        <meta name="author" content="Loadingplay">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/cssbt/style.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/cssbt/icomoon/style.css">
+        <!-- css para estilos de cajas de contenido -->
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/cssbt/cont-boxes-home.css">
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/css/font-awesome.min.css" />
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/css/font-awesome-4.3.0/css/font-awesome.min.css" />
+        <link rel="shortcut icon" type="image/png" href="{{ site_base }}/{{nocache_static}}/imgbt/ico/32.png"/>
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bower/fancybox/source/jquery.fancybox.css" media="screen" />
+        <!-- <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/custom_bootstrap.css"> -->
+        <!-- menu editor css -->
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/menu/css/main.css" type="text/css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/menu/css/wallop-slider--slide.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/menu/css/wallop-slider.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/menu/css/colpick.css">
+        <!-- menu editor css -->
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/menu-material-2.css">
+        <!-- <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/store.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/simplePagination.css"> -->
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/ligthbox-d.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/gallery.css">
+        <!-- autocomplete -->
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/js/plugins/selectize/selectize.css" />
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/{{nocache_static}}/css/me.css">
+        <!--<link rel="stylesheet" href="{{ site_base }}/common/css/jquery.tag-editor.css">-->
+        <link rel="stylesheet" href="{{ site_base }}/common/css/jquery.tagsinput.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/fm.css">
+        <!-- autocomplete -->
+        {% block css %}{% end %}
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+                [data-sr] { visibility: hidden; }
+        </style>
+    </head>
+    <body id="home">
+        {% include 'menu-lateral-editor.html' %}
+        <!-- generar contenido y formularios -->
+        <div id="menu_movil" class="descripcion_wrapper descripcion_opacity b_wrapper" style="display:none;">
+            <div class="descripcion_cerrar">
+                <button id="tellmeboton2" style="font-size: 35px; color:gray !important"><i class="icon-remove"></i></button>
+            </div>
+        </div>
+        <!-- generar contenido y formularios -->
+        <div id="cuerpo" style="width: 100%">
+            
+        </div>
+        <!-- header -->
+        {% block header %}{% end %}
+        <!-- header -->
+        {% block body %}
+        {% end %}
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/js/rimages.js"></script> -->
+        <!--<script src="{{ site_base }}/{{nocache_static}}/js/fix_ie9.js"></script>-->
+        <script type="text/javascript">
+                var site_base = "{{ site_base }}"
+        </script>
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="{{ site_base }}/common/js/jquery.tagsinput.min.js"></script>
+        <!--<script src="{{ site_base }}/{{nocache_static}}/js/giani_functions.js"></script>
+        <script src="{{ site_base }}/{{nocache_static}}/js/giani.js"></script>-->
+        <!-- bt inicio -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/jsbt/placeholders.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/jsbt/custom.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/jsbt/ga.js"></script>
+        <!-- bt fin -->
+        <!-- fm js -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.tagsinput.min.js"></script>
+        <script src="{{ site_base }}/{{nocache_static}}/js/fm.js"></script>
+
+        <!-- menu editor js -->
+        
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/plugins/jquery.lazyload.js"></script>
+        <!-- <script src="{{ site_base }}/common/js/bower/modernizr/lib/build.js"></script> -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/menu/js/main.js"></script> -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/menu/js/WallopSlider.js"></script> -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/menu/js/script.js"></script> -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/menu/js/colpick.js"></script> -->
+        <!-- menu editor js -->
+        <script src="{{ site_base }}/{{nocache_static}}/js/menu-material-2.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/ligthbox-d.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/plugins/selectize/selectize.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/plugins/loadingplay/imageupload.preview.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/plugins/jquery.maskedinput.min.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/me.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        {% block scripts %}{% end %}
+        <!-- wysihtml5 parser rules -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/bower_components/wysihtml/dist/wysihtml5x-toolbar.min.js"></script> -->
+        <!-- <script src="{{ site_base }}/{{nocache_static}}/bower_components/wysihtml/parser_rules/advanced_and_extended.js"></script> -->
+        <!-- wysihtml5 Library -->
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/gallery/add.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/product/add.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/article/add_image_article.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/validation/form_validation.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/page/add.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/content/add.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/content/set_fixed.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/tags.js" ></script>
+        <script>
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId: '348231912006000',
+                        xfbml: true,
+                        version: 'v2.1'
+                    });
+                };
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/header.js" ></script>
+        <script src="{{ site_base }}/{{nocache_static}}/js/scrollReveal.min.js?ver=2.1.0"></script>
+        <script type="text/javascript">
+                window.sr= new scrollReveal({
+                    reset: true,
+                    move:"20px"
+                });
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/members/add.js"></script>
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/bower_components/moment/min/moment.min.js"></script> -->
+
+        <script type="text/javascript" src="{{ site_base }}/{{nocache_static}}/js/imageloader.js" ></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery.cookie/jquery.cookie.js"></script>
+
+        {% block javascript %}{% end %}
+
+    </body>
+</html>

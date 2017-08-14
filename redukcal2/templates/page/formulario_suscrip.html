@@ -1,0 +1,70 @@
+
+<section class="formulario-gris">
+
+<div class="container fondo-contact" >  
+ <a href="#first-page-scroll" class="anchorLink">
+    <div class="cir-white"> <i class="fa fa-arrow-up"> </i> </div>
+  </a>
+  <div class="col-md-12">
+   <div class="press text-center {{editabletext}}" text-id="{{ site.name + '_for_1' }}"> {{ read_text(site.name +  '_for_1') }}</div>
+ </div>    
+      <div class="container-fluid contact product text-left container-fluid-magle fondo-contact" style="display: inherit;">
+        <div class="row">   
+         
+          <div class="container">
+                    <div class="col-xs-12 col-sm-12 align-form-contact fondo-contact">
+            <div>
+            <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
+              <div class="row clearfix">
+                <div class="col-xs-12 col-md-6 col-sm-6">
+                <div class="form-group">
+                     <label id="helpBlock2" class="control-label dif-col">NOMBRE</label>
+                    <div class=" controls">
+                      <input name="name" placeholder="Nombre y apellido" id="itNombre" class="form-control other-0 input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                    </div>
+                    <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+                  </div>
+                  <div class="form-group">
+                     <label  id="helpBlock3" class="control-label dif-col-2">EMAIL</label>
+                    <div class=" controls">
+                      <input name="email" placeholder="Email" class="form-control other input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                      <input type="hidden" name="subject" value="contactanos" />
+                    </div>
+                    <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
+                  </div>
+                </div>  
+              </div>  
+              <div class="col-md-6 col-sm-6">
+               <div class="form-group">
+                <label class="control-label dif-col-3">TELÉFONO</label>
+                <div class=" controls">
+                  <input name="number" placeholder="Escribe tu teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
+                </div>
+                <span id="helpBlock2" class="hidden help-block help-fono">Escribe tu teléfono</span>
+              </div>
+            </div>
+              <div class="col-md-12 col-sm-12">
+              <div class="form-group">
+                  <label id="helpBlock4" class="control-label dif-col-4">COMENTARIO</label>
+                <div class="controls">
+                  <textarea name="message" placeholder="Comentario" class="form-control other-2 input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Comentario</span>
+              </div>
+            </div>
+              <p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-primary" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">ENVIAR </button></p>
+              <input type="hidden" name="submitted" id="submitted3" value="true">
+            </form> 
+            </div>
+
+          </div>    
+        
+                  </div>
+        </div>  
+      </div>
+      
+
+
+
+  </section>
+ 

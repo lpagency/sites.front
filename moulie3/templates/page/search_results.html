@@ -1,0 +1,395 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.dos.js"></script> -->
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcategchocolates", function(ev){
+        // ev.preventDefault();
+
+    $(".subcategchocolates").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.productos').addClass("active");
+
+  });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+   <section>
+
+    <!-- todas -->
+    <div id="banner_todas" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_todas',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_todas">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_todas" name="image" id="img_todas" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_todas" src="{{ read_image(site.name + '_todas', 1) }}" onload="this.src='{{ read_image(site.name + '_todas',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+   <!-- chocolates -->
+    <div id="banner_chocolates" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_chocolates',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_chocolates">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_chocolates" name="image" id="img_chocolates" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_chocolates" src="{{ read_image(site.name + '_chocolates', 1) }}" onload="this.src='{{ read_image(site.name + '_chocolates',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <!-- macarons -->
+    <div id="banner_macarons" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_macarons',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_macarons">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_macarons" name="image" id="img_macarons" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_macarons" src="{{ read_image(site.name + '_macarons', 1) }}" onload="this.src='{{ read_image(site.name + '_macarons',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <!-- delicias -->
+    <div id="banner_delicias" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_delicias',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_delicias">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_delicias" name="image" id="img_delicias" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_delicias" src="{{ read_image(site.name + '_delicias', 1) }}" onload="this.src='{{ read_image(site.name + '_delicias',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <!-- calugas -->
+
+    <div id="banner_calugas" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_calugas',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_calugas">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_calugas" name="image" id="img_calugas" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_calugas" src="{{ read_image(site.name + '_calugas', 1) }}" onload="this.src='{{ read_image(site.name + '_calugas',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <!-- sin azucar -->
+    <div id="banner_sin_azucar" class="mobile banner_top" style="background:url('{{ read_image(site.name + '_sin',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom:40px; position: relative;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_sin">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_sin" name="image" id="img_sin" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_sin" src="{{ read_image(site.name + '_sin', 1) }}" onload="this.src='{{ read_image(site.name + '_sin',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+</section>
+
+<!-- **menu categorias** -->
+
+  <section class="h_submenu">
+          <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+        <div align="center">
+           <div style="background: #7184A4; width:88%; height: 40px;" class="tag-mov"> 
+            <a href="#" id="chocolates" class="subcateg mbtm5" tag="chocolates" role="button">CHOCOLATES </a>
+            <a href="#" id="macarons" class="subcateg mbtm5" tag="macarons" role="button">MACARONS</a>
+            <a href="#" id="delicias" class="subcateg mbtm5" tag="delicias" role="button">DELICIAS</a>
+            <a href="#" id="calugas" class="subcateg mbtm5" tag="calugas" role="button">CALUGAS</a>
+            <a href="#" id="sin_azucar" class="subcateg mbtm5" tag="sin_azucar" role="button">SIN AZÚCAR</a>
+            <!-- <a href="#" id="todo" class="subcateg mbtm5" tag="" role="button" data-toggle="modal" data-target="#myModal-pro">Ver todo</a> -->
+        </div>
+          </div>
+          </div>
+  </section>
+
+    <section class="h_submenu menu_choc" style="display: none;">
+          <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+        <div align="center">
+           <div style="width:88%; height: 40px;" class="tag-mov"> 
+            <a href="#" id="chocolates" class="subcategchocolate mbtm5" tag="chocolates" role="button">TODOS </a>
+            <a href="#" id="barras" class="subcategchocolate mbtm5" tag="barras" role="button">BARRAS</a>
+            <a href="#" id="bombones" class="subcategchocolate mbtm5" tag="bombones" role="button">BOMBONES</a>
+            <a href="#" id="figuras" class="subcategchocolate mbtm5" tag="figuras" role="button">FIGURAS</a>
+            <a href="#" id="specialite" class="subcategchocolate mbtm5" tag="specialite" role="button">SPECIALITÉ</a>
+            <!-- <a href="#" id="todo" class="subcateg mbtm5" tag="" role="button" data-toggle="modal" data-target="#myModal-pro">Ver todo</a> -->
+          </div>
+          </div>
+  </section>
+
+
+<section id="cont">
+   <div class="container">
+
+    <!-- todas -->
+    <div id="img-todas" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_todas">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_todas" name="image" id="img_box_dif_todas" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_todas" src="{{ read_image(site.name + '_box_dif_todas', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_todas') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+    <!-- chocolate -->
+    <div id="img-chocolates" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_1" name="image" id="img_box_dif_1" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_1" src="{{ read_image(site.name + '_box_dif_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_1') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+    <!-- chocolate barras-->
+    <div id="img-chocolates-barras" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_1_barras">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_1_barras" name="image" id="img_box_dif_1_barras" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_1_barras" src="{{ read_image(site.name + '_box_dif_1_barras', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_1_barras') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+    <!-- chocolate bombones-->
+    <div id="img-chocolates-bombones" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_1_bombones">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_1_bombones" name="image" id="img_box_dif_1_bombones" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_1_bombones" src="{{ read_image(site.name + '_box_dif_1_bombones', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_1_bombones') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+    <!-- chocolate figuras-->
+    <div id="img-chocolates-figuras" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_1_figuras">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_1_figuras" name="image" id="img_box_dif_1_figuras" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_1_figuras" src="{{ read_image(site.name + '_box_dif_1_figuras', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_1_figuras') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+    <!-- chocolate specialite-->
+    <div id="img-chocolates-specialite" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_1_specialite">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_1_specialite" name="image" id="img_box_dif_1_specialite" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_1_specialite" src="{{ read_image(site.name + '_box_dif_1_specialite', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_1_specialite') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+   <!-- macarons -->
+    <div id="img-macarons" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_4" name="image" id="img_box_dif_4" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_4" src="{{ read_image(site.name + '_box_dif_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_4') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+   <!-- delicias -->
+    <div id="img-delicias" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_2" name="image" id="img_box_dif_2" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_2" src="{{ read_image(site.name + '_box_dif_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_2') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+   <!-- calugas -->
+    <div id="img-calugas" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_3" name="image" id="img_box_dif_3" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_3" src="{{ read_image(site.name + '_box_dif_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_3') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+   <!-- sin azucar -->
+    <div id="img-sin_azucar" class="col-md-6 hidden img-tag">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_dif_5">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_dif_5" name="image" id="img_box_dif_5" >
+       </div>
+       {% end %}
+
+       <img id="{{ site.name }}_box_dif_5" src="{{ read_image(site.name + '_box_dif_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_5') }}'" class="box-producto-static" alt="item">
+     </div>
+   </div>
+
+
+   <!-- listado de productos -->
+    <div class="product-list products"></div>
+
+
+    </div>
+     <div class="clearfix-dos"> </div>
+</section>
+
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

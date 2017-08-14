@@ -1,0 +1,101 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/inside_header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/common/js/dataTables/jquery.dataTables.min.js" ></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/order/list.js" ></script>
+{% end %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/css/dataTables/jquery.dataTables.min.css">
+{% end %}
+{% block body %}
+    {% if ok %}
+        <div class="container-fluid product-detail-container top-distance-content">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 top-distance-content">
+                    <table id="pedidos" class="table no-bold">
+                        <thead>
+                            <tr>
+                                <th>Nombre de pedido</th>
+                                <th>N&deg; de pedido</th>
+                                <th>Fecha</th>
+                                <th>Monto</th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in lista %}
+                        <tr>
+                            <th>{{item["name"]}}</th>
+                            <th>{{item["id"]}}</th>
+                            <th>{{item["date"]}}</th>
+                            <th>{{money_format(item["total"])}}</th>
+                            <th>
+                                <a class="btn-sm open-with-lightbox" href="{{site_base}}/order_detail/list?order_id={{item['id']}}">Ver Pedido</a>
+                            </th>
+                            <th>
+                                <a class="btn-sm" href="{{site_base}}/order/add_to_cart?order_id={{item['id']}}">Usar Pedido</a>
+                            </th>
+                        </tr>
+                        {% end %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid product-detail-container top-distance-content">
+            <p>{{message}}</p>
+        </div>
+    {% end %}
+{% include '../home/footer.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = 'https://apibodegas.loadingplay.com/',
+            checkout_url = 'https://checkout.loadingplay.com/';
+
+        function isLocalHost() {
+            return document.location.href.indexOf('localhost') != -1;
+        }
+
+        function isDevelopment() {
+            return document.location.href.indexOf('ondev.today') != -1;
+        }
+
+        // configure for each enviroment
+        if ( isLocalHost() ) 
+        {
+            base_url = 'http://localhost:8520/';
+            checkout_url = 'http://localhost:8522/';
+        } 
+        else if ( isDevelopment() ) 
+        {
+            base_url = 'http://apibodegas.ondev.today/';
+            checkout_url = 'http://lpcheckout.ondev.today/';
+        }
+
+        // initialize ecommerce
+        var facade = $(document).ecommerce(
+            {
+                'app_public' : 14,
+                'ignore_stock' : true,
+                'products_per_page' : 60,
+                'animation' : 'basic',
+                'base_url' : base_url,
+                'checkout_url': checkout_url
+            });
+
+    });
+</script>
+{% end %}

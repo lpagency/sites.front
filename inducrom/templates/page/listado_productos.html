@@ -1,0 +1,395 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+</style>
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      var tag = Utils.getUrlParameter("tag");
+
+      if(tag == "tienda"){
+        $(".cotizar").addClass("hidden");
+      }
+
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+
+        //MUESTRA LA FLECHA
+
+        $(".fa-caret-right").addClass('hidden');
+        $(this).parent().find("i").removeClass('hidden');
+
+        if($(this).hasClass("index")){
+          $(".fa-caret-right").addClass('hidden');
+          $(this).parent().find("i").addClass('hidden');
+        }
+
+        //MUESTRA LA CATEGORIA COMO TITULO
+
+        var valorSubCateg = $(this).html();
+        $(".tituloCategoria").html(valorSubCateg);
+
+        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
+
+        var catProd = $(".buscaCat").html(" Home | Subcategorias | " + valorSubCateg);
+
+        localStorage.setItem("subcategoriaProd"," Home | Subcategorias | " + valorSubCateg);
+
+    });
+    console.log(window.location.href);
+
+    localStorage.setItem("url", window.location.href);
+
+    console.log($(".buscaCat").html());
+    });
+</script>
+<script type="text/javascript">
+  $(document).on("click", ".subcateg", function(ev){
+
+
+  });
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+
+<script type="text/javascript">
+// $(window).scroll(function(){
+//         if ($(this).scrollTop() > 100) {
+//             $('.scrollUp').fadeIn();
+//         } else {
+//             $('.scrollUp').fadeOut();
+//         }
+// });
+$(document).ready(function(){
+     $('.scrollUp').click(function(){
+         $("html, body").animate({ scrollTop: 0 }, 500);
+         // return false;
+     });
+})
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+  <div class="container min">
+   <section>
+    <div class="mobile img-mobile" style="background:url('{{ read_image(site.name + '_productos_in',500) }}'); height:499px; background-size:cover; margin-top: -101px;filter: grayscale(0%) brightness(55%); -webkit-filter: grayscale(0%) brightness(55%); -moz-filter: grayscale(0%) brightness(55%); -ms-filter: grayscale(0%) brightness(55%);-o-filter: grayscale(0%) brightness(55%); background-position:center; margin-bottom: 0px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_in">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_in" name="image" id="img_productos_in" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_in" src="{{ read_image(site.name + '_productos_in', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_in',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+</section>
+
+
+<div class="" style="height:100px;display:block;margin:auto auto 0 auto;"></div>
+<section> 
+  <div class="container-fluid">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="texto-header-pro buscaCat"> Home | Subcategorias </div>
+  </div>
+  <div class="hidden-xs hidden-sm visible-lg visible-md">
+    <div class="texto-header-pro-2 tituloCategoria"></div>
+  </div>
+  </div>
+</section>
+
+
+  <section class="h_submenu  visible-lg visible-md hidden-xs hidden-sm">
+        <div align="center">
+          <div class="container col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 100px;">
+            <a href="#" id="control_acceso" class="subcateg mbtm5 index" tag="control_acceso" role="button">Control de acceso</a>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="inteligente" class="subcateg partes mbtm5 scrollUp" tag="inteligente" role="button">Control de acceso inteligente</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="mecanico" class="subcateg partes mbtm5 scrollUp" tag="mecanico" role="button">Control de acceso mecanico</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="filas" class="subcateg partes mbtm5 scrollUp" tag="filas" role="button">Separador de filas</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="letreros" class="subcateg partes mbtm5 scrollUp" tag="letreros" role="button">Portaletreros</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="otros_acceso" class="subcateg partes mbtm5 scrollUp" tag="otros_acceso" role="button">Otros para control de acceso</a>
+              </div>
+
+            <a href="#" id="productos_ecologicos" class="subcateg mbtm5 index" tag="productos_ecologicos" role="button">Productos ecologicos</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="basurero" class="subcateg partes mbtm5 scrollUp" tag="basurero_ecologico" role="button">Basureros</a>
+               </div>
+
+            <a href="#" id="mobiliario_urbano" class="subcateg mbtm5 index" tag="mobiliario_urbano" role="button">Mobiliario urbano</a>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="basureros" class="subcateg partes mbtm5 scrollUp" tag="basureros" role="button">Basureros</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="banqueta" class="subcateg partes mbtm5 scrollUp" tag="banqueta" role="button">Banquetas/Escaños</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="bicicleteros" class="subcateg partes mbtm5 scrollUp" tag="bicicleteros" role="button">Bicicleteros</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="refugio_bici" class="subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button">Refugios para bicicletas</a>
+                </div>
+
+            <a href="#" id="espacios_publicos" class="subcateg mbtm5 index" tag="espacios_publicos" role="button">Espacios publicos</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_ceni" class="subcateg partes mbtm5 scrollUp" tag="pape_ceni" role="button">Papeleros ceniceros</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_ofi" class="subcateg partes mbtm5 scrollUp" tag="pape_ofi" role="button">Papeleros oficina</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_pendu" class="subcateg partes mbtm5 scrollUp" tag="pape_pendu" role="button">Papeleros tapa pendulo</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_pedal" class="subcateg partes mbtm5 scrollUp" tag="pape_pedal" role="button">Papeleros tapa pedal</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="cenicero" class="subcateg partes mbtm5 scrollUp" tag="cenicero" role="button">Ceniceros</a>
+               </div>
+
+            <a href="#" id="productos_especiales" class="subcateg mbtm5 index" tag="productos_especiales" role="button">Productos especiales</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="especiales" class="subcateg partes mbtm5 scrollUp" tag="especiales" role="button">Productos Especiales</a>
+               </div>
+
+            <a href="#" id="productos_nuevos" class="subcateg mbtm5 index" tag="productos_nuevos" role="button">Productos nuevos</a>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="pro_nuevos" class="subcateg partes mbtm5 scrollUp" tag="pro_nuevos" role="button">Productos nuevos</a>
+                </div>
+            <a href="#" id="todos" class="subcateg mbtm5 index scrollUp" tag="tienda" role="button">Todos los productos</a>
+            <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar listado" id="open-cart" onclick="window.location.href='{{ site_base }}/detalle_cotizacion'">COTIZAR</button>
+          </div>
+          </div>
+  </section>
+
+
+
+<!--  ********Tag movil****** -->
+
+   <section class="h_submenu visible-sm visible-xs hidden-md hidden-lg">
+        <div align="center">
+          <div class="container col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 50px;">
+            <div class="col-sm-3 col-xs-6">
+            <a href="#" id="control_acceso" class="subcateg mbtm5 index" tag="control_acceso" role="button">Control de acceso</a>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="inteligente" class="subcateg partes mbtm5" tag="inteligente" role="button">Control de acceso inteligente</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="mecanico" class="subcateg partes mbtm5" tag="mecanico" role="button">Control de acceso mecanico</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="filas" class="subcateg partes mbtm5" tag="filas" role="button">Separador de filas</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="letreros" class="subcateg partes mbtm5" tag="letreros" role="button">Portaletreros</a>
+              </div>
+              <div>
+              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+              <a href="#" id="otros_acceso" class="subcateg partes mbtm5" tag="otros_acceso" role="button">Otros para control de acceso</a>
+              </div>
+              </div>
+
+           <div class="col-sm-3 col-xs-6">
+            <a href="#" id="productos_ecologicos" class="subcateg mbtm5 index" tag="productos_ecologicos" role="button">Productos ecologicos</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="basurero" class="subcateg partes mbtm5" tag="basurero_ecologico" role="button">Basureros</a>
+               </div>
+             </div>
+
+             <div class="col-sm-3 col-xs-6">
+            <a href="#" id="mobiliario_urbano" class="subcateg mbtm5 index" tag="mobiliario_urbano" role="button">Mobiliario urbano</a>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="basureros" class="subcateg partes mbtm5" tag="basureros" role="button">Basureros</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="banqueta" class="subcateg partes mbtm5" tag="banqueta" role="button">Banquetas/Escaños</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="bicicleteros" class="subcateg partes mbtm5" tag="bicicleteros" role="button">Bicicleteros</a>
+                </div>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="refugio_bici" class="subcateg partes mbtm5" tag="refugio_bici" role="button">Refugios para bicicletas</a>
+                </div>
+              </div>
+
+            <div class="col-sm-3 col-xs-6" style="margin-bottom: 55px;">
+            <a href="#" id="espacios_publicos" class="subcateg mbtm5 index" tag="espacios_publicos" role="button">Espacios publicos</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_ceni" class="subcateg partes mbtm5" tag="pape_ceni" role="button">Papeleros ceniceros</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_ofi" class="subcateg partes mbtm5" tag="pape_ofi" role="button">Papeleros oficina</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_pendu" class="subcateg partes mbtm5" tag="pape_pendu" role="button">Papeleros tapa pendulo</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="pape_pedal" class="subcateg partes mbtm5" tag="pape_pedal" role="button">Papeleros tapa pedal</a>
+               </div>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="cenicero" class="subcateg partes mbtm5" tag="cenicero" role="button">Ceniceros</a>
+               </div>
+             </div>
+
+             <div class="col-sm-3 col-xs-6">
+            <a href="#" id="productos_especiales" class="subcateg mbtm5 index" tag="productos_especiales" role="button">Productos especiales</a>
+               <div>
+               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+               <a href="#" id="especiales" class="subcateg partes mbtm5" tag="especiales" role="button">Productos Especiales</a>
+               </div>
+             </div>
+
+           <div class="col-sm-3 col-xs-6">
+            <a href="#" id="productos_nuevos" class="subcateg mbtm5 index" tag="productos_nuevos" role="button">Productos nuevos</a>
+                <div>
+                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
+                <a href="#" id="pro_nuevos" class="subcateg partes mbtm5" tag="pro_nuevos" role="button">Productos nuevos</a>
+                </div>
+                <a href="#" id="todos" class="subcateg mbtm5 index" tag="tienda" role="button">Todos los productos</a>
+                <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar listado" id="open-cart" onclick="window.location.href='{{ site_base }}/detalle_cotizacion'">COTIZAR</button>
+            </div>
+          </div>
+          </div>
+  </section>
+<!-- *****Fin tag movil****** -->
+
+<section class="nov">
+   <div class="container min">
+           <div align="center" class="to"> 
+            <div class="hidden-lg hidden-md visible-xs visible-sm">
+              <div class="texto-header-pro-2 tituloCategoria"></div>
+            </div>
+            <div class="col-md-8 col-md-offset-1">
+              <div class="products">
+                  <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+              </div>
+              </div>
+            <div class="col-xs-12">
+              <div style="margin-top:45px;"></div>
+             <!--  <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button> -->
+            </div>
+          </div> 
+
+    </div>
+</section>
+
+
+<div class="clearfix-dos"> </div>
+
+</div>
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

@@ -1,0 +1,36 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block body %}
+    <div id="wrap" class="top-home">
+
+        <!-- registration -->
+        <div class="container-fluid productlist" >
+            <div class="frase-insp col-sm-12">
+                    <h1 {% if is_admin %}class="editabletext" text-id="detalleseventos-main-phrase"{% end %} >
+                        {{ read_text('detalleseventos-main-phrase') }}
+                    </h1>
+            </div>
+            <!-- raw 1 -->
+            <div class="row content-main-container">
+
+                {{ content }}
+
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+{% end %}

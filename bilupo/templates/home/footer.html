@@ -1,0 +1,189 @@
+<style type="text/css">
+a:hover {
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#barra3:hover {
+    color: red !important;
+}
+
+.footers {
+    min-height: 10px !important;
+}
+
+.esti {
+    margin-top: -12px;
+    margin-bottom: -23px;
+    width: 150px;
+}
+
+.face:hover {
+    content: url("https://7static.loadingplay.com/static/images/26d809d75fb61f5411c4c924eae7d6d2_fb_rojo.png");
+    width: 6%;
+    height: 6%;
+}
+
+.insta:hover {
+    content: url("https://7static.loadingplay.com/static/images/bafe487b863aa30baa0647ac900470a3_insta_rojo.png");
+    width: 9% !important;
+    height: 9% !important;
+}
+
+/** footer menu */
+
+.footer-left-menu {
+    display: block;
+    height: 17px;
+    overflow: hidden;
+    margin: 0px;
+}
+
+.footer-left-menu a, .footer-right-menu a {
+    display: block;
+    color: #808080;
+}
+
+/** /footer menu */
+
+@media only screen and (max-width: 1200px) {
+    [class*="ardillas_linea"] {
+        width: 110% !important;
+    }
+}
+
+@media only screen and (max-width: 568px) {
+    .footerDiv {
+        margin-left: 0% !important;
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .bub{
+       width: 49% !important;
+    }
+
+    .linea3 {
+    width: 89% !important;
+    margin-top: 108% !important;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .footerDiv {
+        width: 90% !important;
+    }
+    .estimula{
+        overflow: initial !important;
+        width: 30%;
+    }
+    .tip{
+        margin-top: 5% !important;
+    }
+}
+</style>
+<div class="footer-home" style="font-family: 'Open Sans',sans-serif;text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;background-color:#DFEAEB; padding-top: 30px; box-sizing: border-box; margin: 0 auto;">
+    <div class="container" style="padding-left: 40px">
+        <div class="footerDiv" style="float: left;margin-left: 15%; position: relative; z-index: 10; width: 35%;">
+            <h5 class="h5Footer" style="top: 0%; position: absolute;">
+                <font color="#E53623" style="letter-spacing: 0.09em; font-size: 11px;"> BILUPPO</font>
+            </h5>
+            <h5 class="bub" style="width: 50%;margin-left: 55%;">
+                <font class="condicionesCompra" color="#E53623" style="letter-spacing: 0.09em; font-size: 11px; ">CONDICIONES DE COMPRA</font>
+            </h5>
+            <div style="float:right;margin-right: 0px;width: 45%; margin-top: -3px;">
+                <h6 class="footer-right-menu" >
+                    <a href="{{site_base}}/envios" id="hyper">
+                        <font color="#808080">
+                            <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer1' }}">
+                                {{ read_text(site.name + 'text_footer1') }}
+                            </div>
+                        </font>
+                    </a>
+                </h6>
+                <h6 class="footer-right-menu" >
+                    <a href="{{site_base}}/cambiosDevoluciones" id="hyper">
+                        <font color="#808080">
+                            <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer2' }}">
+                                {{ read_text(site.name + 'text_footer2') }}
+                            </div>
+                        </font>
+                    </a>
+                </h6>
+                <div style="padding: 20%"></div>
+            </div>
+            <h6 class="footer-left-menu" style="margin-top: 5%;">
+                <a href="{{site_base}}/" id="hyper">
+                    <font color="#808080">
+                        <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer3' }}">
+                            {{ read_text(site.name + 'text_footer3') }}
+                        </div>
+                    </font>
+                </a>
+            </h6>
+            <h6 class="footer-left-menu">
+                <a href="{{site_base}}/listado_productos" id="hyper">
+                    <font color="#808080">
+                        <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer4' }}">
+                            {{ read_text(site.name + 'text_footer4') }}
+                        </div>
+                    </font>
+                </a>
+            </h6>
+            <h6 class="footer-left-menu estimula" >
+                <a href="{{site_base}}/estimulacionTemprana" id="hyper" style="padding-right: 6%">
+                    <font color="#808080">
+                        <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer10' }}">
+                            {{ read_text(site.name + 'text_footer10') }}
+                        </div>
+                    </font>
+                </a>
+            </h6>
+            <h6 class="footer-left-menu tip">
+                <a href="{{site_base}}/tips" id="hyper">
+                    <font color="#808080">
+                        <div class=" footers text_main text-left {{editabletext}}" id="Editar" text-id="{{ site.name + 'text_footer6' }}" >
+                            {{ read_text(site.name + 'text_footer6') }}
+                        </div>
+                    </font>
+                </a>
+            </h6>
+            <h6 class="footer-left-menu">
+                <a href="{{site_base}}/contacto" id="hyper">
+                    <font color="#808080">
+                        <div class=" footers text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer7' }}">
+                            {{ read_text(site.name + 'text_footer7') }}
+                        </div>
+                    </font>
+                </a>
+            </h6>
+            <br>
+            <br>
+            <a href="https://www.facebook.com/biluppo/">
+                <img class="face" src="https://84static.loadingplay.com/static/images/c3030d2d546d2b0e3188e23f41ee155d_fb_verde.png" style="width: 6%; height: 6%">
+            </a>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="https://www.instagram.com/biluppo/?hl=en">
+                <img class="insta" src="https://84static.loadingplay.com/static/images/07a83e67797f5167cfb0f28e60d1e3f6_insta_verde.png" style="width: 10%; height: 10%">
+            </a>&nbsp;&nbsp;&nbsp;
+        </div>
+        <div style="float:right; margin-right: 11%; text-align: right; position: relative; z-index: 10">
+            <img src="https://7static.loadingplay.com/static/images/04bad9336ec3c2dd9e167b8cbb75b225_webpay.png">
+            <br>
+            <br>
+            <h6 style="margin-right: 10%; font-size: 14px;"><a href="{{site_base}}/terminosYcondiciones" id="hyper"><font color="#E53623">Terminos y condiciones</font></a></h6>
+            <h6 style="margin-right: 10%; font-size: 14px;"><a href="{{site_base}}/politica" id="hyper"><font color="#E53623">Politica de privacidad</font></a></h6>
+            <h6 style="margin-right: 10%">{% if user is None %}
+               <a href="{{ site_base }}/auth/login" class="a-footer" id="hyper"><font color="#E53623">Login</font></a>
+               {% else %}
+               <a href="{{ site_base }}/auth/logout" class="a-footer" id="hyper">
+                <font color="red">Logout</font></a>
+                {% end %}</h6>
+        </div>
+        <div style="bottom: 20px">
+            <img class="ardillas_linea" src="https://84static.loadingplay.com/static/images/3b1089c2a307c17419ff8fa0790ae418_Biluppo_PNGs_Web_7-16.png" style="width: 114.7%;margin-left: -8%;margin-top: -5%;">
+            <h6 align="center"><a href="https://www.loadingplay.com" style="color: #808080">Sytes tech. Developed by LoadingPlay</a></h6>
+        </div>
+    </div>
+</div>

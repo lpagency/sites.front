@@ -1,0 +1,18 @@
+<script type="text/template" id="product_template" class="hidden">
+<div class="green-box">
+    <div class="col-md-8 pad col-sm-10 col-xs-12">
+        <div class="cuadro-box-pro">
+            <div align="center">
+               <img src="{{! images[0][3] }}" alt="" class="img-1">
+                <div class="inf ellipsis multiline">{{! name }}</div>
+                <div class="up ellipsis multiline"> {{! description }}</div>
+                         
+                <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                    <button type="button" class="btn btn-success pro">VER MÁS</button>
+                </a>
+                <button type="button" class="btn add-to-cart btn-success carr" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR</button>
+            </div>
+        </div>
+    </div>
+ </div>
+</script>

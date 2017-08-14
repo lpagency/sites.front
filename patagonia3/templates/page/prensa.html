@@ -1,0 +1,253 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section style="height: 484px;position: relative;width: 100%;">
+    <div>
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_prensa">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa" name="image" id="img_prensa" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_img_prensa" src="{{ read_image(site.name + '_img_prensa', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa',500) }}'" class=" img_recetas decolor" alt="item">
+        <div class="box" >
+            <h1 class="title-prensa text-center {{editabletext}}" text-id="{{ site.name + '_prensa1' }}"> {{ read_text(site.name +  '_prensa1') }}
+            </h1>
+        </div>
+    </div> 
+</section>
+
+<section style="height: 130px;">
+
+</section>
+
+
+<section class="h_prensa2">
+    <div class="container kk">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa2">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa2" name="image" id="img_prensa2" >
+                        </div>
+                        {% end %}
+                         <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_img_prensa2') }}">
+                        <img id="{{ site.name }}_img_prensa2" src="{{ read_image(site.name + '_img_prensa2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa2',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+  
+                       <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa2' }}" content="{{ read_link(site.name + '_img_prensa2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa2' }}"> {{ read_text(site.name +  '_text_prensa2') }}</div>
+                </div>
+            </div>
+             <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa3">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa3" name="image" id="img_prensa3" >
+                        </div>
+                        {% end %}
+                        <a id="{{ site.name + '_img_prensa3' }}" href="{{ read_link(site.name + '_img_prensa3') }}">
+                            <img id="{{ site.name }}_img_prensa3" src="{{ read_image(site.name + '_img_prensa3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa3',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa3' }}" content="{{ read_link(site.name + '_img_prensa3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa3' }}"> {{ read_text(site.name +  '_text_prensa3') }}</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa4">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa4" name="image" id="img_prensa4" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_img_prensa4' }}" href="{{ read_link(site.name + '_img_prensa4') }}">
+                        <img id="{{ site.name }}_img_prensa4" src="{{ read_image(site.name + '_img_prensa4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa4',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa4' }}" content="{{ read_link(site.name + '_img_prensa4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa4' }}"> {{ read_text(site.name +  '_text_prensa4') }}</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa5">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa5" name="image" id="img_prensa5" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_img_prensa5' }}" href="{{ read_link(site.name + '_img_prensa5') }}">
+                        <img id="{{ site.name }}_img_prensa5" src="{{ read_image(site.name + '_img_prensa5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa5',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa5' }}" content="{{ read_link(site.name + '_img_prensa5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa5' }}"> {{ read_text(site.name +  '_text_prensa5') }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="h_prensa2">
+    <div class="container kk">
+        <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa6">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa6" name="image" id="img_prensa6" >
+                        </div>
+                        {% end %}
+                         <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_img_prensa6') }}">
+                        <img id="{{ site.name }}_img_prensa6" src="{{ read_image(site.name + '_img_prensa6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa6',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+  
+                       <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa6' }}" content="{{ read_link(site.name + '_img_prensa6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa6' }}"> {{ read_text(site.name +  '_text_prensa6') }}</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa7">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa7" name="image" id="img_prensa7" >
+                        </div>
+                        {% end %}
+                        <a id="{{ site.name + '_img_prensa7' }}" href="{{ read_link(site.name + '_img_prensa7') }}">
+                            <img id="{{ site.name }}_img_prensa7" src="{{ read_image(site.name + '_img_prensa7', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa7',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa7' }}" content="{{ read_link(site.name + '_img_prensa7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa7' }}"> {{ read_text(site.name +  '_text_prensa7') }}</div>
+                </div>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa8">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa8" name="image" id="img_prensa8" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_img_prensa8' }}" href="{{ read_link(site.name + '_img_prensa8') }}">
+                        <img id="{{ site.name }}_img_prensa8" src="{{ read_image(site.name + '_img_prensa8', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa8',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa8' }}" content="{{ read_link(site.name + '_img_prensa8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa8' }}"> {{ read_text(site.name +  '_text_prensa8') }}</div>
+                </div>
+            </div>
+            <!-- IMAGEN OCHO -->
+            <div class="col-md-3 col-sm-3 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_prensa9">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_prensa9" name="image" id="img_prensa9" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_img_prensa9' }}" href="{{ read_link(site.name + '_img_prensa9') }}">
+                        <img id="{{ site.name }}_img_prensa9" src="{{ read_image(site.name + '_img_prensa9', 1) }}" onload="this.src='{{ read_image(site.name + '_img_prensa9',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_img_prensa9' }}" content="{{ read_link(site.name + '_img_prensa9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                    <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_prensa9' }}"> {{ read_text(site.name +  '_text_prensa9') }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="h_third_white">
+</section>
+
+
+
+{% include '../home/footer.html' %}    
+{% end %}

@@ -1,0 +1,304 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+
+{% block body %}
+    <!-- nuevo chekout inicio-->
+
+<div class="top-distance-content">
+<div class="container-fluid-product title">
+  <div class="row">
+    <div class="col-sm-12">
+      <h2>Checkout</h2>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid-product cart-list">
+
+  <div class="row">
+    <!-- esto se muestraa solo en movil -->
+    <div class="col-sm-6 show-in-movil">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="3" class="text-center">Est&aacute;s comprando esto</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          
+            <tr>
+              <td class="vert-align">nombre</td>
+              <td class="vert-align">$ 9000</td>
+              <td class="vert-align text-right">$ 9000</td>
+            </tr>
+         
+          <tr>
+            <td class="vert-align"><b>Subtotal Carro</b></td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><b class="suma">$ 9000</b></td>
+          </tr>
+          <tr>
+            <td class="vert-align">Costo Despacho:</td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><span class="shipping-cost"></span></td>
+          </tr>
+          <tr>
+            <td class="vert-align">Total:</td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><span class="total">$ 9000</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    <!-- esto se muestraa solo en movil -->
+    <div class="col-sm-6">
+      <form action="/checkout/billing" method="post" novalidate id="order-form" class="myform">
+        <h2 class="text-center ">Direcci&oacute;n Despacho</h2>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="form-group">
+              <select name="contact_id" class="form-control" id="address">
+                <option value="">Usar una direcci&oacute;n creada anteriormente</option>
+                
+                <option value="">dirección</option>
+                
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="form-group required">
+              <label class="control-label">Nombre</label>
+              <input required name="name" id="InputName" placeholder="Nombre" class="form-control" type="text">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="form-group required">
+              <label class="control-label">Apellido</label>
+              <input required name="lastname" id="InputLastName" placeholder="Apellido" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group required">
+          <label class="control-label">Email</label>
+          <input required name="email" placeholder="Email" id="InputEmail" class="form-control" type="text">
+        </div>
+        <div class="form-group required">
+          <label class="control-label">RUT</label>
+          <input required name="rut" placeholder="Rut" id="InputRut" class="form-control" type="text">
+        </div>  
+        <div class="form-group required">
+          <label class="control-label">Direcci&oacute;n</label>
+          <input required name="address" id="InputAddress" placeholder="Direcci&oacute;n" class="form-control" type="text">
+        </div>            
+
+        <div class="form-group required">
+          <label class="control-label">Ciudad</label>
+          <select name="city_id" id="InputCity" class="form-control">
+            <option value="">Selecciona una ciudad</option>
+            
+            <option value="">nombre</option>
+           
+          </select>
+        </div> 
+        <div class="form-group required">
+          <label for="InputZip">Código postal <sup>*</sup> </label>
+          <label for="InputZip"><a target="_blank" href="http://www.correos.cl/SitePages/home.aspx">conocer mi código postal</a></label>
+          <input required type="text" class="form-control" id="InputZip" placeholder="Código postal" name="zip_code"> 
+        </div>          
+        <div class="form-group required">
+          <label class="control-label">Tel&eacute;fono</label>
+          <input required name="telephone" placeholder="Tel&eacute;fono" id="InputMobile" class="form-control" type="text">
+        </div>
+        
+      </form>
+    </div>
+    <div class="col-sm-6 ">
+      <div id="fixed-resume-total" style="margin-top:30px;">
+        <table class="table">
+          <thead>
+            <tr>
+              <h2 class="">Est&aacute;s comprando esto…</h2>
+            </tr>
+          </thead>
+
+          <tbody>
+
+            <tr>
+              <td class="vert-align">El nombre del producto</td>
+              <td class="vert-align">3</td>
+              <td class="vert-align text-right">$9000</td>
+            </tr>
+ 
+            <tr>
+              <td class="vert-align"><b>Subtotal Carro</b></td>
+              <td class="vert-align"></td>
+              <td class="vert-align text-right"><b class="suma">$9000</b></td>
+            </tr>
+            <tr>
+              <td class="vert-align">Costo Despacho:</td>
+              <td class="vert-align"></td>
+              <td class="vert-align text-right"><span class="shipping-cost"></span></td>
+            </tr>
+            <tr>
+              <td class="vert-align">Total:</td>
+              <td class="vert-align"></td>
+              <td class="vert-align text-right"><span class="total">$ 9000</span></td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>  
+  </div>
+
+</div>
+<!-- payment -->
+<div class="container-fluid-product cart-list">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3 class="text-center">M&eacute;todo de Pago</h3>
+      <div class="panel-group" id="accordion">
+       <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+              Webpay
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in">
+          <div class="panel-body">
+            <form action="/pago" method="post" id="webpayplus" onsubmit="return ValidateWebpay()" novalidate>
+              <input type="hidden" name="TBK_TIPO_TRANSACCION" value="TR_NORMAL" />
+              <input type="hidden" name="TBK_MONTO" value="" />
+              <input type="hidden" name="TBK_ID_SESION" value="" />
+              <input type="hidden" name="TBK_URL_EXITO" value="" />
+              <input type="hidden" name="TBK_URL_FRACASO" value="" />
+              <input type="hidden" name="shipping_price" id="shipping-cost" value="" />
+              <input type="hidden" name="city_id" id="webpay_city_id">
+              <!-- <input type="submit" class="button" id="submit_webpayplus_payment_form" value="Pagar" /> -->
+
+              <div class="hidden"></div>
+
+              <div class="form-group clearfix">
+                <img src="/static/img/logo_webpay.jpg" class="logo_webpay">
+              </div>
+
+              <div class="form-group clearfix checkbox">
+                <label class="checkbox-inline">
+                <input name="checkboxes" id="term-1" value="1" type="checkbox">
+                <span>Estoy de acuerdo y acepto los <a href="/tos" target="_blank" class="tos_checkbox">Términos y condiciones</a></span>
+                </label>
+              </div>
+              <div class="pull-right"> 
+                <button type="submit" class="btn btn-primary btn-small">Pagar &nbsp;</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+              Dep&oacute;sito
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+          <div class="panel-body">
+            <form action="/checkout/send" onsubmit="return ValidateCheckoutPayment()" method="post" id="form-payment" enctype="multipart/form-data" novalidate>
+              <p>Envíe el comprobante de transferencia.</p>
+              <br>
+              <h2>Datos para la transferencia</h2>
+              <p>
+                Cuenta Corriente<br/>
+                Giani Da Firenze Ltda.<br/>  
+                Rut: 76.290.674-0<br/>
+                Banco BICE<br/>
+                CTA 1671513-1<br/>
+                Mail: contacto@gianidafirenze.cl
+              </p>
+              <hr>
+              <div class="form-group">
+                <label for="CommentsOrder">Comprobante de transferencia</label>
+                <input type="file" name="image" id="comprobante" />
+              </div>
+              <div class="form-group clearfix checkbox">
+                <label class="checkbox-inline" for="checkboxes-1">
+                  <input name="checkboxes" id="checkboxes-1" value="1" type="checkbox">
+                  <span>Estoy de acuerdo y acepto los <a href="/tos" target="_blank" class="tos_checkbox">Términos y condiciones</a></span> </label>
+                </div>
+                <input type="hidden" name="payment_type" value="1">
+                <input type="hidden" name="shipping_price" id="deposit_shipping_price">
+                <input type="hidden" name="city_id" id="deposit_city_id">
+                <input type="hidden" name="contact_id" id="InputContactId">
+                <div class="hidden">
+                </div>
+
+                <div class="pull-right"> <button type="submit" class="btn btn-primary btn-small"> Enviar comprobante &nbsp; <i class="fa fa-arrow-circle-right"></i> </button> </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> 
+    </div> 
+    <!-- esto se muestraa solo en movil -->
+    <div class="col-sm-6 show-in-movil">
+      <table class="table">
+        <thead>
+          <tr>
+            <th colspan="3" class="text-center">Est&aacute;s comprando esto…</th>
+          </tr>
+        </thead>
+
+        <tbody>
+        
+          <tr>
+            <td class="vert-align">el nombre del producto</td>
+            <td class="vert-align">4</td>
+            <td class="vert-align text-right">$9900</td>
+          </tr>
+         
+          <tr>
+            <td class="vert-align"><b>Subtotal Carro</b></td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><b>$94.00</b></td>
+          </tr>
+          <tr>
+            <td class="vert-align">Costo Despacho:</td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><span class="shipping-cost"></span></td>
+          </tr>
+          <tr>
+            <td class="vert-align">Total:</td>
+            <td class="vert-align"></td>
+            <td class="vert-align text-right"><span class="total">$ 9000</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div> 
+    <!-- esto se muestraa solo en movil -->
+  </div>
+
+  <div class="row">
+    <div class="col-sm-12 text-center show-more">
+      <a href="{{ site.url }}" class="btn btn-outline" style="float: left;">Cancelar y volver a la tienda</a>
+    </div>  
+  </div>  
+
+</div>
+</div>
+<!-- payment -->
+{% include '../home/footer.html' %}
+{% end %}

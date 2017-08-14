@@ -1,0 +1,127 @@
+<!-- log in - register -->
+<!-- <div id="mlb-register-wrapper" class="descripcion_wrapper" style="display: none;">
+    <div class="descripcion_cerrar">
+        <button id="mlb-close-register" style="font-size: 35px; color:gray !important"><i class="icon-remove"></i></button>
+    </div>
+    <div class="col-xs-10 col-md-6 mlb-register-content col-md-offset-3 col-xs-offset-1">
+        <div class="col-sm-12 especial bg-black-magle">
+            <img src="{{ site_base }}/static/img/mlb_logo_b.jpg" style="max-height: 50px; max-width: 100%">
+        </div>
+        <div class="g-header-form">
+            <div class="mlb-header-button mlb-header-button-active">
+                <h2 style="cursor: pointer;" >sign in</h2>
+            </div>
+            <div class="mlb-header-button">
+                <h2 style="cursor: pointer;" >register</h2>
+            </div>
+        </div>
+        <div class="col-sm-6 especial">
+            <div class="col-sm-12 info-product" style="padding: 0px 30px; height: auto; margin-bottom: 40px; position: relative;">
+                <div class="form-group required" >
+                    <input name="title" id="article_title_field" placeholder="Email Address" class="form-control" type="text">
+                </div>
+                <div class="form-group required">
+                    <input name="title" id="article_title_field" placeholder="Password" class="form-control" type="text">
+                </div>
+                <button type="button" class="btn add-to-cart" product-id="7" style="float: right; margin: 20px 0px 0px 0px ">sign in</button>
+            </div>
+        </div>
+        <div class="col-sm-6 especial">
+            <div class="col-sm-12 " style="padding: 0px 30px;">
+                <a href=""><img class=""src="{{ site_base }}/static/img/facebook.png" style="width: 130px;" ></a>
+                <label class="control-label" style="width: 100%; text-align: center; color: gray;">sign in with facebook</label>
+            </div>
+        </div>
+    </div>
+    
+</div> -->
+<!-- log in - register -->
+<!-- menú laterla movil -->
+<div id="open-mlb-menu-movil" >
+    <i class="icons-menu"></i>
+</div>
+<div class="mlb-menu-movil">
+    <ul>
+        <li><a href="{{ site_base }}/">Home</a></li>
+        <li><a href="{{ site_base }}/aboutus">Nosotros</a></li>
+        <li><a href="{{ site_base }}/contact">Contacto</a></li>
+        
+        <li class="mlb-menu-movil-top">Categorías</li>
+        <li><a class="tag" href="{{ site_base }}?tag=urbano">Urbano</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=andino">Andino</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=fusion">Fusión</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=cojines">Cojines</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=pieceras">Pieceras</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=accesorio">Accesorios</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=vestuario">Vestuario</a></li>
+        <li><a class="tag" href="" style="font-style: italic;">Blog!</a></li>
+    </ul>
+</div>
+<!-- menú laterla movil -->
+<!-- header normal inicio -->
+<div class="bg-black-magle">
+    <ul class="nav-list text-center effect menu-4 container-fluid-magle">
+        <li><a href="{{ site_base }}/">Home</a></li>
+        <li><a href="{{ site_base }}/aboutus">Nosotros</a></li>
+        <li><a href="{{ site_base }}/contact">Contacto</a></li>
+    </ul>
+</div>
+<div class="line-bottom-magle ">
+    <div class="nav-header container-fluid-magle" style="text-align: left; display: block; ">
+
+        <!--logo -->
+        <a href="{{ site_base }}"  >
+            {% if is_admin %}
+            <div class="image-upload header">
+                <label for="img_logo_header">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_logo_header" name="image" id="img_logo_header" >
+            </div>
+            {% end %}
+            <img id="mlb_logo_header" class="mlb-logo-header" src="{{ read_image(site.name + '_logo_header') }}" class="img-responsive" alt="item">
+            <!-- <img class="mlb-logo-header" src="{{ site_base }}/static/img/mlb_logo.jpg" > -->
+        </a>
+        <i class="fa icon-shopping-cart " data-toggle="modal" data-target="#myModal" style="  color: black; float: right; font-size: 28px; padding: 4px; margin-left: 20px;" onclick=""><span class="units-total">0</span></i>
+
+<!--         <i class="fa icon-shopping-cart mlb-open-cart" style="  color: black; float: right; font-size: 28px; padding: 4px; margin-left: 20px;" onclick=""></i> -->
+        <!--<form class="show-hide"action="{{! site_base }}/search" method="get" style="float: right;">
+            <input type="text" name="search_query" value="{%! try %}{{! search_query }}{%! except %}{%! end %}" class="buscar-header-norm search-input" placeholder="BUSCAR" style="border: 1px solid gray;">
+        </form> -->
+        <!-- add cart product -->
+        <div id="mlb-cart-add-products" class="mlb-btn mlb-cart-add-products" style="display:none;" tabindex="-1">
+            <div style="  position: absolute;margin-top: -20px;right: 16px;">
+                <img src="{{ site_base }}/static/img/triangle.png"  height="17px">
+            </div>
+            {% include '../page/cart.html' %}
+            
+        </div>
+        <!-- add cart product -->
+    </div>
+</div>
+<!-- menu secundario -->
+<div class="line-bottom-magle">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li><a class="tag" href="{{ site_base }}?tag=urbano">Urbano</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=andino">Andino</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=fusion">Fusión</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=cojines">Cojines</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=pieceras">Pieceras</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=accesorio">Accesorios</a></li>
+        <li><a class="tag" href="{{ site_base }}?tag=vestuario">Vestuario</a></li>
+        <li><a class="tag" href="" style="font-style: italic;">Blog!</a></li>
+    </ul>
+</div>
+<div class="header-me-princ" >
+    <!-- menu principal -->
+    <!-- imagen header fixed -->
+    <!-- <img src="https://static.loadingplay.com/static/images/1_adb126e70cc19146c57c9d56d40a4517_header.png" data-original="https://static.loadingplay.com/static/images/adb126e70cc19146c57c9d56d40a4517_header.png" class="show-hide lazy" style="width:100%;">
+    <img src="{{ site_base }}/static/img/header-movil.jpg" class="hide-show" style="width:100%;">-->
+    <!-- imagen header fixed -->
+    <div id="main-nav" class="">
+        <div class="container-fluid">
+            
+        </div>
+    </div>
+</div>
+<!-- header normal fin

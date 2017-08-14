@@ -1,0 +1,30 @@
+
+<script type="text/template" id="product_template" class="hidden">
+<div class="clearfix-dos"> </div>
+  <div class="col-md-3 col-xs-12 art-hi hidden-xs">
+      <div class="hovereffect hidden-xs">
+        <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+           <img src="{{! images[0][3] }}" alt="" class="img-responsive img-pro hidden-xs" >
+           <p class="inf ellipsis multiline hidden-xs">{{! name }}</p>
+              <div class="overlay hidden-xs" id="testButton">
+               <div class="product-price pri hidden-xs">{{! main_price|money }} </div>  
+                 <button type="button" class="btn btn-default carr">Comprar</button>
+               </div>
+        </a>
+      </div>
+      </div>   
+  </div>    
+
+
+
+    <div class="col-md-4 col-xs-12 art-hi hidden-lg hidden-md hidden-sm">
+        <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+           <img src="{{! images[0][3] }}" alt="" class="img-responsive img-pro hidden-lg hidden-md hidden-sm" >
+              <p class="inf ellipsis multiline hidden-lg hidden-md hidden-sm">{{! name }}</p>
+              <div class="product-price pri hidden-lg hidden-md hidden-sm">{{! main_price|money }} </div>
+              <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                 <button type="button" class="btn btn-default carr">Comprar</button>
+              </a>
+        </a>  
+   </div>
+</script>

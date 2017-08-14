@@ -1,0 +1,36 @@
+<script type="text/template" id="product_template" class="hidden">
+
+    <div class="col-md-3 col-sm-6  product-grid border_prod">
+        <a class="fancybox fancybox.ajax" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" >
+        <!-- <a href="#" class="fancybox-product" name="{{! name|friendly}}" product-id="{{! id }}"> -->
+            <div class="product product-thumb">
+                <figure> 
+                   <div align="center">
+                       <div class="image">
+                           <img src="{{! images[0][1] }}" onload="this.src='{{! images[0][2] }}'" alt="" class="img-responsive img-categ">
+                       </div>
+                    </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <figcaption class="text-center">
+                            <p class=" col-xs-12 name name-categ ellipsis multiline">{{! name }}</p>
+                            <h3 class="col-xs-12 detail-categ ellipsis multiline"> {{! description }}</h3>
+
+                            <p class="{{! (parseInt(data.customer_price) === 0 || isNaN(parseInt(data.customer_price))) ? '' : 'hidden' }} col-xs-12 price_categ price">{{! main_price|money }}</p>
+
+                            <p class="{{! (parseInt(data.customer_price) === 0 || isNaN(parseInt(data.customer_price))) ? 'hidden' : '' }} col-xs-12 price_categ price"><span style="text-decoration:line-through" >{{! main_price|money }}</span> {{! customer_price|money }}</p>
+                        </figcaption>
+                    </div>
+                </figure>
+            </div>
+            <div align="center">
+                <div class="mobil_categ_btn" style="max-width: 400px; margin: 0 auto;">
+                <a class="fancybox fancybox.ajax" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" >
+                    <button type="button" class="col-xs-12 col-sm-12 btn btn-catg">VER</button>
+                </a>
+                </div>
+            </div>
+        </a>
+    </div>
+</script>
+
+

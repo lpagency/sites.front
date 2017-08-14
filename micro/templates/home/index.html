@@ -1,0 +1,55 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/figurella.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script> 
+<script type="text/javascript" >
+    $(document).ready(function(){
+        var test = "{{user}}";
+        console.log("test: " + test);
+    });
+
+    
+</script>
+
+<script type="text/javascript">
+      $('.font-tag').removeClass('active');
+      $('.home').addClass("active");
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+{% include '../home/banner_one.html' %}
+<section class="clearfix fond_home">
+{% include '../home/main_text.html' %}
+<section class="clearfix fond_home">
+{% include '../home/group_img.html' %}
+<section class="clearfix fond_home">
+{% include '../home/group_img2.html' %}
+<section class="clearfix fond_home">
+{% include '../home/movilidad.html' %}
+<section class="clearfix fond_home">
+{% include '../home/group_img3.html' %}
+<section class="clearfix fond_home">
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,350 @@
+s{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+  .products{
+   text-align: center;
+    margin-bottom: 20px;
+  }
+</style>
+
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+      // base_url 'http://localhost:8520/'
+      // checkout_url 'http://localhost:8522/'
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(20,20,20);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'products_per_page' : 9,
+            'templateOrigin' : '#product_template',
+            'tag' : 'frubik',
+            'ignore_stock' : true,
+            'infinite_scroll': false,
+            'onLoad':function(){
+               $(".ellipsis").dotdotdot();
+             }
+        };
+        $('.products').ecommerce(config);
+
+        //  $(document).ecommerce({
+        //     'app_public' : app_public,
+        //     'animation' : 'simple',
+        //     'base_url' : base_url,
+        //     'checkout_url' : checkout_url,
+        //     'products_per_page' : 9
+        // });
+
+        
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() 
+{
+   $('.carousel').carousel({
+  interval: 1000 * 9
+});
+
+  });
+</script>
+
+<script type="text/javascript">
+    $(window).on('load',function(){
+        $('#advertencia').modal('show');
+    });
+</script>
+
+{% end %}
+{% block body %}
+
+
+<!-- *****************slider metodo********** -->
+
+  <div id="myCarousel" class="carousel tres slide carousel-fade" data-ride="carousel">
+    <!-- Indicators -->
+   <!--  <ol class="carousel-indicators hidden-xs">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+    </ol> -->
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner dos" role="listbox">
+      <div class="item active" style="background:url('{{ read_image(site.name + '_img_frubik',500) }}'); height:480px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.3);" data-img-width="1600" data-img-height="890" data-diff="100">
+          {% if is_admin %}
+            <div class="image-upload ge visible-movil">
+               <label for="img_frubik">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_frubik" name="image" id="img_frubik" >
+           </div>
+
+           {% end %}
+
+             <div align="center">
+                  <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_frubik' }}"> {{ read_text(site.name +  '_frubik') }} </div>
+            
+             </div> 
+       <!--  <img class="img_banner" id="{{ site.name }}_img_slider_1" src="{{ read_image(site.name + '_img_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_1',500) }}'" alt="item" style=" "> -->
+<!--         <img src="{{ read_image(site.name + '_slide1', 500) }}" alt="Slider 1" longdesc="{{ read_image(site.name + '_slide1', 500) }}" /> -->     
+      </div>
+     
+
+
+<!-- **otro** -->
+      <div class="mov item " style="background:url('{{ read_image(site.name + '_img_frubik_2',500) }}'); height:480px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.3);" data-img-width="1600" data-img-height="890" data-diff="100">
+             {% if is_admin %}
+            <div class="image-upload ge visible-movil">
+               <label for="img_frubik_2">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_frubik_2" name="image" id="img_frubik_2" >
+           </div>
+           
+           {% end %}
+
+            <div align="center">
+                  <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_frubik_2' }}"> {{ read_text(site.name +  '_frubik_2') }} </div>
+             </div> 
+      <!--   <img class="img_banner" id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" alt="item" style=" "> -->
+
+   <!--        <img src="{{ read_image(site.name + '_slide2', 500) }}" alt="Slide 2" longdesc="{{ read_image(site.name + '_slide2', 500) }}" /> -->
+      </div>
+    
+      <div class="mov item " style="background:url('{{ read_image(site.name + '_img_frubik_3',500) }}'); height:480px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.3);" data-img-width="1600" data-img-height="890" data-diff="100">
+         {% if is_admin %}
+            <div class="image-upload ge visible-movil">
+               <label for="img_frubik_3">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_frubik_3" name="image" id="img_frubik_3" >
+           </div>
+          
+           {% end %}
+
+              <div align="center">
+                  <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_frubik_3' }}"> {{ read_text(site.name +  '_frubik_3') }} </div>
+
+             </div> 
+        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" alt="item" style=" "> -->
+     <!--      <img src="{{ read_image(site.name + '_slide3', 500) }}" alt="Slide 3" longdesc="{{ read_image(site.name + '_slide3', 500) }}" /> -->
+      </div>
+
+      <div  class="mov item" style="background:url('{{ read_image(site.name + '_img_frubik_4',500) }}'); height:480px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; box-shadow: inset 2000px 0 0 0 rgba(0, 0, 0, 0.3);" data-img-width="1600" data-img-height="890" data-diff="100">
+         {% if is_admin %}
+            <div class="image-upload ge visible-movil">
+               <label for="img_frubik_4">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_frubik_4" name="image" id="img_frubik_4" >
+           </div>
+        
+           {% end %}
+
+               <div align="center">
+                  <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_frubik_4' }}"> {{ read_text(site.name +  '_frubik_4') }} </div>
+
+             </div> 
+        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_4" src="{{ read_image(site.name + '_img_slider_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_4',500) }}'" alt="item" style=" "> -->
+      <!--   <img src="{{ read_image(site.name + '_slide4', 500) }}" alt="Slide 4" longdesc="{{ read_image(site.name + '_slide4', 500) }}" /> -->
+        </div>
+    </div>
+
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+</section>
+
+
+
+<section id="contenedor">
+
+        <div class="row">
+            <div class="col-md-12">
+             <div align="center">
+                <h1 class="text-center jic {{editabletext}}" text-id="{{ site.name + '_pron_frubik' }}"> {{ read_text(site.name +  '_pron_frubik') }}</h1>
+                </div>
+            </div>
+        </div> 
+
+   <div class="container">
+           <div align="center" class="to"> 
+              <div class="products" style="position: relative;">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+
+              </div>
+          </div> 
+          <div class="col-xs-12">
+            <button type="button" class="btn btn-default more-products" style="display: none">MÁS PRODUCTOS</button>
+          </div>
+
+    </div>
+</section>
+
+<section>
+ 
+ <div class="container">
+       <div class="col-xs-12 col-md-4 box-4">
+         {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_box_frubik">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_box_frubik" name="image" id="img_box_frubik" >
+               </div>
+        {% end %}
+               
+               <img id="{{ site.name }}_box_frubik" src="{{ read_image(site.name + '_box_frubik', 1) }}" onload="this.src='{{ read_image(site.name + '_box_frubik',500) }}'" class="img-uno" alt="item">
+              
+
+               {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_box_frubik' }}" content="{{ read_link(site.name + '_box_frubik') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+         <!--  <img class="img-uno" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
+     <a id="{{ site.name + '_box_frubik' }}" href="{{ read_link(site.name + '_box_frubik') }}">
+         <div class="mask">
+            <div class="hover-recipe text-center {{editabletext}}" text-id="{{ site.name + '_hov_frubik' }}"> {{ read_text(site.name +  '_hov_frubik') }}</div>
+            <button type="button" class="btn btn-default box">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        </div>
+      </a>
+       </div>
+
+
+<div class="col-md-4  col-xs-12">
+  <div style="position: relative;" class="box-4-4">
+       {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_box_frubik_2">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_box_frubik_2" name="image" id="img_box_frubik_2" >
+               </div>
+        {% end %}
+              
+               <img id="{{ site.name }}_box_frubik_2" src="{{ read_image(site.name + '_box_frubik_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_frubik_2',500) }}'" class="img-dos" alt="item">
+             
+               {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_box_frubik_2' }}" content="{{ read_link(site.name + '_box_frubik_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+         <!--  <img class="img-uno" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
+       <a id="{{ site.name + '_box_frubik_2' }}" href="{{ read_link(site.name + '_box_frubik_2') }}">
+         <div class="mask-4">
+            <div class="hover-recipe-2 text-center {{editabletext}}" text-id="{{ site.name + '_hov_frubik_2' }}"> {{ read_text(site.name +  '_hov_frubik_2') }}</div>
+            <button type="button" class="btn btn-default box-2">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        </div>
+      </a>
+
+    </div>
+
+    <div style="position: inherit;" class="box-4-4-4">
+       {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_box_frubik_3">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_box_frubik_3" name="image" id="img_box_frubik_3" >
+               </div>
+        {% end %}
+              
+               <img id="{{ site.name }}_box_frubik_3" src="{{ read_image(site.name + '_box_frubik_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_frubik_3',500) }}'" class="img-tres" alt="item">
+             
+
+               {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_box_frubik_3' }}" content="{{ read_link(site.name + '_box_frubik_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+         <!--  <img class="img-uno" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
+        <a id="{{ site.name + '_box_frubik_3' }}" href="{{ read_link(site.name + '_box_frubik_3') }}">
+           <div class="mask-4-4-4">
+            <div class="hover-recipe-2 text-center {{editabletext}}" text-id="{{ site.name + '_hov_frubik_3' }}"> {{ read_text(site.name +  '_hov_frubik_3') }}</div>
+            <button type="button" class="btn btn-default box-2">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        </div>
+      </a>
+</div>
+</div>
+
+
+
+        <div class="col-xs-12 col-md-4 box-4">
+          {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_box_frubik_4">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_box_frubik_4" name="image" id="img_box_frubik_4" >
+               </div>
+        {% end %}
+               
+           
+               <img id="{{ site.name }}_box_frubik_4" src="{{ read_image(site.name + '_box_frubik_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_frubik_4',500) }}'" class="img-uno" alt="item">
+       
+         <!--  <img class="img-cuatro" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
+
+              {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_box_frubik_4' }}" content="{{ read_link(site.name + '_box_frubik_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+       <a id="{{ site.name + '_box_frubik_4' }}" href="{{ read_link(site.name + '_box_frubik_4') }}">
+         <div class="mask">
+            <div class="hover-recipe text-center {{editabletext}}" text-id="{{ site.name + '_hi_frubik_4' }}"> {{ read_text(site.name +  '_hi_frubik_4') }}</div>
+            <button type="button" class="btn btn-default box">Ver más <i class="fa fa-angle-double-right" aria-hidden="true"></i></button>
+        </div>
+      </a>
+       </div>
+       
+</div>
+
+    
+
+</section>
+
+<div class="clearfix-fun"></div>
+
+
+{% include '../home/footer.html' %}
+{% include '../page/advertencia.html' %}
+{% end %}

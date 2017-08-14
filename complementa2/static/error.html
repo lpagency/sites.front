@@ -1,0 +1,134 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Error inesperado</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+    <style type="text/css">
+        * {
+            border: 0;
+            margin: 0;
+            padding: 0;
+            font-family: "Open Sans";
+        }
+        .centered {
+            text-align: center;
+        }
+
+        .error-wrapper {
+            width: 50%;
+            text-align: left;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        .logo {
+            margin: 20px;
+        }
+
+        .error-title {
+            margin: 20px;
+        }
+
+        .btn {
+            border: black solid 1px;
+            border-radius: 5px;
+            height: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+            float: left;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+
+        .tech-error {
+            font-family: 'Space Mono', monospace;
+        }
+
+        .tech-error-wrapper {
+            border: black solid 1px;
+            padding: 5px;
+            height: {{ height }};
+            overflow: hidden;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="centered" >
+        <img class="logo" src="https://7static.loadingplay.com/static/images/7fd3f3c910147ce3f26682c9c06fc6fb_logo_loadingplay_negro.png" />
+
+        <div class="error-title" >
+            <h1>Lo sentimos!</h1>
+            {% try %}
+            {% if code %}
+                <p>error: {{ code }}, {{reason}}</p>
+            {% end %}
+            {% except %}
+                <p>ha ocurrido un error inesperado en nuestro sitio web.</p>
+            {% end %}
+            <a href="{{ site_base }}">ir al inicio</a>
+            <a href="javascript:window.history.back();">volver</a>
+        </div>
+
+        <div class="error-wrapper" >
+            <a class="show-hide-error" href="#!">mostrar error</a>
+            <div class="tech-error-wrapper" >
+                <button target="_blank" class="btn enviar" >Enviar informe de error a Loadingplay</button>
+                <div class="clearfix" ></div>
+                <div class="tech-error" >{% try %}{{ error }}{% except %}{% end %}</div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script> 
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var $wrapper = $('.tech-error-wrapper');
+            var error_content = "{% try %}{{ url_escape(error) }}{% except %}{% end %}";
+
+            $(document).on('click', '.show-hide-error', function(event)
+            {
+                event.preventDefault();
+                if ($wrapper.css('height') == '0px')
+                {
+                    $wrapper.css('height', 'auto');
+                    $(this).html('ocultar error');
+                }
+                else
+                {
+                    $wrapper.css('height', '0px');
+                    $(this).html('mostrar error');
+                }
+            });
+
+            $(document).on('click', '.enviar', function(event)
+            {
+                event.preventDefault();
+                var url = 'mailto:contacto@loadingplay.com?body=' + error_content;
+                window.open(url, '_blank');
+            });
+        });
+    </script>
+</body>
+</html> -->
+<section>
+    <div class="col-md-12 col-sm-12 col-xs-12 text-center" style="margin: 0 auto;position: relative;text-align: center;line-height: 115px;margin-top: 50px;">
+        <div class="box">
+            <img src="https://84static.loadingplay.com/static/images/4e49a431d30aa15b1dee464511498c0e_PaGINA__NO_ENCONTRADA.png">
+        </div>
+        <div class="box-text ">
+            <h3 style="color: rgba(158, 158, 158, 0.47);">Lo sentimos, al parecer llegaste al lugar equivocado</h3>
+        </div>
+        <button type="button" class="btn btn-default btn-lg btn-block" style="border: 1px solid rgba(0, 0, 0, 0.18); color:rgba(158, 158, 158, 0.47);background-color: white;font-size: 25px;height: 57px;">Volver al home</button>
+        <div class="box" style="margin-top: 50px;">
+            <img src="https://84static.loadingplay.com/static/images/dfb5a231375004e8e650f3d67b1ea23b_Loadingplay_logo.png">
+        </div>
+    </div>
+</section>

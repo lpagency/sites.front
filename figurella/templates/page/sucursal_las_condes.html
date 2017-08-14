@@ -1,0 +1,118 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block javascript %}
+ <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYUOH4rtmdX21L9jA7GNa5W_fKq9Ej8s0&callback=initMap">
+ </script>
+<script type="text/javascript" src="{{ site_base }}/static/js/map_store.js"></script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="is"></div>
+
+<!-- <section class="height_list_product movil-menu" style="display: block;position: relative;width: 100%;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_sucursales_elgolf">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_sucursales_elgolf" name="image" id="img_sucursales_elgolf" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_sucursales_elgolf" src="{{ read_image(site.name + '_sucursales_elgolf', 1) }}" onload="this.src='{{ read_image(site.name + '_sucursales_elgolf',500) }}'" class=" img_planes_banner desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="text_planes text-center {{editabletext}}" text-id="{{ site.name + '_text_sucursales0_elgolf' }}"> 
+            {{ read_text(site.name +  '_text_sucursales0_elgolf') }}
+            </h1>
+        </div>
+    <div class="clearfix" ></div>
+</section> -->
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <a href="{{ site_base }}/formulario">
+   <div class="box-ros">
+     <!-- <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> -->
+     <i class="fa fa-envelope" aria-hidden="true"></i>
+     <div class="texto-rer"> Reserva <br> tu evaluación <br> sin costo</div>
+   </div>
+ </a>
+</div>
+
+
+<section id="cont">
+ <div class="container">
+   <div class="col-md-6 col-sm-12 col-xs-12">
+    <div align="center">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_elgolf">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_elgolf" name="image" id="img_box_elgolf" >
+       </div>
+       {% end %}
+       <img id="{{ site.name }}_box_elgolf" src="{{ read_image(site.name + '_box_elgolf', 1) }}" onload="this.src='{{ read_image(site.name + '_box_elgolf') }}'" class="box-locales" alt="item">
+    
+      </div>
+
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_local_elgolf' }}"> {{ read_text(site.name +  '_local_elgolf') }}</div>
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_local_elgolf_2' }}"> {{ read_text(site.name +  '_local_elgolf_2') }}</div>
+      <a href="tel:56922192976">
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_elgolf_1' }}"> {{ read_text(site.name +  '_elgolf_1') }} </div> </a>
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_local_elgolf_2_vi' }}"> {{ read_text(site.name +  '_local_elgolf_2_vi') }}</div>
+      <hr class="inter hidden-sm hidden-xs">
+     </div>
+ </div>
+
+   <div class="col-md-6 col-sm-12 col-xs-12">
+    <div align="center">
+<!--     <div id="map" class="fondo-mapa" style=" height: 400px; top: 30px;width: 74%; float: left; margin-bottom:35px;">
+    </div> -->
+    <!--   <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOyWSZ9bIYpYR1ws3zKpM-TE&key=AIzaSyDWOF4U-2CTk7Ag5O4bHB-DyVlaM5q3fgI" allowfullscreen></iframe> -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3330.3525633579484!2d-70.60612638522818!3d-33.4140515030302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662cf43d5351e1b%3A0x4063ee9b416d4050!2sAndr%C3%A9s+Bello+2829%2C+Las+Condes%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1494271677691" width="100%" height="400" frameborder="0" style="border:0; margin-top: 29px !important;" allowfullscreen></iframe>
+        <!-- fin editar imagen -->
+    <div class="on-map absolute top-map">
+        <div class="container-fluid-new absolute">
+            <div class="row-fluid-new">
+            </div>
+        </div>
+    </div>
+   </div>
+ </div>
+
+
+
+</div>
+ <div style="margin-bottom:30px;"></div>
+</section>
+
+
+<!-- ***cajas ubicaciones** -->
+
+
+
+
+
+
+
+<section style="height:150px;">
+</section>
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+<section style="height: 300px;">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_success text-center {{editabletext}}" text-id="{{ site.name + '_text_success' }}"> {{ read_text(site.name +  '_text_success') }}
+        </h1>
+    </div>
+</section>
+
+
+{% end %}

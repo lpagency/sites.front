@@ -1,0 +1,144 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>{% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="Desarrollado por loadingplay">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> -->
+
+
+        <link rel="stylesheet" href="http://preview.devisio.ro/visio-v1.2.1/assets/bootstrap/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="http://preview.devisio.ro/visio-v1.2.1/assets/animate/animate.min.css" type="text/css">
+        <link rel="stylesheet" href="http://preview.devisio.ro/visio-v1.2.1/fonts/font-awesome/css/font-awesome.min.css" type="text/css"> 
+        <link rel="stylesheet" href="http://preview.devisio.ro/visio-v1.2.1/fonts/ionicons/css/ionicons.min.css" type="text/css"> 
+        <link id="stylesheetGlobal" type="text/css" href="http://preview.devisio.ro/visio-v1.2.1/css/global-style-blue.min.css" rel="stylesheet" media="screen">
+
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/style.css">
+
+        <!-- Style css -->
+        <!-- <link rel="stylesheet" href="http://demo.designing-world.com/educamp-v3/style.css"> -->
+
+        <!-- Responsive css -->
+        <!-- <link rel="stylesheet" href="http://demo.designing-world.com/educamp-v3/css/responsive.css"> -->
+
+        <!-- Color Changer css -->
+        <!-- <link rel="stylesheet" href="http://demo.designing-world.com/educamp-v3/css/color-changer.css"> -->
+
+        <style type="text/css">
+            html, body {
+                height: 100%;
+            }
+
+            .navbar-brand img 
+            {
+                max-height: 32px;
+            }
+
+            .content
+            {
+                min-height: 80%;
+            }
+        </style>
+
+        <!-- autocomplete -->
+        {% block css %}{% end %}
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- header -->
+        {% block header %}{% end %}
+        <!-- /header -->
+
+        <!-- body -->
+
+        <nav class="navbar navbar-default">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="{{ site_base }}/">
+                        <img src="https://84static.loadingplay.com/static/images/200_d7b73f9cf7a883eff70dfb5a534c4221_Logo_Fundacion.png">
+                    </a>
+                </div>
+
+                <ul class="nav navbar-nav select-active">
+                    <!-- 
+                    <li><a href="{{ site_base }}/horas" >Horas tomadas</a></li>
+                    <li><a href="{{ site_base }}/tomar_hora">Tomar hora</a></li>
+                    <li><a href="{{ site_base }}/mision_vision">Misión/Visión</a></li> 
+                    -->
+                    <li><a href="{{ site_base }}/">Noticias</a></li>
+                    <li><a href="{{ site_base }}/deportistas">Deportistas</a></li>
+                    <li><a href="{{ site_base }}/servicios">Servicios</a></li>
+                    <li><a href="{{ site_base }}/equipo">Equipo</a></li>
+                    <li><a href="{{ site_base }}/contacto">Contacto</a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{site_base}}/auth/logout">Salir</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="content">
+        {% block body %}{% end %}
+        </div>
+
+        <div id="footer">
+            <div class="contaainer" >
+                <div class="lp text-center"><a href="http://www.loadingplay.com" target="_blank" >Sytes tech. Developed by LoadingPlay</a></div>
+            </div>
+        </div>
+        <!-- /body -->
+
+        <!-- bt inicio -->
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+        <!-- bt fin -->
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+            var site_name = "{{site.name}}";
+            {% from tornado.options import options %}
+            var site_base = "{{ site_base }}";
+            var content_manager_url = "{{ options.content_manager_url }}";
+        </script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        {% end %}
+
+
+        <script type="text/javascript">
+            (function()
+            {
+                $($('li', $('.select-active')).get().reverse()).each(function()
+                {
+                    var href = $('a', this).attr("href");
+
+                    // mark as active the selected menu
+                    if (document.location.href.indexOf(href) !== -1)
+                    {
+                        $(this).addClass('active');
+                        return false;
+                    }
+                });
+            })();
+        </script>
+
+        {% block scripts %}{% end %}
+    </body>
+</html>

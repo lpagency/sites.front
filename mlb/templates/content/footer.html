@@ -1,0 +1,67 @@
+<!-- footer -->
+<footer class="bg-black-magle">
+    <div class="container-fluid">
+        <div class="row">
+            
+            <div class="col-sm-3 footer-top" style="text-align:left;">
+                <ul class="nav-list effect textos-footer ">
+                    <li><p style="margin:0px 0px 3px;"><span style="font-size: 20px; font-weight: 500; letter-spacing: 3px;">HOME</span></p></li>
+                    <li>__________</li>
+                </ul>
+                <ul class="nav-list effect textos-footer " style="margin-top: 10px;">
+                    
+                    <li><a href="{{ site_base }}/">Home</a></li>
+                    <li><a href="{{ site_base }}/aboutus">Nosotros</a></li>
+                    <li><a href="{{ site_base }}/contact">Contacto</a></li>
+                    <li><a href="{{ site_base }}/terms_conditions">Términos y condiciones</a></li>
+
+                    {% if user is None %}
+                    <li><a href="{{ site_base }}/auth/login" style="cursor: pointer;" >Ingresar</a></li>
+                    {% else %}
+                    <li><a href="{{ site_base }}/auth/logout" style="cursor: pointer;" >Salir</a></li>
+                    {% end %}
+
+                </ul>
+            </div>
+            <div class="col-sm-3" style="text-align:left;">
+                <ul class="nav-list effect textos-footer ">
+                <li><p style="margin:0px 0px 3px;"><span style="font-size: 20px; font-weight: 500; letter-spacing: 3px;">CATEGORÍAS</span></p></li>
+                    <li>__________</li>
+                </ul>
+                <ul class="nav-list effect textos-footer " style="margin-top: 10px;">
+                    <li><a class="tag" href="{{ site_base }}?tag=urbano">Urbano</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=andino">Andino</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=fusion">Fusión</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=cojines">Cojines</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=pieceras">Pieceras</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=accesorios">Accesorios</a></li>
+                    <li><a class="tag" href="{{ site_base }}?tag=vestuario">Vestuario</a></li>
+                    <li><a class="tag" href="">Blog!</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3" style="text-align:left;">
+            <ul class="nav-list effect textos-footer ">
+                <li><p style="margin:0px 0px 3px;"><span style="font-size: 20px; font-weight: 500; letter-spacing: 3px;">SOCIAL</span></p></li>
+                    <li>__________</li>
+                </ul>
+                <ul class="nav-list effect textos-footer " style="margin-top: 10px;">
+                    <li><a href="{{ get_config("facebook") }}" target="_blank">facebook</a></li>
+                    <li><a href="{{ get_config("pinterest") }}" target="_blank">pinterest</a></li>
+                    <li><a href="{{ get_config("instagram") }}" target="_blank">instagram</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-3">
+                <ul class="nav-list effect textos-footer ">
+                    <li><a href="/"><img class=""src="https://static.loadingplay.com/static/images/2a80be6e96ce07e169035c5c91a5a70c_Logo_MLB.png" style="max-height:50px;max-width:100%;"></a></li>
+                    <li><a href="/"><img class="img-responsive"src="https://84static.loadingplay.com/static/images/ae1f3c008018876e4c75c3779c5fc97d_corfo_2.png" height="50px" style="margin-top: 20px;"></a></li>
+<!--                     <li><p>Magdalena Le Blanc<b>  </b> © 2015. Designed by <a href="" target="_blank">Loadingplay.com</a>.</p></li> -->
+                </ul>
+            </div>
+            <div class="col-sm-6 text_footer">
+                <!-- <ul class="nav-list effect "> -->
+                    <p>Magdalena Le Blanc<b>  </b> © 2015. Designed by <a href="https://www.loadingplay.com/" target="_blank">Loadingplay.com</a>.</p>
+                <!-- </ul> -->
+            </div>
+        </div>
+    </div>
+</footer>

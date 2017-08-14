@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css?family=Damion');
+
+hr {
+  background-color: black;
+  height: 10px;
+}
+.mini-articulos{
+	width: 338px; 
+	height: 355px;
+	position: relative; 
+	bottom: 20px; 
+	right:10px; 
+	object-fit: cover;
+}
+.deja{
+	color: black;
+	font-family: 'Damion' !important;
+}
+.deja:hover{
+	color: red;
+	text-decoration: none;
+}
+.barra{
+	color:black;
+}
+#barra:hover{
+	color:red;
+}
+@font-face{
+font-family: 'Damion', cursive;
+}
+#fuente{
+	font-family: 'Damion';
+}
+.buscarBoton{
+	border-style: none;
+	background-color: #94b7bb;
+	color:white;
+}
+.contenedorPolitica{
+	background-image: url("https://7static.loadingplay.com/static/images/c2d7df8b274c970dd56f7edba788399c_fondo-2.png");
+	background-size: 100%;
+}
+.tipoFuente{
+	font-family: 'Open Sans', sans-serif;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased; 
+	-moz-osx-font-smoothing: grayscale;
+}
+a.rojo{
+	color: #919191 !important;
+}
+a.rojo:hover{
+	color: red !important;
+}
+
+@media only screen and (max-width: 768px) {
+	[class*="imagenPrincipal"]{
+		margin-left: -15%;
+	}
+	.TipsBiluppo{
+		margin-left: 40% !important;
+    	margin-top: 10% !important;
+	}
+	.mini-articulos{
+		width: 126% !important;
+		margin-left: -15% !important;
+	}
+	[class*="contenidoRol"]{
+		float: left !important;
+	}
+	[class*="hrTips"]{
+		position: relative !important;
+		margin-top: 5% !important;
+		width: 100% !important;
+		margin-left: 4%;
+	}
+	.tituloRol{
+		margin-left: 4% !important;
+	}
+	[class*="indiceBil"]{
+		margin-top: -1% !important;
+		margin-left: 4% !important; 
+	}
+	[class*="indiceBil2"]{
+		margin-top: -1% !important;
+		margin-right: 7%;
+	}
+	[class*="textoTip"]{
+		margin-top: 5% !important;
+    	width: 100% !important;
+    	margin-left: 4%;
+	}
+	[class*="pad"]{
+		padding-top: 800px !important;
+	}
+	[class*="deja"]{
+		margin-left: 0px !important;
+	}
+	[class*="porBil"]{
+	    margin-left: -41px !important;
+	}
+	.contenidoTips{
+		width: 100% !important;
+		margin-top: 0% !important;
+	}
+}

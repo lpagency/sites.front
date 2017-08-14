@@ -1,0 +1,199 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<style type="text/css">
+    /*set a border on the images to prevent shifting*/
+ #gallery_01 img{border:2px solid white;}
+ 
+ /*Change the colour*/
+ .active img{border:2px solid #333 !important;}
+</style>
+{% end %}
+
+
+{% block javascript %}
+
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script> -->
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $(document).on("click", '.little', function(){
+            console.log($(this).attr("src"));
+            $("#img_detail").attr("src", $(this).attr('src'));
+        });
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(48,48,48);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            onLoad: function(product){
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+        };
+    });
+
+</script>
+
+
+<script type="text/template" id="product_detail" >
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+        <h1 class="title-detail text-center">{{! name }}</h1>
+    </div>
+    <div class="" >
+        <div class="col-md-6 col-sm-6 images-detail" style="margin-top: 15px;">
+            <div class="" style="width: 100%;">
+                <ul class="thumbnails box pad0 img-contenedor">
+                    <img id="img_detail" class="img-responsive img_detail" src="{{! images[0]['thumb_500'] }}" alt="" style="display: block;">
+                    
+                </ul>
+            </div>
+
+            <div id="gallery_01" class="image_little pad0" style="display: inline-block;">
+             
+
+                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+
+
+
+                 <img id="img_01" class="{{! images[1]['thumb_1']|hide_if_empty}} little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+
+
+                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+
+
+                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little" src="{{! images[3]['thumb_500'] }}" onload="this.src={{! images[3]['thumb_500']}}" />
+
+            </div>
+
+
+        </div>
+
+        <div class="col-md-6 col-sm-6">
+            
+            <div class="title_descrip_detail1">
+                <h5 class="descrip_detail1">{{! description }}</h5>
+            </div>
+            <div class="price_detail">
+                <span class="price-p">{{! main_price|money }}</span>
+                <br>
+            <!-- </div>
+            <div class="cart2">
+                <div>
+                    <button type="button" class="btn-compartir" data-toggle="modal" data-target="#myModal" >Compartir en Facebook</button>
+                </div>
+
+            </div> -->
+        </div>
+    </div> 
+
+ 
+</script>
+
+<section class="space100" style="display: block;height: 600px;">
+     <div class="" style="position: relative;" >
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_prod_detail2">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_prod_detail2" name="image" id="img_prod_detail2" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_prod_detail2" src="{{ read_image(site.name + '_prod_detail2', 1) }}" onload="this.src='{{ read_image(site.name + '_prod_detail2',500) }}'" class="img_detail desaturada" alt="item">
+    </div>
+    <div class="clearfix" ></div>
+</section>
+
+
+<section class="h-third-text">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="third_text text-center ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_prod_detail_pop' }}"> {{ read_text(site.name +  '_text_prod_detail_pop') }}
+        </h1>
+    </div>
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+
+{% block body %} 
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %} 
+
+<section class="height_nosotros movil-menu" style="display: block;">
+     <div class="" >
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_prod_detail">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_prod_detail" name="image" id="img_prod_detail" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_prod_detail" src="{{ read_image(site.name + '_prod_detail', 1) }}" onload="this.src='{{ read_image(site.name + '_prod_detail',500) }}'" class="desaturada img_nosotros desaturada" alt="item">
+  
+
+        <!-- <div class="contenedor-text" align="center">
+            <h1 class="col-md-12 col-xs-12 text_nosotros text-center {{editabletext}}" text-id="{{ site.name + '_text_prod_detail' }}"> 
+            {{ read_text(site.name +  '_text_prod_detail') }}
+            </h1>
+        </div> -->
+    </div>
+    <div class="clearfix" ></div>
+</section>
+
+
+<div id="content" class="container space60">
+</div>
+
+
+{% end %}

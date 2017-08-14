@@ -1,0 +1,228 @@
+.product .product-title {
+    font-weight: 700;
+    font-size: 30px;
+}
+.product .bullet {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.product .main-price {
+    margin-top: 20px;
+}
+
+div.tagsinput {
+    display: inline-block !important;
+    vertical-align: middle !important;
+}
+
+.boton-bus-header {
+    height: 45px;
+    vertical-align: top;
+    color: white;
+}
+
+.boton-bus-header:hover {
+    color: black;
+}
+
+/*div.tagsinput span.tag {
+    border: 1px solid #DDEBE0;
+    color: white;
+    background-color: #8CA591;
+}
+div.tagsinput span.tag a {
+    color: #DDEBE0;
+}*/
+.tag-editor {
+    height: 35px;
+    width: 350px;
+    display: inline-block;
+}
+.nav-header ul {
+    list-style: none;
+}
+
+.tag-search {
+    display: inline-block;
+    border: 2px solid white;
+    height: 45px;
+    vertical-align: top;
+    padding: 10px 10px 5px;
+    margin-right: -4px;
+}
+
+.tag-search span {
+    vertical-align: bottom;
+    background-color: #8CA591;
+    font-size: 18px;
+    padding-right: 25px;
+    font-weight: 300;
+}
+
+.busqueda-header {
+    font-weight: 300;
+    height: 45px;
+    padding: 5px;
+}
+.tag-search, .busqueda-header {
+    background-color: white;
+    color: #333333;
+}
+a.remove-tag{
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    color: #ffffff;
+    padding: 4px;
+    font-size: 14px;
+    border-left: 1px solid #666;
+    margin-left: 5px;
+}
+
+a.remove-tag:hover {
+    background-color: transparent;
+    color: #000000;
+    text-decoration: underline;
+}
+
+.nav-header a.remove-tag {
+    padding: 2px 0 0 4px;
+}
+
+.cart-detail-container h2 {
+    color: white;
+}
+
+.cart-detail-container a.btn-go-to-cart {
+    display: none;
+}
+
+.cart-actions .btn {
+    width: 48%;
+}
+
+table.no-bold * {
+    font-weight: normal;
+}
+
+.top_search_bar {
+    width: 100%;
+    position: absolute;
+    top: 15%;
+    opacity: 0;
+    height: 70%;
+    right: 0;
+}
+
+.top_search_bar .icon-remove{
+    color: white;
+}
+
+.fixed-menu-top-2 .icon-remove {
+    display: none;
+}
+
+.sqs-pill-shopping-cart-content {
+    height: 44px;
+}
+
+.site_search .search_bar_inputs {
+    display: inline-block;
+}
+
+.search_bar_inputs > span.hide-search-bar {
+    width: 30px;
+    height: 44px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    padding-top: 10px;
+}
+
+@media (max-width:480px) {
+    .fixed-menu-top .total_items, .fixed-menu-top .total_cart {
+        display: none;
+    }
+    .sqs-pill-shopping-cart-content .total_items, .sqs-pill-shopping-cart-content .total_cart {
+        display: inline-block;
+        position: inherit;
+        width: inherit;
+    }
+    .boto-bus-header-movil {
+        display: inline;
+        float: left;
+        margin-left: 1%;
+        height: 45px;
+    }
+    .fixed-menu-top {
+        height: 60px !important;
+    }
+    .fixed-menu-top > .top_search_bar {
+        display: none;
+    }
+    .menu-7 > a {
+        margin-left: 5%;
+    }
+    .nav-list.menu-7 {
+        z-index: 3;
+        height: 100%;
+    }
+
+    .nav-list.menu-7 .site_search {
+        opacity: 0;
+        width: 84%;
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        padding-top: 7px;
+        left: 50px;
+        visibility: hidden;
+    }
+
+    .nav-list.menu-7 .site_search .search_bar_inputs {
+        width: 100%;
+    }
+
+    .nav-list.menu-7 .boto-bus-header-movil {
+        width: 15%;
+    }
+
+    .nav-list.menu-7 .boto-bus-header-movil i {
+        vertical-align: sub;
+    }
+
+    .nav-list.menu-7 .busqueda-header {
+        width: 70%;
+        float: left;
+    }
+
+    .busqueda-header {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        -webkit-border-radius:0; 
+        border-radius:0;
+    }
+
+    .nav-list.menu-7 li#toogle_search_bar_movil {
+        height: 45px;
+        vertical-align: top;
+        padding-top: 2%;
+    }
+
+    #toogle_search_bar_movil i {
+        margin-left: 10px;
+        font-size: 20px;
+    }
+
+    .top-products {
+        margin-top: 59px !important;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav-list.menu-7 li#toogle_search_bar_movil {
+        padding-top: 3%;
+    }
+}

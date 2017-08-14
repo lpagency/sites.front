@@ -1,0 +1,21 @@
+<script type="text/template" id="product_template" class="hidden">
+
+    <div class="col-md-4 col-sm-6 product-grid">
+      <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+        <div class="product product-thumb">
+            <figure> 
+                <div class="image"><img src="{{! images[0][2] }}" alt="" class="img-responsive img-detal" style="height: 200px;width: 100%;">
+                    <!-- <div class="quick-view-button">
+                        <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" class="add-to-cart btn btn-default btn btn-default btn-lg btn-block"></button>
+                    </div> -->
+                </div>
+                <figcaption class="">
+                    <p class="name color-prod text-center"><a href="#">{{! name }}</a></p>
+                    <h3> <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">{{! description }}</a></h3>
+                    <p class="price">{{! main_price }}</p>
+                </figcaption>
+            </figure>
+        </div>
+        </a>
+    </div>
+</script>

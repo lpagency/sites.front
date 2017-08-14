@@ -1,0 +1,19 @@
+<script type="text/template" id="product_template">
+    
+    <div class="col-lg-3 col-md-3 col-sm-4 space10 pad0 h_detail_prod">
+        <div class=" product-grid">
+            <div class="container-second-prod box-4">
+                
+                <img class="img_product img-responsive pad0 " src="{{! images[0][1] }}" onload="this.src='{{! images[0][3] }}'" title="" alt="">
+                    <div class="mask">
+                        <div class="hover-recipe font-pacifico">
+                            <div class="name">{{! name }}</div>
+                            <div class="description">{{! description }}</div>
+                            <div class="price">{{! main_price|money }}</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+</script>

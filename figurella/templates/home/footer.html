@@ -1,0 +1,117 @@
+<div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-2 col-md-3 col-sm-3 col-xs-12 padright0">
+        <div class="inform-comerc text-left">
+            <div class="clearfix"></div>
+                <ul class="no-dot">
+                    <div class="footer_text footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer1' }}"> 
+                    {{ read_text(site.name +  '_footer1') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer2' }}"> 
+                    {{ read_text(site.name +  '_footer2') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer3' }}"> 
+                    {{ read_text(site.name +  '_footer3') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer4' }}"> 
+                    {{ read_text(site.name +  '_footer4') }}
+                    </div>
+                   <!-- <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer5' }}"> 
+                    {{ read_text(site.name +  '_footer5') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer6' }}"> 
+                    {{ read_text(site.name +  '_footer6') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer7' }}"> 
+                    {{ read_text(site.name +  '_footer7') }}
+                    </div>-->
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pad-footer-2">
+        <div class="inform-comerc text-left">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer8' }}"> 
+                    {{ read_text(site.name +  '_footer8') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer9' }}"> 
+                    {{ read_text(site.name +  '_footer9') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer10' }}"> 
+                    {{ read_text(site.name +  '_footer10') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer11' }}"> 
+                    {{ read_text(site.name +  '_footer11') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer12' }}"> 
+                    {{ read_text(site.name +  '_footer12') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer13' }}"> 
+                    {{ read_text(site.name +  '_footer13') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer14' }}"> 
+                    {{ read_text(site.name +  '_footer14') }}
+                    </div>
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pad-footer-3">
+        <div class="inform-comerc text-left">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer15' }}"> 
+                    {{ read_text(site.name +  '_footer15') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer16' }}"> 
+                    {{ read_text(site.name +  '_footer16') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer17' }}"> 
+                    {{ read_text(site.name +  '_footer17') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer18' }}"> 
+                    {{ read_text(site.name +  '_footer18') }}
+                    </div>
+                </ul>
+        </div>
+    </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pad-footer-3">
+        <div class="inform-comerc text-left">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer19' }}"> 
+                    {{ read_text(site.name +  '_footer19') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer20' }}"> 
+                    {{ read_text(site.name +  '_footer20') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer21' }}"> 
+                    {{ read_text(site.name +  '_footer21') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer22' }}"> 
+                    {{ read_text(site.name +  '_footer22') }}
+                    </div>
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pad0" style="width: 100%;">
+        <div class="text-right">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <li class="footer_loading">
+                        <a href="{{ site_base }}/terminos_condiciones" style="color: white;">Términos y condiciones</a>
+                    </li>
+                    <li class="footer_loading">
+                        <a href="https://www.loadingplay.com" style="color: white;">Sytes tech. Developed by LoadingPlay</a>
+                    </li>
+                    <li class="pad0">
+                        {% if user is None %}
+                        <a href="{{ site_base }}/auth/login" class="footer_text footer_loading " >LOGIN</a>
+                        {% else %}
+                        <a href="{{ site_base }}/auth/logout" class="footer_text footer_loading" >
+                        LOGOUT</a>
+                        {% end %}
+                    </li>
+                </ul>
+        </div>
+    </div>
+</div>

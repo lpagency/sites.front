@@ -1,0 +1,8 @@
+<div class="col-md-6 col-xs-12">
+    <a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}">
+    <img class="img-responsive img-list" src="{{ article["thumb_500"] }}" />
+    </a>
+    <h1 class="text-left til-list" > {{ article["title"] }}</h1>
+    <p class="text-left til-list2 ellipsis multiline" > {{ article["caption"] }}</p>
+</div>
+

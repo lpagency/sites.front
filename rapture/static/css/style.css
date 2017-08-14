@@ -1,0 +1,322 @@
+
+html * {
+/*-webkit-font-smoothing: antialiased;*/
+/*-moz-osx-font-smoothing: grayscale;*/
+
+}
+
+html, body {
+/*font-family: 'Open Sans', sans-serif;*/
+font-family: 'Oxygen', sans-serif;
+}
+
+/*a{
+    color: gray;
+}*/
+
+a:hover{
+    text-decoration: none;
+}
+
+
+li{
+	list-style: none;
+}
+
+.circulo-bajada{
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    top: -47px;
+    width: 100px;
+    height: 100px;
+    background-color:white;
+    border: 20px solid white;
+    border-radius: 50%;
+    z-index: 10;
+    padding: 5px;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+
+.contenedor-circulo{
+    width: 100px;
+}
+
+.fa-angle-down{
+    font-size: 29px !important;
+    color: black;
+    position: relative;
+    bottom: -2px;
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 35px;
+    padding: 2px 1px 2px 1px;
+    width: 37px;
+    height: 37px;
+} 
+
+
+.text-cont {
+    margin-top: 40px;
+    border-bottom: 1px solid #8a6d3b;
+    text-transform: uppercase;
+    color: #8a6d3b;
+    padding-left: 20px;
+    font-size: 28px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+}
+
+.text-black {
+    margin-top: 40px;
+    padding-left: 20px;
+    font-size: 16px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.text-black-contenido {
+    margin-top: -10px;
+    padding-left: 20px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.text-black-contenido-2 {
+    margin-top: 29px;
+    padding-left: 20px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+.pin {
+    float: left !important;
+    background: rgba(119, 119, 119, 0.43) !important;
+    font-size: 15px !important;
+    padding: 15px 11px !important;
+    color: gray !important;
+    font-weight: 600 !important;
+    height: 51px;
+    width: 31%;
+    cursor: pointer;
+}
+
+img.editablelink {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    z-index: 1030 !important;
+}
+
+div.image-upload {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 1030 !important;
+}
+
+
+div.image-upload.par1 {
+    position: absolute;
+    right: 20px;
+    top: 81px;
+    z-index: 100000;
+}
+
+
+.article-box-2 {
+    overflow: hidden;
+/*    padding: 0px 5px;*/
+    /*margin-bottom: 17px;*/
+}
+
+.text-box{
+    position: absolute;
+    bottom: 0px;
+    width: 97%;
+    color: white;
+    font-size: 35px;
+    margin-bottom: 5px;
+    font-weight: 100;
+    font-family: 'Oxygen', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fondo-contact {
+    width: 100%;
+    height: auto;
+}
+
+.align-form-contact {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 305px;
+    /* vertical-align: middle! important; */
+    margin-top: 30px;
+    padding-right: 305px;
+    padding-bottom: 20px;
+}
+
+div.image-upload.con {
+    position: absolute;
+    right: 20px;
+    top: 86px;
+    z-index: 100000;
+}
+
+.texto-banner{
+    font-size: 38px;
+    color: white;
+    text-align: left;
+    position: absolute;
+    bottom: 0px;
+    width: 45%;
+    overflow: hidden;
+    line-height: 44px;
+    margin-bottom: 15px;
+    font-weight: 200;
+    font-family: 'Oxygen', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 1030;
+}
+
+.layer{
+    font-size: 38px;
+    color: white;
+    text-align: left;
+    position: absolute;
+    top: 341px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 44px;
+    /* margin-bottom: 1px; */
+    font-weight: 200;
+    font-family: 'Oxygen', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, 0.58) 60%);
+    height: 290px;
+    left: 0px;
+}
+
+.res{
+    text-align: left;
+    font-size: 23px;
+    color: white;
+}
+
+.text-one{
+    position: relative;
+    top: 59px;
+    margin-bottom: 96px;
+    font-size: 23px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 60%;
+}
+
+.text-pro{
+    position: relative;
+    top: 59px;
+    margin-bottom: -25px;
+    font-size: 30px;
+    font-weight: 100;
+    text-align: center;
+    line-height: 35px;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 60%;
+}
+
+.oce{
+    position: relative;
+    top: 59px;
+    font-size: 24px;
+    font-weight: 100;
+    text-align: center;
+    font-weight: 200;
+/*     -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;*/
+    font-weight: 500;
+}
+
+.oce-2{
+    position: relative;
+    top: 59px;
+    font-size: 22px;
+    font-weight: 100;
+    text-align: center;
+    font-weight: 200;
+/*    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;*/
+    margin-bottom: 35px;
+}
+
+/*-----------------------------------------------Responsive--------------------------------------------------*/
+
+@media (max-width: 991px){
+    .texto-banner {
+    font-size: 30px;
+
+}
+
+}
+
+@media (max-width: 767px){
+    .texto-banner {
+    font-size: 25px;
+    width: 73%;
+    margin-bottom: 40px;
+}
+
+}
+
+
+@media (max-width: 414px){
+    .img-movi{
+       height: 460px !important;
+    }
+
+    .layer {
+    font-size: 38px;
+    color: white;
+    text-align: left;
+    position: absolute;
+    top: 171px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 44px;
+    /* margin-bottom: 1px; */
+    font-weight: 200;
+    font-family: 'Oxygen', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: linear-gradient(to bottom, rgba(34, 34, 34, 0) 0%, rgba(34, 34, 34, 0.58) 60%);
+    height: 290px;
+    left: 0px;
+}
+
+.texto-banner {
+    font-size: 22px;
+    width: 85%;
+    margin-bottom: 50px;
+    line-height: 34px;
+}
+
+}

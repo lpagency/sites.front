@@ -1,0 +1,124 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+
+<script>
+        paceOptions = {
+            elements: true
+        };
+    </script>
+<script src="{{site_base}}/static/js/pace.min.js"></script>
+<script type="text/javascript">
+function swapStyleSheet(sheet){
+document.getElementById('pagestyle').setAttribute('href', sheet);
+}
+</script> 
+
+     <section id="category-intro" class="section-intro scrollme parallaxOffset">
+            <div class="cat-intro animateme" data-when="exit" data-from="0" data-to="1" data-opacity="0" data-translatey="-220" data-rotatez="0" data-crop="true" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                <div class="cat-intro-text">
+                    <div class="display-table hw100">
+                        <div class="display-table-cell hw100 list1">
+                            <div class="box-text-cell-inner white animateme" data-when="exit" data-from="0" data-to="1" data-opacity="0" data-translatey="-260" data-rotatez="0" data-crop="true" style="opacity: 1; transform: translate3d(0px, 0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) scale3d(1, 1, 1);">
+                                <h1>SHOP WOMEN</h1>
+                                <p> Discover the latest women&#39;s fashion </p>
+                                <p> <a style="color:#fff" href="#main-container-wrapper" class="scrollto"><i class="fa fa-2x fa-angle-down"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <img src="https://7static.loadingplay.com/static/images/c0d80c5573f9e6ce36f936e288376ebf_2.png" alt="img" class="cat-intro-banner"></div>
+         </section>
+
+ <script type="x-text/template" id="product_template" >
+
+    <div class="product-item item-flat pos  col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+       <div class="section-content">
+      <div class="row has-equal-height-child">
+        <div class="product product-item-inner ">
+            <div class="imageHover hasCart">
+                <a href="{{ site_base }}/sc/product/detail/{{!name|friendly}}/{{!id}}">
+                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0][2] }}"></a>
+                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0][3] }}"></a>
+                    <div class="product-btn-box">
+                        <a class="btn btn-product-flat btn-primary">
+                            <span class="add2cart add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                        </a>
+                    </div>
+                </div>
+                <div class="prod-details">
+                    <p class="title">
+                        <a href="product-details-style5-4.1-with-zoom.html" title="title">{{!name}}</a>
+                    </p>
+                    <p class="product-flat-info">
+                        <span class="product-curreent-price">
+                           {{! main_price}}
+                        </span>
+                        &nbsp;|&nbsp;
+                    </p>
+                </div>
+              
+              </div>
+            </div>
+           </div>
+       
+ </script> 
+
+ <script type="text/javascript">
+  var base_url = 'https://apibodegas.loadingplay.com/',
+ checkout_url = 'https://checkout.loadingplay.com/';
+  var app_public = 10;
+
+    function isLocalHost() {
+      return document.location.href.indexOf('localhost') != -1;
+    }
+
+    function isDevelopment() {
+      return document.location.href.indexOf('ondev.today') != -1;
+    }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public= 10;
+    } 
+    else if ( isDevelopment() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public = 10;
+    }
+
+    $(document).ready(function()
+    {
+
+        var facade = $(document).ecommerce(
+         {
+          'app_public' : app_public,
+          'animation' : 'basic',
+          'ignore_stock':true,
+          'base_url' : base_url,
+          'checkout_url': checkout_url
+        });
+
+    });
+    </script>
+
+<div class="products"> </div>
+ <div class="clearfix pos"></div>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

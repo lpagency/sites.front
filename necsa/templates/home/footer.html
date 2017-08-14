@@ -1,0 +1,58 @@
+<div class="clearfix"></div>
+
+<section id="footer" >
+
+    <div class="">
+        <nav class="clearfix nav text-right ">
+            <div class="col-lg-12 col-md-12 fond-footer" >
+<!--                 <div  class="col-sm-1 text-left">
+                {% if user is None %}
+                  <a href="{{ site_base }}/auth/login" class="pull-left font-footer a-footer" >LOGIN</a>
+                  {% else %}
+                  <a href="{{ site_base }}/auth/logout" class="pull-left font-footer a-footer" >
+                    LOGOUT</a>
+                {% end %}
+                </div>
+                <div class="col-sm-2 text-left">
+                <a href="" class="font-footer">PREGUNTAS FRECUENTES</a>
+                </div>
+                <div  class="col-sm-2 col-xs-12 text-left pad0">
+                <a href="" class="font-footer ">TERMINOS Y CONDICIONES DEL SERVICIO</a>
+                </div>
+                <div  class="col-sm-1 col-xs-12 text-left">
+                <a href="{{ site_base }}/contact" class="font-footer">CONTACTO</a>
+                </div> -->
+
+                <div class="col-sm-6 col-xs-12  pad0">
+                    <ul class="list-inline">
+                        <li class="col-sm-1  pad0">
+                            {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="font-footer footer1 " >LOGIN</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="font-footer footer1" >
+                                LOGOUT</a>
+                            {% end %}
+                        </li>
+                        <li class="col-sm-4  pad0">
+                            <a href="{{ site_base }}/preguntas_frecuentes" class="font-footer footer1">PREGUNTAS FRECUENTES</a>
+                        </li>
+                        <li class="col-sm-6  pad0">
+                            <a href="{{ site_base }}/terminos_condiciones" class="font-footer footer1">TERMINOS Y CONDICIONES DEL SERVICIO</a>
+                        </li>
+                       <!--  <li class="col-sm-1  pad0">
+                            <a href="{{ site_base }}/contact" class="font-footer footer1">CONTACTO</a>
+                        </li> -->
+                    </ul>
+                </div>
+
+                <div class="col-sm-3 col-xs-12 font-footer text_right {{editabletext}} pad0" text-id="{{ site.name + '_footer1' }}"> {{ read_text(site.name +  '_footer1') }}
+                </div>
+                <div class="col-sm-1 col-xs-12 font-footer text_right {{editabletext}} pad0" text-id="{{ site.name + '_footer2' }}"> {{ read_text(site.name +  '_footer2') }}
+                </div>
+                <div class="col-sm-2 col-xs-12 font-footer text_right {{editabletext}} pad0" text-id="{{ site.name + '_footer3' }}"> {{ read_text(site.name +  '_footer3') }}
+                </div>
+            </div>
+        </nav>
+    </div>
+</section>
+

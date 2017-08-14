@@ -1,0 +1,15 @@
+{% extends "../base.html" %}
+
+
+{% block body %}
+{% if user is not None %}
+{% block body_servicios %}{% end %}
+{% else %}
+    <div class="clearfix"></div>
+    <div class="container center ">
+        <h1>Necesita un usuario para esta sección</h1>
+
+        <a href="{{ site_base }}/auth/login?next=/servicios" >Entrar / Registrarse</a>
+    </div>
+{% end %}
+{% end %}

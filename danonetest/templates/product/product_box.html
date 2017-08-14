@@ -1,0 +1,16 @@
+
+<script type="text/template" id="product_template" class="hidden">
+     <div class="col-md-6 col-xs-12" style="min-height: 250px;">
+               <div class="col-md-6 col-xs-12">
+                   <img src="{{! images[0][2] }}" alt="" class="img-responsive mini-pro" >
+               </div>
+            
+                <div class="col-md-6 col-xs-12">
+                   <h1 class="text-left nam">{{! name }}</h1>
+                   <h6 class="text-left desp ellipsis multiline" style="word-wrap: break-word;">{{! description }}</h6>
+                   <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                   <button type="button" class="btn btn-ver">Ver producto</button>
+                   </a>
+               </div>
+        </div>
+</script>

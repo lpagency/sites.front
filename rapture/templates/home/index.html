@@ -1,0 +1,234 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+ <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAGulDSOHfYzaFLc31ukYppsbwlefsWwlM">
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/map_store.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(29,29,29);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 16,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+<!-- *contenido* -->
+<section>
+    <div class="img-movi" style="background:url('{{ read_image(site.name + '_landing',500) }}'); height:630px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(85%); -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(85%); -ms-filter: grayscale(0%) brightness(85%);-o-filter: grayscale(0%) brightness(85%); background-position:center;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload par1 visible-movil">
+            <label for="img_landing">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_landing" name="image" id="img_landing" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_landing" src="{{ read_image(site.name + '_landing', 1) }}" onload="this.src='{{ read_image(site.name + '_landing',500) }}'" class="banner_uno_list hidden" alt="item">
+
+        <div class="layer"> </div>
+    </div>
+
+    <div class="container-fluid">
+    	<div class="col-md-12">
+    	<div class="texto-banner {{editabletext}}" text-id="{{ site.name + '_rap' }}"> {{ read_text(site.name +  '_rap') }} </div>	
+    	</div>
+    </div>
+
+        <div class="col-md-12">
+                   <div align="center">
+                   <a href="#first-page-scroll" class="anchorLink">
+                       <div class="contenedor-circulo">
+                           <div  class="circulo-bajada" >
+                              <i class="fa fa-angle-down"  aria-hidden="true"></i> 
+                           </div>
+                       
+                       </div>
+                    </a>
+                   </div>
+          </div>
+
+</section>
+
+<section id="first-page-scroll">
+   <div class="container-fluid"> 
+      <div align="center">
+         <div class="col-md-12">
+            <div class="text-one {{editabletext}}" text-id="{{ site.name + '_rap_resena' }}"> {{ read_text(site.name +  '_rap_resena') }} </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<section>
+   <div class="container-fluid"> 
+      <div align="center">
+         <div class="col-md-12">
+            <div class="text-pro {{editabletext}}" text-id="{{ site.name + '_texto_two' }}"> {{ read_text(site.name +  '_texto_two') }} </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+<!-- **productos** -->
+
+  <section class="h_submenu">
+        <div align="center">
+      <!--     <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+            <a href="#" id="categoria_1" class="subcateg mbtm5" tag="categoria_1" role="button">Categoria 1 </a>
+            <a href="#" id="categoria_2" class="subcateg mbtm5" tag="categoria_2" role="button">Categoria 2</a>
+            <a href="#" id="categoria_3" class="subcateg mbtm5" tag="categoria_3" role="button">Categoria 3</a>
+            <a href="#" id="categoria_4" class="subcateg mbtm5" tag="categoria_4" role="button">Categoria 4</a>
+            <a href="#" id="categoria_5" class="subcateg mbtm5" tag="categoria_5" role="button">Categoria 5</a>
+            <a href="#" id="todo" class="subcateg mbtm5" tag="" role="button" data-toggle="modal" data-target="#myModal-pro">Ver todo</a>
+          </div> -->
+          </div>
+  </section>
+
+<section class="nov" style="height:500px;">
+   <div class="container">
+           <div align="center" class="to"> 
+              <div class="products">
+                  <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+              </div>
+            <div class="col-xs-12">
+              <div style="margin-top:0px; min-height:450px;"></div>
+              <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button>
+            </div>
+          </div> 
+
+    </div>
+</section>
+
+
+<section>
+
+<div class="container">
+     <div align="center">
+         <div class="col-md-12">
+           <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi' }}"> {{ read_text(site.name +  '_bi') }} </div>
+            <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_2' }}"> {{ read_text(site.name +  '_bi_2') }} </div>
+
+            <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi_3' }}"> {{ read_text(site.name +  '_bi_3') }} </div>
+            <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_4' }}"> {{ read_text(site.name +  '_bi_4') }} </div>
+
+            <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi_5' }}"> {{ read_text(site.name +  '_bi_5') }} </div>
+            <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_6' }}"> {{ read_text(site.name +  '_bi_6') }} </div>
+
+            <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi_7' }}"> {{ read_text(site.name +  '_bi_7') }} </div>
+            <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_8' }}"> {{ read_text(site.name +  '_bi_8') }} </div>
+
+             <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi_9' }}"> {{ read_text(site.name +  '_bi_9') }} </div>
+            <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_10' }}"> {{ read_text(site.name +  '_bi_10') }} </div>
+
+            <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_bi_11' }}"> {{ read_text(site.name +  '_bi_11') }} </div>
+          
+           <a href="mailto:rapturesantiago@mgmail.cl" class="" style="color:#232323; text-decoration:none;">
+                <div class="text-center oce-2 {{editabletext}}" text-id="{{ site.name + '_bi_122' }}"> {{ read_text(site.name +  '_bi_122') }} </div>
+            </a>
+         
+         </div>
+     </div>
+</div>
+</section>
+
+<div style="margin-top:35px;"> </div>
+<!-- **+Mapa*** -->
+
+<div class="container">
+  <div align="center">
+    <div class="col-md-12">
+        <div class="text-center oce {{editabletext}}" text-id="{{ site.name + '_map' }}"> {{ read_text(site.name +  '_map') }} </div>
+     </div>
+  </div>
+</div>
+
+
+<section style="height:600px; margin-bottom: 46px; margin-top:75px;">
+    
+<!--    <div class="container"> -->
+      <div id="map" class="fondo-mapa" style="height:600px;">
+<!--     </div> -->
+    <!-- fin editar imagen -->
+    <div class="on-map absolute top-map">
+        <div class="container-fluid-new absolute">
+            <div class="row-fluid-new">
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

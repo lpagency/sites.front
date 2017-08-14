@@ -1,0 +1,132 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.planes').addClass("active");
+
+  });
+    
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var app_public = $.environmentVar(4,4,4);
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/'
+        );
+
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com/',
+            'http://lpcheckout.ondev.today/',
+            'https://pay.loadingplay.com/'
+        );
+
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 6,
+            'templateOrigin' : '#product_template_home',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+ 
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+<section>
+      <div class="container">
+        <div class="col-md-12">
+           <div class="texto-light text-center {{editabletext}}" text-id="{{ site.name + '_plan_power' }}"> {{ read_text(site.name +  '_plan_power') }}</div>
+           <hr class="plan">
+        </div>
+    
+    <!-- **cuadritos planes** -->
+    <div align="center">
+      <div class="col-md-3 col-sm-4">
+       <div class="cuadro-pl">
+        <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_cu' }}"> {{ read_text(site.name +  '_cu') }}</div>
+        <hr class="sun">
+        <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_ci' }}"> {{ read_text(site.name +  '_ci') }}</div>
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+        <label for="img_8080_2">
+            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+          </label>
+          <input type="file" class="editableimage" image-id="{{ site.name }}_8080_2" name="image" id="img_8080_2" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_8080_2" src="{{ read_image(site.name + '_8080_2', 1) }}" onload="this.src='{{ read_image(site.name + '_8080_2',500) }}'" class="img-plan" alt="item" />
+      <!--   <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+        <hr class="sun">
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-8">
+     <div class="cuadro-rang">
+       <div class="select-text text-center {{editabletext}}" text-id="{{ site.name + '_co' }}"> {{ read_text(site.name +  '_co') }} </div>
+       <button type="button" class="btn btn-default plan-0">FEMENINO</button>
+       <button type="button" class="btn btn-default plan-0">MASCULINO</button>
+
+       <div class="select-text text-center {{editabletext}}" text-id="{{ site.name + '_ca' }}"> {{ read_text(site.name +  '_ca') }} </div>
+       <button type="button" class="btn btn-default plan-2">MENOS DE 40 AÑOS</button>
+       <button type="button" class="btn btn-default plan-2">MÁS DE 40 AÑOS </button>
+
+       <button type="button" class="btn btn-warning plan-or">CONTINUAR</button>
+
+     </div>
+
+   </div>
+   <div class="col-md-12 text-center">
+     <button type="button" class="btn btn-info new">Volver a otros planes</button>  
+</div>
+
+ </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}
+
+{% end %}
+

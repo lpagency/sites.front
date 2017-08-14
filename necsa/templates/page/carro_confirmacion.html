@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.content.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+{% include '../home/menu_fixed.html' %}
+<section style="position: relative;bottom: 30px;">
+    <!--banner grande-->
+        {% if is_admin %}
+        <div class="">
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_carrito">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_carrito" name="image" id="img_carrito">
+               </div>
+                {% end %}
+                <img id="{{ site.name }}_carrito" src="{{ read_image(site.name + '_carrito', 1) }}" onload="this.src='{{ read_image(site.name + '_carrito',500) }}'" class="carrito" alt="item">
+
+                <div class="midled">
+                    <h1 class="col-md-12 col-xs-12 carrito_confirmac text-center {{editabletext}}" text-id="{{ site.name + '_carrito-cofm' }}"> {{ read_text(site.name +  '_carrito-cofm') }}
+                    </h1>
+                </div>
+       </div>
+
+</section>
+
+<section>
+        <div class="col-md-12 space25">
+                <h1 class="text-center text-carrito1 {{editabletext}}" text-id="{{ site.name + '_carrito_conf2' }}"> {{ read_text(site.name +  '_carrito_conf2') }}
+                </h1>
+                <h3 class="text-center text-carrito2 {{editabletext}}" text-id="{{ site.name + '_carrito_conf3' }}"> {{ read_text(site.name +  '_carrito_conf3') }}
+                </h3>
+        </div>
+</section>
+
+<section class="mbtm100">
+    <div class="col-lg-6 col-md-6 space45">
+        <button type="button" class="btn btn-default btn-block btn-loading">Descargar comprobante</button>
+    </div>
+    <div class="col-lg-6 col-md-6 space45">
+      <a href="{{site_base}}/">
+        <button type="button" class="btn btn-default btn-block btn-home">Volver al home</button>
+      </a>
+    </div>
+    <div class="clearfix"></div>
+</section>
+
+{% include '../home/footer.html' %}
+
+{% end %}

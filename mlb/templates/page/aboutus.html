@@ -1,0 +1,176 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block body %}
+<div class="productlist">
+	<div class="row">
+		<div class="col-sm-12 especial mlb-aboutus-header">
+			<h2>Magdalena Le Blanc</h2>
+			<div class="col-sm-12 especial bkg"></div>
+			{% if is_admin %}
+			<!-- banner 1 -->
+			<div class="image-upload" style="right:50px;">
+				<!-- id input debe ir en for de label -->
+				<label for="img_banner_aboutus">
+					<img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+				</label>
+				<input type="file" class="editableimage" image-id="{{ site.name }}_banner_aboutus" name="image" id="img_banner_aboutus" >
+			</div>
+			<!-- banner 2 -->
+			<div class="image-upload" style="right:50px;">
+				<!-- id input debe ir en for de label -->
+				<label for="img_banner_aboutus_a">
+					<img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+				</label>
+				<input type="file" class="editableimage" image-id="{{ site.name }}_banner_aboutus_a" name="image" id="img_banner_aboutus_a" >
+			</div>
+			{% end %}
+			<img id="mlb_banner_aboutus" class="img-responsive show-hide" src="{{ read_image(site.name + '_banner_aboutus') }}" />
+			<img id="mlb_banner_aboutus_a" class="img-responsive hide-show" src="{{ read_image(site.name + '_banner_aboutus_a') }}" />
+		</div>
+	</div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+	<div class="col-sm-12 especial profile-foto-top">       
+		<div class="profile-company-logo">
+			<img src="{{ read_image(site.name + '_banner_aboutus') }}" alt="item">                      
+		</div>
+	</div>  
+</div>
+<div class="container-fluid text-center container-fluid-magle" style="display: inherit;">
+	<div class="row">
+		<div class="col-sm-8 mlb-text" style="float: none; margin: 30px auto;">
+			<p> 
+				{% if is_admin %}
+				<p class="editabletext" text-id="{{ site.name + '_aboutus_tit' }}" >{{ read_text(site.name + '_aboutus_tit') }}</p>
+				{% else %}
+				{{ read_text(site.name + '_aboutus_tit') }}
+				{% end %}
+   			</p>
+		</div>
+	</div>
+</div>
+<div class="container-fluid text-right container-fluid-magle" style="display: inherit; margin: 60px auto; overflow: hidden;">
+	<div class="row">
+		<div class="col-sm-6 mlb-text especial" style="padding-right: 40px !important; margin-bottom: 40px;">
+			<div class="col-sm-12 especial" data-sr="enter left">
+				<h2>				
+					{% if is_admin %}
+					<span class="editabletext" text-id="{{ site.name + '_aboutus_tit2' }}" >{{ read_text(site.name + '_aboutus_tit2') }}</span>
+					{% else %}
+					{{ read_text(site.name + '_aboutus_tit2') }}
+					{% end %}</h2>
+					<p>___________</p>
+					<p>				
+						{% if is_admin %}
+						<p class="editabletext" text-id="{{ site.name + '_aboutus_desc2' }}" >{{ read_text(site.name + '_aboutus_desc2') }}</p>
+						{% else %}
+						{{ read_text(site.name + '_aboutus_desc2') }}
+						{% end %}</p>
+					</div>
+					<div class="col-sm-12 especial" data-sr="enter left">
+					<h2>				
+						{% if is_admin %}
+						<span class="editabletext" text-id="{{ site.name + '_aboutus_tit3' }}" >{{ read_text(site.name + '_aboutus_tit3') }}</span>
+						{% else %}
+						{{ read_text(site.name + '_aboutus_tit3') }}
+						{% end %}</h2>
+						<p>___________</p>
+						<p>				
+						{% if is_admin %}
+							<p class="editabletext" text-id="{{ site.name + '_aboutus_desc3' }}" >{{ read_text(site.name + '_aboutus_desc3') }}</p>
+						{% else %}
+							{{ read_text(site.name + '_aboutus_desc3') }}
+						{% end %}
+						</p>
+				</div>
+				</div>
+				<div class="col-sm-6 mlb-text especial" >
+					{% if is_admin %}
+					<div class="image-upload" style="right:50px;">
+						<!-- id input debe ir en for de label -->
+						<label for="img_banner_aboutus2">
+							<img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+						</label>
+						<input type="file" class="editableimage" image-id="{{ site.name }}_banner_aboutus2" name="image" id="img_banner_aboutus2" >
+					</div>
+					{% end %}
+					<img id="mlb_banner_aboutus2" class="img-responsive show-hide" src="{{ read_image(site.name + '_banner_aboutus2') }}" />
+					<!-- 						<img class="img-responsive"src="{{ site_base }}/static/img/mlb-aboutus-detail.png"> -->
+				</div>
+			</div>
+		</div>
+		<div class="productlist">
+			<div class="row">
+				<div class="col-sm-12 especial mlb-aboutus-footer">
+					<div class="col-sm-6 mlb-text" style="float: none; margin: 30px auto; color: white;" data-sr="enter bottom, over 2s">
+						<h2>						
+						{% if is_admin %}
+						<span class="editabletext" text-id="{{ site.name + '_aboutus_tit4' }}" >{{ read_text(site.name + '_aboutus_tit4') }}</span>
+						{% else %}
+						{{ read_text(site.name + '_aboutus_tit4') }}
+						{% end %}</h2>
+						<p>___________</p>
+						<p>				
+						{% if is_admin %}
+							<p class="editabletext" text-id="{{ site.name + '_aboutus_desc4' }}" >{{ read_text(site.name + '_aboutus_desc4') }}</p>
+						{% else %}
+							{{ read_text(site.name + '_aboutus_desc4') }}
+						{% end %}
+						</p>
+					</div>
+					<div class="col-sm-12 especial bkg"></div>
+					{% if is_admin %}
+					<!-- banner 1 -->
+					<div class="image-upload" style="right:50px;">
+						<!-- id input debe ir en for de label -->
+						<label for="img_banner_aboutus3">
+							<img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+						</label>
+						<input type="file" class="editableimage" image-id="{{ site.name }}_banner_aboutus3" name="image" id="img_banner_aboutus3" >
+					</div>
+					<!-- banner 2 -->
+					<div class="image-upload" style="right:50px;">
+						<!-- id input debe ir en for de label -->
+						<label for="img_banner_aboutus3_a">
+							<img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+						</label>
+						<input type="file" class="editableimage" image-id="{{ site.name }}_banner_aboutus3_a" name="image" id="img_banner_aboutus3_a" >
+					</div>
+					{% end %}
+					<img id="mlb_banner_aboutus3" class="img-responsive show-hide" src="{{ read_image(site.name + '_banner_aboutus3') }}"  style="left:0px"/>
+					<img id="mlb_banner_aboutus3_a" class="img-responsive hide-show" src="{{ read_image(site.name + '_banner_aboutus3_a') }}"  style="left:0px" />
+<!-- 						<img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-footer.png" style="left:0px">
+	<img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-footera.png" style="left:0px"> -->
+</div>
+</div>
+
+</div>
+<div class="container-fluid text-center container-fluid-magle" style="display: inherit; height: auto; padding: 80px 0px !important;">
+	<div class="row">
+		<div class="col-sm-8 mlb-text" style="float: none; margin: 30px auto;">
+			<h2>
+			{% if is_admin %}
+			<span class="editabletext" text-id="{{ site.name + '_aboutus_tit5' }}" >{{ read_text(site.name + '_aboutus_tit5') }}</span>
+			{% else %}
+			{{ read_text(site.name + '_aboutus_tit5') }}
+			{% end %}</h2>
+			<p>___________</p>
+			<p>				
+			{% if is_admin %}
+				<p class="editabletext" text-id="{{ site.name + '_aboutus_desc5' }}" >{{ read_text(site.name + '_aboutus_desc5') }}</p>
+			{% else %}
+				{{ read_text(site.name + '_aboutus_desc5') }}
+			{% end %}
+			</p>
+		</div>
+	</div>
+</div>
+
+{% include '../content/footer.html' %}
+{% end %}

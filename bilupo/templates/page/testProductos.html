@@ -1,0 +1,37 @@
+<html>
+<title>W3.CSS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+.mySlides {display:none}
+.demo {cursor:pointer}
+</style>
+<body>
+
+<div class="w3-container">
+  <h2>Slideshow Indicators</h2>
+  <p>Using images to indicate how many slides there are in the slideshow, and highlight the image the user is currently viewing.</p>
+</div>
+
+<div class="w3-content" style="max-width:1200px">
+  <img class="mySlides" src="https://pbs.twimg.com/media/C7cF1diWkAAPrlM.jpg:large" style="width:100%">
+  <img class="mySlides" src="ihttp://img.soy-chile.cl/Fotos/2015/10/02/file_20151002125618.jpg" style="width:100%">
+  <img class="mySlides" src="img_mountains_wide.jpg" style="width:100%">
+
+  <div class="w3-row-padding w3-section">
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="https://pbs.twimg.com/media/C7cF1diWkAAPrlM.jpg:large" style="width:100%" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="http://img.soy-chile.cl/Fotos/2015/10/02/file_20151002125618.jpg" style="width:100%" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s4">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img_mountains_wide.jpg" style="width:100%" onclick="currentDiv(3)">
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>
+

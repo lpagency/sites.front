@@ -1,0 +1,205 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+       
+
+{% end %}
+
+{% block body %}
+
+<section id="inner-banner"><!-- start banner -->
+<!-- <!-- <div class="banner-caption"><!-- start banner caption -->
+<!-- <h1 class=" whiteclr text-left">Snacks <span class="small-1">You are in the Snacks section, enjoy our products. </span></h1>
+
+
+</div> --><!-- end banner caption -->
+
+{% if is_admin %}
+<div class="image-upload">
+	<label for="img_banner_snack">
+		<img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+	</label>
+	<input type="file" class="editableimage" image-id="{{ site.name }}_banner_snack" name="image" id="img_banner_snack">
+</div>
+{% end %}
+<img id="{{ site.name }}_banner_snack" src="{{ read_image(site.name + '_banner_snack', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_snack') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
+
+<div class="banner-caption text-center info-article"><!-- start banner caption -->
+	
+	{% if is_admin %}
+	<h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_snack' }}">{{ read_text(site.name + '_banner_snack') }} </span>
+	<span class="small-1 editabletext" text-id="{{ site.name + '_banner_snack2' }}">{{ read_text(site.name + '_banner_snack2') }}
+	</h1>
+
+	{% else %}
+	<h1 class="whiteclr fsize50"> {{ read_text(site.name + '_banner_snack') }}<span class="small-1"></span>{{ read_text(site.name + '_banner_snack2') }}</h1>
+	{% end %}
+</div>
+
+</section><!-- end banner -->
+
+<!-- {{! content }} -->
+<!-- <section class="space20">
+	<div class="container"> -->
+	
+		<!-- <div class="pink  box">	
+			<div class="row ">
+				<div class="col-md-6">
+					<img src="images/tika.png" class="img-responsive mautomargin">
+				</div>
+				<div class="col-md-6">
+					<h2>Papas Tika</h2>
+					<p>Contrary to popular belief, Lorem Ipsum is not 
+						simply random text. It has roots in a piece 
+						of classical.....</p>
+						<div class="space100"></div>
+					<button class="btn line-button">Shop online</button>	
+					<button class="btn line-button">Where I can buy</button>	
+				</div>
+			</div>
+		</div>
+		<div class="lg-yellow  space20 box">	
+			<div class="row ">
+				<div class="col-md-6">
+					<img src="images/palmito-can.png" class="img-responsive mautomargin">
+				</div>
+				<div class="col-md-6">
+					<h2>Palmitos montaña azul</h2>
+					<p>Contrary to popular belief, Lorem Ipsum is not 
+						simply random text. It has roots in a piece 
+						of classical.....</p>
+						<div class="space100"></div>
+					<button class="btn line-button">Shop online</button>	
+					<button class="btn line-button">Where I can buy</button>	
+				</div>
+			</div>
+		</div>
+		<div class="yellow  space20 box">	
+			<div class="row ">
+				<div class="col-md-6">
+					<img src="images/pisa.png" class="img-responsive mautomargin">
+				</div>
+				<div class="col-md-6">
+					<h2>Piña dorada</h2>
+					<p>Contrary to popular belief, Lorem Ipsum is not 
+						simply random text. It has roots in a piece 
+						of classical.....</p>
+						<div class="space100"></div>
+					<button class="btn line-button">Shop online</button>	
+					<button class="btn line-button">Where I can buy</button>	
+				</div>
+			</div>
+		</div> -->
+<!-- 	</div>
+</section> -->
+
+<div class="container">
+    <div class="row products">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+</div>
+<div class="space50"></div>
+
+
+<section class="section space20" >
+<div class="container">
+	
+	<div class="row space20">
+		<h2 class="text-center">Others you caan pick..</h2>
+		<div class="space20"></div>
+		<div class="col-md-6 space20 img-cat sobre-botones">
+			<div class="box-product" onclick="">
+				<div class="vertical-center-cont"> 
+					<div class="horizontal-center-cont"> 
+						<div class="box-product-info" onclick="">     
+							<a class="tag" href="{{ site_base }}/categorie?tag=chocolates">
+								<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="{{ read_image(site.name + '_banner_cat_chocolates', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cat_chocolates') }}'" class="img-responsive img-edit" alt="item" style="height: 100%;">
+			<div class="img-text-center">
+				<h3>Chocolates <br>
+					& Coffee</h3>
+				</div>
+			</div>
+		<div class="col-md-6 space20 img-cat sobre-botones">
+			<div class="box-product" onclick="">
+                <div class="vertical-center-cont"> 
+                    <div class="horizontal-center-cont"> 
+                        <div class="box-product-info" onclick="">     
+                            <a class="tag" href="{{ site_base }}/categorie?tag=snacks">
+                            <button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <img id="{{ site.name }}_banner_cat_snacks" src="{{ read_image(site.name + '_banner_cat_snacks', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cat_snacks') }}'" class="img-responsive img-edit" alt="item" style="height: 100%;">
+            <div class="img-text-center">
+            	<h3>Healthy <br>
+            		Snacks</h3>
+            </div>
+		</div>
+		<div class="col-md-6 space20 img-cat sobre-botones">		
+			<div class="box-product" onclick="">
+				<div class="vertical-center-cont"> 
+					<div class="horizontal-center-cont"> 
+						<div class="box-product-info" onclick="">     
+							<a class="tag" href="{{ site_base }}/categorie?tag=salt">
+								<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="{{ read_image(site.name + '_banner_cat_salt', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cat_salt') }}'" class="img-responsive img-edit" alt="item" style="height: 100%;">
+			<div class="img-text-center">
+				<h3>Salt</h3>
+			</div>
+		</div>
+		<div class="col-md-6 space20 img-cat sobre-botones">
+			<div class="box-product" onclick="">
+				<div class="vertical-center-cont"> 
+					<div class="horizontal-center-cont"> 
+						<div class="box-product-info" onclick="">     
+							<a class="tag" href="{{ site_base }}/categorie?tag=sauces">
+								<button type="button" class="btn btn-outline">GO TO CATEGORIE</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<img src="{{ read_image(site.name + '_banner_cat_sauces', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cat_sauces') }}'" class="img-responsive img-edit" alt="item" style="height: 100%;">
+			<div class="img-text-center">
+				<h3>Jarred &<br>
+					Canned Food</h3>
+				</div>
+			</div>
+	</div>
+</div>
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

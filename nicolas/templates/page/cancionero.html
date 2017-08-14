@@ -1,0 +1,90 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+   <section>
+   <div class="col-md-12">
+           <a href="">
+           <div class="pos">
+              <h1 class="name-box">NICOLAS EMDEN</h1>
+           </div>
+           </a>
+    </div>
+    <div class="can" style="background:url('{{ read_image(site.name + '_cancionero',500) }}'); height:590px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_cancionero">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_cancionero" name="image" id="img_cancionero" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_cancionero" src="{{ read_image(site.name + '_cancionero', 1) }}" onload="this.src='{{ read_image(site.name + '_cancionero',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container-fluid">
+        <div class="col-md-12">
+         <div class="contenedor-texto">
+            <div class="titulo-can {{editabletext}}" text-id="{{ site.name + '_cancionero_texto' }}"> {{ read_text(site.name +  '_cancionero_texto') }}</div>
+            </div>
+
+            <div class="titulo-ba {{editabletext}}" text-id="{{ site.name + '_cancionero_texto_2' }}"> {{ read_text(site.name +  '_cancionero_texto_2') }}</div>
+            </div>
+        </div>
+    </div>
+ 
+</section>
+
+<section id="contenedores">
+    <div class="container-fluid">
+        <div class="col-md-12">
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_1' }}"> {{ read_text(site.name +  '_can_1') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_2' }}"> {{ read_text(site.name +  '_can_2') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_3' }}"> {{ read_text(site.name +  '_can_3') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_4' }}"> {{ read_text(site.name +  '_can_4') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_5' }}"> {{ read_text(site.name +  '_can_5') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_6' }}"> {{ read_text(site.name +  '_can_6') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_7' }}"> {{ read_text(site.name +  '_can_7') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_8' }}"> {{ read_text(site.name +  '_can_8') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_9' }}"> {{ read_text(site.name +  '_can_9') }}</div>
+           <div class="texto-titulos {{editabletext}}" text-id="{{ site.name + '_can_10' }}"> {{ read_text(site.name +  '_can_10') }}</div>
+        </div>
+    </div>
+</section>
+
+<div class="clear"></div>
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

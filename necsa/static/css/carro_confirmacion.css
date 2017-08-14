@@ -1,0 +1,273 @@
+/*body{
+    background: url("https://7static.loadingplay.com/static/images/1b3ec7dfdee75efd8b84e670f7adcc79_Carro_-_confirmacion.png");
+    background-size: 1280px;
+    position: relative;
+    z-index: 2000;
+}*/
+
+/*IMGANEN*/
+.carrito_conf{
+    width: 100%;
+    height: 367px;
+    object-fit: cover;
+    position: relative;
+}
+
+/*TEXTOS*/
+.carrito_confirmac{
+    position: absolute;
+    z-index: 3;
+    top: 141px;
+    margin: 0 auto;
+    font-size: 43px;
+    color: white;
+    font-weight: 900;
+}
+
+.text-carrito1{
+    color: #383838;
+    font-size: 44px;
+    font-weight: 900;
+}
+
+.text-carrito2{
+    margin-top: 53px;
+    font-size: 30px;
+    font-weight: 500;
+    color: #393939;
+    padding-left: 20%;
+    padding-right: 20%;
+    line-height: 32px;
+}
+
+/*BOTONES */
+
+.btn-loading{
+    width: 310px;
+    /* margin: 0 auto; */
+    border-radius: 1px;
+    height: 64px;
+    float: right;
+    right: 27px;
+    position: relative;
+    font-weight: bold;
+    font-size: 24px;
+    color: #848588;
+}
+
+.btn-home{
+    width: 310px;
+    /* margin: 0 auto; */
+    border-radius: 1px;
+    height: 64px;
+    float: left;
+    left: 12px;
+    position: relative;
+    background-color: #E0091F;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+
+/*PANTALLAS DEL PC*/
+
+@media (min-width: 1134px) and (max-width: 1199px){
+
+.btn-loading{
+    right: 233px;
+}
+.btn-home{
+    left: 233px;
+}
+
+}
+@media (min-width: 1115px) and (max-width: 1133px){
+
+.btn-loading{
+    right: 212px;
+}
+.btn-home{
+    left: 212px;
+}
+
+}
+
+@media (min-width: 1086px) and (max-width: 1114px){
+
+.btn-loading{
+    right: 192px;
+}
+
+.btn-home{
+    left: 192px;
+}
+
+}
+
+@media (min-width: 1068px) and (max-width: 1086px){
+
+.btn-loading{
+    right: 172px;
+}
+
+.btn-home{
+    left: 172px;
+}
+
+}
+
+@media (min-width: 1046px) and (max-width: 1067px){
+
+.btn-loading{
+    right: 152px;
+}
+
+.btn-home{
+    left: 152px;
+}
+
+}
+
+@media (min-width: 1026px) and (max-width: 1045px){
+
+.btn-loading{
+    right: 132px;
+}
+
+.btn-home{
+    left: 132px;
+}
+}
+
+@media (min-width: 992px) and (max-width: 1025px){
+
+.btn-loading{
+    right: 112px;
+}
+
+.btn-home{
+    left: 112px;
+}
+
+}
+
+@media (min-width: 943px) and (max-width: 991px){
+.btn-home{
+    bottom: 46px !important;
+    left: 120px;
+}
+
+.btn-loading{
+    right: 135px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 935px) and (max-width: 942px){
+.btn-home{
+    bottom: 46px !important;
+    left: 120px;
+}
+
+.btn-loading{
+    right: 130px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 900px) and (max-width: 934px){
+.btn-home{
+    bottom: 46px !important;
+    left: 90px;
+}
+
+.btn-loading{
+    right: 100px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 900px) and (max-width: 934px){
+.btn-home{
+    bottom: 46px !important;
+    left: 90px;
+}
+
+.btn-loading{
+    right: 100px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 800px) and (max-width: 899px){
+.btn-home{
+    bottom: 47px;
+    left: 60px;
+}
+
+.btn-loading{
+    right: 47px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 760px) and (max-width: 799px){
+.btn-home{
+    bottom: 47px;
+    left: 30px;
+}
+
+.btn-loading{
+    right: 37px;
+    left: initial;
+}
+
+}
+
+@media (min-width: 700px) and (max-width: 759px){
+.btn-home{
+    bottom: 47px;
+    left: 10px;
+}
+
+.btn-loading{
+    right: 17px;
+    left: initial;
+}
+.carrito_confirmac {
+        top: 115px;
+}
+}
+
+/*MEDIDAS DEL MOVIL*/
+
+@media (max-width: 700px){
+
+.carrito_confirmac{
+    top: 125px;
+    font-size: 35px;
+}
+
+.text-carrito1{
+    font-size: 30px;
+}
+
+.text-carrito2{
+    font-size: 23px;
+}
+
+.btn-loading{
+    right: 42px;
+}
+
+.btn-home{
+    left: 48px;
+    top: 20px;
+}
+}

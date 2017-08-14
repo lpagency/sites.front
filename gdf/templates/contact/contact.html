@@ -1,0 +1,272 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRWCOyuXvXYJSErPU_Mc54mn-6xrB5c_4"></script>
+
+<script type="text/javascript">
+
+function initialize() {
+    myLatlng = new google.maps.LatLng(-33.398276,-70.598063);
+
+    var map_canvas = document.getElementById('map');
+    var map_options = {
+        center: myLatlng,
+        zoom: 16,
+        mapTypeId: google.maps.MapTypeId.ROADMAP }
+    var map = new google.maps.Map(map_canvas, map_options);
+
+    var marker = new google.maps.Marker({
+        position: myLatlng,
+        map: map,
+        icon: "https://7static.loadingplay.com/static/images/f1ba7efd0aab3b66d7cef0ff949d30c9_logo_pajaro-solo-menu-fixed.png",
+        title:"Hello World!" });
+}
+
+
+$(document).ready(function(){
+
+   google.maps.event.addDomListener(window, 'load', initialize);
+
+});
+
+</script>
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/map_store.js"></script> -->
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<section>
+
+<div class="distancia"></div>    
+    
+<div class="container-g contact product" style="display: inherit;">  
+
+<!-- ****parte mapa - texto****** -->
+        <div class="col-md-6" style="margin-bottom: 100px;">
+        
+        <div class="col-md-12"> 
+          <div class="texto-tienda {{editabletext}}" text-id="{{ site.name + '_text_tienda_1' }}"> 
+         {{ read_text(site.name +  '_text_tienda_1') }} </div>
+         <div class="texto-tienda-2 {{editabletext}}" text-id="{{ site.name + '_text_tienda_2' }}"> 
+         {{ read_text(site.name +  '_text_tienda_2') }} </div>    
+        <div class="texto-tienda-3 {{editabletext}}" text-id="{{ site.name + '_text_tienda_3' }}"> 
+         {{ read_text(site.name +  '_text_tienda_3') }} </div>
+        </div> 
+
+        <div class="col-md-12 col-xs-12" style="margin-top: 30px;">
+        <div align="center">
+        <div id="map" style=""></div>
+   <!--          <section style="">
+               <div align="center">
+                  <div id="map" class="fondo-mapa" style="height:200px;position: relative;top: 53px;width: 78%;">
+                  
+                      <div class="on-map absolute top-map">
+                        <div class="container-fluid-new absolute">
+                            <div class="row-fluid-new">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3328.0606421024313!2d-70.63399308522607!3d-33.47377190609481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c55aeb40c07d%3A0xb62fc0005583bb9d!2sLira+2310%2C+San+Joaqu%C3%ADn%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1ses!2scl!4v1493056316674" width="100%" height="233px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+         </div>
+            <div align="center">
+                
+            </div>
+        </div>
+
+        </div>
+
+
+        <!-- ****parte form*** -->
+
+        <div class="col-md-6 contenedor-contacto" style="margin-bottom: 100px;">
+            <div class="col-xs-12 col-sm-8 col-md-12 align-form-contact fondo-contact">  
+              <div class="texto-co  {{editabletext}}" text-id="{{ site.name + '_text_tienda_4' }}"> 
+         {{ read_text(site.name +  '_text_tienda_4') }} </div>                
+                <div>
+                    <form action="{{ site_base }}/contact" class="contact-add-form contacto-form form-horizontal"  method="post" novalidate id="newsletter">
+                        <div class="row clearfix">
+                            <div class="col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                    <label class="control-label col-md-2 col-sm-2">Nombre</label>
+                                    <div class="col-md-8 col-sm-8">
+                                    <div class=" controls">
+                                    <input name="name" placeholder="" class="form-control contacto input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                    </div>
+                                    <span id="helpBlock2" class="hidden help-block help-nombre"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 col-md-2"> Correo</label>
+                                    <div class="col-md-8 col-sm-8">
+                                    <div class=" controls">
+                                        <input name="email" placeholder="" class="form-control contacto input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                        <input type="hidden" name="subject" value="contactanos" />
+                                    </div>
+                                    <span id="helpBlock3" class="hidden help-block help-mail"></span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="control-label col-sm-2 col-md-2" for="pwd">Asunto</label>
+                                    <div class="col-sm-8">
+                                        <input type="text" name="subject" class="form-control contacto box-contact" id="pwd" placeholder="">
+                                    </div>
+                                </div>
+                            </div>  
+                        </div>  
+                        <div class="form-group">
+                            <label class="control-label col-sm-2 col-md-2"> Mensaje</label>
+                            <div class="col-md-8 col-sm-8">
+                                <div class="controls">
+                                    <textarea name="message" placeholder="" class="form-control contacto-2 input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                </div>
+                                <span id="helpBlock4" class="hidden help-block help-comentario"></span>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-sm-8">
+                        <p>
+                            <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">ENVIAR 
+                            </button>
+                        </p>
+                        </div>
+                            <input type="hidden" name="submitted" id="submitted3" value="true">
+                    </form> 
+
+
+
+<!--                     <form id="contacto-form" action="/contact" method="post" class="contacto-form form-horizontal" role="form" onsubmit="return ValidateRequired('contacto-form')" novalidate="">
+<div class="form-group f-1 required">
+<label class="control-label col-sm-2 lis" for="email">Nombre</label>
+<div class="col-sm-8">
+<input type="text" name="name" class="form-control box-contact" id="email" placeholder="">
+</div>
+</div>
+<div class="form-group f-1 required">
+<label class="control-label col-sm-2 lis" for="pwd">Correo</label>
+<div class="col-sm-8">
+<input type="text" name="email" class="form-control box-contact" id="pwd" placeholder="">
+</div>
+</div>
+<div class="form-group f-1 required">
+<label class="control-label col-sm-2 lis" for="pwd">Asunto</label>
+<div class="col-sm-8">
+<input type="text" name="subject" class="form-control box-contact" id="pwd" placeholder="">
+</div>
+</div>
+<div class="form-group f-1 required">
+<label class="control-label col-sm-2 lis" for="pwd">Mensaje</label>
+<div class="col-sm-8">
+<textarea class="co-li" name="message" id="msg"></textarea>
+<button type="submit" class="btn btn-default en-v">ENVIAR</button>
+
+</div>
+</div>
+</form> -->
+                </div>
+
+            </div>      
+                
+        </div>
+ 
+</div>
+            
+            
+
+</section>
+{% include '../home/footer.html' %}     
+{% end %}

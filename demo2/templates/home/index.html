@@ -1,0 +1,95 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script>
+
+<script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<div type="template" id="product_loading" style="display:none;" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+<div type="template" id="product_template" class="hidden">
+    <div class="col-sm-4 mlb-product especial">   
+        <div class="col-sm-12 sobre-botones caja-m" style="padding: 10px !important; z-index: 1;" onclick="">
+            <div class="cont-boxes">
+                <div class="box-product" onclick="">
+                    <div class="vertical-center-cont"> 
+                        <div class="horizontal-center-cont"> 
+                            <div class="box-product-info" onclick="">
+                                <!--<button type="button" class="add-to-cart btn btn-outline" product-id="{{! id }}" product-name="{{! name }}" product-upp="{{! upp }}" product-price="{{! main_price }}">DETALLE</button> -->        
+                                <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                                <button type="button" class="btn btn-outline">DETALLE</button>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <img src="{{ site_base }}/static/img/loading.gif" class="img-responsive product-image" alt="item">
+            </div>
+        </div>
+        <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" style="z-index: 2;">
+        <h1>{{! name }}</h1>
+        </a>
+        <h2 class="money">{{! main_price}}</h2>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).ecommerce(
+        {
+            'app_public' : 9,
+            'products_per_page' : 24,
+            // 'base_url' : 'http://localhost:8520/',
+            // 'checkout_url' : 'http://localhost:8522/'
+            'base_url' : 'http://apibodegas.ondev.today/',
+            'checkout_url': 'http://lpcheckout.ondev.today'
+        });
+
+    });
+</script>
+
+{% end %}
+
+{% block body %}
+    <div id="wrap">
+        <!-- registration -->
+        <div class="" style="width: 100%;">
+            <!-- raw 1 -->
+            <div class="row" style="margin: 0px !important;">
+
+                {% include '../content/slider.html' %}
+                {{ content }}
+                {% include '../content/footer.html' %}
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+{% end %}

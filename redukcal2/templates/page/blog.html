@@ -1,0 +1,334 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.blog').addClass("active");
+
+  });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() 
+{
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    $('#datepicker').datepicker({
+      inline:true
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- ********Contenido******* -->
+    <section id="first-page-scroll"  > 
+     <div class="mobile-ho" style="background:url('{{ read_image(site.name + '_banner_blog') }}'); height:450px; background-size:cover; filter: grayscale(0%) brightness(65%); margin-top: -20px;
+    -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+    background-position:center;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+          <div class="image-upload part1 lapiz visible-movil">
+              <label for="img_banner_blog">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_blog" name="image" id="img_banner_blog" >
+          </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_blog" src="{{ read_image(site.name + '_banner_blog', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_blog',500) }}'" class="banner_blog hidden" alt="item">  
+       </div>
+
+       <div class="container">
+        <div class="consejos-ban"> Noticias </div>  
+          <div class="col-md-4"> 
+             <div class="cuadro-text-bann">
+                 <div class="texto-cuadro-blo {{editabletext}}" text-id="{{ site.name + '_til_blog' }}"> {{ read_text(site.name +  '_til_blog') }}</div>
+              <div align="center">
+                 <a href="{{site_base }}/blog#noticias">
+                 <button type="button" class="btn btn-default-blog-ban">Leer más</button>
+                 </a>
+              </div>
+  
+             </div>
+          </div>
+      </div>
+</section>
+
+<section class="fondo-pro-blog">
+     <div class="container">
+      <div align="center">
+            <div class="col-md-6 col-sm-6">
+               <div class="box-blog">
+                 <div class="note-blog"> PREGUNTAS FRECUENTES</div>
+                 <div class="text-blog {{editabletext}}" text-id="{{ site.name + '_tip_dd' }}"> {{ read_text(site.name +  '_tip_dd') }}</div> 
+                 <hr class="dos-2">
+                  <div class="inf-blog {{editabletext}}" text-id="{{ site.name + '_tip_blog_dos' }}"> {{ read_text(site.name +  '_tip_blog_dos') }}</div> 
+                   <hr class="dos-2">
+                   <a href="{{site_base}}/blog_preguntas_frecuentes">
+                   <button type="button" class="btn btn-default-box">MÁS INFORMACIÓN</button>
+                   </a>
+               </div>
+            </div>
+         <div class="col-md-6 col-sm-6">
+               <div class="box-blog-2" id="send-message">
+                 <div class="text-form-blog text-center {{editabletext}}" text-id="{{ site.name + '_tip_for' }}"> {{ read_text(site.name +  '_tip_for') }}    </div>
+                 <div class="text-f-b text-center {{editabletext}}" text-id="{{ site.name + '_tip_for_1' }}"> {{ read_text(site.name +  '_tip_for_1') }} </div>
+                 <div class="text-f-b-2 text-center {{editabletext}}" text-id="{{ site.name + '_tip_for_dos' }}"> {{ read_text(site.name +  '_tip_for_dos') }}  </div>
+        
+                  <!-- ***formulario** -->
+
+                  <form action="{{ site_base }}/contact" class=""  method="post" novalidate id="newsletter2">
+                        <div class="row clearfix">
+                   
+                          <div class="form-group blog">
+                              <label class="control-label"></label>
+                              <div class=" controls">
+                                <input name="name" placeholder="Nombre Ej (carolina)" class="form-control blog-box input-lg requiredField" type="text" id="Nombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                              </div>
+                              <span id="helpBlock2" class="hidden help-block help-nombre-2 bl">Escribe tu nombre</span>
+                            </div>
+                            <div class="form-group blog">
+                              <label class="control-label"></label>
+                              <div class=" controls">
+                                <input name="email" placeholder="Mail de contacto (Ej Carolina@gmail.com)" class="form-control blog-box input-lg requiredField" type="email" id="Mail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                <input type="hidden" name="subject" value="contactanos" />
+                              </div>
+                              <span id="helpBlock3" class="hidden help-block help-mail-2  bl">Escribe tu Email</span>
+                            </div>
+                          
+                        </div>  
+                        <div class="form-group blog">
+                          <label class="control-label"></label>
+                          <div class="controls">
+                            <textarea name="message" placeholder="Escribenos tu consulta" class="form-control blog-box-2 input-lg requiredField" id="Comentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                          </div>
+                            <span id="helpBlock4" class="hidden help-block help-comentario-2 bl">Escribe tu Comentario</span>
+                        </div>
+
+
+                        <p><button name="submit" id="Enviar" type="submit" class="btn btn-store btn-block" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">ENVIAR </button></p>
+                        <input type="hidden" name="submitted" id="submitted3" value="true">
+                      </form> 
+
+               </div> 
+
+               <div class="box-blog-2 hidden" id="message-success" style="top:-12px;">
+                 <div class="inf-blog text-center {{editabletext}}" text-id="{{ site.name + '_tip_for_tres' }}"> {{ read_text(site.name +  '_tip_for_tres') }}    </div>
+               </div>
+            </div>
+   </div>
+
+  <div align="center">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="cuadro-grande-blog" id="noticias" >
+             <div class="noticias"> Noticias </div>
+                <div class="col-md-6">
+                  {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_noti">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_noti" name="image" id="img_noti" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_noti" src="{{ read_image(site.name + '_noti', 1) }}" onload="this.src='{{ read_image(site.name + '_noti',500) }}'" class="img-noti" alt="item" />
+                    <!-- <img class="img-noti" src="" > -->
+               </div>
+                 <div class="col-md-6">
+                      <div class="blog-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to' }}"> {{ read_text(site.name +  '_til_blog_to') }} </div>
+                      <div class="blog-2 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_21' }}"> {{ read_text(site.name +  '_til_blog_to_21') }} </div>
+                      <div class="blog-1-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_33' }}"> {{ read_text(site.name +  '_til_blog_to_33') }} </div>
+                      <div class="blog-1-des ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_blog_no' }}"> {{ read_text(site.name +  '_til_blog_no') }} </div>
+                 </div>
+          
+          <div style="position: relative;">
+              {% if is_admin %}
+                <img class="change-image blog editablelink" link-id="{{ site.name + '_but_1' }}" content="{{ read_link(site.name + '_but_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+           <a id="{{ site.name + '_but_1' }}" href="{{ read_link(site.name + '_but_1') }}" target="_blank">
+           <button type="button" class="btn btn-danger look" id="but_1">Leer más</button>
+           </a>
+           </div>
+           <div class="col-md-12 col-sm-12">
+           <hr class="one-blog-0">
+           </div>
+            
+  <!-- **dos*+ -->
+            <div class="col-md-6">
+                  {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_noti_2">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_noti_2" name="image" id="img_noti_2" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_noti_2" src="{{ read_image(site.name + '_noti_2', 1) }}" onload="this.src='{{ read_image(site.name + '_noti_2',500) }}'" class="img-noti" alt="item" />
+                    <!-- <img class="img-noti" src="" > -->
+               </div>
+                 <div class="col-md-6">
+                      <div class="blog-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_4' }}"> {{ read_text(site.name +  '_til_blog_to_4') }} </div>
+                       <div class="blog-2 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_2r' }}"> {{ read_text(site.name +  '_til_blog_to_2r') }} </div>
+                      <div class="blog-1-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_35' }}"> {{ read_text(site.name +  '_til_blog_to_35') }} </div>
+                      <div class="blog-1-des ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_blog_no_1' }}"> {{ read_text(site.name +  '_til_blog_no_1') }} </div>
+                 </div>
+            <div style="position: relative;">
+              {% if is_admin %}
+                <img class="change-image blog editablelink" link-id="{{ site.name + '_but_2' }}" content="{{ read_link(site.name + '_but_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+           <a id="{{ site.name + '_but_2' }}" href="{{ read_link(site.name + '_but_2') }}" target="_blank">
+           <button type="button" class="btn btn-danger look" id="but_1">Leer más</button>
+           </a>
+           </div>
+           <div class="col-md-12 col-sm-12">
+           <hr class="one-blog-0">
+           </div>
+           
+<!-- **tres*+ -->
+            <div class="col-md-6">
+                  {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_noti_3">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_noti_3" name="image" id="img_noti_3" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_noti_3" src="{{ read_image(site.name + '_noti_3', 1) }}" onload="this.src='{{ read_image(site.name + '_noti_3',500) }}'" class="img-noti" alt="item" />
+                    <!-- <img class="img-noti" src="" > -->
+               </div>
+                 <div class="col-md-6">
+                      <div class="blog-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_tl' }}"> {{ read_text(site.name +  '_til_blog_tl') }} </div>
+                       <div class="blog-2 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_ff' }}"> {{ read_text(site.name +  '_til_blog_to_ff') }} </div>
+                      <div class="blog-1-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_39' }}"> {{ read_text(site.name +  '_til_blog_to_39') }} </div>
+                      <div class="blog-1-des ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_blog_ff' }}"> {{ read_text(site.name +  '_til_blog_ff') }} </div>
+                 </div>
+           <div style="position: relative;">
+              {% if is_admin %}
+                <img class="change-image blog editablelink" link-id="{{ site.name + '_but_3' }}" content="{{ read_link(site.name + '_but_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+           <a id="{{ site.name + '_but_3' }}" href="{{ read_link(site.name + '_but_3') }}" target="_blank">
+           <button type="button" class="btn btn-danger look" id="but_1">Leer más</button>
+           </a>
+           </div>
+           <div class="col-md-12 col-sm-12">
+           <hr class="one-blog-0">
+           </div>
+           
+<!-- **cuatro** -->
+            <div class="col-md-6">
+                  {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_noti_4">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_noti_4" name="image" id="img_noti_4" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_noti_4" src="{{ read_image(site.name + '_noti_4', 1) }}" onload="this.src='{{ read_image(site.name + '_noti_4',500) }}'" class="img-noti" alt="item" />
+                    <!-- <img class="img-noti" src="" > -->
+               </div>
+                 <div class="col-md-6">
+                      <div class="blog-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_e' }}"> {{ read_text(site.name +  '_til_blog_to_e') }} </div>
+                       <div class="blog-2 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_24' }}"> {{ read_text(site.name +  '_til_blog_to_24') }} </div>
+                      <div class="blog-1-1 {{editabletext}}" text-id="{{ site.name + '_til_blog_to_31' }}"> {{ read_text(site.name +  '_til_blog_to_31') }} </div>
+                      <div class="blog-1-des ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_blog_no_u' }}"> {{ read_text(site.name +  '_til_blog_no_u') }} </div>
+                 </div>
+            <div style="position: relative;">
+              {% if is_admin %}
+                <img class="change-image blog editablelink" link-id="{{ site.name + '_but_4' }}" content="{{ read_link(site.name + '_but_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+           <a id="{{ site.name + '_but_4' }}" href="{{ read_link(site.name + '_but_4') }}" target="_blank">
+           <button type="button" class="btn btn-danger look" id="but_1">Leer más</button>
+           </a>
+           </div>
+           <div class="col-md-12 col-sm-12">
+           <hr class="one-blog-0 hidden-sm">
+           </div>
+
+          </div>
+      </div>
+     
+  </div>
+
+
+
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
+

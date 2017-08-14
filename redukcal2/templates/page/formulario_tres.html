@@ -1,0 +1,65 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="fondo-pro">
+     <div class="container">
+        <div class="col-md-12">
+            <div align="center">
+              <div class="box-orange">
+                 <span class="text-for-1 {{editabletext}}" text-id="{{ site.name + '_sobrepeso' }}"> {{ read_text(site.name +  '_sobrepeso') }}</span>
+                 <span id="kilo" class="text-for-1"></span>
+                 <span class="text-for-1 {{editabletext}}" text-id="{{ site.name + '_sobrepeso2' }}"> {{ read_text(site.name +  '_sobrepeso2') }}</span>
+                     <hr class="for-1">
+                         <div class="text-for-2"> Los planes en linea son de 13 kg. Te invitamos contactarnos para una asesoría nutricional personalizada. 
+                         </div>
+                         <a href="http://redukcal2.sites.ondev.today/blog" class="color-link">
+                          <div class="wri {{editabletext}}" text-id="{{ site.name + '_escribir' }}"> {{ read_text(site.name +  '_escribir') }} 
+                         </div>
+                         </a> 
+                </div>
+            </div>
+        </div>
+    
+
+
+      <div class="col-md-12">
+            <div align="center">
+              <div class="box-white-for-2">
+                 <dvi class="col-md-12">
+                     <div class="text-color"> ¿Ya sabes cuántos kilos quieres perder?</div>
+                     <div class="text-color-2"> Busca el plan que más se adecué a tus objetivos,considera tu EDAD( Mayor de 40 años/ Menor de 40 años) y SEXO (Mujer/Hombre). </div>
+                        <a href="{{site_base}}/planes">
+                          <button type="button" class="btn btn-info loo">VER PLANES</button>
+                       </a>
+                </dvi>
+              </div>
+         </div>
+        </div>
+   </div>  
+    
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

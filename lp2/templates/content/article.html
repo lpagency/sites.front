@@ -1,0 +1,41 @@
+<!-- PRIMERA IMAGEN -->
+<section style="height: 300px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-4 col-sm-4 hidden-xs pad0" >
+            <!-- <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}"> -->
+                <div class="box-img">
+                    <img class="img-responsive img_nosotros1" src="{{ article["thumb_500"] }}" />
+                </div>
+            <!-- </a> -->
+        </div>
+
+
+        <div class="col-md-8 col-sm-8 hidden-xs">
+            <div class="box m0" align="left">
+                <h1 class="text-center text_nosotros3" > {{ article["title"] }}</h1>
+                <p class="text-center text_art4" > {{ article["caption"] }}</p>
+            </div>
+            <a class="btn btn-default btn-cat" href="{{ site_base }}/article/detail/a/{{ article["id"] }}" role="button">IR A LA CATEGORIA</a>
+        </div>
+    
+        <!-- *****MOVIL NOSOTROS 1***** -->
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12  pad0" >
+            <!-- <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}"> -->
+                <div class="box-img">
+                    <img class="img-responsive img_nosotros1" src="{{ article["thumb_500"] }}" />
+                </div>
+            <!-- </a> -->
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros">
+            <div class="m0" align="left" style="width: 100%;">
+                <h1 class="text_nosotros3" > {{ article["title"] }}</h1>
+                <p class="text_nosotros4" > {{ article["caption"] }}</p>
+            </div>
+            <a class="btn btn-default " href="{{ site_base }}/article/detail/a/{{ article["id"] }}" role="button">IR A LA CATEGORIA</a>
+        </div>
+            <!-- *****MOVIL NOSOTROS 1***** -->
+    </div>
+</section>
+
+

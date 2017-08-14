@@ -1,0 +1,123 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(29,29,29);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+   <section>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_contacto',500) }}'); height:300px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_contacto">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_contacto" name="image" id="img_contacto" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_contacto" src="{{ read_image(site.name + '_contacto', 1) }}" onload="this.src='{{ read_image(site.name + '_contacto',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_contacto' }}"> {{ read_text(site.name +  '_contacto') }}</div>
+        </div>
+    </div>
+ 
+</section>
+
+<section>
+<div class="container">
+    <div class="col-md-12 col-xs-12 col-sm-12">
+       <div class="texto-servicios {{editabletext}}" text-id="{{ site.name + '_contacto_2' }}"> {{ read_text(site.name +  '_contacto_2') }}</div>
+    </div>
+
+</div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="col-md-3 col-xs-12 col-sm-12">
+            <div alig="center">
+               {% if is_admin %}
+               <div class="image-upload part1 lapiz visible-movil">
+                <label for="img_fo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_fo" name="image" id="img_fo" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_fo" src="{{ read_image(site.name + '_fo', 1) }}" onload="this.src='{{ read_image(site.name + '_fo',500) }}'" class="img-foto" alt="item">
+            <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+            <!--  <p class="inf">{{! name }}</p> -->
+        </div>
+    </div>
+
+</div>
+</section>
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

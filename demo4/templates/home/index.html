@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+    <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <script type="text/javascript">
+    $(document).ready(function(){
+        $(document).ecommerce({
+                    'ignore_stock' : true,
+                    'app_public' : 4,
+                    'animation' : 'simple',
+                    'base_url' : 'http://apibodegas.ondev.today/',
+                    'products_per_page' : 20
+                });
+    });
+    </script>
+</head>
+<body>
+    <div type="template" id="product_template" style="display:none" >
+        <div class="product" >
+            <h1>{{! name }}</h1>
+            <p>{{! description }}</p>
+            <img height="300" class="product-image" src="{{! images[0][1] }}" height="300" />
+            <!-- <div>{{! name }}</div>
+            aaaa : {{! images[0][1] }}
+            <img height="300" class="product-image" src="{{! images }}" />
+            <div class="money" >{{! main_price }}</div>
+            <div style="height:200px;overflow:hidden" >{{! description }}</div>
+            <a href="/sample/product.html?id={{! id }}">Ver detalle</a>
+            <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" class="add-to-cart add-to-cart-animation" >add to cart</button> -->
+
+        </div>
+    </div>
+    <div class="products" ></div>
+</body>
+</html>

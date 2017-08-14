@@ -1,0 +1,44 @@
+<section>
+<div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="container-fluid">
+         <div align="center">
+             <hr>
+         </div>
+   </div>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="text-left fot">
+                <div class="clearfix"></div>
+                    <ul class="no-doti">
+                            <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_footer_0' }}"> {{ read_text(site.name +  '_footer_0') }}
+                            </li>
+
+                          <!--   <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_0_1' }}"> {{ read_text(site.name +  '_footer_0_1') }}
+                            </li> -->
+              <!--               <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_1' }}"> {{ read_text(site.name +  '_footer_1') }}
+                            </li>
+                            <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_2' }}"> {{ read_text(site.name +  '_footer_2') }}
+                            </li>
+                            <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_3' }}"> {{ read_text(site.name +  '_footer_3') }}
+                            </li> -->
+                            <!-- <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_4_0' }}"> {{ read_text(site.name +  '_footer_4_0') }}
+                            </li>
+                            <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_5' }}"> {{ read_text(site.name +  '_footer_5') }}
+                            </li>
+                            <li class="pas {{editabletext}}" text-id="{{ site.name + '_footer_6' }}"> {{ read_text(site.name +  '_footer_6') }}
+                            </li> -->   
+                         <p class="pas-4" style="text-align:center;">
+                           {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                                Logout</a>
+                           {% end %}
+                        </p>                   
+                    </ul>
+            </div>
+              </div>
+           
+            
+             
+</div>
+</section>

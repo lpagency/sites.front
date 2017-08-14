@@ -1,0 +1,137 @@
+{% extends "../base.html" %}
+{% block title %}
+Perfil
+{% end %}
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/cssbt/style.css?v=5">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block header %}
+    {% include '../home/inside_header_profile.html' %}
+{% end %}
+{% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/members/detail.js" ></script>
+{% end %}
+{% block body %}
+    <div class="container-fluid-profile cart-list productlist" style="text-align:left;">
+        
+        <div class="row">
+            
+            <div class="widget col-sm-12 especial profile-company">
+                <div class="col-sm-12 especial profile-foto-top">
+                    <div class="profile-company-logo">
+                        <img src="{{ profile['company_img']['thumb_200'] }}" class="centered-image" alt="item">
+                    </div>
+                </div>
+                <div class="col-sm-12 especial profile-name">
+                    <h2>
+                    {{ profile["name"][0] }}
+                    </h2>
+                    
+                </div>
+            </div>
+            <div class="col-sm-12 especial">
+                <div class="col-sm-8 profile-data">
+                    <ul>
+                        <li><a href="{{ profile["url"][0] }}" target="_blank">{{ profile["url"][0] }}</a></li>
+                        <li><a>{{ profile["phone"][0] }}</a></li>
+                        <!-- <li><a>{{ profile["url"][0] }}</a></li> -->
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="col-sm-12 profile-partner" >
+                <div class="col-sm-12 profile-title">
+                    <hr>
+                    <h2>Socias</h2>
+                </div>
+                <div class="col-sm-12 especial profile-partner-top">
+                    <div class="col-sm-4 profile-partner-image especial">
+                        <img src="{{ profile['profile_img']['thumb_200'] }}" class="centered-image" alt="item">
+                    </div>
+                    <div class="col-sm-8 especial profile-partner-data">
+                        <h2>
+                        {{ profile["name"][0] }}
+                        </h2>
+                        <p>
+                            {{ profile["email"][0] }}
+                        </p>
+                    </div>
+                </div>
+                <hr>
+            </div>
+            
+            
+            <div class="col-sm-12 profile-company-line">
+                <hr>
+                {% if "description_company" in profile %}
+                <div class="widget col-sm-12 articulo-text" style="text-align:left;">
+                    <h2 style="text-align:left; font-size: 30px; font-weight: 300; text-transform: capitalize;">Descripcion Empresa</h2>
+                    <p class="p-art">
+                    {{ profile["description_company"][0] }}
+                    </p>
+                    
+                    <p style="width:100%; text-align: right;"><a></a></p>
+                    
+                </div>
+                {% end %}
+
+                {% if "description" in profile %}
+                <div class="widget col-sm-12 articulo-text" style="text-align:left;">
+                    <h2 style="text-align:left; font-size: 30px; font-weight: 300; text-transform: capitalize;">Descripcion socia</h2>
+                    <p class="p-art">
+                    {{ profile["description"][0] }}
+                    </p>
+                    
+                    <p style="width:100%; text-align: right;"><a></a></p>
+                    
+                </div>
+                {% end %}
+                <div class="widget col-sm-12">
+                    <h3>Contacto</h3>
+                    <p>Comunicate con la empresa de esta socia</p>
+                    <form action="#" class="myform" method="post" novalidate id="newsletter">
+                        <div class="form-group">
+                            <div class="col-sm-6">
+                                <label class="control-label">Nombre</label>
+                                <div class=" controls">
+                                    <input name="email" placeholder="Tu nombre" class="form-control input-lg requiredField" type="email" >
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <label class="control-label">Email</label>
+                                <div class=" controls">
+                                    <input name="email" placeholder="Tu correo" class="form-control input-lg requiredField" type="email" >
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <label class="control-label">Email</label>
+                                <div class="controls">
+                                    <textarea name="comments" placeholder="Envíanos tu comentario" class="form-control input-lg requiredField" rows="5" data-error-empty="Enter message"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <p><button name="submit" type="submit" class="btn btn-store btn-block" >Enviar correo correo</button></p>
+                        <!-- <input type="hidden" name="submitted" id="submitted3" value="true"> -->
+                    </form>
+                </div>
+                <div class="col-sm-8">
+                    tags | <a href="">Jabones</a> , <a href="">Carcazas</a> , <a href="">sociaficticia</a>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-fluid productlist">
+    <header>
+            <h1 style="text-align:left;"><a href="/article">
+                Productos
+            </a></h1>
+        </header>
+            <div class="row">
+                <!-- content -->
+            </div>
+        </div>
+{% end %}

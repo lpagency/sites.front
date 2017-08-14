@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Rh+ HTML5 Template - Home Page</title>
+
+        <link href="{{ site_base }}/static/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{{ site_base }}/static/css/font-awesome.min.css" rel="stylesheet">
+        <link href="{{ site_base }}/static/css/ionicons.min.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto:400,300,500,700" rel="stylesheet">
+        <link href="{{ site_base }}/static/js/owl-carousel/owl.carousel.css" rel="stylesheet">
+        <link href="{{ site_base }}/static/css/main.css" rel="stylesheet">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        {% block css %}{% end %}
+
+        {% include 'product/product_box.html' %}
+
+        {% if is_admin %}
+        {% set editabletext = 'editabletext' %}
+        {% else %}
+        {% set editabletext = '' %}
+        {% end %}
+
+
+        </head>
+    <body >
+        <!-- header -->
+
+        {% block header %}{% end %}
+
+        {% block body %}{% end %}
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <!-- carga de productos -->
+
+        <script src="{{ site_base }}/static/js/jquery.min.js"></script>
+        <script src="{{ site_base }}/static/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script> -->
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+
+         <!-- Javascript files-->
+
+        
+
+        <!-- productos del carrito -->
+       <!--  <script type="text/template" id="shopping-cart-product">
+            <tr> 
+                <td><a href="detail.html"></a></td>
+                <td><a href="detail.html">{{! name }}</a></td>
+                <td>
+                    <button class="remove-one" product-id="{{! id }}">-</button>
+                    <span class="quantity" >{{! quantity }}</span>
+                    <button class="add-one" product-id="{{! id }}">+</button>
+                </td>
+                <td>{{! price|money }}</td>
+                <td>$0.00</td>
+                <td>{{! total|money }}</td>
+                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+            
+            {{! name }}
+
+        </script> -->
+<!--         <script type="text/x-template" id="shopping-cart-product">
+            <tr> 
+                <td><a href="detail.html"><img src="" alt=""></a></td>
+                <td><a href="detail.html">{{! name }}</a></td>
+                <td>
+                        <button class="remove-one" product-id="{{! id }}">-</button>
+                        <span class="quantity" >{{! quantity }}</span>
+                        <button class="add-one" product-id="{{! id }}">+</button>
+                </td>
+                <td>{{! price|money }}</td>
+                <td>$0.00</td>
+                <td>{{! total|money }}</td>
+                <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+
+        </script> -->
+
+
+        <script type="text/x-template" id="shopping-cart-total" >
+        </script>
+
+
+<!-- este es el script para unidades -->
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span> {{! units_total }}</span>
+        </script>
+
+
+        <script type="text/x-template" id="shopping-cart-checkout-form" >
+            <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+                <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+                <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                </div>
+            </form>
+        </script>
+
+
+
+
+<!-- termino carrito de compra -->
+        <script type="text/javascript">
+        var site_base="{{site_base}}";
+        var site_name="{{site.name}}";
+        </script>
+        {% block javascript %}{% end %}
+
+        {% if is_admin %}
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+
+        {% end %}
+    </body>
+</html>

@@ -1,0 +1,343 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.metodos').addClass("active");
+
+  });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() 
+{
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    $('#datepicker').datepicker({
+      inline:true
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- **contenido** -->
+
+<section id="first-page-scroll">
+
+<div class="container">
+  <div class="fli">
+       <div class="col-md-4">
+          <div class="question"> BLOG | </div>
+      </div>
+
+      <div class="col-md-3">
+          <div class="pink"> PREGUNTAS FRECUENTES </div>
+      </div>
+</div>
+
+      <div align="center">
+         <div class="col-md-12">
+              <div class="dropdown">
+                 <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">   <i  class="fa fa-question" aria-hidden="true"></i>
+                  <hr class="menos">
+                  </button>
+                  <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_1' }}"> {{ read_text(site.name +  '_ti_1') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_ee' }}"> {{ read_text(site.name +  '_ti_ee') }} </li>
+
+                      </ul>
+                    </div>
+              
+              <div class="dropdown">
+                 <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown"> 
+                        <i class="fa fa-question" aria-hidden="true"></i> 
+                        <hr class="menos">
+                  </button>
+                  <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_2' }}"> {{ read_text(site.name +  '_ti_2') }}</div>
+                      <ul class="dropdown-menu blog">
+                         <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_ss' }}"> {{ read_text(site.name +  '_ti_ss') }} </li>
+                      </ul>
+                    </div>
+                
+              <div class="dropdown">
+                  <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">      <i class="fa fa-question" aria-hidden="true"></i> 
+                  <hr class="menos">
+                    </button>
+                    <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_3' }}"> {{ read_text(site.name +  '_ti_3') }}</div>
+                      <ul class="dropdown-menu blog">
+                         <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_mm' }}"> {{ read_text(site.name +  '_ti_mm') }} </li>
+                      </ul>
+                    </div>
+              
+              <div class="dropdown">
+                  <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">     <i class="fa fa-question" aria-hidden="true"></i> 
+                  <hr class="menos">
+                  </button>
+                  <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_4' }}"> {{ read_text(site.name +  '_ti_4') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_nn' }}"> {{ read_text(site.name +  '_ti_nn') }} </li>
+                      </ul>
+                    </div>
+                
+                <div class="dropdown">
+                   <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">     <i class="fa fa-question" aria-hidden="true"></i>
+                   <hr class="menos"> 
+                    </button>
+                    <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_5' }}"> {{ read_text(site.name +  '_ti_5') }}</div>
+                      <ul class="dropdown-menu blog">
+                         <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_rr' }}"> {{ read_text(site.name +  '_ti_rr') }} </li>
+                      </ul>
+                    </div>
+                  
+                <div class="dropdown">
+                  <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">    <i class="fa fa-question" aria-hidden="true"></i> 
+                  <hr class="menos">
+                   </button>
+                   <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_6' }}"> {{ read_text(site.name +  '_ti_6') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_aa' }}"> {{ read_text(site.name +  '_ti_aa') }} </li>
+                      </ul>
+                    </div>
+                
+                <div class="dropdown">
+                   <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">  <i class="fa fa-question" aria-hidden="true"></i> 
+                   <hr class="menos">
+                   </button>
+                   <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_7' }}"> {{ read_text(site.name +  '_ti_7') }}</div>
+                      <ul class="dropdown-menu blog">
+                         <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_cc' }}"> {{ read_text(site.name +  '_ti_cc') }} </li>
+                      </ul>
+                    </div>
+              
+              <div class="dropdown">
+                  <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">     <i class="fa fa-question" aria-hidden="true"></i>
+                  <hr class="menos">
+                 </button>
+                   <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_8' }}"> {{ read_text(site.name +  '_ti_8') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_yy' }}"> {{ read_text(site.name +  '_ti_yy') }} </li>
+                      </ul>
+                    </div>
+                <div class="dropdown">
+                   <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">      <i class="fa fa-question" aria-hidden="true"></i>
+                   <hr class="menos">
+                     </span></button>
+                     <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_9' }}"> {{ read_text(site.name +  '_ti_9') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_uu' }}"> {{ read_text(site.name +  '_ti_uu') }} </li>
+                      </ul>
+                    </div>
+              <div class="dropdown">
+                   <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">       <i class="fa fa-question" aria-hidden="true"></i> 
+                   <hr class="menos">
+                     </button>
+                     <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_10' }}"> {{ read_text(site.name +  '_ti_10') }}</div>
+                      <ul class="dropdown-menu blog">
+                         <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_ff' }}"> {{ read_text(site.name +  '_ti_ff') }} </li>
+                      </ul>
+                    </div>
+            <div class="dropdown">
+                  <button class="btn btn-primary preg dropdown-toggle" type="button" data-toggle="dropdown">       <i class="fa fa-question" aria-hidden="true"></i> 
+                  <hr class="menos">
+                     </button>
+                      <div class="nombre-blog {{editabletext}}" text-id="{{ site.name + '_ti_11' }}"> {{ read_text(site.name +  '_ti_11') }}</div>
+                      <ul class="dropdown-menu blog">
+                        <li class="li-blog {{editabletext}}" text-id="{{ site.name + '_ti_xx' }}"> {{ read_text(site.name +  '_ti_xx') }} </li>
+                      </ul>
+                    </div>
+          
+         </div>
+   <!--       <div class="col-md-12">
+             <div class="rec-grande">
+                     <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_dos' }}"> {{ read_text(site.name +  '_ques_dos') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                      <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_tres' }}"> {{ read_text(site.name +  '_ques_tres') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                 <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_cuatro' }}"> {{ read_text(site.name +  '_ques_cuatro') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                  <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_cinco' }}"> {{ read_text(site.name +  '_ques_cinco') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                 <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_seis' }}"> {{ read_text(site.name +  '_ques_seis') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_siete' }}"> {{ read_text(site.name +  '_ques_siete') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+               <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_ocho' }}"> {{ read_text(site.name +  '_ques_ocho') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                 <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_nueve' }}"> {{ read_text(site.name +  '_ques_nueve') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                 <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_diez' }}"> {{ read_text(site.name +  '_ques_diez') }} </div>
+                 </div>
+             </div>
+
+         </div>
+         <div class="col-md-12">
+             <div class="rec-grande">
+                <div class="col-md-1 col-sm-1 col-xs-1">
+                      <i class="fa fa-question" aria-hidden="true"></i>
+                 </div>
+                  <div class="col-md-10 col-sm-10 col-xs-10">
+                     <div class="text-question {{editabletext}}" text-id="{{ site.name + '_ques_once' }}"> {{ read_text(site.name +  '_ques_once') }} </div>
+                 </div>
+             </div>
+
+         </div> -->
+      </div>
+
+</div>
+
+<div class="clearfix fin-mov"></div>
+    
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
+

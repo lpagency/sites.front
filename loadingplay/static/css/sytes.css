@@ -1,0 +1,414 @@
+.fondo-sy{
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: 0px;
+    width: 100% !important;
+    height:600px;
+    position: relative;
+   filter: grayscale(0%) brightness(50%);
+   -webkit-filter: grayscale(0%) brightness(50%);
+  -moz-filter: grayscale(0%) brightness(50%);
+  -ms-filter: grayscale(0%) brightness(50%);
+  -o-filter: grayscale(0%) brightness(50%);
+}
+
+.back{
+    background: url("https://7static.loadingplay.com/static/images/e520c4f3e708c8a3d8f12843a22e8e44_isotipo_LP_blanco.png") no-repeat;
+    background-color: #000;
+    background-size: 22px, cover;
+    background-position: center;
+    top: 79px;
+    position: absolute;
+    z-index: 10000;
+    margin-top: -51px;
+    width: 55px;
+    height: 44px;
+}
+
+.back:hover{
+    background: url("https://7static.loadingplay.com/static/images/97feeefd03d9970eb95f926fbbbbd545_isotipo_LP_negro.png") no-repeat;
+    background-color: white;
+    background-size: 22px, cover;
+    background-position: center;
+    touch-action: auto;
+
+}
+
+/*.logo-sy{
+    height: 30px;
+    left: 13px;
+    position: relative;
+    top: 10px;
+}
+*/
+.but-sy{
+    background: black;
+    top: 79px;
+    position: absolute;
+    z-index: 10000;
+    margin-top: -51px;
+    width: 100px;
+    height: 44px;
+    left: 59px;
+}
+
+.but-sy:hover{
+    background: white;
+    touch-action: auto;
+
+}
+
+.p-sy{
+    color: white;
+    padding: 3px 20px;
+    font-size: 25px;
+}
+
+.p-sy:hover{
+    color: black;
+    touch-action: auto;
+
+}
+
+.h-1{
+    position: relative;
+    bottom: 239px;
+    font-size: 55px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.p-1{
+    position: relative;
+    bottom: 242px;
+    font-size: 23px;
+    color: white;
+    font-weight: 400;
+}
+
+.h-1-1{
+    position: relative;
+    bottom: 192px;
+    font-size: 55px;
+    color: white;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.p-1-1{
+    position: relative;
+    bottom: 192px;
+    font-size: 23px;
+    color: white;
+    font-weight: 400;
+}
+
+.circulo-bajada{
+    content: ' ';
+    position: absolute;
+    left: 50%;
+    top: -234px;
+    width: 100px;
+    height: 100px;
+    background-color:white;
+    border: 20px solid white;
+    border-radius: 50%;
+    z-index: 10;
+    padding: 5px;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+}
+
+.contenedor-circulo{
+    width: 100px;
+}
+
+.fa-chevron-circle-down{
+    font-size: 40px !important;
+    color: #6E6E6E;
+    position: absolute;
+    top: 10px;
+    left: 14px;
+} 
+
+.h-2{
+  font-weight: 200;
+  font-size: 28px;
+  position: relative;
+  bottom: 100px;
+}
+
+.h-3{
+    font-size: 28px;
+    position: relative;
+    bottom: 71px;
+    font-weight: 200;
+    margin-bottom: 47px;
+}
+
+.fondo-2-sy{
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: 0px;
+    width: 100% !important;
+    height:500px;
+    position: relative;
+   filter: grayscale(0%) brightness(50%);
+   -webkit-filter: grayscale(0%) brightness(50%);
+  -moz-filter: grayscale(0%) brightness(50%);
+  -ms-filter: grayscale(0%) brightness(50%);
+  -o-filter: grayscale(0%) brightness(50%);
+} 
+
+.box-medium{
+    /*margin-left: -30px;*/
+    width: 100%;
+    object-fit: cover;
+    height: 430px;
+}
+
+.box-medium-2{
+    margin-left: -17px;
+    width: 108%;
+    object-fit: cover;
+    height: 430px;
+}
+
+.box-medium-3{
+    /*margin-left: -30px;*/
+    width: 100%;
+    object-fit: cover;
+    height: 430px;
+}
+
+.pri-1{
+    position: relative;
+    bottom: 58px;
+    font-weight: 300;
+}
+
+.grafia{
+    font-weight: 500;
+}
+.grafia-r{
+       font-weight: 500;
+}
+
+.cont{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.cont-r{
+        font-size: 22px;
+    font-weight: 300;
+}
+
+.color{
+    background: #FAFAFA;
+}
+
+.cuadro-2{
+    background: #FAFAFA;
+    height: 196px;
+    margin-bottom: 38px;
+    width: 61%;
+}
+
+.cro{
+    margin-top: -160px;
+}
+
+.article-box{
+    overflow: hidden;
+    padding: 1px 1px;
+}
+
+.coli{
+    padding:1px;
+}
+
+
+/*Star Responsive*/
+
+@media (max-width: 1255px){ 
+   .fa-chevron-circle-down{
+     font-size: 40px !important
+   }
+
+}
+
+
+@media (max-width: 1085px){
+    .logo-sy{
+     left: 8px;
+}
+
+
+}
+
+
+@media (max-width: 991px){
+   .logo-sy {
+    left: 11px;
+}
+
+   .box-medium{
+    position: relative;
+    bottom: -8px;
+
+}
+   
+   .box-medium-2{
+        margin-left: -31px;
+        position: relative;
+   }
+   
+   .grafia-r{
+      position: relative;
+    top: 429px;
+   }
+
+   .cont-r{
+    position: relative;
+    top: 429px;
+   }
+
+}
+
+
+@media (max-width: 857px){   
+    .logo-sy {
+    left: 8px;
+}
+
+}
+
+@media(max-width: 829px){
+     .grafia-r {
+    top: 457px;
+}
+   .cont-r{
+    top: 443px;
+   }
+}
+
+@media (max-width: 767px){
+     .logo-sy {
+    left: 6px;
+}    
+
+}
+
+@media (max-width: 730px){
+    .p-sy{
+        font-size: 23px;
+    }
+}
+
+@media (max-width: 700px){
+    .p-sy{
+        font-size: 23px;
+    }
+
+      .p-1{
+        bottom: 309px;
+        font-size: 14px;
+        margin-bottom: 47px;
+    }
+}
+
+
+@media (max-width: 320px){
+         
+         .p-1{
+       margin-bottom: 13px !important;
+    } 
+}
+
+
+
+@media screen and (max-width: 700px){
+    .fondo-sy{
+        height: 439px;
+    }
+    
+    .cuadro-2{
+        width: 96%;
+        height: 223px;
+    }
+
+    .h-1{
+      bottom: 305px;
+      font-size: 48px;
+    }
+
+    .h-1-1{
+        bottom: 244px;
+    }
+
+    .p-1-1{
+        bottom: 244px;
+        font-size: 14px;
+    }
+
+   
+   .fa-chevron-circle-down{
+      font-size: 40px !important;
+   }
+   .box-medium-2{
+      margin-left: -16px;
+   }
+   
+   .box-medium{
+      margin-left: 0px;
+      bottom: -11px;
+    position: relative;
+   } 
+   
+   .hy-2{
+     bottom: 321px;
+     margin-bottom: 61px;
+   }
+
+   .hy-1{
+        bottom: 317px;
+   }
+   
+   .color{
+    background: white;
+   }
+}
+
+@media screen and (max-width: 662px){
+    .circulo-bajada{
+        top: -233px;
+    }
+}
+
+@media screen and (max-width: 645px){
+    .hy-2{
+        margin-bottom: 9px;
+    }
+}
+@media screen and (max-width: 494px){
+    .circulo-bajada{
+        top: -247px;
+    }
+}
+
+@media screen and (max-width: 418px){
+   .p-1{
+        margin-bottom: 3px;
+   }
+
+}
+
+
+
+
+
+
+
+

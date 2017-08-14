@@ -1,0 +1,31 @@
+<script type="text/template" id="product_template" >
+    
+    <div class="col-lg-3 col-md-3 col-sm-4 space50 h_detail_prod">
+        <div class=" product-grid">
+            <div class="img_box">
+                
+                <img class="img_product img-responsive" src="{{! images[0][1] }}" onload="this.src='{{! images[0][3] }}'" title="" alt="">
+                <a  href="{{site_base}}/sc/product/{{! bullet_3 === '' ? 'detail' : 'detail2' }}/{{! name|friendly }}/{{! id }}?product_id={{! id }}" class="cart mask">
+                    <button type="button" class="hover-recipe button">Ver detalle</button>
+
+                    <!-- <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0][2] }}" class="hover-recipe button add-to-cart" data-toggle="modal" data-target="#myModal" >Ver detalle</button> -->
+
+                    <!-- <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0][2] }}" class=" hover-recipe button add-to-cart">
+                            &nbsp;Comprar
+                    </button> -->
+                </a>
+            </div>
+            <a class="" href="{{site_base}}/sc/product/{{! bullet_3 === '' ? 'detail' : 'detail2' }}/{{! name|friendly }}/{{! id }}?product_id={{! id }}" >
+            <div class="name">{{! name }}</div>
+            </a>
+            <div class="price">{{! main_price|money }}</div>
+            
+            <!-- <div class="cart">
+                <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0][2] }}" class=" button add-to-cart btn-comprar">
+                        &nbsp;Comprar
+                </button>
+            </div> -->
+        </div>
+    </div>
+
+</script>

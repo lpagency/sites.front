@@ -1,0 +1,225 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="container">
+      <div class="row"> 
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li> <a href="blog.html">Blog</a></li>
+            <li>Post title</li>
+          </ul>
+          <div class="row page-top">
+            <div class="col-sm-8 col-sm-offset-2">
+              <h1 class="{{editabletext}}" text-id="{{ site.name + '_post_1' }}">{{ read_text(site.name +  '_post_1') }}
+              </h1>
+              <p class="author-date-top">By <a href="#">John Slim</a> |  January 16, 2016</p>
+              <p class="lead {{editabletext}}" text-id="{{ site.name + '_post_2' }}">{{ read_text(site.name +  '_post_2') }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div id="blog-post" class="col-md-9">
+          <div id="post-content">
+              <p class="{{editabletext}}" text-id="{{ site.name + '_post_3' }}">{{ read_text(site.name +  '_post_3') }}
+              </p>
+            <!-- <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p> -->
+            <p>
+             <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_post_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" style="position: relative;top: 127px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_post_1" name="image" id="img_post_1" >
+                </div>
+                {% end %}
+                  <img id="{{ site.name }}_post_1" src="{{ read_image(site.name + '_post_1', 1) }}" onload="this.src='{{ read_image(site.name + '_post_1',) }}'" class="img-responsive" alt="item" >
+            <!-- <img src="img/blog2.jpg" alt="Example blog post alt" class="img-responsive"> -->
+            </p>
+            <h2 class="{{editabletext}}" text-id="{{ site.name + '_post_4' }}">{{ read_text(site.name +  '_post_4') }}
+            </h2>
+            <ol>
+              <li class="{{editabletext}}" text-id="{{ site.name + '_post_5' }}">{{ read_text(site.name +  '_post_5') }}
+              </li>
+              <li class="{{editabletext}}" text-id="{{ site.name + '_post_6' }}">{{ read_text(site.name +  '_post_6') }}
+              </li>
+            </ol>
+            <blockquote>
+              <p class="{{editabletext}}" text-id="{{ site.name + '_post_7' }}">{{ read_text(site.name +  '_post_7') }}
+              </p>
+            </blockquote>
+            <h3 class="{{editabletext}}" text-id="{{ site.name + '_post_8' }}">{{ read_text(site.name +  '_post_8') }}
+            </h3>
+            <p class="{{editabletext}}" text-id="{{ site.name + '_post_9' }}">{{ read_text(site.name +  '_post_9') }}
+            </p>
+            <ul>
+              <li class="{{editabletext}}" text-id="{{ site.name + '_post_10' }}">{{ read_text(site.name +  '_post_10') }}
+              </li>
+              <li class="{{editabletext}}" text-id="{{ site.name + '_post_11' }}">{{ read_text(site.name +  '_post_11') }}
+              </li>
+            </ul>
+            <p>
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_post_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" style="position: relative;top: 958px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_post_2" name="image" id="img_post_2" >
+                </div>
+                {% end %}
+
+                  <img id="{{ site.name }}_post_2" src="{{ read_image(site.name + '_post_2', 1) }}" onload="this.src='{{ read_image(site.name + '_post_2',) }}'" class="img-responsive" alt="item" >
+              <!-- <img src="img/blog.jpg" alt="Example blog post alt" class="img-responsive"> -->
+              </p>
+
+            <p class="{{editabletext}}" text-id="{{ site.name + '_post_12' }}">{{ read_text(site.name +  '_post_12') }}
+            </p>
+          </div>
+          <!-- /#post-content-->
+          <div id="comments">
+            <h4 >2 comments</h4>
+            <div class="row comment">
+              <div class="col-sm-3 col-md-2 text-center-xs">
+                <p>
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_avatar2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" >
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_avatar2" name="image" id="img_avatar2" >
+                </div>
+                {% end %}
+
+                  <img id="{{ site.name }}_avatar2" src="{{ read_image(site.name + '_avatar2', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar2',) }}'" class="img-responsive img-circle" alt="item" >
+                  <!-- <img src="img/blog-avatar2.jpg" alt="" class="img-responsive img-circle"> -->
+                  </p>
+              </div>
+              <div class="col-sm-9 col-md-10">
+                <h5>Julie Alma</h5>
+                <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2011 at 12:00 am</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p class="reply"><a href="#"><i class="fa fa-reply"></i> Reply</a></p>
+              </div>
+            </div>
+            <!-- /.comment-->
+            <div class="row comment last">
+              <div class="col-sm-3 col-md-2 text-center-xs">
+                <p>
+                <!-- <img src="img/blog-avatar.jpg" alt="" class="img-responsive img-circle"> -->
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_avatar3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" >
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_avatar3" name="image" id="img_avatar3" >
+                </div>
+                {% end %}
+
+                  <img id="{{ site.name }}_avatar3" src="{{ read_image(site.name + '_avatar3', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar3',) }}'" class="img-responsive img-circle" alt="item" >
+                </p>
+              </div>
+              <div class="col-sm-9 col-md-10">
+                <h5>Louise Armero</h5>
+                <p class="posted"><i class="fa fa-clock-o"></i> September 23, 2012 at 12:00 am</p>
+                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+                <p class="reply"><a href="#"><i class="fa fa-reply"></i> Reply</a></p>
+              </div>
+            </div>
+            <!-- /.comment-->
+          </div>
+          <!-- /#comments-->
+          <div id="comment-form">
+            <h4>Leave comment</h4>
+            <form>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="name">Name <span class="required">*</span></label>
+                    <input id="name" type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input id="email" type="text" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="form-group">
+                    <label for="comment">Comment <span class="required">*</span></label>
+                    <textarea id="comment" rows="4" class="form-control"></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-12 text-right">
+                  <button class="btn btn-primary"><i class="fa fa-comment-o"></i> Post comment</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- /.col-md-9-->
+        <div class="col-md-3">
+          <div class="panel panel-default sidebar-menu">
+            <div class="panel-heading">
+              <h3 class="panel-title">Categories</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-stacked">
+                <li><a href="blog.html">About us</a></li>
+                <li><a href="blog.html">Fashion</a></li>
+                <li><a href="blog.html">News and gossip</a></li>
+                <li><a href="blog.html">Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="banner">
+            <a href="category.html">
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_avatar4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" style="position: relative;top: 235px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_avatar4" name="image" id="img_avatar4" >
+                </div>
+                {% end %}
+
+                  <img id="{{ site.name }}_avatar4" src="{{ read_image(site.name + '_avatar4', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar4',) }}'" class="img-responsive" alt="item" >
+            <!-- <img src="img/banner.jpg" alt="" class="img-responsive"> -->
+            </a>
+            </div>
+        </div>
+        <!-- /.col-md-3-->
+        
+      </div>
+    </div>
+    {% include '../home/footer.html' %}
+{% end %}

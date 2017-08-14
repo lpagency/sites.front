@@ -1,0 +1,54 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript">
+     $(document).on("click",".add-to-cart",  function(){
+        $(this).removeClass("btn_comprar");
+        $(this).addClass("btn_comprado");
+        $(this).text("AGREGADO");
+        $(".carrito-header").css("background-color", "red");
+         });
+        $('.list-menu').removeClass('active');
+        $('.mantas').addClass("active");
+</script>
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="">
+    <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+<!--         <div id="header-top"></div> -->
+        <div>
+            <h1 class="text-title">MANTAS</h1>
+        </div>
+        <a href="#" class="subcateg" tag="mantas guagua" role="button">MANTAS GUAGUA</a>
+            <a href="#" class="subcateg" tag="otras mantas" role="button">OTRAS MANTAS</a>
+    </div>
+    <div class=" product-grid products clearfix" >
+
+            <!-- Aqui van los productos -->
+            
+    </div>
+</div>
+
+
+{% end %}

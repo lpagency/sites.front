@@ -1,0 +1,292 @@
+<div class="header-content clearfix header hidden-xs visible-sm visible-md visible-lg">
+<div class="hidden-xs" style="background-color:rgb(209, 206, 201); height: 30px;"></div>
+<div class="container-fluid" style="width:100%;padding: 0px;">
+
+    <nav role="navigation" class="navbar">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        
+        <div class="container-g">
+        <div class="col-md-12 col-sm-12 box_menu">
+            <div class="col-md-5 col-sm-5"></div>
+            <div class="col-md-3 col-sm-4 col-sm-4">
+            <!-- LOGO -->
+                <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+                {% if is_admin %}
+                    <div class="image-upload visible-movil">
+                        <label for="img_logo">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="position: relative;left:60px;">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_logo" name="image" id="img_logo" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_logo' }}" href="#">
+                        <div class="base-logo">
+                            <img class="logo image-1" id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_logo',500) }}'" alt="item">
+                        </div>
+                    </a>
+                </div>
+            </div>
+        <!-- /LOGO -->
+            <div class=""></div>
+            <div class="col-md-4 col-sm-4 container-search" style="float:right;">
+                <div id="">
+                     <form id="searchform" class="navbar-form navbar-left pad0" role="search" action="{{ site_base }}/productos" method="get" >
+                        <div class="form-group search_header">
+                            <img class="lupa" src="https://7static.loadingplay.com/static/images/416fd58ddf89ebb45e1bab07ca85ae2e_icono_lupa_web.png">
+                            <input type="text" name="search_query" class="form-control input_buscar search" placeholder="buscar" value="{% try %}{{search_query}}{% except %}{% end %}">
+                        </div>
+                     <!-- <button type="submit" class="btn btn-default">Enviar</button> -->
+                    </form>
+                </div>
+            
+                <div class="header-right-menu clearfix movil-menu menu-corto">
+                    <ul style="list-style: none;">
+                        <li class="pull-left">
+                            <a href="{{site_base}}/contact" class="upi">contacto &nbsp; </a>
+                        </li>
+                        <li class="pull-left separator header-separator" > / &nbsp; </li>
+                        <li class="pull-left" >
+                            {% try %}
+                            {% set email = user["email"] %}
+                            <a class="pad-top-header upi mov" href="{{ site_base }}/auth/logout" user="{{email}}" >salir</a>
+                            {% except %}
+                            <a class="pad-top-header upi" href="#" data-toggle="modal" data-target="#myModal-login">iniciar sesión</a>
+                            {% end %}
+                        </li>
+                        <li class="pull-left separator header-separator" > </li>
+                        <li class="pull-left cart-bag">
+                            <a href="" class="carritoicono" id="open-cart" data-toggle="modal" data-target="#myModal" >
+                                <img class="img-carrito" src="https://84static.loadingplay.com/static/images/ae98952321918ae3698f3537c36e96eb_icono_bolsa-de-compra.png">
+                                <span>(<span class="units-total">0</span>)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="clearfix"></div>
+        <div class="container">
+        <div class="col-md-12 text-center box_submenu">
+            <div class="col-md-4 col-sm-3" style="margin-left: -22px;"></div>
+            <div class="col-md-5 col-sm-8">
+                <div id="navbarCollapse" class="collapse navbar-collapse text-center">
+                    <ul class="nav navbar-nav nav-center">
+                        <!-- <li><a href="{{ site_base }}/productos?tag=coleccion" class="text-header">COLECCION</a></li> -->
+                        <div class="dropdown col-md-3 col-sm-3">
+                          <button class="ro btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=coleccion'">COLECCION
+                             </button>
+                              <ul class="ro-menu dropdown-menu colecciones">
+                                <li><a href="{{ site_base }}/productos?tag=raices">Raices 2017</a></li>
+                                <li><a href="{{ site_base }}/productos?tag=festival">Festival PV 2017</a></li>
+                                <li><a href="{{ site_base }}/productos?tag=clasicos">Clasicos 2.0</a></li>
+                                <li><a href="{{ site_base }}/productos?tag=capsula">Cápsula Metálica</a></li>
+                            </ul>
+                        </div>
+                        <!-- <li><a href="{{ site_base }}/productos?tag=carteras" class="text-header ">CARTERAS</a></li> -->
+                        <div class="dropdown col-md-3 col-sm-3">
+                            <button class="ro2 btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="estilos">ESTILOS
+                            </button>
+                              <ul class="roMenu dropdown-menu estilos">
+                                <li><a href="{{ site_base }}/productos?tag=botines">Botines</a></li>
+                                <li><a href="{{ site_base }}/productos?tag=botas">Botas</a></li>
+                                <li><a href="{{ site_base }}/productos?tag=zapatos">Zapatos</a></li> 
+                                <li><a href="{{ site_base }}/productos?tag=zapatillas">Zapatillas</a></li> 
+                                <li><a href="{{ site_base }}/productos?tag=sandalias">Sandalias</a></li>
+                            </ul>
+                        </div>
+                        <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header ">NUEVO</a></li>
+                       <!--   <li><a href="" class="text-header">EDITABLE</a></li> -->
+                        <li><a  href="{{ site_base }}/productos?tag=sale"  style="color: rgba(204, 108, 78, 1) !important;" class="text-header sale">SALE</a></li>
+                        <li><a  style="font-style: italic;" href="{{site_base}}/blog" class="text-header font_tag adultos">¡Blog!</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-3"></div>
+        </div>
+      </div>
+        
+    </nav>
+</div>
+</div>
+
+
+
+<!-- ***********Version movil*************** -->
+      <!-- Static navbar -->
+<!--       <nav class="navbar navbar-default hidden-lg hidden-sm hidden-md visible-xs">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div align="center">
+                <div class="col-xs-3">
+                    <div style="position:relative;">
+                        <div class="caja">
+                         {% if is_admin %}
+                         <div class="image-upload gu visible-movil">
+                            <label for="img_logo_movil">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="position: relative;left:60px;">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_logo_movil" name="image" id="img_logo_movil">
+                        </div>
+                        {% end %}
+                        <a id="{{ site.name + '_logo_movil' }}" href="#">
+                            <img class="logo" id="{{ site.name }}_logo_movil" src="{{ read_image(site.name + '_logo_movil', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_movil',500) }}'" alt="item">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+           <div class="col-xs-7">
+                <img id="lupa" class="lupa pull-right" src="https://7static.loadingplay.com/static/images/f659f71e3b73807bd8d5433c4398a5dd_lupaa_.png">
+
+                
+            <div align="center">
+                <div class="col-xs-12">
+                <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
+                    <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
+                        <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+                        <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div>
+                    </form>
+                 </div>
+             </div>
+            </div>
+                
+           </div>
+
+            <div class="col-xs-7">
+               <li class="pull-right cart-bag">
+                <a href="" class="carritoicono" id="open-cart" data-toggle="modal" data-target="#myModal" >
+                    <img class="img-carrito" src="https://84static.loadingplay.com/static/images/ae98952321918ae3698f3537c36e96eb_icono_bolsa-de-compra.png">
+                </a>
+            </li>
+           </div>
+
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class=""><a href="{{ site_base }}/productos?tag=coleccion">COLECCIÓN</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="{{ site_base }}/productos?tag=carteras">CARTERAS</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="{{ site_base }}/productos?tag=accesorios">ACCESORIOS</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="{{ site_base }}/productos?tag=sale" class="text-header sale" style="color: #DA8672 !important;">SALE</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="#" style="">¡Blog!</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="back-white hidden-lg hidden-md hidden-sm hidden-xs">
+        <ul style="list-style: none;">
+            <li class="pull-left" >
+                {% try %}
+                {% set email = user["email"] %}
+                <a class="pad-top-header upi mov" href="{{ site_base }}/auth/logout" user="{{email}}" >salir</a>
+                {% except %}
+                <a class="pad-top-header upi" href="#" data-toggle="modal" data-target="#myModal2">Iniciar sesión</a>
+                {% end %}
+            </li>
+            <li class="pull-left separator-mi header-separator" > / &nbsp; </li>
+        </ul>
+      </div> -->
+ <!-- Navigation -->
+
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top hidden-md hidden-lg hidden-sm visible-xs">
+        <div class="container  header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                     <i class="fa fa-bars"></i>
+                </button>
+                  <img id="lupa" class="lupa pull-right" src="https://7static.loadingplay.com/static/images/f659f71e3b73807bd8d5433c4398a5dd_lupaa_.png">
+
+                  <div align="center">
+                    <div class="col-xs-12">
+                        <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
+                            <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
+                                <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+                                <div class="closeSearch"><!-- <i class="fa fa-times-circle size CloseInput" style=""></i> --></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <li class="pull-right cart-bag">
+                   <a href="" class="carritoicono" id="open-cart" data-toggle="modal" data-target="#myModal" >
+                    <img class="img-carrito" src="https://84static.loadingplay.com/static/images/ae98952321918ae3698f3537c36e96eb_icono_bolsa-de-compra.png">
+                </a>
+                </li>
+
+                <a class="navbar-brand" href="">
+                    <div align="center">
+                  <div style="position:relative">
+                         <div class="caja">
+                             {% if is_admin %}
+                             <div class="image-upload lapiz visible-movil">
+                                <label for="img_logo_movil">
+                                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                               </label>
+                               <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo_movil" name="image" id="img_logo_movil">
+                           </div>
+                           {% end %}
+                           <img id="{{ site.name }}_logo_movil" src="{{ read_image(site.name + '_logo_movil', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_movil',) }}'" class="logo" alt="item">
+                       </div>
+               </div>
+               </div>
+            </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-left">
+              <li class=>
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">COLLECCION </a> <i class="fa fa-caret-right" aria-hidden="true"></i>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Raices 2017</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Festival PV 2017</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Clasicos 2.0</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Cápsula Metálica</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#" class="text-header" data-toggle="dropdown">ESTILOS</a> <i class="fa fa-caret-right" aria-hidden="true"></i>
+                <ul class="dropdown-menu">
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Botines</a></li>
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Botas</a></li>
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Zapatos</a></li> 
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Zapatillas</a></li> 
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Sandalias</a></li>
+                </ul>
+              </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header">NUEVO</a>
+               <li><a href="{{ site_base }}/productos?tag=sale" class="text-header sale" style="color: #DA8672 !important;">SALE</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="#" style="">¡Blog!</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              </li>
+            </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+  

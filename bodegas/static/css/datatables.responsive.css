@@ -1,0 +1,35 @@
+table.has-columns-hidden > tbody > tr > td > span.responsiveExpander {
+    display: inline-block;
+    font-family: 'footable';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    padding-right: 5px;
+    font-size: 14px;
+    color: #888;
+}
+
+table.has-columns-hidden > tbody > tr > td > span.responsiveExpander:before {
+    content: "\e021"
+}
+
+table.has-columns-hidden > tbody > tr.detail-show > td span.responsiveExpander:before {
+    content: "\e01f"
+}
+
+table.has-columns-hidden > tbody > tr.row-detail > td {
+    background: #eee;
+}
+
+table.has-columns-hidden > tbody > tr.row-detail > td > ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+table.has-columns-hidden > tbody > tr.row-detail > td > ul > li > span.columnTitle {
+    font-weight: bold;
+}

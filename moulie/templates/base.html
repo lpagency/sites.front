@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>Moulie</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=430px, user-scalable=no" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+        <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+        <link rel="stylesheet" type="text/css"  href="{{ site_base }}/static/font-awesome-4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/style-home.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+
+        <!-- autocomplete
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-autocomplete -->
+        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+
+        <link rel="stylesheet" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+        <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+
+        {% block css %}
+
+        {% include 'product/product_box.html' %}
+        {% end %}
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <meta name="google-site-verification" content="EixUhbUbBYuKGcPLytFS-K4E7wsvT2h9ob87LdKw31M" />
+        
+
+    </head>
+    
+
+        <body id="home">
+        {% block header %}{% end %}
+
+        <!-- boton para navegar -->
+
+        {% block body %}{% end %}
+        
+        <!-- botón agregar -->
+        <!-- header -->
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="min-height:550px">
+
+                        </div>
+                </div>
+        </div>
+        
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
+
+<!--         <script type="text/javascript">
+                $('#picker').colpick({
+                    flat: true,
+                    layout: 'hex',
+                    submit: 0
+                });
+        </script> -->
+        <script>
+                window.fbAsyncInit = function() {
+                    FB.init({
+                        appId: '348231912006000',
+                        xfbml: true,
+                        version: 'v2.1'
+                    });
+                };
+                (function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0];
+                    if (d.getElementById(id)) {
+                        return;
+                    }
+                    js = d.createElement(s);
+                    js.id = id;
+                    js.src = "//connect.facebook.net/en_US/sdk.js";
+                    fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/header.js" ></script>
+        <script src="{{ site_base }}/static/js/scrollReveal.min.js?ver=2.1.0"></script>
+        <script type="text/javascript">
+                window.sr= new scrollReveal({
+                    reset: true,
+                    move:"20px",
+                    vFactor: 0.20
+                });
+        </script>
+
+        <!-- este es el script para unidades -->
+
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span> {{! upp_total }}</span>
+        </script>
+
+        {% block javascript %}{% end %}
+        {% if is_admin %}
+        <!--Drag to fix content-->
+        
+        <!--Dragging mini image-->
+       
+        <script type="text/javascript" src="{{ site_base }}/static/js/edit_order.js" ></script>
+        {% end %}
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                /*
+                var aux = 0;                
+                $(".btn-menu-bottom.btn-agregar-cont-principal.btn-new-content").on("click", function()
+                {
+                    
+                    if(aux == 0){
+                        NProgress.start();
+                        NProgress.set(0.65);
+                    }
+                    else if(aux < 3)
+                        NProgress.inc();
+                    else
+                        NProgress.done();
+
+                    aux++;
+                });
+                
+               });
+                */
+            });
+        </script>
+                {% if is_admin %}
+        <script type="text/javascript">
+        var site_name = "{{ site.name }}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+        {% end %}
+
+    </body>
+</html>

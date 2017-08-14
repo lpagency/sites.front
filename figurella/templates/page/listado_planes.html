@@ -1,0 +1,332 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+
+
+<section class="height_list_product movil-menu" style="display: block;position: relative;width: 100%;">
+     <div class="banner-background" >
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_banner_planes">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_planes" name="image" id="img_banner_planes" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_planes desaturada" src="{{ read_image(site.name + '_banner_planes', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_planes',500) }}'" class=" img_planes_banner desaturada" alt="item">
+<!--         <div class="" align="center">
+            <h1 class="text_planes text-center {{editabletext}}" text-id="{{ site.name + '_text_banner_planes' }}"> 
+            {{ read_text(site.name +  '_text_banner_planes') }}
+            </h1>
+        </div> -->
+    </div>
+    <div class="clearfix" ></div>
+</section>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <a href="{{ site_base }}/formulario">
+     <div class="box-ros">
+         <!-- <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> -->
+         <i class="fa fa-envelope" aria-hidden="true"></i>
+         <div class="texto-rer"> Reserva <br> tu evaluación <br> sin costo </div>
+     </div>
+ </a>
+</div>
+
+
+<section class="h_planes_2">
+    <div class="col-md-12">
+        <div class="" align="center">
+            <h1 class="text_planes2 text-center {{editabletext}}" text-id="{{ site.name + '_text_planes2' }}"> 
+                {{ read_text(site.name +  '_text_planes2') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<section>
+   <div class="container-fluid">
+    
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_1" name="image" id="img_planes_1">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_1' }}" href="{{ read_link(site.name + '_planes_1') }}">
+         <img id="{{ site.name }}_planes_1" src="{{ read_image(site.name + '_planes_1', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_1',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_1' }}" content="{{ read_link(site.name + '_planes_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_2" name="image" id="img_planes_2">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_2' }}" href="{{ read_link(site.name + '_planes_2') }}">
+         <img id="{{ site.name }}_planes_2" src="{{ read_image(site.name + '_planes_2', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_2',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_2' }}" content="{{ read_link(site.name + '_planes_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_3" name="image" id="img_planes_3">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_3' }}" href="{{ read_link(site.name + '_planes_3') }}">
+         <img id="{{ site.name }}_planes_3" src="{{ read_image(site.name + '_planes_3', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_3',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_3' }}" content="{{ read_link(site.name + '_planes_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_4" name="image" id="img_planes_4">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_4' }}" href="{{ read_link(site.name + '_planes_4') }}">
+         <img id="{{ site.name }}_planes_4" src="{{ read_image(site.name + '_planes_4', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_4',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_4' }}" content="{{ read_link(site.name + '_planes_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_5">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_5" name="image" id="img_planes_5">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_5' }}" href="{{ read_link(site.name + '_planes_5') }}">
+         <img id="{{ site.name }}_planes_5" src="{{ read_image(site.name + '_planes_5', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_5',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_5' }}" content="{{ read_link(site.name + '_planes_5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_6">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_6" name="image" id="img_planes_1">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_6' }}" href="{{ read_link(site.name + '_planes_6') }}">
+         <img id="{{ site.name }}_planes_6" src="{{ read_image(site.name + '_planes_6', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_6',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_6' }}" content="{{ read_link(site.name + '_planes_6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_7">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_7" name="image" id="img_planes_7">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_7' }}" href="{{ read_link(site.name + '_planes_7') }}">
+         <img id="{{ site.name }}_planes_7" src="{{ read_image(site.name + '_planes_7', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_7',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_7' }}" content="{{ read_link(site.name + '_planes_7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_8">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_8" name="image" id="img_planes_8">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_8' }}" href="{{ read_link(site.name + '_planes_8') }}">
+         <img id="{{ site.name }}_planes_8" src="{{ read_image(site.name + '_planes_8', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_8',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_8' }}" content="{{ read_link(site.name + '_planes_8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+
+
+  <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_9">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_9" name="image" id="img_planes_9">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_9' }}" href="{{ read_link(site.name + '_planes_9') }}">
+         <img id="{{ site.name }}_planes_9" src="{{ read_image(site.name + '_planes_9', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_9',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_9' }}" content="{{ read_link(site.name + '_planes_9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+    <div class="col-md-6 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_planes_10">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_planes_10" name="image" id="img_planes_10">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_planes_10' }}" href="{{ read_link(site.name + '_planes_10') }}">
+         <img id="{{ site.name }}_planes_10" src="{{ read_image(site.name + '_planes_10', 1) }}" onload="this.src='{{ read_image(site.name + '_planes_10',) }}'" class="box-planes" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_planes_10' }}" content="{{ read_link(site.name + '_planes_10') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+    
+  </div>
+   </div>
+</section>
+
+
+
+<!-- **aqui irian los productos*** -->
+
+<!-- <section>
+    <div class="col-md-12 pad0 cont-art" style="position: relative;display: inline-block;">
+        <div class=" product-grid products clearfix s" >
+        
+        </div>
+    </div>
+</section> -->
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

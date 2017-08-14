@@ -1,0 +1,26 @@
+<section style="height: 558px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" >
+
+    <!-- ****SOLO MOVIL**** -->
+        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
+            <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+                <div class="img_lis_art">
+                    <img class="img-responsive img_article" src="{{ article["thumb_500"] }}" />
+                </div>
+            </a>
+        </div>
+    <!-- ****SOLO MOVIL**** -->
+
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 article fl">
+            <h1 class="text-center article_title2"> {{ article["title"] }}</h1>
+            <p class="text-center article_text2 ellipsis multiline" > {{ article["caption"] }}</p>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 hidden-xs">
+            <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+                <div class="img_lis_art">
+                    <img class="img-responsive img_article" src="{{ article["thumb_500"] }}" />
+                </div>
+            </a>
+        </div>
+    </div>
+</section>

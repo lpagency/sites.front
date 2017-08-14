@@ -1,0 +1,240 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+    });
+
+</script>
+
+<script type="text/template" id="product_detail">
+
+    <section class="h_submenu hidden-xs" id="cont">
+          <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+        <div align="center">
+           <div style="background: #7184A4; width:88%; height: 40px;" class="tag-mov"> 
+            <a href="{{ site_base }}/productos?tag=chocolates" id="chocolates" class="subcateg mbtm5" tag="chocolates" role="button">CHOCOLATES </a>
+            <a href="{{ site_base }}/productos?tag=macarons" id="macarons" class="subcateg mbtm5" tag="macarons" role="button">MACARONS</a>
+            <a href="{{ site_base }}/productos?tag=delicias" id="delicias" class="subcateg mbtm5" tag="delicias" role="button">DELICIAS</a>
+            <a href="{{ site_base }}/productos?tag=calugas" id="calugas" class="subcateg mbtm5" tag="calugas" role="button">CALUGAS</a>
+            <a href="{{ site_base }}/productos?tag=sin_azucar" id="sin_azucar" class="subcateg mbtm5" tag="sin_azucar" role="button">SIN AZÚCAR</a>
+            <!-- <a href="{{ site_base }}/productos" id="todo" class="subcateg mbtm5" tag="" role="button" data-toggle="modal" data-target="#myModal-pro">Ver todo</a> -->
+        </div>
+          </div>
+          </div>
+  </section>
+
+
+
+
+        <div class="container">
+        <body id="lapimport">
+        <div class="container-fluid">
+            <div class="col-md-12" >
+                <div class="box-det">
+                    <div class="col-md-6 col-sm-10 col-xs-12">
+                       <div class="col-xs-12 col-md-6 col-sm-6 image_little">
+
+                       <img class="{{! images[0]['thumb_500']|hide_if_empty}} col-xs-3 little img_prod_little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+
+                      <img class="{{! images[1]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[1]['thumb_500'] }}"  title="" alt="" onload="this.src={{! images[1]['thumb_500']}}" /> 
+
+                         <!-- *************** -->
+                      <!-- <img class="{{! images[2]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[2]['thumb_500']}}" /> -->
+                      <!-- *************** -->
+
+                         <!-- *************** -->
+                      <!-- <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" /> -->
+                         <!-- *************** -->
+                      
+                      <!-- *************** -->
+                     <!--  <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" /> -->
+                      <!-- *************** -->
+
+                       <!-- *************** -->
+                       <!-- <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" /> -->
+                       <!-- *************** -->
+
+                        <!-- *************** -->
+                      <!--  <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" /> -->
+                        <!-- *************** --> 
+                        </div>
+                        
+                        <div align="center" class="phone">
+                            <div class="chi">
+                                <img id="img_detail" src="{{! images[0]['thumb_500'] }}" title="" alt="" class="img_prod_detail">
+                            </div>
+                        </div>
+
+                    </div>
+
+         
+
+
+                    <div id="product-detail-id" class="col-md-6 col-sm-10 col-xs-12">
+                        <div align="center">
+                            <h1 class="name name_prod_detail" class="line" href="#">{{! name }}</h1>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div align="center">
+                            <hr class="a-cero">
+                            </div>
+                            </div>
+                             <div class="bul ellipsis multiline"> {{!bullet_1}} </div>
+                             <div class="bul-2 ellipsis multiline"> {{!bullet_2}} </div>
+                             <a class="pf" href="">
+                             <div class="bul-3 ellipsis multiline hidden-xs"> {{!bullet_3}} </div></a>
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                             <div align="center">
+                             <hr class="a-cero">
+                             </div>
+                             </div>
+                              <div class="product-price-det">{{! main_price|money }} </div>
+                              <div class="col-md-12 col-sm-12 col-xs-12">
+                              <div align="center">
+                              <hr class="a-cero">
+                              </div>
+                              </div>
+                              <div class="descr_prod_detail ellipsis multiline"> 
+                               {{! description }} </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="" style="margin-bottom:128px;"></div>
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+
+<div class="container-fluid">
+    
+    <div class="container  product-page"></div>
+
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+
+<div style="height:320px;"></div>
+
+
+<!-- ***productos relacionados** -->
+<!-- <hr class="detail">
+<div class="container dano">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="space80">
+         <div class="productlist dano">
+                <article>
+                    <header>
+                        <h1 class="h1-art especial" >Contenido Relacionado</h1>
+                    </header>
+                </article>
+
+                <div class="row cont-rel">
+                    {{ getArticleList() }}
+                </div>
+
+         </div>
+    </div>
+ </div>
+
+<div class="space80"></div>
+
+<div class="container-fluid dano">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-relac text-left"><strong class="editabletext">Contenido relacionado</strong></h1>
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+       
+
+
+<!-- 
+<div align="center">
+    <h1>fdjfidjfidfidjfidifjdi</h1>
+</div> -->
+
+
+{% include '../home/footer.html' %}
+{% end %}

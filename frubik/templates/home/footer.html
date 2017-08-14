@@ -1,0 +1,57 @@
+<div id="footer">
+
+<div style="float:right;">
+   <ul id="lista" class="nav navbar-nav">
+             <li>
+             <a class="" href="">Productos</a> </li>
+              <li>
+             <a class="" href="">Quienes somos</a> </li>
+              <li>
+             <a class="" href="">Donde comprar</a> </li>
+              <li>
+              <li class="icon" id="open-cart" data-toggle="modal" data-target="#myModal" >
+                                 <span> Tu carrito </span> <span class="units-total">(0)</span> 
+                        
+                </li>
+      </ul>
+</div>
+  <div class="col-md-2 col-sm-2 col-xs-6">
+            <div class="inform-comerc text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot">                    
+                     {% if is_admin %}
+                                   <div class="image-upload lapiz visible-movil">
+                                       <label for="img_footer_1">
+                                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                       </label>
+                                       <input type="file" class="editableimage" image-id="{{ site.name }}_footer_1" name="image" id="img_footer_1" >
+                                   </div>
+                    {% end %}
+                       <img id="{{ site.name }}_footer_1" src="{{ read_image(site.name + '_footer_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_1',500) }}'" class="img-foot" alt="item">
+                               
+                    </ul>
+            </div>
+              </div>
+            <!-- <div class="col-md-2 col-sm-2 col-xs-4">
+            <div class="inform text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot ">
+                            <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_foot_10' }}"> {{ read_text(site.name +  '_foot_10') }}
+                            </li>
+                            
+                    </ul>
+            </div>
+            </div>
+
+             <div class="col-md-3 col-sm-2 col-xs-4">
+            <div class="inform-2 text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot">
+                        <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_foot_20' }}"> {{ read_text(site.name +  '_foot_20') }}
+                        </li>
+                                      
+                    </ul>
+            </div>
+            </div>
+ -->
+    </div>

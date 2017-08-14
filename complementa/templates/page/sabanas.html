@@ -1,0 +1,149 @@
+{% extends ../base.html %} 
+
+{% block javascript %}
+{% include ../product/product_box.html %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js?tag=sabanas"></script>
+
+<script type="text/javascript">
+<!--
+function display(view) {
+    if (view == 'list') {
+        $('.product-grid').attr('class', 'product-list');
+
+
+        $('.display').html('<img src="{{ site_base }}/static/catalog/view/theme/nico/image/list.png">Lista <a onclick="display(\'grid\');"><img src="{{ site_base }}/static/catalog/view/theme/nico/image/grid.png"> Mosaico</a>');
+
+        $.cookie('display', 'list');
+    } else {
+        $('.product-list').attr('class', 'product-grid');
+
+        $('.display').html('<a onclick="display(\'list\');"><img src="{{ site_base }}/static/catalog/view/theme/nico/image/list.png">Lista</a>  <img src="{{ site_base }}/static/catalog/view/theme/nico/image/grid.png">Mosaico');
+
+        $.cookie('display', '');
+    }
+
+    //e.preventDefault();
+    return false;
+}
+
+view = $.cookie('display');
+
+if (view) {
+    display(view);
+} else {}
+</script>
+
+
+<script>
+$(document).ready(function() {
+    $("div[data-liffect] > div").each(function(i) {
+        $(this).attr("style", "-webkit-animation-delay:" + i * 500 + "ms;" + "-moz-animation-delay:" + i * 500 + "ms;" + "-o-animation-delay:" + i * 500 + "ms;" + "animation-delay:" + i * 500 + "ms;");
+        if (i == $("div[data-liffect] > div").size() - 1) {
+            $("div[data-liffect]").addClass("play")
+        }
+    });
+});
+</script>
+
+<script>
+var notification_hide_timeout = 5000;
+</script>
+{% end %}
+
+{% block body %}
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:200,300,400,600,700&amp;subset=all' rel='stylesheet' type='text/css' />
+<div id="container">
+{% include '../home/header.html' %}
+
+
+<div id="notification"></div>
+    
+<div id="content">
+    <div class="clearfix cat-head">
+      <div class="cat-nav">
+          <div class="cat-header clearfix">
+          <!-- <div class="breadcrumb">
+                        <a href="{{site_base}}/#">Inicio</a>
+                         &raquo; <a href="{{site_base}}/sabanas">SABANAS</a>
+                      </div> -->
+            <h1 class="cat_heading">SÁBANAS</h1>
+          </div>
+      </div>
+    </div>
+
+    <div class="container col-md-12 col-sm-12 col-xs-12" style="padding-top: 1em;">
+            <!-- <button type="button" class="btn btn-subcateg">ALMOHADA</button> -->
+            <a href="#" class="btn btn-subcateg mbtm5" tag="1 plaza" role="button">1 PLAZA</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="2 plazas" role="button">2 PLAZAS</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="cuna" role="button">CUNA</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="graco" role="button">GRACO</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="king" role="button">KING</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="moises" role="button">MOISES</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="super king" role="button">SUPER KING</a>
+    </div>
+
+
+    <div class="product-grid products clearfix">
+            <!-- Aqui van los productos -->
+    </div>
+
+</div>
+    
+<link rel="stylesheet" id="responsive_css" type="text/css" href="http://complementadiseno.cl/tienda/catalog/view/theme/nico/stylesheet/responsive.css" />
+
+
+<div id="scroll_top">
+    <a href="/"></a>
+</div>
+
+<link class="_editor_css" href='{{ site_base }}/static/catalog/view/theme/nico/nico_theme_editor/editor_settings.css?ts=1422239858' rel='stylesheet' type='text/css' />
+
+<style>
+.box-product .price, .product-grid .price {
+display: block;
+color: #687677;
+margin-bottom: 0px;
+font-size: 19px;
+line-height: 14px;
+}
+
+
+.cat-header, .cat-header h1 {
+padding: 0px;
+margin: 0px;
+margin-top: 0px;
+margin-bottom: 5px;
+display: block;
+font-size: 18px;
+font-weight: 400;
+}
+
+
+#header > #menu > div > ul > li:hover
+{
+    background:#939d9e;
+    color:#fff;
+}
+
+
+#column-left {
+    margin-top: 10px;
+    display: none;
+}
+
+#header-top{
+    display: block !important;
+}
+
+@media screen and (max-width: 700px){
+    #header-top {
+    display: none !important;
+    }
+}
+
+</style>
+    
+    
+{% end %}

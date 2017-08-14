@@ -1,0 +1,40 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+{% block body %}
+    {% if ok %}
+        <div class="container-fluid product-detail-container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                    <table id="detalle_pedido" class="table top-distance-content">
+                        <tr>
+                            <th>Cantidad</th>
+                            <th>Producto</th>
+                            <th>Precio</th>
+                            <th>Subtotal</th>
+                        </tr>
+                        {% for item in lista %}
+                        <tr>
+                            <th>{{item["quantity"]}}</th>
+                            <th>{{item["name"]}}</th>
+                            <th>{{money_format(item["price"])}}</th>
+                            <th>{{money_format(item["subtotal"])}}</th>
+                        </tr>
+                        {% end %}
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        <div class="container-fluid product-detail-container top-distance-content">
+            <p>{{message}}</p>
+        </div>
+    {% end %}
+
+{% end %}

@@ -1,0 +1,180 @@
+{% extends "../base.html" %}
+{% block title %}
+Home
+{% end %}
+{% block header %}
+    {% if search == '' %}
+        {% include '../home/header.html' %}
+    {% else %}
+        {% include '../home/inside_header.html' %}
+    {% end %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% if search != '' %}
+<style>
+    .top-products {
+        margin-top: 0;
+    }
+    .fixed-menu-top .nav-list.menu-7 > *, .fixed-menu-top .nav-list.menu-5 > * {
+        opacity: 0; 
+        font-size: 4px; 
+        z-index: 1;
+    }
+    .fixed-menu-top .nav-list.menu-7 .site_search {
+        opacity: 1;
+        z-index: 6;
+        font-size: 14px;
+        visibility: visible;
+    }
+    .fixed-menu-top .top_search_bar {
+        opacity: 1;
+        width: 100%;
+        z-index: 2
+    }
+</style>
+{% end %}
+{% end %}
+{% block scripts %}
+<div type="template" id="product_loading" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+<div type="template" id="product_template">
+<div class="col-sm-4">
+    <div class="product-limit-image row">
+        <div class="col-sm-4 col-xs-4 especial">
+            <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                <img src="{{! images[0][1] }}" class="img-responsive product-image" alt="item" >
+            </a>
+        </div>
+        <div class="col-sm-1"></div>
+        <div class="col-sm-7 col-xs-7 texts-products especial">
+            <div class="row">
+                <a class="text-nom-prod" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                    <span>{{! name }}</span>
+                </a>
+                <p class="bullet_1">
+                    <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                        {{! bullet_1 }}
+                    </a>
+                </p>
+                <p class="bullet_2">
+                    <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                        {{! bullet_2 }}
+                    </a>
+                </p>
+            </div>
+            <!--<span class="text-cant-prod">{{! manufacturer }}</span>-->
+            <div class="row row-main-price">
+                <span class="text-price-prod money">{{! main_price }}</span>
+                <br/>
+            </div>
+            <div class="row row-add-to-cart">
+                <button class="add-cart-prod add-to-cart add-to-cart-animation" 
+                product-upp="{{! upp }}" 
+                product-id="{{! id }}" 
+                product-name="{{! name }}" 
+                product-price="{{! main_price }}"
+                product-bullet1="{{! bullet_1 }}"
+                product-bullet2="{{! bullet_2 }}"
+                product-bullet3="{{! bullet_3 }}"
+                 > <i class="icons-cart" style="margin-right: 13px;"></i> Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div type="template" id="tag_template" >
+    <li><a href="{{ site_base }}?tag={{! id }}" >{{! name }}</a></li>
+</div>
+
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = 'https://apibodegas.loadingplay.com/',
+            checkout_url = 'https://checkout.loadingplay.com/';
+
+        // function isLocalHost() {
+        //     return document.location.href.indexOf('localhost') != -1;
+        // }
+
+        // function isDevelopment() {
+        //     return document.location.href.indexOf('ondev.today') != -1;
+        // }
+
+        // // configure for each enviroment
+        // if ( isLocalHost() ) 
+        // {
+        //     base_url = 'http://localhost:8520/';
+        //     checkout_url = 'http://localhost:8522/';
+        //     // base_url = 'http://apibodegas.ondev.today/';
+        //     // checkout_url = 'http://localhost:8522/';
+        // } 
+        // else if ( isDevelopment() ) 
+        // {
+        //     base_url = 'http://apibodegas.ondev.today/';
+        //     checkout_url = 'http://lpcheckout.ondev.today/';
+        // }
+
+        // initialize ecommerce
+        var facade = $(document).ecommerce(
+            {
+                'app_public' : 2,
+                'products_per_page' : 60,
+                'animation' : 'basic',
+                'base_url' : base_url,
+                'checkout_url': checkout_url,
+                'analytics' : '{{ get_config("analytics") }}'
+            });
+    });
+</script>
+{% end %}
+{% block body %}
+    <div id="wrap" style="z-index: 0;">
+        <!-- registration -->
+        <!-- <div class="container-fluid productlist"> -->
+        <!-- raw 1 -->
+        <!-- <div class="row">
+            {{ content }}
+        </div>
+        <div class="carritoproductos clearfix">
+            <div class="flecha clearfix">
+            </div>
+        </div>
+    </div> -->
+    <!-- comienzo contenido FM -->
+    <div class="top-products">
+        <div class="container-fluid productlist">
+            
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="titulo-ofertas-dest">Tenemos todos estos productos para ti</h1>
+                </div>
+            </div>
+            <!-- row 4 -->
+            <div class="row products">
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div>
+            <!-- row 4 -->
+        </div>
+    </div>
+</div>
+{% include 'footer.html' %}
+{% end %}

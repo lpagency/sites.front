@@ -1,0 +1,57 @@
+{% extends "../base.html" %}
+{% block header %}
+    {% include '../home/inside_header.html' %}
+{% end %}
+{% block css %}
+<link rel="stylesheet" href="{{ site_base }}/{{nocache_static}}/css/faq.css">
+{% end %}
+{% block body %}
+    <div class="top-distance-content">
+        <div class="container-fluid-product title">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="">Preguntas Frecuentes</h2>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid-product contact product">
+            <div class="row">
+                <div class="col-md-10 text-left">
+                    <ol>
+                        <li>¿Es necesario registrarse antes de que pueda realizar una compra?</li>
+                        <p>R. No. Por el momento se pueden realizar compras sin registrarse.</p>
+                        <br/>
+                        <li>Si al comprar no me registro, ¿Queda guardado mi pedido para una futura compra?</li>
+                        <p>R. NO, para eso debe registrarse como usuario.</p>
+                        <br/>
+                        <li>¿Cuál es el costo de despacho?</li>
+                        <p>R. El despacho no tiene costo de envío.</p>
+                        <br/>
+                        <li>¿Es posible que se realicen envíos fuera de los sectores de despacho?</li>
+                        <p>R. NO</p>
+                        <br/>
+                        <li>¿Puedo cambiar la dirección de despacho?</li>
+                        <p>R. Si, esta nueva información se reflejará en su próxima compra. Si la compra ya fue realizada, esta llegará a la dirección original previamente descrita por el cliente.</p>
+                        <br/>
+                        <li>¿Qué pasa si mi compra no llegó en el plazo que debía?</li>
+                        <p>R. Puede contactarse vía mail a ventas.ecomerce@vastus.cl o al número 051-2672000. Aquí se le podrá informar acerca del estado de su compra de una manera detallada</p>
+                        <br/>
+                        <li>¿Es posible cancelar un pedido?</li>
+                        <p>R. Si el medio de pago del pedido es contra entrega, este se puede cancelar con 24 horas de anticipación. Si el pago fue hecho con tarjetas NO. </p>
+                        <br/>
+                        <li>No tengo tarjetas para realizar pagos por internet. ¿Cómo puedo comprar?</li>
+                        <p>R. Existe la opción de pago contra envío. De esa manera podrá pagar con efectivo.</p>
+                        <br/>
+                        <li>¿Puedo comprar y retirar el producto presencialmente?</li>
+                        <p>R. NO. </p>
+                        <br/>
+                    </ol>
+                    <p>
+                        Cualquier duda, escríbenos a ventas.ecomerce@vastus.cl o llámanos al 051-2672000.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include '../home/footer.html' %}
+{% end %}

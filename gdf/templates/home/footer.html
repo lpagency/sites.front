@@ -1,0 +1,155 @@
+<div class="fufi"></div>
+<section class="footer clearfix">
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+        <label for="img_footer">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage" image-id="{{ site.name }}_footer" name="image" id="img_footer" >
+    </div>
+    {% end %}
+        <img id="{{ site.name }}_footer" src="{{ read_image(site.name + '_footer', 1) }}" onload="this.src='{{ read_image(site.name + '_footer',500) }}'" class="fondo_footer desaturada hidden-xs" alt="item">
+    
+    <div class="container gyly">
+    <div class="col-md-12">
+        <h4 class="text-center text-footer {{editabletext}}" text-id="{{ site.name + '_text_hablemos' }}"> {{ read_text(site.name +  '_text_hablemos') }}</h4>
+    </div>
+    <div class="col-md-12 text-center">
+        <a href="https://www.facebook.com/giani.dafirenze?fref=ts" target="blank">
+        <img class="redes-footer" src="https://84static.loadingplay.com/static/images/d2abe1f95c279223d2cd338f30eebff2_iconos_RRSS_footer_Facebook.png">
+        </a>
+        <a href="http://instagram.com/gianidafirenze" target="blank">
+        <img class="redes-footer" src="https://84static.loadingplay.com/static/images/94afb6a31e81f6a25cd533c8a1e30468_iconos_RRSS_footer_Instagram.png">
+        </a>
+        <a href="{{site_base}}/contact" target="blank">
+        <img class="redes-footer" src="https://84static.loadingplay.com/static/images/438862e29553956cb05bd960ba5b09ee_iconos_RRSS_footer_Mail.png">
+        </a>
+        <a href="https://twitter.com/gianidafirenze" target="blank">
+        <img class="redes-footer" src="https://84static.loadingplay.com/static/images/7535da774792cde1872c64209c04c07e_iconos_RRSS_footer_Twitter.png">
+        </a>
+        <div class="clearfix"></div>
+    </div>
+
+    <div class="col-md-12 inscribete">
+        <div>
+            <form action="" style=" margin-bottom: 15px;">
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <div style="position: relative;margin: 0 auto;">
+                <div style="" class="incrb-text1 {{editabletext}}" text-id="{{ site.name + '_text_new_fo' }}"> {{ read_text(site.name +  '_text_new_fo') }}</div>
+                <br>
+                <div style="" class="incrb-text2 {{editabletext}}" text-id="{{ site.name + '_text_new_2' }}"> {{ read_text(site.name +  '_text_new_2') }}</div> 
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <input class="input_inscr" type="text" name="usrname" placeholder="Email"><br>
+            </div>
+            </form>
+        </div>
+    </div>
+
+<div align="center">
+    <div class="header-right-cont text-center menu-footer" >
+        <ul class="text1 no-dot">
+            <div class="pull-left pad-li fen col-sm-2 col-xs-12">
+               <!--  <a  class="text3 text-footer2" href="{{site_base}}/nuestra_historia">NOSOTROS</a> -->
+               <div class="text3 text-footer2 {{editabletext}}" text-id="{{ site.name + '_text_nosotros_fo' }}"> {{ read_text(site.name +  '_text_nosotros_fo') }}</div>
+            </div>
+            <div class="pull-left pad-li punto-3 col-sm-2 col-xs-12">
+                <!-- <a class="text-footer2" href="{{site_base}}/terminos_condiciones">TÉRMINOS &
+                <br> CONDICIONES</a> -->
+                <div class="text-footer2 {{editabletext}}" text-id="{{ site.name + '_text_terminos_fo' }}"> {{ read_text(site.name +  '_text_terminos_fo') }}</div>
+            </div>
+            <div class="pull-left pad-li fru col-sm-2 col-xs-12">
+                <!-- <a class="text-footer2" href="{{site_base}}/preguntas_frecuentes">PREGUNTAS 
+                <br>FRECUENTES</a> -->
+                <div class="text-footer2 {{editabletext}}" text-id="{{ site.name + '_text_preguntas_fo' }}"> {{ read_text(site.name +  '_text_preguntas_fo') }}</div>
+            </div>
+            <div class="pull-left pad-li punto col-sm-2 col-xs-12">
+                <!-- <a class="text-footer2" href="{{site_base}}/puntos_ventas">PUNTOS DE VENTA</a> -->
+                <div class="text-footer2 {{editabletext}}" text-id="{{ site.name + '_text_puntos_fo' }}"> {{ read_text(site.name +  '_text_puntos_fo') }}</div>
+           </div>
+            <div class="pull-left pad-li punto-2 col-sm-2 col-xs-12">
+                <a class="text-footer2" href="" data-toggle="modal" data-target="#myModal-talla" onclick="">TABLA DE TALLA </a>
+            </div>
+        </ul>
+    </div>
+</div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div align="center">
+             <div class="logos-pagos text-center">
+                <a href="http://www.chilexpress.cl/" target="blank">
+                   <img class="img-responsive" src="https://7static.loadingplay.com/static/images/936fa24701d1b59aeb3261d8e2955d06_Boton_seguimientoFINAL.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/234a38f11042f3ab40575a100f8a8214_Boton_seguimientoFINAL.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/936fa24701d1b59aeb3261d8e2955d06_Boton_seguimientoFINAL.png';">
+                </a>
+            </div>
+         </div>
+    </div>
+
+  <div align="center">
+    <div class="col-md-12 space20">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="box-registro">
+                <li class="pull-left pad-li col-sm-2 col-xs-12" style="padding-top: 7px;list-style: none;">
+                         <a id="login-empresa" href="#" data-toggle="modal" data-target="#myModal4" class="text-footer2 hidden-xs">
+                            <img class="img_registro_mayorista" src="https://7static.loadingplay.com/static/images/6ec1c054d0da81b2384ae59e37f898ec_NewBoton_REGISTRO_MAYORISTAS.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/652fb2bdaf06d0e97c811c12306312df_NewBoton_REGISTRO_MAYORISTAS.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/6ec1c054d0da81b2384ae59e37f898ec_NewBoton_REGISTRO_MAYORISTAS.png';">
+                        </a>
+                        
+                        <a id="various1" href="#" data-toggle="modal" data-target="#myModal3" class="text-footer2">
+                            <button type="button" class="btn btn-default ingreso hidden-lg hidden-md hidden-sm visible-xs">INGRESO MAYORISTA
+                                <img class="hand" src="https://84static.loadingplay.com/static/images/e432fd39a75a9d4135e29644a1d5efb3_indicando_.png">
+                            </button>
+                        </a>
+                 </li>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="fb-messengermessageus" 
+         messenger_app_id="95100348886" 
+         page_id="XYZ" 
+         color="blue"
+         size="large">
+    </div>
+            <div class="box-registro2">
+                <li class="pull-left pad-li col-sm-2 col-xs-12" style="list-style: none;">
+                        <a id="various1" href="#" data-toggle="modal" data-target="#myModal3" class="text-footer2 hidden-xs">
+                        <img class="img_login_mayorista hidden-xs" src="https://7static.loadingplay.com/static/images/3bf0d47b35517f421da678acb6a4e518_NewBoton_INGRESO_MAYORISTAS.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/450653b825794fc5e14c88155de8fa39_NewBoton_INGRESO_MAYORISTAS.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/3bf0d47b35517f421da678acb6a4e518_NewBoton_INGRESO_MAYORISTAS.png';">
+                        </a>
+
+                        <a id="login-empresa" href="#" data-toggle="modal" data-target="#myModal4" class="text-footer2">
+                        <button type="button" class="btn btn-default registro hidden-lg hidden-md hidden-sm visible-xs">REGISTRO MAYORISTA
+                                <img class="hand-2" src="https://7static.loadingplay.com/static/images/91960c4e43adf7c5ae7b889a9837f2c1_indicando_.png">
+                        </button>
+                       </a>
+                </li>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+    
+
+
+        <div class="text footer-contact-text">
+            <p>Sytes tech. Developed by <a href="http://loadingplay.com" class="link_lp" target="_blank">LoadingPlay</a></p>
+            <p class="pas-4">
+               {% if user is None %}
+               <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+               {% else %}
+               <a href="{{ site_base }}/auth/logout" class="a-footer">
+                Logout</a>
+                {% end %}
+            </p>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="logos-pagos-fot text-center">
+                <a href="http://www.chilexpress.cl/" target="blank">
+                  <img class="img-responsive" src="https://84static.loadingplay.com/static/images/db2347508ce160711cb3a80cd85e440f_logopagosgdf.png">
+              </a>
+              </div>
+        </div>
+
+    </div>
+</div>
+</section>

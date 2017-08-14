@@ -1,0 +1,391 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+    <div class="container-fluid pad">
+        <div class="col-lg-12 paa">      
+             {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                     <label for="img_banner_mas_1">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_mas_1" name="image" id="img_banner_mas_1" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                      <label for="img_banner_1a">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1a" name="image" id="img_banner_1a" >
+                </div>
+            {% end %} 
+            <img id="mlb_banner_mas_1" class="banner-espe show-hide lazy" src="{{ read_image(site.name + '_banner_mas_1', 1) }}" data-original="{{ read_image(site.name + '_banner_mas_1') }}" /> <!---->
+            <img id="mlb_banner_1a" class="banner-espe hide-show lazy" src="{{ read_image(site.name + '_banner_1a', 1) }}" data-original="{{ read_image(site.name + '_banner_1a') }}" />
+
+
+
+            <!-- {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_banner_mas_1">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_mas" name="image" id="img_banner_mas_1" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_banner_mas" src="{{ read_image(site.name + '_banner_mas', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_mas',500) }}'" class="banner-espe" alt="item"> -->
+            
+            <!-- <img class="banner-espe" src="https://84static.loadingplay.com/static/images/3e71a93ca6ef62f0bec318135ed1c406_banner.png"> -->
+     
+      </div>
+      </div>
+
+    <div class="container">
+             
+       <div class="row"> 
+           <div class="col-md-12"> 
+              <p class="til {{editabletext}}" text-id="{{ site.name + '_mas_1' }}"> {{ read_text(site.name +  '_mas_1') }}</p> 
+              <p class="til2 {{editabletext}}" text-id="{{ site.name + '_mas_2' }}"> {{ read_text(site.name +  '_mas_2') }}</p>     
+           </div>
+       </div>
+     
+
+     <div class="row">
+         <div class="col-lg-12">
+             <p class="elegir {{editabletext}}" text-id="{{ site.name + '_mas_3' }}"> {{ read_text(site.name +  '_mas_3') }}</p>
+         </div>
+     </div>
+
+     <div class="row">
+             <div class="col-lg-12 col-xs-12 menu_sel">
+                 <div align="center">
+                 <select class="selectize">
+                      <option value="volvo">Perro o Gato</option>
+                      <option value="perro">Perro</option>
+                      <option value="gato">Gato</option>
+                 </select>
+                
+                <select class="selectize">
+                      <option value="volvo">Adulto o Cachorro</option>
+                      <option value="adulto">Adulto</option>
+                      <option value="cachorro">Cachorro</option>
+                </select>
+                      <button type="button" class="btn btn def">Buscar</button>
+                </div>
+            </div>
+      </div>     
+     
+
+      <div  class="row">
+          <div class="col-lg-12">
+              <h1 class="text-3 {{editabletext}}" text-id="{{ site.name + '_mas_4' }}"> {{ read_text(site.name +  '_mas_4') }}</h1>
+          </div>
+
+      </div>
+    
+        <div class="img_three"> 
+            <div class="col-md-4 col-sm-4 col-xs-12 single_box"> 
+                {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_uno" name="image" id="img_cajas_art" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_uno" src="{{ read_image(site.name + '_caja_uno', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_uno',500) }}'" class="img-responsive in" alt="item">
+
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art' }}" content="{{ read_link(site.name + '_cajas_art') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+                <!-- <img class="img-responsive in" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art' }}" href="{{ read_link(site.name + '_cajas_art') }}">
+                <div class="abs_txt">
+                        <p class="cont_uno {{editabletext}}" text-id="{{ site.name + '_cont_uno' }}"> {{ read_text(site.name +  '_cont_uno') }} </p>
+                </div>
+                </a>
+            
+            </div>
+            
+            <div class="col-md-4 col-sm-4 col-xs-12 single_box"> 
+                 {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_2">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_dos" name="image" id="img_cajas_art_2" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_dos" src="{{ read_image(site.name + '_caja_dos', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_dos',500) }}'" class="img-responsive in" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_2' }}" content="{{ read_link(site.name + '_cajas_art_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+               
+               <!--  <img class="img-responsive in" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_2' }}" href="{{ read_link(site.name + '_cajas_art_2') }}">
+                <div class="abs_txt">
+                        <p class="cont_dos {{editabletext}}" text-id="{{ site.name + '_cont_dos' }}"> {{ read_text(site.name +  '_cont_dos') }} </p>
+                </div>
+                </a>
+            
+            </div>
+            
+            <div class="col-md-4 col-sm-4 col-xs-12 single_box"> 
+                 {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_3">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_tres" name="image" id="img_cajas_art_3" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_tres" src="{{ read_image(site.name + '_caja_tres', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_tres',500) }}'" class="img-responsive in" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_3' }}" content="{{ read_link(site.name + '_cajas_art_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+                <!-- <img class="img-responsive in" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_3' }}" href="{{ read_link(site.name + '_cajas_art_3') }}">
+                <div class="abs_txt">
+                        <p class="cont_tres {{editabletext}}" text-id="{{ site.name + '_cont_tres' }}"> {{ read_text(site.name +  '_cont_tres') }} </p>
+                </div>
+                </a>
+            
+            </div>
+       </div>
+
+
+           <div class="col-md-6 col-sm-6 col-xs-12 double_es"> 
+               {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_4">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_cuatro" name="image" id="img_cajas_art_4" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_cuatro" src="{{ read_image(site.name + '_caja_cuatro', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_cuatro',500) }}'" class="img-responsive in2" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_4' }}" content="{{ read_link(site.name + '_cajas_art_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+               <!-- <img class="img-responsive in2" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_4' }}" href="{{ read_link(site.name + '_cajas_art_4') }}">
+                <div class="abs_txt">
+                        <p class="cont_cuatro {{editabletext}}" text-id="{{ site.name + '_cont_cuatro' }}"> {{ read_text(site.name +  '_cont_cuatro') }} </p>
+                </div>
+                </a>
+           
+           </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12 double_es"> 
+                {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_5">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_cinco" name="image" id="img_cajas_art_5" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_cinco" src="{{ read_image(site.name + '_caja_cinco', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_cinco',500) }}'" class="img-responsive in2" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_5' }}" content="{{ read_link(site.name + '_cajas_art_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+         <!--       <img class="img-responsive in2" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+          <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_5' }}" href="{{ read_link(site.name + '_cajas_art_5') }}">
+                <div class="abs_txt">
+                        <p class="cont_cinco {{editabletext}}" text-id="{{ site.name + '_cont_cinco' }}"> {{ read_text(site.name +  '_cont_cinco') }} </p>
+                </div>
+                </a>
+            </div>
+      
+      <div class="cleafix"></div>
+
+       <div  class="row">
+          <div class="col-lg-12">
+              <h1 class="text-4 {{editabletext}}" text-id="{{ site.name + '_mas_5' }}"> {{ read_text(site.name +  '_mas_5') }}</h1>
+          </div>
+
+      </div>
+
+     
+     <div class="row">
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+               {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_6">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_seis" name="image" id="img_cajas_art_6" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_seis" src="{{ read_image(site.name + '_caja_seis', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_seis',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_6' }}" content="{{ read_link(site.name + '_cajas_art_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+             <!--  <img class="img-responsive in3" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_6' }}" href="{{ read_link(site.name + '_cajas_art_6') }}">
+                <div class="abs_txt">
+                        <p class="cont_seis {{editabletext}}" text-id="{{ site.name + '_cont_seis' }}"> {{ read_text(site.name +  '_cont_seis') }} </p>
+                </div>
+                </a>
+
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+              {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_7">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_siete" name="image" id="img_cajas_art_7" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_siete" src="{{ read_image(site.name + '_caja_siete', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_siete',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_7' }}" content="{{ read_link(site.name + '_cajas_art_7') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+              <!-- <img class="img-responsive in3" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                 <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_7' }}" href="{{ read_link(site.name + '_cajas_art_7') }}">
+                <div class="abs_txt">
+                        <p class="cont_siete {{editabletext}}" text-id="{{ site.name + '_cont_siete' }}"> {{ read_text(site.name +  '_cont_siete') }} </p>
+                </div>
+                </a>
+          
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+              {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_8">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_ocho" name="image" id="img_cajas_art_8" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_ocho" src="{{ read_image(site.name + '_caja_ocho', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_ocho',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_8' }}" content="{{ read_link(site.name + '_cajas_art_8') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+             <!--  <img class="img-responsive in3" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+               <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_8' }}" href="{{ read_link(site.name + '_cajas_art_8') }}">
+                <div class="abs_txt">
+                        <p class="cont_ocho {{editabletext}}" text-id="{{ site.name + '_cont_ocho' }}"> {{ read_text(site.name +  '_cont_ocho') }} </p>
+                </div>
+                </a>
+          
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+               {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_9">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_nueve" name="image" id="img_cajas_art_9" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_nueve" src="{{ read_image(site.name + '_caja_nueve', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_nueve',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_9' }}" content="{{ read_link(site.name + '_cajas_art_9') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+              <!-- <img class="img-responsive in3" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                 <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_9' }}" href="{{ read_link(site.name + '_cajas_art_9') }}">
+                <div class="abs_txt">
+                        <p class="cont_nueve {{editabletext}}" text-id="{{ site.name + '_cont_nueve' }}"> {{ read_text(site.name +  '_cont_nueve') }} </p>
+                </div>
+                </a>
+          
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+                {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_10">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_diez" name="image" id="img_cajas_art_10" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_diez" src="{{ read_image(site.name + '_caja_diez', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_diez',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_10' }}" content="{{ read_link(site.name + '_cajas_art_10') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+              <!-- <img class="img-responsive" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_10' }}" href="{{ read_link(site.name + '_cajas_art_10') }}">
+                <div class="abs_txt">
+                        <p class="cont_diez {{editabletext}}" text-id="{{ site.name + '_cont_diez' }}"> {{ read_text(site.name +  '_cont_diez') }} </p>
+                </div>
+                </a>
+          
+          </div>
+          <div class="col-md-4 col-xs-12 col-sm-6 six_di">
+               {% if is_admin %}
+                 <div class="image-upload lapiz visible-movil">
+                     <label for="img_cajas_art_11">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_caja_once" name="image" id="img_cajas_art_11" >
+                 </div>
+            {% end %}
+                 <img id="{{ site.name }}_caja_once" src="{{ read_image(site.name + '_caja_once', 1) }}" onload="this.src='{{ read_image(site.name + '_caja_once',500) }}'" class="img-responsive in3" alt="item">
+
+                  {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_cajas_art_11' }}" content="{{ read_link(site.name + '_cajas_art_11') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+              <!-- <img class="img-responsive in3" src="https://7static.loadingplay.com/static/images/71f4c03e467799d4db4f14bb310a2a59_home.png"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_cajas_art_11' }}" href="{{ read_link(site.name + '_cajas_art_11') }}">
+                <div class="abs_txt">
+                        <p class="cont_once {{editabletext}}" text-id="{{ site.name + '_cont_once' }}"> {{ read_text(site.name +  '_cont_once') }} </p>
+                </div>
+                </a>
+          
+          </div>
+    </div>
+
+    <div class="cleafix cler"></div>
+
+
+    </div>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

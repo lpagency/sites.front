@@ -1,0 +1,184 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/map.home.js"></script>
+
+
+{% end %}
+
+{% block body %}
+<body id="lapimport">
+ {% if tag== False%}
+    <section id="banner"><!-- start banner -->
+        {% if is_admin %}
+        <div class="image-upload">
+            <label for="img_banner_1">
+                <img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" />
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1') }}'" class="img-edit banner1" alt="item" style="width:100%;height:100%" />
+
+        <div class="banner-caption text-center info-article"><!-- start banner caption -->
+            {% if is_admin %}
+                <h1 class="capital whiteclr fsize50">
+                    <span class="editabletext" text-id="{{ site.name + '_banner1' }}" >{{ read_text(site.name + '_banner1') }}</span>
+                </h1>
+            {% else %}
+                <h1 class="capital whiteclr fsize50">
+                    <span > {{ read_text(site.name + '_banner1') }} </span>
+                </h1>
+            {% end %}
+        </div><!-- end banner caption -->
+    </section><!-- end banner -->
+    <!-- <h1>{{ tag }}</h1> -->
+    <section class="section space20" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center" >
+                    {% if is_admin %}
+                        <h2  class="editabletext tit-prev" text-id="{{ site.name + '_desc_1' }}" >{{ read_text(site.name + '_desc_1') }}</h2>
+                    {% else %}
+                        <h2 class="tit-prev"> {{ read_text(site.name + '_desc_1') }}</h2>
+                    {% end %}
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="row space20">
+                <h2 class="text-center">Our Categories</h2>
+                {% include '../home/tag.html' %}
+            </div>
+        </div>
+
+        <section class="space50">
+            <div class="container">
+                <div id="container_banner1">
+                </div>
+            </div>
+        </section>
+
+    </section>
+<section class="space30">
+<div id="aboutus" class="bg-1">
+		{% if is_admin %}
+        <div class="image-upload">
+            <label for="img_banner_2">
+            <img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
+    	<div class="col-md-8 col-md-offset-2 text-center"><!-- start banner caption -->
+		{% if is_admin %}
+        	<h2><span class="editabletext" text-id="{{ site.name + '_banner2' }}" >{{ read_text(site.name + '_banner2') }}</span></h2>
+        {% else %}
+           <h2 ><span> {{ read_text(site.name + '_banner2') }} </span></h2>
+        {% end %}
+        </div>
+
+</div>
+</section>
+
+<section class="space50">
+	<div class="container">
+		<div id="container_banner2">
+			<h2 class="text-center">Our Products</h2>
+
+		</div>
+	</div>
+</section>
+
+<div id="distribution" class="line"></div>
+<section>
+	<div id="map" style="height: 480px;"></div>
+	<div class="overlay" onClick="style.pointerEvents='none'"></div>
+
+</section>
+<section class="bg-1">
+
+		{% if is_admin %}
+        <div class="image-upload">
+            <label for="img_banner_3">
+            <img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_3" name="image" id="img_banner_3" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_3" src="{{ read_image(site.name + '_banner_3', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_3') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
+    	<div class="col-md-8 col-md-offset-2 text-center "><!-- start banner caption -->
+		{% if is_admin %}
+        	<h2><span class="editabletext" text-id="{{ site.name + '_banner3' }}" >{{ read_text(site.name + '_banner3') }}</span></h2>
+        {% else %}
+           <h2 ><span> {{ read_text(site.name + '_banner3') }} </span></h2>
+        {% end %}
+        </div>
+
+</section>
+<section class="section space40">
+	<div class="container">
+		<div class="row">
+			<h2 class="text-center">More Products</h2>
+		</div>
+	</div>
+
+    {% else %}
+
+        {% include '../home/categorie.html' %}
+
+    {% end %}
+
+{% if tag == False%}
+
+    <div class="container">
+        <div class="row group_products">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+    </div>
+{% end %}
+
+{% if tag != False%}
+
+<div class="container"> 
+    <div id="container_tag" class="row">
+        <div class="spinner" >
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+    <div class="row space20">
+        <h2 class="text-center">Others you can pick..</h2>
+        {% include '../home/tag.html' %}
+    </div>
+</div>
+{% end %}
+
+</section>
+
+</body>
+<!-- </html> -->
+{% include '../home/footer.html' %}
+{% end %}

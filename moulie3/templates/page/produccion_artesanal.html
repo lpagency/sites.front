@@ -1,0 +1,164 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(38,38,38);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.mundo').addClass("active");
+
+  });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+<section>
+  <div>
+    <div>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_artesanal',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_artesanal">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_artesanal" name="image" id="img_artesanal" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_artesanal" src="{{ read_image(site.name + '_artesanal', 1) }}" onload="this.src='{{ read_image(site.name + '_artesanal',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+    </div>
+  </div>
+ 
+</section>
+
+
+<!-- ***video** -->
+<!-- {% import random %}
+
+{% set videos = [
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808',
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808',
+        'https://player.vimeo.com/external/183713295.m3u8?s=b93bfb879872eb323c8eeaaf2c443d1354670fa5&oauth2_token_id=916835808'
+    ] %}
+{% set poster = [
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad',
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad',
+        'https://i.vimeocdn.com/video/593003698_1280x720.jpg?r=pad'
+    ] %}
+{% set selected = random.choice([0,1,2]) %}
+  -->
+
+<section > 
+   <div class="container">
+ <!--    <video 
+        src="{{ videos[selected] }}" 
+        poster="{{ poster[selected] }}" width="100%" height="auto" class="fondo" controls autoplay="autoplay" loop="loop" >
+    </video>
+    <div class="video-overlay" ></div> -->
+    <!-- editar imagen -->
+    <div align="center">
+        <div class="" style="position:relative;">
+<!--         <video
+          id="video1"
+          class="banner-one"
+          src="https://player.vimeo.com/external/183713295.sd.mp4?s=67842a0115831973924eed34fe992cb35b973077&profile_id=164&oauth2_token_id=916835808"
+          poster="https://i.vimeocdn.com/video/593003698_640x360.jpg?r=pad" width="100%" height="auto" muted autoplay="autoplay" loop="loop" >         
+        </video> -->
+
+         {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+          <label for="img_one_artesanal">
+            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+          </label>
+          <input type="file" class="editableimage" image-id="{{ site.name }}_one_artesanal" name="image" id="img_one_artesanal" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_one_artesanal" src="{{ read_image(site.name + '_one_artesanal', 1) }}" onload="this.src='{{ read_image(site.name + '_one_artesanal',500) }}'" class="banner-one show-on-mobile visible-xs visible-sm visible-lg visible-md" alt="item" />
+     </div>
+    <!--  <img class="img-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/b015dfd6668b05e05dc57f68983e273b_SONIDO.png">
+     <img class="img-no-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/03627aeb4f602374ed2db198a380d010_SILCENCIO.png"> -->
+     </div>
+  </div>
+</section>
+
+
+<!-- **fin video*** -->
+
+<section id="cont">
+  <div class="container"> 
+    <div class="col-md-8 col-sm-8 col-xs-12">
+      <div align="center">
+      <div class="texto-arte {{editabletext}}" text-id="{{ site.name + '_arte' }}"> {{ read_text(site.name +  '_arte') }} </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

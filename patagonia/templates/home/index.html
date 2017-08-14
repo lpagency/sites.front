@@ -1,0 +1,63 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+   /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+        } else {
+            x.className = "topnav";
+        }
+    }
+    
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+{% include '../home/main_banner.html' %}
+<section class="clearfix">
+{% include '../home/first_text.html' %}    
+</section>
+<section class="clearfix">
+{% include '../home/group_images.html' %}    
+</section>
+<section class="clearfix">
+{% include '../home/second_text.html' %}    
+</section>
+<section class="clearfix">
+{% include '../home/group_images_second.html' %}    
+</section>
+<section class="clearfix">
+{% include '../home/third_text.html' %}    
+</section>
+<section class="">
+{% include '../home/second_banner.html' %}    
+</section>
+<section class="">
+{% include '../home/fourth_text.html' %}    
+</section>
+<section class="">
+{% include '../home/footer.html' %}    
+</section>
+{% end %}

@@ -1,0 +1,136 @@
+
+<!-- <ul class="topnav" id="myTopnav" style="height: 300px;"> -->
+<!-- *********LOGO EN MOVIL*************** -->
+<!-- <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_logo' }}" href="#">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                </a>
+            </div> -->
+
+            <!-- *********LOGO EN MOVIL*************** -->
+
+   <!--  <li><a href="#"></a></li>
+    <li><a href="#">CALIDAD</a></li>
+    <li><a href="#">ORIGEN</a></li>
+    <li><a href="#">VENTAJAS NUTRICIONALES</a></li>
+    <li><a href="#">CONTROLES NUTRICIONALES</a></li>
+    <li><a href="#">RECETAS</a></li>
+    <li class="icon">
+    <a href="javascript:void(0);" onclick="myFunction()">☰</a>
+    </li>
+</ul> -->
+
+
+<nav class="navbar patagonia-menu hidden-sm hidden-md hidden-xs" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- LOGO -->
+        <div class="logo_wrapper navbar-brand hidden-lg hidden-md- hidden-sm visible-xs " style="">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+            </a>
+        </div>
+    <!-- /LOGO -->
+   
+    <div class="collapse navbar-collapse navbar-ex1-collapse box-menu pad0">
+        <ul class="nav navbar-nav col-md-5 pad0">
+            <li >
+                <a href="http://www.patagoniamussel.cl/article/detail/quienes_somos/1486">NOSOTROS</a>
+            </li>
+            <li class="">
+                <a href="http://www.patagoniamussel.cl/gallery/detail/conoce_el_origen_de_patagonia_mussel/1376">ORIGEN</a>
+            </li>
+            <li class="">
+                <a href="http://www.patagoniamussel.cl/gallery/detail/un_producto_%C3%9Anico_por_su_calidad_y_sabor/1379">CALIDAD</a>
+            </li>
+            <li>
+                <a href="http://www.patagoniamussel.cl/article/detail/un_alimento_rico_en_prote%C3%8Dnas_y_omega_3/1380">NUTRICIÓN</a>
+            </li>
+             <li >
+                <a href="{{ site_base }}/listado_recetas">RECETAS</a>
+            </li>
+            <li >
+                <a href="{{ site_base }}/world">WORLD</a>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav col-md-2 pad0">
+            <!-- LOGO -->
+            <div class="logo_wrapper navbar-brand hidden-xs">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a href="#">
+                    <div class="container_header">
+                        <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    </div>
+                </a>
+            </div>
+
+
+            <!-- /LOGO -->
+        </ul>
+        <ul class="nav navbar-nav col-md-5 pad0 cero">
+           <!--  <li >
+                <a href="{{ site_base }}/listado_recetas">RECETAS</a>
+            </li> -->
+            <li class="">
+                <a href="http://www.patagoniamussel.cl/gallery/detail/seguridad_alimentaria/1381">SEGURIDAD</a>
+            </li>
+            <li >
+                <a href="{{ site_base }}/videos">VIDEOS</a>
+            </li>
+            <li>
+                <a href="{{ site_base }}/videos_document">BROCHURE</a>
+            </li>
+            <li>
+                <a href="{{ site_base }}/prensa">PRENSA</a>
+            </li>
+             <li><a href="" class="dropdown-toggle" data-toggle="dropdown">IDIOMA<b class="caret"></b></a> 
+                <ul class="dropdown-menu">
+                  <li><a href="http://www.patagoniamussel.com/">INGLES</a></li>
+                  <li><a href="#">PORTUGUES</a></li>
+                  <li><a href="http://cn.patagoniamussel.cl/">CHINO</a></li>
+              </ul>
+            </li>
+            <li class="" style="position: relative;display: inline-flex;">
+                <a href="https://www.facebook.com/PatagoniaMusselUSA/?fref=ts" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/3dfa7303e26776354458bfdeb6cc97aa_logofb.png">
+                </a>
+                <a href="https://www.instagram.com/patagoniamussel/" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/bde566b69efc2fd6661e826d375a74d3_logoinsta.png">
+                </a>
+                <a href="https://www.linkedin.com/company-beta/22284448/" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/c4d1e5ee56ae96af6ff9426630dc280b_logolinkedin.png">
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>

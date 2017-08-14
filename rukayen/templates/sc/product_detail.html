@@ -1,0 +1,269 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+        <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+        <!-- <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script> -->
+
+        <script type="text/x-template" id = "product_template" > </script> 
+
+        <!-- <script type="text/x-template" id="tag_template" > 
+         <li> 
+             <a href="/sample/tag.html?tag={{! id }}" > 
+            {{!name}} 
+            </a>
+         </li > 
+         </script>-->
+
+        <script type="text/javascript" >
+
+            var base_url = $.environmentVar(
+                            'http://apibodegas.ondev.today/',
+                            'http://apibodegas.ondev.today/',
+                            'https://apibodegas.loadingplay.com/');
+
+            var checkout_url = $.environmentVar(
+                                'http://lpcheckout.ondev.today',
+                                'http://lpcheckout.ondev.today',
+                                'https://checkout.loadingplay.com');
+
+// <<<<<<< HEAD
+//             // configure for each enviroment
+//             if ( isLocalHost() ) 
+//             {
+//               // base_url = 'http://localhost:8520/';
+//               // checkout_url = 'http://localhost:8522/';
+//               base_url = 'http://apibodegas.ondev.today/';
+//               checkout_url = 'http://lpcheckout.ondev.today/';
+//               app_public= 7;
+//             } 
+//             else if ( isDevelopment() ) 
+//             {
+//               base_url = 'http://apibodegas.ondev.today/';
+//               checkout_url = 'http://lpcheckout.ondev.today/';
+//               app_public = 7;
+//             }
+//         $(document).ready(function() 
+//         {
+//             $(document).ecommerce('product_detail', {
+//                 'app_public' : 7,
+//                 'products_per_page' : 6,
+//                 'ignore_stock': true,
+//                 'base_url' : base_url,
+//                 // 'base_url' : 'http://apibodegas.ondev.today/',
+//                 'checkout_url': checkout_url,
+//                 // 'checkout_url': 'http://lpcheckout.ondev.today',
+//                 'product_id' : {{ product_id }}
+//             });
+// =======
+            var app_public = $.environmentVar(7,7,8);
+// >>>>>>> beb533166c6fa42a3b62f7f9d6cacbe512758794
+
+            $(document).ready(function() 
+            {
+                $(document).ecommerce('product_detail', {
+                    'app_public' : app_public,
+                    'products_per_page' : 6,
+                    'ignore_stock': true,
+                    'base_url' : base_url,
+                    // 'base_url' : 'http://apibodegas.ondev.today/',
+                    'checkout_url': checkout_url,
+                    // 'checkout_url': 'http://lpcheckout.ondev.today',
+                    'product_id' : {{ product_id }}
+                });
+
+                $(document).ecommerce(
+                {
+                    'app_public' : app_public,
+                    'products_per_page' : 6,
+                    'ignore_stock': true,
+                    'base_url' : base_url,
+                    // 'base_url' : 'http://apibodegas.ondev.today/',
+                    'checkout_url': checkout_url,
+                    // 'checkout_url': 'http://lpcheckout.ondev.today',
+                    'product_id' : {{ product_id }}
+                });
+
+            });
+        </script>
+
+
+        <div type="template" id="product_detail" class="hidden" >
+        <section id="detail-content">
+            <div class="container2 detail-top">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="item-img ">
+                        <img src="https://static.loadingplay.com/static/images/1_eb1852c1e13bb1087f187b579784f778_maxresdefault.png" class="product-image img-edit image img-responsive" alt="item">
+                     
+                    </div>  
+                </div>
+
+                <div class="col-md-5">
+                    <div class="item-detail text-left">
+                        <h2 style="margin-top: -5px; margin-bottom:0px;">{{! name }} </h2>
+                        <p style="font-size:19px;"> {{! bullet_1 }}</p>
+                        <p>{{! description }}</p>
+
+<!--                         <div class="selectservice">
+                            <select>
+                                <option>TIPO DE SERVICO</option>
+                                <option>TIPO DE SERVICO</option>
+                                <option>TIPO DE SERVICO</option>
+                                <option>TIPO DE SERVICO</option>
+                                <option>TIPO DE SERVICO</option>
+                            </select>
+                        </div> -->
+                        <p class="produc money">{{! main_price }}</p>
+
+                        <div class="reserve space20">
+                            <button 
+                                product-id="{{! id }}" 
+                                product-name="{{! name }}" 
+                                product-price="{{! main_price }}" 
+                                product-upp="{{! upp }}"
+
+                                class="reservebtn whiteclr compra buy-product" >
+                                COMPRAR
+                                <i class="fa fa-arrow-circle-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        <!-- seccion bullet informacion -->
+        <div class="space50"></div>
+
+        <div class="detail-tab">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div role="tabpanel">
+                            <div class="tab-head"><!-- start tab head -->
+                                    <div class="container2">
+                                         <ul class="nav nav-tabs text-center space10" role="tablist">
+                                            <li role="presentation" class="{{! bullet_2|hide_if_empty }} active f600"><a href="#vanila" aria-controls="vanila" role="tab" data-toggle="tab">Qué incluye el cumpleaños</a></li>
+                                            <li role="presentation" class="{{! bullet_3|hide_if_empty }} f600"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Términos y políticas de cumpleaños </a></li>
+                                        </ul>
+                                    </div>  
+                            </div><!-- end tab head -->
+
+                            <div class="container2">
+                                          <!-- Tab panes -->
+                                <div class="tab-content">
+                                     <div role="tabpanel" class="tab-pane fade in active" id="vanila"> 
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <p class="space20">
+                                                    {{! bullet_2 }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div role="tabpanel" class="tab-pane fade" id="profile">
+                                        <div class="row">
+                                        
+                                            <div class="col-md-12">
+                                                <p class="space20">
+                                                        {{! bullet_3 }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section>
+
+
+    </div>
+{% end %}
+
+
+
+
+{% block body %}
+
+<div id="eventContent" title="Event Details" style="display:none;">
+    Start: <span id="startTime"></span><br>
+    End: <span id="endTime"></span><br><br>
+    <p id="eventInfo"></p>
+    <p><strong><a id="eventLink" href="" target="_blank">Read More</a></strong></p>
+</div>
+<div class="back-title-banner">
+    {% if is_admin %}
+        <div class="image-upload">
+            <!-- id input debe ir en for de label -->
+            <label for="{{ site.name }}_banner_detalle">
+            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle" name="image" id="{{ site.name }}_banner_detalle" >
+        </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="img-responsive b-detail" alt="item" style="height: 100%;">
+
+    
+    <div class="container2">
+        <div class="row">
+            <div class="space-menos"></div>
+            <!-- <h1 class="text-product">Área de juegos</h1> -->
+                {% if is_admin %}
+                    <h1 class="product_title"><span class="editabletext" text-id="{{ site.name + '_titulo_detalle' }}" >{{ read_text(site.name + '_titulo_detalle') }}</span></h1>
+                {% else %}
+                   <h1 class="product_title"> {{ read_text(site.name + '_titulo_detalle') }} </h1>
+                {% end %}
+            <!-- <p>
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
+            {% if is_admin %}
+                <p><span class="editabletext" text-id="{{ site.name + '_titulo_detalle_2' }}" >{{ read_text(site.name + '_titulo_detalle_2') }}</span></p>
+            {% else %}
+               <p> {{ read_text(site.name + '_titulo_detalle_2') }} </p>
+            {% end %}
+        </div>
+    </div>
+</div>
+<!-- se carga template de descripcion del producto -->
+<div class="container container-fluid-product product-detail-container especial" style="margin-left: 0px; margin-right: 0px; width: auto;" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+
+<!-- se carga template de todos los productos -->
+<div class="space80"></div>
+<div class="container2 con2">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-relac "><strong class="editabletext">Productos que te pueden interesar</strong></h1>
+        </div>
+    </div>
+    <div class="row products">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div>
+        </div>
+    </div>
+</div>
+        
+{% include '../home/footer.html' %}
+{% end %}

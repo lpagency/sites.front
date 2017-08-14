@@ -1,0 +1,315 @@
+
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>DEMO - {% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="StellaShop - Elegant E-Commerce Theme from angelostudio.net">
+        <meta name="author" content="ANGELOSTUDIO.NET">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/cssbt/style.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/cssbt/icomoon/style.css">
+        <!-- específico para magdalena leblanc -->
+        <link rel="stylesheet" href="{{ site_base }}/static/cssbt/magle.css">
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/me.css">
+        <!-- css para estilos de cajas de contenido -->
+        <link rel="stylesheet" href="{{ site_base }}/static/cssbt/cont-boxes-home.css">
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/font-awesome.min.css" />
+        <!-- favicon -->
+        <link rel="shortcut icon" href="{{ site_base }}/static/imgbt/ico/32.png" sizes="32x32" type="{{ site_base }}/static/imagebt/png" />
+        <link rel="apple-touch-icon-precomposed" href="imgbt/ico/60.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_base }}/static/imgbt/ico/72.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site_base }}/static/imgbt/ico/120.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site_base }}/static/imgbt/ico/152.png" type="image/png" />
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+        <!-- <link rel="stylesheet" href="{{ site_base }}/static/css/custom_bootstrap.css"> -->
+        <!-- menu editor css -->
+        <link rel="stylesheet" href="{{ site_base }}/static/menu/css/main.css" type="text/css">
+        <link rel="stylesheet" href="{{ site_base }}/static/menu/css/wallop-slider--slide.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/menu/css/wallop-slider.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/menu/css/colpick.css">
+        <!-- menu editor css -->
+        <link rel="stylesheet" href="{{ site_base }}/static/css/menu-material-2.css">
+        <!-- <link rel="stylesheet" href="{{ site_base }}/static/css/store.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/simplePagination.css"> -->
+        <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.css">
+        <!-- Link Swiper's CSS -->
+        <link rel="stylesheet" href="{{ site_base }}/static/css/swiper.min.css">
+
+        <!-- autocomplete -->
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-- autocomplete -->
+        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+        {% block css %}{% end %}
+
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style> 
+        [data-sr] { visibility: hidden; } 
+        </style>
+    </head>
+    <body id="home">
+        <!-- generar contenido y formularios -->
+        <div id="menu_movil" class="descripcion_wrapper descripcion_opacity b_wrapper" style="display:none;">
+            <div class="descripcion_cerrar">
+                <button id="tellmeboton2" style="font-size: 35px; color:gray !important"><i class="icon-remove"></i></button>
+            </div>
+            <div class="descripcion_contenido">
+                {% include 'content/add_form.html' %}
+            </div>
+        </div>
+        <!-- generar contenido y formularios -->
+        <div id="cuerpo" style="width: 100%">
+            <!-- editor menu -->
+            <!-- <button class="button-nav-toggle" style="width:40px;height:40px;"></button> -->
+            <div class="menu">
+                <nav class="nav-main">
+                    <div class="nav-container">
+                        <ul>
+                            <li class="menu-ti">EDITOR ESTILO</li>
+                            <li class="menu-st">Header</li>
+                            <li class="menu-te">
+                                <a href="#">menu</a>
+                                <ul>
+                                    <li class="menu-ti"><a href="#" class="back"><strong>Tipos de menu</strong></a></li>
+                                    <li class="menu-te"><a href="#">Menu 1</a></li>
+                                    <li class="menu-te"><a href="#">menu 2</a></li>
+                                </ul>
+                            </li>
+                            <li class="menu-te">
+                                <a href="#">Logo</a>
+                                <ul>
+                                    <li class="menu-ti"> <a href="#" class="back"><strong>Logo</strong></a></li>
+                                    <button class="btn-menu">Subir imagen</button>
+                                    <!-- <input class="" type="file" name="imagen" id="imagen" /> -->
+                                </ul>
+                            </li>
+                            <li class="menu-st">Contenedor</li>
+                            <li class="menu-te">
+                                <a href="#">color fondo</a>
+                                <ul>
+                                    <li class="menu-ti"> <a href="#" class="back"><strong>color fondo</strong></a></li>
+                                    <li>
+                                        <div id="picker"></div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="menu-te">
+                                <a href="#">productos</a>
+                                <ul>
+                                    <li class="menu-ti"> <a href="#" class="back"><strong>Productos</strong></a></li>
+                                    <li class="menu-te" style="float: left;width: 100%;height: 70px;">
+                                        <div class="" style="float:left;margin-top: 14px;width: 20px;height: auto;">X</div>
+                                        <div class="" style="float:left;float: left;width: 30px;height: auto;margin-top: 14px;">fila</div>
+                                        <!-- slider -->
+                                        <div class="photo-slider wallop-slider wallop-slider--slide" style="float: right;width: 120px;height: auto;margin-right: 18px;">
+                                            <div style="width:100%; height:auto; overflow:hidden; position:relative;">
+                                                <ul class="wallop-slider__list" style="right:0; position: inherit; padding: 0px;width: 100%;">
+                                                    <li class="wallop-slider__item wallop-slider__item--current"><img src="{{ site_base }}/static/menu/images/row1.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row2.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row3.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row4.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row5.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row6.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row7.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row8.png"></li>
+                                                    <li class="wallop-slider__item"><img src="{{ site_base }}/static/menu/images/row9.png"></li>
+                                                </ul>
+                                            </div>
+                                            <button class="wallop-slider__btn wallop-slider__btn--previous btn btn--previous wallop-btn-base" disabled style="top: 13px;left: -29px;">
+                                            </button>
+                                            <button class="wallop-slider__btn wallop-slider__btn--next btn btn--next wallop-btn-base" style="top: 13px;right: -29px;">></button>
+                                        </div>
+                                        <!-- slider -->
+                                    </li>
+                                    <button class="btn-menu btn-menu-top">+ agregar row</button>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul style="top:0px;">
+                            <li class="menu-st">Diseños anteriores</li>
+                            <li class="menu-te">
+                                <a href="#">todos los diseños</a>
+                                <ul>
+                                    <li class=""> <a href="#" class="back"><strong>DISEÑOS ANTERIORES</strong></a></li>
+                                    <li><a href="#">Diseño 1</a></li>
+                                    <li><a href="#">Diseño 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="campo_guardar" style="bottom: 0;position: absolute;display:none;">
+                        <input class="campo_guandar_input" type="text" placeholder="NOMBRE DISEÑO">
+                        <button class="btn-menu">Guardar</button>
+                    </div>
+                    <div class="campo_guardar" style="bottom: 0;position: absolute;">
+                        <button class="btn-menu">actualizar</button>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- editor menu -->
+        <!-- header -->
+        <!-- header fixed inicio-->
+        <div id="main-nav-fixed-navigation" class="fixed-menu-me">
+            <div class="container-fluid-magle" style="display: block;">
+                <a href="{{ site_base }}" class="nav-brand" style="border:0px;text-align: left; ">
+                 <img class="mlb-logo-header" src="{{ read_image(site.name + '_logo_header') }}" class="img-responsive" alt="item">
+                    <!-- <img class="mlb-logo-header" src="{{ site_base }}/static/img/mlb_logo.jpg"> -->
+                </a>
+                <!-- <div class="busqueda-movil-material hide-show">
+                    <i class="icon-search"></i>
+                </div> -->
+<!--                 <form action="{{ site_base }}/search" method="get">
+                    <input type="text" name="search_query" value="{% try %}{{ search_query }}{% except %}{% end %}" placeholder="BUSCAR" class="show-hide search-input" />
+                </form> -->
+
+                <i class="fa icon-shopping-cart " data-toggle="modal" data-target="#myModal" style="  color: black; float: right; font-size: 28px; padding: 4px; margin-left: 20px;"></i>
+
+                <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title ">Resumen de tu compra</h4>
+                        </div>
+                        <div class="modal-body mlb-btn">                                 
+                          {% include 'page/cart.html' %}
+                        </div>
+<!--                         <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div> -->
+                      </div>
+                      
+                    </div>
+                  </div>
+                    </div>
+                </div>
+        <!-- header fixed fin-->
+        {% block header %}{% end %}
+        <!-- header -->
+        {% block body %}
+        {% end %}
+
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <!-- <script src="{{ site_base }}/static/js/rimages.js"></script> -->
+        <!--<script src="{{ site_base }}/static/js/fix_ie9.js"></script>-->
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/jquery-min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+        <!--<script src="{{ site_base }}/static/js/giani_functions.js"></script>-->
+        <!--<script src="{{ site_base }}/static/js/giani.js"></script>-->
+        <!-- bt inicio -->
+        <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/jsbt/placeholders.min.js"></script>
+        <!--<script type="text/javascript" src="{{ site_base }}/static/jsbt/custom.js"></script>-->
+        <script type="text/javascript" src="{{ site_base }}/static/jsbt/ga.js"></script>
+        <!-- bt fin -->
+        <!-- menu editor js -->
+        <!--<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>-->
+        <script src="{{ site_base }}/static/menu/js/modernizr.js"></script>
+        <script src="{{ site_base }}/static/menu/js/main.js"></script>
+        <script src="{{ site_base }}/static/menu/js/WallopSlider.js"></script>
+        <script src="{{ site_base }}/static/menu/js/script.js"></script>
+        <script src="{{ site_base }}/static/menu/js/colpick.js"></script>
+        <!-- swipper -->
+        <!-- Swiper JS -->
+        <script src="{{ site_base }}/static/js/swiper.min.js"></script>
+        <!-- menu editor js -->
+        <!--<script src="{{ site_base }}/static/js/menu-material-2.js"></script>-->
+        <!--<script type="text/javascript" src="{{ site_base }}/static/js/ligthbox-d.js"></script>-->
+        <!-- js mlb -->
+        <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+        <!-- js mlb -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+        <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/plugins/selectize/selectize.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/plugins/loadingplay/imageupload.preview.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.maskedinput.min.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script>
+
+        <!-- {%! if is_admin %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery.cookie/jquery.cookie.js"></script>
+
+        {% block javascript %}{% end %}
+
+        <!--<script type="text/javascript" src="{{ site_base }}/static/js/content/set_fixed.js"></script>-->
+        <!--<script type="text/javascript" src="{{ site_base }}/static/js/tags.js" ></script>-->
+        <script type="text/javascript">
+        $('#picker').colpick({
+            flat: true,
+            layout: 'hex',
+            submit: 0
+        });
+        </script>
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '348231912006000',
+                xfbml: true,
+                version: 'v2.1'
+            });
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/header.js" ></script>
+        <script src="{{ site_base }}/static/js/scrollReveal.min.js?ver=2.1.0"></script>
+        <script type="text/javascript">
+        window.sr= new scrollReveal({ 
+            reset: true,
+            move:"20px" 
+        });
+    </script>
+    <!-- Initialize Swiper -->
+    <script>
+    setTimeout(function() {
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            slidesPerView: 1,
+            paginationClickable: true,
+            spaceBetween: 0,
+            loop: true,
+        });
+    }, 3000);
+    </script>
+    </body>
+</html>

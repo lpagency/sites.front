@@ -1,0 +1,267 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block scripts %}
+{% if is_admin %}
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<section style="height: 139px;">
+         <img class="img_galeria"src="{{ gallery.getImageList()[0]["thumb_"] }}" class="img-responsive" data-original="{{ gallery.getImageList()[0]["thumb_"] }}" alt="item">
+
+                    <h1 class="h1-art_a til-ga text-center">
+                        {{ gallery.title }}
+                    </h1>
+</section>
+
+<section style="height: 322px;">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_galer1 text-center {{editabletext}}" text-id="{{ site.name + '_text_galeria' }}"> {{ read_text(site.name +  '_text_galeria') }}
+        </h1>
+    </div>
+</section>
+
+<section class="hlg">
+    <div class="container-fluid clearfix mb">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria" name="image" id="img_galeria" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria" src="{{ read_image(site.name + '_img_galeria', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria2" name="image" id="img_galeria2" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group pd img-responsive" id="{{ site.name }}_img_galeria2" src="{{ read_image(site.name + '_img_galeria2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria2',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria3" name="image" id="img_galeria3" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria3" src="{{ read_image(site.name + '_img_galeria3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria3',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- SEGUNDA TIRA DE IMAGENES -->
+
+    <div class="container-fluid clearfix mb">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria4" name="image" id="img_galeria4" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria4" src="{{ read_image(site.name + '_img_galeria4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria4',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria5">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria5" name="image" id="img_galeria5" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group pd img-responsive" id="{{ site.name }}_img_galeria5" src="{{ read_image(site.name + '_img_galeria5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria5',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria6">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria6" name="image" id="img_galeria6" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria6" src="{{ read_image(site.name + '_img_galeria6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria6',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TERCERA TIRA DE IMAGENES -->
+
+    <div class="container-fluid clearfix mb">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria7">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria7" name="image" id="img_galeria7" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria7" src="{{ read_image(site.name + '_img_galeria7', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria7',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria8">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria8" name="image" id="img_galeria8" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group pd img-responsive" id="{{ site.name }}_img_galeria8" src="{{ read_image(site.name + '_img_galeria8', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria8',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria9">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria9" name="image" id="img_galeria9" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria9" src="{{ read_image(site.name + '_img_galeria9', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria9',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+    </div>
+
+    <!-- CUARTA TIRA DE IMAGENES -->
+
+    <div class="container-fluid clearfix mb">
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria10">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria10" name="image" id="img_galeria10" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria10" src="{{ read_image(site.name + '_img_galeria10', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria10',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria11">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria11" name="image" id="img_galeria11" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group pd img-responsive" id="{{ site.name }}_img_galeria11" src="{{ read_image(site.name + '_img_galeria11', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria11',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_galeria12">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria12" name="image" id="img_galeria12" >
+            </div>
+            {% end %}
+            <div class="container_galeria">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_galeria12" src="{{ read_image(site.name + '_img_galeria12', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria12',500) }}'" alt="item" style=" ">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section style="height:165px;">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_galer2 text-center {{editabletext}}" text-id="{{ site.name + '_text_galeria2' }}"> {{ read_text(site.name +  '_text_galeria2') }}
+        </h1>
+    </div>
+</section>
+
+<section style="display: block;height: 739px;">
+    <div class="" style="position: relative;">
+        {% if is_admin %}
+        <div class="image-upload visible-movil">
+            <label for="img_galeria13">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_img_galeria13" name="image" id="img_galeria13" >
+        </div>
+        {% end %}
+        <div style="width: 100%">
+            <img class="img_banner2 img-responsive" id="{{ site.name }}_img_galeria13" src="{{ read_image(site.name + '_img_galeria13', 1) }}" onload="this.src='{{ read_image(site.name + '_img_galeria13',500) }}'" alt="item" style=" ">
+
+            <div class="parent4">    
+                <h1 class="col-lg-12 col-md-12 col-xs-12 text-center text_second text-sb1 {{editabletext}}" text-id="{{ site.name + '_list_art3' }}"> {{ read_text(site.name +  '_list_art3') }}
+                </h1>
+                <h3 class="col-lg-12 col-md-12 col-xs-12 text-center text_second2 text-sb2 {{editabletext}}" text-id="{{ site.name + '_list_art4' }}"> {{ read_text(site.name +  '_list_art4') }}
+                </h3>
+            </div>
+        </div>
+</section>
+
+<section class="hg3">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class=" text_galer3 text-center {{editabletext}}" text-id="{{ site.name + '_text_galeria3' }}"> {{ read_text(site.name +  '_text_galeria3') }}
+        </h1>
+    </div>
+</section>
+{% include '../home/footer.html' %}
+{% end %}

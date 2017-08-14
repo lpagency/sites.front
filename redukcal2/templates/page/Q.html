@@ -1,0 +1,295 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.planes').addClass("active");
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="fondo-pro">
+     <div class="container">
+        <div class="col-md-12">
+            <div align="center">
+              <div class="box-orange-q">
+                 <span class="text-for-1-q {{editabletext}}" text-id="{{ site.name + '_q_' }}"> {{ read_text(site.name +  '_q_') }}</span>
+                 <span id="kilo" class="text-for-1-q"></span>
+                 <span class="text-for-1-q {{editabletext}}" text-id="{{ site.name + '_q_2' }}"> {{ read_text(site.name +  '_q_2') }}</span>
+                     <hr class="for-1-q">
+                         <div class="text-for-2-q {{editabletext}}" text-id="{{ site.name + '_q_q' }}"> {{ read_text(site.name +  '_q_q') }} </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+      <div class="col-md-12">
+            <div align="center">
+              <div class="box-white-l-2">
+                <div class="reco-l-2 {{editabletext}}" text-id="{{ site.name + '_q_e' }}"> {{ read_text(site.name +  '_q_e') }}</div>
+                 <div class="til-l-2 {{editabletext}}" text-id="{{ site.name + '_q_w' }}"> {{ read_text(site.name +  '_q_w') }} </div>
+                 <hr class="li-l-2">
+                 <div class="refer-l-2 {{editabletext}}" text-id="{{ site.name + '_q_g' }}"> {{ read_text(site.name +  '_q_g') }} </div>
+                 <div class="tor-2"> | </div>
+                 <div class="precio-l-2 {{editabletext}}" text-id="{{ site.name + '_q_pre' }}"> {{ read_text(site.name +  '_q_pre') }}</div>
+                 <div class="col-md-12 col-sm-12 col-xs-12">
+                 <div class="sub-l-2 {{editabletext}}" text-id="{{ site.name + '_q_23' }}"> {{ read_text(site.name +  '_q_23') }}</div>
+
+               <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="det-l-2 {{editabletext}}" text-id="{{ site.name + '_20' }}"> {{ read_text(site.name +  '_20') }}</div>
+                    <div class="det-l-l-2 {{editabletext}}" text-id="{{ site.name + '_d_1' }}"> {{ read_text(site.name +  '_d_1') }} </div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                   {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q" name="image" id="img_q" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q" src="{{ read_image(site.name + '_q', 1) }}" onload="this.src='{{ read_image(site.name + '_q',500) }}'" class="ico-l-2" alt="item" />
+                 <!--  <img class="ico-for-q" src="https://84static.loadingplay.com/static/images/71d90d764ebafb792c4a3e7b6577f1c9_9EvTLiphlmoMXnTR3lan5vlSewBASSKVUzC9z7iunld5ADc4mqqmm_1xp5uVPoJUJnDA=w300.png"> -->
+                  <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_fa_s' }}"> {{ read_text(site.name +  '_fa_s') }} </div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_fe_s' }}"> {{ read_text(site.name +  '_fe_s') }}</div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_2">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_2" name="image" id="img_q_2" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_2" src="{{ read_image(site.name + '_q_2', 1) }}" onload="this.src='{{ read_image(site.name + '_q_2',500) }}'" class="ico-l-2" alt="item" />
+                  <!-- <img class="ico-for-q" src="https://84static.loadingplay.com/static/images/71d90d764ebafb792c4a3e7b6577f1c9_9EvTLiphlmoMXnTR3lan5vlSewBASSKVUzC9z7iunld5ADc4mqqmm_1xp5uVPoJUJnDA=w300.png"> -->
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_q_25' }}"> {{ read_text(site.name +  '_q_25') }}</div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_q_13' }}"> {{ read_text(site.name +  '_q_13') }} </div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                     {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_3">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_3" name="image" id="img_q_3" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_3" src="{{ read_image(site.name + '_q_3', 1) }}" onload="this.src='{{ read_image(site.name + '_q_3',500) }}'" class="ico-l-2" alt="item" />
+                 <!--  <img class="ico-for-q" src="https://84static.loadingplay.com/static/images/71d90d764ebafb792c4a3e7b6577f1c9_9EvTLiphlmoMXnTR3lan5vlSewBASSKVUzC9z7iunld5ADc4mqqmm_1xp5uVPoJUJnDA=w300.png"> -->
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_l_a' }}"> {{ read_text(site.name +  '_l_a') }} </div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_q_45' }}"> {{ read_text(site.name +  '_q_45') }}</div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                     {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_4">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_4" name="image" id="img_q_4" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_4" src="{{ read_image(site.name + '_q_4', 1) }}" onload="this.src='{{ read_image(site.name + '_q_4',500) }}'" class="ico-l-2" alt="item" />
+                 <!--  <img class="ico-for-q" src="https://84static.loadingplay.com/static/images/71d90d764ebafb792c4a3e7b6577f1c9_9EvTLiphlmoMXnTR3lan5vlSewBASSKVUzC9z7iunld5ADc4mqqmm_1xp5uVPoJUJnDA=w300.png"> -->
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_w_1' }}"> {{ read_text(site.name +  '_w_1') }} </div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_w_2' }}"> {{ read_text(site.name +  '_w_2') }} </div>
+               </div>
+              
+
+               <div class="col-md-12 col-sm-12 col-xs-12">
+                 <hr class="lu-p">
+                 <div class="total-l-2 {{editabletext}}" text-id="{{ site.name + '_tol' }}"> {{ read_text(site.name +  '_tol') }}</div>
+               </div>
+
+
+               <div class="col-md-12">
+                    <div class="det-nu-l-2 {{editabletext}}" text-id="{{ site.name + '_num' }}"> {{ read_text(site.name +  '_num') }}</div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+                     {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_5">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_5" name="image" id="img_q_5" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_5" src="{{ read_image(site.name + '_q_5', 1) }}" onload="this.src='{{ read_image(site.name + '_q_5',500) }}'" class="ico-fu-l-2" alt="item" />
+                 <!--  <img class="ico-for-2-q" src="https://84static.loadingplay.com/static/images/93af428fade277c22d77b0100992d6e7_descarga.png"> -->
+                  <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_tet' }}"> {{ read_text(site.name +  '_tet') }} </div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_te_2' }}"> {{ read_text(site.name +  '_te_2') }}</div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+               {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_6">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_6" name="image" id="img_q_6" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_6" src="{{ read_image(site.name + '_q_6', 1) }}" onload="this.src='{{ read_image(site.name + '_q_6',500) }}'" class="ico-fu-l-2" alt="item" />
+                 <!--  <img class="ico-for-2-q" src="https://84static.loadingplay.com/static/images/93af428fade277c22d77b0100992d6e7_descarga.png"> -->
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_te_4' }}"> {{ read_text(site.name +  '_te_4') }}</div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_201' }}"> {{ read_text(site.name +  '_201') }} </div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+               {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_7">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_7" name="image" id="img_q_7" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_7" src="{{ read_image(site.name + '_q_7', 1) }}" onload="this.src='{{ read_image(site.name + '_q_7',500) }}'" class="ico-fu-l-2" alt="item" />
+                  <!-- <img class="ico-for-2-q" src="https://84static.loadingplay.com/static/images/93af428fade277c22d77b0100992d6e7_descarga.png"> -->  
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_213' }}"> {{ read_text(site.name +  '_213') }}</div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_q_235' }}"> {{ read_text(site.name +  '_q_235') }} </div>
+               </div>
+               <div class="col-md-3 col-sm-3 col-xs-6">
+               {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_8">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_8" name="image" id="img_q_8" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_8" src="{{ read_image(site.name + '_q_8', 1) }}" onload="this.src='{{ read_image(site.name + '_q_8',500) }}'" class="ico-fu-l-2" alt="item" />
+                 <!--  <img class="ico-for-2-q" src="https://84static.loadingplay.com/static/images/93af428fade277c22d77b0100992d6e7_descarga.png"> -->  
+                   <div class="fa-l-2 {{editabletext}}" text-id="{{ site.name + '_def3' }}"> {{ read_text(site.name +  '_def3') }}</div>
+                  <div class="da-l-2 {{editabletext}}" text-id="{{ site.name + '_s_1' }}"> {{ read_text(site.name +  '_s_1') }}</div>
+               </div>
+               
+
+               <div class="col-md-12 col-sm-12 col-xs-12">
+                <hr class="lu-p">
+                   <div class="total-l-2 {{editabletext}}" text-id="{{ site.name + '_tol_2' }}"> {{ read_text(site.name +  '_tol_2') }}</div>
+               </div>
+
+
+               <div class="col-md-6 col-sm-6 col-xs-12">
+               {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_q_9">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_q_9" name="image" id="img_q_9" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_q_9" src="{{ read_image(site.name + '_q_9', 1) }}" onload="this.src='{{ read_image(site.name + '_q_9',500) }}'" class="ico-rep-l-2" alt="item" />
+                  <!--  <img class="ico-rep-q" src="https://84static.loadingplay.com/static/images/93af428fade277c22d77b0100992d6e7_descarga.png">  -->
+               </div>
+                
+                <div class="col-md-6 col-sm-6">
+                    <div class="text-rep-l-2 {{editabletext}}" text-id="{{ site.name + '_56' }}"> {{ read_text(site.name +  '_56') }} </div>
+               </div>
+
+               <div class="col-md-12 col-sm-12">
+
+                    <!-- <button type="button" class="btn btn-warning l-2 comprar-btn pack-listo" quantity="50" plan="light">PACK LISTO</button> -->
+                
+                <div align="center">
+                  <a href="{{ site_base }}/producto_planes">
+                    <button type="button" class="btn btn-warning l-l-2 comprar-btn" quantity="100" plan="quick">Compra tu plan</button>
+                  </a>
+                </div>
+
+                    <!-- <div class="acept">Acepto cumplir con las condiciones para realizar el METÓDO RKD </div> -->
+
+                    <input class="w3-check-for-l-2 term_cond" name="terminos" type="checkbox">
+                    <label class="w3-validate-for-l-2"> Acepto cumplir con las condiciones para realizar el Método RDK ®.</label> <button class="ver-l dos lett"> Ver </button><p></p>
+
+                 <!--  <div align="center">
+                    <a href="{{ site_base }}/planes">
+                    <button type="button" class="btn btn-info btn-q fo-l-2 mad">¿Prefieres comenzar con otro plan?</button>
+                    </a>
+                  </div> -->
+               </div>
+
+
+            </div>
+        </div>
+
+     </div>
+    
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

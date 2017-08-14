@@ -1,0 +1,115 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+
+
+{% end %}
+
+{% block body %}
+<section id="inner-banner-1"><!-- start banner -->
+<div class="banner-caption "><!-- start banner caption -->
+<h1 class=" whiteclr text-left">Where to buy</h1>
+
+
+</div><!-- end banner caption -->
+</section><!-- end banner -->
+
+<section class="buy-bg">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-1">
+        <img src="images/tika.png" class="img-responsive">
+      </div>
+      <div class="col-md-4">
+        <h2>Papas Tika</h2>
+          <p>Contrary to popular belief, Lorem Ipsum is not 
+            simply random text. It has roots in a piece 
+            of classical.....</p>
+      </div>
+      <div class="col-md-3">
+      </div>
+      <div class="col-md-3 space30 text-center">
+        <button class="btn line-button">Shop online</button> 
+        <p class="small"> Seleccionar otro producto</p> 
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid">
+    <div class="row-1">
+      <div class="col-md-12 space30">
+          <form class="form-inline" role="form">
+             <label for="email"><strong>Enter Address or Zip code:</strong></label>
+            <div class="form-group">
+             
+              <input type="email" class="form-control" id="email" placeholder="415 grand st, 10002" >
+            </div>
+           
+            <button type="submit" class="btn border-radius10 red-button">Submit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section>
+  <div class="container-fluid space40"> 
+      <div class="box-1">
+        <div class="col-md-4">  
+            <div class="add space10">
+            <div class="cap"><span >A</span></div>  <p class="right"><span class="redclr">Chipote st.paul</span><br>29 5th St West St,Paul,MN 55102<br>
+              651-291-5411<br><a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+              <a href="#" class="orgclr">Directions</a></p>
+
+              </span></p>
+            </div>
+            <div class="bg-gray space20">
+            <div class="add  ">
+            <div class="cap"><span >B</span></div>  <p class="right"><span class="redclr">Chipote st.paul</span><br>29 5th St West St,Paul,MN 55102<br>
+              651-291-5411<br><a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+              <a href="#" class="orgclr">Directions</a></p>
+
+              </span></p>
+            </div>
+            </div>
+            <div class="add space20">
+            <div class="cap"><span >C</span></div>  <p class="right"><span class="redclr">Chipote st.paul</span><br>29 5th St West St,Paul,MN 55102<br>
+              651-291-5411<br><a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+              <a href="#" class="orgclr">Directions</a></p>
+
+              </span></p>
+            </div>
+             <div class="bg-gray space20">
+             <div class="add space20">
+            <div class="cap"><span >D</span></div>  <p class="right"><span class="redclr">Chipote st.paul</span><br>29 5th St West St,Paul,MN 55102<br>
+              651-291-5411<br><a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+              <a href="#" class="orgclr">Directions</a></p>
+
+              </span></p>
+            </div>
+            </div>
+
+        </div>
+        <div class="col-md-8 space20">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.122173940378!2d-73.97618224892769!3d40.781328141206636!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258f4b00f7a09%3A0xa27d8172624c5db1!2sAmerican+Museum+of+Natural+History!5e0!3m2!1sen!2sin!4v1445421576913" width="100%" height="700" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+  </div>
+
+</section>
+<div class="clearfix"></div>
+
+{% include '../home/footer.html' %}
+{% end %}

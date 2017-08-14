@@ -1,0 +1,258 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<script type='text/javascript'>
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(28,27,28);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *** [contenido] *** -->
+
+<!-- *** [BANNER PRINCIPAL] *** -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {% if is_admin %}
+                   <div class="image-upload lapiz bi visible-movil">
+                       <label for="img_banner_1">
+                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                       </label>
+                       <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
+                   </div>
+                {% end %}
+                    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1',500) }}'"  class="banner-home-1 " alt="item">
+            </div>
+        </div>
+    </div>
+</section>
+<!-- *** [/BANNER PRINCIPAL] *** -->
+
+<!-- *** [TEXTO EDITABLE 1] *** -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="texto-one text-center {{editabletext}}" text-id="{{ site.name + '_one' }}"> {{ read_text(site.name +  '_one') }} </div>
+            </div>
+       </div>
+    </div>
+</section>
+<!-- *** [/TEXTO EDITABLE 1] *** -->
+
+
+<!-- *** [BANNER 2 "SERVICIO"] *** -->
+<section class=" img-service-home">
+    <div class="container">
+        <div class="row">
+            <!-- *** [IMAGEN DE FONDO "SERVICIO"] *** -->
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                {% if is_admin %}
+                   <div class="image-upload lapiz bi visible-movil">
+                       <label for="img_banner_2">
+                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
+                    </div>
+                {% end %}
+                <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2',500) }}'"  class="banner-home-1 fondo-only" alt="item">
+                <!-- *** [TITULO "SERVICIO"] *** -->
+            <div class="service-banner-home">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div align="center">
+                      <div class="tittle-service-home text-center {{editabletext}}" text-id="{{ site.name + 'tittle-service-one' }}"> {{ read_text(site.name +  'tittle-service-one') }} </div>
+                    </div>
+                </div>
+            </div>
+            <!-- *** [LISTA DE SERVICIOS] *** -->
+            <div class="service-banner-home">
+                <div class="col-md-4 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service">
+                    <ul class="list-service-ul">
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_0' }}"> {{ read_text(site.name +  '_home_0') }}
+                        </div>
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_1' }}"> {{ read_text(site.name +  '_home_1') }}
+                        </div>
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_2' }}"> {{ read_text(site.name +  '_home_2') }}
+                        </div>
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_3' }}"> {{ read_text(site.name +  '_home_3') }}
+                        </div>             
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 text-left list-service">
+                    <ul class="list-service-ul">
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_4' }}"> {{ read_text(site.name +  '_home_4') }}
+                        </div>
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_5' }}"> {{ read_text(site.name +  '_home_5') }}
+                        </div>
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_6' }}"> {{ read_text(site.name +  '_home_6') }}
+                        </div> 
+                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_6' }}"> {{ read_text(site.name +  '_home_7') }}
+                        </div>                     
+                    </ul>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- *** [/BANNER 2 "SERVICIO"] *** -->
+
+<!-- *** [LISTADO DE ARTICULOS] *** -->
+<section class="list-art-home">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box-text-gal mg-5">
+                    <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_li' }}"> {{ read_text(site.name +  '_til_li') }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div align="center">
+                    <div class="bajada text-center {{editabletext}}" text-id="{{ site.name + '_baj_li' }}"> {{ read_text(site.name +  '_baj_li') }} </div>
+                </div>
+            </div>
+        </div>
+</section>
+    <!-- *articulos* -->
+<section>
+     <div class="container">
+      <!--   <div class="row"> -->
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
+        <!-- </div> -->
+    </div>
+  
+</section>
+<section id="contenedor">
+    <div class="container">
+        <div class="row spa article_list">
+           {{ getArticleList(tag='blive,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }}
+        </div>
+    </div>
+
+</section>
+
+<!--
+<section>
+    <div class="row">
+       <div align="center">
+            <div class="col-md-12 col-xs-12">
+                <a href="#">
+                <button type="button" class="btn btn-cargar">Cargar más contenido </button>
+                </a>
+            </div>
+       </div>
+</section>
+
+</section>-->
+<!-- *** [/LISTADO DE ARTICULOS] *** -->
+
+<!-- *** [BANNER 3 "NUESTRO EQUIPO"] *** -->
+<section class="img-service-home">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+              <div style="position: relative;">
+                
+              {% if is_admin %}
+                 <div class="image-upload lapiz bi visible-movil">
+                     <label for="img_banner-3-home">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                      </label>
+                      <input type="file" class="editableimage" image-id="{{ site.name }}_banner-3-home" name="image" id="img_banner-3-home" >
+                  </div>
+              {% end %}
+                <img id="{{ site.name }}_banner-3-home" src="{{ read_image(site.name + '_banner-3-home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner-3-home',500) }}'"  class="banner-home-3 fondo-only" alt="item">
+                <div class="col-md-12 col-sm-12 col-xs-12 texto-team text-center {{editabletext}}" text-id="{{ site.name + '_three' }}"> {{ read_text(site.name +  '_three') }} </div>
+                <div class="texto-team2 text-center {{editabletext}}" text-id="{{ site.name + '_four' }}"> {{ read_text(site.name +  '_four') }} </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- *** [/BANNER 3 "NUESTRO EQUIPO"] *** -->
+
+<!-- *** [TEXTO EDITABLE 2] *** -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="texto-one text-center {{editabletext}}" text-id="{{ site.name + '_two' }}"> {{ read_text(site.name +  '_two') }} </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- *** [/TEXTO EDITABLE 2] *** -->
+
+<!-- *** [/contenido] *** -->
+
+        
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

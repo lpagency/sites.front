@@ -1,0 +1,317 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+  <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+  <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+  <script src="https://maps.googleapis.com/maps/api/js"></script>
+  <script type="text/javascript">
+
+  
+  var base_url = 'https://apibodegas.loadingplay.com/',
+ checkout_url = 'https://checkout.loadingplay.com/';
+  var app_public = 7;
+
+    function isLocalHost() {
+      return document.location.href.indexOf('localhost') != -1;
+    }
+
+    function isDevelopment() {
+      return document.location.href.indexOf('ondev.today') != -1;
+    }
+
+    // configure for each enviroment
+    if ( isLocalHost() ) 
+    {
+      base_url = 'http://localhost:8520/';
+      checkout_url = 'http://localhost:8522/';
+      app_public= 5;
+    } 
+    else if ( isDevelopment() ) 
+    {
+      base_url = 'http://apibodegas.ondev.today/';
+      checkout_url = 'http://lpcheckout.ondev.today/';
+      app_public = 5;
+    }
+  $(document).ready(function()
+  {
+
+    var facade = $(document).ecommerce('product_detail', {
+      'app_public' : app_public,
+      'animation' : 'basic',
+      'base_url' : base_url,
+      'checkout_url': checkout_url,
+      'product_id' : {{ product_id }}
+    });
+
+      $.ajax({
+        url:base_url+"store/list/"+app_public+"/{{ product_id }}",
+        success: function(data){
+
+          console.log(data);
+        },
+        complete: function(xhr,status) {
+          var stores=$.parseJSON(xhr.responseText);
+          console.log(stores)
+          if (stores.stores.length>0){
+            pointMap(stores);
+          }else{
+            $("#stores-product").addClass("hidden");
+          }
+        }
+      });
+  });
+
+    var pointMap= function(point_map){
+      var stores=point_map;
+      var place = new Array();
+      for(var x=0;x<stores.stores.length;x++){
+        place[stores.stores[x].name]=new google.maps.LatLng(stores.stores[x].latitude, stores.stores[x].longitude);
+
+        var zip_code="";
+        if(stores.stores[x].zip_code!=null){
+          zip_code=" CP "+stores.stores[x].zip_code;
+        }
+        var html="";
+        html+='<div class="add space10">';
+        html+='<div class="cap">';
+        html+='<span >'+(x+1)+'</span>';
+        html+='</div>  ';
+        html+='<p class="right">';
+        html+='<span class="redclr">'+stores.stores[x].name+'</span>';
+        html+='<br>'+stores.stores[x].number+' '+stores.stores[x].street+' ,'+stores.stores[x].city+' '+zip_code;
+        if (stores.stores[x].web_page != null)
+          html+='<br>'+stores.stores[x].phone+'<br>';
+
+        if (stores.stores[x].web_page != null){
+             html+='<a href="http://'+stores.stores[x].web_page+'" class="orgclr">'+stores.stores[x].web_page+'</a>';
+             //  html+='<br>1007.96 miles<br>';
+             // html+=' <a href="#" class="orgclr">Directions</a>';
+             html+='</p>';
+             html+='</div>';
+          }
+
+           $(".stores").append(html);
+
+         }
+
+         var popup;
+         var n=1;
+         var options = {
+          scrollwheel: false,
+          zoom: 12,
+          center: new google.maps.LatLng(40.72658391443684, -73.98215355000002),
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        };
+
+        var map = new google.maps.Map(document.getElementById('map'), options);
+
+    // var place = new Array();
+    // place['San Juan'] = new google.maps.LatLng(18.465, -66.105);
+    // place['Fajardo'] = new google.maps.LatLng(18.336, -65.65);
+
+    for(var i in place){
+      var marker = new google.maps.Marker({
+        position: place[i]
+        , map: map
+        , title: i
+        , icon: 'https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png'
+      });
+
+      google.maps.event.addListener(marker, 'click', function(){
+        if(!popup){
+          popup = new google.maps.InfoWindow();
+        }
+        var note = this.title;
+        popup.setContent(note);
+        popup.open(map, this);
+        google.maps.event.addListener(marker, 'mouseover', function(){
+          this.setIcon('https://maps.gstatic.com/mapfiles/ms2/micons/green-dot.png');
+        });
+
+        google.maps.event.addListener(marker, 'mouseout', function(){
+          this.setIcon('https://maps.gstatic.com/mapfiles/ms2/micons/red-dot.png');
+        });
+
+        // limits.extend(place[i]);
+      });
+    }
+    };
+
+    // window.onload = function(){
+    //   $.ajax({
+    //     url:base_url+"store/list/"+app_public+"/{{ product_id }}",
+    //     success: function(data){
+    //       stores=data;
+    //       // console.log(stores);
+    //     },
+    //     complete: function(xhr,status) {
+    //       stores=$.parseJSON(xhr.responseText);
+
+    //       if (stores.stores.length>0){
+    //         pointMap(stores);
+    //       }else{
+    //         $("#stores-product").addClass("hidden");
+    //       }
+    //     }
+    //   });
+    // };
+        </script>
+
+        <div type="template" id="product_detail" class="hidden">
+            <section class="buy-bg">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="https://static.loadingplay.com/static/images/1_eb1852c1e13bb1087f187b579784f778_maxresdefault.png" class="product-image image img-responsive" alt="item">
+                        </div>
+                        <div class="col-md-5">
+                            <h2>{{! name }}</h2>
+                            <p>{{! description }}</p>
+                        </div>
+<!--                         <div class="col-md-3">
+                        </div> -->
+                        <div class="col-md-3 space30 text-center">
+                            <a href="{{! bullet_1}}">
+                            <button class="btn line-button">Shop online</button> 
+                            </a>
+                            <!-- <p class="small"> Seleccionar otro producto</p>  -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+{% end %}
+
+{% block body %}
+<section id="inner-banner-1"><!-- start banner -->
+  {% if is_admin %}
+  <div class="image-upload">
+    <label for="img_banner_where_to_buy">
+      <img class="change-image" src="{{ site_base }}/{{ nocache_static }}/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/{{ nocache_static }}/img/btn-edit.png';">
+    </label>
+    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_where_to_buy" name="image" id="img_banner_where_to_buy">
+  </div>
+  {% end %}
+  <img id="{{ site.name }}_banner_where_to_buy" src="{{ read_image(site.name + '_banner_where_to_buy', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_where_to_buy') }}'" class="img-edit" alt="item" style="height: 100%;">
+
+  <div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
+
+    {% if is_admin %}
+    <h1 class="whiteclr fsize50"><span class="editabletext" text-id="{{ site.name + '_banner_where_to_buy' }}">{{ read_text(site.name + '_banner_where_to_buy') }} </span>
+      <span class="small-1 editabletext" text-id="{{ site.name + '_banner_where_to_buy2' }}">{{ read_text(site.name + '_banner_where_to_buy2') }}
+      </h1>
+
+      {% else %}
+      <h1 class="whiteclr fsize50"> <span>{{ read_text(site.name + '_banner_where_to_buy') }} </span><span class="small-1">{{ read_text(site.name + '_banner_where_to_buy2') }}</span></h1>
+      {% end %}
+    </div>
+  </section><!-- end banner -->
+
+<div class="container space50" >
+    <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+    </div>
+</div>
+<!-- <section>
+  <div class="container-fluid">
+    <div class="row-1">
+     <div class="col-md-12 space30">
+      <form class="form-inlixne" role="form">
+       <label for="email"><strong>Enter Address or Zip code:</strong></label>
+       <div class="form-group">
+
+        <input type="email" class="form-control" id="email" placeholder="415 grand st, 10002" >
+      </div>
+
+      <button type="submit" class="btn border-radius10 red-button">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
+</section> -->
+<section id="stores-product">
+  <div class="container-fluid space40"> 
+    <div class="box-1">
+    <h2 style="margin-left: 14px;">Where to buy this product</h2>
+      <div class="col-md-4 space20 stores" style="height:480px;overflow-y: auto;">  
+
+        <!-- <div class="add space10">
+          <div class="cap">
+            <span >A</span>
+          </div>  
+          <p class="right">
+            <span class="redclr">Chipote st.paul</span>
+            <br>29 5th St West St,Paul,MN 55102
+            <br>651-291-5411<br>
+            <a href="#" class="orgclr">www.chipotle.com</a>
+            <br>1007.96 miles<br>
+            <a href="#" class="orgclr">Directions</a>
+          </p>
+        </div> -->
+<!--       <div class="bg-gray space20">
+        <div class="add  ">
+          <div class="cap"><span >B</span></div>  <p class="right"><span class="redclr">Chipote st.paul</span><br>29 5th St West St,Paul,MN 55102<br>
+          651-291-5411<br><a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+          <a href="#" class="orgclr">Directions</a></p>
+      </div>
+    </div>
+    <div class="add space20">
+      <div class="cap">
+        <span >C</span>
+      </div>  
+      <p class="right"><span class="redclr">Chipote st.paul</span>
+        <br>29 5th St West St,Paul,MN 55102
+        <br>651-291-5411
+        <br><a href="#" class="orgclr">www.chipotle.com</a>
+        <br>1007.96 miles<br>
+        <a href="#" class="orgclr">Directions</a></p>
+    </div>
+    <div class="bg-gray space20">
+     <div class="add space20">
+      <div class="cap">
+        <span >D</span></div>  
+        <p class="right">
+          <span class="redclr">Chipote st.paul</span>
+          <br>29 5th St West St,Paul,MN 55102
+          <br>
+          651-291-5411<br>
+          <a href="#" class="orgclr">www.chipotle.com</a><br>1007.96 miles<br>
+          <a href="#" class="orgclr">Directions</a></p>
+      </div>
+    </div> -->
+
+  </div>
+<div class="col-md-8 space20">
+<div id="map" style="height:480px;"></div>
+  <!-- <div class="overlay" onClick="style.pointerEvents='none'"></div>
+  <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="600" height="443" src="https://maps.google.com/maps?hl=en&q={{! bullet_2 }}&ie=UTF8&t=m&z=17&iwloc=B&output=embed"><div><small><a href="http://embedgooglemaps.com">embedgooglemaps.com</a></small></div><div><small><a href="http://bmwcritics.org/">bmw critics</a></small></div>
+  </iframe> -->
+</div>
+</div>
+</div>
+
+</section>
+
+<div class="clearfix"></div>
+
+{% include '../home/footer.html' %}
+{% end %}

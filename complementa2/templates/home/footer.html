@@ -1,0 +1,49 @@
+<div class="clearfix"></div>
+<section id="footer" class="fond-footer">
+        <ul class="col-md-12 col-sm-12 pad0" style="list-style:none;">
+            <li class="col-md-3 col-sm-3 col-xs-12 pad0 w-f">
+                <!-- LOGO -->
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo_footer">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo_footer" name="image" id="img_logo_footer" >
+                </div>
+                    {% end %}
+                    <a id="{{ site.name + '_logo_footer' }}" href="#">
+                        <img class="logo_footer" id="{{ site.name }}_img_logo_footer" src="{{ read_image(site.name + '_img_logo_footer', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo_footer',500) }}'" alt="">
+                    </a>
+                <!-- /LOGO -->
+            </li>
+
+            <li class="col-md-6 col-sm-6 col-xs-12 pad0 text-footer-center" style="display: inline-block;">
+                <a href="{{site_base }}/terminos_condiciones">
+                    <h1 class=" text_footer w_termin_cond pad0 ">Terminos y condiciones</h1>
+                </a>
+                <a href="{{site_base }}/politicas_despacho">
+                    <h1 class="text_footer pad0 w_depacho">|Politicas de despacho</h1>
+                </a>
+                <a href="{{site_base }}/nosotros">
+                    <h1 class="text_footer pad0 w_nosotros">|Nosotros</h1>
+                </a>
+                <a href="{{site_base }}/contact">
+                    <h1 class=" text_footer pad0 w_contact ">|Contacto</h1>
+                </a>
+            </li>
+
+            <li class="col-lg-3 col-md-3 col-sm-3 col-xs-12 pad0 w-logos-2" style="display: inline-block;">
+                <div id="search" class="logo_footer2">
+                    <div style="">
+                        <a href="https://www.facebook.com/complementadiseno?fref=ts" target="blank">
+                            <img class="footer_social" src="https://7static.loadingplay.com/static/images/f3a3f396f488148addf1f0f13c1de273_FB-icon.png" border="0" style="padding: 2px;">
+                        </a>
+                        <a href="https://www.instagram.com/complementadiseno/" target="blank">
+                            <img class="footer_social" src="https://84static.loadingplay.com/static/images/eeb84079c6d73e50ad9d4e71c7c366f8_IG-icon.png" style="padding: 2px;">
+                        </a>
+                            <img class="footer_social" src="https://84static.loadingplay.com/static/images/3256f0494eab27e3e81a0ef2f2b2e6c9_P-icon.png" style="padding: 2px;">
+                    </div>
+                </div>
+            </li>
+        </ul>
+</section>

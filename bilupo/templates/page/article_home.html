@@ -1,0 +1,152 @@
+<style type="text/css">
+	
+	@import url('https://fonts.googleapis.com/css?family=Damion');
+
+hr {
+  background-color: black;
+  height: 10px;
+}
+.deja{
+	color: black;
+	font-family: 'Damion' !important;
+}
+.deja:hover{
+	color: red;
+	text-decoration: none;
+}
+.barra{
+	color:black;
+}
+#barra:hover{
+	color:red;
+}
+@font-face{
+font-family: 'Damion', cursive;
+}
+#fuente{
+	font-family: 'Damion';
+}
+.buscarBoton{
+	border-style: none;
+	background-color: lightblue;
+	color:white;
+}
+.buscarBoton:hover{
+	color: red;
+}
+.textoTip{
+	color: black !important;
+	width: 270px;
+	margin-top: 11%; 
+	overflow: hidden;
+	text-overflow: ellipsis;
+    -webkit-line-clamp: 5;
+	display: -webkit-box;
+    -webkit-box-orient: vertical;
+    font-family: arial;
+    font-size: 16px;
+    font-weight: bold;
+}
+.tituloRol{
+	font-family: 'Damion' !important;
+}
+
+
+.textoTip:hover{
+	color: #E53623 !important;
+}
+.mini-articulos{
+	margin-left: 25%;
+}
+.mini-articulos2{
+	margin-left: 25%;
+}
+@media only screen and (max-width: 1200px){
+	.mini-articulos2 {
+    	margin-left: 54%;
+	}
+}
+@media only screen and (max-width: 800px){
+	.mini-articulos2 {
+    	margin-left: 17%;
+	}
+	.lef{
+		right: 39px;
+	}
+	.indiceBil2{
+		margin-right: 0% !important;
+	}
+}
+@media only screen and (max-width: 568px){
+
+  .mini-articulos2{
+    width: 162% !important;
+    margin-left: -31% !important;
+  }
+.tituloRol{
+	margin-left: 30% !important;
+	width: 103% !important;
+}
+.hrTips{
+	width: 137% !important;
+	margin-left: 14% !important;
+}
+.indiceBil{
+	margin-left: 14% !important;
+}
+.textoTip{
+    margin-left: 13% !important;
+	width: 130% !important;
+}
+.indiceBil2{
+	margin-right: -120px !important;
+}
+}
+@media only screen and (max-width: 375px){
+	.mini-articulos2{
+		width: 198% !important;
+    	margin-left: -49% !important;
+	}
+	.tituloRol{
+		margin-left: 16% !important;
+    	width: 165% !important;
+	}
+	.indiceBil2{
+	    margin-right: -120px !important;
+	}
+	.hrTips{
+		width: 170% !important;
+	}
+	.textoTip{
+		width: 169% !important;
+	}
+	.lef{
+		right: 85px !important;
+	}
+}
+
+@media only screen and (max-width: 320px){
+  .b-m{
+  	padding: 49px !important;
+  }
+}
+
+</style>
+<div class="col-md-12 b-m" style="padding: 50px; background-color: #f4f8f8; ;margin-left: auto; margin-right: auto; position: relative;">
+    <div class="container">
+    <div class="contenidoRol col-md-6 col-xs-12 zig">
+              <img class="mini-articulos2" src="{{ article["thumb_500"] }}"/>
+    </div>
+
+            
+    <div class="col-md-6 col-xs-12 lef" style="position: relative; right: -3px;">
+        <h1 class="text-left tres tituloRol" style="font-size: 39px; letter-spacing: 1px; color: #E53623; margin-top: 5%;"> {{ article["title"] }} </h1>
+        <hr class="hrTips" style="background-color:#94b7bb; height: 2px;width: 450px;position: absolute;top: 22%;left: -1.2%" />
+        <p class="indiceBil" style="font-size: small; color: #94b7bb;float:left;margin-top: 1%"><i>por<b> Biluppo</b></i></p>
+        <p class="indiceBil2" style="font-size: small;font-style: italic; color: #94b7bb;float: right;margin-right: 20%;margin-top: 1%">{{ article['creation_date'].strftime("%d") }} de {{ get_month(article['creation_date'].strftime("%B")) }}, {{ article['creation_date'].strftime("%Y") }}</p>
+        <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+        <p class="textoTip text-left cuatro ellipsis multiline"><b>{{ article["caption"] }}
+        </a>
+    </div><font style="color: #9FBFC2;float: right;margin-top: -2.5%;margin-right: 21%;"> Ver Más</font></b></p>
+</div>
+</div>

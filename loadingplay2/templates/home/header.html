@@ -1,0 +1,57 @@
+ <nav id="mainNav" class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                <div style="position:relative">
+                  <div class="col-md-4 col-xs-4">
+                   <div class="caja-logo">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_header_logo">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                   </div>
+                   {% end %}
+                   <a href="">
+                   <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                   </a>
+                 </div>
+               </div>
+
+             </div>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/sytes">Sytes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/hype">Hype</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/mision">Mision</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/vision">Vision</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/nosotros">Nosotros</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="{{ site_base }}/contact">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>

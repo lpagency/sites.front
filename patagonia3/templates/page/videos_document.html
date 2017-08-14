@@ -1,0 +1,197 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(13,13,13);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'products_per_page' : 9,
+            // 'maxProducts' : 3,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+             'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.product-list').ecommerce( config);
+      });
+</script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section style="height: 510px;position: relative;width: 100%;">
+<div>
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_video_document">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_video_document" name="image" id="img_video_document" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_video_document" src="{{ read_image(site.name + '_video_document', 1) }}" onload="this.src='{{ read_image(site.name + '_video_document',500) }}'" class=" img_recetas decolor" alt="item">
+        <div class="box" >
+            <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_video_document' }}"> {{ read_text(site.name +  '_text_video_document') }}
+            </h1>
+        </div>
+    </div> 
+</section>
+
+<section style="height: 100px;">
+    
+</section>
+
+<!-- *****img videos con link*** -->
+
+<section class="h_videos_document">
+    <div class="container kk">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_vi_1">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_vi_1" name="image" id="img_vi_1" >
+                        </div>
+                        {% end %}
+                         <a id="{{ site.name + '_vi_1' }}" href="{{ read_link(site.name + '_vi_1') }}" target="_blank">
+                        <img id="{{ site.name }}_vi_1" src="{{ read_image(site.name + '_vi_1', 1) }}" onload="this.src='{{ read_image(site.name + '_vi_1',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+  
+                       <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_vi_1' }}" content="{{ read_link(site.name + '_vi_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                   
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_0_0' }}"> {{ read_text(site.name +  '_0_0') }}</div>
+                   
+                </div>
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_vi_2">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_vi_2" name="image" id="img_vi_2" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_vi_2' }}" href="{{ read_link(site.name + '_vi_2') }}" target="_blank">
+                        <img id="{{ site.name }}_vi_2" src="{{ read_image(site.name + '_vi_2', 1) }}" onload="this.src='{{ read_image(site.name + '_vi_2',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_vi_2' }}" content="{{ read_link(site.name + '_vi_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+        
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_0_1' }}"> {{ read_text(site.name +  '_0_1') }}</div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="h_videos_document">
+    <div class="container kk">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_vi_3">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_vi_3" name="image" id="img_vi_3" >
+                        </div>
+                        {% end %}
+                         <a id="{{ site.name + '_vi_3' }}" href="{{ read_link(site.name + '_vi_3') }}" target="_blank">
+                        <img id="{{ site.name }}_vi_3" src="{{ read_image(site.name + '_vi_3', 1) }}" onload="this.src='{{ read_image(site.name + '_vi_3',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+  
+                       <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_vi_3' }}" content="{{ read_link(site.name + '_vi_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                   
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_0_3' }}"> {{ read_text(site.name +  '_0_3') }}</div>
+                   
+                </div>
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_vi_4">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_vi_4" name="image" id="img_vi_4" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_vi_4' }}" href="{{ read_link(site.name + '_vi_4') }}" target="_blank">
+                        <img id="{{ site.name }}_vi_4" src="{{ read_image(site.name + '_vi_4', 1) }}" onload="this.src='{{ read_image(site.name + '_vi_4',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_vi_4' }}" content="{{ read_link(site.name + '_vi_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+        
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_0_4' }}"> {{ read_text(site.name +  '_0_4') }}</div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section style="height:90px;">
+</section>
+
+
+
+{% include '../home/footer.html' %}    
+{% end %}

@@ -1,0 +1,212 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+{% end %}
+{% block body %}
+<!-- Start Quieries -->
+    <div class="bg-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h3 class="text-white text">Proceso de compra Paso 2 de 2</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End Quieries -->
+
+
+<!-- arrow -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mtop100 pull-right">
+                <div id="arrowbox" class="arrow_box">
+                    <div class="green-bg">
+                        <h3 class="text-white text-center">Llevas <strong>11</strong> de <strong>24</strong> ReduKcales</h3>
+                    </div>
+
+                    <h3 class="pad10"><strong>Tu Compra:</strong></h3>
+                    <div class="table-responsive">          
+                          <table class="table">
+                            <thead>
+                              <tr> 
+                                <td class="fsize20">Delicia Tiramisú</td>
+                                <td class="fsize18 text-right"><strong>2</strong></td>                         
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="fsize20">Delicia Pie de limón</td>
+                                <td class="fsize18 text-right"><strong>4</strong></td>
+                              </tr>
+
+                              <tr>
+                                <td class="fsize20">ReduKcal Gourmet</td>
+                                <td class="fsize18 text-right"><strong>5</strong></td>
+                              </tr> 
+
+                              <tr class="height">
+                                <td class="space50"></td>
+
+                              </tr>
+
+                              <tfoot class="blk-btm">
+                                <tr class="fbold">
+                                    <td class="fsize20">Total Compra</td>
+                                    <td class="fsize20 text-right"><strong>$30.767</strong></td>
+                                </tr>
+                            </tfoot>
+
+                          </table>
+
+                          <button type="submit" class="table-btn space50">Ir al carro</button>
+                          <button type="submit" class="table-btn1 space50">Pagar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- end arrow -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-4 space50">
+                <div class="box-4 img">
+                    <img src="{{ site_base }}/static/img/prod-1.jpg" class="img-responsive" alt="...">
+                    <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                </div>
+                    <div class="prod-heading">
+                        <h3>Bebida Caliente Crema Miel</h3>
+                        <h4>$10.000</h4>
+                    </div>
+            </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-2.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                        <h3>Refresco Chocolate</h3>
+                        <h4>$10.000</h4>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-3.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                        <h3>Refresco Berries</h3>
+                        <h4>$10.000</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4 col-sm-4 space50">
+                <div class="box-4 padbottom60 img">
+                        <img src="{{ site_base }}/static/img/prod-4.jpg" class="img-responsive" alt="...">
+                    <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                </div>
+                <div class="prod-heading">
+                    <h3>Bebida Caliente Crema Miel</h3>
+                    <h4>$10.000</h4>
+                </div>
+
+            </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-5.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                    <h3>Refresco Chocolate</h3>
+                    <h4>$10.000</h4>
+                </div>
+                </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-6.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                    <h3>Refresco Chocolate</h3>
+                    <h4>$10.000</h4>
+                </div>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col-md-4 col-sm-4 space50">
+                <div class="box-4 img">
+                    <img src="{{ site_base }}/static/img/prod-7.jpg" class="img-responsive" alt="...">
+                    <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                </div>
+                <div class="prod-heading">
+                    <h3>Bebida Caliente Crema Miel</h3>
+                    <h4>$10.000</h4>
+                </div>
+            </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-8.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                    <h3>Refresco Chocolate</h3>
+                    <h4>$10.000</h4>
+                </div>
+                </div>
+                <div class="col-md-4 col-sm-4 space50">
+                    <div class="box-4 img">
+                        <img src="{{ site_base }}/static/img/prod-9.jpg" class="img-responsive" alt="...">
+                        <div class="mask">
+                        <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button>
+                    </div>
+                    </div>
+                    <div class="prod-heading">
+                    <h3>Refresco Chocolate</h3>
+                    <h4>$10.000</h4>
+                </div>
+                </div>
+            </div>
+
+            <center class="space50">
+                <button type="button" class="Prod-btn-2 " data-toggle="button" aria-pressed="false" autocomplete="off">Cargar Más</button>
+            </center>
+    </div>
+</tbody></table></div></div></div></div></div>
+<div class="space50">
+
+</div>
+{% end %}
+{% include 'footer.html' %}

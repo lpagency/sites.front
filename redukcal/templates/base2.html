@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+    <head>
+        <!-- head bt inicio -->
+        <title>{% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="Family Market">
+        <meta name="author" content="Loadingplay">
+        <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/cssbt/style.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/menu/css/main.css" type="text/css">
+
+        {% block css %}{% end %}
+        <style>
+                [data-sr] { visibility: hidden; }
+        </style>
+    </head>
+    <body id="home">
+        {% include 'menu-lateral-editor.html' %}
+        <!-- generar contenido y formularios -->
+        <div id="menu_movil" class="descripcion_wrapper descripcion_opacity b_wrapper" style="display:none;">
+            <div class="descripcion_cerrar">
+                <button id="tellmeboton2" style="font-size: 35px; color:gray !important"><i class="icon-remove"></i></button>
+            </div>
+            <div class="descripcion_contenido">
+                {% include 'content/add_form.html' %}
+            </div>
+        </div>
+        <!-- generar contenido y formularios -->
+        <div id="cuerpo" style="width: 100%">
+            
+        </div>
+        <!-- header -->
+        {% block header %}{% end %}
+        <!-- boton para navegar -->
+<!--         <span class="btn-menu-bottom btn-agregar-cont-principal btn-new-page">
+        <i class="icon-file" ></i>
+        </span>
+        <span class="btn-menu-bottom btn-agregar-cont-principal btn-new-content">
+        <i class="icon-plus"></i>
+        </span> -->
+        <!-- botón agregar
+        <span class="btn-menu-bottom btn-categories">
+        <i class="icon-list"></i>
+        </span> -->
+        <!-- header -->
+        {% block body %}
+        {% end %}
+        <!-- <script src="{{ site_base }}/static/js/rimages.js"></script> -->
+        <!--<script src="{{ site_base }}/static/js/fix_ie9.js"></script>-->
+        <script type="text/javascript">
+                var site_base = "{{ site_base }}"
+        </script>
+        <script language="JavaScript" type="text/javascript" src="{{ site_base }}/static/js/fm.js"></script>
+                {% block scripts %}{% end %}
+
+    </body>
+</html>

@@ -1,0 +1,138 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block body %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+
+<!-- <script src="{{ site_base }}/static/js/magnific/jquery.magnific-popup.min.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/moment.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ site_base }}/static/js/script.js"></script> -->
+<script>
+    $(document).ready(function() {
+
+
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+
+        var app_public = $.environmentVar(13,13,13);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            onLoad: function(product){
+                related(product.bullet_3);
+            },
+            'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        });
+// productos relacionados
+var related = function(tag){
+    var config = {
+        'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+        };
+    $('.product-related').ecommerce('product_box', config);
+};
+});
+</script>
+
+<script type="text/template" id="product_detail" >
+    <div id="content" class="col-sm-12">
+        <div class="row space80">
+            <div class="col-sm-7">
+                <ul class="thumbnails">
+                    <a class="thumbnail" href="{{! images[0] }}" title=""><img src="{{! images[0]['thumb_200'] }}" title="" alt="" class="img-responsive img_prod_detail"></a>
+                </ul>
+            </div>
+
+
+            <div class="col-sm-5">
+                <figcaption class="text-center">
+                            <h1 class="name name_prod_detail ellipsis multiline">{{! name }}</h1>
+                            <h3 class="descr_prod_detail"> {{! description }}</h3>
+                            <p class="price price_prod_detail">{{! main_price }}</p>
+                </figcaption>
+
+                <div class="form-group">
+
+                    <!-- <button type="button" id="button-cart" data-loading-text="Loading..." class="btn btn-lg btn-primary btn-block">Agregar al carrro</button> -->
+                    <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" class="add-to-cart btn btn-lg  btn-block btn_comprar">
+                        <!-- <i class="fa fa-shopping-cart" data-toggle="modal" data-target="#myModal"></i> -->
+                        &nbsp;AGREGADO
+                    </button>
+                    <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" class="add-to-cart btn btn-lg  btn-block btn_comprar">
+                        <!-- <i class="fa fa-shopping-cart" data-toggle="modal" data-target="#myModal"></i> -->
+                        &nbsp;VER CARRO
+                    </button>
+                </div>
+                <!-- <button type="button" id="button-wishlist" class="btn btn-default btn-block">Add to Wishlist</button> -->
+
+                <!-- Description -->
+                <!--/ Description -->
+
+                <!-- Specification -->
+               
+                <!--/ Specification -->
+
+                <!-- Reviews -->
+                <!--/ Reviews -->
+
+                <!-- Tags -->
+                <!--/ Tags -->
+
+            </div>
+        </div>
+    </div>
+</script>
+
+<!-- 
+{% end %} -->
+
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <div class="container row product-page"></div>
+
+    <!-- Related Products -->
+    
+    <!--/ Related Products -->
+    </div>
+
+
+</div>
+
+
+{% end %}

@@ -1,0 +1,825 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700');
+@font-face{
+font-family: Damion-Regular;
+src:url(fonts/Damion-Regular.ttf);
+}
+#titulo_est{
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    top: 28%;
+    left: 36%;
+    color: #E53623;
+    width: 300px;
+    overflow: hidden;
+    height: 110px;
+    font-size: 41px;
+    position: absolute;
+    font-weight: lighter;
+}
+#titulo_est2{
+    font-size: 70px;
+    font-family: Damion-Regular;
+    position: absolute;
+    top: 325px;
+    left: 29%;
+    color: #E53623;
+    width: 36%;
+    height: 135px;
+    overflow: hidden;
+    line-height: 0.9;
+    font-weight: lighter;
+}
+#titulo_desc{
+    font-family: Damion-Regular;
+    color:  #E53623;
+    position: absolute;
+}
+.numeritos{
+	font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    color: #E53623;
+    position: absolute;
+    font-size: 2.7em;
+}
+.desc1{
+    margin-left: 12%;
+    margin-top: 7%;
+    margin-bottom: 17%;
+}
+.titulo1{
+    width: 406px;
+    height: 56px;
+    top: 340px;
+    left: 587px;
+}
+.descripcion{
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 1.5em;
+    color: grey;
+    position: absolute;
+}
+#descripcion1{
+    width: 396px;
+    height: 104px;
+    top: 430px;
+    left: 588px;
+}
+.titulo2{
+    width: 274px;
+    height: 60px;
+    top: 670px;
+    left: 230px;
+}
+#descripcion2{
+    width: 329px;
+    height: 132px;
+    top: 750px;
+    left: 230px;
+}
+.titulo3{
+    width: 272px;
+    height: 197px;
+    top: 1000px;
+    left: 320px;
+    text-align: center;
+    font-size: 45px;
+}
+.dos{
+    top: 1220px;
+    left: 340px;
+}
+#descripcion3{
+    top: 1275px;
+    left: 380px;
+    width: 14%;
+}
+.uno{
+    top: 1180px;
+    left: 620px;
+}
+#descripcion4{
+    top: 1210px;
+    left: 660px;
+    width: 19%;
+}
+.tres{
+    top: 1320px;
+    left: 680px;
+}
+#descripcion5{
+    top: 1350px;
+    left: 720px;
+    width: 18%;
+}
+.cuatro{
+    top: 1350px;
+    left: 320px;
+}
+#descripcion6{
+    top: 1400px;
+    left: 320px;
+    width: 13%;
+}
+.cinco{
+    top: 1440px;
+    left: 530px;
+}
+#descripcion7{
+    top: 1440px;
+    left: 560px;
+    width: 14%;
+}
+.seis{
+    top: 1390px;
+    left: 800px;
+}
+#descripcion8{
+    top: 1420px;
+    left: 830px;
+    width: 14.5%;
+}
+
+.fa-chevron-down {
+    font-size: 48px !important;
+    color: white;
+    position: relative;
+    bottom: 50px;
+}
+@media only screen and (max-width: 1200px){
+    #titulo_est{
+        top: 28%;
+        left: 31%;
+    }
+    #titulo_est2{
+        font-size: 55px;
+        top: 285px;
+        left: 28%;
+        width: 37%;
+    }
+    .titulo1{
+        width: 800px;
+        left: 19%;
+        font-size: 50px;
+        height: 66px;
+        top: 400px;
+    }
+    #descripcion1{
+        width: 600px;
+        left: 19%;
+        top: 550px;
+        font-size: 22px;
+    }
+    .titulo2{
+        top: 36.5%;
+        width: 800px;
+        left: 19%;
+        font-size: 51px;
+        height: 66px;
+    }
+    #descripcion2{
+        left: 19%;
+        width: 600px;
+        top: 42.5%;
+        font-size: 22px;
+    }
+    .titulo3{
+        width: 40%;
+        height: 197px;
+        top: 52%;
+        left: 19%;
+        font-size: 50px;
+        text-align: left;
+    }
+    #descripcion4{
+        top: 62%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+    #descripcion3{
+        top: 69%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+    #descripcion5{
+        top: 75%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+    #descripcion6{
+        top: 81%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+    #descripcion7{
+        top: 88%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+    #descripcion8{
+        top: 95%;
+        left: 19%;
+        width: 60%;
+        font-size: 22px;
+    }
+}
+@media only screen and (max-width: 768px) {
+    #titulo_est{
+        top: 28%;
+        left: 27%;
+        font-size: 30px;
+        left: 29%;
+    }
+    #titulo_est2{
+        font-size: 39px;
+        top: 216px;
+    }
+    .titulo1{
+        width: 600px !important;
+        top: 369px;
+        font-size: 35px;
+    }
+    #descripcion1{
+        width: 60%;
+        top: 477px;
+    }
+    .titulo2{
+        top: 35%;
+        font-size: 35px;
+        width: 60%;
+        left: 19%;
+    }
+    .blah{
+        margin-top: 35% !important;
+        margin-left: -25% !important;
+        margin-bottom: -100% !important;
+    }
+    .linea{
+        margin-top: -23% !important;
+    }
+    #descripcion2{
+        top: 38.5% !important;
+        width: 60%;
+    }
+    .linea3{
+        margin-top: 87% !important;
+    }
+    .titulo3{
+        left: 19%;
+        font-size: 35px;
+        top: 48.5%;
+    }
+    .linea2{
+        margin-top: 144% !important;
+    }
+    .sol{
+        margin-top: 172% !important;
+    }
+    #descripcion4{
+        top: 55.5% !important;
+    }
+    .mano{
+        margin-top: 196% !important;
+        position: absolute;
+        margin-left: -56% !important;
+    }
+    #descripcion3{
+        top: 62% !important;
+    }
+    #descripcion5{
+        top: 68%;
+    }
+    #descripcion6{
+        top: 75%;
+    }
+    #descripcion7{
+        top: 82%;
+    }
+    #descripcion8{
+        top: 91%;
+    }
+    .flechas{
+        margin-top: 228% !important;
+        margin-left: -9% !important;
+    }
+    .cuadrados{
+        margin-left: -12% !important;
+        margin-top: 251% !important;
+    }
+    .ojo{
+        margin-left: -15% !important;
+        margin-top: 291% !important;
+    }
+    .comic{
+        margin-left: -15% !important;
+        margin-top: 325% !important;
+    }
+    #first-page-scroll{
+        padding-bottom: 0% !important;
+        height: 3150px;
+    }
+}
+
+@media only screen and (max-width: 767px){
+    #descripcion2 {
+    top: 39.5% !important;
+    width: 60%;
+}
+
+#descripcion4 {
+    top: 57.5% !important;
+}
+
+.mano {
+    margin-top: 204% !important;
+    position: absolute;
+    margin-left: -56% !important;
+}
+
+#descripcion3 {
+    top: 66% !important;
+}
+
+.flechas {
+    margin-top: 241% !important;
+    margin-left: -9% !important;
+}
+
+#descripcion5 {
+    top: 73%;
+}
+
+.cuadrados {
+    margin-left: -12% !important;
+    margin-top: 267% !important;
+}
+
+#descripcion6 {
+    top: 80%;
+}
+
+.ojo {
+    margin-left: -15% !important;
+    margin-top: 309% !important;
+}
+
+#descripcion7 {
+    top: 88%;
+}
+
+.comic {
+    margin-left: -15% !important;
+    margin-top: 342% !important;
+}
+
+#descripcion8 {
+    top: 97%;
+}
+
+#first-page-scroll {
+    padding-bottom: 0% !important;
+    height: 3152px;
+    margin-bottom: 110px;
+}
+
+}
+
+
+@media only screen and (max-width: 700px){
+    .blah {
+    margin-top: 49% !important;
+    margin-left: -25% !important;
+    margin-bottom: -100% !important;
+}
+
+.linea3 {
+    margin-top: 99% !important;
+    left: 9% !important;
+}
+
+.linea2 {
+    margin-top: 166% !important;
+    left: 11% !important;
+    width: 87% !important;
+}
+
+.titulo3 {
+    left: 19%;
+    font-size: 35px;
+    top: 50.5%;
+}
+
+.sol {
+    margin-top: 195% !important;
+}
+
+.mano {
+    margin-top: 225% !important;
+    position: absolute;
+    margin-left: -64% !important;
+}
+
+.flechas {
+    margin-top: 269% !important;
+    margin-left: -9% !important;
+}
+
+.cuadrados {
+    margin-left: -13% !important;
+    margin-top: 296% !important;
+}
+
+.ojo {
+    margin-left: -18% !important;
+    margin-top: 339% !important;
+}
+
+.comic {
+    margin-left: -17% !important;
+    margin-top: 379% !important;
+}
+.titulo1 {
+    width: 547px !important;
+    top: 369px;
+    font-size: 35px;
+}
+
+}
+
+
+@media only screen and (max-width: 568px){
+    #first-page-scroll{
+        padding-bottom: 90% !important;
+        height: inherit !important;
+    }
+    #titulo_est{
+        top: 29% !important;
+        font-size: 14px !important;
+        left: 34% !important;
+        width: 100px !important;
+    }
+    #titulo_est2{
+        top: 113px !important;
+        font-size: 24px !important;
+        left: 27% !important;
+    }
+    .niñaBil{
+        margin-top: 20% !important;
+        width: 40% !important;
+    }
+    .titulo1{
+        top: 8% !important;
+        width: 350px !important;
+        left: 12% !important;
+        font-size: 25px !important;
+    }
+    #descripcion1{
+        top: 12% !important;
+        width: 350px !important;
+        font-size: 15px !important;
+        left: 12% !important;
+    }
+    .blah{
+        margin-left: -16% !important;
+        width: 70% !important;
+        margin-top: 59% !important;
+        margin-bottom: 20% !important;
+    }
+    .titulo2{
+        font-size: 30px !important;
+        top: 29% !important;
+        left: 12% !important;
+        width: 300px !important;
+    }
+    .linea3{
+        width: 95% !important;
+        margin-top: 108% !important;
+    }
+    #descripcion2{
+        top: 34% !important;
+        left: 16% !important;
+        font-size: 15px !important;
+        width: 70% !important;
+    }
+    .titulo3{
+        top: 44% !important;
+        left: 12% !important;
+        font-size: 31px !important;
+        width: 63% !important;
+    }
+    .linea2{
+        margin-top: 190% !important;
+    }
+    .sol{
+        margin-left: 9% !important;
+        width: 15% !important;
+        margin-top: 230% !important;
+    }
+    #descripcion4{
+        font-size: 15px !important;
+        top: 53.5% !important;
+        left: 15%;
+        width: 70%;
+    }
+    .flechas{
+        margin-left: -13% !important;
+        margin-top: 320% !important;
+    }
+    #descripcion5{
+        font-size: 15px !important;
+        top: 69% !important;
+        left: 15% !important;
+        width: 70% !important;
+    }
+    .cuadrados{
+        margin-left: -16% !important;
+        margin-top: 360% !important;
+        width: 16% !important;
+    }
+    .mano{
+        margin-top: 260% !important;
+        margin-left: -65% !important;
+    }
+    #descripcion3{
+        top: 61.5% !important;
+        font-size: 15px !important;
+        left: 16%;
+        width: 70%;
+    }
+    .ojo{
+        margin-left: -17% !important;
+        margin-top: 410% !important;
+        width: 20% !important;
+    }
+    #descripcion6{
+        left: 16% !important;
+        width: 70% !important;
+        top: 75.5% !important;
+        font-size: 15px !important;
+    }
+    .comic{
+        width: 18% !important;
+        position: absolute;
+        left: 27% !important;
+        top: 58% !important;
+        margin-top: 174% !important;
+    }
+    #descripcion7{
+        left: 16% !important;
+        width: 70% !important;
+        top: 84% !important;
+        font-size: 15px !important;
+    }
+    #descripcion8{
+        font-size: 15px !important;
+        top: 94% !important;
+        left: 16%;
+        width: 70%;
+    }
+}
+
+@media (max-width: 550px){
+    #titulo_est2 {
+    top: 152px !important;
+    font-size: 24px !important;
+    left: 27% !important;
+}
+}
+
+
+@media only screen and (max-width: 375px){
+    #titulo_est, #titulo_est h1{
+        font-size: 11px !important;
+        left: 29% !important;
+    }
+    #titulo_est h1{
+        margin : 5px;
+    }
+    #titulo_est2{
+        top: 92px !important;
+        font-size: 16px !important;
+    }
+    .titulo1 {
+    width: 260px !important;
+    font-size: 20px !important;
+    margin-top: 65px;
+    }
+    #descripcion1 {
+    width: 245px !important;
+    font-size: 13px !important;
+    margin-top: 68px;
+    }
+    .titulo2 {
+    margin-top: 34% !important;
+    width: 260px !important;
+    font-size: 23px !important;
+    top: 34% !important;
+    }
+    #descripcion2 {
+    top: 47.5% !important;
+    width: 80% !important;
+    font-size: 12px !important;
+    }
+    .titulo3 {
+    top: 57% !important;
+    font-size: 25px !important;
+    }
+    .linea2 {
+    margin-top: 168% !important;
+    }
+    .sol {
+    margin-top: 208% !important;
+    }
+    #descripcion4 {
+    font-size: 12px !important;
+    top: 68% !important;
+    width: 78% !important;
+    }
+    .mano {
+    margin-top: 223% !important;
+    }
+    #descripcion3 {
+    top: 77% !important;
+    width: 78% !important;
+    font-size: 12px !important;
+    }
+    .flechas {
+    margin-left: -14% !important;
+    margin-top: 230% !important;
+    top: 147px;
+    position: relative;
+    }
+     #descripcion5 {
+    width: 78% !important;
+    font-size: 12px !important;
+    top: 85.5% !important;
+    }
+    .cuadrados {
+    margin-left: -16% !important;
+    margin-top: 239% !important;
+    position: relative;
+    top: 233px;
+    }
+    #descripcion6 {
+    top: 93% !important;
+    font-size: 12px !important;
+    width: 78% !important;
+    }
+    .ojo {
+    margin-left: -65% !important;
+    margin-top: 318% !important;
+    position: absolute;
+    }
+    #descripcion7 {
+    top: 101% !important;
+    font-size: 12px !important;
+    width: 78% !important;
+    }
+    .comic {
+    margin-top: 185% !important;
+    position: absolute;
+    left: 32% !important;
+    }
+    #descripcion8 {
+    font-size: 12px !important;
+    top: 112% !important;
+    width: 78% !important;
+    }
+
+    .footer-home {
+        margin-top : 30px !important;
+    }
+
+    .linea3 {
+    width: 89% !important;
+    margin-top: 108% !important;
+    }
+
+    #first-page-scroll {
+    padding-bottom: 90% !important;
+    height: inherit !important;
+    margin-bottom: 275px;
+   }
+}
+
+
+@media only screen and (max-width: 360px){
+    #descripcion2 {
+    left: 11% !important;
+   }
+
+   .comic {
+    margin-top: 189% !important;
+    position: absolute;
+    left: 32% !important;
+   }
+ 
+}
+
+@media only screen and (max-width: 320px){
+    .blah {
+    margin-left: -10% !important;
+    width: 58% !important;
+    margin-top: 69% !important;
+    margin-bottom: 20% !important;
+}
+
+.linea2 {
+    margin-top: 186% !important;
+}
+
+.titulo3 {
+    top: 61% !important;
+    font-size: 22px !important;
+}
+
+#descripcion4 {
+    font-size: 12px !important;
+    top: 74% !important;
+    width: 78% !important;
+}
+
+.sol {
+    margin-top: 231% !important;
+}
+
+.mano {
+    margin-top: 255% !important;
+    margin-left: -63% !important;
+
+}
+
+#descripcion3 {
+    top: 88% !important;
+    width: 78% !important;
+    font-size: 12px !important;
+}
+
+.flechas {
+    margin-left: -14% !important;
+    margin-top: 230% !important;
+    top: 307px;
+    position: relative;
+}
+
+#descripcion5 {
+    width: 78% !important;
+    font-size: 12px !important;
+    top: 102.5% !important;
+}
+
+.cuadrados {
+    margin-left: -20% !important;
+    margin-top: 239% !important;
+    position: relative;
+    top: 440px;
+}
+
+#descripcion6 {
+    top: 113% !important;
+    font-size: 12px !important;
+    width: 78% !important;
+}
+
+.ojo {
+    margin-left: -60% !important;
+    margin-top: 402% !important;
+    position: absolute;
+}
+
+#descripcion7 {
+    top: 126% !important;
+    font-size: 12px !important;
+    width: 78% !important;
+}
+
+.comic {
+    margin-top: 290% !important;
+    position: absolute;
+    left: 32% !important;
+}
+
+#descripcion8 {
+    font-size: 12px !important;
+    top: 141% !important;
+    width: 78% !important;
+}
+
+#first-page-scroll {
+    padding-bottom: 90% !important;
+    height: inherit !important;
+    margin-bottom: 600px;
+}
+
+}

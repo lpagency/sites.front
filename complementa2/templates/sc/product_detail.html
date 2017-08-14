@@ -1,0 +1,102 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<style type="text/css">
+    /*set a border on the images to prevent shifting*/
+ #gallery_01 img{border:2px solid white;}
+ 
+ /*Change the colour*/
+ .active img{border:2px solid #333 !important;}
+</style>
+{% end %}
+
+
+{% block javascript %}
+<script>
+
+</script>
+    
+<script type="text/javascript" src="{{ site_base }}/static/js/product.detail.js"></script>
+
+<script type="text/template" id="product_detail" >
+
+    <div class="" >
+        <div class="col-md-5 col-sm-5 images-detail">
+            <div class="">
+                <ul class="thumbnails box pad0 img-contenedor">
+                    <img id="img_detail" src="{{! images[0]['thumb_500'] }}" data-zoom-image="{{! images[0]['thumb_500'] }}" alt="" class="img-responsive img_detail" style="display: block;">
+                </ul>
+            </div>
+
+            <div id="gallery_01" class="image_little pad0">
+             
+              <a href="#" data-image="{{! images[0]['thumb_500']}}" data-zoom-image="{{! images[0]['thumb_500']}}">
+                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+              </a>
+
+              <a href="#" data-image="{{! images[1]['thumb_500']}}" data-zoom-image="{{! images[1]['thumb_500']}}">
+                 <img id="img_01" class="{{! images[1]['thumb_1']|hide_if_empty}} little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+              </a>
+
+              <a href="#" data-image="{{! images[2]['thumb_500']}}" data-zoom-image="{{! images[2]['thumb_500']}}">
+                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+              </a>
+
+              <a href="#" data-image="{{! images[3]['thumb_500']}}" data-zoom-image="{{! images[3]['thumb_500']}}">
+                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little" src="{{! images[3]['thumb_500'] }}" onload="this.src={{! images[3]['thumb_500']}}" />
+              </a>
+
+            </div>
+
+<!--             <div class="image_little pad0">
+                <img class="img_detail {{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+
+                <img class="img_detail {{! images[1]['thumb_500']|hide_if_empty }} little " src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+
+                <img class="img_detail {{! images[2]['thumb_500']|hide_if_empty }} little " src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[2]['thumb_500']}}"/>
+
+                <img class="img_detail {{! images[3]['thumb_500']|hide_if_empty }} little " src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+            </div> -->
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <h1 class="title-detail">{{! name }}</h1>
+            <div class="title_descrip_detail1"> Descripción
+                <h5 class="descrip_detail1">{{! description }}</h5>
+            </div>
+            <div class="price_detail">
+                <span class="price-p">{{! main_price|money }}</span>
+                <br>
+            </div>
+            <div class="cart2">
+                <div>
+                    <!-- <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}"type="button" product-img="{{! images[0]['thumb_200'] }}" class="btn_compra add-to-cart" >Agregar al carro</button> -->
+
+                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn_compra add-to-cart" data-toggle="modal" data-target="#myModal" >Agregar al carro</button>
+                    
+                    <button type="button" class="btn_compra" data-toggle="modal" data-target="#myModal" >Ir al carro</button>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div> 
+
+ 
+</script>
+
+{% end %}
+{% block body %} 
+<div id="content" class="container space60">
+</div>
+
+{% end %}

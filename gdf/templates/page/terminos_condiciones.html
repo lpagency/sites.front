@@ -1,0 +1,176 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="distancia-2"></div>  
+<section class="container-g">
+
+<section class="h-banner-one" style="position: relative;width: 100%;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_term_cond">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_term_cond" name="image" id="img_term_cond" >
+        </div>
+        {% end %}
+        <div>
+            <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_term_cond', 1) }}" onload="this.src='{{ read_image(site.name + '_term_cond',500) }}'" class="img_banner desaturada" alt="item">
+        </div>
+</section>
+
+<div class="container-fluid home">
+    <div class="space50"> </div>
+       <div class="col-md-12 col-xs-12 text_term_cond2 text-center {{editabletext}}" text-id="{{ site.name + '_text_term_cond2' }}"> 
+    {{ read_text(site.name +  '_text_term_cond2') }}
+       </div>
+
+  <div class="col-md-12 col-xs-12 text-center padi">
+   <div href="" class="text_term_cond3 {{editabletext}}" text-id="{{ site.name + '_text_term_cond3' }}"> 
+    {{ read_text(site.name +  '_text_term_cond3') }} </div>
+  </div>
+  <div class="col-md-12 col-xs-12 text-center">
+   <div href="" class="text_term_cond3 {{editabletext}}" text-id="{{ site.name + '_text_term_cond4' }}"> 
+    {{ read_text(site.name +  '_text_term_cond4') }} </div>
+  </div>
+  <div class="col-md-12 col-xs-12 text-center">
+   <div href="" class="text_term_cond3 {{editabletext}}" text-id="{{ site.name + '_text_term_cond5' }}"> 
+    {{ read_text(site.name +  '_text_term_cond5') }} </div>
+  </div>
+  <div class="col-md-12 col-xs-12 text-center">
+   <div href="" class="text_term_cond3 {{editabletext}}" text-id="{{ site.name + '_text_term_cond6' }}"> 
+    {{ read_text(site.name +  '_text_term_cond6') }} </div>
+  </div>
+
+  <div class="col-md-12 col-xs-12"> 
+      <div class="linea-separadora"> </div>
+  </div> 
+
+  <!-- **para terminos*** -->
+
+    <div class="col-md-12 col-xs-12">
+        <a href=""  style="color:rgba(204, 108, 78, 1) !important;" class="text-le text-center {{editabletext}}" text-id="{{ site.name + '_text_term_le' }}"> 
+    {{ read_text(site.name +  '_text_le') }}</a>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_2' }}"> 
+    {{ read_text(site.name +  '_text_le_2') }} </div>
+    <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_3' }}"> 
+    {{ read_text(site.name +  '_text_le_3') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_4' }}"> 
+    {{ read_text(site.name +  '_text_le_4') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_5' }}"> 
+    {{ read_text(site.name +  '_text_le_5') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_6' }}"> 
+    {{ read_text(site.name +  '_text_le_6') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_7' }}"> 
+    {{ read_text(site.name +  '_text_le_7') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_8' }}"> 
+    {{ read_text(site.name +  '_text_le_8') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_9' }}"> 
+    {{ read_text(site.name +  '_text_le_9') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_10' }}"> 
+    {{ read_text(site.name +  '_text_le_10') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_11' }}"> 
+    {{ read_text(site.name +  '_text_le_11') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_12' }}"> 
+    {{ read_text(site.name +  '_text_le_12') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_13' }}"> 
+    {{ read_text(site.name +  '_text_le_13') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_14' }}"> 
+    {{ read_text(site.name +  '_text_le_14') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_15' }}"> 
+    {{ read_text(site.name +  '_text_le_15') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_16' }}"> 
+    {{ read_text(site.name +  '_text_le_16') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_17' }}"> 
+    {{ read_text(site.name +  '_text_le_17') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_18' }}"> 
+    {{ read_text(site.name +  '_text_le_18') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_20' }}"> 
+    {{ read_text(site.name +  '_text_le_20') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_21' }}"> 
+    {{ read_text(site.name +  '_text_le_21') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_22' }}"> 
+    {{ read_text(site.name +  '_text_le_22') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_23' }}"> 
+    {{ read_text(site.name +  '_text_le_23') }} </div>
+     <div class="text-orange {{editabletext}}" text-id="{{ site.name + '_text_le_24' }}"> 
+    {{ read_text(site.name +  '_text_le_24') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_25' }}"> 
+    {{ read_text(site.name +  '_text_le_25') }} </div>
+
+    </div>
+
+    <!-- ****fin terminos**** -->
+
+     <div class="col-md-12 col-xs-12"> 
+         <div class="linea-separadora"> </div>
+     </div> 
+
+    <!-- ****Como comprar**** -->
+    <div class="col-md-12 col-xs-12">
+    <div class="text-le {{editabletext}}" text-id="{{ site.name + '_text_le_26' }}"> 
+    {{ read_text(site.name +  '_text_le_26') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_27' }}"> 
+    {{ read_text(site.name +  '_text_le_27') }} </div>
+    </div>
+     <!-- ****fin como comprar**** -->
+    
+    <div class="col-md-12 col-xs-12"> 
+         <div class="linea-separadora"> </div>
+     </div> 
+
+     <!-- ***Envios y plazos** -->
+
+    <div class="col-md-12 col-xs-12">
+    <div class="text-le {{editabletext}}" text-id="{{ site.name + '_text_le_28' }}"> 
+    {{ read_text(site.name +  '_text_le_28') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_29' }}"> 
+    {{ read_text(site.name +  '_text_le_29') }} </div>
+    </div>
+
+    <!-- ****fin envios y plazos -->
+
+
+    <div class="col-md-12 col-xs-12"> 
+         <div class="linea-separadora"> </div>
+     </div> 
+
+     <!-- ***Cambios y reparacion** -->
+
+    <div class="col-md-12 col-xs-12">
+    <div class="text-le {{editabletext}}" text-id="{{ site.name + '_text_le_30' }}"> 
+    {{ read_text(site.name +  '_text_le_30') }} </div>
+    <div class="text-le-info {{editabletext}}" text-id="{{ site.name + '_text_le_31' }}"> 
+    {{ read_text(site.name +  '_text_le_31') }} </div>
+    </div>
+
+    <!-- ****fin cambios y reparaciones -->
+
+ 
+
+</div>
+
+</section>
+{% include '../home/footer.html' %}
+{% end %}

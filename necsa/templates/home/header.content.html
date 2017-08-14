@@ -1,0 +1,66 @@
+<input class="menu-two" type="checkbox" id="op"></input>
+<a href="#">
+   
+</a>
+<div class="lower hidden-lg visible-md visible-xs visible-sm">
+    <label for="op">
+          <i class="fa fa-bars" aria-hidden="true"></i>
+    </label>
+</div>
+
+<!-- *********LOGO EN MOVIL*************** -->
+<div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_logo' }}" href="#">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                </a>
+            </div>
+
+<!-- *********LOGO EN MOVIL*************** -->
+
+<div class="overlay overlay-hugeinc">
+    <label for="op"></label>
+    <nav>
+        <ul>
+            <li><a class="pad-top-header anchorLink" href="#todoslosproductos">PRODUCTOS</a></li>
+            <li><a class="pad-top-header" href="#">QUIENES SOMOS</a></li>
+            <li><a class="pad-top-header" href="{{ site_base }}/contact">CONTACTO</a></li>
+           <!--  <li><span class="pipeseparator hidden-xs hidden_1044" >|</span></li>
+             <li> -->
+                    {% try %}
+                    {% set email = user["email"] %}
+                    <a class="pad-top-header mov" href="{{ site_base }}/auth/logout" user="{{email}}" >CIERRA SESION</a>
+                    {% except %}
+                    <a class="pad-top-header" href="{{ site_base }}/auth/login">INICIA SESION</a>
+                    {% end %}
+                </li>
+                <li class="active carrito-header header-pedido">
+
+                    <a href="{{site_base}}/carrito_compra"  class="color-carrito" style="">SU PEDIDO 
+                        <span >
+                            (<span class="units-total">0</span>)
+                        </span>
+                        <span class="icon-cart">
+                            <i class="fa fa-shopping-cart " aria-hidden="true" data-toggle="modal" data-target="#myModal">
+                            </i>
+                        </span>
+                    </a>
+                </li>
+
+                 <form class="navbar-form navbar-left pad0" role="search" action="{{ site_base }}/search" method="get" >
+                <div class="form-group">
+                    <input type="text" name="search_query" class="form-control input_buscar" placeholder="Buscar" value="{% try %}{{search_query}}{% except %}{% end %}">
+                </div>
+             <!-- <button type="submit" class="btn btn-default">Enviar</button> -->
+                 </form>
+          
+        </ul>
+    </nav>
+</div>

@@ -1,0 +1,118 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#form-sign").submit(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                
+                var email = $("#itemail").val();
+                var password = $("#itpassword").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+               
+                if(email == "" || !expr.test(correo)){
+                    $("#itemail").parents(".form-group").addClass("has-error");
+                    $(".help-email").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#it").parents(".form-group").removeClass("has-error");
+                    $(".help-email").addClass('hidden');
+                }
+
+                if(password == "" || !expr.test(correo)){
+                    $("#itpassword").parents(".form-group").addClass("has-error");
+                    $(".help-password").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itpassword").parents(".form-group").removeClass("has-error");
+                    $(".help-password").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<section>
+    <div class="text-center iconos_login">
+        <img src="https://84static.loadingplay.com/static/images/e1592e3309d9b50279bba673ea62d312_brigdestone.png">
+        <span class="separator">|</span>
+        <img src="https://7static.loadingplay.com/static/images/c8259cd37f8b0887773dff87b5c9089e_necsa.png">
+    </div>
+    <h2 class="titulo-registro2 text-center {{editabletext}}" text-id="{{ site.name + '_login' }}"> {{ read_text(site.name +  '_login') }}
+    </h2>
+
+    <div class="form-algn ">
+        <form id="form-sign"class="form-horizontal space45" role="form">
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-3 text_sesion" for="email"></label>
+            <div class="col-sm-9 col-xs-9">
+              <input type="email" class="form-control input-sesion requiredField" id="itemail" data-error-invalid="Invalid email" data-error-empty="email" placeholder="EMAIL">
+            </div>
+            <span id="helpBlock9" class="hidden help-block help-mail">Escribe tu Email</span>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-3 col-xs-3 text_sesion" for="password"></label>
+            <div class="col-sm-9 col-xs-9 "> 
+              <input type="password" class="form-control input-sesion requiredField" id="itpassword" data-error-invalid="Invalid password" data-error-empty="password" placeholder="CONTRASEÑA">
+            </div>
+            <span id="helpBlock10" class="hidden help-block help-password">Escribe tu Contraseña</span>
+          </div>
+          <div class="form-group"> 
+            <div class=" col-sm-12 col-xs-12 " style="margin-top: 37px;">
+              <button type="submit" class="btn btn-default btn-login ">INGRESAR</button>
+              <div class="space33">
+                <a href="{{site_base}}/recuperacion_contrasena">
+                    <strong>Olvide mi contraseña</strong>
+                </a>
+            </div>
+            <div>
+              <a href="{{site_base}}/registro_compra_linea">
+                <strong>Solicitar una cuenta</strong>
+            </a>
+            </div>
+          </div>
+        </form>
+      </div>
+</section>
+
+{% end %}

@@ -1,0 +1,202 @@
+{% extends ../base.html %} 
+
+{% block javascript %}
+{% include ../product/product_box.html %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js?tag=sabanas%20bajera"></script>
+
+<script type="text/javascript">
+<!--
+function display(view) {
+    if (view == 'list') {
+        $('.product-grid').attr('class', 'product-list');
+
+
+        $('.display').html('<img src="{{ site_base }}/static/catalog/view/theme/nico/image/list.png">Lista <a onclick="display(\'grid\');"><img src="{{ site_base }}/static/catalog/view/theme/nico/image/grid.png"> Mosaico</a>');
+
+        $.cookie('display', 'list');
+    } else {
+        $('.product-list').attr('class', 'product-grid');
+
+        $('.display').html('<a onclick="display(\'list\');"><img src="{{ site_base }}/static/catalog/view/theme/nico/image/list.png">Lista</a>  <img src="{{ site_base }}/static/catalog/view/theme/nico/image/grid.png">Mosaico');
+
+        $.cookie('display', '');
+    }
+
+    //e.preventDefault();
+    return false;
+}
+
+view = $.cookie('display');
+
+if (view) {
+    display(view);
+} else {}
+</script>
+
+<script>
+$(document).ready(function() {
+    $("div[data-liffect] > div").each(function(i) {
+        $(this).attr("style", "-webkit-animation-delay:" + i * 500 + "ms;" + "-moz-animation-delay:" + i * 500 + "ms;" + "-o-animation-delay:" + i * 500 + "ms;" + "animation-delay:" + i * 500 + "ms;");
+        if (i == $("div[data-liffect] > div").size() - 1) {
+            $("div[data-liffect]").addClass("play")
+        }
+    });
+});
+</script>
+
+<script>
+var notification_hide_timeout = 5000;
+</script>
+{% end %}
+
+{% block body %}
+
+<link href='https://fonts.googleapis.com/css?family=Pacifico|Open+Sans:200,300,400,600,700&amp;subset=all' rel='stylesheet' type='text/css' />
+<div id="container">
+
+    {% include '../home/header.html' %}
+
+    <div id="notification"></div>
+    <div id="content">
+        <div class="clearfix cat-head">
+            <div class="cat-nav">
+                <div class="cat-header clearfix">
+                     <!-- <div class="breadcrumb">
+                        <a href="{{site_base}}/#">Inicio</a>» <a href="{{site_base}}/bano">BAÑO</a>
+                      </div> -->
+                      <h1 class="cat_heading">SÁBANAS BAJERA</h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="container col-md-12 col-sm-12 col-xs-12" style="padding-top: 1em;">
+            <!-- <button type="button" class="btn btn-subcateg">ALMOHADA</button> -->
+            <a href="#" class="btn btn-subcateg mbtm5" tag="1 plaza" role="button">1 PLAZA</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="1,5 plaza" role="button">1,5 PLAZA</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="2 plazas" role="button">2 PLAZAS</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="cuna" role="button">CUNA</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="graco" role="button">PACK & PLAY</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="king" role="button">KING</a>
+            <a href="#" class="btn btn-subcateg mbtm5" tag="super king" role="button">SUPER KING</a>
+        </div>
+
+        <div class="product-grid products clearfix">
+            <!-- Aqui van los productos -->
+        </div>
+    </div>
+</div>
+
+<link rel="stylesheet" id="responsive_css" type="text/css" href="{{ site_base }}/static/catalog/view/theme/nico/stylesheet/responsive.css" />
+
+<div id="footer">
+    <div>
+        <div class="column">
+            <h3 id="follow_us">Follow us</h3>
+            <ul>
+                <li>
+                    <a href="tel:(2) 2954 024" id="phone">
+                        <span><img src="{{ site_base }}/static/catalog/view/theme/nico/image/phone.png" alt="Phone"/></span> (2) 2954 024</a>
+                </li>
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/complementadiseno" id="facebook">
+                        <span><img src="{{ site_base }}/static/catalog/view/theme/nico/image/facebook.png" alt="Facebook"/></span>Facebook</a>
+                </li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Extras</h3>
+            <ul>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=product/manufacturer">Marcas</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/voucher">Vales Regalo</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=affiliate/account">Afiliados</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=product/special">Ofertas</a></li>
+            </ul>
+        </div>
+        <div class="column">
+            <h3>Atención al cliente</h3>
+            <ul>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=information/contact">Contacto</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/return/insert">Devoluciones</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=information/sitemap">SiteMap</a></li>
+            </ul>
+        </div>
+        <div class="column last">
+            <h3>Tu Cuenta</h3>
+            <ul>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/account">Tu Cuenta</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/order">Historial de pedidos</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/wishlist">Favoritos</a></li>
+                <li><a href="http://complementadiseno.cl/tienda/index.php?route=account/newsletter">Boletín de noticias</a></li>
+            </ul>
+        </div>
+        <div id="powered" class="clearfix">
+            <span>
+Powered by <a href="http://www.opencart.com">OpenCart</a><br /> Complementa Diseño &copy; 2016    </span>
+            <ul class="payment-icons">
+                <li><img src="{{ site_base }}/static/catalog/view/theme/nico/image/visa.png" alt="Visa" /></li>
+                <li><img src="{{ site_base }}/static/catalog/view/theme/nico/image/paypal.png" alt="Paypal" /></li>
+                <li><img src="{{ site_base }}/static/catalog/view/theme/nico/image/cirrus.png" alt="Cirrus" /></li>
+                <li><img src="{{ site_base }}/static/catalog/view/theme/nico/image/mastercard.png" alt="Mastercard" /></li>
+                <li><img src="{{ site_base }}/static/catalog/view/theme/nico/image/american_express.png" alt="American Express" /></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<div id="scroll_top">
+    <a href="/"></a>
+</div>
+<!--
+OpenCart is open source software and you are free to remove the powered by OpenCart if you want, but its generally accepted practise to make a small donation.
+Please donate via PayPal to donate@opencart.com
+//-->
+<link class="_editor_css" href='{{ site_base }}/static/catalog/view/theme/nico/nico_theme_editor/editor_settings.css?ts=1422239858' rel='stylesheet' type='text/css' />
+
+<style>
+.box-product .price,
+.product-grid .price {
+    display: block;
+    color: #687677;
+    margin-bottom: 0px;
+    font-size: 19px;
+    line-height: 14px;
+}
+
+.cat-header,
+.cat-header h1 {
+    padding: 0px;
+    margin: 0px;
+    margin-top: 0px;
+    margin-bottom: 5px;
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#header > #menu > div > ul > li:hover {
+    background: #939d9e;
+    color: #fff;
+}
+
+#column-left {
+    margin-top: 10px;
+    display: none;
+}
+
+#header-top{
+    display: block !important;
+}
+
+@media screen and (max-width: 700px){
+    #header-top {
+    display: none !important;
+    }
+}
+
+</style>
+
+{% end %}

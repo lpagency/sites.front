@@ -1,0 +1,288 @@
+{% extends "../base.html" %}
+{% block header %}
+	{% include '../home/header.html' %}
+{% end %}
+{% block body %}
+	<div class="container-fluid title text-left container-fluid-magle" style="display: inherit;">
+		<div class="row">
+			<div class="col-sm-12">
+				<h2>Checkout</h2>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid cart-list text-left container-fluid-magle" style="display: inherit;">
+		<div class="row">
+			<!-- esto se muestraa solo en movil -->
+			<div class="col-sm-6 show-in-movil">
+				<table class="table">
+					<thead>
+						<tr>
+							<th colspan="3" class="text-center">Estás comprando esto</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="vert-align">Jabiru</td>
+							<td class="vert-align">1 x</td>
+							<td class="vert-align text-right">23.500</td>
+						</tr>
+						<tr>
+							<td class="vert-align">Kotel</td>
+							<td class="vert-align">2 x</td>
+							<td class="vert-align text-right">57.400</td>
+						</tr>
+						<tr>
+							<td class="vert-align"><b>Subtotal Carro</b></td>
+							<td class="vert-align"></td>
+							<td class="vert-align text-right"><b class="suma">80.900</b></td>
+						</tr>
+						<tr>
+							<td class="vert-align">Costo Despacho:</td>
+							<td class="vert-align"></td>
+							<td class="vert-align text-right"><span class="shipping-cost"></span></td>
+						</tr>
+						<tr>
+							<td class="vert-align">Total:</td>
+							<td class="vert-align"></td>
+							<td class="vert-align text-right"><span class="total">80.900</span></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- esto se muestraa solo en movil -->
+			<div class="col-sm-6">
+				<form action="/checkout/billing" method="post" novalidate="" id="order-form" class="myform">
+					<h3 >Dirección Despacho</h3>
+					<div class="row">
+						<div class="col-sm-12">
+							<div class="form-group">
+								<select name="contact_id" class="form-control" id="address">
+									<option value="">Usar una dirección creada anteriormente</option>
+									<option value="52">avenida americo vespucio</option>
+									<option value="32">av. americo vespucio</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group required">
+								<label class="control-label">Nombre</label>
+								<input required="" name="name" id="InputName" placeholder="Nombre" class="form-control" type="text">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group required">
+								<label class="control-label">Apellido</label>
+								<input required="" name="lastname" id="InputLastName" placeholder="Apellido" class="form-control" type="text">
+							</div>
+						</div>
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Email</label>
+						<input required="" name="email" placeholder="Email" id="InputEmail" class="form-control" type="text">
+					</div>
+					<div class="form-group required">
+						<label class="control-label">RUT</label>
+						<input required="" name="rut" placeholder="Rut" id="InputRut" class="form-control" type="text">
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Dirección</label>
+						<input required="" name="address" id="InputAddress" placeholder="Dirección" class="form-control" type="text">
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Ciudad</label>
+						<select name="city_id" id="InputCity" class="form-control">
+							<option value="">Selecciona una ciudad</option>
+							<option value="1">Arica</option>
+							<option value="5">Antofagasta</option>
+							<option value="9">Concepción</option>
+							<option value="3">Santiago</option>
+							<option value="4">Valdivia</option>
+						</select>
+					</div>
+					<div class="form-group required">
+						<label for="InputZip">Código postal <sup>*</sup> </label>
+						<label for="InputZip"><a target="_blank" href="http://www.correos.cl/SitePages/home.aspx">conocer mi código postal</a></label>
+						<input required="" type="text" class="form-control" id="InputZip" placeholder="Código postal" name="zip_code">
+					</div>
+					<div class="form-group required">
+						<label class="control-label">Teléfono</label>
+						<input required="" name="telephone" placeholder="Teléfono" id="InputMobile" class="form-control" type="text">
+					</div>
+				</form>
+			</div>
+			<div class="col-sm-6 ">
+				<div id="fixed-resume-total" class="fixed-resume">
+					<table class="table">
+						<thead>
+							<tr>
+								<th colspan="3" >Estás comprando esto…</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="vert-align">Jabiru</td>
+								<td class="vert-align">1 x</td>
+								<td class="vert-align text-right">23.500</td>
+							</tr>
+							<tr>
+								<td class="vert-align">Kotel</td>
+								<td class="vert-align">2 x</td>
+								<td class="vert-align text-right">57.400</td>
+							</tr>
+							<tr>
+								<td class="vert-align"><b>Subtotal Carro</b></td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><b class="suma">80.900</b></td>
+							</tr>
+							<tr>
+								<td class="vert-align">Costo Despacho:</td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><span class="shipping-cost"></span></td>
+							</tr>
+							<tr>
+								<td class="vert-align">Total:</td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><span class="total">80.900</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="container-fluid cart-list text-left container-fluid-magle" style="display: inherit;">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3 class="text-left">Método de Pago</h3>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+								Webpay
+							</a>
+							</h4>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<form action="/pago" method="post" id="webpayplus" onsubmit="return ValidateWebpay()" novalidate="">
+									<input type="hidden" name="TBK_TIPO_TRANSACCION" value="TR_NORMAL">
+									<input type="hidden" name="TBK_MONTO" value="">
+									<input type="hidden" name="TBK_ID_SESION" value="20150622230126">
+									<input type="hidden" name="TBK_URL_EXITO" value="http://ecommerce.ondev.today/store/success">
+									<input type="hidden" name="TBK_URL_FRACASO" value="http://ecommerce.ondev.today/store/failure">
+									<input type="hidden" name="shipping_price" id="shipping-cost" value="">
+									<input type="hidden" name="city_id" id="webpay_city_id">
+									<!-- <input type="submit" class="button" id="submit_webpayplus_payment_form" value="Pagar" /> -->
+									<div class="hidden"></div>
+									<div class="form-group clearfix">
+										<img src="/static/img/logo_webpay.jpg" class="logo_webpay">
+									</div>
+									<div class="form-group clearfix checkbox">
+										<label class="checkbox-inline">
+											<input name="checkboxes" id="term-1" value="1" type="checkbox">
+											<span>Estoy de acuerdo y acepto los <a href="/tos" target="_blank" class="tos_checkbox">Términos y condiciones</a></span>
+										</label>
+									</div>
+									<div class="pull-right mlb-btn">
+										<button type="submit" class="btn btn-primary btn-small" style="background-color: rgba(0, 0, 0, 0.24);">Pagar &nbsp;</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+								Depósito
+							</a>
+							</h4>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								<form action="/checkout/send" onsubmit="return ValidateCheckoutPayment()" method="post" id="form-payment" enctype="multipart/form-data" novalidate="">
+									<p>Envíe el comprobante de transferencia.</p>
+									<br>
+									<h2>Datos para la transferencia</h2>
+									<p>
+										Cuenta Corriente<br>
+										Giani Da Firenze Ltda.<br>
+										Rut: 76.290.674-0<br>
+										Banco BICE<br>
+										CTA 1671513-1<br>
+										Mail: contacto@gianidafirenze.cl
+									</p>
+									<hr>
+									<div class="form-group">
+										<label for="CommentsOrder">Comprobante de transferencia</label>
+										<input type="file" name="image" id="comprobante">
+									</div>
+									<div class="form-group clearfix checkbox">
+										<label class="checkbox-inline" for="checkboxes-1">
+											<input name="checkboxes" id="checkboxes-1" value="1" type="checkbox">
+											<span>Estoy de acuerdo y acepto los <a href="/tos" target="_blank" class="tos_checkbox">Términos y condiciones</a></span> </label>
+										</div>
+										<input type="hidden" name="payment_type" value="1">
+										<input type="hidden" name="shipping_price" id="deposit_shipping_price">
+										<input type="hidden" name="city_id" id="deposit_city_id">
+										<input type="hidden" name="contact_id" id="InputContactId" value="">
+										<div class="hidden">
+										</div>
+										<div class="pull-right mlb-btn"> <button type="submit" class="btn btn-primary btn-small"> Enviar comprobante &nbsp; <i class="fa fa-arrow-circle-right"></i> </button> </div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- esto se muestraa solo en movil -->
+				<div class="col-sm-6 show-in-movil">
+					<table class="table">
+						<thead>
+							<tr>
+								<th colspan="3" class="text-center">Estás comprando esto…</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td class="vert-align">Jabiru</td>
+								<td class="vert-align">1 x</td>
+								<td class="vert-align text-right">23.500</td>
+							</tr>
+							<tr>
+								<td class="vert-align">Kotel</td>
+								<td class="vert-align">2 x</td>
+								<td class="vert-align text-right">57.400</td>
+							</tr>
+							<tr>
+								<td class="vert-align"><b>Subtotal Carro</b></td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><b>$94.00</b></td>
+							</tr>
+							<tr>
+								<td class="vert-align">Costo Despacho:</td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><span class="shipping-cost"></span></td>
+							</tr>
+							<tr>
+								<td class="vert-align">Total:</td>
+								<td class="vert-align"></td>
+								<td class="vert-align text-right"><span class="total">80.900</span></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!-- esto se muestraa solo en movil -->
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center show-more">
+					<a href="/" class="btn btn-outline">Cancelar y volver a la tienda</a>
+				</div>
+			</div>
+		</div>
+		
+		{% include '../content/footer.html' %}
+	{% end %}

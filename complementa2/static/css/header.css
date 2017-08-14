@@ -1,0 +1,396 @@
+/******LOGO*****/
+.header{
+    width: 210px;
+    padding: 0px 0px 0px 0px;
+    background: none repeat scroll 0% 0% rgba(255, 255, 255, 0.58);
+    z-index: 9999;
+    position: absolute;
+    top: 0px;
+/*    max-height: 250%;*/
+    left: 0px;
+}
+.navbar-header{
+    display: none;
+}
+.img_logo{
+    width: 100%;
+    height: 100%;
+
+}
+
+.logo{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: inherit;
+}
+
+.parent{
+    height: 36px;
+    letter-spacing: 2px;
+}
+
+.list-menu {
+    display: block;
+    width: 207px;
+    height: 40px;
+    color:rgba(104,118,119,1);
+    font-size: 17px;
+    font-weight: 600;
+    padding-top: 8px;
+    text-transform: uppercase;
+    padding-left: 20px;
+}
+
+/*.font-menu:hover, .font-menu.active{
+    text-decoration: none;
+    padding: 8px 22px 10px 22px;
+    background:#FD0000;
+    color:white;
+     -webkit-transform: scale(0.8);
+  -ms-transform: scale(0.8);
+  transform: scale(0.8);
+}*/
+/*
+.list-menu:hover, .list-menu.active{
+    text-decoration: none;
+    color: #fff;
+    background: rgba(147, 157, 158, 0.56);
+    height: 40px;
+}*/
+.list-menu:hover{
+    color: #2b2828;
+}
+
+.list-menu.active{
+    text-decoration: none;
+    color: #fff;
+    background: rgba(147, 157, 158, 0.33);
+    height: 40px;
+}
+/*****Menu desplegable******/
+#activar ~ .desplegable {
+    display: block;
+   /* overflow: hidden;*/
+    margin-right: 0px!important;
+    } 
+
+#activar:checked ~ 
+.desplegable {
+    display: none;
+}
+
+.return{
+    color: rgb(104, 118, 119) !important;
+    font-weight: bolder;
+}
+
+.menu_desplegable{
+    padding-right: 5px;
+    color: rgb(104, 118, 119) !important;
+    /*margin-top: 3px;*/
+}
+
+.icon-header{
+    border-radius: 25px;
+        height: 25px;
+}
+/*****FANCYBOX*****/
+.slider {
+     margin: 0 auto; 
+     text-align: center; 
+     display: block; 
+     object-fit: cover; 
+     width: 100%; 
+}
+
+/******FOOTER******/
+.w-f{
+}
+
+#footer {
+    position:relative;
+    right:0px;
+    bottom: 0px;
+    width: 100%;
+    z-index: 20000;
+    clear: both;
+    display: -webkit-box;
+    margin-top: 45px;
+}
+.fond-footer{
+    height:50px;
+    background: #919FA0;
+}
+
+.logo_footer{
+    width: 175px;
+    margin-top: 4px;
+}
+
+.w_termin_cond{
+    /*width: 190px;*/
+}
+
+.w_depacho{
+    /*width: 135px;*/
+}
+
+.w_nosotros{
+    /*width: 68px;*/
+}
+
+.w_contact{
+    /*width: 66px;*/
+}
+
+.text_footer{
+    text-align: left;
+    top: 0px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.71);
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 auto;
+    margin-bottom: 0px;
+    line-height: 45px;
+    letter-spacing: 0px;
+    display: inline-block;
+}
+
+.logo_footer2{
+    float: right;
+    padding-right: 5px;
+}
+
+.footer_social{
+    height: 35px;
+    margin-top:10px;
+}
+
+/********LETRERO********/
+#letrero{
+    min-height: 40px;
+    height: auto;
+    background-color: #C4D87F;
+    position: relative;
+    top: 0;
+    width: 100%;
+    left: 0px;
+    z-index: 20000;
+}
+
+.text_letrero{
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    margin-bottom: 0px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 991px){
+    .text_footer {
+    font-size: 17px;
+    }   
+
+    .w-f{
+    width:166px;
+    }
+
+    .w-logos-2{
+    width: 117px;
+    float: right;
+    }
+
+    .text-footer-center{
+    width: 467px;
+    text-align: center;
+    }
+
+    .w_termin_cond{
+    width: 140px;
+    }
+
+    .w_depacho{
+    width: 135px;
+    }
+
+    .w_nosotros{
+    width: 68px;
+    }
+
+    .w_contact{
+    width: 66px;
+}
+    
+
+}
+
+@media screen and (max-width: 800px){
+    .text_footer {
+        text-align:center;
+        font-size:15px;
+    }
+    .w_termin_cond{
+    width: 148px;
+    }
+
+    .w_depacho{
+    width: 145px;
+    }
+    .w_nosotros{
+    width: 60px;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .w_termin_cond {
+    width: 140px;
+    }
+    .text-footer-center {
+    width: 420px;
+    }
+    }
+@media screen and (max-width: 767px){
+    .list-menu {
+        min-width: 100%;
+        background-color: rgba(0,0,0,.25);
+        text-align: center;
+        color: rgb(65, 81, 82);
+    }
+
+    .list-menu:hover, .list-menu.active {
+        width: 330px;
+    }
+
+    .header {
+        width: 100%;
+        /*background: inherit;*/
+    }
+
+    .navbar-header {
+         display: block; 
+         height: 89px;
+        background-color: rgba(51, 51, 51, 0.71);
+    }
+
+
+    .bag_movil{
+        display: block;
+        position: absolute;
+        margin-top: 18px;
+        width: 45px;
+        margin-left: 15px;
+        z-index: 100000;
+    }
+
+    .modal-dialog{
+        top: 90px;
+    }
+
+    .nav-menu{
+        /*background-color: rgba(0,0,0,.25)!important;*/
+        /*padding: 15px 15px!important;*/
+        padding:inherit;
+        /*margin-top: 30px;*/
+        margin-bottom: 0px;
+        /*border: 2px solid rgba(255, 255, 255, 0.63);*/
+        height: 3px;
+        /*background: #fff;*/
+         top: 25px; 
+        /* left: 21%; */
+        right: 10px;
+        /*box-shadow: 0 8px 0 #fff, 0 16px 0 #fff;*/
+        border-radius: 0px; 
+        width: 30px;
+        height: 30px;
+        }
+
+    .icon-movil{
+        background-color: white;
+    }
+    .logo {
+        position: absolute;
+        height: 89px;
+        margin: 0 auto!important;
+        text-align: center;
+        /*float: right;*/
+        top: 0px;
+        display: table;
+        object-fit: fill;
+        width:inherit;
+        left: 100px;
+        right: 100px;
+        }
+
+    .fond-footer{
+        height:186px;
+        background: #919FA0;
+    }
+
+    .text_footer {
+        text-align:center;
+    }
+
+    .logo_footer {
+    float: inherit;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    display: -webkit-box;
+    }
+
+    .text-footer-center{
+    margin: 0 auto;
+    text-align: center;
+    }
+
+    .logo_footer2 {
+        float: initial;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    #footer{
+        /*height: 70px;*/
+        margin-top: 100px;
+    }
+
+    .w-f{
+    width: 320px;;
+    }
+
+    .w-logos-2{
+    width: 343px;
+    float: inherit;
+    }
+
+    .text-footer-center{
+    width: 313px;
+    /*left: 20px;*/
+    }
+
+    .w_termin_cond{
+    width:inherit;
+    }
+
+    .w_depacho{
+    width: inherit;
+    }
+
+    .w_nosotros{
+    width:inherit;
+    }
+
+    .w_contact{
+    width:inherit;
+}
+
+}

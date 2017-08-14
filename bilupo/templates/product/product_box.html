@@ -1,0 +1,128 @@
+
+
+<style type="text/css">
+   
+#carrito2:hover{
+    color: red;
+}
+#titulo_producto{
+    white-space: nowrap; 
+    width: 12em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+@media only screen and (max-width: 1200px) {
+    [class*="caja-productos"]{
+        width: 250px !important;
+        height: 218px !important;
+    }
+    [class*="img-re"]{
+        width: 250px !important;
+        height: 198px !important;
+    }
+    [class*="carritoCompra"]{
+        width: 3% !important;
+        margin-top: -2% !important;
+        margin-right: 55% !important;
+    }
+    #titulo_producto{
+        margin-right: 0% !important;
+        padding-right: 0% !important;
+        margin-left: 5% !important
+    }
+    .price{
+        margin-left: 4% !important;
+    }
+}
+@media only screen and (max-width: 768px){
+    [class*="carritoCompra"]{
+        width: 3% !important;
+        margin-top: -2% !important;
+        margin-right: 28% !important;
+    }
+    .price{
+        margin-left: 11% !important;
+    }
+    #titulo_producto{
+        margin-right: 0% !important;
+        padding-right: 0% !important;
+        margin-left: 7% !important
+    }
+}
+@media only screen and (max-width: 550px){
+    .carritoCompra{
+        margin-top: -5% !important;
+    }
+
+#titulo_producto{
+    width: 9em !important;
+}
+}
+@media only screen and (max-width: 414px){
+    .coluProductos{
+        width: 100% !important;
+    }
+}
+@media only screen and (max-width: 375px){
+    #titulo_producto {
+        width: 12em !important;
+    }
+    .price {
+        margin-left: 20% !important;
+    }
+}
+@media only screen and (max-width: 320px){
+    #titulo_producto{
+        width: 15em;
+    }
+    .carritoCompra{
+        margin-right: 2% !important;
+    }
+    .price{
+        margin-left: 31% !important;
+    }
+    .products2{
+        margin-left: 0% !important;
+    }
+}
+
+</style>
+<script type="text/template" id="product_template"> 
+    <div class="coluProductos col-lg-4 col-md-6 col-sm-6 col-xs-6 space10 h_detail_prod">
+        <div class="product product-thumb cuadro_product">
+            <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                <div class="box-4 caja-productos" style="width: 242px;height: 200px; padding-bottom:10px; background-color: white">
+                    <img class="img_product img-responsive pad0 img-re" id="imagen_producto" src="{{! images[0][1] }}" style="max-width: 100%!important;width: 242px;height: 200px;object-fit: scale-down;margin: 0 auto;position: absolute;padding: 15px 25px 15px 25px" onload="this.src='{{! images[0][3] }}'" title="" alt=""  onClick="style.pointerEvents='none'">
+                    <div class="product-image-foreground hidden-xs hidden-md hidden-sm">
+                    </div>
+               </div>
+            </a>       
+            <div style="padding-bottom: 20px; left: 55%">   
+                <div class="carritoCompra" style="float: right;margin-right: 4%; color: grey;margin-top: -3%">
+                    <span 
+                        product-id="{{! id }}" 
+                        product-name="{{! name }}" 
+                        product-price="{{! main_price }}" 
+                        product-upp="{{! upp }}" 
+                        product-img="{{! images[0][2] }}"
+                        class="add-to-cart add-to-cart-animation" 
+                        data-toggle="modal" 
+                        data-target="#myModal" 
+                        id="carrito2" 
+                        style="font-size: medium; margin-left: 92%; margin-top: -3px" >
+                            <img src="https://84static.loadingplay.com/static/images/690727952280d380b064a5a461ed2ef8_Biluppo_PNGs_Web_7-23.png">
+                    </span>
+                </div>
+                <h4 class="name ellipsis multiline" id="titulo_producto" style=" margin-left: 25%; margin-right: 10%; padding-right: 5%; color:grey; font-size:0.9em;letter-spacing:0.1em;text-align: center; text-transform: uppercase; margin-bottom: 2px;font-weight: lighter;">
+                    {{! name }}
+                </h4>
+                <div class="price" style=" margin-left: 31%; float: left; color: #E53623; text-align: center; width: 34%; letter-spacing:0.1em">
+                    {{! main_price|money }}
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</script>

@@ -1,0 +1,173 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript">
+function valida(f) {
+  var ok = true;
+  var msg = " El campo esta vacio: <br><br>";
+  
+  if(f.nombre.value == "")
+  {
+    msg += "Nombre<br>";
+    ok = false;
+  }
+
+  if(f.email.value == "")
+  {
+    msg += "email<br>";
+    ok = false;
+  }else{
+    var ve = validarEmail(f.email.value);
+    if(ve == false){
+      ok = false;
+      msg = "Error: La dirección de correo " + f.email.value + " es incorrecta.";
+    }
+  }
+
+  if(f.mensaje.value == "")
+  {
+    msg += "mensaje<br>";
+    ok = false;
+  }
+
+  if(ok == false){
+    $("#myModal2").modal("show");
+    $("#msg").html(msg);
+    return ok;
+  }
+  
+} 
+function validarEmail( email ) {
+    expr = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+    if ( !expr.test(email) )
+      return false;
+}
+</script>
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script>
+<script type="text/javascript">
+ $(document).ready(function()
+{
+     $('.font-menu').removeClass('activado');
+     $('.contacto').addClass("activado");
+     $('.contacto').removeClass('barras');
+
+ });
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/contacto.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+#fondo_detalle{
+    background-image: url("https://84static.loadingplay.com/static/images/fe063c0799006e33e73e0d1fbedc1649_Pattern_Blanco.png");
+}
+@media only screen and (max-width: 568px){
+  .lineaHr{
+    width: 90% !important;
+    margin-top: 20% !important;
+  }
+  .tituloContacto{
+    top: 10% !important;
+    right: 64% !important;
+  }
+  .escribanos{
+    margin-left: 5.6% !important;
+  }
+  .contenidoContacto{
+    margin-left: 6% !important;
+    width: 88% !important;
+  }
+  #enviar3{
+    margin-bottom: 10% !important;
+    margin-left: 72% !important;
+    width: 22% !important;
+ 
+  }
+  .ContactoFormulario{
+    padding: 0% !important;
+  }
+  .mensaje{
+    width: 88% !important;
+    margin-left: 6% !important;
+  }
+}
+</style>
+<div id="fondo_detalle" style=" margin-left: auto; margin-right: auto;position: relative;">
+<div style="padding: 30px">
+</div>
+<div class="ContactoFormulario" style="padding: 100px;max-width: 1280px;margin: 0 auto;">
+<div id="alineacion" style="float: right; margin-right: 25%;">
+<h4 class="tituloContacto" style=" right: 67%; color: grey;position: absolute; top: 160px; letter-spacing: 0.1em;font-size: 14px;font-weight: bold;">CONTACTO</h4>
+  <img class="ardilla hidden-xs hidden-md hidden-sm" src="https://84static.loadingplay.com/static/images/873e6b4433ba88028c57a777e4f195c4_Biluppo_PNGs_Web_7-15.png" style="position: absolute;z-index: 1;top: 132px;width: 125px;left: 875px;">
+</div>
+<br>
+<hr class="lineaHr" style="width: 680px; height: 1px; background-color: grey">
+<h6 class="escribanos" style=" margin-left: 21.6%; color: #E53623; font-size: 14px; letter-spacing: 0.05em"><b>Escríbenos a contacto@biluppo.cl o completa el formulario<b></h6>
+<br>
+<form name="formularioContactos" action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter" onsubmit="return valida(this)">
+<input class="contenidoContacto" type="text" name="nombre" placeholder="Nombre" style="font-size: 12px;font-weight: 100;margin-left: 267px;width: 556px;padding: 6px;letter-spacing: 0.1em">
+<br>
+<br>
+<input class="contenidoContacto" type="email" name="email" placeholder="Email" style="font-size: 12px;font-weight: 100;margin-left: 267px;width: 556px;padding: 6px;letter-spacing: 0.1em">
+<br>
+<br>
+<textarea class="mensaje" name="message" rows="7" cols="69" placeholder="Mensaje" style="margin-left: 267px; width: 556px; font-size: 13px;font-weight: 100;padding: 6px; letter-spacing: 0.1em"></textarea>
+<br>
+<br>
+<input class="contenidoContacto" type="submit" name="submit" id="enviar3" value="ENVIAR">
+
+<div class="modal fade" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">ERROR</h4>
+        </div>
+        <div class="modal-body">
+          <p id="msg"></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="enviar" data-dismiss="modal">Cerrar</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</form>
+
+</div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

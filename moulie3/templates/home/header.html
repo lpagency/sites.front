@@ -1,0 +1,182 @@
+<div class="container hidden-xs visible-sm visible-md visible-lg">
+<nav class="navbar patagonia-menu" role="navigation">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle toggle" data-toggle="collapse"
+                data-target=".navbar-ex1-collapse">
+          <span class="sr-only">Desplegar navegación</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+    </div>
+    <!-- LOGO -->
+        <div class="logo_wrapper navbar-brand hidden-lg hidden-md hidden-sm hidden-xs" style="">
+            <div class="caja-logo">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+                <img class="logo-desk-2" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+            </a>
+        </div>
+        </div>
+    <!-- /LOGO -->
+   
+    <div class="collapse navbar-collapse navbar-ex1-collapse box-menu pad0">
+        <ul class="nav navbar-nav col-md-5 pad0">
+         <div class="dropdow hidden">
+            <div class="btn btn-primary dropdown-toggle font-menu productos" type="button" data-toggle="dropdown">EVENTOS
+             </div>
+              <ul class="dropdown-menu">
+                <li><a href="{{ site_base }}/productos?tag=eventos">--</a></li>
+            </ul>
+        </div>
+         <div class="dropdown">
+            <div class="btn btn-primary dropdown-toggle font-menu productos" type="button" data-toggle="dropdown">PRODUCTOS
+             </div>
+              <ul class="dropdown-menu">
+                <i class="fa fa-angle-down dos" aria-hidden="true"></i>
+                <li><a href="{{ site_base }}/productos">TODOS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=chocolates">CHOCOLATES</a></li>
+                <li><a href="{{ site_base }}/productos?tag=macarons">MACARONS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=delicias">DELICIAS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=calugas">CALUGAS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=sin_azucar">SIN AZÚCAR</a></li>
+            </ul>
+        </div>
+
+        <div class="dropdown">
+          <div class="btn btn-primary dropdown-toggle font-menu mundo" type="button" data-toggle="dropdown">MUNDO MOULIE
+            </div>
+              <ul class="dropdown-menu dos">
+                <i class="fa fa-angle-down dos" aria-hidden="true"></i>
+                <li><a href="{{ site_base }}/la_maison">LA MAISON</a></li>
+                <li><a href="{{ site_base }}/novedades">NOVEDADES</a></li>
+                <li><a href="{{ site_base }}/produccion_artesanal">PRODUCCIÓN <br> ARTESANAL</a></li>
+            </ul>
+        </div>
+        
+        </ul>
+        <ul class="nav navbar-nav col-md-2 pad0">
+            <!-- LOGO -->
+            <div class="logo_wrapper navbar-brand hidden-xs visible-sm visible-md visible-lg">
+            <div class="caja-log">
+                {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a href="#">
+                    <div class="container_header">
+                        <img class="logo-desk" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    </div>
+                </a>
+                </div>
+            </div>
+
+
+            <!-- /LOGO -->
+        </ul>
+        <ul class="nav navbar-nav col-md-5 pad0 cero">
+               <li>
+                <a href="{{ site_base }}/ubicacion" class="font-menu ubicacion ub">UBICACIÓN</a>
+            </li>
+            <li style="">
+                <a href="{{ site_base }}/contact" class=" font-menu con">CONTACTO</a>
+            </li>
+
+             <li class="oc">
+                   <form role="search" method="get" id="searchform" action="{{ site_base }}/search_results">
+                            <label class="up" for="s">
+                                <!-- <i class="icon-search"></i> -->
+                                <i class="fa fa-search uno" aria-hidden="true"></i>
+                            </label>
+                            <input type="text" value="" name="search_query" placeholder="Buscar..." class="" id="s" />
+                    </form>
+            </li>
+        </ul>
+    </div>
+</nav>
+</div>
+
+
+
+
+
+
+<!-- ******************** MENU MOVIL ************************* -->
+
+ 
+<div class="container hidden-lg hidden-md hidden-lg hidden-sm visible-xs" id="container-header">
+  <div class="row">
+    <div class="clear"></div>
+    <nav role="navigation" class="navbar">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle collapsed">
+                <span class="sr-only">Menú de navegación</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand"><img src="https://84static.loadingplay.com/static/images/8a24ca8c00dddea8402f841c1d97f60c_logoweb.png"></a>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+         <div class="menu-menu-principal-container">
+        <ul id="principal" class="menu">
+          <li class="menu-item">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">PRODUCTOS <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="{{ site_base }}/productos" class="">TODOS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=chocolates" class="">CHOCOLATES</a></li>
+                <li><a href="{{ site_base }}/productos?tag=macarons" class="">MACARONS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=delicias" class="">DELICIAS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=calugas" class="">CALUGAS</a></li>
+                <li><a href="{{ site_base }}/productos?tag=sin_azucar" class="">SIN AZÚCAR</a></li>
+            </ul>
+          </li>
+
+          <li class="menu-item">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">MUNDO MOULIE <span class="caret"></span></a>
+              <ul class="dropdown-menu mundo" role="menu">
+                <li><a href="{{ site_base }}/la_maison" class="">LA MAISON</a></li>
+                <li><a href="{{ site_base }}/novedades" class="">NOVEDADES</a></li>
+                <li><a href="{{ site_base }}/produccion_artesanal" class="">PRODUCCIÓN ARTESANAL</a>
+                </li>
+            </ul>
+          </li>
+
+        <li id="menu-item-8324" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8324"><a href="{{ site_base }}/ubicacion">UBICACION</a></li>
+        <li id="menu-item-8323" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-8323"><a href="{{ site_base }}/contact">CONTACTO</a></li>
+        <li class="navbar-search-container search-element hidden-lg">
+            <form accept-charset="UTF-8" action="{{ site_base }}/search_results" class="navbar-search-form" data-search-form="1" id="search_form" method="get">
+                <i class="fa fa-search dos" aria-hidden="true"></i>
+                <a href="#" data-search-btn="1" class="navbar-search-button icon-search" data-block-track="headerSearchButton"></a>
+                <input autocomplete="off" class="vkal-search-box navbar-search-box" data-search-field="1" id="q" name="search_query" onblur="this.placeholder = &#39;Buscar&#39;" onfocus="this.placeholder = &#39;&#39;" placeholder="Buscar" type="text" value="" />
+            </form>
+            <ul class="navbar-search-results hidden" data-search-result="1" data-block-track="headerSearchResult"></ul>
+        </li>
+     </ul>  
+ </div>       
+  </div>
+</nav>
+<div class="mask-menu" style="display:none;"></div>
+<div class="col-md-2 hidden">
+  <img src="http://www.lafetechocolat.com/wp-content/themes/lafete/img/logo.png">
+</div>
+<div class="col-md-10 hidden">
+
+</div>  
+</div>
+</div>
+
+
+
+

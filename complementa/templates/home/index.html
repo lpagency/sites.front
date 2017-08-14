@@ -1,0 +1,155 @@
+{% extends ../base.html %}
+
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+{% block css %}
+<style type="text/css">
+.return{
+    visibility: hidden;
+}
+
+</style>
+
+{% end %}
+    <div id="container">
+       {% include '../home/header.html' %}
+
+        <!-- <div id="header-top">
+            <div id="cart">
+                <div class="heading">
+                    <h4>Tu cesta</h4>
+                    <a href="index630e.html?route=checkout/cart"><span id="cart-total">0 articulo(s) - $0</span></a>
+                </div>
+                <div class="content">
+                    <div class="empty">Tu cesta está vacía!</div>
+                </div>
+            </div>
+        </div> -->
+
+        <div id="notification"></div>
+        <div id="content">
+            <h1 style="display: none;">Complementa Diseño</h1>
+            <div id="tf_loading" class="tf_loading"></div>
+            <div id="tf_bg" class="tf_bg">
+
+                <img src="{{ read_image(site.name + '_slide1', 500) }}" alt="Slider 6" longdesc="{{ read_image(site.name + '_slide1', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide2', 500) }}" alt="Slide 5" longdesc="{{ read_image(site.name + '_slide2', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide3', 500) }}" alt="Slide 04" longdesc="{{ read_image(site.name + '_slide3', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide4', 500) }}" alt="Slide 01" longdesc="{{ read_image(site.name + '_slide4', 500) }}" />
+            
+                <img src="{{ read_image(site.name + '_slide5', 500) }}" alt="Slide 02" longdesc="{{ read_image(site.name + '_slide5', 500) }}" />
+                
+                <img src="{{ read_image(site.name + '_slide6', 500) }}" alt="Slide 03" longdesc="{{ read_image(site.name + '_slide6', 500) }}" />
+
+            </div>
+            <!-- <div id="tf_prev" class="tf_prev">
+                <div></div>
+            </div>
+            <div id="tf_next" class="tf_next">
+                <div></div>
+            </div> -->
+            <!-- <div id="tf_thumbs" class="tf_thumbs">
+                <img src="https://7static.loadingplay.com/static/images/87b28a8975c052b1f9c299167f05319d_HOME1-1280x1024.png" alt="Thumb1" />
+            </div> -->
+            <div id="tf_content_wrapper" class="tf_content_wrapper">
+                <div class="tf_content" id="content0" style="display:block;">
+                    <div class="ei-title">
+                    </div>
+                </div>
+                <div class="tf_content" id="content1">
+                    <div class="ei-title">
+                    </div>
+                </div>
+                <div class="tf_content" id="content2">
+                    <div class="ei-title">
+                    </div>
+                </div>
+                <div class="tf_content" id="content3">
+                    <div class="ei-title">
+                    </div>
+                </div>
+                <div class="tf_content" id="content4">
+                    <div class="ei-title">
+                    </div>
+                </div>
+                <div class="tf_content" id="content5">
+                    <div class="ei-title">
+                    </div>
+                </div>
+            </div>
+            <style>
+
+            </style>
+        </div>
+        
+        <div id="footer">
+            <div>
+                <div class="column">
+                    <h3 id="follow_us">Follow us</h3>
+                    <ul>
+                        <li>
+                            <a href="tel:(2) 2954 024" id="phone">
+                                <span><img src="{{site_base}}/static/catalog/view/theme/nico/image/phone.png" alt="Phone"/></span> (2) 2954 024</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.facebook.com/complementadiseno" id="facebook">
+                                <span><img src="{{site_base}}/static/catalog/view/theme/nico/image/facebook.png" alt="Facebook"/></span>Facebook</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Extras</h3>
+                    <ul>
+                        <li><a href="indexd773.html?route=product/manufacturer">Marcas</a></li>
+                        <li><a href="index4dd2.html?route=account/voucher">Vales Regalo</a></li>
+                        <li><a href="index3d18.html?route=affiliate/account">Afiliados</a></li>
+                        <li><a href="indexf110.html?route=product/special">Ofertas</a></li>
+                    </ul>
+                </div>
+                <div class="column">
+                    <h3>Atención al cliente</h3>
+                    <ul>
+                        <li><a href="index2724.html?route=information/contact">Contacto</a></li>
+                        <li><a href="indexda9d.html?route=account/return/insert">Devoluciones</a></li>
+                        <li><a href="index7cb2.html?route=information/sitemap">SiteMap</a></li>
+                    </ul>
+                </div>
+                <div class="column last">
+                    <h3>Tu Cuenta</h3>
+                    <ul>
+                        <li><a href="indexe223.html?route=account/account">Tu Cuenta</a></li>
+                        <li><a href="indexe223.html?route=account/order">Historial de pedidos</a></li>
+                        <li><a href="indexe223.html?route=account/wishlist">Favoritos</a></li>
+                        <li><a href="indexe223.html?route=account/newsletter">Boletín de noticias</a></li>
+                    </ul>
+                </div>
+                <div id="powered" class="clearfix">
+                    <span>
+Powered by <a href="http://www.opencart.com/">OpenCart</a><br /> Complementa Diseño &copy; 2016     </span>
+                    <ul class="payment-icons">
+                        <li><img src="{{site_base}}/static/catalog/view/theme/nico/image/visa.png" alt="Visa" /></li>
+                        <li><img src="{{site_base}}/static/catalog/view/theme/nico/image/paypal.png" alt="Paypal" /></li>
+                        <li><img src="{{site_base}}/static/catalog/view/theme/nico/image/cirrus.png" alt="Cirrus" /></li>
+                        <li><img src="{{site_base}}/static/catalog/view/theme/nico/image/mastercard.png" alt="Mastercard" /></li>
+                        <li><img src="{{site_base}}/static/catalog/view/theme/nico/image/american_express.png" alt="American Express" /></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="scroll_top">
+            <a href="http://complementadiseno.cl/"></a>
+        </div>
+
+
+{% end %}

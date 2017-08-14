@@ -1,0 +1,138 @@
+
+<div class="header_wrapper"> 
+    <!-- fin editar imagen -->
+    <!-- <img class="fondo" src="{{! site_base }}/static/img/home.jpg"> -->
+    <div class="top_wrapper">
+     <!--  <div class="container"> -->
+          <div class="row">
+            <div class="logo_wrapper col-md-3 col-sm-4 col-xs-12">
+            <div class="caja-logo">
+                <a href="{{ site_base }}">
+                    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
+                    {% if is_admin %}
+                        <div class="image-upload">
+                            <!-- id input debe ir en for de label -->
+                            <label for="{{ site.name }}_site_logo">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                        </div>
+                    {% end %}
+                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
+                </a>
+                </div>
+            </div>
+            <div class="menu_wrapper col-md-9 col-sm-8 col-xs-12">
+                <div class="row">
+                    <nav class="navbar navbar-default">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed segundo " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                            <ul class="nav navbar-nav navbar-right nav1 adaptable"> 
+                                 <li class="dropdown">
+                                <a href="#" class="dropdown-toggle wa-2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Quiénes somos <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="http://blendforlife.cl/article/detail/nosotros/1427">Nosotras</a></li>
+                                     <li><a href="{{site_base}}/ellos">Ellos</a></li>
+
+                               </ul>
+                               </li> 
+                               <!--  <li class="wa-1"><a href="" class=""> Quienes somos</a></li>    -->                        
+                               <!--  <li class="wa-2"><a href="{{site_base}}/listado_productos" class=""> Productos</a></li> -->
+                                <li class="dropdown">
+                                <a href="#" class="dropdown-toggle wa-2" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Productos <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                     <li><a href="{{site_base}}/listado_productos">Todos</a></li>
+                                     <li><a href="{{site_base}}/frubik">Frubik</a></li>
+                                    <!--  <li><a href="{{site_base}}/blender_bottle?tag=blender_bottle">Blender Bottle</a></li> -->
+                                      <li><a href="{{site_base}}/gudsnac?tag=gudsnac">GudSnac</a></li>
+                                     <li><a href="{{site_base}}/squeasy_snacker">Squeasy snacker</a></li>
+                                     <li><a href="{{site_base}}/inspiral">Inspiral</a></li>
+                               </ul>
+                               </li>
+                                <li class="wa-2"><a href="{{site_base}}/tips" class="">Blog</a></li>
+                                <li class="wa-3"><a href="{{site_base}}/destacados" class="">Destacados</a></li>
+                        <!--         <li class="wa-4"><a href="" class=""> Buscar</a></li>  -->
+                                <li class="wa-5"><a href="{{site_base}}/contact" class="" >Contacto</a></li>                           
+                                <li class="icon" id="open-cart" data-toggle="modal" data-target="#myModal" >
+                                 <span> Carrito </span> <span class="units-total">0</span> 
+                                </li> 
+
+                                <li class="pip hidden-sm hidden-xs">|</li>
+
+                                <li>
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </li>
+
+                                <li class="blue" style="position:relative;left: 38px;">   
+                                  {% if is_admin %}
+                                  <div class="image-upload lapiz visible-movil">
+                                      <label for="img_he_1">
+                                          <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                      </label>
+                                      <input type="file" class="editableimage" image-id="{{ site.name }}_he_1" name="image" id="img_he_1" >
+                                  </div>
+                                {% end %}
+
+                               <a href="https://www.facebook.com/Blend-for-Life-1608641922763121/?fref=ts" target="_blank">
+                                 <img id="{{ site.name }}_he_1" src="{{ read_image(site.name + '_he_1', 1) }}" onload="this.src='{{ read_image(site.name + '_he_1',500) }}'" class="iconos-header-0" alt="item" />
+                               </a>
+                             </li>
+
+                              <li>   {% if is_admin %}
+                                  <div class="image-upload lapiz visible-movil">
+                                      <label for="img_he_2">
+                                          <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                      </label>
+                                      <input type="file" class="editableimage" image-id="{{ site.name }}_he_2" name="image" id="img_he_2" >
+                                  </div>
+                                {% end %}
+
+                               <a href="https://www.instagram.com/blendforlife/?hl=en" target="_blank">
+                                 <img id="{{ site.name }}_he_2" src="{{ read_image(site.name + '_he_2', 1) }}" onload="this.src='{{ read_image(site.name + '_he_2',500) }}'" class="iconos-header" alt="item" />
+                               </a>
+                             </li>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+       <!--  </div> -->
+    </div>
+</div>
+
+
+<!--     ***efecto lupa******** -->
+<div class="modal fade" id="buscar-modal" role="dialog">
+    <div class="modal-dialog m-buscador">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Estamos aqui para ayudarte, que necesitas?</h4>
+            </div>
+            <div class="modal-body cuerpo">
+                <div class="col-md-12">
+                    <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: block;">
+                        <form id="searchForm" role="search" action="{{site_base}}/listado_productos" method="get" class="style-form2">
+                            <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="search_query" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<!-- **fin efecto** -->

@@ -1,0 +1,224 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var api_url = $.environmentVar(
+            'http://apibodegas.ondev.today/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'https://checkout.loadingplay.com');
+
+        var app_public = $.environmentVar(7,7,8);
+
+        $(document).ecommerce(
+        {
+            'app_public' : app_public,
+            'products_per_page' : 6,
+            'ignore_stock': true,
+            'base_url' : api_url,
+            'checkout_url': checkout_url
+        });
+    });
+</script>
+
+
+
+<!-- esto es el template del producto que se repite dependiendo de los productos que se trae de bodega -->
+
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<!-- /.navbar-->
+<div class="container">
+    <div class="row"> 
+        <div class="col-md-12">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li>Ladies</li>
+            </ul>
+            <div class="row page-top">
+                <div class="col-sm-6 col-sm-offset-3">
+                    <h1 class="{{editabletext}}" text-id="{{ site.name + '_shop_1' }}">{{ read_text(site.name +  '_shop_1') }}
+                    </h1>
+                    <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_shop_2' }}">{{ read_text(site.name +  '_shop_2') }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">
+            <!-- menus and filters-->
+            <!-- /menus and filters-->
+            <div class="banner"><a href="category.html">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_produc">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" style="position: relative;display: flex;top: 1278px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_produc" name="image" id="img_banner_produc" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_banner_produc" src="{{ read_image(site.name + '_banner_produc', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_produc',) }}'" class="img-responsive" alt="item" >
+                </a>
+
+            </div>
+        </div>
+        <div class="col-md-9">
+            <div class="info-bar">
+                <div class="row">
+                    <div class="col-sm-12 col-md-4 products-showing">Mostrar <strong>12</strong> de <strong>25</strong> productos</div>
+                    <div class="col-sm-12 col-md-8 products-number-sort">
+                        <div class="row">
+                            <div class="form-inline">
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="products-number"><strong>Mirar</strong> <a href="#" class="btn btn-default btn-sm btn-primary">12</a> <a href="#" class="btn btn-default btn-sm">24</a> <a href="#" class="btn btn-default btn-sm">Todos</a> <span class="hidden-md">Productos</span></div>
+                                </div>
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="products-sort-by"><strong>Ordenar por</strong>
+                                        <select name="sort-by" class="form-control"><option>Precio</option><option>Nombre</option><option>Primeras ventas</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row products">
+
+                <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div> 
+                </div>
+                <!-- en este fragmento se pega el listado de productos traidos de bodega -->
+                <!-- /product-->
+            </div>
+
+            <!-- /product-->
+        </div>
+        <div class="row">
+            <div class="col-md-12 banner">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_produc2">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_produc2" name="image" id="img_banner_produc2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_banner_produc2" src="{{ read_image(site.name + '_banner_produc2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_produc2',) }}'" class="img-responsive" alt="item" >
+                </a>
+            </div>
+            <div class="pages">
+                <p class="loadMore"><a href="#" class="btn btn-primary"><i class="fa fa-chevron-down"></i> Cargar mas</a></p>
+                <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- quick view modal box-->
+    <div id="product-quick-view-modal" tabindex="-1" role="dialog" aria-hidden="false" class="modal fade">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+                    <div class="row quick-view product-main">
+                        <div class="col-sm-6">
+                            <div class="quick-view-main-image"><img src="{{ site_base }}/static/img/detailbig1.jpg" alt="" class="img-responsive"></div>
+                            <div class="ribbon ribbon-quick-view sale">
+                                <div class="theribbon">SALE</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon-->
+                            <div class="ribbon ribbon-quick-view new">
+                                <div class="theribbon">NEW</div>
+                                <div class="ribbon-background"></div>
+                            </div>
+                            <!-- /.ribbon-->
+                            <div class="row thumbs">
+                                <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig1.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall1.jpg" alt="" class="img-responsive"></a></div>
+                                <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig2.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall2.jpg" alt="" class="img-responsive"></a></div>
+                                <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig3.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall3.jpg" alt="" class="img-responsive"></a></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <h2 class="product__heading">Burton Jacky Shirt</h2>
+                            <p class="text-muted text-small text-center">A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut...</p>
+                            <div class="box">
+                                <form>
+                                    <p class="price">$124.00</p>
+                                    <div class="row">
+                                        <div class="col-md-6 col-md-offset-3">
+                                            <div class="form-group">
+                                                <label for="modal_size">Choose your size</label>
+                                                <select id="modal_size" class="form-control">
+                                                    <option>Small</option>
+                                                    <option>Medium</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="modal_quantity">Quantity</label>
+                                                <input type="number" value="1" id="modal_quantity" class="form-control">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-center">
+                                        <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;Agregar al carro</button>
+                                        <button type="submit" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="btn btn-default"><i class="fa fa-heart-o"></i></button>
+                                    </p>
+                                </form>
+                            </div>
+                            <!-- /.box-->
+                            <div class="quick-view-social">
+                                <h4>Show it to your friends</h4>
+                                <p><a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" data-animate-hover="pulse" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /.modal-dialog-->
+    </div>
+    <!-- /.modal-->
+    <!-- /quick view modal box-->
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}

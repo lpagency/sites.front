@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('.font-menu').removeClass('active');
+      $('.amort').addClass("active");
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(15,15,15);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+                 $('.ellipsis').ellipsis();
+                 // $('.spinner').css("display", "none")
+             },
+             'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.products').ecommerce("product_box",config);
+
+
+    });
+</script>
+
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+{% include '../home/web_en_construccion.html' %}
+{% end %}
+

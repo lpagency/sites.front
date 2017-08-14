@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block body %}
+    <div id="wrap">
+        <!-- registration -->
+        <div class="container-fluid productlist">
+            <!-- raw 1 -->
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-sm-4 sobre-botones caja-m">
+                        <a href="{{ site.url }}article/detail/{{ article["title"] }}/{{ article["id"] }}">
+                            <div class="cont-boxes">
+                                <div class="box-art">
+                                    <h2>{{ article["title"] }}</h2>
+                                </div>
+                                <img src="{{ site_base }}/static/img/0051.jpg" class="img-responsive" alt="item" />
+                            </div>
+                        </a>
+                        <span class="btn-modificar-cont btn-agregar-cont-principal ">
+                            <i class="icon-pencil"></i>
+                        </span>
+                    </div>
+                {% end %}
+                <div class="col-sm-4">
+                    <div class="col-bt-5 sobre-botones">
+                        <a href="">
+                            <img src="{{ site_base }}/static/img/0013.png" class="img-responsive" alt="item">
+                        </a>
+                        <span class="btn-modificar-cont btn-agregar-cont-principal btn-agregar-cont-caja ">
+                            <i class="icon-plus"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+{% end %}

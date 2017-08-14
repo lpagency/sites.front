@@ -1,0 +1,9 @@
+{% if read_text(site.name +  '_text_letrero')!= '' or is_admin %}
+<section id="letrero" class="">
+    <div class="box">
+        <h1 class="col-md-11 col-sm-11 col-xs-11 text_letrero text-center {{editabletext}}" text-id="{{ site.name + '_text_letrero' }}"> {{ read_text(site.name +  '_text_letrero') }}
+        </h1>
+        <div class="col-md-1  col-sm-1 col-xs-1 text_letrero pull-right close-pop" >X</div>
+    </div>
+</section>
+{% end %}

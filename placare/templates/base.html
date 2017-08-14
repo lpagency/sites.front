@@ -1,0 +1,482 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- head bt inicio -->
+        <title>Placare</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+        <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.ho.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/listado_articulos.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/listado_productos.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/checkout.css">
+        
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+
+        <!-- aqui se ponen los demas css -de las paginas -->
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+
+        <!-- autocomplete
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-autocomplete -->
+        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+
+        <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css">
+       
+
+        <!-- <link rel="stylesheet" href="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.css?v=2.1.5"> -->
+
+        <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+
+
+
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css"/> -->
+
+        
+        {% block css %}{% end %}
+
+        {% include 'product/product_box.html' %}
+        {% include 'product/product_home.html' %}
+
+        {% if is_admin %}
+        {% set editabletext = 'editabletext' %}
+        {% else %}
+        {% set editabletext = '' %}
+        {% end %}
+
+    </head>
+
+
+
+    <body>
+        {% block header %}{% end %}
+        {% block body %}{% end %}
+
+         <!-- Modal -->
+    <div align="center">
+        <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title ">Resumen de tu compra</h4>
+                    </div>
+                    <div class="modal-body mlb-btn">
+                        <div class="container-fluid cart-list" ng-controller="">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th class="text-center">Cant</th>
+                                            <th class="text-right"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody class="shopping-cart">
+                                    </tbody>
+                                </table>
+                                <div class="checkout-form"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <!-- ********Modal filtros ordenar******** -->
+
+<!-- Modal -->
+<div id="myModal-orde" class="modal fade" role="dialog">
+  <div class="modal-dialog filtrosmovil">
+
+    <!-- Modal content-->
+    <div class="modal-content filtros">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><br> ORDENAR POR:</h4>
+      </div>
+      <div class="modal-body text-center">
+         <ul class="">
+                    <li><a href="#!" class="mayor">Precio: Mayor a menor</a></li>
+                    <li><a href="#!" class="menor">Precio: Menor a mayor</a></li>
+                    <li><a href="#!" class="nombre">Nombre</a></li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div id="myModal-fil" class="modal fade" role="dialog">
+  <div class="modal-dialog filtrosmovil">
+
+    <!-- Modal content-->
+    <div class="modal-content filtros">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center"><br> FILTRAR POR:</h4>
+      </div>
+      <div class="modal-body fili text-center">
+       <section class="h_submenu">
+          <div class="mtl text-center" style="padding-top: 33px; margin-bottom: 50px;">
+          <div class="text-fil"> FILTROS <i class="fa fa-plus botonMasFiltros" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-filtros"><input type="checkbox" class="categ c-billeteras" name="vehicle1" tag="billeteras" value="Bike"> Billeteras <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-filtros"><input type="checkbox" class="categ c-collares" name="vehicle2" tag="collares" value="Car"> Collares <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-filtros"><input type="checkbox" class="categ c-ropa" name="vehicle3" tag="ropa" value="Boat"> Ropa <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+          </form>
+          <div class="clearfix"></div>
+
+           <div class="text-fil"> CATEGORIAS<i class="fa fa-plus botonMasCategorias" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-categorias"><input type="checkbox" class="categ c-accesorios" name="vehicle1" tag="accesorios" value="Bike"> Accesorios <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-categorias"><input type="checkbox" class="categ c-poleras" name="vehicle2" tag="poleras" value="Car"> Poleras <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-categorias"><input type="checkbox" class="categ c-zapato" name="vehicle3" tag="zapato" value="Boat"> Zapatos <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+          </form>
+          <div class="clearfix"></div>
+
+        <div class="text-fil"> MARCA <i class="fa fa-plus botonMasMarca" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca1" name="vehicle1" tag="marca1" value="Bike"> Marca 1 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca2" name="vehicle2" tag="marca2" value="Car"> Marca 2 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca3" name="vehicle3" tag="marca3" value="Boat"> Marca 3 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca4" name="vehicle3" tag="marca4" value="Boat"> Marca 4 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca5" name="vehicle3" tag="marca5" value="Boat"> Marca 5 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-marca"><input type="checkbox" class="categ c-marca6" name="vehicle3" tag="marca6" value="Boat"> Marca 6 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+          </form>
+          <div class="clearfix"></div>
+
+         <div class="text-fil"> TALLA<i class="fa fa-plus botonMasTalla" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas37" name="vehicle1" tag="tallas37" value="Bike"> 37 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas38" name="vehicle2" tag="tallas38" value="Cara"> 38 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas39" name="vehicle3" tag="tallas39" value="Boat"> 39 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas40" name="vehicle3" tag="tallas40" value="Boat"> 40 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas41" name="vehicle3" tag="tallas41" value="Boat"> 41 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas42" name="vehicle3" tag="tallas42" value="Boat"> 42 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+              <div class="filtro-talla"><input type="checkbox" class="categ c-tallas43" name="vehicle3" tag="tallas43" value="Boat"> 43 <i class="fa fa-check-square hidden" aria-hidden="true"></i></div>
+          </form>
+          <div class="clearfix"></div>
+
+          <div class="text-fil"> COLOR <i class="fa fa-plus botonMasColor" aria-hidden="true"></i> </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="filtro-color">
+            <div class="col-md-6 col-sm-6 col-xs-4">
+                <div class="background-color-producto" onclick="location.href='#!';" tag="rojo" style="cursor: pointer;background-color: red"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="rosado" style="background-color: pink"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="azul" style="background-color: blue"></div>
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="verde" style="background-color: green"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="gris" style="background-color: grey"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="negro" style="background-color: black"></div>
+             </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="cafe" style="background-color: brown"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-4">
+               <div class="background-color-producto" tag="naranja" style="background-color: orange"></div>
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-4">
+                <div class="background-color-producto" tag="amarillo" style="background-color: yellow"></div>
+            </div>
+
+            </div>
+            </div>
+        </div>
+     </section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ******modal imagen talla****** -->
+
+<!-- Modal -->
+<div id="myModal-talla" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title talla">TABLA DE TALLAS</h4>
+      </div>
+      <div class="modal-body">
+        <div align="center">
+          <img class="img-talla" src="https://7static.loadingplay.com/static/images/100cf52904039b858baee21ab53c4ae5_hype.png">
+        </div>
+      </div>
+     <!--  <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> -->
+    </div>
+
+  </div>
+</div>
+
+<!-- ***fin modal talla**** -->
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        
+
+<!--         <script src="/path/to/parallax.js"></script> -->
+        
+<!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+        <!-- <script src="/node_modules/readmore-js/readmore.min.js"></script> -->
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+
+                <!-- carga de productos -->
+<!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+        
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+<!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
+<!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
+<!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script> -->
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script> -->
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script>
+
+
+         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
+
+<!--         <div type="template" id="product_loading" style="display:none;" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".fancybox").fancybox({
+                    'width':800,
+                    'height':630,
+                    'autoSize' : false,
+                    'autoScale': false,
+                    'padding': 0,
+                    'helpers': {
+                            overlay: {
+                                locked: false
+                            }
+                        }
+                });
+            });
+        </script>
+
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $(document).on("click", ".lupita", function(ev){
+                    $(".buscar-movil").toggle(1000);
+                });
+            });
+
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-total" >
+        </script>
+
+
+<!-- este es el script para unidades -->
+<script type="text/x-template" id="shopping-cart-product">
+<tr>
+    <td class="vert-align text-left">{{! name }}</td>
+    <td class="vert-align money">{{! price }}</td>
+    <td class="text-center vert-align">
+        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+        {{! quantity }}
+        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+    </td>
+    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+</tr>
+</script>
+<script type="text/x-template" id="shopping-cart-total" >
+<tr>
+    
+</tr>
+</thead>
+<tr>
+    <td>Total:</td> 
+    <td id="total" class="text-right money lib">{{! total }}</td>
+    <td></td>
+</tr>
+</script>
+<script type="text/x-template" id="shopping-cart-units-total" >
+    <span> {{! units_total }}</span>
+</script>
+<script type="text/x-template" id="shopping-cart-checkout-form" >
+<form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+    <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+    <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+    <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+    <div class="form-group text-center">
+         <button type="submit" class="btn bn" style="
+            background-color: rgba(0, 0, 0, 0.24); color: #777; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;">PAGAR
+        </button>
+    
+    </div>
+</form>
+   <div class=""> 
+             <a class="modal-close pin" data-dismiss="modal" aria-hidden="true">VOLVER</a>
+               
+           </a>        
+        </div>
+</script>
+
+
+
+
+<!-- termino carrito de compra -->
+
+        {% block javascript %}{% end %}
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '348231912006000',
+                xfbml: true,
+                version: 'v2.1'
+            });
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+        var site_name="{{site.name}}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/header.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+
+        {% end %}
+
+        <script type="text/javascript" src"https://clouddelivery.textbox.io/1/getEditor?apiKey=1wugguwjiatkm69xmt7w1den1mpvqkxi75mwfmb49lz89o4r">
+        </script>
+
+
+        <script>
+/*            $(document).ajaxComplete(function()
+            {
+                var hash = window.location.hash;
+                // window.location.href= hash;
+                
+                if (hash !== "") 
+                {
+                    $('html,body').animate({
+                        scrollTop: $(hash).offset().top
+                    });
+                }
+            });
+*/        </script>
+
+
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ get_config("analytics") }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+     <script type="text/javascript">
+    //     $(".carousel").on("touchstart", function(event){
+    //             var xClick = event.originalEvent.touches[0].pageX;
+    //         $(this).one("touchmove", function(event){
+    //             var xMove = event.originalEvent.touches[0].pageX;
+    //             if( Math.floor(xClick - xMove) > 5 ){
+    //                 $(".carousel").carousel('next');
+    //             }
+    //             else if( Math.floor(xClick - xMove) < -5 ){
+    //                 $(".carousel").carousel('prev');
+    //             }
+    //         });
+    //         $(".carousel").on("touchend", function(){
+    //                 $(this).off("touchmove");
+    //         });
+    //     });
+    // </script>
+
+
+    </body>
+</html>

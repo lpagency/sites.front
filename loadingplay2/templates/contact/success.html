@@ -1,0 +1,75 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+
+{% if is_admin %}
+<script type="text/javascript">
+    $(document).editablepage({
+        page_name : "{{page.name}}",
+        page_keywords : "{{page.keywords}}",
+        page_uri : " {{ site_base }}",
+        body_url : site_base + "/page/{{ site_base }}/body"
+    });
+</script>
+{% else %}
+<script type="text/javascript">
+    $(document).loadpagecontent({
+        body_url : site_base + "/page/{{ site_base }}/body",
+        page_uri : "{{ page.uri }}"
+    });
+</script>
+
+
+{% end %}
+
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+
+    .col-sm-6, .col-sm-12
+    {
+        padding: 2px;
+    }
+</style>
+{% end %}
+
+
+
+{% block body %}
+
+
+    <section>
+       <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_banner_suc">
+             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_suc" name="image" id="img_banner_suc" >
+     </div>
+     {% end %}
+     <img id="{{ site.name }}_banner_suc" src="{{ read_image(site.name + '_banner_suc', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_suc',500) }}'" class="banner-success" alt="item">
+     </div>
+         <div align="center">
+        <div class="col-md-12 col-sm-12 col-xs-3">
+        <div class="ani"> Gracias por escribirnos, nos pondremos en contacto contigo a la brevedad!</div>
+    </div>
+    </div>
+     </section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

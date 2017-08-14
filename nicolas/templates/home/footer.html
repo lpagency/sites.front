@@ -1,0 +1,71 @@
+<footer class="fondo-footer">
+  <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class="inform-comerc">
+                <div class="clearfix fo"></div>
+                    <ul class="no-dot">
+                        <li class=" {{editabletext}}" text-id="{{ site.name + '_footer_1' }}"> {{ read_text(site.name +  '_footer_1') }}
+                        </li>
+                        <li class="text-bot {{editabletext}}" text-id="{{ site.name + '_footer_2' }}"> {{ read_text(site.name +  '_footer_2') }}
+                        </li>
+                         <li class="text-bot {{editabletext}}" text-id="{{ site.name + '_footer_o' }}"> {{ read_text(site.name +  '_footer_o') }}
+                        </li>
+                        <li></li>
+                           {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                                Logout</a>
+                           {% end %}
+                        </li>
+                    </ul>
+            </div>
+  </div>
+
+
+<section>
+    <div class="container">
+        <div class="row redes-footer">
+            <div align="center">
+              <div class="col-md-2 col-xs-2">
+                <a href="https://www.facebook.com/NicolasEmdenMusica/?fref=ts">
+                <img class="iconos iconos2" src="https://84static.loadingplay.com/static/images/8e05ac5d546c0edfa8b38270c4be7902_icono_facebook.png"> 
+                <div class="name-red-foo or">FACEBOOK</div>
+                </a>
+              </div>
+              
+              <div class="col-md-2 col-xs-2">
+                  <a href="https://twitter.com/nicoemden">
+                  <img class="iconos iconos2" src="https://84static.loadingplay.com/static/images/0b82f08cbdcb95b314d33053ad75b77b_icono_twitter.png">
+                  <div class="name-red-foo ar">TWITTER</div>
+                  </a>
+              </div>
+              
+              <div class="col-md-2 col-xs-2">
+                  <a href="https://www.youtube.com/user/NicolasEmden">
+                  <img class="iconos iconos2" src="https://84static.loadingplay.com/static/images/dfc3f242daed2e7fdf10690329849159_icono_youtube.png">
+                  <div class="name-red-foo">YOUTUBE</div>
+                  </a>
+              </div>
+              
+              <div class="col-md-2 col-xs-2">
+                  <a href="https://play.spotify.com/user/1117729147/playlist/6dGHUDsiLr1IDdBNp1oBLo?play=true&utm_source=open.spotify.com&utm_medium=open">
+                  <img class="iconos iconos2" src="https://84static.loadingplay.com/static/images/3f5767724c8bde4fafb76ea52c6975b9_icono_spotify.png">
+                  <div class="name-red-foo">SPOTIFY</div>
+                  </a>
+              </div>
+              
+              <div class="col-md-2 col-xs-3">
+                  <a href="https://itunes.apple.com/us/artist/nicolas-emden/id912216917">
+                  <img class="iconos iconos2" src="https://84static.loadingplay.com/static/images/f42cd335404bcdfa3d02e3085689316b_icono_apple.png"> 
+                  <div class="name-red-foo er">APPLE MUSIC</div>
+                  </a>
+              </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+</footer>
+
+
+

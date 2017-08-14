@@ -1,0 +1,56 @@
+<!-- generar contenido galeria -->
+<div id="g-galeria-a" class="loginpopup step_two">
+    <div class="g-header-form">
+        <div class="g-header-button g-header-button-active">
+            <h2>NUEVA GALERÍA</h2>
+        </div>
+        <div class=" g-header-button">
+            <h2>BORRADORES</h2>
+        </div>
+    </div>
+    <form id="gallery-form" class="gallery-add-form" method="post" action="{{ site_base }}/gallery/add" >
+        <div class="form-group required">
+            <label class="control-label">Nombre galería</label>
+            <input name="name" class="form-control" placeholder="Nombre" class="form-control" type="text" id="gallery-name-field" value="{% if data is not None %}{{data.title}} {% end %}">
+            <div for="name" id="error_gallery_name" class="error g-alert">Ingrese un nombre</div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" style="width:100%;text-align:left;">Descripci&oacute;n de la galeria</label>
+            <div class="controls">
+                <!--form-->
+                <div id="wysihtml5-gallery-toolbar" style=" float:left;">
+                    <a data-wysihtml5-command="bold" title="CTRL+B">bold</a> |
+                    <a data-wysihtml5-command="italic" title="CTRL+I">italic</a> |
+                    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="p">párrafo</a> |
+                    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h1">h1</a> |
+                    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h2">h2</a> |
+                    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h3">h3</a> |
+                    <a data-wysihtml5-command="formatBlock" data-wysihtml5-command-value="h4">h4</a> |
+                    <a data-wysihtml5-command="insertUnorderedList">lista</a> |
+                    <a data-wysihtml5-command="insertOrderedList">lista enumerada</a> 
+                </div>
+                <textarea id="wysihtml5-gallery-textarea" name="description" placeholder="ingresa una descripci&oacute;n para tu producto (Opcional)" class="form-control input-lg" rows="5">{% if data is not None %}{{data.description}} {% end %}</textarea>
+                <!--/form>-->
+            </div>
+        </div>
+        <div class="form-group required">
+            <label class="control-label">Seleccione Fotografias</label>
+            <div id="gallery-list">
+                <input type="file" name="image" class="gallery-add-form-input" id="gallery-input-image" multiple>
+            </div>
+        </div>
+        <div class="loademegallery"><img src="{{ site_base }}/static/img/loaderme.gif"></div>
+        <div id="error_gallery_images" for="image" class="error g-alert">Debe haber al menos una imagen</div>
+        {% if data is not None %}
+            {% set tags = data.tag_list %}
+        {% else %}
+            {% set tags = None %}
+        {% end %}
+        {% module Template('common/add_tag.html', tags=tags) %}
+        <button id="producto-volver-5"><a>volver</a></button>
+        <button><a>archivar</a></button>
+        <button><a>previsualizar</a></button>
+        <button type="submit" id="submit_gallery_form"><a>publicar</a></button>
+        <!--button><a href="/galeria">publicar</a></button-->
+    </form>
+</div>

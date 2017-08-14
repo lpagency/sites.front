@@ -1,0 +1,843 @@
+{% if tag==False %}
+<!-- log in - register -->
+<div id="mlb-register-wrapper" class="descripcion_wrapper" style="display: none;">
+    <div class="descripcion_cerrar">
+        <button id="mlb-close-register" style="font-size: 35px; color:gray !important"><i class="icon-remove"></i></button>
+    </div>
+    <div class="col-xs-10 col-md-6 mlb-register-content col-md-offset-3 col-xs-offset-1">
+        <div class="col-sm-12 especial bg-black-magle">
+            <img src="{{ site_base }}/static/img/mlb_logo_b.jpg" style="max-height: 50px; max-width: 100%">
+        </div>
+        <div class="g-header-form">
+            <div class="mlb-header-button mlb-header-button-active">
+                <h2 style="cursor: pointer;" >sign in</h2>
+            </div>
+            <div class="mlb-header-button">
+                <h2 style="cursor: pointer;" >register</h2>
+            </div>
+        </div>
+        <div class="col-sm-6 especial">
+            <div class="col-sm-12 info-product" style="padding: 0px 30px; height: auto; margin-bottom: 40px">
+                <div class="form-group required" >
+                    <input name="title" id="article_title_field" placeholder="Email Address" class="form-control" type="text">
+                </div>
+                <div class="form-group required">
+                    <input name="title" id="article_title_field" placeholder="Password" class="form-control" type="text">
+                </div>
+                <button type="button" class="btn add-to-cart" product-id="7" style="float: right; margin: 20px 0px 0px 0px ">sign in</button>
+            </div>
+        </div>
+        <div class="col-sm-6 especial">
+            <div class="col-sm-12 " style="padding: 0px 30px;">
+                <a href=""><img class=""src="{{ site_base }}/static/img/facebook.png" style="width: 130px;" ></a>
+                <label class="control-label" style="width: 100%; text-align: center; color: gray;">sign in with facebook</label>
+            </div>
+        </div>        
+    </div>
+    
+</div>
+
+
+
+<!-- log in - register -->
+
+
+<!-- Swiper -->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_1">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_1a">
+                        <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1a" name="image" id="img_banner_1a" >
+                </div>
+            {% end %} 
+            <img id="mlb_banner_1" class="img-responsive show-hide lazy" src="{{ read_image(site.name + '_banner_1', 1) }}" data-original="{{ read_image(site.name + '_banner_1') }}" /> <!---->
+            <img id="mlb_banner_1a" class="img-responsive hide-show lazy" src="{{ read_image(site.name + '_banner_1a', 1) }}" data-original="{{ read_image(site.name + '_banner_1a') }}" />
+          
+            <div class="info-product banner-principal">
+                <h2>
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner1_tit' }}" >{{ read_text(site.name + '_banner1_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner1_tit') }}
+                {% end %}</h2>
+                <!-- <i>_______________________________</i> -->
+                <p>
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner1_desc' }}" >{{ read_text(site.name + '_banner1_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner1_desc') }}
+                {% end %}
+                </p>
+                <a href="{{ site_base }}?tag=cojines"><button type="button" class="btn btn-banner">conocer</button></a>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_9">
+                <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_9" name="image" id="img_banner_9" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_9a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_9a" name="image" id="img_banner_9a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_9" class="img-responsive show-hide lazy" src="{{ read_image(site.name + '_banner_9') }}" data-original="{{ read_image(site.name + '_banner_9') }}" />
+            <img id="mlb_banner_9a" class="img-responsive hide-show lazy" src="{{ read_image(site.name + '_banner_9a') }}" data-original="{{ read_image(site.name + '_banner_9a') }}"/>
+              
+  <!--           <img class="img-responsive show-hide" src="{{ site_base }}/static/img/mlb_009.png">
+            <img class="img-responsive hide-show" src="{{ site_base }}/static/img/mlb_009a.png"> -->
+            <div class="info-product banner-principal banner-principal-product">
+                <h2>
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner9_tit' }}" >{{ read_text(site.name + '_banner9_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner9_tit') }}
+                {% end %}
+                </h2>
+                <!-- <i>_______________________________</i> -->
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner9_desc' }}" >{{ read_text(site.name + '_banner9_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner9_desc') }}
+                {% end %}
+                </p>
+                <!-- <h1>$ 9.000</h1> -->
+                <a href="{{ site_base }}?tag=pieceras"><button type="button" class="btn">conocer</button></a>
+            </div>
+        </div>
+        <div class="swiper-slide">
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_10">
+                <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_10" name="image" id="img_banner_10" />
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload">
+                <label for="img_banner_10a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_10a" name="image" id="img_banner_10a">
+            </div>
+            {% end %}
+            <img id="mlb_banner_10" class="img-responsive show-hide lazy" src="{{ read_image(site.name + '_banner_10') }}" data-original="{{ read_image(site.name + '_banner_10') }}" />
+            <img id="mlb_banner_10a" class="img-responsive hide-show lazy" src="{{ read_image(site.name + '_banner_10a') }}" data-original="{{ read_image(site.name + '_banner_10a') }}"/>
+             
+            <div class="info-product banner-secundario">
+                <h2>
+                {% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner10_tit' }}" >{{ read_text(site.name + '_banner10_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner10_tit') }}
+                {% end %}
+                </h2>
+                <!-- <i>_______________________________</i>  -->
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner10_desc' }}" >{{ read_text(site.name + '_banner10_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner10_desc') }}
+                {% end %}</p>
+                <button type="button" class="btn add-to-cart" product-id="7">conocer</button>
+            </div>
+        </div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+    <!-- Add Arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>
+<!-- content fake -->
+<!-- row momentanea -->
+<div class="row cat-index">
+    <div class="col-sm-4 especial"style="height: 515px;">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+            <div class="image-upload">
+                <label for="img_banner_2">
+                <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" data-original="{{ read_image(site.name + '_banner_2', 200) }}"class="img-responsive lazy" alt="item" style="height: 100%;">
+            <div class="info-product">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner2_tit' }}" >{{ read_text(site.name + '_banner2_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner2_tit') }}
+                {% end %}</h2>
+                <i>_______________________________</i> 
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner2_desc' }}" >{{ read_text(site.name + '_banner2_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner2_desc') }}
+                {% end %}</p>
+                <!-- <h1>$ 9.000</h1> -->
+                <a href="{{ site_base }}?tag=fusion"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+    <div class="col-sm-4 especial" style="height: 515px;">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+            <div class="image-upload">
+                <label for="img_banner_3">
+                <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_3" name="image" id="img_banner_3" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_3" src="{{ read_image(site.name + '_banner_3', 1) }}" data-original="{{ read_image(site.name + '_banner_3', 200) }}" class="img-responsive lazy" alt="item" style="height: 100%;">
+            <!-- <img src="{{ site_base }}/static/img/mlb_003.png" class="img-responsive" alt="item"> -->
+            <div class="info-article">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner3_tit' }}" >{{ read_text(site.name + '_banner3_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner3_tit') }}
+                {% end %}</h2>
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner3_desc' }}" >{{ read_text(site.name + '_banner3_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner3_desc') }}
+                {% end %}</p>
+                <a href="{{ site_base }}?tag=urbano"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+    <div class="col-sm-4 especial" style="height: 515px;">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+            <div class="image-upload">
+                <label for="img_banner_4">
+                <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_4" name="image" id="img_banner_4" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_4" src="{{ read_image(site.name + '_banner_4', 1) }}" data-original="{{ read_image(site.name + '_banner_4', 200) }}" class="img-responsive lazy" alt="item" style="height: 100%;">
+            <!-- <img src="{{ site_base }}/static/img/mlb_004.png" class="img-responsive" alt="item"> -->
+            <div class="info-product color-white">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner4_tit' }}" >{{ read_text(site.name + '_banner4_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner4_tit') }}
+                {% end %}</h2>
+                <i>_______________________________</i>
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner4_desc' }}" >{{ read_text(site.name + '_banner4_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner4_desc') }}
+                {% end %}</p>
+                <!-- <h1>$ 9.000</h1> -->
+                <a href="{{ site_base }}?tag=andino"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+</div>
+<!-- row momentanea -->
+<div class="row cat-index-largo">
+    <div class="col-sm-12 especial">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_5">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_5" name="image" id="img_banner_5" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_5a">
+                        <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_5a" name="image" id="img_banner_5a" >
+                </div>
+            {% end %}
+            <div>
+            <img id="mlb_banner_5" class="img-responsive show-hide lazy" src="{{ read_image(site.name + '_banner_5', 1) }}" data-original="{{ read_image(site.name + '_banner_5', 500) }}" />
+            <img id="mlb_banner_5a" class="img-responsive hide-show lazy" src="{{ read_image(site.name + '_banner_5a', 1) }}" data-original="{{ read_image(site.name + '_banner_5a', 500) }}" /> 
+            </div>
+<!--             <img src="{{ site_base }}/static/img/mlb_005.png" class="img-responsive show-hide" alt="item">
+            <img src="{{ site_base }}/static/img/mlb_005a.png" class="img-responsive hide-show" alt="item"> -->
+            <div class="info-product banner-secundario color-white">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner5_tit' }}" >{{ read_text(site.name + '_banner5_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner5_tit') }}
+                {% end %}</h2>
+                <i>_______________________________</i>
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner5_desc' }}" >{{ read_text(site.name + '_banner5_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner5_desc') }}
+                {% end %}</p>
+                <a href="{{ site_base }}?tag=pieceras"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+</div>
+
+<div class="row cat-index-end">
+    <div class="col-sm-6 especial banner-50">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_6">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_6" name="image" id="img_banner_6" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_6a">
+                        <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_6a" name="image" id="img_banner_6a" >
+                </div>
+            {% end %}
+            <div>
+                <img id="mlb_banner_6" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_6', 1) }}" data-original="{{ read_image(site.name + '_banner_6', 500) }}" />
+                <img id="mlb_banner_6a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_6a', 1) }}" data-original="{{ read_image(site.name + '_banner_6a', 500) }}" />
+            </div>
+<!--             <img src="{{ site_base }}/static/img/mlb_006.png" class="img-responsive show-hide" alt="item">
+            <img src="{{ site_base }}/static/img/mlb_006a.png" class="img-responsive hide-show" alt="item"> -->
+            <div class="info-product">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner6_tit' }}" >{{ read_text(site.name + '_banner6_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner6_tit') }}
+                {% end %}</h2>
+                <i>_______________________________</i>
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner6_desc' }}" >{{ read_text(site.name + '_banner6_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner6_desc') }}
+                {% end %}</p>
+                <a href="{{ site_base }}?tag=cojines"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+    <div class="col-sm-6 especial banner-50">
+        <!-- <a href=""> -->
+            {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_7">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_7" name="image" id="img_banner_7" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                    <label for="img_banner_7a">
+                        <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_7a" name="image" id="img_banner_7a" >
+                </div>
+            {% end %}
+            <div>
+                <img id="mlb_banner_7" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_7', 1) }}" data-original="{{ read_image(site.name + '_banner_7', 500) }}" />
+                <img id="mlb_banner_7a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_7a', 1) }}" data-original="{{ read_image(site.name + '_banner_7a', 500) }}" />
+            </div>
+            <!-- <img src="{{ site_base }}/static/img/mlb_007.png" class="img-responsive show-hide" alt="item">
+            <img src="{{ site_base }}/static/img/mlb_007a.png" class="img-responsive hide-show" alt="item"> -->
+            <div class="info-article">
+                <h2>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner7_tit' }}" >{{ read_text(site.name + '_banner7_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner7_tit') }}
+                {% end %}</h2>
+                <p>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_banner7_desc' }}" >{{ read_text(site.name + '_banner7_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_banner7_desc') }}
+                {% end %}</p>
+                <a href="{{ site_base }}/aboutus"><button type="button" class="btn">conocer</button></a>
+            </div>
+        <!-- </a> -->
+    </div>
+</div>
+<div class="row">
+    <ul class="col-sm-12 nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black; /*text-transform: uppercase*/font-variant:small-caps;" ><h1>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_product_tit' }}" >{{ read_text(site.name + '_product_tit') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_product_tit') }}
+                {% end %}</h1></li>
+        <li style="width: 100% !important; text-align: center; color: black; /*text-transform: uppercase*/font-variant:small-caps;" ><h1>{% if is_admin %}
+                <span class="editabletext" text-id="{{ site.name + '_product_desc' }}" >{{ read_text(site.name + '_product_desc') }}</span>
+                {% else %}
+                {{ read_text(site.name + '_product_desc') }}
+                {% end %}</h1></li>
+    </ul>
+</div>
+{% end %}
+
+{% if tag!=False %}
+    {% if tag=='urbano' %}
+    <div class="productlist">
+        <div class="row">
+            <div class="col-sm-12 especial mlb-aboutus-header">
+                <h2>{{ tag.upper()}}</h2>
+                <div class="col-sm-12 especial bkg"></div>
+                {% if is_admin %}
+                <!-- banner 1 -->
+                <div class="image-upload" style="right:50px;">
+                    <!-- id input debe ir en for de label -->
+                    <label for="img_banner_living">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_living" name="image" id="img_banner_living" >
+                </div>
+                <!-- banner 2 -->
+                <div class="image-upload" style="right:50px;">
+                    <!-- id input debe ir en for de label -->
+                    <label for="img_banner_living_a">
+                        <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_living_a" name="image" id="img_banner_living_a" >
+                </div>
+                {% end %}
+                <div>
+                <img id="mlb_banner_living" class="img-responsive show-hide lazy" src="{{ read_image(site.name + '_banner_living', 1) }}" data-original="{{ read_image(site.name + '_banner_living', 500) }}" />
+                <img id="mlb_banner_living_a" class="img-responsive hide-show lazy" src="{{ read_image(site.name + '_banner_living_a', 1) }}" data-original="{{ read_image(site.name + '_banner_living_a', 500) }}" />
+                </div>
+        <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+        <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+            </div>
+        </div>
+    </div>
+    <div class="widget col-sm-12 especial profile-company">
+            <div class="col-sm-12 especial profile-foto-top">       
+                    <div class="profile-company-logo">
+                        <img class="lazy" src="{{ read_image(site.name + '_banner_living', 1) }}" data-original="{{ read_image(site.name + '_banner_living', 200) }}" alt="item">
+                    </div>
+            </div>  
+    </div>
+
+    <div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps*/;" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-urbano-title" >{{ read_text(site.name + '-urbano-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-urbano-title') }}</span>
+            {% end %}
+            </h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>     
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-urbano-desc" >{{ read_text(site.name + '-urbano-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-urbano-desc') }}</span>
+            {% end %}
+            </h1></li>
+    </ul>
+</div>
+
+    {% end %}
+{% if tag=='andino' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_dinner">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_dinner" name="image" id="img_banner_dinner" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_dinner_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_dinner_a" name="image" id="img_banner_dinner_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_dinner" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_dinner', 1) }}" data-original="{{ read_image(site.name + '_banner_dinner') }}" />
+            <img id="mlb_banner_dinner_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_dinner_a', 1) }}" data-original="{{ read_image(site.name + '_banner_dinner_a') }}" />
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img class="mlb-img lazy" src="{{ read_image(site.name + '_banner_dinner', 1) }}" data-original="{{ read_image(site.name + '_banner_dinner', 200) }}" alt="item">                      
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-andino-title" >{{ read_text(site.name + '-andino-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-andino-title') }}</span>
+            {% end %}</h1></li>
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-andino-desc" >{{ read_text(site.name + '-andino-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-andino-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}   
+
+{% if tag=='fusion' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_kitchen">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_kitchen" name="image" id="img_banner_kitchen" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_kitchen_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_kitchen_a" name="image" id="img_banner_kitchen_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_kitchen" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_kitchen', 1) }}" data-original="{{ read_image(site.name + '_banner_kitchen') }}" />
+            <img id="mlb_banner_kitchen_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_kitchen_a', 1) }}" data-original="{{ read_image(site.name + '_banner_kitchen_a') }}" />
+    <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+    <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img src="{{ read_image(site.name + '_banner_kitchen', 1) }}" class="lazy" data-original="{{ read_image(site.name + '_banner_kitchen', 200) }}" alt="item">
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase ;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-fusion-title" >{{ read_text(site.name + '-fusion-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-fusion-title') }}</span>
+            {% end %}
+        </h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/* font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-fusion-desc" >{{ read_text(site.name + '-fusion-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-fusion-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}  
+
+{% if tag=='cojines' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_bedroom">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_bedroom" name="image" id="img_banner_bedroom" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_bedroom_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_bedroom_a" name="image" id="img_banner_bedroom_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_bedroom" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_bedroom', 1) }}" data-original="{{ read_image(site.name + '_banner_bedroom') }}" />
+            <img id="mlb_banner_bedroom_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_bedroom_a', 1) }}" data-original="{{ read_image(site.name + '_banner_bedroom_a') }}" />
+    <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+    <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img src="{{ read_image(site.name + '_banner_bedroom', 1) }}" class="lazy" data-original="{{ read_image(site.name + '_banner_bedroom') }}" alt="item">
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-cojines-title" >{{ read_text(site.name + '-cojines-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-cojines-title') }}</span>
+            {% end %}
+        </h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-cojines-desc" >{{ read_text(site.name + '-cojines-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-cojines-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}
+
+
+{% if tag=='pieceras' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_piecera">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_piecera" name="image" id="img_banner_piecera" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_piecera_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_piecera_a" name="image" id="img_banner_piecera_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_piecera" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_piecera', 1) }}" data-original="{{ read_image(site.name + '_banner_piecera') }}" />
+            <img id="mlb_banner_piecera_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_piecera_a', 1) }}" data-original="{{ read_image(site.name + '_banner_piecera_a') }}" />
+    <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+    <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img src="{{ read_image(site.name + '_banner_piecera', 1) }}" class="lazy" data-original="{{ read_image(site.name + '_banner_piecera') }}" alt="item">
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-pieceras-title" >{{ read_text(site.name + '-pieceras-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-pieceras-title') }}</span>
+            {% end %}</h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-pieceras-desc" >{{ read_text(site.name + '-pieceras-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-pieceras-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}
+
+
+{% if tag=='accesorio' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_revistero">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_revistero" name="image" id="img_banner_revistero" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_revistero_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_revistero_a" name="image" id="img_banner_revistero_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_revistero" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_revistero', 1) }}" data-original="{{ read_image(site.name + '_banner_revistero') }}" />
+            <img id="mlb_banner_revistero_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_revistero_a', 1) }}" data-original="{{ read_image(site.name + '_banner_revistero_a') }}" />
+    <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+    <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img src="{{ read_image(site.name + '_banner_revistero', 1) }}" data-original="{{ read_image(site.name + '_banner_revistero') }}" class="lazy" alt="item">                      
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-revisteros-title" >{{ read_text(site.name + '-revisteros-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-revisteros-title') }}</span>
+            {% end %}</h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase; /*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-revisteros-desc" >{{ read_text(site.name + '-revisteros-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-revisteros-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}
+
+{% if tag=='vestuario' %}
+
+<div class="productlist">
+    <div class="row">
+        <div class="col-sm-12 especial mlb-aboutus-header">
+            <h2>{{ tag.upper()}}</h2>
+            <div class="col-sm-12 especial bkg"></div>
+            {% if is_admin %}
+            <!-- banner 1 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_vestuario">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';" >
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_vestuario" name="image" id="img_banner_vestuario" >
+            </div>
+            <!-- banner 2 -->
+            <div class="image-upload" style="right:50px;">
+                <!-- id input debe ir en for de label -->
+                <label for="img_banner_vestuario_a">
+                    <img class="change-image hide-show" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_vestuario_a" name="image" id="img_banner_vestuario_a" >
+            </div>
+            {% end %}
+            <img id="mlb_banner_vestuario" class="img-responsive show-hide mlb-img lazy" src="{{ read_image(site.name + '_banner_vestuario', 1) }}" data-original="{{ read_image(site.name + '_banner_vestuario') }}" />
+            <img id="mlb_banner_vestuario_a" class="img-responsive hide-show mlb-img lazy" src="{{ read_image(site.name + '_banner_vestuario_a', 1) }}" data-original="{{ read_image(site.name + '_banner_vestuario_a') }}" />
+    <!--                         <img class="img-responsive show-hide"src="{{ site_base }}/static/img/mlb-aboutus-header.png">
+    <img class="img-responsive hide-show"src="{{ site_base }}/static/img/mlb-aboutus-headera.png"> -->
+        </div>
+    </div>
+</div>
+<div class="widget col-sm-12 especial profile-company">
+        <div class="col-sm-12 especial profile-foto-top">       
+                <div class="profile-company-logo">
+                    <img src="{{ read_image(site.name + '_banner_vestuario', 1) }}" data-original="{{ read_image(site.name + '_banner_vestuario') }}" class="lazy" alt="item">                      
+                </div>
+        </div>  
+</div>
+
+<div class="row" style="margin-top: 40px;">
+    <ul class="nav-list text-center effect menu-3 container-fluid-magle">
+        <li style="width: 100% !important; text-align: center; color: black; text-transform: uppercase;" ><p>___________</p></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase;/*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-vestuarios-title" >{{ read_text(site.name + '-vestuarios-title') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-vestuarios-title') }}</span>
+            {% end %}</h1></li>
+        <li style="width: 100% !important; text-align: center; color: black;text-transform: uppercase; /*font-variant: small-caps;*/" ><h1>
+            {% if is_admin %}
+                <span class="editabletext" text-id="mlb-vestuarios-desc" >{{ read_text(site.name + '-vestuarios-desc') }}</span>
+            {% else %}
+                <span>{{ read_text(site.name + '-vestuarios-desc') }}</span>
+            {% end %}</h1></li>
+    </ul>
+</div>
+
+{% end %}
+
+{% end %}
+
+<!-- row momentanea -->
+<div class="row container-fluid-magle products" style="margin-top: 40px;">
+</div>
+<!-- row momentanea -->
+

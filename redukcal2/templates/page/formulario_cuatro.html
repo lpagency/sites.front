@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="fondo-pro">
+     <div class="container">
+        <div class="col-md-12">
+            <div align="center">
+              <div class="box-orange">
+                <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                 <div class="text-for-1"> Estás en tu peso ideal, no necesitas bajar de peso </div>
+                     <hr class="for-1">
+                         <div class="text-for-2"> !Disfruta!
+                         </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+      <div class="col-md-12">
+            <div align="center">
+              <div class="box-white-for-2">
+                 <dvi class="col-md-12">
+                     <div class="text-color"> ¿Ya sabes cuantos kilos quieres perder?</div>
+                     <div class="text-color-2"> Busca el plan que más se adecué a tus objetivos,considera tu EDAD( Mayor de 40 años/ Menor de 40 años) y SEXO (Mujer/Hombre). </div>
+                        <a href="{{site_base}}/planes">
+                          <button type="button" class="btn btn-info loo">VER PLANES</button>
+                       </a>
+                </dvi>
+              </div>
+         </div>
+        </div>
+   </div>  
+    
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

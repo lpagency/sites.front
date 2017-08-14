@@ -1,0 +1,190 @@
+#footer{
+    background-color: #757478;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    height: auto;
+    padding: 0;
+}
+.producto-detalle-cotizacion{
+    display: none;
+}
+
+.text-fot{
+	color: white;
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: -5px;
+    margin-left: 65px;
+}
+
+.no-dot{
+   margin-top: 30px;
+   padding:0;
+   padding-bottom: 2px;
+}
+
+li{
+	list-style:none;
+}
+
+.text-fit{
+    color: white;
+    font-weight: 200;
+    font-size: 12px;
+    margin-bottom: 0px;
+}
+
+.text-fot-ico{
+	color: white;
+	font-weight: 100;
+}
+
+.caja-fo {
+    height: 51px;
+    width: 100px;
+    margin-top: 17px;
+    margin-bottom: 21px;
+    left: -49px;
+    position: relative;
+}
+
+.img-foot {
+    height: 105px;
+    width: 209px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 21px;
+    object-fit: scale-down;
+}
+
+
+.caja-fo-red{
+    height: 39px;
+    width: 55px;
+    /* float: left; */
+    margin-top: 27px;
+    margin-bottom: 21px;
+    position: relative;
+    left: -33px;
+}
+
+.img-foot-red{
+    height: 45px;
+    width: 40px;
+    /* float: left; */
+    margin-top: -47px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+#map{
+    height:125px;
+    width: 256px;
+    position: relative;
+    top: 12px;
+    margin-bottom: 20px;
+}
+
+
+/*----------------------------------------------RESPONSIVE------------------------------------------*/
+
+@media (max-width: 991px){
+	.text-fot {
+    text-align: center;
+    margin-left: 0px;
+}
+
+    .text-fit {
+     text-align: center;
+}
+
+    .text-fot-ico {
+    color: white;
+    font-weight: 100;
+    text-align: center;
+}
+
+   .caja-fo-red {
+   left: 0px;
+   margin-bottom: -24px;
+}
+
+.caja-fo {
+    height: 51px;
+    width: 100px;
+    margin-top: 38px;
+    margin-bottom: 21px;
+    left: -53px;
+    position: relative;
+}
+
+}
+
+@media (max-width: 767px){
+    .images-fo{
+        width: 18%;
+    }
+
+    .caja-fo-red {
+    left: -25px;
+    margin-bottom: -24px;
+    }
+
+    .caja-fo {
+    height: 51px;
+    width: 100px;
+    margin-top: 38px;
+    margin-bottom: 21px;
+    left: -57px;
+    position: relative;
+    }
+}
+
+
+@media (max-width: 546px){
+.images-fo {
+    width: 30%;
+}
+
+}
+
+@media (max-width: 414px){
+    .img-foot-red {
+    height: 45px;
+    width: 31px;
+    /* float: left; */
+    margin-top: -47px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+}
+
+@media (max-width: 360px){
+    .img-foot-red {
+    height: 45px;
+    width: 29px;
+    /* float: left; */
+    margin-top: -47px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+}
+
+@media (max-width: 320px){
+    .images-fo {
+    width: 32%;
+}
+
+.img-foot-red {
+    height: 45px;
+    width: 24px;
+    /* float: left; */
+    margin-top: -47px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+}
+
+}

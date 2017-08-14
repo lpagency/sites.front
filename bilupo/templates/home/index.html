@@ -1,0 +1,843 @@
+{% extends "../base.html" %}
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" /> {% end %} {% block header %}
+<style type="text/css">
+#senior{
+  width: 75%;
+  margin-left: 14%;
+  margin-top: 19%;
+}
+a:focus{
+  outline: none;
+  outline-offset: -2px;
+}
+#senior:hover{
+  content: url("{{ site_base }}/static/img/gif/senior.gif");
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+#gallina{
+  width: 77%;
+  margin-top: 17%;
+  margin-left: 18%;
+}
+#gallina:hover{
+  content: url("{{ site_base }}/static/img/gif/Gallina.gif");
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+#elefante{
+  width: 85%;
+  margin-top: 12%;
+  margin-left: 8%;
+}
+#elefante:hover{
+  content: url("{{ site_base }}/static/img/gif/Elefante_2.gif");
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+#pez{
+  width: 80%;
+  margin-top: 2%;
+  margin-left: 8%;
+}
+#pez:hover{
+  content: url("{{ site_base }}/static/img/gif/Pez.gif");
+  width: 95% !important;
+  margin-top: -10% !important;
+  margin-left: -4% !important;
+}
+#camion{
+  width: 87%;
+  margin-top: 14%;
+  margin-left: 8%;
+}
+#camion:hover{
+  content: url("{{ site_base }}/static/img/gif/camion.gif");
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+}
+#avion{
+  width: 80%;
+  margin-top: 28%;
+  margin-left: -15%;
+  margin-bottom: 18%;
+}
+#avion:hover{
+  content: url("{{ site_base }}/static/img/gif/Avion.gif");
+  width: 100% !important;
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+  margin-bottom: 0px !important;
+}
+#xilofono{
+  width: 80%;
+  margin-top: 0%;
+  margin-left: -1%;
+  margin-bottom: 18%;
+}
+#xilofono:hover{
+  content: url("https://84static.loadingplay.com/static/images/822b0be8348fdaa361f2d5a2851e0a09_Xilofono.gif");
+  margin-top: 0px !important;
+  margin-left: 0px !important;
+  margin-bottom: 0px !important;
+}
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 5px 6px rgba(0, 0, 0, 0.22);
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {color: red;}
+
+ul.topnav li.icon {display: none;}
+
+@media only screen and (max-width:1200px) {
+  .xilo:hover{
+    content: initial !important;
+  }
+  .xilo2:hover{
+    content: initial !important;
+  }
+  ul.topnav li:not(:first-child) {
+    display: none;
+  }
+  ul.topnav li.icon {
+    float: left !important;
+    display: inline-block;
+  }
+  ul.topnav{
+    background: transparent;
+    box-shadow: none !important;
+  }
+  [id*="barra"]{
+    color: white !important;
+    text-align: center !important;
+    font-size: 25px !important;
+  }
+  ul.topnav.responsive {
+    position: fixed;
+    background-color: #94b7bb;
+    width:100%;
+    height: 100%;
+  }
+  ul.topnav.responsive li.icon {
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+  }
+  [class*="contenedor-img"]{
+        margin: 0% !important;
+    float: left !important;
+    margin-left: -5% !important;
+    margin-top: 5% !important;
+    width: 108% !important;
+    height: 200px!important;
+    }
+    [class*="el_juego"]{
+      float: left !important;
+      margin-left: 27% !important;
+
+    }
+    [class*="puntos"]{
+    float: right !important;
+    top: 35.5% !important;
+    left: 41% !important;
+    }
+    [class*="imagen"]{
+      margin-left: 35%;
+    }
+    [class*="espacio"]{
+      padding: 0px !important;
+    }
+    [class*="inicio"]{
+      margin-top: 20% !important;
+    }
+    [class*="quantity"]{
+      font-size: 25px !important;
+
+    }
+    [id*="gallina"]{
+      margin-top: 45% !important;
+      margin-left: -10% !important; 
+    }
+    #gallina:hover{
+      width: 77% !important;
+      margin-top: 45% !important;
+      margin-left: -10% !important;
+    }
+    [id*="pez"]{
+      margin-left: -90% !important;
+      margin-top: 40% !important;
+      width: 60% !important;
+    }
+    #pez:hover{
+      margin-left: -90% !important;
+      margin-top: 40% !important;
+      width: 60% !important;
+    }
+    [id*="titulo"]{
+      margin-left: 20% !important;
+    }
+    [id*="camion"]{
+      margin-left: 28% !important;
+    }
+    #camion:hover{
+        margin-left: 28% !important;
+        width: 87% !important;
+        margin-top: 14% !important;
+    }
+    [id*="xilofono"]{
+      margin-left: -110% !important;
+    }
+    #xilofono:hover{    
+      width: 80%;
+      margin-top: 0%;
+      margin-bottom: 18%;
+      margin-left: -110% !important; 
+    }
+    [class*="carro"]{
+      right: 65px !important;
+      top: 20px !important;
+      content: url("https://84static.loadingplay.com/static/images/b059a570c9fb16870565db099142e0b0_canasto-rojo.png") !important;
+    }
+    [class*="numero"]{
+      top: 27px !important;
+      color: red !important;
+    }
+    [class*="imgBil"]{
+      width: 50% !important;
+    }
+    [class*="mascara"]{
+      width: 55% !important;
+      height: 200px !important;
+      opacity: 1 !important;
+      background-color:  rgba(24, 123, 207, 0.91) !important;
+          left: 50% !important;
+    }
+    [class*="parrafo"]{
+      margin-top: 5% !important;
+    }
+    [class*="contenedor2"]{
+      height: 80px !important;
+    }
+    p{
+      opacity: 1 !important;
+    }
+  }
+@media only screen and (max-width:770px) {
+  [id*="titulo"]{
+      margin-left: 8% !important;
+    }
+  [class*="numero"]{
+    top:22px !important;
+  }
+  [id*="gallina"]{
+      margin-top: 31% !important;
+      margin-left: -50% !important; 
+    }
+  #gallina:hover{
+      margin-top: 31% !important;
+      margin-left: -50% !important; 
+  }
+  [id*="pez"]{
+      margin-left: -90% !important;
+      margin-top: 20% !important;
+    }
+  #pez:hover{
+      margin-left: -90% !important;
+      margin-top: 20% !important;
+  }
+  [id*="camion"]{
+      margin-left: 28% !important;
+      margin-top: 1% !important;
+    }
+  #camion:hover{
+      margin-left: 28% !important;
+      margin-top: 1% !important;
+  }
+  [class*="puntos"]{
+    float: right !important;
+    top: 35% !important;
+    left: 45.5% !important;
+    }
+
+    [class*="imagenesBiluppo"]{
+      width: 410px;
+      position: absolute !important;
+      bottom: 0 !important;
+    }
+    [class*="mascara"]{
+      left: 52.5% !important;
+      width: 48% !important;
+      height: 200px !important;
+      opacity: 1 !important;
+      background-color:  rgba(24, 123, 207, 0.91) !important;
+    }
+    [class*="imgBil"]{
+      width: 410px !important;
+    }
+    .home-icons{
+      left: 8% !important;
+    }
+}
+
+
+#barra{
+    color: #9FBFC2;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+}
+@font-face{
+font-family: Damion-Regular;
+src:url(fonts/Damion-Regular.ttf);
+}
+.el_juego{
+  font-family: Damion-Regular;
+  color: #E53623;
+  margin-left: 44%;
+}
+
+#barra:hover{
+    color: red;
+}
+#barra2{
+    color: #808080;
+}
+#barra2:hover{
+    color: red;
+}
+.redondo:hover{
+    border-radius: 70%;
+    width: 16px;
+    height: 36px;
+    padding: 20px;
+    background: red;
+    text-align: center;
+    color: white !important;
+    
+}
+.redondo2:hover{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: #94B7BB;
+    text-align: center;
+    text-decoration: white;
+    color: white !important;
+}
+#br:hover{
+    color: white;
+}
+#br2:hover{
+    color: red;
+}
+#titulo_producto{
+    white-space: nowrap; 
+    width: 12em; 
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.imagenBiluppo{
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.22);
+  position: absolute; 
+  z-index: 1;
+}
+.puntos{
+  position: absolute;
+  top: 45%;
+  left: 54%;
+}
+.numero{
+  position: absolute; 
+  right: 8%; 
+  top: 33px;
+}
+.carro:hover{
+  content: url("https://7static.loadingplay.com/static/images/0fddcfd59e5bef8363af86999e73186e_carro-blanco_(1).png");
+}
+.instaImg:hover{
+  content: url("https://7static.loadingplay.com/static/images/6be89f92087c7ce0f162c1798bce9aed_insta-blanco.png");
+}
+.faceImg:hover{
+  content: url("https://84static.loadingplay.com/static/images/a2512973270d023daa435f468bb49bdd_fb-blanco.png");
+}
+/*@media only screen and (max-width: 1200px) {*/
+    /* For mobile phones: */
+/* For mobile phones: */
+/*
+@media only screen and (max-width: 768px) {
+>>>>>>> origin/master
+    [class*="col-"] {
+        width: 100%;
+        margin-top: 5% !important;
+        float: center !important;
+        margin-left: 16% !important;
+        margin-right: 16% !important;
+    }
+    [class*="imagen"]{
+      float: right !important;
+      margin-left: 0 !important;
+    }
+    [class*="xilo"]{
+      width: 20% !important;
+      height: 20% !important;
+    }
+    [class*="xilo2"]{
+      width: 20% !important;
+      height: 3% !important;
+    }
+  }*/
+@media screen and (max-width: 667px){
+  .home-icons {
+    left: 0% !important;
+}
+  .imagenBiluppo{
+    width: 25% !important;
+  }
+  .carro{
+    width: 7% !important;
+  }
+  #titulo{
+    margin-left: 0% !important;
+    width: 100% !important;
+  }
+  #gallina{
+    width: 70% !important;
+    margin-left: -34% !important;
+    margin-top: 83% !important;
+  }
+  #gallina:hover{
+    width: 70% !important;
+    margin-left: -34% !important;
+    margin-top: 83% !important;
+  }
+  #pez{
+    width: 60% !important;
+    margin-top: 40% !important;
+    margin-left: -35% !important;
+  }
+  #pez:hover{
+    width: 60% !important;
+    margin-top: 40% !important;
+    margin-left: -35% !important;
+  }
+  #camion{
+    width: 100% !important;
+    margin-left: 50% !important;
+  }
+  #camion:hover{
+    width: 100% !important;
+    margin-left: 50% !important;
+  }
+  #xilofono{
+    width: 50% !important;
+    margin-top: 12% !important;
+    margin-left: -1% !important;
+  }
+  #xilofono:hover{
+    width: 50% !important;
+    margin-top: 12% !important;
+    margin-left: -1% !important;
+  }
+  .puntos{
+    top: 54.5% !important;
+    left: 22.5% !important;
+  }
+  .el_juego{  
+    margin-left: 6% !important;
+    font-size: 30px !important;
+  }
+  .imgBil{
+    width: 53% !important;
+  }
+  p{
+    font-size: 14px !important;
+  }
+  .iconoMenu{
+    font-size: 25px !important;
+  }
+}
+@media only screen and (max-width: 568px){
+  #pez{
+    width: 90% !important;
+    margin-left: -58% !important;
+  }
+  #pez:hover{
+    width: 90% !important;
+    margin-left: -58% !important;
+  }
+  #gallina {
+    width: 90% !important;
+    margin-left: -41% !important;
+    margin-top: 88% !important;
+  }
+  #gallina:hover {
+    width: 90% !important;
+    margin-left: -41% !important;
+    margin-top: 88% !important;
+  }
+  #camion{
+    width: 120% !important;
+    margin-left: 39% !important;
+  }
+  #camion:hover{
+    width: 120% !important;
+    margin-left: 39% !important;
+  }
+  #xilofono{
+    width: 50% !important;
+  }
+  #xilofono:hover{
+    width: 50% !important;
+  }
+  .puntos{
+    top: 49% !important;
+    left: 25.5% !important;
+  }
+}
+@media only screen and (max-width: 414px){
+  #gallina{
+    margin-top: 125% !important;
+  }
+  #gallina:hover{
+    margin-top: 125% !important;
+  }
+  .puntos{
+    top: 46.5% !important;
+    left: 30.5% !important;
+  }
+}
+@media only screen and (max-width: 375px){
+  .imagenBiluppo{
+    margin-left: 30% !important;
+  }
+  .iconoMenu{
+    margin-left: -60% !important;
+  }
+  .carro{
+    right: 55px !important;
+  }
+  .quantity{
+    font-size: 15px !important;
+  }
+  #pez{
+    margin-top: -37% !important;
+  }
+  #titulo{
+    margin-top: -22% !important;
+    margin-left: -7% !important;
+  }
+  #pez{
+    margin-top: 31% !important;
+  }
+  .puntos{
+    top: 43.5% !important;
+    left: 35.5% !important;
+  }
+  .contenedor2{
+    height: 90px !important;
+  }
+}
+@media only screen and (max-width: 320px){
+  .imagenBiluppo{
+    margin-left: 30% !important;
+  }
+  #gallina{
+    margin-top: 150% !important;
+  }
+  #pez{
+    margin-top: -37% !important;
+  }
+  #titulo{
+    margin-top: -73% !important;
+  }
+  #barra{
+    font-size: 25px !important;
+  }
+  .carro{
+    right: 34px !important;
+  }
+  .numero{
+    top: 18px !important;
+    right: 18px !important;
+  }
+  .puntos{
+    top: 38.5% !important;
+    left: 35.5% !important;
+  }
+  .el_juego{
+    margin-left: 0% !important;
+  }
+
+  [class*="contenedor2"] {
+    height: 120px !important;
+}
+#titulo {
+    margin-left: -1% !important;
+}
+
+}
+
+</style>
+
+<header style="
+  width: 100%;
+  position: fixed;
+  z-index: 100;">
+  
+        <ul class="topnav" id="myTopnav">
+        <div class="container">
+        <div style="max-width: 1280px; margin-left: auto; margin-right: auto;">
+        <a class="navbar-brand" href="#" style="padding-top: 0%;"><img class="imagenBiluppo" src="https://7static.loadingplay.com/static/images/e85a909a8a8fd24dd15075a7eabdffc7_Biluppo_PNGs_Web_7-10.png"></a>
+        </div>
+                <div class="hidden-xs hidden-sm hidden-md" style="position: relative">
+                <a href="https://www.instagram.com/biluppo/?hl=en" class="redondo2" style="position: absolute;margin-top: 2.5%;padding-top: 2%;padding-left: 2%;color: #808080;float: right;margin-right: 1.4%;right: 0%;">
+                    <span id="br" style="font-size: large; position: absolute; right: 7.4%; top: 35px"><img src="https://84static.loadingplay.com/static/images/b0fb3f25066774448748a4453a017b97_insta-gris.png" class="instaImg" style="position: absolute;top: -37px;right: -4px;z-index: 10"></span>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.facebook.com/biluppo/" class="redondo2" style="position: absolute;margin-top: 2.5%;padding-top: 2%;padding-left: 2%;color: #808080;float: right;right: 4.3%;">
+                    <span id="br" style="font-size: large; position: absolute; right: 10%; top: 35px"><img src="https://84static.loadingplay.com/static/images/4fa07730e1206f393aa6a4b9036f26af_fb-gris.png" class="faceImg" style="position: absolute;top: -37px;right: -5px;"></span>
+                </a>
+                 <a href="#" data-toggle="modal" class="redondo hidden-md hidden-sm hidden-xs" data-target="#myModal" style="padding:3%;color: #808080; float: right; margin-top:0.5%; margin-right: 6.3%">
+                 <img src="https://84static.loadingplay.com/static/images/10976f3e84da85bfdd1da026cd9c09a5_canasto-gris-_(1).png" class="carro" style="position: absolute;top: 3px;right: 6%;z-index: 1">
+                <span class="units-total shopping-cart-animation numero" id="br" ></span></a>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="icon">
+                  <a href="javascript:void(0);" class="iconoMenu" style="font-size:45px; color: red; float: left;" onclick="myFunction()">☰</a>
+                </li>
+
+                <li><a class="hidden-xs hidden-md" id="barra" href="{{site_base}}">HOME</a>
+                <li style="margin-left: 35%"><a class="inicio" id="barra" href="{{site_base}}/quienessomos">BILUPPO</a></li>
+                <li><a id="barra" href="{{site_base}}/listado_productos">SHOP</a></li>
+                <li><a id="barra" href="{{site_base}}/estimulacionTemprana">ESTIMULACION<br> TEMPRANA</a></li>
+                <li><a id="barra" href="{{site_base}}/articulos">TIPS</a></li>
+                <li><a id="barra" href="{{site_base}}/contacto">CONTACTO</a></li>
+                <div class="hidden-lg visible-md visible-sm visible-xs">
+                  <a href="https://www.instagram.com/biluppo/?hl=en" style="padding:1%;color: #808080; float: right; margin-right: 45%">
+                    <span class="fa-instagram fa" id="br2" style="font-size: large; position: relative;"></span>
+                  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="https://www.facebook.com/biluppo/" style="padding:1%; color: #808080; float: right;">
+                    <span class="fa-facebook fa" id="br2" style="font-size: large; position: relative;"></span>
+                  </a>
+                 </div>
+        <a href="#" data-toggle="modal" data-target="#myModal" class="hidden-lg" style="padding:1%;color: white; float: right; top: 5px">
+        <img src="https://84static.loadingplay.com/static/images/fbaebf78c9fecc6b569e1a2325d9c180_canasto-gis-claro.png" class="carro" style="position: absolute;right: 5%;top: 0%; width: 5%">
+                    <span class="units-total shopping-cart-animation numero" id="br2" style="font-size: large; position: absolute; top: 15px; right: 40px"></span>
+                  </a>&nbsp;&nbsp;
+
+        </div>
+        </ul>
+       </header>
+{% end %} 
+{% block scripts %}
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="canti quantity" style="font-family: arial; font-size: 13px"><b>{{! units_total }}</b></span>
+</script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{site_base}}/static/style.css">
+{% end %} 
+{% block body %} 
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+
+<!-- cache preloader -->
+<div class="hidden" >
+  <img src="{{ site_base }}/static/img/gif/senior.gif" class="hidden" />
+  <img src="{{ site_base }}/static/img/gif/Gallina.gif" class="hidden" />
+  <img src="{{ site_base }}/static/img/gif/Elefante_2.gif" class="hidden" />
+  <img src="{{ site_base }}/static/img/gif/Pez.gif" class="hidden" />
+  <img src="{{ site_base }}/static/img/gif/camion.gif" class="hidden" />
+  <img src="{{ site_base }}/static/img/gif/Avion.gif" class="hidden" />
+  <img src="https://84static.loadingplay.com/static/images/822b0be8348fdaa361f2d5a2851e0a09_Xilofono.gif" class="hidden" />
+</div>
+<!-- / cache preloader -->
+
+<div  style=" margin-left: auto; margin-right: auto;position: relative;">
+    <div class="espacio" style="padding: 41px;">
+    </div>
+    <div class="fondo">
+      <div class="container home-icons" style="position: relative; left: 0.9%; bottom: 60px">
+        <div class="icons-upper col-mx-12">
+          <div class="col-sm-3 col-xs-6">
+            <img id="senior" class="xilo hidden-xs hidden-md hidden-sm" src="https://84static.loadingplay.com/static/images/5c9fe0e77ae30e6fc5e4d3a1047867db_viejito.png">
+          </div>
+          <div class="col-sm-3 col-xs-6">
+            <a href="{{site_base}}/articulos">
+              <img id="gallina" class="xilo" src="https://7static.loadingplay.com/static/images/b9cc2f41c33e98690f8e73e1007e8c1d_gallina.png">
+            </a>
+          </div>
+          <div class="col-sm-3 col-xs-6 elephant">
+            <img id="elefante" class="xilo hidden-xs hidden-md hidden-sm" src="https://84static.loadingplay.com/static/images/44b2121dfa25515e96506b83aa1d7332_Elefante.png">
+          </div>
+          <div class="col-sm-3 col-xs-6 fish">
+            <a href="{{site_base}}/estimulacionTemprana">
+              <img id="pez" class="xilo" src="https://84static.loadingplay.com/static/images/b92864a385e23bccfd27c3bc1d6ca0ec_Pez.png">
+            </a>
+          </div>
+        </div>
+        <div class="icons-mid col-mx-12">
+          <img id="titulo" class="xilo" src="https://84static.loadingplay.com/static/images/a9557249194d1751e37e4ab7a3403bb1_Biluppo_Web_7_JUGUETES2.png">
+        </div>
+        <div class="icons-lower">
+          <div class="col-sm-4 col-xs-6 camion">
+            <a href="{{site_base}}/listado_productos" >
+              <img id="camion" class="xilo" src="https://84static.loadingplay.com/static/images/b35bdb2bf4c9af9f30328e98316f8f4c_camion.png">
+            </a>
+          </div>
+          <div class="col-sm-4 col-xs-6 avion">
+            <img id="avion" class="xilo hidden-xs hidden-md hidden-sm" src="https://84static.loadingplay.com/static/images/b1e00fed70c252ff2ed936c293f87da6_avion.png">
+          </div>
+          <div class="col-sm-4 col-xs-12 xilo">
+            <a href="{{site_base}}/quienessomos">
+              <img id="xilofono" class="xilo2" src="https://84static.loadingplay.com/static/images/038a64de64031a889ae5602202dde63f_xilophono.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix" style="padding: 20px"></div>
+
+    <div class="container">
+    <div id="alineacion col2">
+        <img class="ardilla hidden-md hidden-xs hidden-sm" src="https://84static.loadingplay.com/static/images/873e6b4433ba88028c57a777e4f195c4_Biluppo_PNGs_Web_7-15.png">
+        <h1 class="el_juego">El juego es el<br>primer lenguaje de tu hijo</h1>
+        <img src="https://84static.loadingplay.com/static/images/96a31a2176934dbbbcd92f16aabe381a_Biluppo_Web_7_PUNTITOS.png" class="puntos">
+    </div>
+    <div class="clearfix" style="padding: 20px"></div>
+    <div id="caja_imagen1" class="contenedor-img hover col-3" style="position: relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="z-index: 1;">
+            <label for="img_index3">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage imagenesBiluppo" image-id="{{ site.name }}index3" name="image" id="img_index3" style=" object-fit: cover; width: 100%;height: 100%;" />
+        </div>
+        {% end %}
+        <img class="imgBil" id="{{ site.name }}index3" src="{{ read_image(site.name + 'index3', 1) }}" onload="this.src='{{ read_image(site.name + 'index3',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
+        <div class="mascara">
+            <div class="contenedor2">
+          <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index1' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index1') }}</div>
+          </div>
+            <!--editable link-->
+        <div>
+        <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_grupo1') }}">
+            <img src="https://84static.loadingplay.com/static/images/ddeddeeaa642812b205eb52733aaefa3_images.png" class="mas">
+            
+        </a>
+        {% if is_admin %}
+        <img class="change-image editablelink import" link-id="{{ site.name + '_grupo1' }}" content="{{ read_link(site.name + '_grupo1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;"> {% end %}
+        </div>
+        </div>
+    </div>
+    <div id="caja_imagen2" class="contenedor-img hover col-6">
+    {% if is_admin %}
+    <div class="image-upload lapiz visible-movil" style="z-index: 1;">
+        <label for="img_index1">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+        </label>
+        <input type="file" class="editableimage imagenesBiluppo" image-id="{{ site.name }}index1" name="image" id="img_index1" style="object-fit: cover; width: 100%;height: 100%;" />
+    </div>
+    {% end %}
+    <img class="imgBil" id="{{ site.name }}index1" src="{{ read_image(site.name + 'index1', 1) }}" onload="this.src='{{ read_image(site.name + 'index1',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
+    <div class="mascara" >
+    <div class="contenedor2">
+          <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index2' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index2') }}</div>
+          </div>
+        <!--editable link-->
+        <div>
+        <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_grupo2') }}">
+            <img src="https://84static.loadingplay.com/static/images/ddeddeeaa642812b205eb52733aaefa3_images.png" class="mas">
+            
+        </a>
+        {% if is_admin %}
+        <img class="change-image editablelink import" link-id="{{ site.name + '_grupo2' }}" content="{{ read_link(site.name + '_grupo2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;"> {% end %}
+        </div>
+    </div>
+</div>
+
+    <div id="caja_imagen3" class="contenedor-img hover col-3" >
+
+  {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="z-index: 1;">
+            <label for="img_index2">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage imagenesBiluppo" image-id="{{ site.name }}index2" name="image" id="img_index2" style=" object-fit: cover; width: 100%;height: 100%;"/>
+        </div>
+  {% end %}
+       
+        <img class="imgBil" id="{{ site.name }}index2 " src="{{ read_image(site.name + 'index2', 1) }} " onload="this.src='{{ read_image(site.name + 'index2',) }}' " class="cuadros-home " alt="item " style=" object-fit: cover; width: 420px;height: 450px;">
+  <div class="mascara ">
+  <div class="contenedor2">
+          <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index3' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index3') }}</div>
+          </div>
+  <!--editable link-->
+        <div>
+        <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_grupo3') }}">
+            <img src="https://84static.loadingplay.com/static/images/ddeddeeaa642812b205eb52733aaefa3_images.png" class="mas">
+            
+        </a>
+        {% if is_admin %}
+        <img class="change-image editablelink import" link-id="{{ site.name + '_grupo3' }}" content="{{ read_link(site.name + '_grupo3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;"> {% end %}
+        </div>
+  </div>
+</div>
+<div class="clearfix " style="padding: 100px; ">
+  
+</div>
+</div>
+
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+
+</div>
+{% end %}

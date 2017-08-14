@@ -1,0 +1,122 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block scripts %}
+<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+{% if is_admin %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div id="wrap">
+        <!-- registration -->
+        
+<section style="height: 650px; display: block;">
+        <!-- {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_detailart">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_detailart" name="image" id="detailart" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_detailart" src="{{ read_image(site.name + '_detailart', 1) }}" onload="this.src='{{ read_image(site.name + '_detailart',500) }}'" class="img_banner" alt="item">
+        <div class="box">    
+            <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_art' }}"> {{ read_text(site.name +  '_text_art') }}
+            </h1>
+        </div> -->
+    <div class="mobile-li">
+        <img class="img_banner" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
+        <div class="box">    
+            <!-- <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_art' }}"> {{ read_text(site.name +  '_text_art') }}
+            </h1> -->
+            <h1 class="col-md-12 col-xs-12 text_banner text-center">
+                {{ article["title"] }}
+            </h1>
+        </div>
+    </div>
+</section>
+<!-- 
+<section>
+        <div class="container"> 
+           <div class="row">
+               <div class="col-md-12">
+                   <h2 class="text-center sub-detail-art {{editabletext}}" text-id="{{ site.name + '_det_2' }}"> {{ read_text(site.name +  '_det_2') }}</h2>
+               </div>
+           </div>
+        </div>
+</section> -->
+
+
+
+<div class="container-fluid productlist">
+        <div class="col-sm-12 pad_article">
+            <input type="hidden" id="article-description-ajax-url" value="{{ site.url }}article/update-description">
+            <input type="hidden" id="article-content-id" value="{{article['id']}}">
+
+            <!-- PRIMER TEXTO -->
+            <div class="container-fluid" style="display: block;">
+
+                <div class="col-md-12 col-sm-12 col-xs-12">
+
+                    <h2 class="text-art1">
+                    {{ article["caption"] }}
+                    </h2>
+                </div>
+
+            </div>
+
+                <!-- SEGUNDO TEXTO -->
+            <div class="container-fluid" style="display: block; ">
+                
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div id="description" class="text-art2 tex-center">
+                        {{ article["description"] }}
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+</div>
+     
+<div class="container">
+    <article>
+        <header>
+            <h1 class="text-center text-relac" >Contenido Relacionado</h1>
+        </header>
+    </article>
+    <div class="row cont-rel">
+        {{ getArticleList( tag = article["tags"][0], html='content/article.box.related.html') }}
+    </div>
+</div>
+
+<div class="carritoproductos clearfix">
+    <div class="flecha clearfix">
+    </div>
+</div>
+
+<section style="height: 214px;">
+    <div class="col-md-12 col-sm-12 parent3">
+        <h1 class=" text_third text-center {{editabletext}}" text-id="{{ site.name + '_text_art3' }}"> {{ read_text(site.name +  '_text_art3') }}
+        </h1>
+    </div>
+</section>
+  
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}

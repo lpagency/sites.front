@@ -1,0 +1,34 @@
+/*
+
+=====================
+SLIDERS
+=====================
+
+*/
+
+#main-slider { .opacity(0);
+
+              .item {padding: 40px; text-align: center; height: 500px; background-size: cover; color: #fff; 
+                     h1, h2, h3, h4, h5, h6,p  {color: #fff;   text-shadow: @carousel-text-shadow;}
+                     @media (min-width: @screen-lg-min) {
+                         .content {position: relative; top: 50%; .translate(0,-50%);}
+                         height: 600px;
+                         p {font-size: @font-size-large;}
+                     }
+
+              }
+
+}
+
+.box.slideshow, #main-slider {
+    ul li div {width: 100%;}
+
+    .owl-controls {position: absolute; right: 20px; bottom: 20px;}
+    .owl-controls .owl-buttons {display: none;}
+
+    .owl-controls .owl-page.active span,
+    .owl-controls.clickable .owl-page:hover span{
+        background: @brand-primary;
+    }
+
+}

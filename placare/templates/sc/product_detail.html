@@ -1,0 +1,553 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">
+<style type="text/css">
+
+ 
+</style>
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/swiper.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+
+            $(document).on('click', '.tallas', function()
+            {
+                $('.size-item').removeClass('active');
+                $('.size-item').children().css("color", "rgb(91, 81, 83)");
+                $('.size-item').css("background-color", "white");
+                $(this).addClass('active');
+                $(this).children().css("color", "white");
+                $(this).css("background-color", "rgb(91, 81, 83)");
+            });
+
+            // $(this).css("background-color", "rgb(91, 81, 83)");
+            // $(this).parent(".num-tal").css("color", "white");
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(50,50,50);
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+
+                $(".texto-ruta-detalle").html(localStorage.getItem("subcategoriaProd").toString());
+
+                related(product.bullet_3);
+                related2(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+        
+                var mainImage = $("#mainImage");
+                    $(".img-container img").hover(function(){
+                     var src = $(this).attr("src");
+                     $("#mainImage").attr("src",src);
+                 });
+
+                mainImage.on("click",function(){
+                    $(this).css("transform","scale(1.1)");
+                });
+
+
+                var main = $(".descuento-detalle").attr("main-price");
+                var promotion = $(".descuento-detalle").attr("promotion-price");
+
+
+                var promo = Utils.money(promotion);
+                var original = Utils.money(main);
+
+                console.log(original);
+
+                if(promotion != 0){
+                  var resta = Math.trunc((main - promotion)*100/main);
+                  $(".descuento-detalle").removeClass("hidden");
+                  $(".descuento-detalle").html("("+resta+"%)");
+
+                  $(".precio-oferta").html(promo);
+                }else{
+                    $(".precio-oferta").html(original);
+                    $(".descuento-detalle").addClass("hidden");
+                    $(".product-price-2").addClass("hidden");
+                    $(".oferta-de").css("color","#696e79");
+                }
+
+                var swiper = new Swiper('.swiper-container', {
+                    pagination: '.swiper-pagination',
+                    paginationClickable: true,
+                    nextButton: '.swiper-button-next',
+                    prevButton: '.swiper-button-prev',
+                    spaceBetween: 30,
+                });
+
+                $(".carousel").on("touchstart", function(event){
+                    var xClick = event.originalEvent.touches[0].pageX;
+                    $(this).one("touchmove", function(event){
+                        var xMove = event.originalEvent.touches[0].pageX;
+                        if( Math.floor(xClick - xMove) > 5 ){
+                            $(".carousel").carousel('next');
+                        }
+                        else if( Math.floor(xClick - xMove) < -5 ){
+                            $(".carousel").carousel('prev');
+                        }
+                    });
+                    $(".carousel").on("touchend", function(){
+                        $(this).off("touchmove");
+                    });
+                });
+            }
+
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template_home',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                        $(".ellipsis").dotdotdot();
+
+                     }
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+
+        var related2 = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template_home2',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                        $(".ellipsis").dotdotdot();
+
+                     }
+            };
+            $('.product-related2').ecommerce('product_box', config);
+        };
+
+    });
+
+</script>
+
+
+<script type="text/template" id="product_detail">
+    <section>
+        <div style="position: relative;">
+            <img src="{{! images[1]['thumb_500'] }}" title="" alt="" class="fondo-detalle-producto">
+            <div class="container">
+            </div>
+        </div>
+    </section>
+
+    <section class="hidden-xs">
+       <div class="container min">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+
+            <div class="texto-header-pro texto-ruta-detalle"></div>
+
+        </div>
+        </div>
+    </section>
+
+
+        
+           <section>
+                  <div class=" hidden-lg hidden-sm hidden-md visible-xs">
+                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+
+
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                    <div class="item active">
+                    <img class="{{! images[1]['thumb_500']|hide_if_empty}} little img_prod_little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" alt="Chania"  width="460" height="345">
+                    </div>
+
+                    <div class="item">
+                    <img class="{{! images[2]['thumb_500']|hide_if_empty }} little img_prod_little" src="{{! images[2]['thumb_500'] }}"  alt="Chania" onload="this.src={{! images[2]['thumb_500']}}" width="460" height="345">
+                    </div>
+
+                    <div class="item">
+                    <img class="{{! images[3]['thumb_500']|hide_if_empty }} little img_prod_little" src="{{! images[3]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[3]['thumb_500']}}"  width="460" height="345">
+                    </div>
+
+                    <div class="item">
+                    <img class="{{! images[4]['thumb_500']|hide_if_empty }} little img_prod_little" src="{{! images[4]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[4]['thumb_500']}}"  width="460" height="345">
+                    </div>
+
+                    <div class="item">
+                    <img class="{{! images[5]['thumb_500']|hide_if_empty }} little img_prod_little" src="{{! images[5]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[5]['thumb_500']}}"  width="460" height="345">
+                    </div>
+                    <div class="item">
+                    <img class="{{! images[1]['thumb_500']|hide_if_empty }} little img_prod_little" src="{{! images[1]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[1]['thumb_500']}}"  width="460" height="345">
+                    </div>
+                    </div>
+                    </div>
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-circle-arrow-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-circle-arrow-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                    </a>
+                    </div>
+
+                    <div id="product-detail-id" class="col-md-6 col-sm-12 col-xs-12 dir visible-xs hidden-md hidden-lg hidden-sm">
+                        <div align="center">
+                            <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>
+                            <div class="up-ex-detalle ellipsis multiline"> {{! brand }}</div>
+                            <div class="product-price original-de">{{! main_price|money }} </div>
+                            <div class="descuento-detalle" main-price="{{! main_price }}" promotion-price="{{! promotion_price }}"></div>
+                            <div class="product-price oferta-de"> {{! promotion_price|money }} </div>
+                             <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
+                                <div class="linea-separacion-movil"> </div>
+                            </div>
+                            <div class="texto-oferta">Existe una oferta adicional a este producto</div>
+                            <div class="ver-oferta">Ver oferta</div>
+
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion"> </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                 <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                 <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
+                            </div>
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <div class="col-md-12 mover">
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas">
+                                                <div class="num-tal"> 36</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 37</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 38</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 39</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 40</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 41</div>
+                                            </div>
+                                    </div>
+                             </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            </button>
+
+                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            </button>
+                             </div>
+
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion-2"> </div>
+                            </div>
+
+                            <div align="center">
+                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! description }}</h3>
+                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! bullet_1 }}</h3>
+                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! bullet_2 }}</h3>
+
+                            <div class="container hidden-md hidden-sm hidden-lg visible-xs">
+                                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
+                            <div id="demo" class="collapse">
+                            <h3 class="descr_prod_detail ellipsis multiline"> 
+                            {{! description }}</h3>
+                            <h3 class="medidas ellipsis multiline"> 
+                            {{! bullet_1 }}</h3>
+
+                            </div>
+                            </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion-3"> </div>
+                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs"> 
+                                {{! bullet_2 }}</h3>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
+                            <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            </button>
+
+                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            </button>
+                            </div>
+                             </div>
+
+                        </div>
+            </section>
+
+    <div class="container min">
+        <div class="container-fluid">
+        </div>
+        <div class="clearfix-fun-2"></div>
+        <div class="container-fluid">
+            <div class="col-md-12 col-sm-12" >
+                <div class="box-det">
+                    <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs visible-md visible-lg visible-sm">
+                        <div class="col-xs-3 col-md-2 col-sm-3">
+                         
+                         <div class="img-container">  
+                            <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+                         </div>
+                         <div class="img-container">
+                             <img class="{{! images[2][’thumb_1’]|hide_if_empty }} " src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" /> 
+                         </div>
+                      
+                          <div class="img-container">
+                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+                          </div>
+
+                          <div class="img-container">
+                               <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" />
+                          </div>
+
+                          <div class="img-container">
+                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" />
+                         </div>
+
+                         <div class="img-container">
+                             <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" />
+                         </div>
+                        </div>
+
+                        <div align="center">
+                        <div id="mainDiv">
+                           <div class="main-img-container">
+                              <img id='mainImage' class="img_prod_detail" src="{{! images[1]['thumb_500'] }}"/>
+                           </div>   
+                        </div>
+                        </div>
+                        <div align="center">
+                           <h1 class="name  sku-detalle" class="line">{{! sku }}</h1>
+                        </div>
+                    </div>
+
+                
+ 
+                    <div id="product-detail-id" class="col-md-6 col-sm-12 col-xs-12 dir hidden-xs">
+                        <div align="center">
+                            <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>
+                            <div class="up-ex-detalle ellipsis multiline"> {{! brand }}</div>
+                            <div class="product-price product-price-2 original-de">{{! main_price|money }} </div>
+                            <div class="descuento-detalle" main-price="{{! main_price }}" promotion-price="{{! promotion_price }}"></div>
+                            <div class="product-price precio-oferta oferta-de"> {{! promotion_price|money }} </div>
+                             <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
+                                <div class="linea-separacion-movil"> </div>
+                            </div>
+                            <div class="texto-oferta">Existe una oferta adicional a este producto</div>
+                            <div class="ver-oferta">Ver oferta</div>
+
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion"> </div>
+                            </div>
+                            
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                 <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
+                            </div>
+                            <div class="col-md-6 col-sm-6 col-xs-6">
+                                 <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
+                            </div>
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                  <div class="col-md-12 mover">
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas">
+                                                <div class="num-tal"> 36</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 37</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 38</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 39</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 40</div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
+                                                <div class="num-tal"> 41</div>
+                                            </div>
+                                    </div>
+                             </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            </button>
+
+                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            </button>
+                             </div>
+
+                             <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion-2"> </div>
+                            </div>
+
+                            <div align="center">
+                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! description }}</h3>
+                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! bullet_1 }}</h3>
+                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            {{! bullet_2 }}</h3>
+
+                            <div class="container hidden-md hidden-sm hidden-lg visible-xs">
+                                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
+                            <div id="demo" class="collapse">
+                            <h3 class="descr_prod_detail ellipsis multiline"> 
+                            {{! description }}</h3>
+                            <h3 class="medidas ellipsis multiline"> 
+                            {{! bullet_1 }}</h3>
+
+                            </div>
+                            </div>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="linea-separacion-3"> </div>
+                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs"> 
+                                {{! bullet_2 }}</h3>
+                            </div>
+
+                            <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
+                            <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            </button>
+
+                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            </button>
+                            </div>
+                             </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+   
+    </div>
+
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+<div class="" style="height:435px;display:block;margin:auto auto 0 auto;"></div>
+<div class="container-fluid">
+    
+    <div class="container product-page"></div>
+
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+
+<!-- ***productos relacionados** -->
+<!-- <hr class="detail">
+<div class="container dano">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+
+
+
+<div class="space80"></div>
+
+<section>
+<div class="container min">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <hr>
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados de la misma categoria</strong></h1>
+        </div>
+    <div class="product-related hidden-xs">
+        
+    </div>
+    <div class="swiper-container hidden-lg">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper product-related2">
+
+        </div>
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</div>
+
+</section>
+<div style="margin-bottom:45px;"></div>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

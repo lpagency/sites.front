@@ -1,0 +1,239 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#form-sign-in").submit(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var razon_social = $("#itRazonSocial").val();
+                var rut = $("#itrut").val();
+                var direccion = $("#itdireccion").val();
+                var comuna = $("#itcomuna").val();
+                var region = $("#itregion").val();
+                var contacto = $("#itcontacto").val();
+                var email = $("#itemail").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(razon_social == ""){
+                    $("#itRazonSocial").parents(".form-group").addClass("has-error");
+                    $(".help-razon_social").removeClass('hidden');
+                    error_count += 1;
+                    return false; 
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itRazonSocial").parents(".form-group").removeClass("has-error");
+                    $(".help-razon_social").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                
+
+
+                if(rut == ""){
+                    $("#itrut").parents(".form-group").addClass("has-error");
+                    $(".help-rut").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itrut").parents(".form-group").removeClass("has-error");
+                    $(".help-rut").addClass('hidden');
+                }
+
+                // Direccion
+                 if(direccion == ""){
+                    $("#itdireccion").parents(".form-group").addClass("has-error");
+                    $(".help-direccion").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itdireccion").parents(".form-group").removeClass("has-error");
+                    $(".help-direccion").addClass('hidden');
+                }
+
+                // comuna
+                 if(comuna == ""){
+                    $("#itcomuna").parents(".form-group").addClass("has-error");
+                    $(".help-comuna").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itcomuna").parents(".form-group").removeClass("has-error");
+                    $(".help-comuna").addClass('hidden');
+                }
+
+                // region
+                 if(region == ""){
+                    $("#itregion").parents(".form-group").addClass("has-error");
+                    $(".help-region").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itregion").parents(".form-group").removeClass("has-error");
+                    $(".help-region").addClass('hidden');
+                }
+
+                // contacto
+                 if(contacto == ""){
+                    $("#itcontacto").parents(".form-group").addClass("has-error");
+                    $(".help-contacto").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itcontacto").parents(".form-group").removeClass("has-error");
+                    $(".help-contacto").addClass('hidden');
+                }
+
+
+                if(email == "" || !expr.test(correo)){
+                    $("#itemail").parents(".form-group").addClass("has-error");
+                    $(".help-email").removeClass('hidden');
+                    error_count += 1;
+                    return false;
+                }
+                else
+                {
+                    $("#itemail").parents(".form-group").removeClass("has-error");
+                    $(".help-email").addClass('hidden');
+                }
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+</style>
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<section>
+    <div class="form-algn">
+        <h2 class="titulo-registro">REGISTRATE PARA COMPRAR EN LINEA</h2>
+        <form id="form-sign-in" class="form-horizontal space70" role="form">
+              <div class="form-group ">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="itRazonSocial">Razón Social</label>
+                <div class="col-sm-8 col-xs-8">
+                  <input type="text" class="form-control input-registro requiredField" id="itRazonSocial" data-error-invalid="Invalid email address" data-error-empty="Razon Social" placeholder="">
+                </div>
+                <span id="helpBlock2" class="hidden help-block help-razon_social">Razon Social</span>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="itrut">Rut</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="text" class="form-control input-registro requiredField" id="itrut" data-error-invalid="Invalid razon social" data-error-empty="Razon social" placeholder="">
+                </div>
+                <span id="helpBlock3" class="hidden help-block help-rut">Rut</span>
+              </div>
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="direccion">Dirección</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="text" class="form-control input-registro requiredField" id="itdireccion" data-error-invalid="Invalid direccion" data-error-empty="Direccion" placeholder="">
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-direccion">Direccion</span>
+              </div> -->
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="comuna">Comuna</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="text" class="form-control input-registro requiredField" id="itcomuna" data-error-invalid="Invalid comuna" data-error-empty="Comuna" placeholder="">
+                </div>
+                <span id="helpBlock5" class="hidden help-block help-comuna">Comuna</span>
+              </div> -->
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="region">Región</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="text" class="form-control input-registro requiredField" id="itregion" data-error-invalid="Invalid region" data-error-empty="Region" placeholder="">
+                </div>
+                <span id="helpBlock6" class="hidden help-block help-region">Region</span>
+              </div> -->
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="contacto">Nombre del cotacto</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="text" class="form-control input-registro requiredField" id="itcontacto" data-error-invalid="Invalid contacto" data-error-empty="Contacto" placeholder="">
+                </div>
+                <span id="helpBlock7" class="hidden help-block help-contacto">Nombre del contacto</span>
+              </div> -->
+              <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="email">Email</label>
+                <div class="col-sm-8 col-xs-8 ">
+                  <input type="email" class="form-control input-registro requiredField" id="email" placeholder="">
+                </div>
+                <span id="helpBlock8" class="hidden help-block help-mail">Escribe tu Email</span>
+              </div>
+              <!-- <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="pwd">Contraseña</label>
+                <div class="col-sm-8 col-xs-8"> 
+                  <input type="password" class="form-control input-registro" id="pwd" placeholder="">
+                </div>
+              </div> -->
+             <!--  <div class="form-group">
+                <label class="control-label col-sm-4 col-xs-4 text_registro" for="pwd">Repita la contraseña</label>
+                <div class="col-sm-8 col-xs-8 "> 
+                  <input type="password" class="form-control input-registro" id="pwd" placeholder="">
+                </div>
+              </div> -->
+              <div class="form-group"> 
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-default btn-registrese">REGISTRESE</button>
+                </div>
+              </div>
+        </form>
+    </div>
+    <div class="col-md-12 text-center">
+            <h4 class="text_aprobacion">SU REGISTRO PASARA POR UN PROCESO DE APROBACION MANUAL,
+                  <br>
+                  UNA VEZ TERMINADO ESTE PROCESO,SERA NOTIFICADO POR EMAIL Y PODRA ACCEDER
+                  <br>
+                  AL SITIO PARA COMPRAR.
+            </h4>
+        </div>
+</section>
+{% end %}

@@ -1,0 +1,164 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/tips.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+
+
+@media only screen and  (max-width: 991px){
+  .text_retiros1{
+      width: 514px !important;
+  }
+
+  .text_retiros3{
+    width: 514px !important;
+  }
+}
+
+@media only screen and (max-width: 767px){
+    .contenedorPolitica{
+    padding:31px !important;
+
+  }
+}
+
+
+@media only screen and (max-width: 700px){
+    .contenedorPolitica{
+    padding:31px !important;
+    margin-left: -46px;
+
+  }
+
+}
+
+@media only screen and (max-width: 600px){
+.text_retiros1 {
+    width: 390px !important;
+}
+
+.text_retiros3 {
+    width: 389px !important;
+}
+
+}
+
+  @media only screen and (max-width: 568px){
+    .enviosTitulo{
+      margin-left: 5% !important;
+      width: 100% !important;
+    }
+    .retiros{
+      width: 50% !important;
+      margin-right: 0% !important;
+    }
+    .descRetiros{
+      margin-left: 0% !important;
+      width: 120% !important;
+      margin-top: -17.5% !important;
+    }
+    .camionBlanco{
+      margin-left: 5% !important;
+      width: 10% !important;
+    }
+    .envios{
+      margin-left: 24% !important;
+      margin-top: 4% !important;
+    }
+    .descRetirosRojo{
+    margin-left: 7% !important;
+    width: 91% !important;
+    margin-top: 17.5% !important;
+    }
+    .descRetirosBlanco{
+      margin-left: 6% !important;
+      width: 120% !important;
+      margin-top: 14.5% !important;
+    }
+    .descRetirosBlanco2{
+    margin-left: 6% !important;
+    width: 89% !important;
+    }
+    .bolsa{
+      margin-left: 0% !important;
+      width: 10% !important;
+      margin-top: -8% !important;
+    }
+    .re{
+      width: 100% !important;
+      margin-left: 6% !important;
+      height: 76px !important;
+    }
+  }
+</style>
+<div class="contenedor" style="max-width: 1280px; margin-left: auto; margin-right: auto;position: relative;">
+<div style="padding: 30px">
+</div>
+<div class="contenedorPolitica" style="padding: 100px; font-family: 'Open Sans', sans-serif; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+<h4 style=" margin-left: 15%; color: white; font-weight: bold">ENVIOS Y RETIROS</h4>
+<img class="hidden-sm hidden-xs hidden-md" src="https://7static.loadingplay.com/static/images/259a29fd95c129f19005093361c8db6e_ardilla-blanca2.png" style="position: absolute;width: 70px;top: 130px;right: 500px;">
+<hr style="height: 5%; width: 70%; margin-bottom: 5%">
+<div class="re" style="float: left; width: 15%;margin-left: 6%;">
+<br>
+  <br>
+  <img class="bolsa" src="https://7static.loadingplay.com/static/images/f149f7cdecb32100eb6ebd73e7d1172b_bolsa-envios.png" style="margin-top: -30%; margin-left: 90%; width: 10%">
+  <h5 class="retiros" style="float: right; color: white;margin-top: -5px;">RETIROS</h5>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  </div>
+<hr class="hidden-sm hidden-md hidden-xs" style="width:1px; height:50px; float: left; margin-left: 1%; background-color: white" />
+<br>
+<div class="descRetirosRojo text_retiros1 text-center {{editabletext}}" text-id="{{ site.name + '_text_retiros1' }}" id="titulo_retiros1" style="margin-left: 23%;color: white;line-height: 1.5em;text-align: left; width: 650px; margin-top: -0.5%"> {{ read_text(site.name +  '_text_retiros1') }} </div>
+
+  <br>
+  <br>
+  <br>
+  <img class="camionBlanco" src="https://7static.loadingplay.com/static/images/f45bb976ffbe1df7d17ab245f4687722_camion-envios.png" style="margin-top: 1%;position: absolute;margin-left: -2%;width: 2%;">
+  <h5 class="envios" style="float: left;color: white;position: absolute;margin-left: 14%;margin-top: 4%;
+">ENVÍOS</h5>
+  <hr class="hidden-sm hidden-md hidden-xs" style="width: 1px;height: 60px;margin-top: 1%;float: left;margin-left: 18.7%;background-color: white;position: absolute;" />
+<br>
+<div class="descRetirosBlanco text_retiros2 text-center {{editabletext}}" text-id="{{ site.name + '_text_retiros2' }}" id="titulo_retiros2" style="margin-left: 23%;color: red;line-height: 1.5em;text-align: left; font-weight: bold;width: 650px; margin-top: -1.5%"> {{ read_text(site.name +  '_text_retiros2') }} </div>
+<div class="descRetirosBlanco2 text_retiros3 text-center {{editabletext}}" text-id="{{ site.name + '_text_retiros3' }}" id="titulo_retiros3" style="margin-left: 23%;color: white;line-height: 1.5em;text-align: left;width: 650px;"> {{ read_text(site.name +  '_text_retiros3') }} </div>
+</div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

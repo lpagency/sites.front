@@ -1,0 +1,142 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ page.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+<div class="frase-insp" style="width:100%; color:gray; text-align:center; padding: 20px 0px;">
+    <h1><span class="title-view" >{{ page.name }}</span></h1>
+    <h4><span class="keywords-view">{{ page.keywords }}</span></h4>
+</div>
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/loadingplay/jquery.editable.js" ></script>
+<script type="text/javascript">
+
+var PageEditModel = {
+    "name" : "{{ page.name }}",
+    "keywords" : "{{ page.keywords }}",
+    "uri" : "{{ page.uri }}"
+}
+
+
+var PageEditView = function(controller)
+{
+    this.controller = controller;
+    this.options = {
+        title : ".title-view",
+        keywords : ".keywords-view",
+        body : ".content-body",
+        bodyURL : site_base + "/page/{{ page.uri }}/body"
+    };
+
+    this.init();
+}
+
+PageEditView.prototype.init = function() 
+{
+    var self = this;
+    $(this.options.title).editable(
+    {
+        textAlign : "center"
+    },
+    function(old_value, new_value) 
+    {
+        document.title = new_value;
+        self.controller.updateTitle(new_value);
+    });
+
+    $(this.options.keywords).editable(
+    {
+        textAlign : "center"
+    },
+    function(old_value, new_value)
+    {
+        self.controller.updateKeywords(new_value);
+    });
+
+    this.renderBody();
+};
+
+PageEditView.prototype.renderBody = function() 
+{
+    var self = this;
+
+
+    $body = $(self.options.body);
+
+    $body.css("opacity", 0);
+    $.get(this.options.bodyURL, function(html)
+    {
+        $body.html(html);
+        $body.animate({ opacity : 1 }, 300);
+    });
+};
+
+
+var PageEditController = function()
+{
+    this.model = PageEditModel;
+    this.view = new PageEditView(this);
+
+    this.options = {
+        "titleUpdate" : site_base + "/page/update"
+    }
+}
+
+PageEditController.prototype.updateTitle = function(title) 
+{
+    this.model.name = title;
+    this.updateModel();
+};
+
+PageEditController.prototype.updateKeywords = function(keywords) 
+{
+    this.model.keywords = keywords;
+    this.updateModel();
+};
+
+PageEditController.prototype.updateModel = function() 
+{
+    var self = this;
+
+    $.get(this.options.titleUpdate, this.model, function(data)
+    {
+        var json_data = $.parseJSON(data);
+
+        if (json_data.hasOwnProperty("success"))
+        {
+            self.view.renderBody();
+        }
+    });
+};
+
+
+$(document).ready(function()
+{
+    new PageEditController();
+});
+</script>
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+{% end %}
+
+{% block body %}
+    <div id="wrap">
+        <!-- registration -->
+        <div class="container-fluid productlist">
+            <!-- raw 1 -->
+            <div class="row content-body">
+            </div>
+            <div class="carritoproductos clearfix">
+                <div class="flecha clearfix">
+                </div>
+            </div>
+        </div>
+    </div>
+{% end %}

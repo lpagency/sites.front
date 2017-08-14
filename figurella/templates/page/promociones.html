@@ -1,0 +1,249 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- ******contenido******* -->
+
+<div class="is"></div>
+
+<section>
+ <div class="container-fluid">
+     <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_1" name="image" id="img_promo_1" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_1' }}" href="{{ read_link(site.name + '_promo_1') }}">
+         <img id="{{ site.name }}_promo_1" src="{{ read_image(site.name + '_promo_1', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_1',) }}'" class="box-promo" alt="item">
+     <!--     <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_1' }}"> {{ read_text(site.name +  '_t_promo_1') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+   {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_1' }}" content="{{ read_link(site.name + '_promo_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+    
+    <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_2" name="image" id="img_promo_2" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_2' }}" href="{{ read_link(site.name + '_promo_2') }}">
+         <img id="{{ site.name }}_promo_2" src="{{ read_image(site.name + '_promo_2', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_2',) }}'" class="box-promo" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_2' }}"> {{ read_text(site.name +  '_t_promo_2') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+  {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_2' }}" content="{{ read_link(site.name + '_promo_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+  
+       <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_3" name="image" id="img_promo_3" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_3' }}" href="{{ read_link(site.name + '_promo_3') }}">
+         <img id="{{ site.name }}_promo_3" src="{{ read_image(site.name + '_promo_3', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_3',) }}'" class="box-promo" alt="item">
+        <!--  <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_3' }}"> {{ read_text(site.name +  '_t_promo_3') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_3' }}" content="{{ read_link(site.name + '_promo_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+  </div>
+
+    <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_4" name="image" id="img_promo_4">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_4' }}" href="{{ read_link(site.name + '_promo_4') }}">
+         <img id="{{ site.name }}_promo_4" src="{{ read_image(site.name + '_promo_4', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_4',) }}'" class="box-promo" alt="item">
+        <!--  <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_4' }}"> {{ read_text(site.name +  '_t_promo_4') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+     {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_4' }}" content="{{ read_link(site.name + '_promo_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+       <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_5">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_5" name="image" id="img_promo_5">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_5' }}" href="{{ read_link(site.name + '_promo_5') }}">
+         <img id="{{ site.name }}_promo_5" src="{{ read_image(site.name + '_promo_5', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_5',) }}'" class="box-promo" alt="item">
+      <!--    <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_5' }}"> {{ read_text(site.name +  '_t_promo_5') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_5' }}" content="{{ read_link(site.name + '_promo_5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+       <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_55">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_55" name="image" id="img_promo_55">
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_55' }}" href="{{ read_link(site.name + '_promo_55') }}">
+         <img id="{{ site.name }}_promo_55" src="{{ read_image(site.name + '_promo_55', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_5',) }}'" class="box-promo" alt="item">
+    <!--      <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_55' }}"> {{ read_text(site.name +  '_t_promo_55') }}</div>
+        </div> -->
+      </a>
+    </div>
+ {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_55' }}" content="{{ read_link(site.name + '_promo_55') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+  
+    <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_6">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_6" name="image" id="img_promo_6" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_6' }}" href="{{ read_link(site.name + '_promo_6') }}">
+         <img id="{{ site.name }}_promo_6" src="{{ read_image(site.name + '_promo_6', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_6',) }}'" class="box-promo" alt="item">
+       <!--   <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_6' }}"> {{ read_text(site.name +  '_t_promo_6') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+     {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_6' }}" content="{{ read_link(site.name + '_promo_6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+       <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_7">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_7" name="image" id="img_promo_7" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_7' }}" href="{{ read_link(site.name + '_promo_7') }}">
+         <img id="{{ site.name }}_promo_7" src="{{ read_image(site.name + '_promo_7', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_7',) }}'" class="box-promo" alt="item">
+        <!--  <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_7' }}"> {{ read_text(site.name +  '_t_promo_7') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+     {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_7' }}" content="{{ read_link(site.name + '_promo_7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+       <div class="col-md-4 article-box-2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_promo_8">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_promo_8" name="image" id="img_promo_8" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_promo_8' }}" href="{{ read_link(site.name + '_promo_8') }}">
+         <img id="{{ site.name }}_promo_8" src="{{ read_image(site.name + '_promo_8', 1) }}" onload="this.src='{{ read_image(site.name + '_promo_8',) }}'" class="box-promo" alt="item">
+       <!--   <div align="center">
+          <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_promo_8' }}"> {{ read_text(site.name +  '_t_promo_8') }}</div>
+        </div> -->
+      </a>
+    </div>
+
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_promo_8' }}" content="{{ read_link(site.name + '_promo_8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="">
+    {% end %}
+
+    
+  </div>
+ </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}    
+{% end %}

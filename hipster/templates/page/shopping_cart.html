@@ -1,0 +1,273 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var api_url = $.environmentVar(
+                            'http://apibodegas.ondev.today/',
+                            'http://apibodegas.ondev.today/',
+                            'https://apibodegas.loadingplay.com/');
+
+        var checkout_url = $.environmentVar(
+                                'http://lpcheckout.ondev.today',
+                                'http://lpcheckout.ondev.today',
+                                'https://checkout.loadingplay.com');
+
+        var app_public = $.environmentVar(7,7,8);
+
+        $(document).ecommerce(
+        {
+            'app_public' : app_public,
+            'products_per_page' : 6,
+            'ignore_stock': true,
+            'base_url' : api_url,
+            'checkout_url': checkout_url
+        });
+    });
+</script>
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+    <!-- /.navbar-->
+
+    <div class="container">
+      <div class="col-md-12">
+        <ul class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li>Shopping cart</li>
+        </ul>
+        <div class="row page-top">
+          <div class="col-sm-10 col-sm-offset-1">
+            <h1 class="{{editabletext}}" text-id="{{ site.name + '_cart_1' }}">{{ read_text(site.name +  '_cart_1') }}
+            </h1>
+            <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_2' }}">{{ read_text(site.name +  '_cart_2') }}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div id="basket" class="col-md-9">
+        <div class="box">
+          <!-- <form method="post" action="checkout1.html"> -->
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Product</th>
+                    <th>Quantity</th>
+                    <th>Unit price</th>
+                    <th>Discount</th>
+                    <th colspan="2">Total</th>
+                  </tr>
+                </thead>
+                <tbody class="shopping-cart">
+                <!--
+                  <tr> 
+                    <td><a href="detail.html"><img src="{{ site_base }}/static/img/detailsquare.jpg" alt="White Blouse Armani"></a></td>
+                    <td><a href="detail.html">White Blouse Armani</a></td>
+                    <td><input type="number" value="" class="form-control"></td>
+                    <td>$123.00</td>
+                    <td>$0.00</td>
+                    <td>$246.00</td>
+                    <td><a href="#"><i class="fa fa-trash-o"></i></a></td>
+                  </tr>
+                  -->
+                </tbody>
+              </table>
+            </div>
+            <div class="box-footer">
+              <div class="pull-left"><a href="category.html" class="btn btn-default"><i class="fa fa-chevron-left"></i> Continue shopping</a></div>
+              <div class="pull-right">
+                <button class="btn btn-default"><i class="fa fa-refresh"></i> Update cart</button>
+                <div class="checkout-form"></div>
+                
+              </div>
+            </div>
+          <!-- </form> -->
+        </div>
+        <!-- similar products-->
+        <section class="products-similar">
+          <div class="row">
+            <div class="col-md-3 col-sm-6">
+              <h3 class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_3' }}">{{ read_text(site.name +  '_cart_3') }}
+              </h3>
+            </div>
+                    <!-- product-->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="product"> 
+                        <div class="image"><a href="detail.html"><img src="{{ site_base }}/static/img/product2.jpg" alt="" class="img-responsive"></a>
+                          <div class="quick-view-button"><a href="#" data-toggle="modal" data-target="#product-quick-view-modal" class="btn btn-default btn-sm">Quick view</a></div>
+                        </div>
+                        <div class="text">
+                          <p class="brand"><a href="#"></a></p>
+                          <h3> <a href="detail.html">Fur coat</a></h3>
+                          <p class="price">$143</p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /product-->
+                    <!-- product-->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="product"> 
+                        <div class="image"><a href="detail.html"><img src="{{ site_base }}/static/img/product3.jpg" alt="" class="img-responsive"></a>
+                          <div class="quick-view-button"><a href="#" data-toggle="modal" data-target="#product-quick-view-modal" class="btn btn-default btn-sm">Quick view</a></div>
+                        </div>
+                        <div class="text">
+                          <p class="brand"><a href="#"></a></p>
+                          <h3> <a href="detail.html">Fur coat</a></h3>
+                          <p class="price">$113</p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /product-->
+                    <!-- product-->
+                    <div class="col-md-3 col-sm-6">
+                      <div class="product"> 
+                        <div class="image"><a href="detail.html"><img src="{{ site_base }}/static/img/product1.jpg" alt="" class="img-responsive"></a>
+                          <div class="quick-view-button"><a href="#" data-toggle="modal" data-target="#product-quick-view-modal" class="btn btn-default btn-sm">Quick view</a></div>
+                        </div>
+                        <div class="text">
+                          <p class="brand"><a href="#"></a></p>
+                          <h3> <a href="detail.html">Fur coat</a></h3>
+                          <p class="price">$121</p>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /product-->
+          </div>
+        </section>
+        <!-- /similar products-->
+      </div>
+      <div class="col-md-3">
+        <div id="order-summary" class="box">
+          <div class="box-header">
+            <h3 class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_4' }}">{{ read_text(site.name +  '_cart_4') }}
+            </h3>
+          </div>
+          <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_5' }}">{{ read_text(site.name +  '_cart_5') }}
+          </p>
+          <!-- <div class="table-responsive">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>Order subtotal</td>
+                  <th>$446.00</th>
+                </tr>
+                <tr>
+                  <td>Shipping and handling</td>
+                  <th>$10.00</th>
+                </tr>
+                <tr>
+                  <td>Tax</td>
+                  <th>$0.00</th>
+                </tr>
+                <tr class="total">
+                  <td>Total</td>
+                  <th>$456.00</th>
+                </tr>
+              </tbody>
+            </table>
+          </div> -->
+        </div>
+        <div class="box">
+          <div class="box-header">
+            <h4 class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_6' }}">{{ read_text(site.name +  '_cart_6') }}
+            </h4>
+          </div>
+          <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_cart_7' }}">{{ read_text(site.name +  '_cart_7') }}
+          </p>
+          <form>
+            <div class="input-group">
+              <input type="text" class="form-control"><span class="input-group-btn">
+                <button type="button" class="btn btn-primary"><i class="fa fa-gift"></i></button></span>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- quick view modal box-->
+      <div id="product-quick-view-modal" tabindex="-1" role="dialog" aria-hidden="false" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+              <div class="row quick-view product-main">
+                <div class="col-sm-6">
+                  <div class="quick-view-main-image"><img src="{{ site_base }}/static/img/detailbig1.jpg" alt="" class="img-responsive"></div>
+                  <div class="ribbon ribbon-quick-view sale">
+                    <div class="theribbon">SALE</div>
+                    <div class="ribbon-background"></div>
+                  </div>
+                  <!-- /.ribbon-->
+                  <div class="ribbon ribbon-quick-view new">
+                    <div class="theribbon">NEW</div>
+                    <div class="ribbon-background"></div>
+                  </div>
+                  <!-- /.ribbon-->
+                  <div class="row thumbs">
+                    <div class="col-xs-4"><a href="img/detailbig1.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall1.jpg" alt="" class="img-responsive"></a></div>
+                    <div class="col-xs-4"><a href="img/detailbig2.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall2.jpg" alt="" class="img-responsive"></a></div>
+                    <div class="col-xs-4"><a href="img/detailbig3.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall3.jpg" alt="" class="img-responsive"></a></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h2 class="product__heading">Burton Jacky Shirt</h2>
+                  <p class="text-muted text-small text-center">A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut...</p>
+                  <div class="box">
+                    <form>
+                      <p class="price">$124.00</p>
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                          <div class="form-group">
+                            <label for="modal_size">Choose your size</label>
+                            <select id="modal_size" class="form-control">
+                              <option>Small</option>
+                              <option>Medium</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="modal_quantity">Quantity</label>
+                            <input type="number" value="1" id="modal_quantity" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+
+                      <p class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart shopping-cart-product" data-toggle="modal" data-target="#myModal"></i>&nbsp;Agregar a Carro</button>
+                        <button type="submit" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="btn btn-default"><i class="fa fa-heart-o"></i></button>
+                      </p>
+                    </form>
+                  </div>
+                  <!-- /.box-->
+                  <div class="quick-view-social">
+                    <h4>Show it to your friends</h4>
+                    <p><a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" data-animate-hover="pulse" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.modal-dialog-->
+      </div>
+      <!-- /.modal-->
+      <!-- /quick view modal box-->
+    </div>
+    {% include '../home/footer.html' %}
+{% end %}

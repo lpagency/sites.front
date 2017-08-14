@@ -1,0 +1,33 @@
+{% extends "servicios.base.html" %}
+
+
+{% block header %}
+{% end %}
+
+
+{% block body_servicios %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-12" >
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_select_success_title' }}"> {{ read_text(site.name +  '_select_success_title') }} </div>
+
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_select_success' }}"> {{ read_text(site.name +  '_select_success') }} </div>
+
+        <ul class="nav nav-pills">
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/">Inicio</a></li>
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/week?sku={{ argument('sku', '') }}">Semana</a></li>
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/day?sku={{ argument('sku', '') }}&week={{ argument('week', '') }}">Día</a></li>
+            <li role="presentation" ><a class="btn" href="#!">Hora</a></li>
+            <li role="presentation" class="active" ><a class="btn" href="#!">Fin</a></li>
+        </ul>
+
+        <h2>Reserva para el día xxxxx a las 10:00</h2>
+
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_select_success_message' }}"> {{ read_text(site.name +  '_select_success_message') }} </div>
+    </div>
+</div>
+
+{% end %}

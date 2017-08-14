@@ -1,0 +1,52 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<div class="container space150">
+
+        <ul class="breadcrumb">
+          <li><a href="#"><i class="icon ion-ios-home-outline"></i></a></li>
+          <li><a href="#">Sobre Nosotros</a></li>
+        </ul>
+
+        <div class="row">
+          <div class="col-sm-12">
+            <h1 class="{{editabletext}}" text-id="{{ site.name + '_about_1' }}">{{ read_text(site.name +  '_about_1') }}
+            </h1>
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_2' }}">{{ read_text(site.name +  '_about_2') }}
+            </p>
+            <br />
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_3' }}">{{ read_text(site.name +  '_about_3') }}
+            </p>
+            <br />
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_4' }}">{{ read_text(site.name +  '_about_4') }}
+            </p>
+            <br />
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_5' }}">{{ read_text(site.name +  '_about_5') }}
+            </p>
+            <br />
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_6' }}">{{ read_text(site.name +  '_about_6') }}
+            </p>
+            <br />
+          </div>
+        </div>
+
+      </div>
+{% include '../home/footer.html' %}
+{% end %}

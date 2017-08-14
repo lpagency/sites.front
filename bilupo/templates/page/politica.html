@@ -1,0 +1,57 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/tips.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<style type="text/css">
+body{
+    height: 100%;
+    overflow-x: hidden;
+}
+@media only screen and (max-width: 568px){
+    .politicasPriv {
+    width: 120% !important;
+    margin-left: -11% !important;
+    }
+}
+</style>
+<div class="contenedor" style="max-width: 1280px; margin-left: auto; margin-right: auto;position: relative;">
+<div style="padding: 30px">
+</div>
+<div class="contenedorPolitica" style="padding: 100px; font-family: 'Open Sans', sans-serif; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+<h4 class="tipoFuente" style=" margin-left: 15%; color: white;font-size: 0.9em;letter-spacing: 0.2em;font-weight: bold"><b>POLÍTICAS DE PRIVACIDAD</b></h4>
+<img src="https://7static.loadingplay.com/static/images/259a29fd95c129f19005093361c8db6e_ardilla-blanca2.png" style="position: absolute;width: 70px;top: 120px;right: 435px;">
+<hr style="height: 5%; width: 62%; margin-bottom: 5%">
+<div class="politicasPriv text_pol text-center {{editabletext}}" text-id="{{ site.name + '_text_pol' }}" id="titulo_pol" style="margin-left: 18%;color: white;line-height: 1.5em;text-align: left;width: 700px"> {{ read_text(site.name +  '_text_pol') }} </div>
+</div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

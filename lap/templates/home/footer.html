@@ -1,0 +1,25 @@
+<!-- footer -->
+<footer class="space40">
+    <div class="pad15">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="{{ site_base }}/{{ nocache_static }}/img/LOGO-.png" class="space10">
+                <p class="small">All rights reserved</p>
+                <ul class="list-inline">
+             <!--        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="#"><i class="fa fa-twitter"></i></a></li> -->
+                    <li><a href=" https://www.instagram.com/lapimport/" target="blank"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                <p class="small">Terms and conditions | <a href="http://www.lapimport.com/contact" class="sin"> Contact </a> | 
+                    {% if user is None %}
+                  <a href="{{ site_base }}/auth/login" style="cursor: pointer; color:#fff" >Login</a>
+                  {% else %}
+                  <a href="{{ site_base }}/auth/logout" style="cursor: pointer; color:#fff" >
+                    Logout</a>
+                    {% end %}
+                </p>
+            </div>
+        </div>
+    </div>
+    
+</footer>

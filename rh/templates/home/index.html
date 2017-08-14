@@ -1,0 +1,176 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script src="{{ site_base }}/static/js/owl-carousel/owl.carousel.min.js"></script>
+<script src="{{ site_base }}/static/js/smoothscroll.js"></script>
+<script src="{{ site_base }}/static/js/scrollreveal.min.js"></script>
+<script src="{{ site_base }}/static/js/script.js"></script>
+<script>
+$(document).ready(function() {
+
+  // Main banners slideshow
+  $("#slideshow").owlCarousel({
+    items: 6,
+    autoPlay: 6000,
+    singleItem: true,
+    navigation: true,
+    responsive: true,
+    navigationText: ['<i class="fa fa-angle-left"></i>', '<i class="fa fa-angle-right"></i>'],
+    pagination: true
+  });
+
+  // scrollReveal plugin
+  window.sr = new scrollReveal();
+
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'http://apibodegas.ondev.today/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(8,8,8);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+        };
+
+        $('.tikas-recetas').ecommerce('product_box', config);
+    });
+</script>
+
+{% end %}
+
+    <!-- navbar-->
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+      <!-- Slideshow -->
+      <div class="container-fluid nopadding">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="slideshow" class="owl-carousel" style="opacity: 1;">
+              <div>
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_slider_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';"style="position: relative;bottom: 17px; left: 15px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_1" name="image" id="img_slider_1" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_1', 500) }}'" class="img-responsive item" alt="item" >
+                </a>
+                  <!-- <a href="#">
+                    <img src="assets/img/image_holder_1500x698.png" alt="">
+                  </a> -->
+              </div>
+
+              <div>
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_slider_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';"style="position: relative;bottom: 17px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_2" name="image" id="img_slider_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
+                </a>
+                <!-- <a href="#">
+                  <img src="assets/img/image_holder_1500x698.png" alt="">
+                </a> -->
+              </div>
+              <div>
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil" style="margin-top: 0px;">
+                    <label for="img_slider_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';"style="position: relative;bottom: 17px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_2" name="image" id="img_slider_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
+                </a>
+               <!--  <a href="#">
+                  <img src="assets/img/image_holder_1500x698.png" alt="">
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--/ Slideshow -->
+
+      <!-- <div class="container showcase">
+        <div class="row">
+          <div class="product-grid col-xs-6 col-sm-3">
+            <div class="product-thumb" data-sr>
+              <figure>
+                <div class="image">
+                  <a href="#"><img src="assets/img/image_holder_x263.png" alt="" title="" class="img-responsive"></a>
+                </div>
+                <figcaption>
+                  <div class="name">
+                    <a href="#">Oversized Shirt</a>
+                  </div>
+                  <div class="price">
+                    $122.00
+                  </div>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+    <div class="col-sm-12 tikas-recetas space90">
+        <div class="row products">
+
+                  <div class="spinner">
+                      <div class="rect1"></div>
+                      <div class="rect2"></div>
+                      <div class="rect3"></div>
+                      <div class="rect4"></div>
+                      <div class="rect5"></div> 
+                  </div>
+                  <!-- en este fragmento se pega el listado de productos traidos de bodega -->
+                  <!-- /product-->
+        </div>
+      
+  </div>
+</div>
+    <span id="home"></span>
+<div id="main" class="clearfix"></div>
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,113 @@
+   {% include '../page/formulario_suscrip.html' %}
+    <div class="bg-footer pad50">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="til-lis {{editabletext}}" text-id="{{ site.name + '_til_fo' }}"> {{ read_text(site.name +  '_til_fo') }}</div>
+                        
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_2' }}"> {{ read_text(site.name +  '_til_fo_2') }}</div>
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_3' }}"> {{ read_text(site.name +  '_til_fo_3') }}</div>
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_4' }}"> {{ read_text(site.name +  '_til_fo_4') }}</div>
+                    </center>
+                    
+                        <div class="border-right hidden-xs"></div>                            
+                </div>
+
+                <div class="col-md-3 col-sm-6 col-xs-12">
+                    <center>
+                         <div class="til-lis {{editabletext}}" text-id="{{ site.name + '_til_fo_5' }}"> {{ read_text(site.name +  '_til_fo_5') }}</div>
+                        
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_6' }}"> {{ read_text(site.name +  '_til_fo_6') }}</div>
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_7' }}"> {{ read_text(site.name +  '_til_fo_7') }}</div>
+                        <div class="til-lis-2 {{editabletext}}" text-id="{{ site.name + '_til_fo_8' }}"> {{ read_text(site.name +  '_til_fo_8') }}</div>
+                    </center>
+                
+                    <div class="border-right-2 hidden-xs"></div>
+                </div>
+                 
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <center>
+                        <div class="til-lis {{editabletext}}" text-id="{{ site.name + '_til_fo_9' }}"> {{ read_text(site.name +  '_til_fo_9') }}</div>
+
+                          <div class="col-md-4 col-sm-3 col-xs-3">
+                          <div class="caja-contenedora">
+                            {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                            <label for="img_fo_1">
+                                    <img class="change-image ins" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_fo_1" name="image" id="img_fo_1" >
+                            </div>
+                            {% end %}
+                            <img id="{{ site.name }}_fo_1" src="{{ read_image(site.name + '_fo_1', 1) }}" onload="this.src='{{ read_image(site.name + '_fo_1',500) }}'" class="iconos-header" alt="item" />
+                         <!--  <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                         </div>
+                          </div>
+                         
+                          <div class="col-md-4 col-sm-3 col-xs-3">
+                          <div class="caja-contenedora">
+                               {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                            <label for="img_fo_2">
+                                    <img class="change-image fc" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_fo_2" name="image" id="img_fo_2" >
+                            </div>
+                            {% end %}
+                            </div>
+
+                          <a href="https://www.facebook.com/Redukcal" target="blank">
+                            <img id="{{ site.name }}_fo_2" src="{{ read_image(site.name + '_fo_2', 1) }}" onload="this.src='{{ read_image(site.name + '_fo_2',500) }}'" class="iconos-header" alt="item" />
+                           </a> 
+                         <!--  <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                          </div>
+                         
+                          <div class="col-md-4 col-sm-3 col-xs-3">
+                          <div class="caja-contenedora">
+                               {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                            <label for="img_fo_3">
+                                    <img class="change-image tw" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_fo_3" name="image" id="img_fo_3" >
+                            </div>
+                            {% end %}
+                            </div>
+
+                          <a href="https://twitter.com/ReduKcal" target="blank">
+                            <img id="{{ site.name }}_fo_3" src="{{ read_image(site.name + '_fo_3', 1) }}" onload="this.src='{{ read_image(site.name + '_fo_3',500) }}'" class="iconos-header" alt="item" />
+                          </a>
+                          <!-- <img class="iconos-header" src="https://84static.loadingplay.com/static/images/0fb253b02e5cbaa9f610e0b54b88ebb8_200_a4895a2f2337af051356291f722c1f68_instagram.png"> -->
+                          </div>
+                    </center>
+                
+                    <div class="border-right-3 hidden-xs"></div>
+                </div>
+                
+
+                 <div class="col-md-3 col-sm-6 col-xs-12">
+                    <center>
+                        <img src="https://84static.loadingplay.com/static/images/2d03708cbfa23f6f9f6b935b9f3343e7_footer-iocn.png" class="space40 mov-img">
+                         <div class="fir {{editabletext}}" text-id="{{ site.name + '_firma' }}"> {{ read_text(site.name +  '_firma') }}</div>
+                    </center>
+                
+                </div>
+            </div>
+        
+        <div class="col-md-12">   
+            <a href="{{site_base}}/terms_conditions">
+             <div class="text-center the"> | Privacidad  | Términos y condiciones |  </div>
+           </a>
+           <div class=" text-center thi">
+             <p class="">
+               {% if user is None %}
+               <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+               {% else %}
+               <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                Logout</a>
+                {% end %}
+              </p> 
+            </div>
+        </div>
+    </div>

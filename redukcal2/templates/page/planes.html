@@ -1,0 +1,139 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.planes').addClass("active");
+
+  });
+</script>
+<script type="text/javascript">
+$(document).ready(function() 
+{
+   
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+ 
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+
+<section>
+      <div class="container">
+        <div class="col-md-12">
+           <div class="texto-light text-center {{editabletext}}" text-id="{{ site.name + '_plan_light' }}"> {{ read_text(site.name +  '_plan_light') }}</div>
+           <hr class="plan">
+        </div>
+    
+ 
+    <!-- **cuadritos planes** -->
+
+ <div align="center">
+
+    <div class="col-md-12 col-sm-12">
+       <div class="cuadro-rang">
+         <div class="select-text text-center {{editabletext}}" text-id="{{ site.name + '_q_qe' }}"> {{ read_text(site.name +  '_q_qe') }} </div>
+         <button type="button" class="btn btn-default plan-0 gender female">FEMENINO</button>
+         <button type="button" class="btn btn-default plan-0 gender male">MASCULINO</button>
+
+         <div class="select-text text-center {{editabletext}}" text-id="{{ site.name + '_q_rr' }}"> {{ read_text(site.name +  '_q_rr') }} </div>
+         <button type="button" class="btn btn-default plan-2 age -40">MENOS DE 40 AÑOS</button>
+         <button type="button" class="btn btn-default plan-2 age plus-40">MÁS DE 40 AÑOS </button>
+
+         <button type="button" class="btn btn-warning plan-or result_plans">CONTINUAR</button>
+
+     </div>  
+ </div>
+</div>
+
+<!-- <div class="col-md-12 text-center">
+     <button type="button" class="btn btn-info new">Volver a otros planes</button>  
+</div>  -->
+
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+
+{% end %}
+

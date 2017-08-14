@@ -1,0 +1,92 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript">
+ $(document).ready(function()
+{
+     $('.font-menu').removeClass('activado');
+     $('.tips').addClass("activado");
+     $('.tips').removeClass('barras');
+
+ });
+</script>
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+{% end %} 
+{% block css%}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{site_base}}/static/tips.css" >
+<link rel="stylesheet" href="{{site_base}}/static/font-awesome.css">
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+<div class="contenedor">
+<div style="padding-top: 120px;padding-left: 10%;padding-right: 10%;padding-bottom: 20px;">
+      {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="left: 400px; top: 150px; z-index: 0;">
+    <label for="img_titulo_tips">
+        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+    </label>
+    <input type="file" class="editableimage" image-id="{{ site.name }}titulo_tips" name="image" id="img_titulo_tips" style="width: 232px; height: 137px; object-fit: scale-down;" />
+</div>
+{% end %}
+<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item">
+  <button type="subbmit" alt="Enviar" class="buscarBoton" style="float: right;margin-top: 5%"><span class="fa fa-search"></span></button><input type="text" name="tBuscar" placeholder="Buscar" style="float: right; height: 60%; margin-top: 5%">
+</div>
+<div style="padding: 50px;">
+  <div style=";float: left;">
+  {% if is_admin %}
+        <div class="image-upload lapiz visible-movil" style="margin-left:30%;width: 67%; margin-top: 22%; z-index: 0;">
+         <label for="img_tips1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}tips1" name="image" id="img_tips1" />
+       </div>
+       {% end %}
+       
+        <img id="{{ site.name }}tips1" src="{{ read_image(site.name + 'tips1', 1) }}" onload="this.src='{{ read_image(site.name + 'tips1',) }}'" class="cuadros-home" alt="item" style="margin-left: 35%; width: 415px; height: 434px; object-fit: scale-down;">
+  </div>
+  <div style="width: 60%; float: right;">
+    <h1 class="text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_tips2' }}" id="fuente" style="color: red;     margin-left: 16%; margin-top: 5%;margin-bottom: -4.7%">{{ read_text(site.name +  'text_tips2') }}</h1>
+    <br>
+    <p style="font-size: small; color: lightblue;float:left; margin-left: 16%;margin-top: 4%;"><i>por<b> Bluppo</b></i></p><p style="font-size: small; color: lightblue;float: right;margin-right: 20%;margin-top: 4%;"><b>1 de Enero, 2017</b></p>
+    <hr style="background-color:lightblue; height: 3px;width: 500px;position: absolute;left: 47.3%;" />
+    <div class="text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_rol1' }}" style="font-family: arial;margin-left:16%;margin-top: 10%;width: 300px;font-size: 120%;line-height: 0.9;">
+    <b>{{ read_text(site.name +  'text_rol1') }} </b>
+    </div>
+    <div class="clearfix">
+    <div class="text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_rol2' }}" style="font-family: arial;margin-left:16%;margin-top: 6%;width: 500px; color: grey;line-height: 1.6em;min-height: auto">
+    {{ read_text(site.name +  'text_rol2') }} 
+    </div>
+    </div>
+  </div>
+
+</div>
+<div>
+  
+  </div>
+<div class="clearfix" style="padding: 100px;">
+</div>
+{% include '../home/carrito_compra.html' %}
+{% include '../home/footer.html' %}
+</div>
+{% end %}

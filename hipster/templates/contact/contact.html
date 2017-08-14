@@ -1,0 +1,162 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+
+{% if is_admin %}
+<script type="text/javascript">
+    $(document).editablepage({
+        page_name : "{{page.name}}",
+        page_keywords : "{{page.keywords}}",
+        page_uri : " {{ site_base }}",
+        body_url : site_base + "/page/{{ site_base }}/body"
+    });
+</script>
+{% else %}
+<script type="text/javascript">
+    $(document).loadpagecontent({
+        body_url : site_base + "/page/{{ site_base }}/body",
+        page_uri : "{{ page.uri }}"
+    });
+</script>
+{% end %}
+
+{% end %}
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+<div id="contact" class="container">
+      <div class="row"> 
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Contact</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-md-10 col-md-offset-1">
+          <div class="heading">
+            <h2 class="{{editabletext}}" text-id="{{ site.name + '_contact_1' }}">{{ read_text(site.name +  '_contact_1') }}
+            </h2>
+          </div>
+          <p class="lead text-center {{editabletext}}" text-id="{{ site.name + '_contact_2' }}">{{ read_text(site.name +  '_contact_2') }}
+          </p>
+          <p class="text-center {{editabletext}}" text-id="{{ site.name + '_contact_3' }}">{{ read_text(site.name +  '_contact_3') }}
+          </p>
+        </div>
+      </div>
+      <div class="row margin-bottom">
+        <div class="col-md-4">
+          <div class="box-simple">
+            <div class="icon"><i class="fa fa-map-marker"></i></div>
+            <h3 class="text-center {{editabletext}}" text-id="{{ site.name + '_contact_4' }}">{{ read_text(site.name +  '_contact_4') }}
+            </h3>
+            <!-- <p>13/25 New Avenue<br>New Heaven, 45Y 73J<br>England, <strong>Great Britain</strong></p> -->
+            <p class="text-center {{editabletext}}" text-id="{{ site.name + '_contact_5' }}">{{ read_text(site.name +  '_contact_5') }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-simple">
+            <div class="icon"><i class="fa fa-phone"></i></div>
+            <h3 class="text-center {{editabletext}}" text-id="{{ site.name + '_contact_6' }}">{{ read_text(site.name +  '_contact_6') }}
+            </h3>
+            <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_7' }}">{{ read_text(site.name +  '_contact_7') }}
+            </p>
+            <!-- <p ><strong>+33 555 444 333</strong></p> -->
+            <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_8' }}">{{ read_text(site.name +  '_contact_8') }}
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="box-simple">
+            <div class="icon"><i class="fa fa-envelope"></i></div>
+            <h3 class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_9' }}">{{ read_text(site.name +  '_contact_9') }}
+            </h3>
+            <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_10' }}">{{ read_text(site.name +  '_contact_10') }}
+            </p>
+            <ul class="list-style-none">
+              <!-- <li><strong><a href="mailto:">info@fakeemail.com</a></strong></li> -->
+              <li class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_11' }}">{{ read_text(site.name +  '_contact_11') }}
+              </li>
+              <!-- <li ><strong><a href="#">
+                    Ticketio
+                     - our ticketing support platform</a></strong></li> -->
+              <li class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_12' }}">{{ read_text(site.name +  '_contact_12') }}
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="row text-center margin-bottom">
+        <div class="col-md-12">
+          <div class="heading">
+            <h2 class="text-muted {{editabletext}}" text-id="{{ site.name + '_contact_13' }}">{{ read_text(site.name +  '_contact_13') }}
+            </h2>
+          </div>
+        </div>
+        <div class="col-md-8 col-md-offset-2">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="firstname">Nombre</label>
+                  <input id="firstname" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="lastname">Apellido</label>
+                  <input id="lastname" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="email">Correo</label>
+                  <input id="email" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="form-group">
+                  <label for="subject">Tema</label>
+                  <input id="subject" type="text" class="form-control">
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="message">Mensaje</label>
+                  <textarea id="message" class="form-control"></textarea>
+                </div>
+              </div>
+              <div class="col-sm-12 text-center">
+                <button type="submit" class="btn btn-primary"><i class="fa fa-envelope-o"></i> Enviar Mensaje</button>
+              </div>
+            </div>
+            <!-- /.row-->
+          </form>
+        </div>
+      </div>
+      <!-- /.row-->
+    </div>
+{% include '../home/footer.html' %}		
+{% end %}

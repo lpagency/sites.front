@@ -1,0 +1,143 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var app_public = $.environmentVar(4,4,4);
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/'
+        );
+
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com/',
+            'http://lpcheckout.ondev.today/',
+            'https://pay.loadingplay.com/'
+        );
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         $('.ellipsis').ellipsis();
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+    });
+
+</script>
+
+
+<script type="text/template" id="product_detail">
+
+
+
+      <div class="col-md-3">
+        <div id="menu" class="sc">
+            <ul>
+                <!-- **dos** -->
+                <li class="has-sub" id="pro"><a title="" href="{{site_base}}/productos">PRODUCTOS SALADOS</a>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                <!-- **tres** -->
+                <li class="has-sub" id="cre"><a title="" href="{{site_base}}/producto_delicias">DELICIAS/POSTRES</a>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                <!-- **cuatro** -->
+                <li class="has-sub" id="tor"><a title="" href="{{site_base}}/producto_shakes">REFRESCOS/SHAKES</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                <!-- **siete** -->
+                <li class="has-sub" id="beb"><a title="" href="{{site_base}}/producto_bebidas">BEBIDAS CALIENTES</a> <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                <!-- **ocho** -->
+                <li class="has-sub" id="sho"><a title="" href="{{site_base}}/producto_tortillas">SNACK</a>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                 <li class="has-sub" id="ref"><a title="" href="">COMPLEMENTOS</a>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                 <li class="has-sub" id="sho"><a title="" href="">SUPLEMENTOS DIETETICOS</a>
+                    <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                </li>
+                <!-- **nueve** -->
+               
+            </ul>
+        </div>
+    </div>
+     
+
+         <div class="col-md-8">
+                 <div class="box-det"> 
+                       <div class="col-md-6 col-sm-4 col-xs-12">
+                       <img src="{{! images[0]['thumb_200'] }}" title="" alt="" class="img_prod_detail">
+                       </div>
+                       <div class="col-md-6 col-sm-6 col-xs-12">
+                         <div align="center">
+                                    <h1 class="name name_prod_detail">{{! name }}</h1>
+                                    <hr class="detal">
+                                     <div class="up-2"> {{! upp }}</div>
+                                     <div class="vert-align s-b">Sobres</div>
+                                     <div class="pal-2">| </div>
+                                     <div class="product-price-2">{{! main_price|money }} </div>
+                                    <h3 class="descr_prod_detail ellipsis multiline"> 
+                                   {{! description }}</h3>
+                                    <button type="button" class="btn add-to-cart btn-success" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-img="{{! images[0]['thumb_200'] }}">AGREGAR AL CARRO</button>
+                         
+                            </div>
+                       </div>
+                 </div>
+            </div>
+
+</script>
+
+
+{% end %}
+{% block body %}
+<section class="fondo-pro-det">
+
+<div class="product-detail"></div>
+
+    <div class="container-fluid"> </div>
+
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

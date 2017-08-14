@@ -1,0 +1,307 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'http://apibodegas.ondev.today/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(7,7,8);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 3,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+        };
+
+        $('.tikas-recetas').ecommerce('product_box', config);
+    });
+</script>
+{% end %}
+
+    <!-- navbar-->
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+    <!-- /.navbar-->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="main-slider">
+           <div class="item">
+            <!-- <div style="background-image: url('{{ site_base }}/static/img/slider1.jpg');" class="item"> -->
+            <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_slider_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_1" name="image" id="img_slider_1" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_1',) }}'" class="img-responsive item" alt="item" >
+                </a>
+
+              <div class="content">
+                <h3>The one and Only</h3>
+                <h1>Hipster E-commerce Theme</h1>
+                <p><img src="{{ site_base }}/static/img/logo-white-small.png" alt="" class="img-responsive"></p>
+              </div>
+            </div>
+            <div class="item">
+            <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_slider_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_2" name="image" id="img_slider_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',) }}'" class="img-responsive item" alt="item" >
+                </a>
+            <!-- <div style="background-image: url('{{ site_base }}/static/img/slider2.jpg');" class="item"> -->
+              <div class="content">
+                <h3>12 Pages Included</h3>
+                <h3>Fully Responsive</h3>
+                <h3>Based on Bootstrap 3.3.6</h3>
+                <h3>LESS files included in the download</h3>
+              </div>
+            </div>
+            <div class="item">
+            <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_slider_3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_slider_3" name="image" id="img_slider_3" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_slider_3" src="{{ read_image(site.name + '_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_3',) }}'" class="img-responsive item" alt="item" >
+                </a>
+            <!-- <div style="background-image: url('{{ site_base }}/static/img/slider3.jpg');" class="item"> -->
+              <div class="content"> 
+                <h3>And much more!</h3>
+                <p><img src="{{ site_base }}/static/img/logo-white-small.png" alt="" class="img-responsive"></p>
+              </div>
+            </div>
+          </div>
+          <!-- /#main-slider-->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <section>
+        <div class="row">
+          <div class="col-sm-6">
+          
+            <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_promobox">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_promobox" name="image" id="img_promobox" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_promobox" src="{{ read_image(site.name + '_promobox', 1) }}" onload="this.src='{{ read_image(site.name + '_promobox', 200) }}'" class="img-responsive" alt="item" >
+                </a>
+            <!-- <img src="{{ site_base }}/static/img/promobox-item-1.jpg" alt="" class="img-responsive"> -->
+          
+          </div>
+          <div class="col-sm-6">
+          <!-- editar imagen -->
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_promobox2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_promobox2" name="image" id="img_promobox2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_promobox2" src="{{ read_image(site.name + '_promobox2', 1) }}" onload="this.src='{{ read_image(site.name + '_promobox2', 200) }}'" class="img-responsive" alt="item" >
+                </a>
+            <!-- fin editar imagen -->
+              <!-- <img src="{{ site_base }}/static/img/promobox-item-2.jpg" alt="" class="img-responsive"> -->
+        </div>
+      </section>
+      <!-- Elementos Relacionados -->
+      <section>
+       <div class="row">
+        <div class="col-md-12">
+          <!-- se carga template de descripcion del producto -->
+
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12 tikas-recetas">
+                <!-- titulo relacionados -->
+                <!-- fin titulo relacionados -->
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+      </section>
+      <!-- Fin de elementos relacionados -->
+      <section>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="heading">
+              <h4 class="{{editabletext}}" text-id="{{ site.name + '_texto_2' }}">{{ read_text(site.name +  '_texto_2') }}
+              </h4>
+            </div>
+            <p class="text-center text-mutedclass {{editabletext}}" text-id="{{ site.name + '_texto_3' }}">{{ read_text(site.name +  '_texto_3') }}
+            </p>
+          </div>
+        </div>
+        <div id="blog-homepage" class="row">
+          <div class="col-sm-6">
+            <div class="post">
+              <div class="image">
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_cuadro1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_cuadro1" name="image" id="img_cuadro1" >
+                </div>
+                {% end %}
+                
+                <img id="{{ site.name }}_cuadro1" src="{{ read_image(site.name + '_cuadro1', 1) }}" onload="this.src='{{ read_image(site.name + '_cuadro1',) }}'" class="img-responsive" alt="item" >
+                <!-- <img src="{{ site_base }}/static/img/blog.jpg" alt="" class="img-responsive"> -->
+                </div>
+              <a href="post.html">
+              <h4 class="{{editabletext}}" text-id="{{ site.name + '_texto_4' }}">{{ read_text(site.name +  '_texto_4') }}
+               </h4>
+               </a>
+              <p class="post__intro {{editabletext}}" text-id="{{ site.name + '_texto_5' }}">{{ read_text(site.name +  '_texto_5') }}
+              </p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Sigue leyendo</a></p>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="post">
+              <div class="image">
+              <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_cuadro2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_cuadro2" name="image" id="img_cuadro2" >
+                </div>
+                {% end %}
+                
+                <img id="{{ site.name }}_cuadro2" src="{{ read_image(site.name + '_cuadro2', 1) }}" onload="this.src='{{ read_image(site.name + '_cuadro2',) }}'" class="img-responsive" alt="item" >
+              <!-- <img src="{{ site_base }}/static/img/blog2.jpg" alt="" class="img-responsive"> -->
+              </div>
+              <a href="post.html">
+              <h4 class="{{editabletext}}" text-id="{{ site.name + '_texto_6' }}">{{ read_text(site.name +  '_texto_6') }}
+               </h4>
+               </a>
+              <p class="post__intro {{editabletext}}" text-id="{{ site.name + '_texto_7' }}">{{ read_text(site.name +  '_texto_7') }}"
+              </p>
+              <p class="read-more"><a href="#" class="btn btn-primary">Sigue Leyendo</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- quick view modal box-->
+      <div id="product-quick-view-modal" tabindex="-1" role="dialog" aria-hidden="false" class="modal fade">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" data-dismiss="modal" aria-hidden="true" class="close">×</button>
+              <div class="row quick-view product-main">
+                <div class="col-sm-6">
+                  <div class="quick-view-main-image"><img src="{{ site_base }}/static/img/detailbig1.jpg" alt="" class="img-responsive"></div>
+                  <div class="ribbon ribbon-quick-view sale">
+                    <div class="theribbon">SALE</div>
+                    <div class="ribbon-background"></div>
+                  </div>
+                  <!-- /.ribbon-->
+                  <div class="ribbon ribbon-quick-view new">
+                    <div class="theribbon">NEW</div>
+                    <div class="ribbon-background"></div>
+                  </div>
+                  <!-- /.ribbon-->
+                  <div class="row thumbs">
+                    <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig1.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall1.jpg" alt="" class="img-responsive"></a></div>
+                    <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig2.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall2.jpg" alt="" class="img-responsive"></a></div>
+                    <div class="col-xs-4"><a href="{{ site_base }}/static/img/detailbig3.jpg" class="thumb"><img src="{{ site_base }}/static/img/detailsmall3.jpg" alt="" class="img-responsive"></a></div>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <h2 class="product__heading">Burton Jacky Shirt</h2>
+                  <p class="text-muted text-small text-center">A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut...</p>
+                  <div class="box">
+                    <form>
+                      <p class="price">$124.00</p>
+                      <div class="row">
+                        <div class="col-md-6 col-md-offset-3">
+                          <div class="form-group">
+                            <label for="modal_size">Choose your size</label>
+                            <select id="modal_size" class="form-control">
+                              <option>Small</option>
+                              <option>Medium</option>
+                            </select>
+                          </div>
+                          <div class="form-group">
+                            <label for="modal_quantity">Quantity</label>
+                            <input type="number" value="1" id="modal_quantity" class="form-control">
+                          </div>
+                        </div>
+                      </div>
+                      <p class="text-center">
+                        <button type="submit" class="btn btn-primary"><i class="fa fa-shopping-cart"></i>&nbsp;Add to cart</button>
+                        <button type="submit" data-toggle="tooltip" data-placement="top" title="Add to wishlist" class="btn btn-default"><i class="fa fa-heart-o"></i></button>
+                      </p>
+                    </form>
+                  </div>
+                  <!-- /.box-->
+                  <div class="quick-view-social">
+                    <h4>Show it to your friends</h4>
+                    <p><a href="#" data-animate-hover="pulse" class="external facebook"><i class="fa fa-facebook"></i></a><a href="#" data-animate-hover="pulse" class="external gplus"><i class="fa fa-google-plus"></i></a><a href="#" data-animate-hover="pulse" class="external twitter"><i class="fa fa-twitter"></i></a><a href="#" data-animate-hover="pulse" class="email"><i class="fa fa-envelope"></i></a></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- /.modal-dialog-->
+      </div>
+      <!-- /.modal-->
+      <!-- /quick view modal box-->
+    </div>
+    {% include '../home/footer.html' %}
+{% end %}

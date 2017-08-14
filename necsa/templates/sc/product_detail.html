@@ -1,0 +1,284 @@
+
+<!DOCTYPE html>
+<html>
+
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+    html, body {
+    height: auto !important;
+    }
+/*    .fancybox-inner{
+        height: auto !important;
+    }
+
+    .fancybox-wrap{
+        width: 800px !important;
+    }*/
+    body::-webkit-scrollbar { 
+    display: none; 
+    }
+    .hidden{
+        display: none;
+    }
+    @media screen and (max-width: 700px){
+    html, body {
+    overflow-y: auto !important;
+    }
+
+    }
+</style>
+{% end %}
+
+{% block javascript %}
+
+<!-- <script src="{{ site_base }}/static/js/magnific/jquery.magnific-popup.min.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/moment.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ site_base }}/static/js/script.js"></script> -->
+<script>
+    $(document).ready(function() {
+
+
+
+});
+
+</script>
+
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        // $(document).on("click",".add-to-cart",  function(){
+        //     $(this).removeClass("btn_comprar");
+        //     $(this).addClass("btn_comprado");
+        //     $(this).text("AGREGADO");
+        //     $(".carrito-header").css("background-color", "red");
+        // });
+
+        // base_url = 'http://localhost:8520/';
+        // checkout_url = 'http://localhost:8522/';
+        var base_url = $.environmentVar(
+            'http://localhost:8520/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://localhost:8522/',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com/');
+        var app_public = $.environmentVar(16,3,13);
+
+        $.ajax({
+            type    : "GET",
+            cache   : false,
+            url     : base_url+"product/get/{{ product_id }}?user="+'{% try %}{{ user["email"] }}{% except %}{% end %}',
+            success: function(data) {
+                // console.log(data);
+
+                $(".img-detail-prod").attr("href", data.images[0])
+                try {
+                    $(".img-detail-prod img").attr("src", data.images[0]['thumb_200'])
+                }
+                catch(err) {
+                    console.log(err)
+                }
+                $(".name_prod_detail").html(data.name);
+                $(".descr_prod_detail").html(data.description);
+                $(".ficha-producto").attr("href",data.bullet_1);
+
+                var html=''
+                var notClient=''
+                var client= ''
+
+                if (parseInt(data.customer_price) === 0 || isNaN(parseInt(data.customer_price))){
+                    notClient='';
+                    client='hidden'
+                }else{
+                    notClient='hidden';
+                    client='';
+                }
+                html+='<p class="'+notClient+' pull-left price price_prod_detail col-sm-12 pad0">'+Utils.formatMoney(data.main_price)+'</p>';
+
+                html+='<p class="'+client+' pull-left price price_prod_detail col-sm-12 pad0"><span style="text-decoration:line-through" class="money">'+Utils.formatMoney(data.main_price) +'</span> '+Utils.formatMoney(data.customer_price)+'</p>';
+
+                $(".price_prod_detail").html(html);
+
+                var btns=''
+
+                if (client === 'hidden'){
+                    //si cliente esta oculto usar main_price
+                    btns+='<div class="col-sm-6 col-xs-12">';
+                        btns+='<button product-id="'+data.id+'" product-name="'+data.name+'" product-price="'+data.main_price+'" product-upp="'+data.upp+'" class="add-to-cart btn btn-lg  btn-block btn_comprar">AGREGAR';
+                        btns+='</button>';
+                    btns+='</div>';
+                }else{
+                    btns+='<div class="col-sm-6 col-xs-12">';
+                        btns+='<button product-id="'+data.id+'" product-name="'+data.name+'" product-price="'+data.customer_price+'" product-upp="'+data.upp+'" class="add-to-cart btn btn-lg  btn-block btn_comprar">AGREGAR';
+                        btns+='</button>';
+                    btns+='</div>';
+                }
+
+                btns+='<div class="col-sm-6 col-xs-12 ">';
+                btns+='<a href="'+site_base+'/carrito_compra"  target="_parent">';
+                    btns+='<button  class="btn btn-lg  btn-block btn_carro">&nbsp;VER CARRO';
+                    btns+='</button>';
+                    btns+='</a>';
+                btns+='</div>';
+
+                $(".btns-cart").html(btns);
+
+            }
+
+        });
+
+        // $(document).ecommerce('product_detail', {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'checkout_url': checkout_url,
+        //     'product_id' : {{ product_id }},
+        //     onLoad: function(product){
+
+        //         related(product.bullet_3);
+        //     },
+        //      'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        // });
+
+
+
+
+        // // productos relacionados
+        // var related = function(tag){
+        //     var config = {
+        //         'app_public' : app_public,
+        //             'base_url' : base_url,
+        //             'maxProducts' : 8,
+        //             'templateOrigin' : '#product_template',
+        //             'tag' : '',
+        //             'ignore_stock' : true,
+        //              'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        //         };
+        //     $('.product-related').ecommerce('product_box', config);
+        // };
+
+
+});
+</script>
+
+<!-- <script type="text/template" id="product_detail" >
+    <div id="content" class="col-sm-12">
+        <div class="row space50 margin_movil">
+            <div class="col-sm-6">
+                <ul class="thumbnails paddin_left">
+                    <a class="thumbnail" href="{{! images[0] }}" title=""><img src="{{! images[0]['thumb_200'] }}" title="" alt="" class="img-responsive img_prod_detail"></a>
+                </ul>
+            </div>
+
+
+            <div class="col-sm-6 col-xs-12">
+                <figcaption class="text-center height-movil">
+                            <h1 class="name name_prod_detail ellipsis multiline">{{! name }}</h1>
+                            <h3 class="descr_prod_detail ellipsis multiline"> {{! description }}</h3>
+                            <a href="{{!bullet_1}}" target="_blank">
+                                <p class="text-ficha">Descargar ficha del producto</p>
+                            </a>
+                            <p class="{{! (parseInt(data.customer_price) === 0 || isNaN(parseInt(data.customer_price))) ? '' : 'hidden' }} pull-left price price_prod_detail col-sm-12 pad0">{{! main_price|money }}</p>
+
+                            <p class="{{! (parseInt(data.customer_price) === 0 || isNaN(parseInt(data.customer_price))) ? 'hidden' : '' }} pull-left price price_prod_detail col-sm-12 pad0"><span style="text-decoration:line-through" >{{! main_price|money }}</span> {{! customer_price|money }}</p>
+
+
+                </figcaption>
+
+                <div class="form-group">
+
+
+                    <div class="col-sm-6 col-xs-12">
+                        <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! customer_price }}" product-upp="{{! upp }}" class="add-to-cart btn btn-lg  btn-block btn_comprar">
+
+                            AGREGAR
+                        </button>
+                    </div>
+                    <div class="col-sm-6 col-xs-12 ">
+                    <a href="{{site_base}}/carrito_compra"  target="_parent">
+                        <button  class="btn btn-lg  btn-block btn_carro">
+    
+                            &nbsp;VER CARRO
+                        </button>
+                        </a>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+</script> -->
+{% end %}
+
+
+{% block body %}
+
+<!-- <span class="units-total">0</span> -->
+<div class="container-fluid" style="background-color: white">
+    <!-- boton cerrar iframe -->
+<!--     <span class="icon-cart" style="color: darkgrey;">
+            <i class="fa fa-shopping-cart "><span class="units-total total-font">0</span>
+            </i>
+    </span> -->
+
+    <div class="pull-right close" >
+        <a class="close-detail" href="javascript:parent.jQuery.fancybox.close();">
+            
+        <img src="https://7static.loadingplay.com/static/images/a01020b72a7fff2ee3d64de469d99eee_close-window-icon.png" width="30" height="30" style="margin: 10px"/>
+        <br>
+        
+            <!-- <img src="https://84static.loadingplay.com/static/images/25b44dfc9bd8f0cc21d5c108d0caf06a_icon_site_close_black.png" width="30" height="30" /> -->
+        </a>
+    </div>
+    <div class="container row product-page height_movil">
+
+        <div id="content" class="col-sm-12">
+                <div class="row space50 margin_movil">
+                    <div class="col-sm-4">
+                        <ul class="thumbnails paddin_left">
+                            <a class="thumbnail img-detail-prod" href="#" title=""><img src="" title="" alt="" class="img-responsive img_prod_detail"></a>
+                        </ul>
+                    </div>
+
+
+                    <div class="col-sm-4 col-xs-12">
+                        <figcaption class="text-center height-movil">
+                                    <h1 class="name name_prod_detail ellipsis multiline"></h1>
+                                    <h3 class="descr_prod_detail ellipsis multiline"> </h3>
+                                    <a class="ficha-producto" href="{{!bullet_1}}" target="_blank">
+                                        <p class="text-ficha">Descargar ficha del producto</p>
+                                    </a>
+                                    <div class="price_prod_detail">
+                                    </div>
+                        </figcaption>
+
+                        <div class="form-group btns-cart"></div>
+
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+    <div class="space50"></div>
+
+
+
+    <!-- Related Products -->
+    
+    <!--/ Related Products -->
+
+</div>
+
+
+{% end %}
+</html>

@@ -1,0 +1,220 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+{% end %}
+{% block body %}
+<!-- Start Quieries -->
+ <section class="fondo-pro">
+    <div class="bg-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h3 class="text-white text-gre">IMPORTANTE</h3>
+                <hr class="car-green">
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End Quieries -->
+
+
+<!-- start white box -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="cuadro-check">
+                    <h3 class="text-che padtop20 mleft30">Datos del cliente</h3>                   
+                 <div align="center">                  
+                    <div class="col-md-6 mleft30">
+                        <form class="space30">
+                          <div class="form-group for-che">
+                            <input type="email" class="form-control con-chek-2" id="exampleInputEmail1" placeholder="Nombre">
+                          </div>
+                        
+                          <div class="form-group space30">                    
+                            <input type="password" class="form-control con-chek-2" id="exampleInputPassword1" placeholder="Teléfono">
+                          </div>
+                          </form>
+                      </div>    
+                        
+                      <div class="col-md-6 mleft30"> 
+                          <form class="space30">
+                          <div class="form-group space30 for-che">
+                             <input type="password" class="form-control con-chek-2" id="exampleInputPassword1" placeholder="Apellido">
+                          </div>
+
+                          <div class="form-group space30 for-che">
+                            <input type="password" class="form-control con-chek-2" id="exampleInputPassword1" placeholder="Rut">
+                          </div>
+                  </form>
+                  </div>
+                        <div class="col-md-12 mleft30">  
+                          <form class="space30">
+                            <div class="form-group space30 for-che">
+                              <input type="password" class="form-control con-chek" id="exampleInputPassword1" placeholder="Email">
+                            </div>
+
+                            <div class="form-group space30 for-che">
+                              <input type="password" class="form-control con-chek" id="exampleInputPassword1" placeholder="Dirección">
+                            </div>
+                        </form>
+                        </div>
+
+                        </div>
+                    </div>
+                </div>  
+
+                <!-- *cuadros derecho** -->
+                <div class="col-md-4">
+                    <div class="cuadro-right">
+                     <h2 class="text-che">COMPRA</h2>
+                      <button type="button" class="close" data-dismiss="modal"><i class="pe-7s-close-circle cir-2"></i></button>
+                       <div class="col-md-4 col-sm-4 col-xs-4"> 
+                           <img class="img-check" src="https://84static.loadingplay.com/static/images/4d58b311725f0fab75c4b666c44f82f0_200_7a3b7551bb427c888721b26140637af8_POWER_pack.png">
+                       </div>
+                       <div class="col-md-6">
+                           <div class="nam-check">Crema de verdura </div>
+                           <div class="up-check"> 5 sobres</div>
+                           <div class="number-check">1 </div>
+                           <div class="equis-check"> x </div>
+                           <div class="mon-check"> $7.990</div>
+                          <div class="text-center vert-align number-car">
+                             <a href="#!" class="remove-one" product-id="{{! id }}"> <i class="pe-7s-less"></i></a> 
+                             <a href="#!" class="add-one" product-id="{{! id }}"> <i class="pe-7s-plus"></i></a>
+                          </div>
+                       </div>
+                        <hr class="cok">
+                      
+
+                           <div class="col-md-12">
+                              <div align="center">
+                                  <div class="total"> Total: $15.980</div>
+                               </div>
+                           </div>
+
+                           <div class="col-md-12">
+                              <input class="w3-check" type="checkbox">
+                              <label class="w3-validate"> Acepto con las condiciones para realizar el metodo RDK</label></p>
+                              <div class="link-con"> VER AQUI</div>
+                           </div>
+                    </div>
+                  </div>
+
+
+                <!-- *+fin cuadros** -->
+              </div>
+
+
+
+           
+             <div class="row">
+                <div class="col-md-8">
+                   <div class="cuadro-check-2">
+                          <div align="center">
+                            <div class="col-md-12 mleft30">  
+                              <form class="space30">
+                                <h2 class="text-com">Región</h2>
+                                <div class="form-group space30">
+                                  <input type="password" class="form-control con-chek" id="exampleInputPassword1" placeholder="Seleccione su Región">
+                                </div>
+                                <h2 class="text-com">Comuna</h2>
+                                <div class="form-group space30">
+                                  <input type="password" class="form-control con-chek" id="exampleInputPassword1" placeholder="Seleccione su Dirección">
+                                </div>
+                              </form>
+                        </div>
+                     </div>
+                     </div>
+                </div>
+              </div>
+
+   <!-- **forma de pago*** -->
+               <div class="row mo">
+                   <div class="col-md-8">
+                         <div class="cuadro-check-3">
+                         <h2 class="text-che">FORMAS DE PAGO</h2>
+                         <hr class="for-pag">
+                    <div class="col-md-10">
+                         <form id="payment-type" method="post" novalidate class="myform">
+                          <div class="row">
+                            <div class="col-sm-1"></div>
+                            <div class="col-sm-11 payment_type">
+
+                              <div class="row webpay">
+                                <label class="payment-label" payment-type="webpay" >
+                                  <input type="radio" name="payment_type" value="webpay"><img src="https://84static.loadingplay.com/static/images/1ce48f3f3a634c3f648fc9fe82d35643_logo_webpay.png" class="logo_webpay">
+                                </label>
+                              </div>
+
+
+                              <div class="row">
+                                <label class="payment-label pay-2" payment-type="transferencia" >
+                                  <input type="radio" name="payment_type" value="transferencia">
+                                  Transferencia (Adjuntar comprobante aqu&iacute;)
+                                </label>
+                                <input type="file" name="image" id="comprobante" class="for-movil-com" />
+                              </div>
+                              <div class="row">
+                                 
+                                  Banco de Chile<br>
+                                  Cuenta Corriente : 237-03800-05<br>
+                                  Empresa : Kolko Ltda<br>
+                                  Rut : 76.120.578-1
+
+                              </div>
+
+                            </div>
+                          </div>
+                        </form>
+                        </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="cuadro-right-2">
+                      <h2 class="text-che">Resumen de la compra </h2> 
+                      <hr class="linea-re">
+                      <div class="valor-che">VALOR</div>
+                      <div class="na-pro">Productos</div>
+                      <hr class="separador">
+                      <div class="na-pro-2">Despacho</div>
+                      <hr class="separador-2">
+
+                    <div class="col-md-12">
+                      <div align="center">
+                         <div class="total-final">Total</div>
+                         <div class="number-o"> $ 0 </div>
+                         <button type="submit" class="btn" style="
+                         background-color:rgba(69, 139, 34, 0.68); color:white; width:100%; border-radius: 6px;top:132px;
+                         position: relative;">Finalizar compra</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              
+ <!-- **fin forma de pago** -->
+
+            </div>
+        </div>
+    </div>
+
+    </section>
+<!-- end white box -->
+<div class="space50"></div>
+<!-- payment -->
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,139 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <div class="container">
+      <div class="row"> 
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Blog</li>
+          </ul>
+          <div class="row page-top">
+            <div class="col-sm-8 col-sm-offset-2">
+              <h1 class="text-muted {{editabletext}}" text-id="{{ site.name + '_blog_1' }}">{{ read_text(site.name +  '_blog_1') }}
+              </h1>
+              <p class="text-muted {{editabletext}}" text-id="{{ site.name + '_blog_2' }}">{{ read_text(site.name +  '_blog_2') }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="post">
+            
+            <a href="post.html">
+            <h2 class="text-muted {{editabletext}}" text-id="{{ site.name + '_blog_3' }}">{{ read_text(site.name +  '_blog_3') }}
+            </h2>
+            </a>
+            <p class="author-category">By <a href="#">John Slim</a> in <a href="">Fashion and style</a></p>
+            <p class="date-comments"><a href="post.html"><i class="fa fa-calendar-o"></i> June 20, 2015</a><a href="post.html"><i class="fa fa-comment-o"></i> 8</a></p>
+            <div class="image">
+            <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_blog_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_blog_2" name="image" id="img_blog_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                  <img id="{{ site.name }}_blog_2" src="{{ read_image(site.name + '_blog_2', 1) }}" onload="this.src='{{ read_image(site.name + '_blog_2',) }}'" class="img-responsive" alt="item" >
+                </a>
+              <!-- <a href="post.html">
+                <img src="img/blog2.jpg" alt="Fashion now" class="img-responsive">
+              </a> -->
+            </div>
+            <p class="post-intro {{editabletext}}" text-id="{{ site.name + '_blog_4' }}">{{ read_text(site.name +  '_blog_4') }}
+            </p>
+            <p class="read-more"><a href="post.html" class="btn btn-primary">Sigue Leyendo</a></p>
+          </div>
+          <div class="post" style="position: relative;">
+             <!-- editar imagen -->
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_blog_3">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_blog_3" name="image" id="img_blog_3" >
+            </div>
+            {% end %}
+
+            <a href="post.html">
+              <h2 class="post-intro {{editabletext}}" text-id="{{ site.name + '_blog_5' }}">{{ read_text(site.name +  '_blog_5') }}
+              </h2>
+            </a>
+            <p class="author-category">By <a href="#">Tony Black</a> in <a href="">Hipster</a></p>
+            <p class="date-comments"><a href="post.html"><i class="fa fa-calendar-o"></i> January 20, 2016</a><a href="post.html"><i class="fa fa-comment-o"></i> 10</a></p>
+            <div class="image">
+                <a href="post.html">
+                  <img id="{{ site.name }}_blog_3" src="{{ read_image(site.name + '_blog_3', 1) }}" onload="this.src='{{ read_image(site.name + '_blog_3',) }}'" class="img-responsive" alt="item" >
+                </a>
+              <!-- <a href="post.html">
+                <img src="img/blog.jpg" alt="What is new in town" class="img-responsive"></a> -->
+            </div>
+            <p class="post-intro {{editabletext}}" text-id="{{ site.name + '_blog_6' }}">{{ read_text(site.name +  '_blog_6') }}
+            </p>
+            <p class="read-more"><a href="post.html" class="btn btn-primary">Sigue leyendo</a></p>
+          </div>
+          <ul class="pager">
+            <li class="previous"><a href="#">← Mayor</a></li>
+            <li class="next disabled"><a href="#">Más reciente→</a></li>
+          </ul>
+        </div>
+        <!-- /.col-md-9-->
+        <div class="col-md-3">
+          <div class="panel panel-default sidebar-menu">
+            <div class="panel-heading">
+              <h3 class="panel-title">Categoria</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="nav nav-pills nav-stacked">
+                <li><a href="blog.html">About us</a></li>
+                <li><a href="blog.html">Fashion</a></li>
+                <li><a href="blog.html">News and gossip</a></li>
+                <li><a href="blog.html">Design</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="banner">
+
+          <a href="category.html">
+          <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                    <label for="img_blog_4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';" style="position: relative;top: 253px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_blog_4" name="image" id="img_blog_4" >
+                </div>
+                {% end %}
+                  <img id="{{ site.name }}_blog_4" src="{{ read_image(site.name + '_blog_4', 1) }}" onload="this.src='{{ read_image(site.name + '_blog_4',) }}'" class="img-responsive" alt="item" >
+                </a>
+          <!-- <img src="img/banner.jpg" alt="" class="img-responsive">
+          </a> -->
+          </div>
+        </div>
+        <!-- /.col-md-3-->
+        
+      </div>
+    </div>
+{% include '../home/footer.html' %}
+{% end %}

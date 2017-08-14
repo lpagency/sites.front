@@ -1,0 +1,27 @@
+<section id="first-page-scroll" class="fondo-pro"> 
+     <div class="mobile-ho fullscreen background parallax" style="background:url('{{ read_image(site.name + '_banner_deta_pro') }}'); background-attachment:fixed; height:400px; background-size:cover; filter: grayscale(0%) brightness(65%); margin-top: -20px;
+    -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+    background-position:center; margin-bottom:54px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+          <div class="image-upload part1 lapiz visible-movil">
+              <label for="img_banner_deta_pro">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_deta_pro" name="image" id="img_banner_deta_pro" >
+          </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_deta_pro" src="{{ read_image(site.name + '_banner_deta_pro', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_deta_pro',500) }}'" class="banner_productos hidden" alt="item">     
+       </div>
+
+       <div class="container">
+          <div class="col-md-12">
+                 <div class="til-pro text-center {{editabletext}}" text-id="{{ site.name + '_til_yu' }}"> {{ read_text(site.name +  '_til_yu') }}</div>
+                 <hr class="pro">
+          </div>
+      </div>
+</section>
+
+
+

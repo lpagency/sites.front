@@ -1,0 +1,63 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript">
+         $(document).on("click",".add-to-cart",  function(){
+        $(this).removeClass("btn_comprar");
+        $(this).addClass("btn_comprado");
+        $(this).text("AGREGADO");
+
+        // $(".carrito-header").css("background-color", "red");
+        $('#carrito').animate({backgroundColor: 'red'}, 'slow');
+        setTimeout(function()
+        { 
+        $('#carrito').animate({backgroundColor: 'black'}, 'slow');
+        }, 1000);
+        console.log('agrega al carro');
+    });
+         $('.list-menu').removeClass('active');
+        $('.cubreplumones').addClass("active");
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="">
+    <div class="container-fluid col-md-12 col-sm-12 col-xs-12 text-center mtl" style="padding-top: 1em;">
+<!--         <div id="header-top"></div> -->
+        <div>
+            <h1 class="text-title">CUBREPLUMONES</h1>
+        </div>
+            <a href="#" class="subcateg mbtm5" tag="moises" role="button">MOISES</a>
+            <a href="#" class="subcateg mbtm5" tag="pack&play" role="button">PACK & PLAY</a>
+            <a href="#" class="subcateg mbtm5" tag="cuna" role="button">CUNA</a>
+            <a href="#" class="subcateg mbtm5" tag="1,5 plaza" role="button">1,5 PLAZA</a>
+            <a href="#" class="subcateg mbtm5" tag="2 plazas" role="button">2 PLAZAS</a>
+            <a href="#" class="subcateg mbtm5" tag="king" role="button">KING</a>
+            <a href="#" class="subcateg mbtm5" tag="super king" role="button">SUPER KING</a>
+    </div>
+    <div class=" product-grid products clearfix" >
+
+            <!-- Aqui van los productos -->
+            
+    </div>
+</div>
+
+{% end %}

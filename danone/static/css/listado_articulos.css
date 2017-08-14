@@ -1,0 +1,392 @@
+/*.banner_list{
+    height: 550px;
+    width: 100%;
+    object-fit: cover;
+    margin-top: -49px;
+     filter: grayscale(0%) brightness(75%);
+    -webkit-filter: grayscale(0%) brightness(75%);
+    -moz-filter: grayscale(0%) brightness(75%);
+    -ms-filter: grayscale(0%) brightness(75%);
+    -o-filter: grayscale(0%) brightness(75%);
+}*/
+
+.iconos-articulo{
+  width: 40px;
+  margin-top: 23px;
+}
+
+.texto-com{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: -2px;
+}
+
+.lis-art{
+    position: relative;
+    bottom: 207px;
+    color: white;
+    font-weight: 200;
+     left: 10px; 
+    /* width: 95%; */
+    height: 10px;
+   /* padding-left: 127px;*/
+}
+
+.lis-art_dos{
+    position: relative;
+    bottom: 187px;
+    color: white;
+    font-weight: 200;
+    width: 80%;
+}
+
+.sub-art{
+     font-size: 25px;
+    bottom: 58px;
+    position: relative;
+    color: #424242;
+    font-weight: 200 !important;
+    text-align: left;
+    left: 29px;
+}
+
+.btn-articles{
+    border:1px solid black!important;
+    font-size: 24px !important;
+    width: 371px !important;
+    padding: 12px;
+    top: 39px;
+    background: white;
+    margin-bottom: 57px;
+    border-radius: 0px;
+
+}
+
+.img-list{
+    width: 100%;
+    height: 285px;
+    object-fit: cover;
+    margin-top: 17px;
+    padding-left: 26px;
+    padding-right: 22px;
+
+}
+
+.til-list{
+    font-size: 20px;
+    font-family: Roboto;
+    font-weight: 400;
+    margin-top: 4px;
+    padding-left: 27px;
+}
+
+.til-list2{
+  height: 84px;
+  font-family: Roboto ;
+  position: relative;
+  bottom: 8px;
+  line-height: 21px;
+  font-size: 17px;
+  font-weight: 300;
+  padding-left: 28px;
+  width: 100%;
+  padding-right: 20px;
+}
+
+
+.mar{
+   margin-bottom: 40px;
+
+}
+
+.box-home-list{
+    width: 100%;
+    position: relative;
+    bottom: 137px;
+ 
+}
+
+.all{
+    float: left;
+    width: 32px;
+    position: relative;
+     right: 60px;
+    top: 25px;
+    color: white;
+}
+
+
+.btn-home-li{
+    font-size: 24px !important;
+    width: 262px !important;
+    padding: 12px;
+    background:white;
+    margin-bottom: 57px;
+    border-radius: 0px;
+    position: relative;
+    height: 68px;
+    margin:0px;
+    font-weight: 200;
+    color: rgba(13, 13, 142, 0.67);
+    margin: 0px 6px;
+}
+
+.box-home-lis-2{
+    width: 100%;
+    position: relative;
+    bottom: 98px;
+   
+
+}
+
+.btn-home-li:hover{
+    background: rgba(13, 13, 142, 0.67);
+    color:#fff;
+}
+
+/*box para etapas*/
+
+.box-home-art-etapa{
+    width: 100%;
+    position: relative;
+    bottom: 98px;
+}
+
+.h1-art{
+    /*bottom: 0px;
+    position: absolute;
+    color: white;
+    font-weight: 100;
+    margin-bottom: 20px;
+    text-align: left;
+    left: 224px;
+    width: 100%;
+    padding-bottom: 20px;*/
+    bottom: 0px;
+    position: absolute;
+    color: white;
+    font-weight: 100;
+    margin-bottom: 20px;
+    /* text-align: left; */
+    left: 194px;
+    /* width: 100%; */
+    padding-bottom: 20px;
+    /* padding-right: 564px; */
+}
+
+.h1-art-de{
+    bottom: 0px;
+    position: relative;
+    margin-top: 150px;
+    left: 107px;
+    font-size: 24px;
+}
+
+/*----------------responsive------------------*/
+
+@media (max-width: 1366px){
+.h1-art{
+    left: 125px;
+}
+
+}
+
+@media (max-width: 1280px){
+    .banner_list {
+    height: 417px;
+    object-fit: cover;
+    margin-top: -71px; 
+}
+   
+   .sub-art{
+    bottom: 50px;
+
+}
+   
+   .btn-articles {
+    font-size: 20px !important;
+    width: 263px !important;
+    top: -8px;
+    margin-bottom: 57px;
+    position: relative;
+    border-radius: 0px;
+}
+
+   .lis-art {
+    bottom: 215px;
+}
+
+   .img-list{
+     height: 279px;
+     object-fit: cover;
+     width: 98%;
+     padding-left: 45px;
+}
+   
+   .til-list{
+     padding-left: 45px;
+}
+
+  .til-list2{
+    padding-left: 45px; 
+    padding-right: 28px; 
+}
+
+   .box-home-list{
+    width: 100%;
+    position: relative;
+    bottom: 137px;
+}
+
+.btn-home-li{
+   font-size: 20px !important;
+ }  
+
+ .box-home-lis-2{
+          bottom: 98px;
+}
+ 
+ .box-home-art-etapa{
+    width: 100%;
+    position: relative;
+    bottom: 98px;
+}
+
+.all {
+    right: 34px;
+}
+.h1-art {
+    text-align: left;
+     left: 179px;
+}
+
+}
+
+
+@media (max-width: 1240px){
+    .all {
+    right: 24px;
+}
+
+}
+
+@media (max-width: 1217px){
+   .all {
+    right: 14px;
+}
+
+}
+
+
+
+@media (max-width: 1199px){
+    .col-xs-12-wi{
+        width: 75%;
+}
+
+}
+
+
+
+@media (min-width: 800px) and (max-width: 1200px){
+   .btn-home-li{
+   font-size: 17px !important;
+ }  
+   .box-home-list{
+     bottom: 193px;
+}
+   
+   .lis-pro {
+    left: 133px;
+    bottom: 201px;
+}
+
+}
+
+@media (max-width: 768px){
+    .img-list {
+    padding-left: 0px;
+    margin-bottom: 20px;
+    padding-right: 0px;
+    height: 202px;
+}
+.h1-art-de {
+    left: 25px;
+  /*  font-style: italic;*/
+}
+
+}
+
+@media (max-width: 707px){
+    .list-art{
+        font-size: 29px;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .img-list{
+        padding-left: 9px;
+        margin-bottom: 20px;
+        padding-right: 0px;
+        height: 202px;
+        width: 100%;
+}
+
+  .lis-art {
+    bottom: 267px;
+    text-align: center;
+}
+
+
+   
+   .btn-list4{
+      bottom: 0px;
+      right: 2px;
+}
+   
+   .sub-art {
+    margin-bottom: 20px;
+    margin-top: 49px;
+}
+   
+   .box-home-lis-2 {
+        bottom: 41px;
+
+}
+
+
+   .btn-home-li{
+    border: 1px solid rgba(13, 13, 142, 0.67);
+    margin: -1px 6px;
+}
+
+  .box-home-list{
+         bottom: 68px;
+}
+
+  .box-home-art-etapa{
+          bottom: 40px;
+}
+
+ .banner_list{
+    bottom: 50px;
+    position: relative;
+    margin-top: -128px;
+    height: 575px;
+}
+
+.h1-art-de{
+   left: 12px;
+}
+
+   .h1-art{
+    bottom: 0px;
+    text-align: left;
+    left: 13px;
+    width: 96%;
+    padding-bottom: 20px;
+}
+
+
+}
+

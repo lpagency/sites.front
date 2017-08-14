@@ -1,0 +1,225 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+}
+</style>
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template_home',
+                'tag' : tag,
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+
+            // $('.product-related').ecommerce('product_box', config);
+        };
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product)
+            {
+                related("");
+                // if (product.bullet_1 != "" ){
+                //     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                //     {
+                //         $("#article-reladed").html(data);
+                //     });
+                // }
+            }
+        });
+    });
+
+</script>
+
+
+
+<script type="text/template" id="product_detail">
+
+
+    <section>
+                        <div class="container">
+                            <div class="row">
+                                <div class="shop-item-detail shop-item-detail-1">
+                                    <div class="col-sm-6">
+                                        <div class="slider" data-animation="fade" data-arrows="true" data-paging="true">
+                                            <ul class="slides">
+                                                <li>
+                                                      <img class="{{! images[0]['thumb_200']|hide_if_empty}} col-xs-3 little img_prod_little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+                                                </li>
+                                                <li>
+                                                       <img class="{{! images[2]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[2]['thumb_500']}}" />
+                                                </li>
+                                                <li>
+                                                      <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-md-offset-1 col-sm-6">
+                                        <div class="item__title">
+                                            <h4>{{! name }}</h4>
+                                        </div>
+                                        <div class="item__price">
+                                            <span class="type--strikethrough">{{! main_price|money }}</span>
+                                            <span>{{! main_price|money }}</span>
+                                        </div>
+                                        <div class="item__addtocart">
+                                            <input type="text" value="1" name="quantity">
+                                            <button type="submit" class="btn btn--primary vpe add-to-cart" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Add To Cart
+                                            </button>
+                                        </div>
+                                        <div class="item__description">
+                                            <h6>Descripción:</h6>
+                                            <p>{{! description }} </p>
+                                        </div>
+                                        <div class="item__description">
+                                            <h6>Información:</h6>
+                                            <div class="item__subinfo">
+                                                <span>{{! bullet_1 }}</span>
+                                            </div>
+                                            <div class="item__subinfo">
+                                                <span>{{! bullet_2 }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="item__description">
+                                            <hr>
+                                            <ul class="social-list">
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="socicon-twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="socicon-facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="socicon-pinterest"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="#">
+                                                        <i class="socicon-stumbleupon"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </section>
+
+
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+<div class="container-fluid">
+    
+    <div class="container product-page"></div>
+
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+
+<!-- ***productos relacionados** -->
+<!-- <hr class="detail">
+<div class="container dano">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+
+
+                    <section class="imagebg image--light height-140" data-overlay="7">
+                      <div class="" style="margin-bottom:160px;"></div>
+                        <div class="background-image-holder">
+                            <img alt="image" src="{{ site_base }}/static/img/work11.jpg">
+                        </div>
+                        <div class="container pos-vertical-center">
+                            <div class="row">
+                                <div class="col-sm-4 shop-item-detail">
+                                    <h3>Esta es un producto relacionado en oferta</h3>
+                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself </p>
+                                    <div class="item__price">
+                                        <span class="type--strikethrough">$89.000</span>
+                                        <span>$49.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        
+                    </section>
+
+                    <div class="container min">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <h1 class="text-relac text-center">
+                                <h4>Productos relacionados</h4>
+                            </div>
+                            <div class=" product-related products">
+                            </div>
+                        </div>
+                        <div style="margin-bottom:30px;"></div>
+
+
+
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

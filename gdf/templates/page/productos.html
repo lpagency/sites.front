@@ -1,0 +1,489 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+    body{
+/*      background-color: rgba(128, 128, 128, 0.15);*/
+    }
+</style>
+
+{% end %}
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".m-ordenar", function(ev){
+        // ev.preventDefault();
+
+        //MUESTRA LA CATEGORIA COMO TITULO
+
+        var valorSubCateg = $(this).html();
+
+        $(".ordena-nombre").html("  " + valorSubCateg);
+
+    });
+    });
+
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+
+
+<script type="text/javascript">
+
+    {% block active %}
+    // productos
+    $('.font_tag').removeClass('active');
+    $('.productos').addClass("active");
+    {% end %}
+
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    var hyper = window.location.search;
+
+    if(/tag=coleccion/.test(hyper)){
+
+        $(".banner_coleccion").css("display", "block");
+    }
+    if(/tag=carteras/.test(hyper)){
+
+        $(".banner_carteras").css("display", "block");
+    }
+
+    if(/tag=accesorios/.test(hyper)){
+
+        $(".banner_accesorios").css("display", "block");
+    }
+
+    if(/tag=sale/.test(hyper)){
+
+        $(".banner_sale").css("display", "block");
+    }
+
+
+
+    //     var base_url = $.environmentVar(
+    //         'http://apibodegas.ondev.today/',
+    //         'http://apibodegas.ondev.today/',
+    //         'https://apibodegas.loadingplay.com/');
+    //     var checkout_url = $.environmentVar(
+    //         'http://lpcheckout.ondev.today/',
+    //         'http://lpcheckout.ondev.today/',
+    //         'https://checkout.loadingplay.com');
+    //     var app_public = $.environmentVar(26,26,26);
+    //     var config = {
+    //         'app_public' : app_public,
+    //         'base_url' : base_url,
+    //         'products_per_page' : 8,
+    //         'templateOrigin' : '#product_template',
+    //         'tag' : '',
+    //         'ignore_stock' : true,
+    //         'infinite_scroll': true,
+    //         'onLoad':function(){
+    //              // $('.ellipsis').ellipsis();
+    //              // $('.spinner').css("display", "none")
+    //          },
+    //          'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+    //     };
+
+    // $(document).ecommerce(config);
+
+
+    });
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="container-g">
+<section class="h-list-prod hidden-xs" style="">
+    <div class="col-md-12">
+
+    <!-- BANNER COLECCION -->
+
+        <div class="banner_coleccion banner_top" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_prod">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_prod" name="image" id="img_list_prod" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_prod" src="{{ read_image(site.name + '_list_prod', 1) }}" onload="this.src='{{ read_image(site.name + '_list_prod',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER CARTERAS -->
+
+        <div class="banner_top banner_carteras" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_carteras">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_carteras" name="image" id="img_list_carteras" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_carteras" src="{{ read_image(site.name + '_list_carteras', 1) }}" onload="this.src='{{ read_image(site.name + '_list_carteras',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER ACCESORIOS -->
+
+        <div class="banner_top banner_accesorios" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_accesorios">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_accesorios" name="image" id="img_list_accesorios" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_accesorios" src="{{ read_image(site.name + '_list_accesorios', 1) }}" onload="this.src='{{ read_image(site.name + '_list_accesorios',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+    <!-- BANNER SALE -->
+
+        <div class="banner_top banner_sale" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_sale">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_sale" name="image" id="img_list_sale" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_sale" src="{{ read_image(site.name + '_list_sale', 1) }}" onload="this.src='{{ read_image(site.name + '_list_sale',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="hidden-xs visible-lg visible-md visible-sm">
+    <div class="container-g">
+      <div class="col-md-2 col-sm-3 col-xs-2">
+    <div class="dropdown">
+      <button class="btn btn-primary ordenar dropdown-toggle" type="button" data-toggle="dropdown">ORDENAR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+      </button> 
+      <ul class="dropdown-menu ordenar">
+         <div class="" style="height: 100px;">
+            <div class="col-md-12">
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod menor"> (menor a mayor)</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod mayor"> (mayor a menor)</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOMBRE<a href="#!" class="mod nombre">  (A-Z)</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+          <div align="center">
+            <button type="button" class="btn btn-default-fil">FILTRAR</button>
+            <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+          </div>
+        </div>
+    </ul>
+</div>
+</div>
+
+        <div class="col-md-2 col-sm-3 col-xs-2">
+            <div class="dropdown">
+              <button class="btn btn-primary filtrar dropdown-toggle" type="button" data-toggle="dropdown">TALLAS <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+              </button> 
+              <ul class="dropdown-menu filtrar">
+               <div class="text-center talla-onclick">TALLA </div>
+               <div class="col-md-12 box-talla" style="">
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                    <div class="num-tal-2" tag="35">35</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                    <div class="num-tal-2" tag="36">36</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                  <div class="num-tal-2" tag="37">37</div>
+              </div>
+          </div>
+          <div class="col-md-12 box-talla" style="">
+            <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+               <div class="num-tal-2" tag="38">38</div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+               <div class="num-tal-2" tag="39">39</div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+               <div class="num-tal-2" tag="40">40</div>
+           </div>
+       </div>
+       <div class="col-md-12">
+        <div align="center">
+          <button type="button" class="btn btn-default-fil">FILTRAR</button>
+          <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+        </div>
+    </div>
+</ul>
+</div>
+</div>
+
+
+<div class="col-md-2 col-sm-3 col-xs-2">
+  <div class="dropdown">
+    <button class="btn btn-primary color dropdown-toggle" type="button" data-toggle="dropdown">COLOR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    </button> 
+    <ul class="dropdown-menu color">
+     <div class="text-center talla-onclick">COLOR</div>
+  
+  <div class="col-md-12">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-taupe" type="radio" name="animal" value="Cat" tag="taupe"/> TAUPE </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-negro" type="radio" name="animal" value="Cat" tag="negro"/> NEGRO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-blanco" type="radio" name="animal" value="Cat" tag="blanco"/> BLANCO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-cafe" type="radio" name="animal" value="Cat" tag="cafe"/> CAFE </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-chocolate" type="radio" name="animal" value="Cat" tag="chocolate"/> CHOCOLATE </div>
+    </form>
+  </div>
+
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-camel" type="radio" name="animal" value="Cat" tag="camel"/> CAMEL </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-oxido" type="radio" name="animal" value="Cat" tag="oxido"/> OXIDO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-arena" type="radio" name="animal" value="Cat" tag="arena"/> ARENA </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-animal" type="radio" name="animal" value="Cat" tag="animal print"/> ANIMAL PRINT </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-gris" type="radio" name="animal" value="Cat" tag="gris"/> GRIS </div>
+    </form>
+  </div>
+  </div>
+
+   <div class="col-md-12">
+    <div align="center">
+    <button type="button" class="btn btn-default-fil">FILTRAR</button>
+    <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+    </div>
+  </div>
+</ul>
+</div>
+</div>
+
+
+<div class="col-md-2 col-sm-3 col-xs-2">
+  <div class="dropdown">
+    <button class="btn btn-primary tipo dropdown-toggle" type="button" data-toggle="dropdown">TIPO <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    </button> 
+    <ul class="dropdown-menu tipo">
+     <div class="text-center talla-onclick">TIPO</div>
+  
+  <div class="col-md-12">
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas"/> BOTAS </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines"/> BOTINES </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras"/> BUCANERAS </div>
+    </form>
+  </div>
+
+   <div class="col-md-6 col-sm-6 col-xs-12">
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="zapato"/> ZAPATOS </div>
+    </form>
+    <!-- <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag=""/> BOTINES </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag=""/> BUCANERAS </div>
+    </form> -->
+  </div>
+  </div>
+
+   <div class="col-md-12">
+    <div align="center">
+    <button type="button" class="btn btn-default-fil">FILTRAR</button>
+    <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+    </div>
+  </div>
+</ul>
+</div>
+</div>
+</section>
+
+
+<!-- **+*+ FILTROS VERSION MOVIL*** -->
+
+<section class="hidden-lg hidden-md hidden-sm visible-xs">
+    <div class="col-xs-12" style="margin-top: 90px;">
+    <div class="col-xs-4">
+        <div class="nombre-categoria">Colección / </div>
+    </div>
+    <div class="col-xs-4">
+        <a href="#" class="nombre-tag">Cualquiera</a>
+    </div>
+    </div>
+</section>
+
+<section class="visible-xs hidden-lg hidden-sm hidden-md">
+    <div align="center">
+        <div class="container-g">
+            <div class="col-md-2 col-sm-2 col-xs-6">
+                <div class="dropdown">
+                  <button class="btn btn-primary filtrar dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR <a href="" style="color:#cc6c4e;"> > </a>
+                  </button> 
+                  <ul class="dropdown-menu filtrar">
+                   <div class="text-center talla-onclick">Tallas</div>
+                   <div class="col-md-12 box-talla" style="">
+                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                        <div class="num-tal-2">35</div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                        <div class="num-tal-2">36</div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                      <div class="num-tal-2">37</div>
+                  </div>
+              </div>
+              <div class="col-md-12 box-talla" style="">
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                   <div class="num-tal-2">38</div>
+               </div>
+               <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                   <div class="num-tal-2">39</div>
+               </div>
+               <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                   <div class="num-tal-2">40</div>
+               </div>
+           </div>
+           <div class="col-xs-6">
+            <button type="button" class="btn btn-default-fil">Aplicar filtro</button>
+        </div>
+        <div class="col-xs-6">
+          <button type="button" class="btn btn-default-ord">Limpiar</button>
+      </div>
+  </ul>
+</div>
+</div>
+
+<div class="col-md-2 col-sm-2 col-xs-6">
+    <div class="dropdown">
+      <button class="btn btn-primary ordenar dropdown-toggle" type="button" data-toggle="dropdown">ORDENAR <a href="" style="color:#cc6c4e;"> > </a>
+      </button> 
+      <ul class="dropdown-menu ordenar">
+         <div class="" style="height: 100px;">
+            <div class="col-md-12">
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Precio:<a href="#!" class="mod menor">menor a mayor</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Precio:<a href="#!" class="mod mayor">mayor a menor</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Lo nuevo<a href="#!" class="mod llegada">  </a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">En sale<a href="#!" class="mod"></a></div>
+            </div>
+        </div>
+         <div class="col-xs-6">
+            <button type="button" class="btn btn-default-fil">Filtrar</button>
+        </div>
+        <div class="col-xs-6">
+             <button type="button" class="btn btn-default-ord">Limpiar</button>
+        </div>
+    </ul>
+</div>
+</div>
+</div>
+</div>
+
+</section>
+<!-- ***fin filtros movil*** -->
+
+
+    <div class="paginacion col-md-8 col-sm-8 col-xs-8 hidden-xs visible-lg visible-md visible-sm">
+    <div class="texto-filtros"><!--AQUI VAN LOS FILTROS--></div>
+        <ul>
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </ul>
+    </div>
+    <div>
+      <div class="ordena-nombre"></div>
+    </div>
+</section>
+<div class="container-g">
+<div class="col-md-12 h-product" style="position: relative;display: inline-block;top: -13px;">
+    <div class=" product-grid products inline-menu" >
+
+        <!-- Aqui van los productos -->
+    </div>
+</div>
+</div>
+
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

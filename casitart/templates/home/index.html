@@ -1,0 +1,203 @@
+{% extends "../base.html" %}
+{% block content %}
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<h2>Whatsapp</h2>
+			<h3>+56984152515</h3>
+			<h2>Email</h2>
+			<h3>yi.neko@gmail.com</h3>
+		</div>
+		<!-- <div class="modal-body">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+			<p>+56 9 84152515</p>
+		</div> -->
+		<!-- <div class="modal-footer">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+			<button class="btn btn-primary">Save changes</button>
+		</div> -->
+	</div>
+	
+	<div class="masthead clearfix">
+		
+		<div class="container">
+			
+			<div class="logo pull-left">Casita RT</div>
+			
+			<div class="socials pull-right">
+				<!--<a href=""><i class="icon-twitter"></i></a> <!-- your twitter link -->
+				<a href="https://www.facebook.com/CasitaRT" target="_blank"><i class="icon-facebook"></i></a> <!-- your facebook link -->
+				<!--<a href=""><i class="icon-linkedin"></i></a> <!-- your linkedin link -->
+				<a href="#" id="phone" data-toggle="modal" data-target="#myModal"><i class="icon-envelope"></i></a> <!-- your whatsapp link -->
+			</div>
+			
+			
+		</div>
+		
+	</div>
+	<script type="template" id="product_template" >
+		<li class="col-md-3 col-sm-3 col-xs-12 product-box" data-id="{{! sku}}" data-type="infantil">
+			<a href="https://static.loadingplay.com/static/images/500_62770667bc56a7fc9f6a446547ba07c3_AY753_02.jpg.png" class="thumbnail product-image-href" rel="shadowbox[images];player=img" >
+				<img class="product-image" src="http://bodegas.gianidafirenze.cl/image/a?mw=100" alt="" />
+				<span class="caption"><i class="icon-plus-sign"></i></span>
+			</a>
+			<h5 class="price">Precio {{! main_price}}</h5>
+		</li>
+	</script>
+	<div class="container productlist">
+		
+		<!--<div class="clearfix">
+			
+			<ul class="filter-nav">
+				<li class="active"><a data-id="all" href="">Todos</a></li>
+				<li><a data-id="infantil" href="">Infantil</a></li>
+				<li><a data-id="luminoso" href="">Luminosos</a></li>
+				<li><a data-id="reloj" href="">Reloj</a></li>
+				<li><a data-id="wc" href="">Ba&ntilde;o</a></li>
+				<li><a data-id="mixto" href="">Mixto</a></li>
+			</ul>
+			
+		</div>-->
+		
+		<div class="row">
+
+			<ul class="thumbnails products" id="thumbnails"></ul>
+			
+			<!-- <ul class="thumbnails" id="thumbnails">
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="1" data-type="infantil">
+					<a href="assets/img/01.jpg" class="thumbnail">
+						<img src="assets/img/01.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="2" data-type="luminoso">
+					<a href="assets/img/02.jpg" class="thumbnail">
+						<img src="assets/img/02.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="3" data-type="infantil">
+					<a href="assets/img/03.jpg" class="thumbnail">
+						<img src="assets/img/03.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="6" data-type="mixto">
+					<a href="assets/img/06.jpg" class="thumbnail">
+						<img src="assets/img/06.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="7" data-type="luminoso">
+					<a href="assets/img/07.jpg" class="thumbnail">
+						<img src="assets/img/07.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="8" data-type="mixto">
+					<a href="assets/img/08.jpg" class="thumbnail">
+						<img src="assets/img/08.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="9" data-type="reloj">
+					<a href="assets/img/09.jpg" class="thumbnail">
+						<img src="assets/img/09.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="10" data-type="luminoso">
+					<a href="assets/img/10.jpg" class="thumbnail">
+						<img src="assets/img/10.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="11" data-type="luminoso">
+					<a href="assets/img/11.jpg" class="thumbnail">
+						<img src="assets/img/11.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="infantil">
+					<a href="assets/img/12.jpg" class="thumbnail">
+						<img src="assets/img/12.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="wc">
+					<a href="assets/img/13.jpg" class="thumbnail">
+						<img src="assets/img/13.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="mixto">
+					<a href="assets/img/15.jpg" class="thumbnail">
+						<img src="assets/img/15.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="luminoso">
+					<a href="assets/img/16.jpg" class="thumbnail">
+						<img src="assets/img/16.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="mixto">
+					<a href="assets/img/17.jpg" class="thumbnail">
+						<img src="assets/img/17.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="luminoso">
+					<a href="assets/img/18.jpg" class="thumbnail">
+						<img src="assets/img/18.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="mixto">
+					<a href="assets/img/19.jpg" class="thumbnail">
+						<img src="assets/img/19.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="reloj">
+					<a href="assets/img/20.jpg" class="thumbnail">
+						<img src="assets/img/20.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="mixto">
+					<a href="assets/img/21.jpg" class="thumbnail">
+						<img src="assets/img/21.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="luminoso">
+					<a href="assets/img/23.jpg" class="thumbnail">
+						<img src="assets/img/23.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+				<li class="col-md-3 col-sm-3 col-xs-12" data-id="12" data-type="wc">
+					<a href="assets/img/24.jpg" class="thumbnail">
+						<img src="assets/img/24.jpg" alt="" />
+						<span class="caption"><i class="icon-plus-sign"></i></span>
+					</a>
+				</li>
+			</ul> -->
+			
+		</div>
+		
+	</div>
+{% end %}

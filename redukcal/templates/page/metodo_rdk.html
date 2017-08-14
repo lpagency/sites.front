@@ -1,0 +1,83 @@
+{% extends "../base.html" %}
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/jquery.js"></script>
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/bootstrap.js"></script> -->
+<script type="text/javascript" src="{{ site_base }}/static/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/fancybox/jquery.fancybox.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/plans.js"></script>
+{% end %}
+{% block body %}
+
+<div class="container text-cont">
+	<div class="space50"> </div>
+	<h1 class="fweight100">DIETA PROTEINADA</h1>
+	<br>
+		<div class="metodo-rdk">
+			<div class="row">
+				<div class="col-md-6">
+				    <center>
+                        <img src="static/img/metodo-rdk.png" class="space50">
+                    </center>
+				</div>
+				<div class="col-md-6">
+					<div class="space50"> </div>
+					<p>ReduKcal, es una línea de suplementos proteicos de altísima calidad nutricional, especialmente formulados para la dieta proteinada.</p>
+					<p>La gran variedad de productos ReduKcal, favorece el cumplimiento de la dieta.</p>
+					<p>El aporte calórico se hace fundamentalmente a partir de las proteínas, produciendo una reducción rápida de peso a través de la pérdida de masa grasa y asegurando el mantenimiento de la masa muscular. </p>
+				</div>
+
+			</div>
+			<div class="space50"> </div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="space100"> </div>
+
+					<p><strong>¿En que consiste el Método RDK ®? </strong>El Método RDK®  es una dieta proteinada,  que consiste en aportar una cantidad pequeña de calorías, provenientes de las proteínas, lo cual provoca una sensación de saciedad y la pérdida rápida de peso. El Método RDK® combina ReduKcal con alimentos tradicionales. Nunca recibirás una cantidad excesiva de proteínas y esa es la diferencia esencial con las dietas hiperproteicas. </p>
+				</div>
+				<div class="col-md-6">
+				    <center>
+                        <img src="static/img/etapas-rdk.png" class="space50">
+                    </center>
+				</div>
+
+			</div>
+
+			<div class="space50"> </div>
+			<p><strong>¿Cuántos Kg se bajan?</strong> </p>
+			<p>En promedio se bajan 1-1.5 Kg semanales.</br>
+			La cantidad de kilogramos que se bajan por mes depende de varios factores propios de la persona, tales como el metabolismo, sexo, grado de actividad física, etc. </br>
+			El descenso de peso es rápido y el éxito depende del correcto seguimiento del método.</p>
+			<div class="space50"> </div>
+			<p><strong>¿Cuánto dura el tratamiento?</strong> </p>
+			<p>La duración del tratamiento depende de la cantidad de kilos que necesitas perder.</br>
+			Los planes van de 15 días a 90 días. La pérdida es mucho más rápida que en otras dietas y se pierde localmente donde más grasa se tiene. </p>
+			<div class="space50"> </div>
+			<p>Cuando sigues una dieta proteinada reduces peso
+				porque reduces masa grasa, manteniendo la masa
+				muscular. Al reducir la ingesta de hidratos de carbono, tu
+				organismo se ve obligado a buscar energía de las grasas que tiene
+				acumulada como reservas. Y aportando proteína se evita que obtenga
+				esta energía de la masa muscular y así evitamos la flacidez y el efecto
+				rebote o yoyo de otras dietas.</p>
+
+		</div>
+		<div class="space100"> </div>
+	</div>
+
+
+	{% include '../home/footer.html' %}
+	{% end %}

@@ -1,0 +1,303 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        $(document).on("click", '.little', function(){
+            console.log($(this).attr("src"));
+            $("#img_detail").attr("src", $(this).attr('src'));
+        });
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com');
+    var app_public = $.environmentVar(37,37,37);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            onLoad: function(product){
+                // console.log(product);
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+        };
+    });
+
+</script>
+
+<script type="text/javascript">
+    //funcion para validar sucursal, y alerta 
+    function validarSucursal()
+    {
+        indice = document.getElementById("nationality").selectedIndex;
+        if( indice == null || indice == 0 )
+        {
+            //alert("Por favor seleccione una sucursal");
+            swal(
+            {
+                title: "Oops...",
+                text: "Por favor elige una sucursal",
+                type: "error",
+                confirmButtonColor: "#EE70AC"
+            }
+            );
+            return false;
+        }
+        return true;
+    }
+</script>
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var apellido = $("#itApellido").val();
+                var telefono = $("#itTelefono").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itSucursal").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                // Apellido
+                if(apellido == ""){
+                    $("#itApellido").parents(".form-group").addClass("has-error");
+                    $(".help-apellido").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itApellido").parents(".form-group").removeClass("has-error");
+                    $(".help-apellido").addClass('hidden');
+                }
+
+                // Telefono
+                if(apellido == ""){
+                    $("#itTelefono").parents(".form-group").addClass("has-error");
+                    $(".help-telefono").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itTelefono").parents(".form-group").removeClass("has-error");
+                    $(".help-telefono").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+
+<script type="text/template" id="product_detail" >
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 pad0">
+        <div class="contenedor_banner">
+            <img id="img_detail" class="img-responsive img_detail desaturada" src="{{! images[0]['thumb_500'] }}" alt="" style="display: block;">
+            <h1 class="title-detail text-center">{{! name }}</h1>
+        </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="">{{! bullet1 }}</h1>
+    </div>
+
+    <div class="col-md-12 col-sm-12">
+        <div class="title_descrip_detail1">
+            <h5 class="descrip_detail1">{{! description }}</h5>
+        </div>
+    </div> 
+</script>
+
+
+<div class="container-fluid">
+    <div class="row main">
+        <div class="main-login main-center color-form">
+                <div class="panel-title text-center box-form">
+                    <h2 class="title title-form">Reserva tu evaluacion de prueba</h2>
+                    <hr />
+                </div>
+            <form class="form-horizontal space20" method="post" onsubmit="return validarSucursal()" action="{{ site_base }}/contact">
+                <div class="form-group">
+                    <label for="name" class="cols-sm-2 control-label"></label>
+                        <div class="cols-sm-10">
+                            <div class="input-group" style="width: 100%;">
+                                <input name="Nombre" placeholder="Nombre" class="form-control cuadro-form requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                <input type="hidden" name="subject" value="contactanos" />
+                            </div>
+                            <span id="helpBlock1" class="hidden help-block help-nombre" style="text-align: center;">Escribe tu Nombre</span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label"></label>
+                        <div class="cols-sm-10">
+                            <div class="input-group" style="width: 100%;">
+                                <input name="apellido" placeholder="Apellido" class="form-control cuadro-form requiredField" type="text" id="itApellido" data-error-invalid="Invalid email address" data-error-empty="Ingrese apellido">
+                            <input type="hidden" name="subject" value="contactanos" />
+                            </div>
+                            <span id="helpBlock2" class="hidden help-block help-apellido" style="text-align: center;">Escribe tu apellido</span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="mobile" class="cols-sm-2 control-label required"></label>
+                        <div class="cols-sm-10">
+                            <div class="input-group" style="width: 100%;">
+                                <input name="telefono" placeholder="Telefono" class="form-control cuadro-form requiredField" type="text" id="itTelefono" data-error-invalid="Invalid email address" data-error-empty="Ingrese Telefono">
+                                <input type="hidden" name="subject" value="contactanos" />
+                            </div>
+                            <span id="helpBlock3" class="hidden help-block help-telefono" style="text-align: center;">Escribe tu telefono</span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email" class="cols-sm-2 control-label"></label>
+                        <div class="cols-sm-10">
+                            <div class="input-group" style="width: 100%;">
+                                <input name="Email" placeholder="Email" class="form-control cuadro-form requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                <input type="hidden" name="subject" value="contactanos" />
+                            </div>
+                            <span id="helpBlock4" class="hidden help-block help-mail" style="text-align: center;">Escribe tu Email</span>
+                        </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="nationality" class="cols-sm-2 control-label"></label>
+                        <div class="cols-sm-10">
+                            <div class="input-group" style="width: 100%;"> 
+                                <select class="form-control cuadro-form" name="nationality" id="nationality"  placeholder="Please select your Nationality">
+                                    <option>Sucursal donde te quieres atender</option>
+                                    <option>Sucursal1</option>
+                                    <option>Sucursal2</option>
+                                    <option>Sucursal3</option>
+                                    <option>Sucursal4</option>
+                                </select>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="form-group ">
+                    <button name="submit" id="bEnviar" type="submit" class="btn btn-enviar-detail login-button" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar 
+                    </button>
+                </div>
+                <input type="hidden" name="submitted" id="submitted3" value="true">
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+
+{% block body %} 
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %} 
+
+
+<div id="content" class="container height-content pad0">
+</div>
+
+
+{% end %}

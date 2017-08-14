@@ -1,0 +1,116 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/inside_header.html' %}
+{% end %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+        <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        <script type="text/x-template" id = "product_template" > </script> 
+
+        <script type="text/x-template" id="tag_template" > 
+        <li> 
+            <a href="{{ site_base }}?tag={{! id }}" > 
+            {{!name}} 
+            </a>
+        </li > 
+        </script> 
+
+        <script type="text/javascript" >
+        $(document).ready(function() 
+        {
+            var base_url = 'https://apibodegas.loadingplay.com/',
+            checkout_url = 'https://checkout.loadingplay.com/';
+
+            // function isLocalHost() {
+            //     return document.location.href.indexOf('localhost') != -1;
+            // }
+
+            // function isDevelopment() {
+            //     return document.location.href.indexOf('ondev.today') != -1;
+            // }
+
+            // // configure for each enviroment
+            // if ( isLocalHost() ) 
+            // {
+            //     base_url = 'http://apibodegas.ondev.today/';
+            //     checkout_url = 'http://localhost:8522/';
+            // } 
+            // else if ( isDevelopment() ) 
+            // {
+            //     base_url = 'http://apibodegas.ondev.today/';
+            //     checkout_url = 'http://lpcheckout.ondev.today/';
+            // }
+
+            var facade = $(document).ecommerce('product_detail', {
+                'app_public' : 2,
+                'animation' : 'basic',
+                'base_url' : base_url,
+                'checkout_url': checkout_url,
+                'product_id' : {{ product_id }},
+                'analytics' : '{{ get_config("analytics") }}'
+            });
+        });
+        </script>
+
+        <div type="template" id="product_detail" >
+            <div class="container-fluid-product product" style="text-align:left;">
+                <div class="row visible-xs product-mobile" style="color: white;">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="product-title" >{{! name }}</h2>
+                        <div class="">
+                            <span class="money pre">{{! main_price }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="fm-content-img-prod">
+                        <img src="https://static.loadingplay.com/static/images/1_eb1852c1e13bb1087f187b579784f778_maxresdefault.png" class="fm-image-products image" alt="item">
+                        </div>
+                    </div>
+                    <form action="product1.html" method="POST" class="myform">
+                        <div class="col-sm-6 fondo-blanco-movil">
+                            <h2 class="product-title hidden-xs">{{! name }}</h2>
+                            <p class="product-title bullet">
+                                {{! bullet_1 }}<br/>
+                                {{! bullet_2}}
+                            </p>
+                            <div class="main-price hidden-xs">
+                                <span class="money" style="font-size:30px;">{{! main_price }}</span>
+                            </div>
+                            <div class="product-detail">
+                                <p>{{! description }}</p>
+                            </div>
+                            <button type="button" class="btn btn-right-1 add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" >Añadir al carro</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+{% end %}
+
+
+{% block body %}
+        <div class="container top-distance-content container-fluid-product product-detail-container">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+        {% include '../home/footer.html' %}
+
+{% end %}

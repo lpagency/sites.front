@@ -1,0 +1,320 @@
+.img-bolsa {
+    width: 9%;
+    position: relative;
+    left: 51%;
+    top: -5px;
+    cursor: pointer;
+}
+
+li.bolsa{
+    float: right;
+    left: 10%;
+    position: relative;
+    color: rgba(130, 82, 19, 0.63);
+    font-weight: 300;
+    padding-left: 6px;
+    top: 11px;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+color: gray;
+background-color: transparent;
+text-decoration: underline;
+outline:none !important;
+outline: 5px auto -webkit-focus-ring-color;
+outline-offset: -2px;
+
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 20px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 1px;
+}
+
+.navbar-left {
+    float: left!important;
+    right: 31px;
+    position: relative;
+}
+
+.menu-safari{
+    z-index: 1000;
+    position: relative;
+    height: 50%;
+    margin-top: 10px;
+}
+
+.navbar {
+     margin-bottom: 0px!important; 
+}
+
+.text-header{
+    color: rgba(130, 82, 19, 0.63);
+    font-weight: 300;
+}
+
+.base-logo {
+    width: 293px;
+    height: 97px;
+    background: transparent;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 0% 0%;
+    position: relative;
+    z-index: 200;
+    left: 15%;
+    margin-top: 2px;
+}
+
+.logo {
+    width: 167px;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    margin-left: 71px;
+    object-fit: scale-down;
+    margin-top: 23px;
+}
+.navbar-brand {
+  padding: 0px;
+}
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+  text-decoration: none;
+  background-color: #9c8900;
+  color: white;
+}
+
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color:white ;
+    text-decoration: none;
+    background-color: rgba(154, 144, 71, 0.58) !important;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+    text-decoration: none;
+    background-color: rgba(154, 144, 71, 0.58)!important;
+    color: white!important;
+    -webkit-transition: all 0.7s ease;
+    -moz-transition: all 0.7s ease;
+    -ms-transition: all 0.7s ease;
+    -o-transition: all 0.7s ease;
+    transition: all 0.7s ease;
+}
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover {
+    color: white;
+    background-color: #9c8900;
+
+}
+
+.movil-h{
+    color:rgba(130, 82, 19, 0.63)!important;
+}
+.movil-h:hover{
+    background-color: #9c8900!important;
+    color: white!important;
+}
+/* EXAMPLE 9 - Center with Flexbox and Text*/
+.brand-centered {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-top: 1px solid rgba(154, 144, 71, 0.58);
+}
+.brand-centered .navbar-brand {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
+/* CSS Transform Align Navbar Brand Text ... This could also be achieved with table / table-cells */
+.navbar-alignit .navbar-header {
+    -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  height: 50px;
+}
+.navbar-alignit .navbar-brand {
+  top: 50%;
+  display: block;
+  position: relative;
+  height: auto;
+  -webkit-transform: translate(0,-50%);
+          transform: translate(0,-50%);
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+
+.navbar-nav>li>.dropdown-menu {
+  z-index: 9999;
+
+}
+
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    line-height: 1.42857143;
+    color: #333;
+    white-space: nowrap;
+    color: rgba(130, 82, 19, 0.63);
+    font-weight: 300;
+}
+
+/*---------------------Responsive------------------------*/
+
+
+@media (max-width: 767px){
+    .base-logo {
+    width: 293px;
+    height: 54px;
+    background: transparent;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 0% 0%;
+    position: relative;
+    z-index: 200;
+    left: 15%;
+    margin-top: 2px;
+}
+
+.logo {
+    width: 132px;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    margin-left: 0px;
+    object-fit: scale-down;
+    margin-top: 7px;
+}
+
+.navbar-nav.navbar-right:last-child {
+    margin-right: 1px;
+    width: 100%;
+    display: inline-block;
+}
+
+.navbar-left {
+    float: left!important;
+    right: 0px;
+    position: relative;
+    width: 100%;
+}
+
+.img-bolsa {
+    width: 4%;
+    position: relative;
+    left: -13px;
+    top: 12px;
+    cursor: pointer;
+    float: right;
+}
+
+.fa-angle-down {
+    font-size: 15px !important;
+    position: relative;
+    left: 1%;
+}
+
+}
+
+@media (max-width: 414px){
+  .base-logo {
+    width: 248px;
+    height: 53px;
+    background: white;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 60% 60%;
+    position: relative;
+    z-index: 200;
+    left: 5%;
+}
+
+.logo {
+    width: 132px;
+    position: absolute;
+    display: block;
+    margin: 0 auto;
+    z-index: 1;
+    margin-left: 69px;
+    object-fit: scale-down;
+    margin-top: 7px;
+}
+
+.img-bolsa {
+    width: 7%;
+    position: relative;
+    left: -13px;
+    top: 13px;
+    cursor: pointer;
+    float: right;
+}
+
+}
+
+@media (max-width: 400px){
+  .base-logo {
+    width: 224px;
+    height: 53px;
+    background: white;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 60% 60%;
+    position: relative;
+    z-index: 200;
+    left: 5%;
+}
+
+}

@@ -1,0 +1,98 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var api_url = $.environmentVar(
+                            'http://apibodegas.ondev.today/',
+                            'http://apibodegas.ondev.today/',
+                            'https://apibodegas.loadingplay.com/');
+
+        var checkout_url = $.environmentVar(
+                                'http://lpcheckout.ondev.today',
+                                'http://lpcheckout.ondev.today',
+                                'https://checkout.loadingplay.com');
+
+        var app_public = $.environmentVar(7,7,8);
+
+        $(document).ecommerce(
+        {
+            'app_public' : app_public,
+            'products_per_page' : 6,
+            'ignore_stock': true,
+            'base_url' : api_url,
+            'checkout_url': checkout_url
+        });
+    });
+</script>
+
+{% end %}
+
+{% block body %}
+<!-- mostrar lista productos -->
+<div class="back-title-banner">
+    {% if is_admin %}
+        <div class="image-upload">
+            <!-- id input debe ir en for de label -->
+            <label for="{{ site.name }}_banner_products">
+            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_products" name="image" id="{{ site.name }}_banner_products" >
+        </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_products" src="{{ read_image(site.name + '_banner_products', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_products',500) }}'" class="img-responsive  b-produ" alt="item" style="height: 100%;">
+
+
+
+    <div class="container min">
+    	<div class="row">
+            <div class="space100"></div>
+    		<!-- <h1 class="text-product">Área de juegos</h1> -->
+                {% if is_admin %}
+                    <h1 class="product_title"><span class="editabletext" text-id="{{ site.name + '_titulo1' }}" >{{ read_text(site.name + '_titulo1') }}</span></h1>
+                {% else %}
+                   <h1 class="product_title"> {{ read_text(site.name + '_titulo1') }} </h1>
+                {% end %}
+    		<!-- <p>
+    		Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p> -->
+    		{% if is_admin %}
+                <p class="sub-ti"><span class="editabletext" text-id="{{ site.name + '_titulo2' }}" >{{ read_text(site.name + '_titulo2') }}</span></p>
+            {% else %}
+               <p class="sub-ti"> {{ read_text(site.name + '_titulo2') }} </p>
+            {% end %}
+    	</div>
+
+
+
+    </div>
+</div>
+<div class="container min">
+    <div class="row products hi">
+        <div class="spinner">
+            <div class="rect1"></div>
+            <div class="rect2"></div>
+            <div class="rect3"></div>
+            <div class="rect4"></div>
+            <div class="rect5"></div> 
+        </div>
+
+    </div>
+</div>
+<!-- fin mostrar lista productos -->
+{% include '../home/footer.html' %}
+{% end %}

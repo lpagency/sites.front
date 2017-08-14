@@ -1,0 +1,15 @@
+
+<script type="text/template" id="product_template" class="hidden">
+<a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" style="margin-bottom:32px; padding:0px 20px;">
+       <div class="hovereffect">
+         <img class="img-responsive img-pro" src="{{! images[0][3] }}" alt=""> 
+         <div class="overlay">
+             <a class="info" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">Ver</a>
+         </div>
+       </div>
+        <div class="nombre-producto"> {{! name }}</div>
+        <div class="product-price-listado" style="margin-top: 40px">{{! main_price|money }} </div>
+     </div> 
+</a>
+</script>

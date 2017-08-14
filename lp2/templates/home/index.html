@@ -1,0 +1,70 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/moulie.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+      $('.font-menu').removeClass('active');
+      $('.amort').addClass("active");
+        var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+          'https://pay.loadingplay.com',
+          'https://pay.loadingplay.com',
+          'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(48,48,48);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+                 $('.ellipsis').ellipsis();
+                 // $('.spinner').css("display", "none")
+             },
+             'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+        };
+
+        $('.products').ecommerce("product_box",config);
+   
+        
+    });
+$('.img_product').on('touchstart click', function(){ /* do something... */ });
+</script>
+
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+{% include '../home/header.html' %}
+{% include '../home/main_banner.html' %}
+{% include '../home/main_text.html' %}
+{% include '../home/group_img.html' %}
+{% include '../home/second_text.html' %}
+{% include '../home/second_group.html' %}
+{% include '../home/third_text.html' %}
+{% include '../home/footer.html' %}
+
+
+{% end %}
+

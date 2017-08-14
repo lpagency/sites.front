@@ -1,0 +1,32 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-12" >
+        <div class="col-md-12" >
+            <h2>{{ article["title"] }}</h2>
+            <hr>
+            <h3>{{ article["caption"] }}</h3>
+        </div>
+        <div class="col-md-6" >
+            {{article['description']}}
+        </div>
+        <img class="col-md-4" src="{{ article['thumb_500'] }}">
+    </div>
+</div>
+
+{% end %}

@@ -1,0 +1,97 @@
+<section style="display: block;height: 884px;">
+
+    <div class="container-fluid clearfix pad0 mbtm50">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_group_second">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_group_second" name="image" id="img_group_second" >
+            </div>
+            {% end %}
+            <div class="container-second" >
+                <a id="{{ site.name + '_img_group2_images1' }}" href="{{ read_link(site.name + '_img_group2_images1') }}">
+                <img class="img_group_second img-responsive decolor2" id="{{ site.name }}_img_group_second" src="{{ read_image(site.name + '_img_group_second', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group_second',500) }}'" alt="item" style=" ">
+                </a>
+                <h1 class=" text_group_second1 igs1 {{editabletext}}" text-id="{{ site.name + '_text_group_second1' }}"> {{ read_text(site.name +  '_text_group_second1') }}
+                </h1>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_group2_images1' }}" content="{{ read_link(site.name + '_img_group2_images1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                {% end %}
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_group_second2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_group_second2" name="image" id="img_group_second2" >
+            </div>
+            {% end %}
+            <div class="container-second2">
+                <a id="{{ site.name + '_img_group2_images2' }}" href="{{ read_link(site.name + '_img_group2_images2') }}">
+                <img class="img_group_second2 img-responsive decolor2" id="{{ site.name }}_img_group_second2" src="{{ read_image(site.name + '_img_group_second2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group_second2',500) }}'" alt="item" style=" ">
+                </a>
+                <h1 class=" text_group_second1 igs2 {{editabletext}}" text-id="{{ site.name + '_text_group_second2' }}"> {{ read_text(site.name +  '_text_group_second2') }}
+                </h1>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_group2_images2' }}" content="{{ read_link(site.name + '_img_group2_images2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                {% end %}
+            </div>
+        </div>
+    </div>
+
+<!-- SEGUNDO GRUPO DE IMAGENES -->
+
+    <div class="container-fluid clearfix pad0 mbtm50">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_group_second3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_group_second3" name="image" id="img_group_second3" >
+            </div>
+            {% end %}
+            <div  class="container-second">
+                <a id="{{ site.name + '_img_group2_images3' }}" href="{{ read_link(site.name + '_img_group2_images3') }}">
+                <img class="img_group_second3 img-responsive decolor2" id="{{ site.name }}_img_group_second3" src="{{ read_image(site.name + '_img_group_second3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group_second3',500) }}'" alt="item" style=" ">
+                </a>
+                <h1 class=" text_group_second1 igs3 {{editabletext}}" text-id="{{ site.name + '_text_group_second3' }}"> {{ read_text(site.name +  '_text_group_second3') }}
+                </h1>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_group2_images3' }}" content="{{ read_link(site.name + '_img_group2_images3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                {% end %}
+            </div>
+        </div>
+
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_group_second4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_group_second4" name="image" id="img_group_second4" >
+            </div>
+            {% end %}
+            <div class="container-second2">
+                <a id="{{ site.name + '_img_group2_images4' }}" href="{{ read_link(site.name + '_img_group2_images4') }}">
+                <img class="img_group_second4 img-responsive decolor2" id="{{ site.name }}_img_group_second4" src="{{ read_image(site.name + '_img_group_second4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group_second4',500) }}'" alt="item" style=" ">
+                </a>
+                <h1 class="text_group_second1 igs2 {{editabletext}}" text-id="{{ site.name + '_text_group_second4' }}"> {{ read_text(site.name +  '_text_group_second4') }}
+                </h1>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_group2_images4' }}" content="{{ read_link(site.name + '_img_group2_images4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                {% end %}
+            </div>
+        </div>
+    </div>
+
+</section>

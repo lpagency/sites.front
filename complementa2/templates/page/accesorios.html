@@ -1,0 +1,59 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript">
+     $(document).on("click",".add-to-cart",  function(){
+        $(this).removeClass("btn_comprar");
+        $(this).addClass("btn_comprado");
+        $(this).text("AGREGADO");
+        $(".carrito-header").css("background-color", "red");
+         });
+
+        $('.list-menu').removeClass('active');
+        $('.accesorios').addClass("active");
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="">
+    <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;">
+<!--         <div id="header-top"></div> -->
+        <div>
+            <h1 class="text-title">ACCESORIOS</h1>
+        </div>
+        <a href="#" class="subcateg mbtm5" tag="almohada" role="button">ALMOHADA</a>
+            <a href="#" class="subcateg mbtm5" tag="cascabel" role="button">CASCABEL</a>
+            <a href="#" class="subcateg mbtm5" tag="cascabel peluche" role="button">CASCABEL PELUCHE</a>
+            <a href="#" class="subcateg mbtm5" tag="pantuflas" role="button">PANTUFLAS</a>
+            <a href="#" class="subcateg mbtm5" tag="peluche" role="button">PELUCHE</a>
+            <a href="#" class="subcateg mbtm5" tag="portachupete" role="button">PORTACHUPETE</a>
+            <a href="#" class="subcateg mbtm5" tag="tuto" role="button">TUTO</a>
+            <a href="#" class="subcateg mbtm5" tag="tuto grande" role="button">TUTO GRANDE</a>
+    </div>
+    <div class=" product-grid products clearfix" >
+
+            <!-- Aqui van los productos -->
+            
+    </div>
+</div>
+
+
+{% end %}

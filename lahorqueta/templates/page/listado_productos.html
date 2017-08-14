@@ -1,0 +1,136 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+    body{
+/*      background-color: rgba(128, 128, 128, 0.15);*/
+    }
+</style>
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    });
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+                    <section class="imagebg image--light height-100" data-overlay="7">
+                        <div class="background-image-holder">
+                            <img alt="image" src="{{ site_base }}/static/img/work11.jpg">
+                        </div>
+                        <div class="container pos-vertical-center">
+                            <div class="row">
+                                <div class="" style="margin-top:-30px;"></div>
+                                <div class="col-sm-4 shop-item-detail">
+                                    <h3>Esta es un producto relacionado en oferta</h3>
+                                    <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself </p>
+                                    <div class="item__price">
+                                        <span class="type--strikethrough">$89.000</span>
+                                        <span>$49.000</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+<section class="nov" style="">
+   <div class="container">
+           <div align="center" class="to"> 
+              <div class="products">
+                  <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+              </div>
+            <div class="col-xs-12">
+              <div style="margin-top:45px;"></div>
+             <!--  <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button> -->
+            </div>
+          </div> 
+
+    </div>
+</section>
+
+<!-- ************++********box banner*********+*++***** -->
+
+<div class="clearfix-dos"> </div>
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

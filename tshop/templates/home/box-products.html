@@ -1,0 +1,129 @@
+ {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+ <section class="section-hero section-gray" id="section-shop">
+        <div class="container">
+            <div class="hero-section-header ">
+                <h3 class="hero-section-title  {{editabletext}}"  text-id="{{ site.name + '_texto-box-list' }}">  {{ read_text(site.name + '_texto-box-list') }}  </h3>
+            </div>
+            <!-- <div class="section-content">
+                <div class="row has-equal-height-child">
+                    <div class="product-item item-flat col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+                        <div class="product product-item-inner">
+                            <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav wisthlist-flat tooltipHere">
+                                <i class="glyphicon glyphicon-heart"></i>
+                            </a>
+                            <div class="imageHover hasCart">
+                                <a href="product-details.html">
+                                    <img class="img-responsive primaryImage" alt="img" src="https://84static.loadingplay.com/static/images/ee88d349bfb5feaa09b8c0bd4d42ba08_54a.png">
+                                    <img class="img-responsive secondaryImage" alt="img" src="https://84static.loadingplay.com/static/images/41dbbaead9c0a85047da3bfc21e5ab98_54b.png"></a>
+                                    <div class="product-btn-box">
+                                        <a class="btn btn-product-flat btn-primary">
+                                            <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="prod-details">
+                                    <p class="title">
+                                        <a href="product-details-style5-4.1-with-zoom.html" title=""> Men Flat TShirt </a>
+                                    </p>
+                                    <p class="product-flat-info">
+                                        <span class="product-curreent-price">
+                                            $60.00
+                                        </span>
+                                        &nbsp;|&nbsp;
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-item item-flat col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+                            <div class="product product-item-inner">
+                                <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav wisthlist-flat tooltipHere">
+                                    <i class="glyphicon glyphicon-heart"></i>
+                                </a>
+                                <div class="imageHover hasCart">
+                                    <a href="product-details.html">
+                                        <img class="img-responsive primaryImage" alt="img" src="https://84static.loadingplay.com/static/images/f8092f176a1030aa54c7265f08524130_53a.png">
+                                        <img class="img-responsive secondaryImage" alt="img" src="https://7static.loadingplay.com/static/images/64a9aa877fcbdb5f0862fa4c3fcf32ad_53b.png"></a>
+                                        <div class="product-btn-box">
+                                            <a class="btn btn-product-flat btn-primary">
+                                                <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="prod-details">
+                                        <p class="title">
+                                            <a href="product-details-style5-4.1-with-zoom.html" title="title">Women Flat TShirt</a>
+                                        </p>
+                                        <p class="product-flat-info">
+                                            <span class="product-curreent-price">
+                                                $100.00
+                                            </span>
+                                            &nbsp;|&nbsp;
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="product-item item-flat col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+                                <div class="product product-item-inner">
+                                    <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav wisthlist-flat tooltipHere">
+                                        <i class="glyphicon glyphicon-heart"></i>
+                                    </a>
+                                    <div class="imageHover hasCart">
+                                        <a href="product-details.html">
+                                            <img class="img-responsive primaryImage" alt="img" src="https://84static.loadingplay.com/static/images/3d51ad6eec6d5d57bfd9c73d42e7fb07_50a.png">
+                                            <img class="img-responsive secondaryImage" alt="img" src="https://7static.loadingplay.com/static/images/b076ebc8daf8ea09b019cb069c86329c_50b.png"></a>
+                                            <div class="product-btn-box">
+                                                <a class="btn btn-product-flat btn-primary">
+                                                    <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="prod-details">
+                                            <p class="title">
+                                                <a href="product-details-style5-4.1-with-zoom.html" title="title">Women Flat TShirt</a>
+                                            </p>
+                                            <p class="product-flat-info">
+                                                <span class="product-curreent-price">
+                                                    $100.00
+                                                </span>
+                                                &nbsp;|&nbsp;
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-item item-flat col-lg-3 col-md-3 col-sm-3 col-xs-6 col-xxs-12">
+                                    <div class="product product-item-inner">
+                                        <a data-placement="left" data-original-title="Add to Wishlist" data-toggle="tooltip" class="add-fav wisthlist-flat tooltipHere">
+                                            <i class="glyphicon glyphicon-heart"></i>
+                                        </a>
+                                        <div class="imageHover hasCart">
+                                            <a href="product-details.html">
+                                                <img class="img-responsive primaryImage" alt="img" src="https://84static.loadingplay.com/static/images/fdc7a06a5ef5d5ddc26cafa82c6fb04a_51a.png">
+                                                <img class="img-responsive secondaryImage" alt="img" src="https://7static.loadingplay.com/static/images/602594a77e8a82a79e4f8f317856851d_51b.png"></a>
+                                                <div class="product-btn-box">
+                                                    <a class="btn btn-product-flat btn-primary">
+                                                        <span class="add2cart"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="prod-details">
+                                                <p class="title">
+                                                    <a href="product-details-style5-4.1-with-zoom.html" title=""> Men Flat TShirt </a>
+                                                </p>
+                                                <p class="product-flat-info">
+                                                    <span class="product-curreent-price">
+                                                        $100.00
+                                                    </span>
+                                                    &nbsp;|&nbsp;
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+           </section>

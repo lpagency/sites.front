@@ -1,0 +1,328 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function() 
+{
+
+      document.cookie = 'shopping-cart=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+
+      $('.font-menu').removeClass('active');
+      $('.planes').addClass("active");
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    $('#datepicker').datepicker({
+      inline:true
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+ 
+ <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+
+<section id="first-page-scroll"> 
+     <div class="mobile-ho" style="background:url('{{ read_image(site.name + '_banner_plan') }}'); 
+    height: 400px;
+    background-size: cover;
+    filter: grayscale(0%) brightness(65%);
+    margin-top: -20px;
+    -webkit-filter: grayscale(0%) brightness(85%);
+    -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%);
+    -o-filter: grayscale(0%) brightness(65%);
+    background-position: center;
+    margin-bottom: 54px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+          <div class="image-upload part1 lapiz visible-movil">
+              <label for="img_banner_plan">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_plan" name="image" id="img_banner_plan" >
+          </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_plan" src="{{ read_image(site.name + '_banner_plan', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_plan',500) }}'" class="banner_productos hidden" alt="item">     
+       </div>
+
+       <div class="container">
+          <div class="col-md-12">
+                 <div class="til-pro text-center {{editabletext}}" text-id="{{ site.name + '_til_de' }}"> {{ read_text(site.name +  '_til_de') }}</div>
+                 <hr class="pro">
+          </div>
+      </div>
+</section>
+
+
+
+
+
+<section>
+      <div class="container">
+        <div class="col-md-12">
+           <div class="texto-pl text-center {{editabletext}}" text-id="{{ site.name + '_tex_xx' }}"> {{ read_text(site.name +  '_tex_xx') }}</div>
+           <hr class="plan">
+        </div>
+    
+    <!-- **cuadritos planes** -->
+ <div align="center" class="plans-normal hidden">
+        <div class="col-md-3 col-sm-6">
+           <div class="cuadro-pl">
+            <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_ee' }}"> {{ read_text(site.name +  '_tex_ee') }}</div>
+            <hr class="sun">
+            <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_ee_2' }}"> {{ read_text(site.name +  '_tex_ee_2') }}</div>
+             {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_9090">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_9090" name="image" id="img_9090" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_9090" src="{{ read_image(site.name + '_9090', 1) }}" onload="this.src='{{ read_image(site.name + '_9090',500) }}'" class="img-plan" alt="item" />
+            <!--  <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+              <hr class="sun">
+           </div>
+            <a href="{{ site_base }}/detalle_plan_light">
+              <button type="button" class="btn btn-primary more">Más información</button>
+            </a>
+        </div>
+        
+         <div class="col-md-3 col-sm-6">
+           <div class="cuadro-pl">
+             <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_ii_i' }}"> {{ read_text(site.name +  '_tex_ii_i') }}</div>
+            <hr class="sun">
+             <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_ii_2' }}"> {{ read_text(site.name +  '_tex_ii_2') }}</div>
+             {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_9090_2">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_9090_2" name="image" id="img_9090_2" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_9090_2" src="{{ read_image(site.name + '_9090_2', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_2',500) }}'" class="img-plan" alt="item" />
+            <!--  <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+              <hr class="sun">
+           </div>
+           <a href="{{ site_base }}/detalle_plan_quick">
+           <button type="button" class="btn btn-primary more">Más información</button>
+           </a>
+        </div>
+
+         <div class="col-md-3 col-sm-6">
+           <div class="cuadro-pl">
+             <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_uu' }}"> {{ read_text(site.name +  '_tex_uu') }}</div>
+            <hr class="sun">
+             <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_uu_2' }}"> {{ read_text(site.name +  '_tex_uu_2') }}</div>
+             {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_9090_3">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_9090_3" name="image" id="img_9090_3" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_9090_3" src="{{ read_image(site.name + '_9090_3', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_3',500) }}'" class="img-plan" alt="item" />
+             <!-- <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+              <hr class="sun">
+           </div>
+           <a href="{{ site_base }}/detalle_plan_power">
+            <button type="button" class="btn btn-primary more">Más información</button>
+            </a>
+        </div>
+
+         <div class="col-md-3 col-sm-6">
+           <div class="cuadro-pl">
+             <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_oo' }}"> {{ read_text(site.name +  '_tex_oo') }}</div>
+            <hr class="sun">
+            <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_oo_2' }}"> {{ read_text(site.name +  '_tex_oo_2') }}</div>
+            {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_9090_4">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_9090_4" name="image" id="img_9090_4" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_9090_4" src="{{ read_image(site.name + '_9090_4', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_4',500) }}'" class="img-plan" alt="item" />
+             <!-- <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+              <hr class="sun">
+           </div>
+           <a href="{{ site_base }}/detalle_plan_ultra">
+            <button type="button" class="btn btn-primary more">Más información</button>
+            </a>
+        </div>
+    </div>
+
+        <!-- **cuadritos planes** -->
+     <div align="center" class="plans-plus hidden">
+            <div class="col-md-3 col-sm-6">
+               <div class="cuadro-pl">
+                <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_ee+' }}"> {{ read_text(site.name +  '_tex_ee+') }}</div>
+                <hr class="sun">
+                <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_ee+_2' }}"> {{ read_text(site.name +  '_tex_ee+_2') }}</div>
+                 {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                              <label for="img_9090_plus">
+                                <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                              </label>
+                              <input type="file" class="editableimage" image-id="{{ site.name }}_9090_plus" name="image" id="img_9090_plus" >
+                            </div>
+                            {% end %}
+                            <img id="{{ site.name }}_9090_plus" src="{{ read_image(site.name + '_9090_plus', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_plus',500) }}'" class="img-plan" alt="item" />
+                <!--  <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+                  <hr class="sun">
+               </div>
+                <a href="{{ site_base }}/detalle_plan_light+">
+                  <button type="button" class="btn btn-primary more">Más información</button>
+                </a>
+            </div>
+            
+             <div class="col-md-3 col-sm-6">
+               <div class="cuadro-pl">
+                 <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_ii_plus_i' }}"> {{ read_text(site.name +  '_tex_ii_plus_i') }}</div>
+                <hr class="sun">
+                 <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_ii_plus_2' }}"> {{ read_text(site.name +  '_tex_ii_plus_2') }}</div>
+                 {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                              <label for="img_9090_plus_2">
+                                <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                              </label>
+                              <input type="file" class="editableimage" image-id="{{ site.name }}_9090_plus_2" name="image" id="img_9090_plus_2" >
+                            </div>
+                            {% end %}
+                            <img id="{{ site.name }}_9090_plus_2" src="{{ read_image(site.name + '_9090_plus_2', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_plus_2',500) }}'" class="img-plan" alt="item" />
+                <!--  <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+                  <hr class="sun">
+               </div>
+               <a href="{{ site_base }}/detalle_plan_quick+">
+               <button type="button" class="btn btn-primary more">Más información</button>
+               </a>
+            </div>
+
+             <div class="col-md-3 col-sm-6">
+               <div class="cuadro-pl">
+                 <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_uu_plus' }}"> {{ read_text(site.name +  '_tex_uu_plus') }}</div>
+                <hr class="sun">
+                 <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_uu_plus_2' }}"> {{ read_text(site.name +  '_tex_uu_plus_2') }}</div>
+                 {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                              <label for="img_9090_plus_3">
+                                <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                              </label>
+                              <input type="file" class="editableimage" image-id="{{ site.name }}_9090_plus_3" name="image" id="img_9090_plus_3" >
+                            </div>
+                            {% end %}
+                            <img id="{{ site.name }}_9090_plus_3" src="{{ read_image(site.name + '_9090_plus_3', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_plus_3',500) }}'" class="img-plan" alt="item" />
+                 <!-- <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+                  <hr class="sun">
+               </div>
+               <a href="{{ site_base }}/detalle_plan_power+">
+                <button type="button" class="btn btn-primary more">Más información</button>
+                </a>
+            </div>
+
+             <div class="col-md-3 col-sm-6">
+               <div class="cuadro-pl">
+                 <div class="tex-nim {{editabletext}}" text-id="{{ site.name + '_tex_oo_plus' }}"> {{ read_text(site.name +  '_tex_oo_plus') }}</div>
+                <hr class="sun">
+                <div class="tex-or {{editabletext}}" text-id="{{ site.name + '_tex_oo_plus_2' }}"> {{ read_text(site.name +  '_tex_oo_plus_2') }}</div>
+                {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil">
+                              <label for="img_9090_plus_4">
+                                <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                              </label>
+                              <input type="file" class="editableimage" image-id="{{ site.name }}_9090_plus_4" name="image" id="img_9090_plus_4" >
+                            </div>
+                            {% end %}
+                            <img id="{{ site.name }}_9090_plus_4" src="{{ read_image(site.name + '_9090_plus_4', 1) }}" onload="this.src='{{ read_image(site.name + '_9090_plus_4',500) }}'" class="img-plan" alt="item" />
+                 <!-- <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
+                  <hr class="sun">
+               </div>
+               <a href="{{ site_base }}/detalle_plan_ultra+">
+                <button type="button" class="btn btn-primary more">Más información</button>
+                </a>
+            </div>
+        </div>
+      </div>
+</section>
+
+{% include '../home/footer.html' %}
+
+{% end %}
+

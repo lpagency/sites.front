@@ -1,0 +1,81 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block scripts %}
+<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+{% if is_admin %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div id="wrap">
+        <!-- registration -->
+        
+    <section style="display: block;position: relative;margin-top: 142px;" class="wil">
+        <div class="mobile-li">
+            <img class="img_banner_art desaturada" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
+            <div class="box">
+                <h1 class="text_artdetail text-center">
+                    {{ article["title"] }}
+                </h1>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <div class="container-fluid productlist">
+            <div class="col-sm-12">
+                <input type="hidden" id="article-description-ajax-url" value="{{ site.url }}article/update-description">
+                <input type="hidden" id="article-content-id" value="{{article['id']}}">
+
+                <!-- PRIMER TEXTO -->
+                <div class="container-fluid" style="display: block;">
+
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+
+                        <h2 class="text-art1">
+                        {{ article["caption"] }}
+                        </h2>
+                    </div>
+
+                </div>
+
+                    <!-- SEGUNDO TEXTO -->
+                <div class="container-fluid" style="display: block; ">
+                    
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div id="description" class="text-art2  text-justify">
+                            {{ article["description"] }}
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+    </div>
+
+    <div class="carritoproductos clearfix">
+        <div class="flecha clearfix">
+        </div>
+    </div>
+  
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}
+

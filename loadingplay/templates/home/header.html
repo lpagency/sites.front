@@ -1,0 +1,30 @@
+ {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 col-xs-12">
+                 <a href="{{ site_base}}/contact">
+                 <p class="with"> CONTÁCTANOS </p>
+                 </a>
+            </div>
+        </div> 
+        <div class="loh">
+           <div align="center">
+              <a href="#">
+              <img class="logo" src="https://7static.loadingplay.com/static/images/7fd3f3c910147ce3f26682c9c06fc6fb_logo_loadingplay_negro.png">
+              </a>
+           </div>
+       </div>
+
+       <div class="row">
+           <div class="col-md-12 col-xs-12">
+               <h1 class="pres {{editabletext}}" text-id="{{ site.name + '_infor_1' }}"> {{ read_text(site.name +  '_infor_1') }}</h1>
+           </div>
+       </div>
+    
+
+</div>

@@ -1,0 +1,24 @@
+<script type="text/template" id="product_template_home" class="hidden">
+    <div class="carousel-inner">
+    <div align="center" class="hidden-xs visible-md visible-lg visible-sm">
+         <div>
+            <div align="center">
+                 <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                     <img src="{{! images[0][2] }}" alt="" class="img-responsive mini" >       
+                  </a>
+            </div>
+         </div>
+     </div>
+
+       <div align="center" class="visible-xs hidden-md hidden-lg hidden-sm">
+         <div class="col-xs-6">
+              <div class="contenedor-img">
+                 <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                     <img src="{{! images[0][2] }}" alt="" class="img-responsive mini" >
+                     <p class="inf-rel">{{! name }}</p>       
+                  </a>
+              </div>
+         </div>
+     </div>
+     </div>
+</script>

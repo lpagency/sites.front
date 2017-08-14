@@ -1,0 +1,253 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.blog').addClass("active");
+
+  });
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() 
+{
+
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    $('#datepicker').datepicker({
+      inline:true
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- ***contenido** -->
+
+<section id="first-page-scroll" class="fondo-pro">
+
+    <div class="container">
+        <div align="center">
+            <div class="col-md-3">
+                 <div class="consejos"> Consejos </div>
+            </div>
+           <div class="col-md-12">
+                 <div class="box-consejos">
+                      <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_1">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_1" name="image" id="img_conse_1" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_1" src="{{ read_image(site.name + '_conse_1', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_1',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse' }}"> {{ read_text(site.name +  '_til_conse') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_' }}"> {{ read_text(site.name +  '_til_con_') }}</div>
+                    </div>
+        
+                       <div class="col-md-12 col-sm-12 col-xs-12">
+                          <hr class="one-blog">
+                       </div>
+
+                       <!-- **dos** -->
+                  <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_2">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_2" name="image" id="img_conse_2" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_2" src="{{ read_image(site.name + '_conse_2', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_2',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse_2' }}"> {{ read_text(site.name +  '_til_conse_2') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_2' }}"> {{ read_text(site.name +  '_til_con_2') }}</div>
+                    </div>
+        
+                       <div class="col-md-12 col-sm-12 col-xs-12">
+                          <hr class="one-blog">
+                       </div>
+
+
+                       <!-- **tres** -->
+                    <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_3">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_3" name="image" id="img_conse_3" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_3" src="{{ read_image(site.name + '_conse_3', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_3',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse_3' }}"> {{ read_text(site.name +  '_til_conse_3') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_3' }}"> {{ read_text(site.name +  '_til_con_3') }}</div>
+                    </div>
+                    
+                     <div class="col-md-12 col-sm-12 col-xs-12">
+                       <hr class="one-blog">
+                     </div>
+
+                       <!-- **cuatro** -->
+                      <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_4">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_4" name="image" id="img_conse_4" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_4" src="{{ read_image(site.name + '_conse_4', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_4',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse_4' }}"> {{ read_text(site.name +  '_til_conse_4') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_4' }}"> {{ read_text(site.name +  '_til_con_4') }}</div>
+                    </div>
+        
+                   <div class="col-md-12 col-sm-12 col-xs-12">
+                       <hr class="one-blog">
+                    </div>
+
+
+                   <!-- **cinco** -->
+                      <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_5">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_5" name="image" id="img_conse_5" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_5" src="{{ read_image(site.name + '_conse_5', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_5',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse_5' }}"> {{ read_text(site.name +  '_til_conse_5') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_5' }}"> {{ read_text(site.name +  '_til_con_5') }}</div>
+                    </div>
+                 
+                     <div class="col-md-12 col-sm-12 col-xs-12">
+                       <hr class="one-blog">
+                     </div>
+
+                <!-- **seis** -->
+                      <div class="col-md-6">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil">
+                          <label for="img_conse_6">
+                            <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                          </label>
+                          <input type="file" class="editableimage" image-id="{{ site.name }}_conse_6" name="image" id="img_conse_6" >
+                        </div>
+                        {% end %}
+                        <img id="{{ site.name }}_conse_6" src="{{ read_image(site.name + '_conse_6', 1) }}" onload="this.src='{{ read_image(site.name + '_conse_6',500) }}'" class="img-consejos" alt="item" />
+                         <!--  <img class="img-consejos" src="" > -->
+                      </div>
+      
+                   <div class="col-md-6">
+                       <div class="con-1 {{editabletext}}" text-id="{{ site.name + '_til_conse_6' }}"> {{ read_text(site.name +  '_til_conse_6') }} </div>
+                       <div class="con-2 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_til_con_66' }}"> {{ read_text(site.name +  '_til_con_66') }}</div>
+                    </div>
+
+
+
+                 </div>
+           </div>
+        </div>
+   </div>
+
+       
+        
+ 
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

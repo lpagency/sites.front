@@ -1,0 +1,20 @@
+<script type="text/template" id="product_template" class="hidden">
+
+    <div class="col-md-4 col-sm-3 col-xs-12 pad0">
+        <!-- <a class="fancybox fancybox.ajax" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" > -->
+        <!-- <a href="#" class="fancybox-product" name="{{! name|friendly}}" product-id="{{! id }}"> -->
+            <div class="product product-thumb">
+                <figure> 
+                    <div class="box_img">
+                        <img src="{{! images[0][1] }}" onload="this.src='{{! images[0][2] }}'" alt="" class="img-responsive img_recipe">
+                    </div>
+                    <div class="col-lg-12 col-sm-12">
+                        <figcaption class="text-left">
+                            <p class=" col-xs-12 name-recipe ellipsis multiline">{{! name }}</p>
+                        </figcaption>
+                    </div>
+                </figure>
+            </div>
+        <!-- </a> -->
+    </div>
+</script>

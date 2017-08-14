@@ -1,0 +1,33 @@
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+    <footer >
+        <div class="container-fluid">
+            <div class="pull-left copyright">
+                <p class="{{editabletext}}" text-id="{{ site.name + '_copyri_1' }}"> {{ read_text(site.name +  '_copyri_1') }} <b></b>  <a href="" target="_blank"></a>.</p>
+                <ul class="nav-list effect">
+                    <li><a href="#" class="{{editabletext}}" text-id="{{ site.name + '_list_1' }}"> {{ read_text(site.name +  '_list_1') }}</a></li>
+                    <li><a  href="{{ site_base }}/product_detail" class="{{editabletext}}" text-id="{{ site.name + '_list_2' }}"> {{ read_text(site.name +  '_list_2') }} </a></li>
+                    <li><a href="{{ site_base }}/contact" class="{{editabletext}}" text-id="{{ site.name + '_list_3' }}"> {{ read_text(site.name +  '_list_3') }}</a></li>
+                    <li><a  href="" class="{{editabletext}}" text-id="{{ site.name + '_list_4' }}"> {{ read_text(site.name + '_list_4') }}</a></li>
+                    <li><a  href="" class="{{editabletext}}" text-id="{{ site.name + '_list_5' }}"> {{ read_text(site.name + '_list_5') }}</a></li>
+                    <li><a  href="" class="{{editabletext}}" text-id="{{ site.name + '_list_6' }}"> {{ read_text(site.name + '_list_6') }}</a></li>
+                </ul>   
+           </div>
+
+        <div class="pull-right copyright">
+              <ul class="social-links">
+                   <li><a href="{{ get_config("facebook") }}"><img class="red" src="https://7static.loadingplay.com/static/images/dc6f75c32fd8b4ac04a7854c7d6b6b54_facebook.png"></a></li>
+                    <li><a href="{{ get_config("instagram") }}"><img class="red" src="https://84static.loadingplay.com/static/images/af72a41c8801a3582ecea851d46b5ca7_Intagram.png"></a></li>
+                    <li><a href="{{ get_config("twitter") }}"><img class="red" src="https://84static.loadingplay.com/static/images/6b97e0a273837d905bec9ac97ec3c1e7_Twitter.png"></a></li>
+                    <li><a href="{{ get_config("pinterest") }}"><img  class="red" src="https://7static.loadingplay.com/static/images/eb438b00e7795ae9698297dafc926428_pinterest.png"></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>

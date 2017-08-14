@@ -1,0 +1,307 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="height_nosotros movil-menu" style="display: block;">
+    <div align="center">
+            <h1 class="col-md-12 col-xs-12 text_nosotros2 text-center {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos' }}"> 
+            {{ read_text(site.name +  '_text_nuestros_productos') }}
+            </h1>
+        </div>
+    <div class="clearfix" ></div>
+</section>
+
+<section class="h-nosotros" >
+    <div class="" align="center">
+        <h1 class="col-md-12 col-xs-12 text_nosotros2 t-n text-center {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos2' }}"> 
+        {{ read_text(site.name +  '_text_nuestros_productos2') }}
+        </h1>
+    </div>
+</section>
+
+<!-- PRIMERA IMAGEN -->
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-4 col-sm-4 hidden-xs pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos1" name="image" id="img_nuestros_productos1" >
+            </div>
+            {% end %}
+            <div class="box-img">
+                <img id="{{ site.name }}_nuestros_productos1" src="{{ read_image(site.name + '_nuestros_productos1', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos1',500) }}'" class=" img_nosotros1" alt="item">
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-8 hidden-xs">
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros3 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos3' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos3') }}
+                </h1>
+            </div>
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros4 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos4' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos4') }}
+                </h1>
+            </div>
+            <!-- <a id="{{ site.name + '_img_group_images' }}" href="{{ read_link(site.name + '_img_group_images') }}"> -->
+            <a  href="{{site_base}}/listado_de_productos?t=chocolates">
+            <bottom class="btn btn-default btn-resena" href="" role="button">IR A LA CATEGORIA</bottom>
+             </a>
+                <!--editable link-->
+                <!-- {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_group_images' }}" content="{{ read_link(site.name + '_img_group_images') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;position: relative;"> -->
+                {% end %}
+        </div>
+
+         <!-- *****MOVIL NOSOTROS 1***** -->
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12  pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos1" name="image" id="img_nuestros_productos1" >
+            </div>
+            {% end %}
+            <div class="box-img" >
+                <img id="{{ site.name }}_nuestros_productos1" src="{{ read_image(site.name + '_nuestros_productos1', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos1',500) }}'" class=" img_nosotros1" alt="item">
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros">
+            <div class="box m0">
+                <h1 class="text_nosotros3 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos3' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos3') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros4 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos4' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos4') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="{{site_base}}/listado_de_productos?t=chocolates" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <!-- *****MOVIL NOSOTROS 1***** -->
+
+    </div>
+</section>
+
+
+<!-- SEGUNDA IMAGEN -->
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4 hidden-xs pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos2" name="image" id="img_nuestros_productos2" >
+            </div>
+            {% end %}
+            <div class="box-img2 m0">
+                <img id="{{ site.name }}_nuestros_productos2" src="{{ read_image(site.name + '_nuestros_productos2', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos2',500) }}'" class=" img_nosotros2" alt="item">
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 hidden-xs top-2-img">
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros5 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos5' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos5') }}
+                </h1>
+            </div>
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros6 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos6' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos6') }}
+                </h1>
+            </div>
+
+            <a class="btn btn-default btn-resena btn-2" href="{{site_base}}/listado_de_productos?t=calugas" role="button">IR A LA CATEGORIA</a>
+        </div>
+
+        <!-- *****MOVIL NOSOTROS 1***** -->
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos2" name="image" id="img_nuestros_productos2" >
+            </div>
+            {% end %}
+            <div class="box-img2 m0">
+                <img id="{{ site.name }}_nuestros_productos2" src="{{ read_image(site.name + '_nuestros_productos2', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos2',500) }}'" class=" img_nosotros2" alt="item">
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros">
+            <div class="box m0">
+                <h1 class="text_nosotros5 {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos5' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos5') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros6 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos6' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos6') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="{{site_base}}/listado_de_productos?t=calugas" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <!-- *****MOVIL NOSOTROS 1***** -->
+
+    </div>
+</section>
+
+
+<!-- TERCERA IMAGEN -->
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-8 col-sm-8 col-xs-8 col-xs-6 hidden-xs">
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros7 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos7' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos7') }}
+                </h1>
+            </div>
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros8 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos8' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos8') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="{{site_base}}/listado_de_productos?t=macarons" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <div class="col-md-4 col-sm-4 hidden-xs pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos3" name="image" id="img_nuestros_productos3" >
+            </div>
+            {% end %}
+            <div class="box-img3">
+                <img id="{{ site.name }}_nuestros_productos3" src="{{ read_image(site.name + '_nuestros_productos3', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos3',500) }}'" class=" img_nosotros3" alt="item">
+            </div>
+        </div>
+
+        <!-- *****MOVIL NOSOTROS 1***** -->
+        
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos3" name="image" id="img_nuestros_productos3" >
+            </div>
+            {% end %}
+            <div class="box-img3">
+                <img id="{{ site.name }}_nuestros_productos3" src="{{ read_image(site.name + '_nuestros_productos3', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos3',500) }}'" class=" img_nosotros3" alt="item">
+            </div>
+        </div>
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros pad0">
+            <div class="box m0">
+                <h1 class="text_nosotros7 {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos7' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos7') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros8 {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos8' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos8') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena btn-3" href="{{site_base}}/listado_de_productos?t=macarons" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <!-- *****MOVIL NOSOTROS 1***** -->
+
+
+    </div>
+
+    <!-- CUARTA IMAGEN IMAGEN -->
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4 hidden-xs pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos4" name="image" id="img_nuestros_productos4" >
+            </div>
+            {% end %}
+            <div class="box-img2 m0">
+                <img id="{{ site.name }}_nuestros_productos4" src="{{ read_image(site.name + '_nuestros_productos4', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos4',500) }}'" class=" img_nosotros2" alt="item">
+            </div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 hidden-xs top-2-img">
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros5 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos9' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos9') }}
+                </h1>
+            </div>
+            <div class="box m0 contenedor-text" align="left">
+                <h1 class="text_nosotros6 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos10' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos10') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena btn-2" href="{{site_base}}/listado_de_productos?t=delicias" role="button">IR A LA CATEGORIA</a>
+        </div>
+
+        <!-- *****MOVIL NOSOTROS 1***** -->
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nuestros_productos4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nuestros_productos4" name="image" id="img_nuestros_productos4" >
+            </div>
+            {% end %}
+            <div class="box-img2 m0">
+                <img id="{{ site.name }}_nuestros_productos4" src="{{ read_image(site.name + '_nuestros_productos4', 1) }}" onload="this.src='{{ read_image(site.name + '_nuestros_productos4',500) }}'" class=" img_nosotros2" alt="item">
+            </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros">
+            <div class="box m0">
+                <h1 class="text_nosotros5 {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos9' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos9') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros6 ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_text_nuestros_productos10' }}"> 
+                {{ read_text(site.name +  '_text_nuestros_productos10') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="{{site_base}}/listado_de_productos?t=delicias" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <!-- *****MOVIL NOSOTROS 1***** -->
+
+    </div>
+</section>
+
+</section>
+
+<section style="height:550px; margin-bottom: 60px;">
+</section>
+{% include '../home/footer.html' %}
+{% end %}

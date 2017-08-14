@@ -1,0 +1,161 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(14,43,14);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : 'lactantes_especiales',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               $('.ellipsis').ellipsis();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+
+{% end %}
+
+
+
+{% block body %}
+
+<section>
+      <div class="mobile-li" style="background:url('{{ read_image(site.name + '_banner_list_pro_dos',500) }}'); background-attachment:fixed; height:550px; background-size:cover; margin-top: -49px;  filter: grayscale(0%) brightness(75%);-webkit-filter: grayscale(0%) brightness(75%);
+    -moz-filter: grayscale(0%) brightness(75%); -ms-filter: grayscale(0%) brightness(75%);-o-filter: grayscale(0%) brightness(75%); background-position:center;">
+        {% if is_admin %}
+               <div class="image-upload lapiz bi visible-movil">
+                   <label for="img_banner_list_pro_dos">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_pro_dos" name="image" id="img_banner_list_pro_dos" >
+               </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_list_pro_dos" src="{{ read_image(site.name + '_banner_list_pro_dos', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_pro_dos',500) }}'" class="banner_list_pro hidden" alt="item">
+           </div>
+             <div class="container">
+                    <div class="col-md-12">
+                        <h1 class="text-left lis-pro {{editabletext}}" text-id="{{ site.name + '_list_pro_2' }}"> {{ read_text(site.name +  '_list_pro_2') }}</h1>
+                    </div>
+                </div>
+</section>
+
+<section>
+        <div class="container">
+            <div class="row"> 
+                    <div class="box-home-list">
+                        <div align="center">
+                             <div class="col-lg-12 col-md-12-cil col-xs-12-wil">
+                                    <a href="{{ site_base}}/listado_producto">
+                                   <!--  <p class="all">Todos</p> </a> -->
+                                    <button type="button" id="testButton" class="btn btn-contact btn-home active {{editabletext}}" text-id="{{ site.name + '_but_1' }}"> {{ read_text(site.name +  '_but_1') }} </button>
+                                     </a>
+                                   <!--  <a href=""> -->
+                                    <button type="button" id="testButton" class="btn btn-contact btn-home  {{editabletext}}" text-id="{{ site.name + '_but_2' }}"> {{ read_text(site.name +  '_but_2') }} </button>
+                                     <!-- </a> -->
+<!--                                <button type="button" class="btn btn-contact btn-home">7 a 12 meses </button>
+                                    <button type="button" class="btn btn-contact btn-home">Más de un año</button> -->
+
+
+                                   
+                            </div>
+                        </div> 
+                    </div>
+              
+            </div>
+        </div>
+</section>
+
+
+<section>
+    <!-- *producto* -->
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center en {{editabletext}}" text-id="{{ site.name + '_til_li_dos' }}"> {{ read_text(site.name +  '_til_li_dos') }}</h1>
+            </div>
+        </div> 
+
+    <div class="container">
+
+    <div class="product-list"></div>
+      <!--  <div class="row">
+           <div align="center">
+               <div class="col-md-3 col-xs-12">
+                   <img class="img-responsive mini-pro" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png">
+               </div>
+            
+                <div class="col-md-3 col-xs-12">
+                   <h1 class="text-left">Nombre del producto</h1>
+                   <p class="text-left desp ">Pequeña descripcion del producto</p>
+                    <button type="button" class="btn btn-ver">Ver producto</button>
+               </div>
+            
+                 <div class="col-md-3 col-xs-12">
+                   <img class="img-responsive mini-pro" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png">
+               </div>
+            
+                <div class="col-md-3 col-xs-12">
+                   <h1 class="text-left">Nombre del producto</h1>
+                   <p class="text-left">Pequeña descripcion del producto</p>
+                   <button type="button" class="btn btn-ver">Ver producto</button>
+               </div>
+            </div>
+       </div>
+       
+        <div class="row">
+           <div align="center">
+               <div class="col-md-3 col-xs-12">
+                   <img class="img-responsive mini-pro" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png">
+               </div>
+            
+                <div class="col-md-3 col-xs-12">
+                   <h1 class="text-left">Nombre del producto</h1>
+                   <p class="text-left more">Pequeña descripcion del producto</p>
+                   <button type="button" class="btn btn-ver">Ver producto</button>
+               </div>
+               
+        <div class="col-md-3 col-xs-12">
+                   <img class="img-responsive mini-pro" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png">
+               </div>
+            
+                <div class="col-md-3 col-xs-12">
+                   <h1 class="text-left">Nombre del producto</h1>
+                   <p class="text-left more">Pequeña descripcion del producto</p>
+                   <button type="button" class="btn btn-ver">Ver producto</button>
+               </div>
+            </div>
+       </div> -->
+
+    </div>
+</section>
+
+
+{% include '../home/footer.html' %}
+{% end %}

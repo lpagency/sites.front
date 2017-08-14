@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- head bt inicio -->
+        <title>Mercadito - {% block title %}{% end %}</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="description">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=430px, user-scalable=no" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+        <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/new_style.css">
+
+        <link rel="stylesheet" href="{{ site_base }}/static/css/icomoon/style.css">
+
+        
+        
+        {% block css %}{% end %}
+
+    </head>
+
+    <div class="modal fade" id="myModal" role="dialog">
+            <div class="modal-dialog">
+
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title text-center ">Resumen de tu compra</h4>
+              </div>
+              <div class="modal-body mlb-btn">
+                
+                  {% include './page/cart.html' %}
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+        {% block header %}{% end %}
+
+        
+        {% block body %}
+        <body id="home">
+        {% end %}
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+
+
+                <!-- carga de productos -->
+<!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        <!-- // <script src="bower_components/jquery/dist/jquery.min.js"></script> -->
+        <script type="text/javascript" src="{{ site_base }}/static/css/js/placeholders.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/css/js/custom.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/css/js/ga.js"></script>
+
+<!--         // <script src="bower_components/bodegas.cliente.js/dist/bodegas.client.min.js"></script>
+        // <script src="bower_components/jquery.cookie/jquery.cookie.js"></script> -->
+
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+
+
+
+<!--         <div type="template" id="product_loading" style="display:none;" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+
+        {% block javascript %}{% end %}
+        <script>
+        // window.fbAsyncInit = function() {
+        //     FB.init({
+        //         appId: '348231912006000',
+        //         xfbml: true,
+        //         version: 'v2.1'
+        //     });
+        // };
+        // (function(d, s, id) {
+        //     var js, fjs = d.getElementsByTagName(s)[0];
+        //     if (d.getElementById(id)) {
+        //         return;
+        //     }
+        //     js = d.createElement(s);
+        //     js.id = id;
+        //     js.src = "//connect.facebook.net/en_US/sdk.js";
+        //     fjs.parentNode.insertBefore(js, fjs);
+        // }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+        var site_name="{{site.name}}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+        {% end %}
+    </body>
+</html>

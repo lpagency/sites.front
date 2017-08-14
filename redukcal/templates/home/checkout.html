@@ -1,0 +1,171 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+{% end %}
+{% block body %}
+<!-- Start Quieries -->
+    <div class="bg-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h3 class="text-white text">Proceso de compra Paso 1 de 2</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End Quieries -->
+
+
+<!-- start white box -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="white-box1">
+                    <h3 class="text padtop20 mleft30">Ingresa los datos de tu compra</h3>                   
+
+                                        
+                    <div class="col-md-9 mleft30">
+                        <form class="space30">
+                          <div class="form-group">
+                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Nombre">
+                          </div>
+                        
+                          <div class="form-group space30">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Apellido">
+                          </div>
+                          
+                          <div class="form-group space30">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Dirección">
+                          </div>
+
+                          <div class="form-group space30">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Nº">
+                          </div>
+
+                          <div class="form-group space30">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Comuna">
+                          </div>
+
+                          <div class="form-group space30">
+                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="País">
+                          </div>
+                        </form>
+                    </div>
+                </div>  
+                        
+                
+                <div class="white-box2">
+                    <h3 class="text padtop20 mleft30">Elije tu medio de pago</h3>
+                
+                    <button type="submit" class="btn btn-default mleft50 space50"><strong>Webpay</strong></button>
+                    <br>
+                    <button type="submit" class="trans-btn mleft50 space50"><strong>Transferencia</strong></button>
+                </div>              
+                    
+                </div>
+
+                <div class="col-md-6">
+                    <div class="bg-orange space50">
+                        <h4 class="text-white fsize26">Resumen de tu compra</h4>
+                    </div>
+
+                    <div class="table1">
+                        <div class="table-responsive">          
+                          <table class="table">
+                            <thead>
+                              <tr class="fsize18">
+                                <th>Producto</th>
+                                <th>Unidades</th>
+                                <th>Total</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>Producto 1</td>
+                                <td>1</td>
+                                <td>22.145</td>
+                              </tr>
+
+                              <tr>
+                                <td>Producto 2</td>
+                                <td>2</td>
+                                <td>21.430</td>
+                              </tr>
+
+                              <tr>
+                                <td>Producto 3</td>
+                                <td>1</td>
+                                <td>22.145</td>
+                              </tr>
+
+                               <tr>
+                                <td>Producto 4</td>
+                                <td>4</td>
+                                <td>21.430</td>
+                              </tr>
+
+                              <tr>
+                                <td>Producto 5</td>
+                                <td>5</td>
+                                <td>22.145</td>
+                              </tr>
+
+                              <tr>
+                                <td>Producto 6</td>
+                                <td>7</td>
+                                <td>21.430</td>
+                              </tr> 
+
+                              <tr>
+                                <td>Producto 7</td>
+                                <td>9</td>
+                                <td>22.145</td>
+                              </tr>
+
+                              <tr>
+                                <td>Producto 8</td>
+                                <td>1</td>
+                                <td>21.430</td>
+                              </tr>
+                            </tbody>
+
+                            <tfoot class="bg-grey">
+                                <tr class="fbold fsize18">
+                                    <td>Total</td>
+                                    <td>25</td>
+                                    <td>$149.878</td>
+                                </tr>
+                            </tfoot>
+                                
+                          </table>
+
+                          <h5 class="text pad20">Compra mínima: 21 Reduckales</h5>
+
+                          </div>
+                        </div>
+
+                        <button type="submit" class="pagar-btn pull-right space50">Pagar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- end white box -->
+<div class="space50"></div>
+<!-- payment -->
+{% include '../home/footer.html' %}
+{% end %}

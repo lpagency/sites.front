@@ -1,0 +1,79 @@
+    <header class="header">
+      <div class="topbar">
+        <div class="container-fluid"> 
+          <div class="topbar__content row">
+            <div class="col-sm-3 col-sm-offset-1 hidden-xs">
+              <form class="topbar__search">
+                <div class="input-group"><span class="input-group-btn">
+                    <button type="button" class="btn"><i class="fa fa-search"></i></button></span>
+                  <input type="text" placeholder="SEARCH" class="form-control">
+                </div>
+              </form>
+            </div>
+            <div class="col-sm-4 topbar__logo">
+            <!-- <img src="{{ site_base }}/static/img/logo.png" alt="" class="topbar__logo__normal"> -->
+            <!-- <img src="{{ site_base }}/static/img/logo-small.png" alt="" class="topbar__logo__small"> -->
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+            <label for="img_logo_header">
+               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+             </label>
+             <input type="file" class="editableimage" image-id="{{ site.name }}_logo_header" name="image" id="img_logo_header" >
+           </div>
+           {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_logo_header" src="{{ read_image(site.name + '_logo_header', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_header', 200) }}'" class="img-responsive" alt="item" >
+                </a>
+           </div>
+            <div class="col-sm-3 hidden-xs">
+              <div class="topbar__cart"><a href="{{ site_base }}/shopping_cart" class="btn btn-transparent"><i class="fa fa-shopping-cart" data-toggle="modal" data-target="#myModal"></i><span> <span class="units-total" ></span> Artículos el en Carro</span></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div role="navigation" class="navbar navbar-default">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button" data-toggle="collapse" data-target=".collapsed-search" class="navbar-toggle btn btn-transparent"><i class="fa fa-search"></i><span class="sr-only">Toggle navigation</span></button><a href="basket.html" class="navbar-toggle btn btn-transparent"><i class="fa fa-shopping-cart"></i><span class="hidden-xs">Artículos en el Carro</span></a>
+            <button type="button" data-toggle="collapse" data-target="#navigation" class="navbar-toggle btn btn-transparent"><i class="fa fa-align-justify"></i><span class="sr-only">Toggle navigation</span></button>
+          </div>
+          <div id="navigation" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+              <a href="{{ site_base }}/">
+                <li class="active {{editabletext}}" text-id="{{ site.name + '_menu_1' }}">{{ read_text(site.name +  '_menu_1') }}
+                </li>
+              </a>
+              <a href="{{ site_base }}/shop">
+                <li class="{{editabletext}}" text-id="{{ site.name + '_menu_2' }}">{{ read_text(site.name +  '_menu_2') }}
+                </li>
+              </a>
+              <a href="{{ site_base }}/about">
+              <li class="{{editabletext}}" text-id="{{ site.name + '_menu_3' }}">{{ read_text(site.name +  '_menu_3') }}</li>
+              </a>
+              <li class="dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Theme Content <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="{{ site_base }}/">Homepage</a></li>
+                  <li><a href="{{ site_base }}/shop">Shop</a></li>
+                  <li><a href="{{ site_base }}/detail">Product</a></li>
+                  <li><a href="{{ site_base }}/shopping_cart">Shopping Cart</a></li>
+                  <li><a href="checkout1.html">Checkout (4 steps)</a></li>
+                  <li><a href="{{ site_base }}/blog">Blog</a></li>
+                  <li><a href="{{ site_base }}/contact">Contact page</a></li>
+                </ul>
+              </li>
+              <a href="{{ site_base }}/contact">
+              <li class="{{editabletext}}" text-id="{{ site.name + '_menu_4' }}">{{ read_text(site.name +  '_menu_4') }}</li>
+              </a>
+            </ul>
+          </div>
+          <div class="collapsed-search collapse">
+            <form>
+              <div class="input-group">
+                <input type="text" placeholder="SEARCH" class="form-control"><span class="input-group-btn">
+                  <button type="button" class="btn"><i class="fa fa-search"></i></button></span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </header>

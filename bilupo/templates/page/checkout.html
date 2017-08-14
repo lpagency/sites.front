@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block head %}
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block scripts %}
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
+</script>
+<script type="text/javascript">
+    // embed checkout
+    (function(iframe, cart_cookie, site_id, base)
+    {
+        // get cookie
+        var aux_cookie = document.cookie.split(';');
+        var cookie = '';
+        var iframe = $(iframe);  // convert to jquery elememt
+        var checkout = '/?site_id=' + site_id;
+
+        // get cookie
+        for (var i = 0; i < aux_cookie.length; i++)
+        {
+            var cookie_pair = aux_cookie[i];
+            if (cookie_pair.indexOf(cart_cookie) > -1)
+            {
+                cookie = cookie_pair.split('=')[1];
+                break;
+            }
+        }
+
+        // set attr
+        iframe.attr('src', base + checkout + '&cart_id=' + cookie + '&embed=true');
+
+
+    })('iframe.checkout', 'shopping-cart', 
+    $.environmentVar('42','8','42'), 
+    $.environmentVar('https://pay.loadingplay.com', 'http://lpcheckout.ondev.today', 'https://pay.loadingplay.com'));
+
+</script>
+{% end %} 
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<iframe class="checkout" frameborder="0" scrolling="no" style="padding-top: 80px; width: 100%; height: 2200px"></iframe>
+
+{% include '../home/footer.html' %}
+{% end %}

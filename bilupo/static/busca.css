@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css?family=Damion');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300, 400, 700');
+
+.buscarBoton{
+	border-style: none;
+	background-color: #94b7bb;
+	color:white;
+    height: 23px;
+}
+.buscarBoton:hover{
+	background-color: #E53623 !important;
+}
+#barra:hover{
+	color:#E53623;
+}
+@font-face{
+font-family: 'Damion', cursive;
+}
+#fuente{
+	font-family: 'Damion';
+	color: #E53623;
+}
+.fuentes2{
+    font-family: 'Damion';
+    color: #E53623;
+    font-size: 30px;
+}
+.contenedor{
+	background-image: url("https://7static.loadingplay.com/static/images/8442e4fd77ee181e89fb8b35d5323c9d_Pattern_Blanco-1.png");
+}
+.dropbtn {
+    background-color: #94b7bb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 23px;
+    position: absolute;
+    top: -3%;
+    right: -20%;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+    background-color: #E53623;
+}
+.dropbtnup {
+	position: absolute;
+    background-color:#E53623;
+    color: white;
+    border: none;
+    cursor: pointer;
+    left: 100%;
+    top: 0px;
+    height: 100%;
+}
+
+#btnDown{
+    font-weight: lighter;
+}
+#btnDown:hover{
+    font-weight: normal;
+}
+.dropbtnup:hover, .dropbtnup:focus {
+    background-color: #E53623;
+}
+.dropbtndown {
+    background-color: #94b7bb;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtndown:hover, .dropbtndown:focus {
+    background-color: #E53623;
+}
+#myInput {
+    margin-right: -2%;
+    height: 10%;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    width: 111%;
+    overflow: auto;
+    background-color: #fff;
+    text-align: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 99;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown a:hover { 
+    background-color: #e53623;
+    color: white;
+}
+
+.show {display:block;}
+
+#filtroMayorMenor{
+	margin-top: 1.2%;
+    margin-left: 8%;
+    float: left;
+    width: 70%;
+    height: 20%;
+    padding-bottom: 16px;
+}
+.filtros{
+    position: relative;
+	float: left; 
+	width: 20%; 
+	margin-top: -2%;
+    margin-left: 4.5%;
+}
+#encuentra{
+    font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.03em;
+	font-size: 15px;
+	color: #E53623;
+}
+.filtrosBuscador{
+    font-size: 12px;
+    width: 200px;
+    height: 26px;
+}
+.buscarPorFiltros{
+    border-style: none;
+    background-color: #94b7bb;
+    color:white;
+    width: 101%;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased; 
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    height: 25px;
+    letter-spacing: 0.1em;
+}
+.buscarPorFiltros:hover{
+    background-color: #E53623 !important;
+}
+#boton_slide{
+    color: white;
+    border: none;
+    background-color: #94b7bb;
+    left: 85.4%;
+    position: absolute;
+    top: 31.5%;
+    width: 5%;
+    height: 10%;
+}
+#boton_slide:hover{
+    background-color: #E53623;
+}
+.contenidoDrop{
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+}
+.flecha{
+    width: 60px;
+    margin-top: 39%;
+    margin-left: 9%;
+}
+.products .product-image-foreground
+{
+    background-color: #712177;
+    opacity: 0.07;
+    max-width: 100%!important;
+    width: 242px;
+    object-fit: cover;
+    margin: 0 auto;
+    position: absolute;
+    height: 200px;   
+}
+
+.products .coluProductos:nth-child(4n+1) .product-image-foreground
+{
+  background-color: #FF6B00;
+  opacity: 0.1;
+}
+.products .coluProductos:nth-child(4n+2) .product-image-foreground
+{
+  background-color: #57C9E8;
+  opacity: 0.1;
+}
+.products .coluProductos:nth-child(4n+3) .product-image-foreground
+{
+  background-color: #8BDC65;
+  opacity: 0.1;
+}
+.products .coluProductos:nth-child(4n+1) .product-image-foreground:hover
+{
+  opacity: 0;
+}
+.products .coluProductos:nth-child(4n+2) .product-image-foreground:hover
+{
+  opacity: 0;
+}
+.products .coluProductos:nth-child(4n+3) .product-image-foreground:hover
+{
+  opacity: 0;
+}
+@media screen and (max-width:1024px) {
+  
+    [class*="w3-content"]{
+
+        margin-left: 10%;
+
+    }
+    [class*="w3-desc"]{
+        margin-left: 3.5%;
+    }
+    [class*="slide"]{
+        left: 91.5%;
+    }
+
+    
+}

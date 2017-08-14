@@ -1,0 +1,644 @@
+<!doctype html>
+<html>
+<head>
+    <!-- head bt inicio -->
+    <base href="{{ site_base }}/">
+    <meta charset="utf-8">
+    <title>Giani Dafirenze - Zapatos de mujer. Descuentos. Compra online.</title>
+    <meta name="description" content="Zapatos, botines, botas y más en calzado de mujer. Tienda online chilena centrados en moda, diseño y calidad. Envío a todo Chile.">
+    <meta name="author" content="loadingplay.com">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style-home.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/hover.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header_movil.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/checkout.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less">
+    <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+    
+    <link rel="shortcut icon" href="{{ site_base }}/static2:/img/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="apple-touch-icon-precomposed" href="{{ site_base }}/static2:/img/apple-touch-icon-60x60.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_base }}/static2:/img/apple-touch-icon-72x72.png" type="image/png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site_base }}/static2:/img/apple-touch-icon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site_base }}/static2:/img/apple-touch-icon-152x152.png" type="image/png"/>
+
+    <!-- desarrollo -->
+   
+    <script src="{{ site_base }}/common/js/less/dist/less.js" type="text/javascript"></script>
+    <!-- produccion -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less"> -->
+    <!-- autocomplete -->
+    {% block css %}{% end %}
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<!-- MENU MOVIL -->
+<!-- <nav class="navbar hidden-lg">
+  <button class="navbar-btn">
+     ☰<span class="sr-only">Menu</span></button>
+  <div class="navbar-inner">
+    <ul class="nav"> 
+      <li class="nav-item"><a class="nav-link" href="#">COLECCION</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">CARTERAS</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">ACCESORIOS</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">SALE</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">BLOG</a></li>
+    </ul>
+  </div>
+</nav> -->
+<!-- MENU MOVIL -->
+
+
+
+
+<body id="home">
+    {% block header %}{% end %}
+    <!-- boton para navegar -->
+    {% if is_admin %} {% end %}
+    <!-- botón agregar -->
+    <!-- header -->
+
+    {% include 'product/product_box.html' %} 
+    {% include 'product/product_art.html' %}
+
+    {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+    {% else %}
+    {% set editabletext = '' %}
+    {% end %}
+
+    {% block body %}{% end %}
+    <!-- Modal -->
+        <!-- <div class="modal fade modal-z" id="myModalC" role="dialog">
+            <div class="modal-dialog modal-since">
+
+                <div class="modal-content modal-movil">
+                    <div class="modal-header border_header">
+                        <button type="button" class=" space5 close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title space5">Resumen de tu compra</h4>
+                    </div>
+                    <div class="modal-body mlb-btn box_cart">
+                        <table class="table box_table">
+                            <tbody class="shopping-cart">
+                            </tbody>
+                        </table>
+                        <div class="checkout-form"></div>
+                        <div class="space80"></div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+    <!-- **modal categorias productos** -->
+
+<!-- ***********FORMULARIO************** -->
+<div class="modal fade modal-z" id="myModal2" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content modal-size">
+            <div class="reg-strate-fb clearfix">
+                <div class="title-form">CREAR CUENTA</div>
+                <div align="center">
+                    <div class="rese">
+                        Estás a un solo paso de ser parte de Giani Dafirenze. Yuhuu!
+                    </div>
+                </div>
+                <!-- **crear cuenta** -->
+<div class="reg-strate-login clearfix reg-strate-login-1">
+    <form action="/auth/registro" method="post" class="form-register">
+        <div class="lab"> NOMBRE* </div>
+        <input class="_input _input-3 new_input margin-top" type="text" name="name" required="">
+        <div class="lab"> APELLIDO* </div>
+        <input class="_input _input-3 new_input margin-top" p="" type="text" name="name" required="">
+        <div class="lab"> MAIL* </div>
+        <input class="_input _input-4 new_input margin-top" type="email" name="email" required="">
+        <div class="lab"> TELÉFONO* </div>
+        <input class="tel" type="tel" name="telefono" placeholder="9 91234567">
+        <div class="lab-2"> CUMPLEAÑOS* </div>
+        <input name="_D:day" value=" " type="hidden"><select id="day" dir="ltr" name="day" onblur="verificarCamposFechasCL(this);" class="fecha" size="1"><option value="">DD</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option><option value="6">6</option><option value="7">7</option><option value="8">8</option><option value="9">9</option><option value="10">10</option><option value="11">11</option><option value="12">12</option><option value="13">13</option><option value="14">14</option><option value="15">15</option><option value="16">16</option><option value="17">17</option><option value="18">18</option><option value="19">19</option><option value="20">20</option><option value="21">21</option><option value="22">22</option><option value="23">23</option><option value="24">24</option><option value="25">25</option><option value="26">26</option><option value="27">27</option><option value="28">28</option><option value="29">29</option><option value="30">30</option><option value="31">31</option></select><input name="_D:month" value=" " type="hidden"><select id="month" dir="ltr" name="month" onblur="verificarCamposFechasCL(this);" class="fecha" onchange="monthChanged(this.value)" size="1"><option value="">MM</option><option value="01">Ene</option><option value="02">Feb</option><option value="03">Mar</option><option value="04">Abr</option><option value="05">May</option><option value="06">Jun</option><option value="07">Jul</option><option value="08">Ago</option><option value="09">Sep</option><option value="10">Oct</option><option value="11">Nov</option><option value="12">Dic</option></select>
+        <input type="hidden" id="month_1" name="month_1" value="Ene">
+        <input type="hidden" id="month_2" name="month_2" value="Feb">
+        <input type="hidden" id="month_3" name="month_3" value="Mar">
+        <input type="hidden" id="month_4" name="month_4" value="Abr">
+        <input type="hidden" id="month_5" name="month_5" value="May">
+        <input type="hidden" id="month_6" name="month_6" value="Jun">
+        <input type="hidden" id="month_7" name="month_7" value="Jul">
+        <input type="hidden" id="month_8" name="month_8" value="Ago">
+        <input type="hidden" id="month_9" name="month_9" value="Sep">
+        <input type="hidden" id="month_10" name="month_10" value="Oct">
+        <input type="hidden" id="month_11" name="month_11" value="Nov">
+        <input type="hidden" id="month_12" name="month_12" value="Dic">
+        <input name="_D:year" value=" " type="hidden">
+        <select id="year" dir="ltr" name="year" onblur="verificarCamposFechasCL(this);" class="fecha" onchange="yearChanged(this.value)" size="1"><option value="">AAAA</option><option value="2017">2017</option><option value="2016">2016</option><option value="2015">2015</option><option value="2014">2014</option><option value="2013">2013</option><option value="2012">2012</option><option value="2011">2011</option><option value="2010">2010</option><option value="2009">2009</option><option value="2008">2008</option><option value="2007">2007</option><option value="2006">2006</option><option value="2005">2005</option><option value="2004">2004</option><option value="2003">2003</option><option value="2002">2002</option><option value="2001">2001</option><option value="2000">2000</option><option value="1999">1999</option><option value="1998">1998</option><option value="1997">1997</option><option value="1996">1996</option><option value="1995">1995</option><option value="1994">1994</option><option value="1993">1993</option><option value="1992">1992</option><option value="1991">1991</option><option value="1990">1990</option><option value="1989">1989</option><option value="1988">1988</option><option value="1987">1987</option><option value="1986">1986</option><option value="1985">1985</option><option value="1984">1984</option><option value="1983">1983</option><option value="1982">1982</option><option value="1981">1981</option><option value="1980">1980</option><option value="1979">1979</option><option value="1978">1978</option><option value="1977">1977</option><option value="1976">1976</option><option value="1975">1975</option><option value="1974">1974</option><option value="1973">1973</option><option value="1972">1972</option><option value="1971">1971</option><option value="1970">1970</option><option value="1969">1969</option><option value="1968">1968</option><option value="1967">1967</option><option value="1966">1966</option><option value="1965">1965</option><option value="1964">1964</option><option value="1963">1963</option><option value="1962">1962</option><option value="1961">1961</option><option value="1960">1960</option><option value="1959">1959</option><option value="1958">1958</option><option value="1957">1957</option><option value="1956">1956</option><option value="1955">1955</option><option value="1954">1954</option><option value="1953">1953</option><option value="1952">1952</option><option value="1951">1951</option><option value="1950">1950</option><option value="1949">1949</option><option value="1948">1948</option><option value="1947">1947</option><option value="1946">1946</option><option value="1945">1945</option><option value="1944">1944</option><option value="1943">1943</option><option value="1942">1942</option><option value="1941">1941</option><option value="1940">1940</option><option value="1939">1939</option><option value="1938">1938</option><option value="1937">1937</option><option value="1936">1936</option><option value="1935">1935</option><option value="1934">1934</option><option value="1933">1933</option><option value="1932">1932</option><option value="1931">1931</option><option value="1930">1930</option><option value="1929">1929</option><option value="1928">1928</option><option value="1927">1927</option><option value="1926">1926</option><option value="1925">1925</option><option value="1924">1924</option><option value="1923">1923</option><option value="1922">1922</option><option value="1921">1921</option><option value="1920">1920</option><option value="1919">1919</option><option value="1918">1918</option><option value="1917">1917</option><option value="1916">1916</option><option value="1915">1915</option><option value="1914">1914</option><option value="1913">1913</option><option value="1912">1912</option><option value="1911">1911</option><option value="1910">1910</option><option value="1909">1909</option><option value="1908">1908</option><option value="1907">1907</option></select><div class="validRegistro">
+        <div class="valError" id="errorFecha"></div>
+        <div class="valOK" id="okFecha"></div>
+        </div>
+        <div class="lab"> DIRECCIÓN* </div>
+        <input name="sudireccion" type="text" class=" textoRegistro" id="sudireccion" maxlength="49" size="60">
+        <div class="lab"> REGIÓN* </div>
+        <i class="fa fa-caret-down" aria-hidden="true"></i>
+        <select name="Sl_region_region" onchange="asigna_region('_region',this)" id="Sl_region_region" class="letraNormal">
+        <option value="0" selected="selected"></option>
+        <option value="01">Tarapaca</option>
+        <option value="02">Antofagasta</option>
+        <option value="03">Atacama</option>
+        <option value="04">Coquimbo</option>
+        <option value="05">Valparaiso</option>
+        <option value="06">Del Libertador Bdo O'Higgins</option>
+        <option value="07">Del Maule</option>
+        <option value="08">Del Bio Bio</option>
+        <option value="09">Araucania</option>
+        <option value="10">Los Lagos</option>
+        <option value="11">Coyhaique</option>
+        <option value="12">Magallanes y la Ant. Chilena</option>
+        <option value="13">Metropolitana</option>
+        <option value="14">De Los Rios</option>
+        <option value="15">Arica y Parinacota</option>
+        </select>
+        <div class="col-md-12 pad0">
+            <div class="col-md-6 pad0">
+                <div class="lab_clave"> CLAVE* </div>
+                <input class="_input_clave" type="password" name="password" required="">
+            </div>
+            <div class="col-md-6 pad0">
+                <div class="lab_repetir "> REPITA CLAVE* </div>
+                <input class=" _input_repita" type="password" name="re-password" required="" pattern="12345">
+            </div>
+        </div>
+        <label class="aceptar-condiciones-base col-md-12 pad0">
+            <div class="col-md-1 padright0">
+                <input class="radio" type="checkbox" name="tos" style="position: relative;">
+            </div>
+            <div class="col-md-11">
+                <div class="term" style="font-size: 12px;"><a href="/tos" style="float: none;" class="fu">Acepto términos y condiciones</a></div>
+            </div>
+        </label>
+        <label class="nuestro-newsletter col-md-12 pad0">
+            <div class="col-md-1 padright0">
+                <input class="radio rad" type="checkbox" name="tos" style="position: relative;">
+            </div>
+            <div class="col-md-11">
+                <div class="codi-2" style="font-size: 12px;"><a class="rec" href="/" style="float: none;">Mantengamonos en contacto </a></div>
+                <div class="codi-3" style="font-size: 12px;"><a class="rec" href="/" style="float: none;">¿Quieres recibir nuestro Newsletter? </a></div>
+            </div>
+        </label>
+        <button class="_button btn_crear" type="submit">CREAR CUENTA :) </button>
+    </form>
+</div>
+
+</div>
+        </div> 
+    </div>
+</div>
+
+<!-- ***********fin del formulario******* -->
+
+<!-- ***********FORMULARIO MAYORISTA********* -->
+<div class="modal w3-animate-top modal-z" id="myModal3" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content content-3">
+                <div class="col-xs-12 col-sm-12 form_3">
+                    <form action="#" method="post" id="#" class="form-horizontal">
+                        <h3 class="title-3-form">Iniciar sesi&oacute;n con cuenta empresa</h3>
+                        <div class="alert alert-warning hidden"></div>
+                        <div class="form-group required rut_3_form">
+                            <label for="rut" class="col-sm-4">Rut</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="rut" name="rut" placeholder="Rut">
+                            </div>
+                        </div>
+                        <div class="form-group required contr_3_form">
+                            <label for="clave" class="col-sm-4">Contraseña</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="clave" name="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="pull-right" style="margin-top:20px; margin-bottom: 20px;">
+                            <button type="button" onclick="loginEnterprise();" class="btn btn-default btn-default-3">Entrar</button>
+                            <button type="button" onclick="$('.fancybox-close').click();" class="btn btn-default btn-default-3 btn-close-movil">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+            <div class="clearfix"></div>
+        </div> 
+    </div>
+</div>
+
+<div class="modal w3-animate-top modal-z" id="myModal4" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content content-4">
+                <div class="col-xs-12 col-sm-12 form-4">
+                    <form action="#" method="post" id="" class="form-horizontal">
+                        <h3 class="title-4-form">Completar formulario venta mayorista</h3>
+                        <div class="form-group required">
+                            <label for="nombre" class="col-sm-4 name_form4">Nombre o Raz&oacute;n social</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="nombre" name="name" placeholder="Nombre">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="giro" class="col-sm-4 name_form4">Giro</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="giro" name="bussiness" placeholder="Giro">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="rut" class="col-sm-4 name_form4">Rut</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="rut" name="rut" placeholder="Rut">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="email" class="col-sm-4 name_form4">Email</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control" id="email" name="email" placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="direccion" class="col-sm-4 name_form4">Direcci&oacute;n</label>
+                            <div class="col-sm-8">
+                                <input type="text" class="form-control name_form4" id="direccion" name="address" placeholder="Dirección">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="comuna" class="col-sm-4 name_form4">Region</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="region" name="select-state" placehold="Región"></select>
+                                <input type="hidden" class="form-control" id="state" name="state">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="comuna" class="col-sm-4 name_form4">Provincia</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="provincia" name="select-city" placeholder="Provincia"></select>
+                                <input type="hidden" class="form-control" id="city" name="city">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="comuna" class="col-sm-4 name_form4">Comuna</label>
+                            <div class="col-sm-8">
+                                <select class="form-control" id="comuna" name="select-town" placeholder="Comuna"></select>
+                                <input type="hidden" class="form-control" id="town" name="town">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="clave" class="col-sm-4 name_form4">Contraseña</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="clave" name="password" placeholder="Contraseña">
+                            </div>
+                        </div>
+                        <div class="form-group required">
+                            <label for="clave" class="col-sm-4 name_form4">Confirme contraseña</label>
+                            <div class="col-sm-8">
+                                <input type="password" class="form-control" id="rep_clave" name="re-password" placeholder="Confirme contraseña">
+                            </div>
+                        </div>
+                        <div class="pull-right" style="margin-top:20px;  margin-bottom: 20px;">
+                            <button type="button" class="btn btn-default btn-default-3" onclick="enterpriseRegistration($('#enterpriseRegistration'))">Crear</button>
+                            <button type="button" onclick="$('.fancybox-close').click();" class="btn btn-default btn-default-3 btn-close-movil">Cerrar</button>
+                        </div>
+                    </form>
+                </div>
+
+        </div> 
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+
+
+<!-- ******modal talla detalle***** -->
+   <div class="modal w3-animate-top" id="myModal-talla" role="dialog" style="z-index: 1000000;">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                        <img class="img-modal-detalle" src="https://84static.loadingplay.com/static/images/691fe1434d8b566c07a636685e25af07_Cual_es_tu_talla__web_.png">
+                </div>
+            </div>
+    </div>
+
+<!-- ****Fin modal talla detalle** -->
+
+
+<!-- ***Modal login cliente registrado**** -->
+
+<!-- Modal -->
+<div id="myModal-login-saludo" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content login-iniciar">
+      <div class="modal-header login">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title login">¡GRACIAS POR REGISTRARTE </h4>
+      </div>
+      <div class="modal-body">
+        <p class="vol">¡Ya esta lista para seguir tu compra </p>
+      </div>
+      <div class="modal-footer">
+            <div align="center" class="tup">
+                <img class="img-monito" src="https://84static.loadingplay.com/static/images/737571a00a97baeaa0e07970332c8f7c_Logo_correccion_GDFweb.png">
+                <div class="col-md-12">
+                    <button class="_button btn_entrar" type="submit">COMPLETAR MI COMPRA</button>
+                </div>
+            </div>   
+     </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ****Fin login***** -->
+
+
+<!-- ***Modal login ya registrado mensaje de bienvenida**** -->
+
+<!-- Modal -->
+<div id="myModal-login" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content login-iniciar">
+      <div class="modal-header login">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title login">INICIAR SESIÓN</h4>
+      </div>
+      <div class="modal-body">
+        <p class="vol">¡Hola! que bueno que volviste</p>
+      </div>
+      <div class="modal-footer">
+            <div align="center" class="tup">
+             <form action="/auth/registro" method="post" class="form-register">
+                <div class="col-md-12 col-sm-12 col-xs-12 pad0">
+                    <div class="col-md-12 col-sm-12 pad0">
+                        <div class="lab"> MAIL </div>
+                        <input class="_input_clave margin-top" type="email" name="email" required="">
+                    </div>
+                </div>
+                <div class="col-md-12 pad0">
+                    <div class="col-md-12 col-sm-12 col-xs-12 pad0">
+                        <div class="lab_clave"> CLAVE </div>
+                        <input class="_input_clave" type="password" name="password" required="">
+                    </div>
+                </div>
+
+                <a href="" class="olvidar-clave">Olvidaste tu clave?</a>
+               <div class="col-md-12 col-sm-12 col-xs-12 pad0">
+                    <button class="_button btn_entrar" type="submit" data-toggle="modal" data-target="#myModal-login-saludo" data-dismiss="modal">ENTRAR </button>
+               </div>
+
+               <div class="col-md-12 col-sm-12 col-xs-12 pad0">
+                   <div class="texto-nueva">¿ERES NUEVA?</div>
+                   <div class="texto-nueva-2">¡Bienvenida! Puedes registrarte, es fácil y rápido.</div>
+                   <button class="_button btn_crear_2" type="submit" data-toggle="modal" data-target="#myModal2" data-dismiss="modal">CREAR CUENTA</button>
+               </div>
+                
+            </form>
+    </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ****Fin login***** -->
+
+
+
+
+<!-- Modal -->
+    <div align="center">
+        <div class="modal fade" id="myModal" role="dialog">
+          <div align="center">
+            <div class="modal-dialog carrito">
+                <!-- Modal content-->
+                <div class="box-content">
+                <div class="modal-content car">
+                    <div class="modal-header">
+                       <!--  <button type="button" class="close" data-dismiss="modal">&times;</button> -->
+                        <h4 class="modal-title">BOLSA DE COMPRAS</h4>
+                        <div class="modal-title" style="font-style:italic;">¡Qué buen gusto!</div>
+                    </div>
+                    <div class="modal-body mlb-btn">
+                        <div class="container-fluid cart-list" ng-controller="">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <table class="table">
+                                        <thead>
+                                            <tr>
+                                        <!--     <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th class="text-center">Cant</th>
+                                            <th class="text-right"></th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="shopping-cart">
+                                    </tbody>
+                                </table>
+                                <div class="checkout-form"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- gif loading editableimage -->
+    <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+    <script type="text/javascript">
+    var site_base = "{{ site_base }}"
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+    <!-- {%!  end %} -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
+
+    <script type="text/x-template" id="shopping-cart-product">
+<tr class="ver">
+    <td>
+       <img src="{{! images[0][2] }}" alt="" class="img-cart">
+   </td>
+    <td class="hidden" name="id-car">{{! id }}</td>
+    <td class="vert-align name-car">{{! name }}</td>
+    <td class="vert-align money uno">{{! price }}</td>
+    <td class="vert-align talla-car">Talla</td>
+    <td class="vert-align color-car">Color</td>
+    <td class="text-center vert-align">
+    <a href="#!" class="remove-one" product-id="{{! id }}"></a>
+    <a href="" class="two remove-from-cart remove-one" product-id="{{! id }}" aria-hidden="true"> X
+    </a>
+    </td>
+</tr>
+</script>
+<script type="text/x-template" id="shopping-cart-total" >
+<tr>
+    
+</tr>
+</thead>
+<tr>
+    <td class="tot">Total:</td> 
+    <td id="total" class="text-right money lib">{{! total }}</td>
+    <td></td>
+</tr>
+<tr>
+    <td class="lo-sentimos hidden">No has agregado productos</td>
+</tr>
+</script>
+<script type="text/x-template" id="shopping-cart-units-total" >
+    <span> {{! units_total }}</span>
+</script>
+<script type="text/x-template" id="shopping-cart-checkout-form" >
+<form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+    <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+    <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+    <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+    <div class="form-group text-center">
+         <button type="submit" class="btn bn btn-compra" style="background-color:#ddd;color:#797072;width: 31%;border-radius: 0px;height: 33px;float: left;  width: 100%;">IR A PAGAR
+        </button>
+    
+    </div>
+</form>
+</script>
+
+
+    <script>
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '348231912006000',
+            xfbml: true,
+            version: 'v2.1'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/header.js"></script>
+    <script src="{{ site_base }}/static/js/scrollReveal.min.js?ver=2.1.0"></script>
+    <script type="text/javascript">
+    window.sr = new scrollReveal({
+        reset: true,
+        move: "20px",
+        vFactor: 0.20
+    });
+    </script>
+
+    <script type="text/x-template" id="shopping-cart-total" >
+    </script>
+
+
+<!-- este es el script para unidades -->
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span> {{! upp_total }}</span>
+        </script>
+    {% block javascript %}{% end %} {% if is_admin %}
+
+    <!--Drag to fix content-->
+    <!--Dragging mini image-->
+    <script type="text/javascript" src="{{ site_base }}/static/js/edit_order.js"></script>
+    {% end %}
+
+    <!--
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.dropdown-toggle').dropdown();
+    });
+    </script>
+    -->
+ 
+    {% if is_admin %}
+    <script type="text/javascript">
+    var site_name = "{{ site.name }}";
+    </script>
+
+    <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js"></script>
+    {% end %}
+
+    <script>
+    $(document).ready(function()
+    {
+        $('.cate').click(function(){
+            $('#myModal-pro').modal('toggle');
+            // alert("algo");
+        });
+    });
+    </script>
+
+    <script type="text/javascript">
+    $('.navbar-btn').on('click', function() {
+    $('.navbar-inner').toggleClass('in');
+    });
+    </script>
+
+    <script>      
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '95100348886',
+          xfbml      : true,
+          version    : 'v2.6'
+        });
+      };
+
+      (function(d, s, id){
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));      
+    </script>
+
+    <script type="text/javascript">
+        $('ul.nav div.dropdown').hover(function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+
+</body>
+
+</html>

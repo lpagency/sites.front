@@ -1,0 +1,125 @@
+<!-- <div class="container-fluid" style="position: absolute;width: 100%;padding: 0px;">
+    <nav role="navigation" class="navbar navbar-default hidden-md hidden-sm hidden-xs">
+        <div class="navbar-header">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li><a href="http://figurella.lpe.cl/article/detail/conocenos/1538" class="text-header">Conócenos</a></li>
+                <li><a href="{{site_base}}/metodo_figurella" class="text-header">Método Figurella</a></li>
+                <li><a href="{{site_base}}/listado_planes" class="text-header">Planes Figurella</a></li>
+                <li><a href="http://figurella.lpe.cl/article/detail/promociones/1539" class="text-header">Promociones</a></li>
+                <li><a href="{{site_base}}/sucursales" class="text-header">Sucursales</a></li>
+                <li><a href="http://figurella.lpe.cl/historias" class="text-header">Historias de éxito</a></li>
+                <li><a href="{{site_base}}/contact" class="text-header">Contacto</a></li>
+                <a href="https://twitter.com/Nutriacademia" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/facd79b770615c7ff4157b6da8e41457_twitter.png">
+                </a>
+                <a href="https://www.facebook.com/nutriacademiachile" target="_blank">
+                <img class="redes-menu" src="https://84static.loadingplay.com/static/images/3e51e5d79d496bbb14b7efb76c65a36e_facebook.png">
+                </a>
+                <a href="https://www.instagram.com/nutriacademia/" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/b52df0ce0094fafa7a3419004cd4dfc9_instagram_2.png">
+                </a>
+            </ul>
+        </div>
+        
+    </nav>
+
+    <div class="col-md-3 franja-color">
+       
+            <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+            {% if is_admin %}
+                <div class="image-upload visible-movil">
+                    <label for="img_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="position: relative;left:60px;">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_logo' }}" href="#">
+                    <div class="base-logo">
+                        <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    </div>
+                </a>
+            </div>
+  
+    </div>
+
+</div> -->
+
+<header class="" data-spy="" data-offset-top="60">
+        <div class="navbar mun hidden-md hidden-sm hidden-xs" role="navigation">
+
+            <div class="container-fluid">   
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="navbar-header"  style="">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" style="" >
+                               <div style="position:relative">
+                               <div class="col-md-8">
+                               <div class="caja-logo">
+                               {% if is_admin %}
+                               <div class="image-upload lapiz visible-movil">
+                                <label for="img_header_logo">
+                                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                 </label>
+                                 <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                             </div>
+                             {% end %}
+                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                             </div>
+                             </div>
+
+                         </div>
+                               </a>
+                        </div>
+                        <div class="navbar-collapse collapse">
+                    
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="http://figurella.cl/article/detail/conocenos/1538" class="text-header">Conócenos</a></li>
+                                <li><a href="{{site_base}}/metodo_figurella" class="text-header">Método Figurella</a></li>
+                                <li><a href="{{site_base}}/listado_planes" class="text-header">Planes Figurella</a></li>
+                                <li><a href="{{site_base}}/promociones" class="text-header">Promociones</a></li>
+                                <li><a href="{{site_base}}/sucursales" class="text-header">Sucursales</a></li>
+<!--                                 <li><a href="{{site_base}}/" class="text-header">Embajadoras</a></li> -->
+                                <li><a href="{{site_base}}/historias" class="text-header">Historias de éxito</a></li>
+                                <li><a href="{{site_base}}/sucursales" class="text-header">Contacto</a></li>
+                                <a href="https://www.facebook.com/FigurellaChileOficial/" target="_blank">
+                                  <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                              </a>
+                              <a href="https://www.instagram.com/figurellachile/?hl=es" target="_blank">
+                                 <i class="fa fa-instagram" aria-hidden="true"></i>
+                              </a>
+                              <a href="">
+                                  <i class="fa fa-twitter-square" aria-hidden="true"></i>
+                              </a>
+                         <!--      <a href="" target="_blank">
+                                  <img class="redes-menu" src="https://7static.loadingplay.com/static/images/b52df0ce0094fafa7a3419004cd4dfc9_instagram_2.png">
+                              </a> -->
+
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+</header>
+
+
+
+
+  

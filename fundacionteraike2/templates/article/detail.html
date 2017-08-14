@@ -1,0 +1,146 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+<div class="container">
+<div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="top-header-home">
+            <div class="logo-div-home">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+            <label for="img_header">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
+            </div>
+            {% end %}
+            <a href="{{ site_base }}">
+            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
+            </a>
+           <!--  <img src="img/logo_2.png" class="logo"> -->
+        <div class="logo-border"></div>
+              <div class="header-desktop-menu menulist">
+                <ul class="header-menu">
+                 <li><a href="{{ site_base }}/quienes_somos">Quienes somos</a></li>
+                    <li><a href="{{ site_base }}/que_hacemos">Que hacemos</a></li>
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
+                    <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
+                    <li><a href="{{ site_base }}/noticias">Noticias </a></li>
+                    <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
+                    <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
+                </ul>
+              </div>
+              <div class="mobilemenu">
+                <nav>
+                  <a href="#"><i class="fa fa-bars fa-2x"></i></a>
+                  <div>
+                    {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil">
+                    <label for="img_header">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
+                  </div>
+                  {% end %}
+                  <a href="{{ site_base }}">
+                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+                  </a>
+                </div>
+                  <ul>
+                    <li><a href="{{ site_base }}/quienes_somos">Quienes somos</a></li>
+                    <li><a href="{{ site_base }}/que_hacemos">Que hacemos</a></li>
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
+                    <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
+                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
+                    <li><a href="{{ site_base }}/noticias">Noticias </a></li>
+                    <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
+                    <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="banner-div-home">
+            <img src="{{ article["thumb_500"] }}">
+              <p class="text-header">{{ article["title"] }}</p>
+              <div class="menu-icon">
+                <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
+              </div>
+        <div class="menu-text">Menu</div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+{% end %}
+
+{% block body %}
+<div class="container">
+<div class="clearfix" style="height: 40px"></div>
+<div class="row">
+        <div class="col-md-12 col-lg-12 ">
+          <div class="col-md-offset-2">
+            <div class="banner-below-text">
+            {{ article["caption"] }}
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <div class="row">
+    <div class="col-md-12 margin">
+      <div class="col-md-offset-2 col-lg-offset-2">
+        <div class="col-md-12 col-lg-12 detail-text article-content" class="right">
+          {{ article["description"] }}
+        </div>
+      </div>
+    </div>
+  </div>
+<!--   <div class="row">
+        <div class="col-lg-12 col-md-12 space15">
+          <p class="bottom-text">Noticias relacionadas</p>
+          <span class="border"></span>
+        </div>
+      </div>
+    
+    <div class="div">
+      <div class="row">
+        <div class="col-lg-12 col-md-12">
+          {{ getArticleList(html="page/articulos_rel.html",tag="articulo") }}
+        </div>
+      </div>
+    </div> -->
+</div>
+{% include ../home/footer.html %}
+{% end %}

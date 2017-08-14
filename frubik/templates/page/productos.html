@@ -1,0 +1,101 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(20,20,20);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : 'frubik',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+        'app_public' : 4,
+        'animation' : 'simple',
+        'base_url' : 'https://apibodegas.loadingplay.com/',
+        'checkout_url' : 'https://pay.loadingplay.com/',
+        'products_per_page' : 9
+    });
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+    <section>
+        <div style="position: relative;">
+            <img src="{{! images[1]['thumb_500'] }}" title="" alt="" class="fondo-detalle">
+            <div class="container">
+                <h1 class="name texto-detalle text-left" class="line" href="#">{{! name }}</h1>
+            </div>
+        </div>
+    </section>
+
+    <section>
+   <div class="container">
+
+    <div class="product-list"></div>
+
+
+    </div>
+</section>
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

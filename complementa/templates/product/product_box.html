@@ -1,0 +1,35 @@
+<script type="text/template" id="product_template" >
+
+<div class="col-lg-3 col-md-3 col-sm-3" >
+        <div class=" product-grid box_list">
+            <div class="image img_box">
+                <a class="" href="{{site_base}}/sc/product/{{! bullet_3 === '' ? 'detail' : 'detail2' }}/{{! name|friendly }}/{{! id }}?product_id={{! id }}" >
+                    <img class="img_product img-responsive" src="{{! images[0][1] }}" onload="this.src='{{! images[0][3] }}'" title="" alt="">
+                </a>
+            </div>
+            <div class="name">
+
+                {{! name }}
+            </div>
+            <div class="description">
+            {{! description }}
+            </div>
+            <div class="price">
+            {{! main_price|money }}
+            </div>
+            <div class="cart">
+                <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0][2] }}" class=" button add-to-cart btn-comprar">
+                &nbsp;Comprar
+                </button>
+            </div>
+        </div>
+        <div class="wishlist">
+            <a onclick="addToWishList('194');">Añadir a Favoritos</a>
+        </div>
+
+        <div class="compare">
+            <a onclick="addToCompare('194');">Comparar</a>
+        </div>
+</div>
+
+</script>

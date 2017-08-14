@@ -1,0 +1,82 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+ <div class="container space200">
+
+        <ul class="breadcrumb">
+          <li><a href="#"><i class="icon ion-ios-home-outline"></i></a></li>
+          <li><a href="#">Marcas</a></li>
+        </ul>
+
+        <div class="row">
+
+          <div id="content" class="col-sm-12">
+
+          <h1 class="panel-title {{editabletext}}" text-id="{{ site.name + '_marca_1' }}">{{ read_text(site.name +  '_marca_1') }}
+          </h1>
+          <p><strong class="panel-title {{editabletext}}" text-id="{{ site.name + '_marca_2' }}">{{ read_text(site.name +  '_marca_2') }}
+          </strong>
+            &nbsp;&nbsp;&nbsp;<a href="#">A</a>
+            &nbsp;&nbsp;&nbsp;<a href="#">C</a>
+            &nbsp;&nbsp;&nbsp;<a href="#">H</a>
+            &nbsp;&nbsp;&nbsp;<a href="#">P</a>
+            &nbsp;&nbsp;&nbsp;<a href="#">S</a>
+          </p>
+          <h2>A</h2>
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="#">Apple</a>
+            </div>
+          </div>
+          <h2>C</h2>
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="#">Canon</a>
+            </div>
+          </div>
+          <h2>H</h2>
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="#">Hewlett-Packard</a>
+            </div>
+            <div class="col-sm-3">
+              <a href="#">HTC</a>
+            </div>
+          </div>
+          <h2>P</h2>
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="#">Palm</a>
+            </div>
+          </div>
+          <h2>S</h2>
+          <div class="row">
+            <div class="col-sm-3">
+              <a href="#">Sony</a>
+            </div>
+          </div>
+
+          </div>
+
+        </div>
+
+      </div>
+{% include '../home/footer.html' %}
+{% end %}

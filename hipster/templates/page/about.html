@@ -1,0 +1,80 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div class="container">
+      <div class="row"> 
+        <div class="col-md-12">
+          <ul class="breadcrumb">
+            <li><a href="index.html">Home</a></li>
+            <li>Text page</li>
+          </ul>
+        </div>
+      </div>
+      <div class="row">
+        <div id="text-page" class="col-md-8 col-md-offset-2">
+          <h1 class="{{editabletext}}" text-id="{{ site.name + '_about_1' }}">{{ read_text(site.name +  '_about_1') }}
+          </h1>
+          <!-- <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis</p> -->
+          <p class="{{editabletext}}" text-id="{{ site.name + '_about_2' }}">{{ read_text(site.name +  '_about_2') }}
+          </p>
+          <h2 class="{{editabletext}}" text-id="{{ site.name + '_about_3' }}">{{ read_text(site.name +  '_about_3') }}
+          </h2>
+          <ol>
+            <li class="{{editabletext}}" text-id="{{ site.name + '_about_4' }}">{{ read_text(site.name +  '_about_4') }}
+            </li>
+            <li class="{{editabletext}}" text-id="{{ site.name + '_about_5' }}">{{ read_text(site.name +  '_about_5') }}
+            </li>
+          </ol>
+          <blockquote>
+            <p class="{{editabletext}}" text-id="{{ site.name + '_about_6' }}">{{ read_text(site.name +  '_about_6') }}
+            </p>
+          </blockquote>
+          <h3 class="{{editabletext}}" text-id="{{ site.name + '_about_7' }}">{{ read_text(site.name +  '_about_7') }}
+          </h3>
+          <ol>
+            <li class="{{editabletext}}" text-id="{{ site.name + '_about_8' }}">{{ read_text(site.name +  '_about_8') }}
+            </li>
+            <li class="{{editabletext}}" text-id="{{ site.name + '_about_9' }}">{{ read_text(site.name +  '_about_9') }}
+            </li>
+          </ol>
+          <hr>
+          <h2 class="{{editabletext}}" text-id="{{ site.name + '_about_10' }}">{{ read_text(site.name +  '_about_10') }}
+          </h2>
+          <div class="row">
+            <div class="col-sm-4">
+              <p class="text-center"><img src="{{ site_base }}/static/img/text-page.jpg" alt="" class="img-circle img-responsive"></p>
+              <p class="text-center {{editabletext}}" text-id="{{ site.name + '_about_11' }}">{{ read_text(site.name +  '_about_11') }}
+              </p>
+            </div>
+            <div class="col-sm-4">
+              <p class="text-center"><img src="{{ site_base }}/static/img/text-page.jpg" alt="" class="img-thumbnail img-responsive"></p>
+              <p class="text-center {{editabletext}}" text-id="{{ site.name + '_about_12' }}">{{ read_text(site.name +  '_about_12') }}
+              </p>
+            </div>
+            <div class="col-sm-4">
+              <p class="text-center"><img src="{{ site_base }}/static/img/text-page.jpg" alt="" class="img-rounded img-responsive"></p>
+              <p class="text-center {{editabletext}}" text-id="{{ site.name + '_about_13' }}">{{ read_text(site.name +  '_about_13') }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% include '../home/footer.html' %}
+{% end %}

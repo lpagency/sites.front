@@ -1,0 +1,56 @@
+<!-- {% import random %}
+
+{% set videos = [
+        'https://www.loadingplay.com/static/img/VIDEOPRUEBAHOME.mp4',
+        'https://www.loadingplay.com/static/img/VIDEOPRUEBAHOME.mp4',
+        'https://www.loadingplay.com/static/img/VIDEOPRUEBAHOME.mp4'
+    ] %}
+{% set poster = [
+        'https://84static.loadingplay.com/static/images/05d19f91160ae67f21b4e5604905defe_foto_banner_1.png',
+        'https://84static.loadingplay.com/static/images/05d19f91160ae67f21b4e5604905defe_foto_banner_1.png',
+        'https://84static.loadingplay.com/static/images/05d19f91160ae67f21b4e5604905defe_foto_banner_1.png'
+    ] %}
+{% set selected = random.choice([0,1,2]) %} -->
+
+
+    <div class="col-lg-12 pad">
+      <!--   {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_one">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_one" name="image" id="img_banner_one" >
+               </div>
+        {% end %}
+               <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="desaturada banner-uno" alt="item"> -->
+
+            <!-- <img class="desaturada banner-uno" src="https://84static.loadingplay.com/static/images/05d19f91160ae67f21b4e5604905defe_foto_banner_1.png"> -->  
+         <!--    <div id="a"  class="div-video hidden-xs">
+              <video 
+                  src="{{ videos[selected] }}" 
+                  poster="{{ poster[selected] }}" width="100%" class="fondo desaturada video-article" controls autoplay="autoplay" loop="loop">
+              </video>
+            </div>  -->
+
+                <!-- <div class="video-overlay" ></div>  -->
+                
+                <!-- imagen movil -->
+            <div class=""></div>
+                {% if is_admin %}
+                    <div class="image-upload lapiz">
+                         <label for="img_banner_one">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_one" name="image" id="img_banner_one" >
+                    </div>
+                {% end %}
+                    <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="banner-one desaturada" alt="item" style="height: 100%;">
+               <!-- fin imagen movil -->
+               
+                    <div class="row">
+                           <div class="col-md-12">
+                              <h2  id="b" class="we {{editabletext}}" text-id="{{ site.name + '_in_2' }}"> {{ read_text(site.name +  '_in_2') }} </h2>
+                              <p class="wi {{editabletext}}" text-id="{{ site.name + '_in_3' }}"> {{ read_text(site.name +  '_in_3') }} </p>
+                          </div>
+                    </div>
+     </div>

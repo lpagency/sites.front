@@ -1,0 +1,628 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+   {% set editabletext = 'editabletext' %}
+{% else %}
+   {% set editabletext = '' %}
+{% end %}
+
+
+<div class="container-fluid page_wraper">
+<!--            <div class="container">-->
+{% include '../home/header.html' %}
+
+
+
+<div class="main_content">
+
+    <div class="container2 text-center">
+        <!-- <h3>Mira lo que hacemos..</h3> -->
+            <div class="text_div_hom editabletext" text-id="{{ site.name + '_caption' }}" >{{ read_text(site.name + '_caption') }}</div>
+
+            <!-- ***Franja naranja****** -->
+
+            <div class="container-fluid">
+                <div align="center">
+                    <div class="col-md-12">
+                         <div class="franja-naranja">
+                            <div class="text_hora editabletext" text-id="{{ site.name + '_caption_horario' }}" >{{ read_text(site.name + '_caption_horario') }} </div>
+                          </div>
+                     </div>
+                </div>
+            </div>
+
+            <div class="miki" style="margin-top: 150px;"> </div> 
+          
+        <div class="img_three">
+            <div class="row" style="cursor:pointer;">
+            <div class="col-md-4 col-sm-4 col-xs-12 single_div">
+                 <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_single_div_1">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_single_div_1" name="image" id="img_single_div_1" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_single_div_1" src="{{ read_image(site.name + '_single_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_single_div_1', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <div class="abs_txt">
+                        <p class="{{editabletext}} div_3" text-id="{{ site.name + '_actividades' }}">{{ read_text(site.name + '_actividades')}}</p>
+                </div>
+                </a>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div1' }}" content="{{ read_link(site.name + '_div1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+            </div>
+            <div class="col-md-4 col-sm-4 col-xs-12 single_div">
+                             <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_single_div_2">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_single_div_2" name="image" id="img_single_div_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div2'}}" href="{{ read_link(site.name + '_div2') }}">
+                <img id="{{ site.name }}_single_div_2" src="{{ read_image(site.name + '_single_div_2', 1) }}" onload="this.src='{{ read_image(site.name + '_single_div_2', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_div2'}}" href="{{ read_link(site.name + '_div2') }}">
+                <div class="abs_txt">
+                    <p  class="{{editabletext}} div_3" text-id="{{ site.name + '_precios' }}">{{ read_text(site.name + '_precios')}}  </p>
+                </div>
+                </a>
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div2' }}" content="{{ read_link(site.name + '_div2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+            </div>
+            <div class="col-sm-4 col-xs-12 single_div">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_single_div_3">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_single_div_3" name="image" id="img_single_div_3" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div3' }}" href="{{ read_link(site.name + '_div3') }}">
+                <img id="{{ site.name }}_single_div_3" src="{{ read_image(site.name + '_single_div_3', 1) }}" onload="this.src='{{ read_image(site.name + '_single_div_3', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                <div class="abs_back"></div>
+                <a id="{{ site.name + '_div3' }}" href="{{ read_link(site.name + '_div3') }}">
+                <div class="abs_txt">
+                    <p  class="{{editabletext}} div_3" text-id="{{ site.name + '_un_lugar_para_todos' }}">{{ read_text(site.name + '_un_lugar_para_todos')}}</p>
+                </div>
+                </a>
+                                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_div3' }}" content="{{ read_link(site.name + '_div3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+            </div>
+            </div>
+            </div>
+        <div class="img_two">
+            <div class="row" style="cursor:pointer;">
+            <div class="col-md-6 col-sm-6 col-xs-12 double_div">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_double_div_1">
+                    <img class="change-image chico" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_double_div_1" name="image" id="img_double_div_1" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_double_div1' }}" href="{{ read_link(site.name + '_double_div1') }}">
+                <img id="{{ site.name }}_double_div_1" src="{{ read_image(site.name + '_double_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_double_div_1', 500) }}'" class="img-responsive ancho" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                <a id="{{ site.name + '_double_div1' }}" href="{{ read_link(site.name + '_double_div1') }}">
+                <div class="abs_txt">
+                    <p class="hvr-bounce-in {{editabletext}}" text-id="{{ site.name + '_cumpleanos' }}">{{ read_text(site.name + '_cumpleanos')}} </p>
+                </div>
+                </a>
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_double_div1' }}" content="{{ read_link(site.name + '_double_div1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="bottom:38px;">
+                {% end %}
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12 double_div">
+             <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_double_div_2">
+                    <img class="change-image chico" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_double_div_2" name="image" id="img_double_div_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_double_div_2' }}" href="{{ read_link(site.name + '_double_div_2') }}">
+                <img id="{{ site.name }}_double_div_2" src="{{ read_image(site.name + '_double_div_2', 1) }}" onload="this.src='{{ read_image(site.name + '_double_div_2', 500) }}'" class="img-responsive ancho" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                <a id="{{ site.name + '_double_div_2' }}" href="{{ read_link(site.name + '_double_div_2') }}">
+                <div class="abs_txt">
+                    <p class="hvr-bounce-in {{editabletext}}" text-id="{{ site.name + '_juegos' }}">{{ read_text(site.name + '_juegos')}} </p>
+                </div>
+                </a>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_double_div_2' }}" content="{{ read_link(site.name + '_double_div_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="bottom:38px;">
+                {% end %}
+
+            </div>
+            </div>
+            </div> 
+
+            <!-- <h3>Esta es una frase inspiradora que deja al usuario con un deseo inmediato de comprar sus servicios</h3> -->
+            {% if is_admin %}
+                <h3><span class="{{editabletext}}" text-id="{{ site.name + '_caption2' }}" >{{ read_text(site.name + '_caption2') }}</span></h3>
+            {% else %}
+               <h3> <span > {{ read_text(site.name + '_caption2') }} </span></h3>
+            {% end %}
+
+        <div class="six_img">
+            <div class="row" style="cursor: pointer;">
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_six_div_1">
+                    <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_1" name="image" id="img_six_div_1" >
+                </div>
+                {% end %}
+                <a  id="{{ site.name + '_six_div_1' }}" href="{{ read_link(site.name + '_six_div_1') }}">
+                <img id="{{ site.name }}_six_div_1" src="{{ read_image(site.name + '_six_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_six_div_1', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg">  -->
+                    <div class="abs_back"></div>
+                    <a  id="{{ site.name + '_six_div_1' }}" href="{{ read_link(site.name + '_six_div_1') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}"  text-id="{{ site.name + '_cercania' }}">{{ read_text(site.name + '_cercania') }} </p></div>
+                    </a>
+                 {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_six_div_1' }}" content="{{ read_link(site.name + '_six_div_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_six_div_2">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_2" name="image" id="img_six_div_2" >
+                    </div>   
+                    {% end %}
+                    <a  id="{{ site.name + '_six_div_2' }}" href="{{ read_link(site.name + '_six_div_2') }}">
+                   <img id="{{ site.name }}_six_div_2" src="{{ read_image(site.name + '_six_div_2', 1) }}" onload="this.src='{{ read_image(site.name + '_six_div_2', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                   </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg">  -->
+                    <div class="abs_back"></div>
+                     <a  id="{{ site.name + '_six_div_2' }}" href="{{ read_link(site.name + '_six_div_2') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}"  text-id="{{ site.name + '_profesionales_de_la_salud' }}">{{ read_text(site.name + '_profesionales_de_la_salud') }}</p></div>
+                    </a>
+                    {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_six_div_2' }}" content="{{ read_link(site.name + '_six_div_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+                    
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_six_div_3">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_3" name="image" id="img_six_div_3" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_six_div_3' }}" href="{{ read_link(site.name + '_six_div_3') }}">
+                    <img id="{{ site.name }}_six_div_3" src="{{ read_image(site.name + '_six_div_3', 1) }}" onload="this.src='{{ read_image(site.name + '_six_div_3', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg">  -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_six_div_3' }}" href="{{ read_link(site.name + '_six_div_3') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}"  text-id="{{ site.name + '_talleres' }}">{{ read_text(site.name + '_talleres') }} </p></div>
+                    </a>
+                     {% if is_admin %}
+                  <img class="change-image editablelink" link-id="{{ site.name + '_six_div_3' }}" content="{{ read_link(site.name + '_six_div_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                {% end %}
+                
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_six_div_4">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_4" name="image" id="img_six_div_4" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_six_div_4' }}" href="{{ read_link(site.name + '_six_div_4') }}">
+                    <img id="{{ site.name }}_six_div_4" src="{{ read_image(site.name +'_six_div_4', 1) }}" onload="this.src='{{ read_image(site.name +'_six_div_4', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_six_div_4' }}" href="{{ read_link(site.name + '_six_div_4') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}" text-id="{{ site.name + '_donde_estamos' }}">{{ read_text(site.name + '_donde_estamos') }} </p></div>
+                    </a>
+                     {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_six_div_4' }}" content="{{ read_link(site.name + '_six_div_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_six_div_5">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_5" name="image" id="img_six_div_5" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_six_div_5' }}" href="{{ read_link(site.name + '_six_div_5') }}">
+                    <img id="{{ site.name }}_six_div_5" src="{{ read_image(site.name + '_six_div_5', 1) }}" onload="this.src='{{ read_image(site.name + '_six_div_5', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_six_div_5' }}" href="{{ read_link(site.name + '_six_div_5') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}"  text-id="{{ site.name + '_club_rukayen_uno' }}">{{ read_text(site.name + '_club_rukayen_uno') }} </p></div>
+                    </a>
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_six_div_5' }}" content="{{ read_link(site.name + '_six_div_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+
+                </div>
+                <div class="col-md-4 col-xs-12 col-sm-6 six_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_six_div_6">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_six_div_6" name="image" id="img_six_div_6" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_six_div_6' }}" href="{{ read_link(site.name + '_six_div_6') }}">
+                    <img id="{{ site.name }}_six_div_6" src="{{ read_image(site.name + '_six_div_6', 1) }}" onload="this.src='{{ read_image(site.name + '_six_div_6', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img2.jpg">  -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_six_div_6' }}" href="{{ read_link(site.name + '_six_div_6') }}">
+                    <div class="absolute_div"><p class="{{editabletext}}"  text-id="{{ site.name + '_club_rukayen_dos' }}">{{ read_text(site.name + '_club_rukayen_dos') }} </p></div>
+                    </a>
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_six_div_6' }}" content="{{ read_link(site.name + '_six_div_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+
+                </div>
+                
+            </div>
+        </div>
+    </div>
+        <div class="full_width_div" style="cursor: pointer;">
+            <div class="text-left">
+            <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_full_width_div_1">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_full_width_div_1" name="image" id="img_full_width_div_1" >
+                    </div>
+                    {% end %}
+                    <img id="{{ site.name }}_full_width_div_1" src="{{ read_image(site.name + '_full_width_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_full_width_div_1', 500) }}'" class="img-banner2" alt="item">
+                    <!--img-banner2 tenia un style="height: 100%;"-->
+                <!-- fin editar imagen -->
+                <!-- <img class="img-banner2"src="{{ site_base }}/static/img/img1.jpg"> -->
+            </div>
+                <div class="right_abs">
+                    <div class="black_bak"></div>
+                    <div class="black_content">
+                    <!-- <h4>Celebra el cumpleaños de tu hijos con nosotros</h4> -->
+                    {% if is_admin %}
+                <h4 class="{{editabletext}}" text-id="{{ site.name + '_reserva' }}" >{{ read_text(site.name + '_reserva') }}</h4>
+            {% else %}
+               <h4> {{ read_text(site.name + '_reserva') }} </span></h4>
+            {% end %}
+                    <span><a href="{{ read_link(site.name + '_double_div1') }}" style="color: white;">Ir a cumpleaños</a></span>
+                    </div>
+                </div>
+        </div>
+    <div class="dub_width">        
+    <div class="container2">
+        <div class="row" style="cursor: pointer;">
+            <div class="col-md-7 col-xs-12 col-sm-12 sin_div sam_height ajustar" >
+                <div class="col-md-12 full-height pad0" >
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_sin_div_1">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_sin_div_1" name="image" id="img_sin_div_1" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_sin_div_1' }}" href="{{ read_link(site.name + '_sin_div_1') }}">
+                    <img id="{{ site.name }}_sin_div_1" src="{{ read_image(site.name + '_sin_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_sin_div_1', 500) }}'" class="img-responsive img-edit" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                <!-- <img src="{{ site_base }}/static/img/img1.jpg">  -->
+                <a id="{{ site.name + '_sin_div_1' }}" href="{{ read_link(site.name + '_sin_div_1') }}">
+                <div class="b_div">
+                    <p class=" nosotros {{editabletext}}"  text-id="{{ site.name + '_club_rukayen_tres' }}">{{ read_text(site.name + '_club_rukayen_tres') }} </p>
+                </div>
+                </a>
+                   {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_sin_div_1' }}" content="{{ read_link(site.name + '_sin_div_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+                </div>
+            </div>
+            <div class="col-md-5 col-xs-12 col-sm-12 dub_div sam_height ajuste" style="padding:0;">
+                <div class="col-md-12 col-sm-6 col-xs-12 ful_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_ful_div_1">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_ful_div_1" name="image" id="img_ful_div_1" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_ful_div_1' }}" href="{{ read_link(site.name + '_ful_div_1') }}">
+                    <img id="{{ site.name }}_ful_div_1" src="{{ read_image(site.name + '_ful_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_ful_div_1', 500) }}'" class="img-responsive photo" alt="item" style="height: 418px;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <a id="{{ site.name + '_ful_div_1' }}" href="{{ read_link(site.name + '_ful_div_1') }}">
+                    <div class="b_div">
+                    <p class="{{editabletext}}"  text-id="{{ site.name + '_taller' }}">{{ read_text(site.name + '_taller') }} </p>
+                </div>
+                </a>
+                   {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_ful_div_1' }}" content="{{ read_link(site.name + '_ful_div_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+                </div>
+                <div class="col-md-12  col-sm-6 col-xs-12 ful_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_ful_div_2">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_ful_div_2" name="image" id="img_ful_div_2" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_ful_div_2' }}" href="{{ read_link(site.name + '_ful_div_2') }}">
+                    <img id="{{ site.name }}_ful_div_2" src="{{ read_image(site.name + '_ful_div_2', 1) }}" onload="this.src='{{ read_image(site.name + '_ful_div_2', 500) }}'" class="img-responsive photo" alt="item"  style="height: 442px;">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <a id="{{ site.name + '_ful_div_2' }}" href="{{ read_link(site.name + '_ful_div_2') }}">
+                    <div class="b_div">
+                    <p class="{{editabletext}}"  text-id="{{ site.name + '_quienes_somoss' }}">{{ read_text(site.name + '_quienes_somoss') }}</p>
+                </div>
+                </a>
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_ful_div_2' }}" content="{{ read_link(site.name + '_ful_div_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+        <div class="map_wrapper" style="cursor: pointer;">
+          <div class="overlay" onClick="style.pointerEvents='none'"></div>
+             <div id="map-canvas"></div>
+            <div class="map_abs">
+                <div class="yellow_back"></div>
+                <div class="yellow_content">
+                
+                <!-- <p>Donde Estámos <br>
+                      Padre Hurtado Norte 1925
+                      (esquina Lo Beltrán 8914)
+                      Vitacura Santiago RM </p> -->
+                      {% if is_admin %}
+                <p><span class="{{editabletext}}" text-id="{{ site.name + '_mapa' }}" >{{ read_text(site.name + '_mapa') }}</span></p>
+            {% else %}
+               <p> <span > {{ read_text(site.name + '_mapa') }} </span></p>
+            {% end %}
+                </div>
+            </div>
+        </div>
+    <div class="container2" style="cursor: pointer;">
+        <div class="bot_six">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_1">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_1" name="image" id="img_bot_div_1" >
+                    </div>
+                    {% end %}
+                   <a id="{{ site.name + '_bot_div_1' }}" href="{{ read_link(site.name + '_bot_div_1') }}">
+                    <img id="{{ site.name }}_bot_div_1" src="{{ read_image(site.name + '_bot_div_1', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_1', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_bot_div_1' }}" href="{{ read_link(site.name + '_bot_div_1') }}">
+                    <div class="ab_txt nn" ><p class="{{editabletext}}"  text-id="{{ site.name + '_quienes_somos' }}">{{ read_text(site.name + '_quienes_somos') }}</p></div>
+                    </a>
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_1' }}" content="{{ read_link(site.name + '_bot_div_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+                
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_2">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_2" name="image" id="img_bot_div_2" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_bot_div_2' }}" href="{{ read_link(site.name + '_bot_div_2') }}">
+                    <img id="{{ site.name }}_bot_div_2" src="{{ read_image(site.name + '_bot_div_2', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_2', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_bot_div_2' }}" href="{{ read_link(site.name + '_bot_div_2') }}">
+                    <div class="ab_txt nn"><p class="{{editabletext}}" text-id="{{ site.name + '_siguenos_en_facebook' }}">{{ read_text(site.name + '_siguenos_en_facebook') }} </p></div>
+                    </a>
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_2' }}" content="{{ read_link(site.name + '_bot_div_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                    {% end %}
+                </div>
+                
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_3">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_3" name="image" id="img_bot_div_3" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_bot_div_3' }}" href="{{ read_link(site.name + '_bot_div_3') }}">
+                    <img id="{{ site.name }}_bot_div_3" src="{{ read_image(site.name + '_bot_div_3', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_3', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                     <a id="{{ site.name + '_bot_div_3' }}" href="{{ read_link(site.name + '_bot_div_3') }}">
+                    <div class="ab_txt mm"><p class="{{editabletext}}" text-id="{{ site.name + '_donde_estamoss' }}">{{ read_text(site.name + '_donde_estamoss') }} </p></div>
+                    </a>
+                     {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_3' }}" content="{{ read_link(site.name + '_bot_div_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                    {% end %}              
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_4">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_4" name="image" id="img_bot_div_4" >
+                    </div>
+                    {% end %}
+                     <a id="{{ site.name + '_bot_div_4' }}" href="{{ read_link(site.name + '_bot_div_4') }}">
+                    <img id="{{ site.name }}_bot_div_4" src="{{ read_image(site.name + '_bot_div_4', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_4', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_bot_div_4' }}" href="{{ read_link(site.name + '_bot_div_4') }}">
+                    <div class="ab_txt mm"><p class="{{editabletext}}" text-id="{{ site.name + '_eduacion' }}">{{ read_text(site.name + '_eduacion') }} </p></div>
+                    </a>
+                     {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_4' }}" content="{{ read_link(site.name + '_bot_div_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                    {% end %} 
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_5">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_5" name="image" id="img_bot_div_5" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_bot_div_5' }}" href="{{ read_link(site.name + '_bot_div_5') }}">
+                    <img id="{{ site.name }}_bot_div_5" src="{{ read_image(site.name + '_bot_div_5', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_5', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_bot_div_5' }}" href="{{ read_link(site.name + '_bot_div_5') }}">
+                    <div class="ab_txt mm"><p class="{{editabletext}}" text-id="{{ site.name + '_galeria_de_eventos' }}">{{ read_text(site.name + '_galeria_de_eventos') }} </p></div>
+                    </a>
+                      {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_5' }}" content="{{ read_link(site.name + '_bot_div_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                    {% end %}
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12 bot_div">
+                    <!-- editar imagen -->
+                    {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_bot_div_6">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_bot_div_6" name="image" id="img_bot_div_6" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_bot_div_6' }}" href="{{ read_link(site.name + '_bot_div_6') }}">
+                    <img id="{{ site.name }}_bot_div_6" src="{{ read_image(site.name + '_bot_div_6', 1) }}" onload="this.src='{{ read_image(site.name + '_bot_div_6', 200) }}'" class="img-responsive div_chico" alt="item">
+                    </a>
+                <!-- fin editar imagen -->
+                    <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                    <div class="abs_back"></div>
+                    <a id="{{ site.name + '_bot_div_6' }}" href="{{ read_link(site.name + '_bot_div_6') }}">
+                    <div class="ab_txt nn"><p class="{{editabletext}}" text-id="{{ site.name + '_siguenos_en_instagram' }}">{{ read_text(site.name + '_siguenos_en_instagram') }} </p></div>
+                    </a>
+                      {% if is_admin %}
+                        <img class="change-image editablelink" link-id="{{ site.name + '_bot_div_6' }}" content="{{ read_link(site.name +'_bot_div_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                       {% end %} 
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </div>
+{% include '../home/footer.html' %}
+{% end %}
+

@@ -1,0 +1,227 @@
+{% extends "../base.html" %}
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+
+<link rel="stylesheet" href="{{ site_base }}/static/js/jquery-ui-1.11.4.custom/jquery-ui.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+
+  <!-- <link rel="stylesheet" href="/resources/demos/style.css"> -->
+{% end %}
+{% block scripts %}
+<!--<script type="text/javascript" src="{{ site_base }}/static/js/jquery-ui-1.11.4.custom/jquery.js"></script>-->
+<script type="text/javascript" src="{{ site_base }}/static/js/bootstrap.js"></script>
+<!-- <script type="text/javascript" src="{{ site_base }}/static/js/plugins/datepicker/bootstrap-datepicker.js"></script> -->
+
+  <!--<script src="//code.jquery.com/jquery-1.10.2.js"></script>-->
+<script src="{{ site_base }}/static/js/jquery-ui-1.11.4.custom/jquery-ui.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/plugins/fancybox/jquery.fancybox.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/plans.js"></script>
+{% end %}
+{% block body %}
+<!-- Start Quieries -->
+<div class="bg-orange">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <h3 class="text-white text fweight200">¿En qué consiste?</h3>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Quieries -->
+
+
+<!-- Start Metodo -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <p class="space30 fsize18 fweight200" >El <strong>Método RDK ®</strong> es  una dieta proteinada, que<br> consiste en aportar una cantidad pequeña de <br> 
+      calorias, provenientes de las proteinas lo cual <br>
+      provoca una sensacion de saciedad y la pérdida<br>
+      rápida de peso.El Método RDK® combina <br> 
+      <strong>ReduKcal</strong> con alimentos tradicionales.</p>
+
+      <img src="static/img/ice-cream.jpg" alt="..." class="img-responsive">
+    </div>
+
+    <div class="col-md-6 space50">
+      <div class="white-box">
+        <h4 class="text-center text padtop20 fweight100 fsize24">¿No sabes cuántos kilos necesitas perder?<br>Ingresa tus datos y te orientaremos</h4>
+        
+        <hr>                    
+
+        <ul>
+          <li class="fsize18"><div class=" gender female">Mujer</div></li>
+          <li  class="fsize18"><div class=" gender male">Hombre</div></li>
+        </ul>
+        
+        <div class="col-md-8 marginL form-index">
+          <form  method="get" id="calculate" >
+            <div class="form-group">
+              <input type="number" class="form-control" id="weight" placeholder="Ingresa tu peso (kg, por ejemplo 55.4)" step="0.01">
+            </div>
+
+            <div class="form-group">             
+              <input type="number" class="form-control" id="height" placeholder="Ingresa tu altura (mts, por ejemplo 1.70)" step="0.01" min="0" max="3">
+            </div>
+            
+            <div class="form-group">
+
+
+            <input type="text" class="form-control age" id="datepicker" placeholder="Fecha de nacimiento dd/mm/aaaa">
+<!--               <select class="form-control" id="age">
+                <option value="0">Seleccione rango de edad</option>
+                <option value="1">Menor de 40 años</option>
+                <option value="2">Mayor de 40 años </option>
+              </select> -->
+              <!-- <input type="text" class="form-control" id="age" placeholder="Edad"> -->
+            </div>
+
+            <button type="submit" class="btn btn-default btn-calculate pull-right space20">Calcular</button>
+          </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Metodo -->
+
+<!-- Start slider -->
+<div class="space50">
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="container">
+      <h3 class="text-center"><span class="fweight100">Casos de Éxito: </span>Nuestros Clientes</h3>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="row">
+            <div class="col-md-5 center">
+              <img src="static/img/clt-01.png"  class="img-responsive img-circle" alt="..." height="220" width="220">
+            </div>
+            <div class="col-md-6">
+              <h5 class="space40">Plan Power+ 200</h5>
+              <h2 class="fweight100">ASTRID SLIGHT- Ingeniero</h2>
+              <p class="space30">Perdí poco más de 9 Kg en 45 días, seguí al pie de la letra mi plan, no me salí nunca. Es fácil de usar y de llevar a todas partes. Los productos son variados y ricos , nunca se pasa hambre.  Con el apoyo del coaching nutricional vía WhatsApp  se me hizo mucho más fácil seguir todos las Fases. 100% recomendable. </p>
+              <a href="#!" class="orange-btn plan" kilo="8" age="2">Ver Plan Usado</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-md-5 center">
+              <img src="static/img/clt-02.png"  class="img-responsive img-circle" alt="..." height="220" width="220">
+            </div>
+            <div class="col-md-6">
+              <h5 class="space30">Plan Ultra+ 280</h5>
+              <h2 class="fweight100">CLAUDIO ARREDONDO-Actor</h2>
+              <p class="space50">Realicé el plan con control presencial  de nutricionista. Ella fue monitoreando y reacomodando mi plan a medida de mis necesidades  de salud y exigencias de trabajo. Logré bajar 10 Kg en poco menos de 3 meses. </p>
+              <a href="#!" class="orange-btn plan" kilo="12" age="2">Ver Plan Usado</a>
+            </div>
+          </div>
+        </div>
+
+<!--         <div class="item">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="static/img/silder-img.png"  class="img-responsive img-circle"alt="...">
+            </div>
+            <div class="col-md-6">
+              <h5 class="space30">Plan de 5-9 kg</h5>
+              <h2>Maria Andrea Gonzalez</h2>
+              <p class="space50">Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño. El punto de usar Lorem Ipsum es que tiene una distribución más o menos</p>
+              <a href="#" class="orange-btn">Ver Plan Usado</a>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev">
+      <img src="static/img/left-arrow.png">
+    </a>
+    <a class="right carousel-control hidden-xs" href="#carousel-example-generic" role="button" data-slide="next">
+      <img src="static/img/right-arrow.png">
+    </a>
+  </div>
+  <!-- End slider -->
+
+<!-- Start Quieries -->
+<div class="space50"></div>
+<a href="{{ site_base }}/plans">
+<div class="bg-orange orange-btn">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" style="text-align:left;">
+        <h3 class="fweight100">¿Ya sabes cuánto quieres perder? Revisa aquí nuestros planes.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+</a>
+<!-- End Quieries -->
+
+  <!-- Start nuestros Planes -->
+ <!--  <div class="bg-2 space50">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="text-white text-center space20">Nuestros Planes</h2>
+        </div>
+
+        <div class="col-md-4 space30">
+          <div class="white-round">
+            0-3 kg
+          </div>
+          <p class="text-center text-white space20 fsize16">Es un hecho establecido hace demasiado<br>tiempo que un lector se distraerá con el<br>contenido del texto de un sitio mientras<br>que mira su diseño. El punto de usar Lorem<br>Ipsum es que tiene una distribución más o<br>menos normal de las letras, al contrario d<br> usar textos</p>
+          
+          <center class="space30">
+            <a href="#" class="ver-btn fsize20"><strong>Ver Plan</strong></a>
+          </center>
+        </div>
+
+        <div class="col-md-4 space30">
+          <div class="white-round">
+            3-5 kg
+          </div>
+          <p class="text-center text-white space20 fsize16">Es un hecho establecido hace demasiado<br>tiempo que un lector se distraerá con el<br>contenido del texto de un sitio mientras<br>que mira su diseño. El punto de usar Lorem<br>Ipsum es que tiene una distribución más o<br>menos normal de las letras, al contrario d<br> usar textos</p>
+          
+          <center class="space30">
+            <a href="#" class="ver-btn fsize20"><strong>Ver Plan</strong></a>
+          </center>
+        </div>
+
+        <div class="col-md-4 space30">
+          <div class="white-round">
+            5-7 kg
+          </div>
+          <p class="text-center text-white space20 fsize16">Es un hecho establecido hace demasiado<br>tiempo que un lector se distraerá con el<br>contenido del texto de un sitio mientras<br>que mira su diseño. El punto de usar Lorem<br>Ipsum es que tiene una distribución más o<br>menos normal de las letras, al contrario d<br> usar textos</p>
+          
+          <center class="space30">
+            <a href="#" class="ver-btn fsize20"><strong>Ver Plan</strong></a>
+          </center>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- end nuestros Planes -->
+  {% include '../home/footer.html' %}
+  {% end %}

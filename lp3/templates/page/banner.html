@@ -1,0 +1,21 @@
+<section>
+      <div class="mobile-li" style="background:url('{{ read_image(site.name + '_banner_list_pro_deta',500) }}'); background-attachment:fixed; height:550px; background-size:cover; margin-top: 31px;  filter: grayscale(0%) brightness(75%);-webkit-filter: grayscale(0%) brightness(75%);
+    -moz-filter: grayscale(0%) brightness(75%); -ms-filter: grayscale(0%) brightness(75%);-o-filter: grayscale(0%) brightness(75%); background-position:center;">
+        {% if is_admin %}
+               <div class="image-upload lapiz visible-movil">
+                   <label for="img_banner_list_pro_deta">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_pro_deta" name="image" id="img_banner_list_pro_deta" >
+               </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_list_pro_deta" src="{{ read_image(site.name + '_banner_list_pro_deta', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_pro_deta',500) }}'" class="banner_list_pro hidden" alt="item">
+
+           </div>
+
+                <div class="col-md-12">
+                    <h1 class="text-left lis-pro tex-detail {{editabletext}}" text-id="{{ site.name + '_list_pro' }}"> {{ read_text(site.name +  '_list_pro') }}</h1>
+                </div>
+            
+</section>
+

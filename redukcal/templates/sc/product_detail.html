@@ -1,0 +1,113 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% end %}
+
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block scripts %}
+        <script src="{{ site_base }}/static/js/detalle-producto.js"></script>
+        <!--<script type="text/javascript" > ifvoted(7);</script>-->
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+
+        <script type="text/x-template" id="tag_template" > 
+        <li> 
+            <a href="/sample/tag.html?tag={{! id }}" > 
+            {{!name}} 
+            </a>
+        </li > 
+        </script> 
+
+        <script type="text/javascript" >
+        $(document).ready(function() 
+        {
+
+            var base_url = $.environmentVar(
+                'http://localhost:8520/',
+                'http://apibodegas.ondev.today/',
+                'https://apibodegas.loadingplay.com/'
+            );
+
+            var checkout_url = $.environmentVar(
+                'http://localhost:8522/',
+                'http://lpcheckout.ondev.today/',
+                'https://checkout.loadingplay.com/'
+            );
+
+            $(document).ecommerce( 'product_detail',
+            {
+                'app_public' : 4,
+                'base_url' : base_url,
+                'checkout_url': checkout_url,
+                'product_id' : {{ product_id }}
+            });
+
+        });
+        </script>
+
+        <!-- templates -->
+<!--         <div type="template" id="product_loading" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+
+        <div type="template" id="product_detail" class="hidden" >
+            <div class="container-fluid-product product" style="text-align:left;">
+                <div class="row visible-xs product-mobile" style="color: white;">
+                    <div class="col-xs-12 text-center">
+                        <h2 class="product-title" >{{! name }}</h2>
+                        <div class="">
+                            <span class="money">{{! main_price }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="fm-content-img-prod">
+                        <img src="https://7static.loadingplay.com/static/images/500_cfafbbe22e2ef55e4e62e72b191021b6_estucheRDK_CafeCaramel.png.png" class="fm-image-products image" alt="item">
+                        </div>
+                    </div>
+                    <form action="product1.html" method="POST" class="myform">
+                        <div class="col-sm-6 fondo-blanco-movil">
+                            <h2 class="product-title hidden-xs " style="font-weight: 700; font-size: 30px;">{{! name }}</h2>
+                            <div class=" hidden-xs">
+                                <span class="money" style="font-size:30px;">{{! main_price }}</span>
+                            </div>
+                            <div class="product-detail">
+                                <p>{{! description }}</p>
+                            </div>
+                            <!-- <button type="button" class="Prod-btn add-cart-prod add-to-cart btn-warning" data-toggle="button" aria-pressed="false" autocomplete="off"  product-id="{{! id }}" product-upp="{{! upp }}" product-name="{{! name }}" product-price="{{! main_price }}" >Agregar al carro</button> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+{% end %}
+
+
+{% block body %}
+        <div class="container">
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div>
+
+
+        
+
+{% end %}

@@ -1,0 +1,130 @@
+<img class="foto-header-desk" src="{{ site.url }}static/images/004.png">
+<img class="foto-header-movil" src="{{ site.url }}static/images/003.png">
+<div id="fixed-menu-top-int" class="fixed-menu-top" style="">
+    <ul class="nav-list text-center effect menu-7" >
+        <a href="{{ site.url }}" class="hide-show" style="">Family<span>Market</span></a>
+        <li id="toogle_search_bar_movil" onclick=""><i class="icon-search"></i></li>
+        <div class="site_search"></div>
+    </ul>
+    <a href="{{ site_base }}" class="nav-brand logo-page show-hide" style="">Family<span>Market</span></a>
+        <ul class="nav-list text-center effect menu-5" style="margin-top:10px;">
+            <li><a href="{{ site_base }}">Novedades</a></li>
+            <li><a href="{{ site_base }}">Tienda</a></li>
+            {% if current_user %}
+            <li><a href="{{ site.url }}order/list?user_email={{current_user['email']}}">Tus pedidos</a></li>
+            {% else %}
+            <li><a class="open-with-lightbox" href="{{ site.url }}login_invitation">Tus pedidos</a></li>
+            {% end %}
+            <li><a href="{{ site.url }}contact">Contacto</a></li>
+            {% if current_user %}
+            <li><a href="{{ site.url }}auth/logout" class="logout">Cerrar sesión</a></li><!--no borrar la clase logout-->
+            {% else %}
+            <li><a href="{{ site.url }}auth/login">Iniciar sesión</a></li>
+            {% end %}
+            <li><i class="icon-search" id="toogle_search_bar"></i></li>
+        </ul>
+        <ul class="top_search_bar">
+            <li class="site_search">
+            </li>
+        </ul>
+        <img class="foto-header-desk" style="position: absolute !important;" src="{{ site.url }}static/images/004.png">
+        <div class="total_items"></div>
+        <div class="total_cart"></div>
+        <script type="text/x-template" id="total_cart_template" >
+            <div><span class="money">{{! total }}</span></div>
+        </script>
+        <script type="text/x-template" id="total_items_template" >
+            <div><span class="money">{{! total }}</span> items</div>
+        </script>
+</div>
+<!--
+<div class="fixed-menu-2">
+ <ul class="navi">
+                <li><a href="{{ site_base }}/?tag=perro">Alimentos perros</a>
+                    <ul>
+                        <li><a href="">Dog Chow</a></li>
+                        <li><a href="">Doko</a></li>
+                        <li><a href="">Proplan</a></li>
+                        <li><a href="">Excellent</a></li>
+                        <li><a href="">Doguitos</a></li>
+                    </ul>
+                </li>
+                <li><a href="{{ site_base }}/?tag=gato">Alimento gatos</a>
+                    <ul>
+                        <li><a href="">Cat Chow</a></li>
+                        <li><a href="">Gati</a></li>
+                        <li><a href="">Proplan</a></li>
+                        <li><a href="">Fancy feast</a></li>
+                        <li><a href="">Felix</a></li>
+                        <li><a href="">Tidy cat</a></li>
+                    </ul>
+                </li>
+                <li><a href="">Confites</a>
+                    <ul>
+                        <li><a href="">Galletas</a>
+                            <ul>
+                                <li><a href="">Impulsivos</a></li>
+                                <li><a href="">Hogar</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Chocolates</a>
+                            <ul>
+                                <li><a href="">Impulsivos</a></li>
+                                <li><a href="">Tabletas</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="">Abarrotes</a>
+                    <ul>
+                        <li><a href="">Nutrición infantil</a>
+                            <ul>
+                                <li><a href="">Fórmula</a></li>
+                                <li><a href="">Alimentos infantiles</a></li>
+                                <li><a href="">Cereales infantiles</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="">Café</a></li>
+                        <li><a href="">Cereales para el desayuno</a></li>
+                        <li><a href="">Culinarios</a></li>
+                        <li><a href="">Lacteos</a></li>
+                        <li><a href="">Oppb</a></li>
+                    </ul>
+                </li>
+            </ul>
+  
+</div>-->
+
+<div id="open-cart" class="absolute-cart-box" >
+    <div class="sqs-pill-shopping-cart">
+        <div class="sqs-pill-shopping-cart-content shopping-cart-animation">
+            <div class="dark"><i class="icons-cart"></i></div>
+            <div class="details">
+                Pagar&nbsp;-&nbsp;
+                <span class="total_items"></span>
+                &nbsp;-&nbsp;
+                <span class="total_cart"></span>
+            </div>                      
+            <!--<span class="subtotal">
+                <span class="price">
+                    <span class="sqs-money-native"></span>
+                </span>
+            </span>-->
+        </div>
+    </div>
+</div>
+<div type="template" id="site_search_template">
+    <form class="search_form" action="{{ site.url }}">
+        <input class="hidden" name="tag" value="{{! tag }}">
+        <input class="hidden" name="search" value="true">
+        <div class="tag-search">
+            <span class="label label-success">{{! tag }} <a class="remove-tag">X</a></span>
+        </div>
+        <div class="search_bar_inputs">
+            <input class="busqueda-header" type="search" name="search_query" value="{{! search_query }}" onsearch="$(this).closest('.search_form').submit()">
+            <button class="boton-bus-header btn-search">buscar</button>
+            <div class="boto-bus-header-movil" onclick=""> <i class="icon-search" onclick=""></i></div>
+            <span class="hide-search-bar" onclick=""><i class="icon-remove" onclick=""></i></span>
+        </div>
+    </form>
+</div>

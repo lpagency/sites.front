@@ -1,0 +1,238 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{site_base}}/static/catalog/view/javascript/jquery/ui/themes/ui-lightness/jquery-ui-1.8.16.custom.css" />
+<link rel="stylesheet" id="responsive_css" type="text/css" href="http://complementadiseno.cl/tienda/catalog/view/theme/nico/stylesheet/responsive.css" />
+
+<style type="text/css">
+    body::-webkit-scrollbar { 
+    display: none; 
+    }
+    @media screen and (max-width: 700px){
+    html, body {
+    overflow-y: auto !important;
+    }
+
+    #header-top{
+    display: block !important;
+}
+    }
+</style>
+
+{% end %}
+
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/product.detail.js"></script>
+
+<script type="text/javascript"><!--
+$('.colorbox').colorbox({
+    overlayClose: true,
+    opacity: 0.5
+});
+</script> 
+
+<script type="text/javascript"><!--
+$('#button-cart').bind('click', function() {
+    $.ajax({
+        url: 'index.php?route=checkout/cart/add',
+        type: 'post',
+        data: $('.product-info input[type=\'text\'], .product-info input[type=\'hidden\'], .product-info input[type=\'radio\']:checked, .product-info input[type=\'checkbox\']:checked, .product-info select, .product-info textarea'),
+        dataType: 'json',
+        success: function(json) {
+            $('.success, .warning, .attention, information, .error').remove();
+            
+            if (json['error']) {
+                if (json['error']['option']) {
+                    for (i in json['error']['option']) {
+                        $('#option-' + i).after('<span class="error">' + json['error']['option'][i] + '</span>');
+                    }
+                }
+            } 
+            
+            if (json['success']) {
+                $('#notification').html('<div class="success" style="display: none;">' + json['success'] + '<img src="catalog/view/theme/nico/image/close.png" alt="" class="close" /></div>');
+                    
+                $('.success').fadeIn('slow');
+                    
+                $('#cart-total').html(json['total']);
+                
+                $('html, body').animate({ scrollTop: 0 }, 'slow'); 
+                if (notification_hide_timeout > 0) var t=setTimeout(function(){$('#notification img').click()}, notification_hide_timeout);
+            }   
+        }
+    });
+});
+</script>
+
+<script type="text/javascript"><!--
+$('#review .pagination a').live('click', function() {
+    $('#review').fadeOut('slow');
+        
+    $('#review').load(this.href);
+    
+    $('#review').fadeIn('slow');
+    
+    return false;
+});         
+
+$('#review').load('http://complementadiseno.cl/tienda/index.php?route=product/product/review&amp;product_id=203');
+
+$('#button-review').bind('click', function() {
+    $.ajax({
+        url: 'index.php?route=product/product/write&product_id=203',
+        type: 'post',
+        dataType: 'json',
+        data: 'name=' + encodeURIComponent($('input[name=\'name\']').val()) + '&text=' + encodeURIComponent($('textarea[name=\'text\']').val()) + '&rating=' + encodeURIComponent($('input[name=\'rating\']:checked').val() ? $('input[name=\'rating\']:checked').val() : '') + '&captcha=' + encodeURIComponent($('input[name=\'captcha\']').val()),
+        beforeSend: function() {
+            $('.success, .warning').remove();
+            $('#button-review').attr('disabled', true);
+            $('#review-title').after('<div class="attention"><img src="catalog/view/theme/nico/image/loading.gif" alt="" /> Por favor, espera!</div>');
+        },
+        complete: function() {
+            $('#button-review').attr('disabled', false);
+            $('.attention').remove();
+        },
+        success: function(data) {
+            if (data['error']) {
+                $('#review-title').after('<div class="warning">' + data['error'] + '</div>');
+            }
+            
+            if (data['success']) {
+                $('#review-title').after('<div class="success">' + data['success'] + '</div>');
+                                
+                $('input[name=\'name\']').val('');
+                $('textarea[name=\'text\']').val('');
+                $('input[name=\'rating\']:checked').attr('checked', '');
+                $('input[name=\'captcha\']').val('');
+            }
+        }
+    });
+});
+
+</script> 
+
+<script type="text/javascript"><!--
+$('#tabs a').tabs();
+</script> 
+
+<script type="text/javascript" src="{{site_base}}/static/catalog/view/javascript/jquery/ui/jquery-ui-1.8.16.custom.min.js"></script>
+
+
+<script type="text/javascript" src="{{site_base}}/static/catalog/view/javascript/jquery/ui/jquery-ui-timepicker-addon.js"></script> 
+
+<script type="text/javascript">
+if ($.browser.msie && $.browser.version == 6) {
+    $('.date, .datetime, .time').bgIframe();
+}
+
+$('.date').datepicker({dateFormat: 'yy-mm-dd'});
+$('.datetime').datetimepicker({
+    dateFormat: 'yy-mm-dd',
+    timeFormat: 'h:m'
+});
+$('.time').timepicker({timeFormat: 'h:m'});
+
+</script> 
+
+    
+
+
+<!-- <script src="{{ site_base }}/static/js/magnific/jquery.magnific-popup.min.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/moment.js"></script>
+<script src="{{ site_base }}/static/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ site_base }}/static/js/script.js"></script> -->
+<script>
+    $(document).ready(function() {
+
+
+
+});
+
+</script>
+
+
+<script type="text/template" id="product_detail" >
+
+    <!-- Modal -->
+    <div id="myModal2" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal-top">
+                <!--               <div class="modal-header">
+                
+                <h4 class="modal-title">Modal Header</h4>
+              </div> -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="text-center title_detail">DESCRIPCION</h5>
+                    <p class="descrip_detail">{{! description }}</p>
+                </div>
+                <!--               <div class="modal-footer">
+                
+              </div> -->
+            </div>
+        </div>
+    </div>
+
+{% include '../home/header.html' %}
+<section class="prod2">
+    <img src="{{! images[0]['thumb_200'] }}" title="" alt="" class="img-responsive img_prod2" >
+    <section>
+        <div class="col-md-12">
+            <div class="detail_price">
+                <div class="col-md-10">
+                    <i class="fa fa-shopping-bag bag" aria-hidden="true"></i>
+                    <div class="left price1">
+                        <div class="">UNIDADES</div>
+                        <br>
+                        <span class="price-p">{{! main_price|money }} </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="clearfix"></div>
+
+    <section>
+        <div class="col-md-12 pull-right detail_compra">
+            <h1 class="text-detail">{{! name }}</h1>
+            <span class="price2">{{! main_price|money }}</span>
+            <br>
+            <a class="" href="" data-toggle="modal" data-target="#myModal2" style="font-size:15px;display: -webkit-inline-box;border-top: 2px solid rgba(0, 0, 0, 0.3);">Ver mas informacion</a>
+
+            <div class="cart">
+                <div>
+                    <select class="lista_prod" name="OS">
+                           <option value="1">1</option> 
+                           <option value="2">2</option> 
+                           <option value="3">3</option>
+                           <option value="10">4</option> 
+                           <option value="11">5</option> 
+                           <option value="12">6</option> 
+                    </select>
+                    <a class="fancybox fancybox.iframe " href="{{ site_base }}/carrito_compra">
+                        <button product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}"type="button" class="btn btn-info btn-lg btn_compra2 add-to-cart" >Comprar</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+</script>
+
+{% end %}
+
+
+{% block body %} 
+<div id="" class="container clearfix">
+</div>
+
+{% end %}

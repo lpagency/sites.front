@@ -1,0 +1,202 @@
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+<!-- 
+<div style="position:relative">
+   {% if is_admin %}
+        <div class="image-upload">
+            <label for="img_banner_in">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_in" name="image" id="img_banner_in" >
+        </div>
+    {% end %}
+ <section class="section-hero-parallax parallax-section " id="hero-parallax" style="background-image: url({{ read_image(site.name + '_banner_in', 500) }});
+    background-size: cover">
+    <div class="overly-shade">
+        <div class="container">
+            <div class="hero-parallax-content ">
+                <h3 class="hero-section-title {{editabletext}}"  text-id="{{ site.name + '_texto-images' }}">  {{ read_text(site.name + '_texto-images') }} </h3>
+                <a  href="#" class="btn btn-stroke thin lite {{editabletext}}"  text-id="{{ site.name + '_texto-but' }}">  {{ read_text(site.name + '_texto-but') }} </a>
+            </div>
+        </div>
+    </div>
+</section>
+</div> -->
+<div style="position:relative">
+   {% if is_admin %}
+        <div class="image-upload">
+            <label for="img_banner_in">
+            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_in" name="image" id="img_banner_in" >
+        </div>
+    {% end %}
+    <div class="parallax-section parallax-image-2" style="background-position: 50% -39px;">
+        <div class="w100 parallax-section-overley">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="parallax-content clearfix">
+                            <h1 class="xlarge {{editabletext}}"  text-id="{{ site.name + '_texto-images' }}">  {{ read_text(site.name + '_texto-images') }}  </h1>
+                            <a  href="#" class="btn btn-stroke thin lite {{editabletext}}"  text-id="{{ site.name + '_texto-but' }}">  {{ read_text(site.name + '_texto-but') }} </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section class="section-hero hide" id="TheCollection">
+    <div class="container">
+        <div class="hero-section-header ">
+            <h3 class="hero-section-title">The collection</h3>
+            <p class="hero-section-sub-text">This season, classic pinstripes make a comeback both on and off the court.
+                <br>
+                Introducing the Lacoste Live Pinstripes on the Court Collection.</p>
+            </div>
+            <div class="row featuredPostContainer ">
+                <div class="featuredImageLook3 flat">
+                    <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                        <div class="inner">
+                            <div class="box-content-overly box-content-overly-white flat">
+                                <div class="box-text-table">
+                                    <div class="box-text-cell ">
+                                        <div class="box-text-cell-inner dark">
+                                            <h1 class="uppercase">Handbags</h1>
+                                            <hr class="submini">
+                                            <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img-title"> Handbags</div>
+                                <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/2.jpg" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                            <div class="inner">
+                                <div class="box-content-overly box-content-overly-white flat">
+                                    <div class="box-text-table">
+                                        <div class="box-text-cell ">
+                                            <div class="box-text-cell-inner dark">
+                                                <h1 class="uppercase"> Designers</h1>
+                                                <hr class="submini">
+                                                <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="img-title"> Designers</div>
+                                    <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/1.jpg" class="img-responsive"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                <div class="inner">
+                                    <div class="box-content-overly box-content-overly-white flat">
+                                        <div class="box-text-table">
+                                            <div class="box-text-cell ">
+                                                <div class="box-text-cell-inner dark">
+                                                    <h1 class="uppercase">Sale Offers</h1>
+                                                    <hr class="submini">
+                                                    <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="img-title"> Sale Offers</div>
+                                        <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/3.jpg" class="img-responsive"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                    <div class="inner">
+                                        <div class="box-content-overly box-content-overly-white flat">
+                                            <div class="box-text-table">
+                                                <div class="box-text-cell ">
+                                                    <div class="box-text-cell-inner dark">
+                                                        <h1 class="uppercase">T Collections</h1>
+                                                        <hr class="submini">
+                                                        <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="img-title">T Collections</div>
+                                            <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/4.jpg" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                        <div class="inner">
+                                            <div class="box-content-overly box-content-overly-white flat">
+                                                <div class="box-text-table">
+                                                    <div class="box-text-cell ">
+                                                        <div class="box-text-cell-inner dark">
+                                                            <h1 class="uppercase">Latest Trends </h1>
+                                                            <hr class="submini">
+                                                            <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="img-title"> Latest Trends</div>
+                                                <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/5.jpg" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                            <div class="inner">
+                                                <div class="box-content-overly box-content-overly-white flat">
+                                                    <div class="box-text-table">
+                                                        <div class="box-text-cell ">
+                                                            <div class="box-text-cell-inner dark">
+                                                                <h1 class="uppercase">Dresses</h1>
+                                                                <hr class="submini">
+                                                                <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="img-title"> Dresses</div>
+                                                    <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/6.jpg" class="img-responsive"></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                                <div class="inner">
+                                                    <div class="box-content-overly box-content-overly-white flat">
+                                                        <div class="box-text-table">
+                                                            <div class="box-text-cell ">
+                                                                <div class="box-text-cell-inner dark">
+                                                                    <h1 class="uppercase">Dresses</h1>
+                                                                    <hr class="submini">
+                                                                    <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="img-title"> Dresses</div>
+                                                        <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/category/3.jpg" class="img-responsive"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                                    <div class="inner">
+                                                        <div class="box-content-overly box-content-overly-white flat">
+                                                            <div class="box-text-table">
+                                                                <div class="box-text-cell ">
+                                                                    <div class="box-text-cell-inner dark">
+                                                                        <h1 class="uppercase">Dresses</h1>
+                                                                        <hr class="submini">
+                                                                        <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="img-title"> Dresses</div>
+                                                            <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/category/1.jpg" class="img-responsive"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+</section>

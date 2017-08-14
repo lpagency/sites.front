@@ -1,0 +1,315 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <!-- head bt inicio -->
+    <title>{% block title %}Nutriacademia - Acompañandote en todas las etapas de su crecimiento{% end %}</title>
+
+    <base href="{{ site_base }}/">
+    <meta charset="utf-8">
+
+    {% block meta %}
+    <meta name="description" content="Acompañandote en todas las etapas de su crecimiento">
+    <meta property="og:image" content="https://84static.loadingplay.com/static/images/87603663f4e04404bb55d40a6483a572_android-icon-36x36.png" />
+    {% end %}
+    <meta name="author" content="loadingplay.com">
+    <meta name="viewport" content="width=430px, user-scalable=no" />
+    <!-- <meta property="og:image" content="https://84static.loadingplay.com/static/images/cfc78888f3f3b1b12be4c2c27fb1e774_500_cfc78888f3f3b1b12be4c2c27fb1e774_500_afa1ca469fbf6bdcacbea507098bab5f_logo.png" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="{{ site_base }}/static/imgbt/ico/apple-icon.png" sizes="32x32" type="{{ site_base }}/static/imagebt/ico" />
+    <link rel="apple-touch-icon-precomposed" href="{{ site_base }}/static2:/imgbt/ico/72.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_base }}/static2/imgbt/ico/apple-icon-72x72.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site_base }}/static2/imgbt/ico/apple-icon-120x120.png" type="image/png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site_base }}/static2/imgbt/ico/ms-icon-150x150.png" type="image/png" />
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header_movil.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/listado_articulos.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/list_product.css">
+    <!-- aqui se ponen los demas css -de las paginas -->
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5" media="screen" />
+    <!-- autocomplete
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-autocomplete -->
+    <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+    <!-- <link rel="stylesheet" href="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.css?v=2.1.5"> -->
+    <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+    <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css"/> -->
+
+
+
+    {% block css %}
+    {% end %} 
+    {% include 'product/product_box.html' %} 
+    {% include 'product/product_home.html' %} 
+    {% if is_admin %} 
+    {% set editabletext = 'editabletext' %} 
+    {% else %} 
+    {% set editabletext = '' %} 
+    {% end %}
+</head>
+<div id="main-nav-fixed-navigation" class="fixed-menu hidden-md hidden-sm  hidden-xs">
+    <nav class="navbar navbarcolor" role="navigation">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Desplegar navegación</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand navbar-logo" href="{{ site_base }}/"> 
+                              {% if is_admin %}
+                                  <div class="image-upload logg">
+                                   
+                                      <label for="{{ site.name }}_site_logo">
+                                      <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                      </label>
+                                      <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                                  </div>
+                              {% end %}
+                              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
+                    <a class="navbar-brand" href=""></a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav pull-right">
+                <li>
+                    <div id="container hidden-lg hidden-xs">
+                        <form role="search" method="get" id="searchform" action="{{ site_base }}/search">
+                            <label class="up" for="s">
+                                <!-- <i class="icon-search"></i> -->
+                                <img class="lupa" src="https://84static.loadingplay.com/static/images/f5d762705e35fb682831cc6c7ddeac8f_Lupa_Azul.png">
+                            </label>
+                            <input type="text" value="" name="search_query" placeholder="Buscar..." class="" id="s" />
+                        </form>
+                    </div>
+                </li>
+                <li><a href="{{ site_base }}/listado_articulos" class="esp">Tus etapas</a></li>
+                <li><a href="{{ site_base }}/listado_producto" class="esp">Nuestros productos</a></li>
+                <a href="https://twitter.com/Nutriacademia" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/facd79b770615c7ff4157b6da8e41457_twitter.png">
+                </a>
+                <a href="https://www.facebook.com/nutriacademiachile" target="_blank">
+                <img class="redes-menu" src="https://84static.loadingplay.com/static/images/3e51e5d79d496bbb14b7efb76c65a36e_facebook.png">
+                </a>
+                <a href="https://www.instagram.com/nutriacademia/" target="_blank">
+                <img class="redes-menu" src="https://7static.loadingplay.com/static/images/b52df0ce0094fafa7a3419004cd4dfc9_instagram_2.png">
+                </a>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+
+<input class="menu-two" type="checkbox" id="op"></input>
+<a href="#">
+    <img class="logo  hidden-lg" src="https://7static.loadingplay.com/static/images/cfc78888f3f3b1b12be4c2c27fb1e774_500_cfc78888f3f3b1b12be4c2c27fb1e774_500_afa1ca469fbf6bdcacbea507098bab5f_logo.png" />
+</a>
+<div class="lower hidden-lg">
+    <label for="op">
+        <p class="tex-menu-mov">MENU</p>
+        <img class="logo-header-mov" src="https://84static.loadingplay.com/static/images/12da7c107cdba2dda7bf6a3722c58f17_menu_icono_azul.png" />
+    </label>
+</div>
+<div class="overlay overlay-hugeinc">
+    <label for="op"></label>
+    <nav>
+        <ul>
+            <li><a href="{{ site_base }}/listado_articulos">Tus etapas</a></li>
+            <li><a href="{{ site_base }}/listado_producto">Nuestros productos </a></li>
+            <li class="navbar-search-container search-element">
+                <form accept-charset="UTF-8" action="{{ site_base }}/search" class="navbar-search-form" data-search-form="1" id="search_form" method="get">
+                    <img class="lupa-movil" src="https://7static.loadingplay.com/static/images/db02aa62d700345ed320cf5ad9fd2af0_Lupa_blanca.png">
+                    <a href="#" data-search-btn="1" class="navbar-search-button icon-search" data-block-track="headerSearchButton"></a>
+                    <input autocomplete="off" class="vkal-search-box navbar-search-box" data-search-field="1" id="q" name="search_query" onblur="this.placeholder = &#39;Buscar&#39;" onfocus="this.placeholder = &#39;&#39;" placeholder="Buscar" type="text" value="" />
+                </form>
+                <ul class="navbar-search-results hidden" data-search-result="1" data-block-track="headerSearchResult"></ul>
+            </li>
+        </ul>
+    </nav>
+</div>
+{% block header %}{% end %}
+
+<body id="home">
+    {% block body %}{% end %}
+    <div class="hidden">
+        <button id="OpenAlert" type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+    </div>
+    <!-- Modal -->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content modal-top">
+                <!--               <div class="modal-header">
+                
+                <h4 class="modal-title">Modal Header</h4>
+              </div> -->
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h5 class="text-center">ADVERTENCIA</h5>
+                    <p class="text-center text-advertencia">La lactancia es la mejor alimentación para los bebés y brinda muchos beneficios. Es importante que, antes y durante la lactancia, su alimentación se base en una dieta saludable y balanceada. La combinación de la lactancia materna con la alimentación con biberón durante las primeras semanas de vida puede reducir la producción de su leche materna y resulta difícil revertir la decisión de no amamantar. Deben tenerse en cuenta las consecuencias sociales y económicas del consumo de fórmulas infantiles. El uso indebido de fórmulas infantiles o de alimentos o métodos de alimentación inadecuados puede significar un riesgo para la salud. Si utiliza fórmulas infantiles, siga cuidadosamente las instrucciones de uso del fabricante; de lo contrario, puede provocar trastornos en la salud de su bebé. Consulte siempre a su médico, partera o pediatra para obtener asesoramiento sobre cómo alimentar a su bebé.</p>
+                    <button type="button" class="btn btn-default btn-aceptar" data-dismiss="modal">Aceptar</button>
+                </div>
+                <!--               <div class="modal-footer">
+                
+              </div> -->
+            </div>
+        </div>
+    </div>
+    <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+    <!-- Share in facebook -->
+    <div id="fb-root"></div>
+    <script type="text/javascript">(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/es_ES/sdk.js#xfbml=1&version=v2.8&appId={{ get_config('app_id_facebook')}}";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <!-- End Share in facebook -->
+
+    <div id="like"></div>
+
+    <!-- Your share button code -->
+<!--     <div id="fb-share-button" class="fb-share-button" data-href="http://danone.sites.ondev.today" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fdanone.sites.ondev.today%2F&amp;src=sdkpreparse">Compartir</a></div> -->
+
+    <script type="text/javascript">
+    var site_base = "{{ site_base }}"
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+    <!-- {%!  end %} -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+    <!-- carga de productos -->
+    <!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
+    <!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
+    <!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script> -->
+    <script type="text/javascript" src="{{ site_base }}/static/js/ellipsis/src/jquery.dotdotdot.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/ellipsis/src/jquery.dotdotdot.min.umd.js"></script>
+    <!--         <div type="template" id="product_loading" style="display:none;" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/share.facebook.js"></script>
+    <script type="text/x-template" id="shopping-cart-total">
+    </script>
+    <!-- este es el script para unidades -->
+    <script type="text/x-template" id="shopping-cart-units-total">
+        <span> {{! units_total }}</span>
+    </script>
+    <script type="text/x-template" id="shopping-cart-checkout-form">
+        <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+            <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+            </div>
+        </form>
+    </script>
+    <script type='text/javascript'>
+    $(".testButton").live("touchstart", function() {
+        $(this).addClass("active");
+    }).live("touchend", function() {
+        $(this).removeClass("active");
+    });
+
+    var changeImageMouseOver = function(id_img, url) {
+        $("img#" + id_img).attr("src", url);
+    };
+    var changeImageMouseOut = function(id_img, url) {
+        $("img#" + id_img).attr("src", url);
+    };
+    </script>
+    <!-- termino carrito de compra -->
+    {% block javascript %}{% end %}
+    <script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '348231912006000',
+            xfbml: true,
+            version: 'v2.1'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {% if is_admin %}
+    <script type="text/javascript">
+    var site_name = "{{site.name}}";
+    </script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js"></script>
+    {% end %}
+    <script type="text/javascript" src "https://clouddelivery.textbox.io/1/getEditor?apiKey=1wugguwjiatkm69xmt7w1den1mpvqkxi75mwfmb49lz89o4r">
+    </script>
+    <script>
+    $(document).ajaxComplete(function() {
+        var hash = window.location.hash;
+        // window.location.href= hash;
+
+        if (hash !== "") {
+            $('html,body').animate({
+                scrollTop: $(hash).offset().top
+            });
+        }
+    });
+    // $(document).ready(function(){
+    //     $(".lupa").click(function(){
+    //         $("#formSearch").css("visibility","visible");
+    //         $(this).css("display", "none");
+    //     })
+    // });
+    </script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ get_config("analytics") }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>

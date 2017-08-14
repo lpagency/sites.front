@@ -1,0 +1,352 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+  body , html{
+    overflow-x:hidden;
+  }
+</style>
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+    //   
+    $(document).on("click", ".categ", function(ev){
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+    var hyper = Utils.getUrlParameter('tag').split(',');
+
+    if(hyper[0] == "mujer"){
+      $(".tag-header").html("Mujeres");
+    }
+
+    if(hyper[0] == "hombre"){
+      $(".tag-header").html("Hombres");
+    }
+
+    if(hyper[0] == "nino"){
+      $(".tag-header").html("Niños");
+    }
+
+    if(hyper[0] == "oferta"){
+      $(".tag-header").html("Oferta");
+    }
+
+    });
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+    <section>
+      <div class="container min">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="texto-header-pro hidden-xs texto-ruta"> Home </div>
+        </div>
+      </div>
+    </section>
+
+
+<section>
+   <div class="container min dos">
+    <div class="col-md-3 col-sm-3 col-xs-12">
+ <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
+          <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 0px;margin-bottom: 50px;border-right: 1px solid rgba(128, 128, 128, 0.4);width: 92%;left: 8%;">
+          <div class="text-fil"> FILTROS <i class="fa fa-plus botonMasFiltros" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-filtros">
+                <input type="checkbox" class="categ c-billeteras" name="vehicle1" tag="billeteras" value="Bike" onclick="check('billeteras')"> Billeteras <i class="fa fa-check-square ch-billeteras hidden" aria-hidden="true" onclick="uncheck('billeteras')"></i>
+              </div>
+              <div class="filtro-filtros">
+                <input type="checkbox" class="categ c-collares" name="vehicle2" tag="collares" value="Car" onclick="check('collares')"> Collares <i class="fa fa-check-square ch-collares hidden" aria-hidden="true" onclick="uncheck('collares')"></i>
+              </div>
+              <div class="filtro-filtros">
+                <input type="checkbox" class="categ c-ropa" name="vehicle3" tag="ropa" value="Boat" onclick="check('ropa')"> Ropa <i class="fa fa-check-square ch-ropa hidden" aria-hidden="true" onclick="uncheck('ropa')"></i>
+              </div>
+          </form>
+          <div class="clearfix"></div>
+
+           <div class="text-fil"> CATEGORIAS<i class="fa fa-plus botonMasCategorias" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-accesorios" name="vehicle1" tag="accesorios" value="Bike" onclick="check('accesorios')"> Accesorios <i class="fa fa-check-square ch-accesorios hidden" aria-hidden="true" onclick="uncheck('accesorios')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-poleras" name="vehicle2" tag="poleras" value="Car" onclick="check('poleras')"> Poleras <i class="fa fa-check-square ch-poleras hidden" aria-hidden="true" onclick="uncheck('poleras')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-zapato" name="vehicle3" tag="zapato" value="Boat" onclick="check('zapato')"> Zapatos <i class="fa fa-check-square ch-zapato hidden" aria-hidden="true" onclick="uncheck('zapato')"></i>
+              </div>
+          </form>
+          <div class="clearfix"></div>
+
+        <div class="text-fil"> MARCA <i class="fa fa-plus botonMasMarca" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca1" name="vehicle1" tag="marca1" value="Bike" onclick="check('marca1')"> Marca 1 <i class="fa fa-check-square ch-marca1 hidden" aria-hidden="true" onclick="uncheck('marca1')"></i>
+              </div>
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca2" name="vehicle2" tag="marca2" value="Car" onclick="check('marca2')"> Marca 2
+               <i class="fa fa-check-square ch-marca2 hidden" aria-hidden="true" onclick="uncheck('marca2')"></i>
+               </div>
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca3" name="vehicle3" tag="marca3" value="Boat" onclick="check('marca3')"> Marca 3 <i class="fa fa-check-square ch-marca3 hidden" aria-hidden="true" onclick="uncheck('marca3')"></i>
+              </div>
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca4" name="vehicle3" tag="marca4" value="Boat" onclick="check('marca4')"> Marca 4 <i class="fa fa-check-square ch-marca4 hidden" aria-hidden="true" onclick="uncheck('marca4')"></i>
+              </div>
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca5" name="vehicle3" tag="marca5" value="Boat" onclick="check('marca5')"> Marca 5 <i class="fa fa-check-square ch-marca5 hidden" aria-hidden="true" onclick="uncheck('marca5')"></i>
+              </div>
+              <div class="filtro-marca">
+                <input type="checkbox" class="categ c-marca6" name="vehicle3" tag="marca6" value="Boat" onclick="check('marca6')"> Marca 6 <i class="fa fa-check-square ch-marca6 hidden" aria-hidden="true" onclick="uncheck('marca6')"></i>
+              </div>
+          </form>
+          <div class="clearfix"></div>
+
+         <div class="text-fil"> TALLA<i class="fa fa-plus botonMasTalla" aria-hidden="true"></i> </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas37" name="vehicle1" tag="tallas37" value="Bike" onclick="check('tallas37','37')"> 37 <i class="fa fa-check-square ch-tallas37 hidden" aria-hidden="true" onclick="uncheck('tallas37','37')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas38" name="vehicle2" tag="tallas38" value="Cara" onclick="check('tallas38','38')"> 38 <i class="fa fa-check-square ch-tallas38 hidden" aria-hidden="true" onclick="uncheck('tallas38','38')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas39" name="vehicle3" tag="tallas39" value="Boat" onclick="check('tallas39','39')"> 39 <i class="fa fa-check-square ch-tallas39 hidden" aria-hidden="true" onclick="uncheck('tallas39','39')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas40" name="vehicle3" tag="tallas40" value="Boat" onclick="check('tallas40','40')"> 40 <i class="fa fa-check-square ch-tallas40 hidden" aria-hidden="true" onclick="uncheck('tallas40','40)"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas41" name="vehicle3" tag="tallas41" value="Boat" onclick="check('tallas41','41')"> 41 <i class="fa fa-check-square ch-tallas41 hidden" aria-hidden="true" onclick="uncheck('tallas41','41')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas42" name="vehicle3" tag="tallas42" value="Boat" onclick="check('tallas42','42')"> 42 <i class="fa fa-check-square ch-tallas42 hidden" aria-hidden="true" onclick="uncheck('tallas42','42')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-tallas43" name="vehicle3" tag="tallas43" value="Boat" onclick="check('tallas43','43')"> 43 <i class="fa fa-check-square ch-tallas43 hidden" aria-hidden="true" onclick="uncheck('tallas43', '43')"></i>
+              </div>
+          </form>
+          <div class="clearfix"></div>
+
+          <div class="text-fil"> COLOR <i class="fa fa-plus botonMasColor" aria-hidden="true"></i> </div>
+            <div class="col-md-12 col-sm-12 col-xs-12">
+            <form action="/action_page.php" class="chek">
+            <div class="filtro-color">
+            <div class="col-md-6 col-sm-6 col-xs-6">
+              <input type="checkbox" class="categ c-rojo background-color-producto" tag="rojo" style="cursor: pointer;background-color: red" onclick="check('rojo')">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-rosado background-color-producto" tag="rosado" style="cursor: pointer;background-color: pink" onclick="check('rosado')">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-azul background-color-producto" tag="azul" style="cursor: pointer;background-color: blue" onclick="check('azul')">
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-verde background-color-producto" tag="verde" style="cursor: pointer;background-color: green" onclick="check('verde')">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-gris background-color-producto" tag="gris" style="cursor: pointer;background-color: grey" onclick="check('gris')">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-negro background-color-producto" tag="negro" style="cursor: pointer;background-color: black" onclick="check('negro')">
+             </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-cafe background-color-producto" tag="cafe" style="cursor: pointer;background-color: brown" onclick="check('cafe')">
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-naranja background-color-producto" tag="naranja" style="cursor: pointer;background-color: orange" onclick="check('naranja')">
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-6">
+               <input type="checkbox" class="categ c-amarillo background-color-producto" tag="amarillo" style="cursor: pointer;background-color: yellow" onclick="check('amarillo')">
+            </div>
+
+            </div>
+            </form>
+            </div>
+        </div>
+
+  </section>
+</div>
+    <section>
+        <div class="col-md-8 col-sm-8 col-xs-12 muu">
+          <div class="col-md-12 col-sm-12 col-xs-12 mii">
+            <div class="texto-header-pro-2 tag-header"></div><div class="texto-header-pro-3 tag-header2"></div>
+          </div>
+        <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-md visible-sm visible-lg">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Ordenar por:
+                  <span class="caret"></span></button>
+                  <ul class="dropdown-menu">
+                    <li><a href="#!" class="mayor">Precio: Mayor a menor</a></li>
+                    <li><a href="#!" class="menor">Precio: Menor a mayor</a></li>
+                    <li><a href="#!" class="nombre">Nombre</a></li>
+                </ul>
+            </div>
+        </div>
+          <div class="">
+            <div class=" filtrosRec hidden-xs">
+            
+                <!-- <div class="ordenar-precio"> Menos de $50.000 <i class="fa fa-times" aria-hidden="true" onclick="uncheck('billeteras')"></i></div> -->
+            </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12">
+          <div class="limpiar">LIMPIAR TODO </div>
+          </div>
+          <div class="col-md-12 col-sm-12 col-xs-12 kinti">
+              <a href="#!" class="variables1" tag="variable_1">Variable 1 &nbsp</a>
+              <a href="#!" class="variables2" tag="variable_2">Variable 2 &nbsp</a>
+              <a href="#!" class="variables3" tag="variable_3">Variable 3 &nbsp</a>
+          </div>
+          <form action="/action_page.php" class="chek">
+           <div class="col-md-3 col-sm-3 col-xs-12 vari">
+            <div class="filtro-talla c-variable_1">
+              <label class="hidden c-variable_1">
+                <input class="hidden categ check c-variable_1 c-menos20000" type="checkbox" name="checkbox" tag="menos20000" value="Menos de $20.000" onclick="check('menos20000','Menos de $20.000')">Menos de $20.000
+              </label> 
+              <i class="fa fa-check-square c-variable_uno ch-menos20000 other hidden" aria-hidden="true" onclick="uncheck('menos20000','Menos de $20.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_1">
+              <label class="hidden c-variable_1">
+                <input class="hidden categ check c-variable_1 c-mas20000" type="checkbox" name="checkbox" tag="mas20000" value="Más de $20.000" onclick="check('mas20000','Más de $20.000')">Más de $20.000
+              </label>
+              <i class="fa fa-check-square c-variable_uno ch-mas20000 other hidden" aria-hidden="true" onclick="uncheck('mas20000','Más de $20.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_1">
+              <label class="hidden c-variable_1">
+                <input class="hidden categ check c-variable_1 c-otro" type="checkbox" name="checkbox" tag="otro" value="Otro" onclick="check('otro','Otro')">Otro
+              </label> 
+              <i class="fa fa-check-square c-variable_uno ch-otro other hidden" aria-hidden="true" onclick="uncheck('otro','Otro')"></i>
+            </div>
+
+            <div class="filtro-talla c-variable_2">
+              <label class="hidden c-variable_2">
+                <input class="hidden categ check c-variable_2 c-menos2000" type="checkbox" name="checkbox" tag="menos2000" value="Menos de $2.000" onclick="check('menos2000','Menos de $2.000')">Menos de $2.000
+              </label> 
+              <i class="fa fa-check-square c-variable_dos ch-menos2000 other hidden" aria-hidden="true" onclick="uncheck('menos2000','Menos de $2.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_2">
+              <label class="hidden c-variable_2">
+                <input class="hidden categ check c-variable_2 c-mas2000" type="checkbox" name="checkbox" tag="mas2000" value="Más de $2.000" onclick="check('mas2000','Más de $2.000')">Más de $2.000
+              </label> 
+              <i class="fa fa-check-square c-variable_dos ch-mas2000 other hidden" aria-hidden="true" onclick="uncheck('mas2000','Más de $2.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_2">
+              <label class="hidden c-variable_2">
+                <input class="hidden categ check c-variable_2 c-otro_filtro" type="checkbox" name="checkbox" tag="otro_filtro" value="Otro filtro" onclick="check('otro_filtro','Otro filtro')">Otro filtro
+              </label> 
+              <i class="fa fa-check-square c-variable_dos ch-otro_filtro other hidden" aria-hidden="true" onclick="uncheck('otro_filtro','Otro filtro')"></i>
+            </div>
+
+            <div class="filtro-talla c-variable_3">
+              <label class="hidden c-variable_3">
+                <input class="hidden categ check c-variable_3 c-menos1000" type="checkbox" name="checkbox" tag="menos1000" value="Menos de $1.000" onclick="check('menos1000','Menos de $1.000')">Menos de $1.000
+              </label> 
+              <i class="fa fa-check-square c-variable_tres ch-menos1000 other hidden" aria-hidden="true" onclick="uncheck('menos1000','Menos de $1.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_3">
+              <label class="hidden c-variable_3">
+                <input class="hidden categ check c-variable_3 c-mas1000" type="checkbox" name="checkbox" tag="mas1000" value="Más de $1.000" onclick="check('mas1000','Más de $1.000')">Más de $1.000
+              </label> 
+              <i class="fa fa-check-square c-variable_tres other ch-mas1000 hidden" aria-hidden="true" onclick="uncheck('mas1000','Más de $1.000')"></i>
+            </div>
+            <div class="filtro-talla c-variable_3">
+              <label class="hidden c-variable_3">
+                <input class="hidden categ check c-variable_3 c-mas" type="checkbox" name="checkbox" tag="mas" value="Mas" onclick="check('mas','Más')">Mas
+              </label>
+              <i class="fa fa-check-square c-variable_tres ch-mas other ch-mas1000 hidden" aria-hidden="true" onclick="uncheck('mas','Más')"></i>
+            </div>
+          </div>
+        </form>
+        </div>
+
+    </section>
+    <!-- *****fin filtros DESKTOP**** -->
+
+
+
+    <!-- ******principio filtros MOVIL**** -->
+
+    <div class="col-xs-12 hidden-md hidden-lg hidden-sm visible-xs">
+       <div class="fixx"> 
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="modal" data-target="#myModal-orde">Ordenar por:
+          <span class="caret"></span></button>
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="modal" data-target="#myModal-fil">Filtrar por:
+          <span class="caret"></span></button>
+       </div>
+    </div>
+
+    <div class="col-md-8 col-sm-8 col-xs-12">
+        <hr class="listado">
+    </div>
+
+<div class="visible-xs hidden-md hidden-sm hidden-lg" style="height:450px;display:block;margin:auto auto 0 auto;"></div>
+<div class="col-md-8 col-sm-8 col-xs-12  pinki">
+    <div class="products"></div>
+      <div class="spinner">
+          <div class="rect1"></div>
+          <div class="rect2"></div>
+          <div class="rect3"></div>
+          <div class="rect4"></div>
+          <div class="rect5"></div>
+      </div>
+      <div class="col-xs-12">
+        <div align="center">
+           <button type="button" class="btn btn-default more-products" style="display: none">Cargar más productos</button>
+        </div>
+      </div>
+</div>
+</section>
+
+
+
+</body>
+{% include '../home/footer.html' %}
+{% end %}
+
+

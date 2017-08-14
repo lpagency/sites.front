@@ -1,0 +1,45 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="fondo-pro">
+     <div class="container">
+        <div class="col-md-12">
+            <div align="center">
+              <div class="box-orange">
+              <span class="text-for-1 {{editabletext}}" text-id="{{ site.name + '_bajopeso' }}"> {{ read_text(site.name +  '_bajopeso') }}</span>
+                 <span id="kilo" class="text-for-1"></span>
+                 <span class="text-for-1 {{editabletext}}" text-id="{{ site.name + '_bajopeso2' }}"> {{ read_text(site.name +  '_bajopeso2') }}</span>
+                     <hr class="for-1">
+                         <div class="text-for-2"> No te recomendamos perder peso
+                         </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    
+</section>
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

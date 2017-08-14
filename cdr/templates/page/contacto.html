@@ -1,0 +1,45 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-6 col-sm-12" >
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + 'deportista_contact_title' }}"> {{ read_text(site.name +  'deportista_contact_title') }} </div>
+
+        <form>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="name" class="form-control" id="name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="message">Mensaje:</label>
+                <textarea type="message" class="form-control" id="message" ></textarea>
+            </div>
+        </form>
+    </div>
+
+    <div class="row" >
+        <div class="col-md-6">
+            <div class="texto-fru {{editabletext}}" text-id="{{ site.name + 'deportista_contact_social' }}"> {{ read_text(site.name +  'deportista_contact_social') }} </div>
+        </div>
+    </div>
+</div>
+
+{% end %}

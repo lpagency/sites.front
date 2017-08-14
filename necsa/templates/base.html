@@ -1,0 +1,426 @@
+<!doctype html>
+<html class="no-js" lang="en">
+    <head>
+        <!-- head bt inicio -->
+        <title>Necsa - Todo en aceites, baterias, equipos y más.</title>
+        <base href="{{ site_base }}/">
+        <meta charset="utf-8">
+        <meta name="description" content="Todo en aceites, baterias, equipos y más.">
+        <meta name="author" content="loadingplay.com">
+        <meta name="viewport" content="width=430px, user-scalable=no" />
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+        <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css"  href="{{ site_base }}/static/font-awesome-4.4.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/listado_productos.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/carro_confirmacion.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/carrito_compra.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/registro_compra_linea.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/login2.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/categoria.css">
+        <link rel="stylesheet" href="{{ site_base }}/static/css/menu_movil.css">
+        <link rel="shortcut icon" href="{{ site_base }}/static/imgbt/ico/favicon-32x32.png" sizes="32x32" type="{{ site_base }}/static/imagebt/ico" />
+        <link rel="apple-touch-icon-precomposed" href="imgbt/ico/apple-icon-60x60.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{ site_base }}/static/imgbt/ico/apple-icon-72x72.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="120x120" href="{{ site_base }}/static/imgbt/ico/apple-icon-120x120.png" type="image/png" />
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="{{ site_base }}/static/imgbt/ico/apple-icon-152x152.png" type="image/png" />
+
+        <!-- aqui se ponen los demas css -de las paginas -->
+        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+
+
+        <!-- autocomplete
+        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
+        <!-autocomplete -->
+        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+
+        <link rel="stylesheet" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+        <!-- <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css"> -->
+
+
+        <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css"/> -->
+
+        
+        {% block css %}{% end %}
+
+        {% include 'product/product_box.html' %}
+        {% include 'product/product_box_2.html' %}
+        {% if is_admin %}
+        {% set editabletext = 'editabletext' %}
+        {% else %}
+        {% set editabletext = '' %}
+        {% end %}
+
+    </head>
+
+
+
+    <body id="home">
+        {% block header %}{% end %}
+
+        {% if user is None %}
+        <style type="text/css">
+            .base_menu{
+                display: none !important;
+            }
+        </style>
+        <div class="img-welcome vertical-center desaturada">
+       
+            <div class="col-sm-12 text-center">
+             <img class="img-welcome2 {{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                <h2 class="titulo-password text-center text-uppercase">PARA INGRESAR A ESTE SITIO</h2>
+                <h2 class="titulo-password text-center text-uppercase"><a href="{{ site_base }}/auth/login" >registrarse o entrar</a></h2>
+            </div>
+        </div>
+        {% else %}
+        {% block body %}{% end %}
+        {% end %}
+
+        <!-- gif loading editableimage -->
+        <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+
+          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content" style="min-height:550px">
+
+                        </div>
+                </div>
+        </div>
+        
+
+        <script type="text/javascript">
+        var site_base = "{{ site_base }}"
+        </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        
+<!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
+
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+        <!-- {%!  end %} -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+
+        <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+
+                <!-- carga de productos -->
+<!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
+        
+        <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js?t=1"></script>
+<!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
+        <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+<!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script> -->
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script> -->
+        <script type="text/javascript" src="{{ site_base }}/static/js/necsa.js"></script>
+        
+
+        <!-- <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script> -->
+
+<!--         <div type="template" id="product_loading" style="display:none;" >
+            <div class="spinner">
+                <div class="rect1"></div>
+                <div class="rect2"></div>
+                <div class="rect3"></div>
+                <div class="rect4"></div>
+                <div class="rect5"></div>
+            </div>
+        </div> -->
+        <script type="text/x-template" id="shopping-cart-product" class="hidden">
+            <tr> 
+                <td class="hidden-md hidden-lg visible-xs"><img class="img_carrito_movil" src="https://84static.loadingplay.com/static/images/61e5340993208962bb31b9dd8d885037_4.png"></td>
+                <td class="sku_movil">{{! sku }}</td>
+                <td class="ellipsis multiline name-compra"><a class="fancybox fancybox.iframe " href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">{{! name }}</a></td>
+                <td class="price-compra">{{! not_discount_price|money }}<br><div class="quantity-compra hidden-md hidden-lg visible-xs">{{! quantity}} unidades</div></td> 
+                <td class="descuento hidden-xs">{{! price|money }}</td>
+                <td class="quantity-compra ">
+                    <div class="pull-left visible-md visible-lg hidden-xs">{{! quantity}}</div>
+                    <button class="add-one pull-right position_add" product-id="{{! id }}">+</button>
+                    <button class="remove-one pull-right position_remove" product-id="{{! id }}">-</button>
+                </td>
+                <td class="total_money">{{! total|money }}</td>
+                <td class="hidden-xs trash_btn"><a href="#" class="remove-from-cart" product-id="{{! id }}"><i class="fa fa-trash-o"></i></a></td>
+            </tr>
+
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span>{{! upp_total }}</span>
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-total" >
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right display_block hidden-xs subtotal-cart">SubTotal</td>
+            <td id="total" class=" money pull-left hidden-xs subtotal-cart">{{! total/1.19 }}</td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right hidden-xs iva-cart">IVA</td>
+            <td id="total" class=" money pull-left hidden-xs iva-cart">{{! total/1.19*0.19}}</td>
+            </tr>
+            <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td class="text-right hidden-xs total-cart">Total</td>
+            <td id="total" class=" money pull-left hidden-xs total-cart">{{! total }}</td>
+            </tr>
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-checkout-form" >
+        <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+            <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+            <input name="l" class="form-control required" type="hidden" value="t" />
+            <div class="form-group text-center">
+            <div class="col-sm-6  col-xs-12">
+                <a href="{{site_base}}/">
+                <button type="button" class="btn btn-volver">Volver</button>
+                </a>
+                </div>
+                <div class="col-sm-6 col-xs-12">
+                <button type="submit" class="btn btn-enviar">Enviar</button>
+                </div>
+            </div>
+        </form>
+        </script>
+
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".fancybox").fancybox({
+                    // 'AutoDimension' : true,
+                    'width':800,
+                    // 'height':650,
+                    'autoSize' : false,
+                    'autoScale': true,
+                    'overlayShow': true,
+                    'transitionIn': 'elastic',
+                    'transitionOut': 'elastic',
+                    'scrolling': 'no',
+                    'padding': 0,
+                    'openEffect'  : 'fade',
+                    'closeEffect' : 'fade',
+                    'openSpeed'   : 'slow',
+                    'closeSpeed'  : 'slow',
+                    'hideOnContentClick': true,
+                    'helpers': {
+                            overlay: {
+                                speedIn  : 0,
+                                speedOut : 300,
+                                // locked: false,
+                                css: {'background': 'rgba(0, 0, 0, 0.2)'}
+                            }
+                        },
+                    beforeShow: function(){
+                        // $("body").css({'overflow-y':'hidden'});
+                        $('.fancybox-type-ajax').addClass("fancybox-opened").css("opacity","1");
+                        console.log($(this.element).data("height"));
+                        // this.height = $(this.element).data("height");
+                        // $(this).resize();
+
+                    },
+                    afterClose: function(){
+                        $("body").css({'overflow-y':'visible'});
+                        $(".fancybox-overlay").css("display", "none !important");
+                    }, 
+                    beforeClose:function(){
+                        $(".fancybox-wrap").css("display", "none");
+                        $(".fancybox-overlay").css("display", "none !important");
+                        $("body").css({'overflow-y':'visible'});
+                    },
+                    callbackOnStart : function() {
+                        $("#fancy_overlay").bind("click","null");
+                    },
+                });
+
+                $(".fancybox-login").fancybox({
+                    'width':700,
+                    'height':380,
+                    'autoSize' : false,
+                    'autoScale': false,
+                    'type': 'iframe',
+                    'scrolling': 'no',
+                    'padding': 0,
+                    'helpers': {
+                            overlay: {
+                                locked: false
+                            }
+                        },
+                    'speedIn': 1500, //<-- here you control the overlay speedIn
+                    'speedOut': 1500,//<-- here you control the overlay speedOut
+                    beforeShow: function(){
+                        $("body").css({'overflow-y':'hidden'});
+                    },
+                    afterClose: function(){
+                        $("body").css({'overflow-y':'visible'});
+                    },
+                    'onCleanup': function () {
+                        var myContent = this.href;
+                        console.log("llega a clean up");
+                        console.log(myContent);
+                        $(myContent).unwrap();
+                    }
+                });
+            });
+        </script>
+
+        <script type="text/x-template" id="shopping-cart-total" >
+        </script>
+
+
+<!-- este es el script para unidades -->
+        <script type="text/x-template" id="shopping-cart-units-total" >
+            <span> {{! upp_total }}</span>
+        </script>
+
+
+<!--         <script type="text/x-template" id="shopping-cart-checkout-form" >
+            <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+                <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+                <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+                <div class="form-group text-center">
+                    <button type="submit" class="btn btn-primary">Proceed to checkout <i class="fa fa-chevron-right"></i></button>
+                </div>
+            </form>
+        </script> -->
+
+
+
+
+<!-- termino carrito de compra -->
+
+        {% block javascript %}{% end %}
+        <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '348231912006000',
+                xfbml: true,
+                version: 'v2.1'
+            });
+        };
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        {% if is_admin %}
+        <script type="text/javascript">
+        var site_name="{{site.name}}";
+        </script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
+
+        {% end %}
+
+        <script type="text/javascript" src"https://clouddelivery.textbox.io/1/getEditor?apiKey=1wugguwjiatkm69xmt7w1den1mpvqkxi75mwfmb49lz89o4r">
+        </script>
+
+
+        <script>
+            var checkScroll = function()
+            {
+                var hash = window.location.hash;
+                // window.location.href= hash;
+
+                if (hash !== "") 
+                {
+                    $('html,body').animate({
+                        scrollTop: $(hash).offset().top
+                    },
+                    500, 
+                    function()
+                    {
+                        window.location.hash = "";
+                    });
+                }
+            };
+
+            $(document).ajaxComplete(checkScroll);
+            $(document).ready(checkScroll);
+        </script>
+        <script type="text/javascript">
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+              (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', '{{ get_config("analytics") }}', 'auto');
+            ga('send', 'pageview');
+        </script>
+
+    </body>
+</html>

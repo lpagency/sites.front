@@ -1,0 +1,114 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ article["title"] }}
+{% end %}
+
+{% block meta %}
+  <!-- <meta property="og:url"           content="" /> -->
+  <meta property="og:type"          content="website" />
+  <meta property="og:title"         content="{{ article['title'] }}" />
+  <meta property="og:description"   content="{{ article['caption'] }}" />
+  <!-- <meta property="og:image"         content="http://www.your-domain.com/path/image.jpg" /> -->
+{% end %}
+{% block scripts %}
+<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+{% if is_admin %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div id="wrap">
+        <!-- registration -->
+        
+<section style="height: 650px; display: block;position: relative;width: 100%;">
+    <div class="mobile-li">
+        <img class="img_detail_planes desaturada" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
+        <div class="box">    
+            <h1 class="col-md-12 col-xs-12 text_detail_planes text-center">
+                {{ article["title"] }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div class="container-flui productlist">
+    <div class="col-sm-12 pad_article">
+        <input type="hidden" id="article-description-ajax-url" value="{{ site.url }}article/update-description">
+        <input type="hidden" id="article-content-id" value="{{article['id']}}">
+        <!-- PRIMER TEXTO -->
+        <div class="container-fluid" style="display: block;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2 class="text-art1">
+                {{ article["caption"] }}
+                </h2>
+            </div>
+        </div>
+        <!-- SEGUNDO TEXTO -->
+        <div class="container-fluid" style="display: block; ">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="description" class="text-art2 tex-center">
+                {{ article["description"] }}
+                </div>
+            </div>
+        </div>
+
+        <!-- compartir en redes sociales -->
+        <div style="float: left;position: relative;left: 28px;">
+
+            <a target="_blank" class="twitter-share-button" href="#!" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" >Twitter</a> | 
+
+            <a target="_blank" class="pinterest-share-button" href="#!" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" >Pinterest</a> | 
+            <a target="_blank" class="facebook-share-button" href="#!" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=580')" >Facebook</a>
+
+            <script type="text/javascript">
+                // facebook href
+                var es = document.getElementsByClassName('facebook-share-button');
+                for (var i = 0; i < es.length; i++)
+                {
+                    es[i].href = "https://www.facebook.com/sharer/sharer.php?app_id=587045894741639&sdk=joey&u=" + 
+                        document.location.href + 
+                        "&display=popup&ref=plugin&src=share_button";
+                }
+
+                // pinterest
+                var es = document.getElementsByClassName('pinterest-share-button');
+                for (var i = 0; i < es.length; i++)
+                {
+                    es[i].href = "https://www.pinterest.com/pin/create/button/?url=" +
+                        document.location.href + 
+                        "&media={{ article['thumb_500'] }}&description={{ article['title'] }}";
+                }
+
+                // twitter
+                var es = document.getElementsByClassName('twitter-share-button');
+                for (var i = 0; i < es.length; i++)
+                {
+                    es[i].href = "https://twitter.com/intent/tweet?hashtags=figurella&url=" +
+                     document.location.href;
+                }
+
+            </script>
+
+        </div>
+
+        <!-- /compartir en redes sociales -->
+</div>
+
+<section style="height: 200px;">
+    
+</section>
+
+{% include '../home/footer.html' %}
+{% end %}

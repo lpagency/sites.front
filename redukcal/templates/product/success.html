@@ -1,0 +1,62 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block header %}
+    {% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/bootstrap.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/font-awesome-4.4.0/css/font-awesome.css">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,600,400,700' rel='stylesheet' type='text/css'>
+{% end %}
+{% block scripts %}
+    <script type="text/javascript" src="static/js/jquery.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.js"></script>
+{% end %}
+{% block body %}
+<body>  
+
+<!-- Start Quieries -->
+    <div class="bg-orange">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                <h3 class="text-white text">Proceso de compra Paso 2 de 2</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- End Quieries -->
+
+    <div class="space100"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 padbottom100">
+                <center>
+                    <div class="box-5">
+                        <h3>¡¡¡Felicitaciones!!!</h3>
+                    </div>
+                    <div class="box">
+                        <p>Tu compra se ha procesado con éxito.
+                            Recibirás un correo con todos los datos
+                            de tu compra y en unos días más
+                            podrás disfrutar de tus productos</p>
+
+
+                        <h4>Si tienes cualquier problema o duda
+                        <br>
+                                contáctanos al teléfono: 2-2341298
+                                <br>
+                                o a soporte@redukcal.cl</h4>
+                    </div>
+                </center>
+            </div>
+        </div>
+    </div>
+
+</body>
+{% include 'footer.html' %}
+{% end %}

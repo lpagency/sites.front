@@ -1,0 +1,101 @@
+
+<nav class="navbar header" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <img class="hidden-lg hidden-md hidden-sm visible-xs bag_movil " src="https://84static.loadingplay.com/static/images/9a6a4069607bd82879c8e1e400b0ba63_bolsita.png" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" data-toggle="modal" data-target="#myModal">
+        <!-- LOGO -->
+        <div class="hidden-lg hidden-md hidden-sm visible-xs">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+                {% end %}
+                <a href="{{site_base }}/">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
+                </a>
+        </div>
+        <!-- /LOGO -->
+        <button type="button" class="navbar-toggle nav-menu" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar icon-movil"></span>
+            <span class="icon-bar icon-movil"></span>
+            <span class="icon-bar icon-movil"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+            
+        </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse navbar-ex1-collapse pad0">
+        <ul class="nav nav-stacked">
+            <li role="presentation" class="hidden-xs">
+            <!-- LOGO -->
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_logo' }}" href="#">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
+                </a>
+            <!-- /LOGO -->
+            </li >
+            <a class="hidden-xs return" href="javascript:history.back()"> ← Volver</a>
+            <input  class="hidden-xs hidden-md hidden-sm hidden-lg pull-right" id="activar" name="activar" type="checkbox"> 
+            <label class="inputlabel hidden-xs pull-right menu_desplegable" for="activar"> + Menu</label>
+            <div class="desplegable">
+                <li class="parent" role="presentation">
+                    <a class="list-menu cubreplumones" href="{{ site_base}}/cubreplumones?tag=cubreplumones">CUBREPLUMONES</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu sabanas" href="{{ site_base }}/sabanas?tag=sabanas">SÁBANAS</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu faldon" href="{{site_base }}/faldones?tag=faldones">FALDONES</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu cojines" href="{{site_base }}/cojines?tag=cojines">COJINES</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu mantas" href="{{site_base }}/mantas?tag=mantas">MANTAS</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu cortinas_de_bano" href="{{site_base }}/cortinas_de_bano?tag=cortinas%20de%20bano">CORTINAS DE BAÑO</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu cubrecama" href="{{ site_base}}/cubrecama?tag=cubrecama">CUBRECAMAS</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu accesorios" href="{{site_base }}/accesorios?tag=accesorios">ACCESORIOS</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu individuales" href="{{site_base }}/individuales?tag=individuales">INDIVIDUALES</a>
+                </li>
+                <!-- <li class="parent" role="presentation">
+                    <a class="list-menu proyectos" href="{{site_base }}/proyectos?tag=proyectos">PROYECTOS</a>
+                </li> -->
+                <li class="parent" role="presentation">
+                    <a class="list-menu toallas_de_visita" href="{{ site_base}}/toallas_de_visita?tag=toallas%20de%20visita">TOALLAs DE VISITA</a>
+                </li>
+                <li class="parent" role="presentation">
+                    <a class="list-menu contacto" href="{{ site_base}}/contact">CONTACTO</a>
+                </li>
+                {% if is_admin %}
+                   <!-- FANCYBOX -->
+                    <li class="parent" role="presentation">
+                        <a class="list-menu fancybox fancybox.iframe img_lista" href="{{site_base }}/edit_image_home">Imagenes</a>
+                    </li>
+                {% end %}
+                
+                
+            </div>
+        </ul>
+    </div><!-- /.navbar-collapse -->
+</nav>

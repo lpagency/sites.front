@@ -1,0 +1,342 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/redukcal2.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/datepicker.conf.js"></script>
+<script type="text/javascript">
+$(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.inicio').addClass("active");
+
+    // $("#OpenAlert").click();
+
+    var app_public = $.environmentVar(4,4,4);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/'
+    );
+
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com/',
+        'http://lpcheckout.ondev.today/',
+        'https://pay.loadingplay.com/'
+    );
+
+    $(document).ecommerce({
+        'app_public' : app_public,
+        'animation' : 'simple',
+        'base_url' : base_url,
+        'checkout_url' : checkout_url,
+        'products_per_page' : 9
+    });
+
+    // var base_url = $.environmentVar(
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/',
+    //     'https://apibodegas.loadingplay.com/');
+    // var checkout_url = $.environmentVar(
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com',
+    //     'https://checkout.loadingplay.com');
+    // var app_public = $.environmentVar(4, 4, 4);
+    // var config = {
+    //     'app_public': app_public,
+    //     'base_url': base_url,
+    //     'maxProducts': 6,
+    //     'templateOrigin': '#product_template',
+    //     'ignore_stock': true,
+    //     'container': '.product-list',
+    //     'onLoad': function()
+    //     {
+    //         // $('.ellipsis').ellipsis();
+    //         // $(".ellipsis").dotdotdot();
+    //     }
+    // };
+
+    // $(document).ecommerce(config);
+
+    // destacado categoria 2
+    // config.tag = 'destacado_categoria2';
+    // $('.product-list2').ecommerce('product_box', config);
+});
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function() 
+{
+   $('.carousel').carousel({
+  interval: 1000 * 8
+});
+
+  });
+</script>
+
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- *contenido* -->
+
+<section> 
+     <div class="mobile-ho" style="background:url('{{ read_image(site.name + '_banner_home') }}');  height:450px; background-size:cover; filter: grayscale(0%) brightness(65%); margin-top: -20px;
+    -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+    margin-bottom: -120px; " data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+          <div class="image-upload part1 lapiz visible-movil">
+              <label for="img_banner_home">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home" name="image" id="img_banner_home" >
+          </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_home" src="{{ read_image(site.name + '_banner_home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home',500) }}'" class="banner_home hidden" alt="item">     
+       </div>
+
+       <div class="container">
+          <div class="col-md-8 col-sm-8">
+              <div class="text-center titulo-1 {{editabletext}}" text-id="{{ site.name + '_til_hom' }}"> {{ read_text(site.name +  '_til_hom') }}</div>
+              <div class="text-center mini-list {{editabletext}}" text-id="{{ site.name + '_tip_1' }}"> {{ read_text(site.name +  '_tip_1') }}</div>
+              <div class="text-center mini-list {{editabletext}}" text-id="{{ site.name + '_tip_2' }}"> {{ read_text(site.name +  '_tip_2') }}</div>
+              <div class="text-center mini-list {{editabletext}}" text-id="{{ site.name + '_tip_3' }}"> {{ read_text(site.name +  '_tip_3') }}</div>
+          </div>
+        </div>
+</section>
+
+<section class="color">
+  <div class="container">
+  <div align="center">
+    <div class="col-md-6 col-sm-6">
+       <div class="box-whi">
+         <div class="note-1"> METODO RDK</div>
+         <div class="inf-1 {{editabletext}}" text-id="{{ site.name + '_tip_4' }}"> {{ read_text(site.name +  '_tip_4') }}</div> 
+         <hr class="dos">
+          <div class="inf-2 {{editabletext}}" text-id="{{ site.name + '_tip_5' }}"> {{ read_text(site.name +  '_tip_5') }}</div> 
+          <a href="{{site_base}}/metodo_RDK">
+          <button type="button" class="btn btn-default hom">Leer más</button>
+          </a>
+       </div>
+    </div>
+     <div class="col-md-6 col-sm-6">
+           {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_box_one">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_box_one" name="image" id="img_box_one" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_box_one" src="{{ read_image(site.name + '_box_one', 1) }}" onload="this.src='{{ read_image(site.name + '_box_one',500) }}'" class="box-one" alt="item" />
+      <!--  <img class="box-one" src="https://7static.loadingplay.com/static/images/b1c863a0c9663a240038baa06c20b8f1_superbn-blanco-60x60.png">
+    </div> -->
+  </div>
+   <div align="center">
+    <div class="col-md-6 col-sm-6">
+       <div class="box-whi">
+         <div class="note-2"> PLANES</div>
+         <div class="inf-3 {{editabletext}}" text-id="{{ site.name + '_tip_6' }}"> {{ read_text(site.name +  '_tip_6') }}</div> 
+         <hr class="tres">
+          <div class="inf-4 {{editabletext}}" text-id="{{ site.name + '_tip_7' }}"> {{ read_text(site.name +  '_tip_7') }}</div> 
+          <hr class="tres">
+          <a href="{{site_base}}/planes">
+          <button type="button" class="btn btn-danger">AQUÍ</button>
+          </a>
+          <div class="inf-5 {{editabletext}}" text-id="{{ site.name + '_tip_8' }}"> {{ read_text(site.name +  '_tip_8') }}</div> 
+       </div>
+       </div>
+    </div>
+     <div class="col-md-6 col-sm-6">
+      <div class="white-box">
+        <div class="note-3">PLANES</div>
+        <div class="text-center text-1">¿No sabes cuánto quieres perder?</div>
+        <div class="text-center text-2">¡Te ayudamos!</div>
+        <hr>
+        <ul>
+          <div class="text-center text-3">Ingresa tus datos y te orientaremos </div>
+          <li class="fsize18"><div class=" gender female">Mujer</div></li>
+          <li class="fsize18"><div class=" gender male">Hombre</div></li>
+        </ul>
+        <div class="col-md-12 marginL form-index">
+          <form method="get" id="calculate" >
+            <div class="form-group in">
+              <input type="number" class="form-control" id="weight" name="weight" placeholder="Ingresa tu peso (kg, por ejemplo 55.4)" min="0" step="0.01">
+            </div>
+            <div class="form-group in">
+              <input type="number" class="form-control" id="height" name="height" placeholder="Ingresa tu altura (mts, por ejemplo 1.70)" step="0.01" min="0" max="3">
+            </div>
+            <div class="form-group in">
+              <input type="text" class="form-control age" id="datepicker" name="age" placeholder="Fecha de nacimiento dd/mm/aaaa">
+<!-- <select class="form-control" id="age">
+<option value="0">Seleccione rango de edad</option>
+<option value="1">Menor de 40 años</option>
+<option value="2">Mayor de 40 años </option>
+</select> -->
+<!-- <input type="text" class="form-control" id="age" placeholder="Edad"> -->
+</div>
+
+  <div align="center">
+  <button type="submit" class="btn btn-warning btn-calculate  space20">Calcular</button>
+  </div>
+</form>
+</div>
+</div>
+</section>
+
+<!-- Start slider -->
+<div class="space50">
+
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <!-- <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    </ol> -->
+
+    <!-- Wrapper for slides -->
+    <div class="container">
+     <div class="note-4"> TESTIMONIOS </div>
+      <div class="carousel-inner" role="listbox">
+        <div class="item active">
+          <div class="row">
+            <div class="col-md-5 center">
+                     {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_slider_one">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_slider_one" name="image" id="img_slider_one" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_slider_one" src="{{ read_image(site.name + '_slider_one', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_one',500) }}'" class="image-slider" alt="item" />
+             <!--  <img src="https://7static.loadingplay.com/static/images/2cec37b847f7b7367e634e23b57c130a_clt-01.png"  class="image-slider" alt="..." height="220" width="220"> -->
+            </div>
+            <div class="col-md-6">
+              <div class="intro-1 {{editabletext}}" text-id="{{ site.name + '_sli_1' }}"> {{ read_text(site.name +  '_sli_1') }} </div>
+              <div class="intro-2 {{editabletext}}" text-id="{{ site.name + '_sli_2' }}"> {{ read_text(site.name +  '_sli_2') }} </div>
+              <div class="space30 back-gro {{editabletext}}" text-id="{{ site.name + '_sli_3' }}"> {{ read_text(site.name +  '_sli_3') }} </div>
+<!--               <a href="#!" class="orange-btn plan" kilo="8" age="2">VER PLAN UTILIZADO</a> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-md-5 center">
+                      {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_slider_two">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_slider_two" name="image" id="img_slider_two" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_slider_two" src="{{ read_image(site.name + '_slider_two', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_two',500) }}'" class="image-slider" alt="item" />
+             <!--  <img src="https://7static.loadingplay.com/static/images/2cec37b847f7b7367e634e23b57c130a_clt-01.png"  class="image-slider" alt="..." height="220" width="220"> -->
+            </div>
+            <div class="col-md-6">
+              <div class="intro-1 {{editabletext}}" text-id="{{ site.name + '_sli_4' }}"> {{ read_text(site.name +  '_sli_4') }} </div>
+              <div class="intro-2 {{editabletext}}" text-id="{{ site.name + '_sli_5' }}"> {{ read_text(site.name +  '_sli_5') }}</div>
+              <div class="space50 back-gro {{editabletext}}" text-id="{{ site.name + '_sli_6' }}"> {{ read_text(site.name +  '_sli_6') }} </div>
+<!--               <a href="#!" class="orange-btn plan" kilo="12" age="2"> VER PLAN UTILIZADO</a> -->
+            </div>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="row">
+            <div class="col-md-5">
+                {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_slider_tree">
+                    <img class="change-image pencil" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_slider_tree" name="image" id="img_slider_tree" >
+            </div>
+            {% end %}
+            <img id="{{ site.name }}_slider_tree" src="{{ read_image(site.name + '_slider_tree', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_tree',500) }}'" class="image-slider" alt="item" />
+          
+            </div>
+            <div class="col-md-6">
+              <div class="intro-1 {{editabletext}}" text-id="{{ site.name + '_sli_7' }}"> {{ read_text(site.name +  '_sli_7') }}</div>
+              <div class="intro-2 {{editabletext}}" text-id="{{ site.name + '_sli_15' }}"> {{ read_text(site.name +  '_sli_15') }}</div>
+              <div class="space50 back-gro {{editabletext}}" text-id="{{ site.name + '_sli_16' }}"> {{ read_text(site.name +  '_sli_16') }}</div>
+         <!--  <a href="#!" class="orange-btn plan" kilo="12" age="2"> VER PLAN UTILIZADO</a> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control hidden-xs" href="#carousel-example-generic" role="button" data-slide="prev">
+    <!-- <i class="pe-7s-left-arrow"></i> --> <i class="fa fa-arrow-circle-left" aria-hidden="true"></i>
+    </a>
+    <a class="right carousel-control hidden-xs" href="#carousel-example-generic" role="button" data-slide="next">
+     <!--  <i class="pe-7s-right-arrow"></i> --> <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+    </a>
+  </div>
+  <!-- End slider -->
+
+<!-- *************Formulario******** -->
+<!-- 
+  <section class="formulario-gris">
+     <div class="col-md-12">
+       <div class="press text-center {{editabletext}}" text-id="{{ site.name + '_for_1' }}"> {{ read_text(site.name +  '_for_1') }}</div>
+     </div>
+
+
+   
+    <form class="form-inline" role="form">
+        <div class="form-group for-mov">
+          <label for="name" class="dif-col">NOMBRE</label>
+          <input type="name" class="form-control other" id="name" placeholder="Escribe tu nombre">
+        </div>
+    </form>
+   
+    <form class="form-inline" role="form">
+        <div class="form-group for-mov">
+          <label for="email" class="dif-col">EMAIL</label>
+          <input type="email" class="form-control other-3" id="email" placeholder="Escribe tu email">
+        </div>
+         <div class="form-group es for-mov">
+          <label for="number" class="dif-col">TELEFONO</label>
+          <input type="number" class="form-control other" id="number" placeholder="Escribe tu telefono">
+        </div>
+         <button type="enviar" class="btn btn-primary">Enviar</button> 
+    </form>
+
+    <form class="form-inline" role="form">
+        <div class="form-group for-mov">
+          <label for="text" class="dif-col">CONSULTA</label>
+          <input type="text" class="form-control other-2" id="text" placeholder="Escribe tu consulta">
+        </div>
+    </form>
+
+
+  </section> -->
+ 
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

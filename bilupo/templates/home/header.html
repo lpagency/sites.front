@@ -1,0 +1,283 @@
+<style type="text/css">
+    ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.22);
+}
+a:focus{
+  outline: none;
+  outline-offset: -2px;
+}
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: inline-block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+ul.topnav li a:hover {color: #e53623;}
+
+ul.topnav li.icon {display: none;}
+
+@media only screen and (max-width:1200px) {
+  .header-cart{
+    right: 6% !important;
+  }
+  .header-cantidad{
+    font-size: 31px !important;
+  }
+  ul.topnav li:not(:first-child) {
+    display: none;
+  }
+  ul.topnav li.icon {
+    float: left !important;
+    display: inline-block;
+  }
+  ul.topnav{
+    background: transparent;
+    box-shadow: none !important;
+  }
+  [id*="barra"]{
+    text-align: center !important;
+    font-size: 25px !important;
+  }
+  [class*="barras"]{
+    color: white !important;
+  }
+  ul.topnav.responsive {
+    position: fixed;
+    background-color: #94b7bb;
+    width:100%;
+    height: 100%;
+  }
+  ul.topnav.responsive li.icon {
+    right: 0;
+    top: 0;
+  }
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+  ul.topnav.responsive li a {
+    display: block;
+  }
+    .imagenBiluppo2{
+      margin-left: 40%;
+    }
+    [class*="inicio"]{
+      margin-top: 20% !important;
+    }
+    [class*="quantity"]{
+      font-size: 25px !important;
+
+    }
+
+    [class*="carro"]{
+    /*  right: 65px !important;
+      top: 20px !important;*/
+      content: url("https://84static.loadingplay.com/static/images/b059a570c9fb16870565db099142e0b0_canasto-rojo.png") !important;
+      margin-top: 20px;
+    }
+    [class*="numero"]{
+      top: 27px !important;
+      color: #e53623 !important;
+    }
+
+/*    [class*="carro"]{
+      right: 65px !important;
+      top: 20px !important;
+      content: url("https://84static.loadingplay.com/static/images/b059a570c9fb16870565db099142e0b0_canasto-rojo.png") !important;
+    }*/
+    [class*="numero"]{
+      top: 27px !important;
+      color: #e53623 !important;
+    }
+
+}
+
+
+@media only screen and (max-width: 991px){
+[class*="carro"] {
+    content: url(https://84static.loadingplay.com/static/images/b059a570c9fb16870565db099142e0b0_canasto-rojo.png) !important;
+    margin-top: 13px;
+    margin-right: 2%;
+        top: 6% !important;
+
+}
+
+}
+
+
+@media only screen and (max-width: 568px){
+  .imagenBiluppo2{
+    margin-left: 35% !important;
+  }
+  .iconoMenu{
+    font-size: 25px !important;
+  }
+  .carro{
+    top: 28px !important;
+  }
+}
+
+@media only screen and  (max-width: 480px){
+  [class*="carro"] {
+    content: url(https://84static.loadingplay.com/static/images/b059a570c9fb16870565db099142e0b0_canasto-rojo.png) !important;
+    margin-top: 1px;
+    margin-right: 9%;
+}
+
+}
+
+@media only screen and (max-width: 375px){
+  .imagenBiluppo2{
+    margin-left: 30% !important;
+    width: 20% !important;
+  }
+  
+  #barra{
+    font-size: 25px !important;
+  }
+  ul.topnav li.icon {
+    margin-left: -13%;
+  }
+  .carro{
+    top: 19px !important;
+    right: 0px !important;
+  }
+  .numero{
+    top: 18px !important;
+    right: 18px !important;
+  }
+}
+#barra{
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-align: left;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased; 
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#barra2:hover{
+    color: white;
+}
+.barras{
+  color: #9FBFC2;
+}
+.redondo:hover{
+    border-radius: 70%;
+    width: 16px;
+    height: 36px;
+    padding: 20px;
+    background: #e53623;
+    text-align: center;
+    color: white !important;
+}
+.redondo2:hover{
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    background: #94B7BB;
+    text-align: center;
+    text-decoration: white;
+    color: white !important;
+}
+#br:hover{
+    color: white ;
+}
+#br2:hover{
+    color: #e53623;
+}
+.font-menu.activado {
+color:#e53623;
+background: transparent;
+}
+.imagenBiluppo2{
+  box-shadow: 5px 5px 6px rgba(0, 0, 0, 0.22);
+  position: absolute; 
+  z-index: 1;
+}
+.numero{
+  position: absolute;
+  font-size: 13px !important;
+  right: 8%; 
+  top: 35px;
+}
+.carro:hover{
+  content: url("https://7static.loadingplay.com/static/images/0fddcfd59e5bef8363af86999e73186e_carro-blanco_(1).png");
+}
+.instaImg:hover{
+  content: url("https://7static.loadingplay.com/static/images/6be89f92087c7ce0f162c1798bce9aed_insta-blanco.png");
+}
+.faceImg:hover{
+  content: url("https://84static.loadingplay.com/static/images/a2512973270d023daa435f468bb49bdd_fb-blanco.png");
+}
+</style>
+<header class="font-menu" style="
+  width: 100%;
+  position: fixed;
+  z-index: 100;">
+        <ul class="topnav" id="myTopnav" >
+        <div class="container">
+        <div class="imagen" style="max-width: 1280px; margin-left: auto; margin-right: auto;">
+        <a class="navbar-brand" href="#" style="padding-top: 0%;"><img class="imagenBiluppo2" src="https://84static.loadingplay.com/static/images/3e09d223c19826659c5c9d79deb4c9ba_Biluppo_PNGs_Web_7-13.png"></a>
+        </div>
+               <div class="hidden-xs hidden-sm hidden-md" style="position: relative">
+                <a href="https://www.instagram.com/biluppo/?hl=en" class="redondo2" style="position: absolute;margin-top: 2.5%;padding-top: 2%;padding-left: 2%;color: #808080;float: right;margin-right: 1.4%;right: 0%;">
+                    <span id="br" style="font-size: large; position: absolute; right: 7.4%; top: 35px"><img src="https://84static.loadingplay.com/static/images/b0fb3f25066774448748a4453a017b97_insta-gris.png" class="instaImg" style="position: absolute;top: -37px;right: -4px;"></span>
+                </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="https://www.facebook.com/biluppo/" class="redondo2" style="position: absolute;margin-top: 2.5%;padding-top: 2%;padding-left: 2%;color: #808080;float: right;right: 4.3%;">
+                    <span id="br" style="font-size: large; position: absolute; right: 10%; top: 35px"><img src="https://84static.loadingplay.com/static/images/4fa07730e1206f393aa6a4b9036f26af_fb-gris.png" class="faceImg" style="position: absolute;top: -37px;right: -5px;"></span>
+                </a>
+                 <a href="#" data-toggle="modal" class="redondo hidden-md hidden-sm hidden-xs" data-target="#myModal" style="padding:3%;color: #808080; float: right; margin-top:0.5%; margin-right: 6.3%">
+                 <img src="https://84static.loadingplay.com/static/images/10976f3e84da85bfdd1da026cd9c09a5_canasto-gris-_(1).png" class="carro" style="position: absolute;top: 3px;right: 6%;z-index: 1">
+                <span class="units-total shopping-cart-animation numero" id="br" ></span></a>
+                </div>&nbsp;&nbsp;&nbsp;&nbsp;
+                <li class="icon">
+                  <a href="javascript:void(0);" class="iconoMenu" style="font-size:45px; color: #e53623; float: left;" onclick="myFunction()">☰</a>
+                </li>
+                <li style="margin-left: 35%"><a id="barra" class="font-menu home barras hidden-xs hidden-sm hidden-md" href="{{site_base}}">HOME</a>
+                <li><a id="barra" class="font-menu biluppo2 barras inicio" href="{{site_base}}/quienessomos">BILUPPO</a></li>
+                <li><a id="barra" class="font-menu shop barras" href="{{site_base}}/listado_productos">SHOP</a></li>
+                <li><a id="barra" class="font-menu estimulacion barras" href="{{site_base}}/estimulacionTemprana">ESTIMULACION<br> TEMPRANA</a></li>
+                <li><a id="barra" class="font-menu articulos barras" href="{{site_base}}/articulos">TIPS</a></li>
+                <li><a id="barra" class="font-menu contacto barras" href="{{site_base}}/contacto">CONTACTO</a></li>
+                <div class="hidden-lg visible-md visible-sm visible-xs">
+                  <a href="https://www.instagram.com/biluppo/?hl=en" style="padding:1%;color: #808080; float: right; margin-right: 45%">
+                    <span class="fa-instagram fa" id="br2" style="font-size: large; position: relative;"></span>
+                  </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <a href="https://www.facebook.com/biluppo/" style="padding:1%; color: #808080; float: right;">
+                    <span class="fa-facebook fa" id="br2" style="font-size: large; position: relative;"></span>
+                  </a>
+                 </div>
+        <a href="#" data-toggle="modal" data-target="#myModal" class="hidden-lg" style="padding:1%;color: white; float: right; top: 5px">
+        <img src="https://84static.loadingplay.com/static/images/fbaebf78c9fecc6b569e1a2325d9c180_canasto-gis-claro.png" class="carro header-cart" style="position: absolute;right: 5%;top: 0%; width: 5%">
+                    <span class="units-total shopping-cart-animation numero" id="br2" style="font-size: large; position: absolute; top: 15px; right: 40px"></span>
+                  </a>&nbsp;&nbsp;
+
+        </ul>
+        </div>
+       </header>
+<script type="text/template" id="shopping-cart-units-total" >
+    <span class="quantity header-cantidad" style="font-family: arial; font-size: 13px"><b>{{! units_total }}</b></span>
+</script> 
+
+<script>
+function myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x.className === "topnav") {
+        x.className += " responsive";
+    } else {
+        x.className = "topnav";
+    }
+}
+</script>

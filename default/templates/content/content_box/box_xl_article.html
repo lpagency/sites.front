@@ -1,0 +1,24 @@
+<div {% if box_counter != 0 %}data-sr{% end %} class="col-sm-12 sobre-botones caja-xl ">
+    <div class="cont-modifi" style="background:url('{{ cnt["thumb_1"] }}')" >
+        {% include box_menu.html %}
+        <a href="{{ site_base }}/article/detail/{{ friendlyURL(cnt["title"]) }}/{{ cnt["id"] }}" class="cont-boxes">
+            <div >
+                <div class="box-art">
+                    <div class="vertical-center-cont"> 
+                        <!-- estas clases se pueden usar para justificar el texto a la derecha o ala izquierda -->
+                        <div class="left-just">
+                            <h2>{{ cnt["title"] }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <img src="{{ cnt["thumb_1"] }}" thumb="{{ cnt["thumb_1"] }}" data-original="{{ cnt["thumb_500"] }}" offsetx="{{ cnt["offset_x"] }}" offsety="{{ cnt["offset_y"] }}" class="lazy " alt="item"/>
+            </div>
+        </a>
+    </div>
+    <span class="btn-modificar-cont btn-mod-cont">
+        <i class="icon-pencil"></i>
+    </span>
+    <span class="btn-modificar-cont btn-set-cont" content-id="{{ cnt["id"] }}" box-id="{{ box_index }}" >
+        <i class="icon-pushpin"></i>
+    </span>
+</div>

@@ -1,0 +1,199 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(14,43,14);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+            }
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+    });
+
+</script>
+
+
+
+<script type="text/template" id="product_detail">
+  <section>
+      <div style="position: relative;">
+         <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-detalle" id="img_detail">
+        <div align="center">
+        <div class="lateral l-movil" style="position: relative; margin-top: -330px; float: right; left: -29px;">
+        <div class="reser">  
+        <div class="paxer-widget-calendar calendar-vertical" style="height: 272px; width: 209px;">  
+
+       <iframe id="paxer-iframe-calendar" src="https://paxer.com/reservacion/bookingengine/calendar/hot_id/180/chain_active/false/lang/es/secure/false/widgetUrl/http%3A%2F%2Fhotelcasadecampo.cl%2F" scrolling="no" style=" height: 458px; visibility: visible; border-color: transparent; width: 100%;"></iframe>
+       </div>
+       </div>
+        </div>
+        </div>
+      <div class="container">
+          <div align="center">
+             <h1 class="name name_prod_detail ellipsis multiline" class="line" href="#">{{! name }}</h1>
+              <h3 class="descr_prod_detail ellipsis multiline"> 
+             {{! description }}</h3>
+          </div>
+           <div class="col-xs-12 col-md-4 col-sm-6 image_little">
+                        <div align="center">
+                          <img class="{{! images[0]['thumb_500']|hide_if_empty}} col-xs-3 little img_prod_little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />             
+                            <!-- *************** -->
+                            <!-- <img class="{{! images[1][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" /> -->
+                            <!-- *************** -->
+                            <img class="{{! images[2]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[2]['thumb_500']}}" />
+                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+                            <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" />
+                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" />
+                             </div>
+                        </div>
+       </div>
+     </div>
+    </section>
+
+
+        <div class="clearfix-fun-2"></div>
+        <div class="container">
+
+        </div>
+    </div>
+
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+
+<div class="container-fluid">
+    
+    <div class="container  product-page"></div>
+
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+   <div align="center">
+      <div class="fin text-center {{editabletext}}" text-id="{{ site.name + '_ple' }}"> {{ read_text(site.name +  '_ple') }}</div>
+      <hr class="len">
+      <div class="fin-2 text-center {{editabletext}}" text-id="{{ site.name + '_ple_2' }}"> {{ read_text(site.name +  '_ple_2') }}</div>
+   </div>
+
+<!-- ***productos relacionados** -->
+<!-- <hr class="detail">
+<div class="container dano">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="space80">
+         <div class="productlist dano">
+                <article>
+                    <header>
+                        <h1 class="h1-art especial" >Contenido Relacionado</h1>
+                    </header>
+                </article>
+
+                <div class="row cont-rel">
+                    {{ getArticleList() }}
+                </div>
+
+         </div>
+    </div>
+ </div>
+
+<div class="space80"></div>
+
+<div class="container-fluid dano">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-relac text-left"><strong class="editabletext">Contenido relacionado</strong></h1>
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+       
+
+
+<!-- 
+<div align="center">
+    <h1>fdjfidjfidfidjfidifjdi</h1>
+</div> -->
+
+
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,342 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block javascript %}
+<script src="http://cdnjs.cloudflare.com/ajax/libs/select2/4.0.0/js/select2.min.js"></script>
+ 
+<script src="assets/js/bootstrap.touchspin.js"></script>
+ 
+<script src="assets/js/script.js"></script>
+ 
+<script src="assets/js/wow.min.js"></script>
+<script>
+    new WOW().init();
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+(function(){try{var s,a,i,j,r,c,l=document.getElementsByTagName("a"),t=document.createElement("textarea");for(i=0;l.length-i;i++){try{a=l[i].getAttribute("href");if(a&&a.indexOf("/cdn-cgi/l/email-protection") > -1  && (a.length > 28)){s='';j=27+ 1 + a.indexOf("/cdn-cgi/l/email-protection");if (a.length > j) {r=parseInt(a.substr(j,2),16);for(j+=2;a.length>j&&a.substr(j,1)!='X';j+=2){c=parseInt(a.substr(j,2),16)^r;s+=String.fromCharCode(c);}j+=1;s+=a.substr(j,a.length-j);}t.innerHTML=s.replace(/</g,"&lt;").replace(/>/g,"&gt;");l[i].setAttribute("href","mailto:"+t.value);}}catch(e){}}}catch(e){}})();
+/* ]]> */
+</script>
+
+{% end %} 
+
+ {% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<div style="position:relative">
+        {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_pall">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_pall" name="image" id="img_about_pall" >
+                </div>
+                {% end %}
+    <div class="parallax-section parallax-fx about-3 parallaxOffset no-padding" style="background-image: url({{ read_image(site.name + '_about_pall', 500) }}); ">
+        <div class="w100 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="parallax-content clearfix  wow fadeInUp" data-wow-duration=".8s" data-wow-delay="0">
+                            <h2 class="intro-heading {{editabletext}}"  text-id="{{ site.name + '_texto-banner' }}">  {{ read_text(site.name + '_texto-banner') }}
+                                <br>  </h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-container ">
+        <div class="row innerPage">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+                <div class="about-content wow fadeIn" data-wow-duration=".8s" data-wow-delay="0">
+                    <p class="lead-2 text-center {{editabletext}}"  text-id="{{ site.name + '_texto-abo' }}">  {{ read_text(site.name + '_texto-abo') }} </p>
+                </div>
+                <div style="clear:both;">
+                    <hr class="hr40">
+                </div>
+                <div class="row has-equal-height-child">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+                        <div class="hw100 display-table">
+                            <div class="hw100 display-table-cell">
+                                <div class="content-inner wow fadeInRight" data-wow-duration=".8s" data-wow-delay="0">
+                                    <div class="about-content-text {{editabletext}}"  text-id="{{ site.name + '_texto-abo2' }}">  {{ read_text(site.name + '_texto-abo2') }}
+                                        <h3>
+                                           <br> 
+                                       </h3>
+                                       <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-abo3' }}">  {{ read_text(site.name + '_texto-abo3') }}
+
+                                       </p>
+                                   </div>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+<div class="content-inner wow fadeInLeft" data-wow-duration=".8s" data-wow-delay="0">
+             {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about" name="image" id="img_about" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about" src="{{ read_image(site.name + '_about', 1) }}" onload="this.src='{{ read_image(site.name + '_about', 200) }}'" class="img-responsive abt-img" alt="item" style="height: 100%;">
+                </a>
+
+<!-- <img src="https://7static.loadingplay.com/static/images/62e6731e17109f101cc2d3f4abddeba5_2.png" class="img-responsive abt-img" alt="img">
+ --></div>
+</div>
+</div>
+ 
+<div style="clear:both;">
+<hr class="hr40">
+</div>
+<div class="row has-equal-height-child">
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+<div class="content-inner wow fadeInLeft" data-wow-duration=".8s" data-wow-delay="0">
+           {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_2" name="image" id="img_about_2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_2" src="{{ read_image(site.name + '_about_2', 1) }}" onload="this.src='{{ read_image(site.name + '_about_2', 200) }}'" class="img-responsive abt-img" alt="item" style="height: 100%;">
+                </a>
+
+<!-- <img src="https://84static.loadingplay.com/static/images/8f13d843951bc953c8b618787088993b_3.png" class="img-responsive abt-img" alt="img"> -->
+</div>
+</div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+    <div class="hw100 display-table">
+        <div class="hw100 display-table-cell">
+            <div class="content-inner wow fadeInRight" data-wow-duration=".8s" data-wow-delay="0">
+                <div class="about-content-text {{editabletext}}"  text-id="{{ site.name + '_texto-abo4' }}">  {{ read_text(site.name + '_texto-abo4') }}
+                    <h3>
+                         <br> 
+                    </h3>
+                    <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-abo5' }}">  {{ read_text(site.name + '_texto-abo5') }}
+                       
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+ 
+<div style="clear:both;">
+    <hr class="hr40">
+</div>
+<div class="row has-equal-height-child">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+        <div class="hw100 display-table">
+            <div class="hw100 display-table-cell">
+                <div class="content-inner  wow fadeInRight" data-wow-duration=".8s" data-wow-delay="0">
+                    <div class="about-content-text {{editabletext}}"  text-id="{{ site.name + '_texto-abo6' }}">  {{ read_text(site.name + '_texto-abo6') }}
+                        <h3>
+                           <br> 
+                        </h3>
+                        <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-abo7' }}">  {{ read_text(site.name + '_texto-abo7') }}
+                            
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+<div class="content-inner wow fadeInLeft" data-wow-duration=".8s" data-wow-delay="0">
+            {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_3" name="image" id="img_about_3" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_3" src="{{ read_image(site.name + '_about_3', 1) }}" onload="this.src='{{ read_image(site.name + '_about_3', 200) }}'" class="img-responsive abt-img" alt="item" style="height: 100%;">
+                </a>
+
+<!-- <img src="https://7static.loadingplay.com/static/images/3f377f7b722d3ba7ce47e745be2516bd_7.png" class="img-responsive abt-img" alt="img"> -->
+         </div>
+     </div>
+</div>
+ 
+<div style="clear:both;">
+    <hr class="hr40">
+</div>
+<div class="row has-equal-height-child">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+        <div class="content-inner  wow fadeInLeft" data-wow-duration=".8s" data-wow-delay="0">
+            {% if is_admin %}
+            <div class="image-upload">
+                <label for="img_about_4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_about_4" name="image" id="img_about_4" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_4" src="{{ read_image(site.name + '_about_4', 1) }}" onload="this.src='{{ read_image(site.name + '_about_4', 200) }}'" class="img-responsive abt-img" alt="item" style="height: 100%;">
+            </a>
+            <!-- <img src="https://7static.loadingplay.com/static/images/baeff9fbf63744ea0445d73a1e7104ec_4.png" class="img-responsive abt-img" alt="img"> -->
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 is-equal">
+        <div class="hw100 display-table">
+            <div class="hw100 display-table-cell">
+                <div class="content-inner  wow fadeInRight" data-wow-duration=".8s" data-wow-delay="0">
+                    <div class="about-content-text {{editabletext}}"  text-id="{{ site.name + '_texto-abo8' }}">  {{ read_text(site.name + '_texto-abo8') }}
+                        <h3>
+                            <br>
+                        </h3>
+                        <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-abo9' }}">  {{ read_text(site.name + '_texto-abo9') }}
+                        
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    </div>
+</div>
+ 
+<div style="clear:both"></div>
+</div>
+
+<div class="section-people white-bg">
+    <div class="container">
+        <div style="clear:both;">
+            <hr class="hr40 hide-on-gray-look">
+        </div>
+        <div class="row ">
+            <div class="col-xs-12">
+                <h2 class="text-center about-title {{editabletext}}"  text-id="{{ site.name + '_texto-abo10' }}">  {{ read_text(site.name + '_texto-abo10') }}</h2>
+<div class="row row-center preson-row">
+<div class=" preson text-center wow fadeInUp cont" data-wow-duration=".5s" data-wow-delay="0.05">
+               {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_circle">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_circle" name="image" id="img_about_circle" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_circle" src="{{ read_image(site.name + '_about_circle', 1) }}" onload="this.src='{{ read_image(site.name + '_about_circle', 200) }}'" class="img-circle img-responsive" alt="item" style="height: 100%;">
+                </a>
+<!-- <img src="https://84static.loadingplay.com/static/images/a5834bd41a3608a054b78a147be57991_p2.png" class="img-circle img-responsive" alt="img"> -->
+<div class="preson-details">
+<p class="{{editabletext}}"  text-id="{{ site.name + '_texto-pers' }}">  {{ read_text(site.name + '_texto-pers') }} <br><span></span></p>
+</div>
+</div>
+<div class=" preson text-center wow fadeInUp cont" data-wow-duration=".25s" data-wow-delay="0.07">
+             {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_circle2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_circle2" name="image" id="img_about_circle2" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_circle2" src="{{ read_image(site.name + '_about_circle2', 1) }}" onload="this.src='{{ read_image(site.name + '_about_circle2', 200) }}'" class="img-circle img-responsive" alt="item" style="height: 100%;">
+                </a>
+<!-- <img src="https://84static.loadingplay.com/static/images/8fedd644211d08ad29b3c0038e0033fa_p1.png" class="img-circle img-responsive" alt="img"> -->
+<div class="preson-details">
+<p class="{{editabletext}}"  text-id="{{ site.name + '_texto-pers2' }}">  {{ read_text(site.name + '_texto-pers2') }} <br><span></span></p>
+</div>
+</div>
+<div class=" preson text-center wow fadeInUp cont" data-wow-duration=".40s" data-wow-delay="0.09">
+              {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_circle3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_circle3" name="image" id="img_about_circle3" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_circle3" src="{{ read_image(site.name + '_about_circle3', 1) }}" onload="this.src='{{ read_image(site.name + '_about_circle3', 200) }}'" class="img-circle img-responsive" alt="item" style="height: 100%;">
+                </a>
+
+<!-- <img src="https://7static.loadingplay.com/static/images/4dd7aee8abf220ab3d6abdc7d9ed401d_p3.png" class="img-circle img-responsive" alt="img"> -->
+<div class="preson-details">
+<p class="{{editabletext}}"  text-id="{{ site.name + '_texto-pers3' }}">  {{ read_text(site.name + '_texto-pers3') }}<br><span></span></p>
+</div>
+</div>
+<div class=" preson text-center wow fadeInUp cont" data-wow-duration=".65s" data-wow-delay="0.1">
+              {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_circle4">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_circle4" name="image" id="img_about_circle4" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_about_circle4" src="{{ read_image(site.name + '_about_circle4', 1) }}" onload="this.src='{{ read_image(site.name + '_about_circle4', 200) }}'" class="img-circle img-responsive" alt="item" style="height: 100%;">
+                </a>
+<!-- <img src="https://84static.loadingplay.com/static/images/e0255aeabe3459175145e19439c27c72_p4.png" class="img-circle img-responsive" alt="img"> -->
+<div class="preson-details">
+    <p class="{{editabletext}}"  text-id="{{ site.name + '_texto-pers4' }}">  {{ read_text(site.name + '_texto-pers4') }} <br><span></span></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div style="position:relative">
+ {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_about_circle5">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_circle5" name="image" id="img_about_circle5" >
+                </div>
+                {% end %}
+<div class="section-about-bottom" style="background: url({{ read_image(site.name + '_about_circle5', 500) }}) no-repeat bottom center; background-size: 100% auto">
+    <div class="container">
+        <div class="col-lg-12">
+            <div class="about-content text-center  wow fadeInUp">
+                <h2 class="text-center about-title {{editabletext}}"  text-id="{{ site.name + '_texto-enq' }}">  {{ read_text(site.name + '_texto-enq') }} </h2>
+                <p class="lead-2 {{editabletext}}"  text-id="{{ site.name + '_texto-cus' }}">  {{ read_text(site.name + '_texto-cus') }}">
+                     <br> 
+                     </p>
+                    <a class="btn btn-center btn-lg  btn-primary" data-toggle="modal" href="#contact-us"><i class=" fa fa-envelope"></i> Send a message </a>
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+{% include '../home/footer.html' %} 
+{% end %} 
+
+ 
+

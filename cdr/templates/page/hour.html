@@ -1,0 +1,68 @@
+{% extends "servicios.base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="https://bodegas.loadingplay.com/static/bower/moment/min/moment.min.js" ></script>
+<script type="text/javascript" src="https://bodegas.loadingplay.com/static/js/lpapi.js" ></script>
+<script type="text/javascript" src="https://bodegas.loadingplay.com/static/js/product/calendarproduct.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $.fn.calendarproduct.defaults.functions.get_selected_site = function()
+        {
+            return '{{ site.name }}';
+        };
+
+        $.fn.calendarproduct.defaults.functions.get_calendar_sku = function()
+        {
+            return '{{ argument('sku') }}';
+        };
+
+        $.fn.calendarproduct.defaults.functions.get_selected_week = function()
+        {
+            return {{ argument('week') }};
+        };
+
+        $.fn.calendarproduct.defaults.functions.get_selected_day = function()
+        {
+            return {{ argument('day') }};
+        };
+
+        $('.day-selector').calendarproduct('hours');
+    });
+</script>
+<script type="text/template" class="hour-list-item">
+    <a href="{{ site_base }}/success" class="btn btn-default" >{{! description }}</a>
+</script>
+{% end %}
+
+{% block body_servicios %}
+
+{% if is_admin %}{% set editabletext = 'editabletext' %}
+{% else %}{% set editabletext = '' %}{% end %}
+
+<div class="container">
+    <div class="col-md-12" >
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_select_hour_title' }}"> {{ read_text(site.name +  '_select_hour_title') }} </div>
+
+        <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_select_hour' }}"> {{ read_text(site.name +  '_select_hour') }} </div>
+        <ul class="nav nav-pills">
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/">Inicio</a></li>
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/week?sku={{ argument('sku') }}">Semana</a></li>
+            <li role="presentation" ><a class="btn" href="{{ site_base }}/day?sku={{ argument('sku') }}&week={{ argument('week') }}">Día</a></li>
+            <li role="presentation" class="active" ><a class="btn" href="#!">Hora</a></li>
+            <li role="presentation" ><a class="btn disabled" href="#!">Fin</a></li>
+        </ul>
+
+        <div class="btn-group-vertical day-selector" role="group" aria-label="">
+        </div>
+    </div>
+</div>
+
+{% end %}

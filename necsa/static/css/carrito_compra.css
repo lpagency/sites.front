@@ -1,0 +1,303 @@
+.text-cart{
+   font-weight: 900;
+    font-size: 42px;
+    position: relative;
+    margin: 0 auto;
+    color: white;
+    bottom: 68px;
+}
+
+.carrito{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    position: relative;
+}
+
+.box-cart{
+    padding-left: 11%;
+    padding-right: 11%;
+}
+
+.text-cart2{
+    font-weight: 900;
+    font-size: 22px;
+    font-family: 'Open Sans', sans-serif !important;
+}
+
+.btn-volver{
+    position: relative;
+   /* right: 800px;*/
+    width: 218px;
+    padding: 16px;
+    /* top: 6px; */
+    font-size: 22px;
+    font-weight: 900;
+    border-radius: 1px;
+    color: #E0091F;
+    background-color: white;
+    border: 2px solid;
+    height: 63px;
+    float: left;
+}
+.btn-volver:hover{
+    background-color: #E0091F;
+    color: white;
+}
+.btn-enviar{
+    position: relative;
+    /*left: 121px;*/
+    background-color: #E0091F;
+    color: white;
+    font-weight: 700;
+    border-radius: 1px;
+    width: 218px;
+    padding: 15px;
+    font-size: 22px;
+    float: right;
+}
+
+.btn-enviar:hover{
+    background-color: white;
+    color: #E0091F;
+    border: 2px solid;
+}
+
+.sku_movil{
+    font-size: 16px;
+}
+
+.name-compra{
+    font-size: 18px;
+    /* float: left; */
+    text-align: left;
+    color: #333333;
+    height: 2.9em;
+    display: block;
+}
+
+.quantity-compra{
+    text-align: left;
+    font-size: 18px;
+}
+/*
+.total-compra{
+    display: block;
+    text-align: right;
+}*/
+.text-aling{
+    text-align: left;
+    font-size: 18px;
+}
+.price-compra{
+    text-align: left;
+    font-size: 18px;
+}
+
+.descuento {
+    text-align: left;
+    font-size: 18px;
+}
+
+.total_money{
+    font-size: 18px;
+}
+.font_weight{
+    font-weight: 400;
+    text-align: left;
+    text-transform:capitalize;
+}
+
+.aling>tbody>tr>td{
+    border: 0px !important; 
+    padding: 4px;
+}
+.aling>thead>tr>th{
+    border: 0px !important; 
+}
+.space_table>tr>td{
+    margin-top: 20px;
+    display: flex;
+}
+
+.subtotal-cart{
+    font-size: 18px;
+}
+
+.iva-cart{
+    font-size: 18px;
+}
+
+.total-cart{
+    font-size: 18px;
+}
+
+.position_add{
+    font-size: 10px;
+    width: 30px;
+}
+
+.position_remove{
+    font-size: 10px;
+    width: 30px;
+}
+
+.padding_btn{
+    padding-left: 112px;
+    padding-right: 112px;
+}
+
+.trash_btn{
+    position: relative;
+    bottom: 5px;
+}
+
+
+
+/*-----------------------Responsive-----------------------------------*/
+@media (max-width: 1199px){
+    .carrito{
+        margin-top: -34px;
+    }
+}
+
+
+@media (max-width: 837px){
+    .box-cart{
+    padding-left: 5%;
+    padding-right: 5%;
+}
+}
+
+@media (max-width: 767px){
+.btn-enviar{
+    margin: 0 auto;
+    display: block;
+    /*width: 100%;*/
+    padding-right: 0;
+    padding-left: 0;
+    float: none;
+    }
+.btn-volver{
+ margin: 0 auto;
+    display: block;
+    /*width: 100%;*/
+    padding-right: 0;
+    padding-left: 0;
+    float: none;
+    margin-bottom: 20px;
+    }
+
+/*CARRITO MOVIL MODIFICADO*/
+
+.sku_movil{
+    display: block;
+    margin-top: 54px;
+    position: relative;
+    left: -20px;
+}
+
+.img_carrito_movil{
+    width: 75px;
+    height: 90px;
+    font-family: 'Open Sans', sans-serif;
+    margin-top: 54px;
+}
+
+.name-compra{
+    font-size: 10px;
+    height: 2.1em;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    left: -20px;
+}
+.price-compra{
+    display: block;
+    position: relative;
+    left: -20px;
+    font-size: 15px;
+}
+
+.quantity-compra{
+    display: block;
+    font-weight: bold;
+}
+.text-cart2 {
+    font-size: 11px;
+    border: inherit!important;
+}
+
+.box-cart{
+    padding-left: 5%;
+    padding-right: 2%;
+}
+
+.btn-descarg{
+    right: 102px;
+    bottom: 25px;
+    top: inherit;
+}
+
+/*.btn-enviar{
+    right: 89px !important;
+    left: initial;
+    margin-bottom: 150px;
+}*/
+.text-cart {
+    bottom: 104px;
+}
+
+.text-aling{
+    font-size: 13px;
+}
+
+.margin_bottom_movil{
+    display: block;
+    position: relative;
+    bottom: 95px;
+}
+.total_money{
+    font-weight: bold;
+    text-align: right;
+    top: 75px;
+    position: relative;
+}
+
+.position_add{
+    position: relative;
+    /*bottom: 45px;*/
+    left: 17px;
+    font-size: 20px;
+    top: -77px;
+    /*width: 35px;*/
+    text-align: center;
+    padding-left: 9px;
+    -webkit-appearance: none; 
+}
+
+.position_remove{
+    position: relative;
+    /*bottom: 45px;*/
+    left: 16px;
+    font-size: 20px;
+    top: -77px;
+    /*width: 35px;*/
+    text-align: center;
+    padding-left: 11px;
+    -webkit-appearance: none; 
+}
+.aling>tbody>tr>td {
+    padding: 1px;
+}
+
+.padding_btn {
+     padding-left:inherit; 
+     padding-right:inherit; 
+    }
+
+.carrito{
+    margin-top: -33px;
+}
+
+}

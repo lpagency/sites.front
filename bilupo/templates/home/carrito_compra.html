@@ -1,0 +1,361 @@
+<link rel="stylesheet" href="{{site_base}}/static/contacto.css">
+<style type="text/css">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300');
+.precio {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    margin: 0 auto;
+    left: 0;
+    right: -50%;
+    width: 40px;
+}
+
+.cantidad {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    margin: 0 auto;
+    left: 20%;
+    right: 0;
+    width: 40px;
+}
+
+.producto {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    position: absolute;
+    margin: 0 auto;
+    left: -70%;
+    right: 0;
+    width: 40px;
+}
+
+.nombre_producto {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto;
+    right: 0;
+    margin-left: 18%;
+    top: 8%;
+    width: 230px;
+    color: grey;
+    font-size: 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.marca_producto {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 auto;
+    left: -15%;
+    right: 0;
+    top: 20%;
+    width: 350px;
+    color: grey;
+    font-size: 11px;
+    letter-spacing: 0.025em;
+}
+
+.cantidad_producto {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 59%;
+    right: 0;
+    width: 50px;
+    margin-top: -6%;
+    margin-bottom: 3%;
+}
+
+.total_producto {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-left: 73%;
+    width: 40px;
+    margin-top: -40px;
+    position: absolute;
+    font-size: 16px;
+}
+
+.boton_redondo {
+    float: right;
+    font-size: large;
+    color: #E53623;
+}
+
+#busca2 {
+    background: #94b7bb;
+    border: 0px;
+    color: white;
+    width: 160px;
+    height: 30px;
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 16px;
+    letter-spacing: 0.025em;
+    margin-top: 2%;
+}
+
+#busca2:hover {
+    background: #E53623;
+}
+
+.modal-dialog {
+    width: 50%;
+}
+
+.modal-title {
+    font-family: 'Open Sans', sans-serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: grey;
+    margin-left: 5%;
+}
+
+#basura {
+    z-index: 1;
+    float: right;
+    margin-right: -27%;
+}
+
+#basura:hover {
+    margin-top: -12% !important;
+    margin-right: -40% !important;
+    border-radius: 50% !important;
+    background: #EAEAEA;
+    width: 40px;
+    height: 40px;
+    padding-left: 23% !important;
+    padding-top: 13% !important;
+}
+
+.titulo1 {
+    letter-spacing: 0.05em;
+}
+
+.estilo {
+    font-size: 12px !important;
+    letter-spacing: 0.1em !important;
+    color: #E53623;
+}
+
+
+}
+@media only screen and (max-width: 768px){
+    /* For mobile phones: */
+    
+    [class*="modalCarrito"] {
+        width: 100% !important;
+    }
+    
+    [class*="cant"] {
+        left: 5% !important;
+    }
+    
+    [class*="precios"] {
+        top: 13% !important;
+        left: 2% !important;
+    }
+    
+    [class*="marca_producto"] {
+        left: 27% !important;
+    }
+    
+    [class*="titulos"] {
+        font-size: smaller !important;
+    }
+    
+    [class*="canti"] {
+        position: absolute !important;
+        left: 14% !important;
+    }
+    
+    [class*="botones"] {
+        width: 100px !important;
+    }
+    
+    [class*="compra"] {
+        float: right !important;
+    }
+    .boton_menos{
+        left: 62.5% !important;
+    }
+    #basura{
+        margin-top: -11% !important;
+    }
+    .money{
+        right: 13% !important;
+    }
+    #eh{
+        margin-right: 0% !important;
+    }
+}
+@media only screen and (max-width: 1200px) {
+    .boton_redondo{
+        position: absolute;
+    }
+    .boton_menos{
+        top: 25%;
+        left: 62.7%;
+    }
+    .nombre_producto{
+        width: 100px !important;
+        margin-left: 26% !important;
+    }
+    .quantity{
+        font-size: 17px !important;
+    }
+    .total_producto{
+        font-size: 13px !important;
+        margin-top: -34px !important;
+        margin-left: 74% !important;
+    }
+    .basurero{
+        margin-right: 4% !important;
+    }
+    .producto{
+        left: -45% !important;
+    }
+    .estilo{
+        font-size: 9px !important;
+    }
+    .money{
+        right: 15% !important;
+    }
+    .botones{
+        width: 122px !important;
+    }
+}
+@media only screen and (max-width: 568px){
+    .modal-content{
+        width: 190% !important;
+    }
+    #eh{
+        margin-top: -12% !important;
+        margin-right: 4% !important;
+    }
+    .money{
+        margin-right: -36% !important;
+    }
+}
+@media only screen and (max-width: 375px){
+    .nombre_producto{
+        width: 27% !important;
+        margin-left: 28% !important;
+        font-size: 10px !important;
+    }
+    .quantity{
+        font-size: 10px !important;
+    }
+    .total_productos{
+        font-size: 10px !important;
+        margin-top: -26px !important;
+    }
+    #eh{
+        margin-right: -1% !important;
+    }
+    .botones{
+        width: 100px !important;
+    }
+    .moneyProducto{
+        font-size: 10px !important;
+    }
+}
+
+}
+</style>
+<div class="modal fade" id="myModal" role="dialog" style="background-color:rgba(223, 234, 235, 0.5);">
+    <div class="modal-dialog modal-lg modal-xs modalCarrito">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title titulos titulo1">RESUMEN DE TU CARRITO</h4>
+            </div>
+            <div>
+                <div class="precio">
+                    <h5 class="precios titulos estilo" style="margin-left: 70%">PRECIO</h5></div>
+                <div class="cantidad">
+                    <h5 class="cant titulos estilo">CANTIDAD</h5></div>
+                <div class="producto">
+                    <h5 class="titulos estilo" style="margin-left: -78%">PRODUCTO</h5></div>
+                <div class="clearfix" style="padding-top: 10px"></div>
+                <hr style="width: 86%; height: 1px !important; background-color: #E53623 !important;">
+            </div>
+            <div class="modal-body shopping-cart">
+            </div>
+            <div class="modal-footer">
+                <div style="float: left; margin-left: 5%;">
+                    <button type="button" class="botones" data-dismiss="modal" id="busca2" style="    margin-top: 6.7%;">VOLVER</button>
+                </div>
+                <div class="checkout-form"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-template" id="shopping-cart-total">
+    <div>
+        <span class="money" style="color: #E53623; font-weight: bold; right: 100px; font-size: 16px; letter-spacing: 0.025em;bottom: 50px;position: absolute;">{{! total }}</span>
+        <h5 style="color: #E53623; margin-left: 5%; font-size: 16px; letter-spacing: 0.025em;position: absolute;bottom: 44px;"><b>TOTAL </b></h5>
+    </div>
+    <hr style="width: 90%; height: 2px !important; background-color: #E53623 !important;margin-top: 60px;">
+    <h5 style="color: #E53623; margin-left: 5%; font-family: 'Open Sans', sans-serif;text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; letter-spacing: 0.025em; font-size: 12px; margin-top: -18px"><i>* El despacho no está incluido todavía</i></h5>
+</script>
+
+
+<script type="text/template" id="shopping-cart-product">
+    <div class="shopping-cart-product">
+        <div style="float: left; position: absolute; left: 7%;">
+            <img src="{{! images[0][1] }}" style="width: 70px; height: 70px">
+        </div>
+        <br>
+        <div class="nombre_producto names titulos">{{! name }}</div>
+        <div class="marca_producto titulos"><b>{{! brand }}</b></div>
+        <div class="cantidad_producto titulos">
+            <span class="quantity titulos canti">{{! quantity }}</span> &nbsp;
+            <a href="#" class="add-one fa fa-plus-circle boton_redondo" product-id="{{! id }}"></a>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a href="#" class="remove-one fa fa-minus-circle boton_redondo boton_menos" product-id="{{! id }}"></a>
+        </div>
+        <div class="total_producto">
+            <span class="product-total moneyProducto titulos">{{! total|money }}</span>
+        </div>
+        <div id="eh" style="z-index: 1;float: right;margin-right: 5%; margin-top: -7%;">
+            <a href="#" class="remove-from-cart basurero" product-id="{{! id }}" id="basura"><img src="https://7static.loadingplay.com/static/images/03dc3ce6b9d6bebfa6f7bbb0928d3ce6_basurerito.png" style="width: 20px"></a>
+        </div>
+        <br>
+        <div>
+            <hr style="width: 90%; height: 1px !important; color: #979797 !important; background-color: #979797">
+        </div>
+    </div>
+</script>
+
+<script type="text/x-template" id="shopping-cart-checkout-form">
+    <form action="{{!checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
+        <input name="checkout" class="form-control required" type="hidden" value="{{!checkout_url}}" />
+        <input name="site_id" class="form-control required" type="hidden" value="{{!site_id}}" />
+        <input name="cart_id" class="form-control required" type="hidden" value="{{!cart_id}}" />
+        <input name="session_id" class="form-control required" type="hidden" value="{{!session_id}}" />
+        <input name="success_url" class="form-control required" type="hidden" value="{{!success_url}}" />
+        <input name="failure_url" class="form-control required" type="hidden" value="{{!failure_url}}" />
+        <input name="webpay_url" class="form-control required" type="hidden" value="{{!webpay_url}}" />
+        <input type="submit" class="form-group text-center botones compra" id="busca2" value="COMPRAR" style="margin-right: 5% " />
+    </form>
+</script>

@@ -1,0 +1,44 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/figurella.js"></script>
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+{% include '../home/banner_one.html' %}
+<section class="clearfix">
+{% include '../home/main_text.html' %}
+<section class="clearfix">
+{% include '../home/second_banner.html' %}
+<section class="clearfix">
+{% include '../home/text_second.html' %}
+<section class="clearfix">
+{% include '../home/group_img.html' %}
+<section class="clearfix">
+{% include '../home/third_text.html' %}
+<section class="clearfix">
+{% include '../home/third_banner.html' %}
+<section class="clearfix">
+{% include '../home/fourth_text.html' %}
+<section class="clearfix">
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,324 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+    body{
+/*      background-color: rgba(128, 128, 128, 0.15);*/
+    }
+</style>
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+    
+    });
+</script>
+<script type="text/javascript">
+    
+    $(document).ready(function(){
+
+        var hyper = window.location.search;
+        console.log(hyper);
+
+        if(/tag=cubreplumones/.test(hyper)){
+            $(".cubrecama").removeClass("hidden");
+            $(".sabanas").addClass('hidden');
+            $(".faldon").addClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").addClass('hidden');
+        }
+        if(/tag=sabanas/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").removeClass("hidden");
+            $(".faldon").addClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").addClass('hidden');
+        }
+        if(/tag=faldones/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").addClass("hidden");
+            $(".faldon").removeClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").addClass('hidden');
+        }
+        if(/tag=cojines/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").addClass("hidden");
+            $(".faldon").addClass('hidden');
+            $(".cojin").removeClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").addClass('hidden');
+        }
+        if(/tag=mantas/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").addClass("hidden");
+            $(".faldon").addClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").removeClass('hidden');
+            $(".ambientes").addClass('hidden');
+        }
+        if(/tag=accesorios/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").addClass("hidden");
+            $(".faldon").addClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").addClass('hidden');
+           
+        }
+        if(/tag=ambientes/.test(hyper)){
+            $(".cubrecama").addClass('hidden');
+            $(".sabanas").addClass("hidden");
+            $(".faldon").addClass('hidden');
+            $(".cojin").addClass('hidden');
+            $(".manta").addClass('hidden');
+            $(".ambientes").removeClass('hidden');
+        }
+    });
+    
+</script>
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+  
+   <section>
+    <div align="center">
+     <div class="container">
+    <div class="mobile img-mobile hidden-xs" style="background:url('{{ read_image(site.name + '_productos_complementa',500) }}'); height:375px; background-size:cover; margin-top: -25px;
+  filter: grayscale(0%) brightness(100%); -webkit-filter: grayscale(0%) brightness(100%); -moz-filter: grayscale(0%) brightness(100%); -ms-filter: grayscale(0%) brightness(100%);-o-filter: grayscale(0%) brightness(100%); background-position:center; margin-bottom: 40px; width: 97%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_complementa">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_complementa" name="image" id="img_productos_complementa">
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_complementa" src="{{ read_image(site.name + '_productos_complementa', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_complementa',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_til' }}"> {{ read_text(site.name +  '_productos_til') }}</div>
+        </div>
+    </div>
+    </div>
+</div>
+</section>
+
+
+<!-- <section> 
+  <div class="container"> 
+   <div class="col-md-12 col-sm-12 col-xs-12">
+    <div align="center">
+      <div class="texto-productos-com {{editabletext}}" text-id="{{ site.name + '_productos_til_fra' }}"> {{ read_text(site.name +  '_productos_til_fra') }} </div>
+    </div>
+   </div>
+  </div>
+</section> -->
+
+
+
+<!-- ******* SE ENTIENDE QUE AL PINCHAR EL NOMBRE EN EL HEADER DEBE LLEVAR A LA CATEGORIA CORRESPONDIENTE, NO QUE TODAS SALGAN AL MISMO TIEMPO EN EL LISTADO DE PRODUCTOS, SI DEBES SIMPLIFICAR LAS SECTIONES HAZLO PORQUE NO SABIA COMO COPIAR TODOS XD********** -->
+
+<!-- **tag diferentes cubrecamas** -->
+
+    <section class="h_submenu cubrecama hidden-xs">
+        <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -22px;" class="">
+                   <a href="#" id="cuna" class="subcateg2 subcateg mbtm5" tag="cuna" role="button">Cuna</a>
+                    <a href="#" id="1,5 plaza" class="subcateg2 subcateg mbtm5" tag="1,5 plaza" role="button">1.5 plaza </a>
+                    <a href="#" id="2 plazas" class="subcateg2 subcateg mbtm5" tag="2 plazas" role="button">2 plazas</a>
+                    <a href="#" id="king" class="subcateg2 subcateg mbtm5" tag="king" role="button">King</a>
+                    <a href="#" id="super king" class="subcateg2 subcateg mbtm5" tag="super king" role="button">Super King</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- **fin tag *** -->
+
+
+<!-- **tag diferentes sabanas** -->
+
+    <section class="h_submenu sabanas hidden-xs">
+        <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -27px;" class="">
+                     <a href="#" id="moises" class="subcateg2 subcateg mbtm5" tag="moises" role="button">Moises</a>
+                    <a href="#" id="graco" class="subcateg2 subcateg mbtm5" tag="graco" role="button">Graco</a>
+                    <a href="#" id="cuna" class="subcateg2 subcateg mbtm5" tag="cuna" role="button">Cuna</a>
+                    <a href="#" id="1,5 plaza" class="subcateg2 subcateg mbtm5" tag="1,5 plaza" role="button">1.5 plaza </a>
+                    <a href="#" id="2 plazas" class="subcateg2 subcateg mbtm5" tag="2 plazas" role="button">2 plazas</a>
+                    <a href="#" id="king" class="subcateg2 subcateg mbtm5" tag="king" role="button">King</a>
+                    <a href="#" id="super king" class="subcateg2 subcateg mbtm5" tag="super king" role="button">Super King</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- **fin tag *** -->
+
+
+<!-- **tag diferentes faldones** -->
+
+    <!-- <section class="h_submenu faldon">
+        <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -27px;" class="">
+                    <a href="#" id="1,5 plaza" class="subcateg mbtm5" tag="1,5 plaza" role="button">1.5 plaza </a>
+                     
+                </div>
+            </div>
+        </div>
+    </section> -->
+<!-- **fin tag *** -->
+
+<!-- **tag diferentes cojines** -->
+
+    <section class="h_submenu cojin hidden-xs">
+<!--         <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -27px;" class="">
+                    <a href="#" id="faldon" class="subcateg mbtm5" tag="faldon" role="button">1.5 plaza </a>
+                     <a href="{{ site_base }}/listado_productos" id="" class="subcateg mbtm5" tag="" role="button">Todos</a>
+                </div>
+            </div>
+        </div> -->
+    </section>
+<!-- **fin tag *** -->
+
+<!-- **tag diferentes mantas** -->
+
+    <section class="h_submenu manta hidden-xs">
+        <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -27px;" class="">
+                    <a href="#" id="mantas" class="subcateg2 subcateg mbtm5" tag="mantas guagua" role="button">Mantas guaguas </a>
+                    <a href="#" id="mantas" class="subcateg2 subcateg mbtm5" tag="otras mantas" role="button">Otras mantas </a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- **fin tag *** -->
+
+
+<!-- **tag diferentes ambientes** -->
+
+    <section class="h_submenu ambientes hidden-xs">
+        <div class="container" style="padding-top: 1em;">
+            <div align="center">
+                <div style="margin-top: -27px;" class="">
+                    <a href="#" id="dormitorio" class="subcateg2 subcateg mbtm5" tag="dormitorio" role="button">Dormitorio </a>
+                    <a href="#" id="sala de estar" class="subcateg2 subcateg mbtm5" tag="sala de estar" role="button">Sala de estar</a>
+                    <a href="#" id="terraza" class="subcateg2 subcateg mbtm5" tag="terraza" role="button">Terraza</a>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- **fin tag *** -->
+
+
+
+
+
+
+
+<section class="nov" style="height:500px;">
+   <div class="container">
+           <div align="center" class="to"> 
+              <div class="products">
+                  <div class="spinner">
+                    <div class="rect1"></div>
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+              </div>
+            <div class="col-xs-12">
+              <div style="margin-top:45px;"></div>
+            </div>
+          </div> 
+
+    </div>
+</section>
+
+<!-- ************++********box banner*********+*++***** -->
+
+<div class="clearfix-dos"> </div>
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

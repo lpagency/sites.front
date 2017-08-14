@@ -1,0 +1,54 @@
+.header_wrapper
+{
+  position: absolute;
+  z-index: 1;
+}
+.logo
+{
+    max-width: 300px;
+    max-height: 100px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+   right: 49px;
+    top: 20px;
+}
+.navbar{
+    position: absolute;
+    right: 23px;
+    width: 250px;
+    height: 640px;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.28);
+    border: none;
+    border-radius: 0%;
+}
+.text-header
+{
+  width: 30px;
+}
+.menu-side{
+    display: grid;
+    position: relative;
+    top: 390px;
+    right: 111px;
+}
+.texto-header{
+    position: absolute;
+    left: 12px;
+    height: 242px;
+    top: 131px;
+    color: white;
+    font-weight: bold;
+    width: 101%;
+    overflow: hidden;
+    font-size: 1.4rem;
+}
+.navbar-default .navbar-nav>li>a{
+    color: white;
+    font-weight: bold;
+}
+.navbar-default .navbar-nav>li>a:hover{
+    color: #cac5c5;
+    font-weight: bold;
+}

@@ -1,0 +1,85 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block scripts %}
+{% if is_admin %}
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="hla">
+    <div class="">
+    {% if is_admin %}
+        <div class="image-upload lapiz bi visible-movil">
+            <label for="img_banner_list_art">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_art" name="image" id="img_banner_list_art" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_list_art" src="{{ read_image(site.name + '_banner_list_art', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_art',500) }}'" class="banner_list desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="text_planes-2 text-center {{editabletext}}" text-id="{{ site.name + '_text_banner_article' }}"> 
+            {{ read_text(site.name +  '_text_banner_article') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <a href="{{ site_base }}/formulario">
+     <div class="box-ros">
+         <!-- <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> -->
+         <i class="fa fa-envelope" aria-hidden="true"></i>
+         <div class="texto-rer"> Reserva <br> tu evaluación <br> sin costo</div>
+     </div>
+ </a>
+</div>
+
+<section style="height:290px;" class="text-article-title">
+        <div class="container"> 
+           <div class="col-md-12 col-sm-12 box">
+                <h1 class="listart1 text-center {{editabletext}}" text-id="{{ site.name + '_text_listart1' }}"> {{ read_text(site.name +  '_text_listart1') }}
+                </h1>
+            </div>
+
+        </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            {{ getArticleList(html="content/article_01.html", tag="metodo1") }}
+            {{ getArticleList(html="content/article_02.html", tag="metodo2") }}
+            {{ getArticleList(html="content/article_03.html", tag="metodo3") }}
+            {{ getArticleList(html="content/article_04.html", tag="metodo4") }}
+        </div>
+    </div>
+
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

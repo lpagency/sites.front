@@ -1,0 +1,69 @@
+<!-- footer -->
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+<footer class="space40 text-left" style="background-color:#0B610B;color:white;">
+    <div class="pad15">
+        <div class="row">
+            <div class="col-md-2 hidden-sm hidden-xs">
+                    {% if is_admin %}
+                        <div class="image-upload">
+                            <label for="{{ site.name }}_site_logo">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                        </div>
+                    {% end %}
+                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="img-responsive space10 img-logo" alt="item">
+                </div>
+
+                
+                <div class="col-md-2 col-sm-12 hidden-lg hidden-md visible-sm visible-xs">
+                    <div align="center">
+                    {% if is_admin %}
+                        <div class="image-upload">
+                            <label for="{{ site.name }}_site_logo">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+                        </div>
+                    {% end %}
+                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="img-responsive space10 img-logo" alt="item">
+                </div>
+                </div>
+                
+                <div class="col-md-5">
+                <p class="small text-left foo {{editabletext}}" text-id="{{ site.name + '_footer_address' }}">{{ read_text(site.name + '_footer_address')}} </p>
+                <p class="small text-left foo"><a class="a-footer" href="{{ site_base }}/terms_conditions">Términos y condiciones del sitio  </a>|   <a class="a-footer" href="{{ site_base }}/faq">Preguntas frecuentes</a>   </p> 
+                <p class="small text-left foo">
+                    <a class="a-footer" href="{{ site_base }}/politica_cancelacion_cumpleanos">Política y cancelación de cumpleaños  </a>|   <a class="a-footer" href="{{ site_base }}/contact">Contacto</a>|
+                    {% if user is None %}
+                  <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                  {% else %}
+                  <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                    Logout</a>
+                    {% end %}
+
+                </p> 
+               </div>
+                
+                <div class="col-md-5 col-sm-12" style="padding: 20px;">
+                <ul class="list-inline">
+                    <li><a href="{{ get_config("facebook") }}"><i class="fa fa-facebook"></i></a></li>
+                    <!-- <li><a href="{{ get_config("twitter") }}"><i class="fa fa-twitter"></i></a></li> -->
+                    <li><a href="{{ get_config("instagram") }}"><i class="fa fa-instagram"></i></a></li>
+                </ul>
+                </div>
+            <div class="col-md-5 col-sm-12 col-xs-12">
+                <img src="https://84static.loadingplay.com/static/images/ae1f3c008018876e4c75c3779c5fc97d_corfo_2.png"  class="space10 cor hidden-sm hidden-xs visible-lg visible-md">
+
+              <div align="center" class="hidden-lg hidden-md visible-sm visible-xs">
+                 <img src="https://84static.loadingplay.com/static/images/ae1f3c008018876e4c75c3779c5fc97d_corfo_2.png"  class="space10 cor">
+             </div>
+                <p class="desa"> Desarrollado con tecnología Sytes, por LoadingPlay. </p>
+            </div>
+        </div>
+    </div>
+</footer>

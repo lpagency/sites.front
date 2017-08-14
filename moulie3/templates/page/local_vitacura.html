@@ -1,0 +1,174 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+ <script async defer
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBYUOH4rtmdX21L9jA7GNa5W_fKq9Ej8s0&callback=initMap">
+ </script>
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/map_store.js"></script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(38,38,38);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 8,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+      $('.font-menu').removeClass('active');
+      $('.ubicacion').addClass("active");
+
+  });
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+<section>
+  <div>
+    <div>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_ubicacion_vitacura',500) }}'); height:200px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px; width:100%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_ubicacion_vitacura">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_ubicacion_vitacura" name="image" id="img_ubicacion_vitacura" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_ubicacion_vitacura" src="{{ read_image(site.name + '_ubicacion_vitacura', 1) }}" onload="this.src='{{ read_image(site.name + '_ubicacion_vitacura',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+ </div>
+</section>
+
+
+<!-- **locales** -->
+<section>
+ <div class="container">
+   <div class="col-md-12 col-sm-12 col-xs-12">
+    <div align="center">
+      <div class="texto-locales-interior {{editabletext}}" text-id="{{ site.name + '_loc_vitacura' }}"> {{ read_text(site.name +  '_loc_vitacura') }}</div>
+      <hr class="ubicacion-interior">
+   </div>
+   </div>
+
+</section>
+
+<section id="cont">
+ <div class="container">
+   <div class="col-md-6 col-sm-12 col-xs-12">
+    <div align="center">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_vita">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_vita" name="image" id="img_box_vita" >
+       </div>
+       {% end %}
+      <a id="{{ site.name + '_box_vita' }}" href="{{ read_link(site.name + '_box_vita') }}" target="_blank">
+       <img id="{{ site.name }}_box_vita" src="{{ read_image(site.name + '_box_vita', 1) }}" onload="this.src='{{ read_image(site.name + '_box_vita') }}'" class="box-locales" alt="item">
+      </a>
+      
+        {% if is_admin %}
+          <img class="change-image editablelink loc" link-id="{{ site.name + '_box_vita' }}" content="{{ read_link(site.name + '_box_vita') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+        {% end %}
+      </div>
+
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_local_vita' }}"> {{ read_text(site.name +  '_local_vita') }}</div>
+      <div class="texto-ubi-2 {{editabletext}}" text-id="{{ site.name + '_local_vita_2' }}"> {{ read_text(site.name +  '_local_vita_2') }}</div>
+      <hr class="inter hidden-sm hidden-xs">
+      <a href="tel:56222192976">
+      <div class="texto-tel-dos {{editabletext}}" text-id="{{ site.name + '_numero_1' }}"> {{ read_text(site.name +  '_numero_1') }} </div> </a>
+     <!--  <a class="texto-tel-dos dir" href="tel:56922192976">+569 2219 2976</a></div> -->
+      <div class="texto-tel {{editabletext}}" text-id="{{ site.name + '_kara_1' }}"> {{ read_text(site.name +  '_kara_1') }}</div>
+      <div class="texto-tel {{editabletext}}" text-id="{{ site.name + '_kara_2' }}"> {{ read_text(site.name +  '_kara_2') }}</div>
+      <div class="texto-tel {{editabletext}}" text-id="{{ site.name + '_kara_3' }}"> {{ read_text(site.name +  '_kara_3') }}</div>
+
+     </div>
+ </div>
+
+   <div class="col-md-6 col-sm-12 col-xs-12">
+    <div align="center">
+<!--     <div id="map" class="fondo-mapa" style=" height: 400px; top: 30px;width: 74%; float: left; margin-bottom:35px;">
+    </div> -->
+<!--       <iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJOyWSZ9bIYpYR1ws3zKpM-TE&key=AIzaSyDWOF4U-2CTk7Ag5O4bHB-DyVlaM5q3fgI" allowfullscreen></iframe> -->
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3331.443741818775!2d-70.57731948527247!3d-33.38558558079255!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9662c8d66792253b%3A0x31f94caacc370bd7!2sLuis+Pasteur%2C+Vitacura%2C+Regi%C3%B3n+Metropolitana!5e0!3m2!1sen!2scl!4v1484675841725" width="100%" height="400" frameborder="0" style="border:0; margin-top: 29px !important;" allowfullscreen></iframe>
+    <!-- fin editar imagen -->
+    <div class="on-map absolute top-map">
+        <div class="container-fluid-new absolute">
+            <div class="row-fluid-new">
+            </div>
+        </div>
+    </div>
+   </div>
+ </div>
+
+
+
+</div>
+ <div style="margin-bottom:30px;"></div>
+</section>
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+

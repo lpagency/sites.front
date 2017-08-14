@@ -1,0 +1,524 @@
+
+<div class="">
+    <div class="psp">
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_1">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_1" name="image" id="img_img_box_1" >
+                </div>
+               {% end %}
+                <a id="{{ site.name + '_img_box_1' }}" href="{{ read_link(site.name + '_img_box_1') }}" target="_blank">
+                  <img class="desaturada desaturada2" id="{{ site.name }}_img_box_1" src="{{ read_image(site.name + '_img_box_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_1',500) }}'" alt="item" style="position: absolute;">
+                </a>
+               
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_1' }}"> {{ read_text(site.name +  '_box_1') }} </h1>
+                
+                <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_1' }}" content="{{ read_link(site.name + '_img_box_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+                 
+            </div>
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+       
+           
+        </div>
+
+       <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_2">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_2" name="image" id="img_img_box_2" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_2' }}" href="{{ read_link(site.name + '_img_box_2') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_2" src="{{ read_image(site.name + '_img_box_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_2',500) }}'" alt="item" style="position: absolute; width: 103%; object-fit: cover !important;height: 343px; ">
+               </a>
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_2' }}"> {{ read_text(site.name +  '_box_2') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_2' }}" content="{{ read_link(site.name + '_img_box_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+       </div>
+        <div class="hidden-md hidden-lg col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_4">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_4" name="image" id="img_img_box_4" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_4' }}" href="{{ read_link(site.name + '_img_box_4') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_4" src="{{ read_image(site.name + '_img_box_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_4',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px; ">
+               </a>
+
+               <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_4' }}"> {{ read_text(site.name +  '_box_4') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_4' }}" content="{{ read_link(site.name + '_img_box_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+        </div>
+
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_3">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_3" name="image" id="img_img_box_3" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_3' }}" href="{{ read_link(site.name + '_img_box_3') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_3" src="{{ read_image(site.name + '_img_box_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_3',500) }}'" alt="item" style="position: absolute;">
+               </a>
+            
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_3' }}"> {{ read_text(site.name +  '_box_3') }} </h1>
+                
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_3' }}" content="{{ read_link(site.name + '_img_box_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+
+        <div class="hidden-sm hidden-xs col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_4">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_4" name="image" id="img_img_box_4" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_4' }}" href="{{ read_link(site.name + '_img_box_4') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_4" src="{{ read_image(site.name + '_img_box_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_4',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px; ">
+               </a>
+
+               <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_4' }}"> {{ read_text(site.name +  '_box_4') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_4' }}" content="{{ read_link(site.name + '_img_box_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+           
+        </div>
+    </div>
+
+
+    <div class="">
+
+        <div class="hidden-md hidden-lg col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_6">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_6" name="image" id="img_img_box_6" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_6' }}" href="{{ read_link(site.name + '_img_box_6') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_6" src="{{ read_image(site.name + '_img_box_6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_6',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+               <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_6' }}"> {{ read_text(site.name +  '_box_6') }}  </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_6' }}" content="{{ read_link(site.name + '_img_box_6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!--  <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+        </div>
+
+            <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+               <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_5">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_5" name="image" id="img_img_box_5" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_5' }}" href="{{ read_link(site.name + '_img_box_5') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_5" src="{{ read_image(site.name + '_img_box_5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_5',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px; ">
+               </a>
+
+                 <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_5' }}"> {{ read_text(site.name +  '_box_5') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_5' }}" content="{{ read_link(site.name + '_img_box_5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+                </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+         
+            </div>
+
+        <div class="col-md-3 col-xs-6 col-lg-3 hidden-sm hidden-xs  img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_6">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_6" name="image" id="img_img_box_6" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_6' }}" href="{{ read_link(site.name + '_img_box_6') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_6" src="{{ read_image(site.name + '_img_box_6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_6',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+               <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_6' }}"> {{ read_text(site.name +  '_box_6') }}  </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_6' }}" content="{{ read_link(site.name + '_img_box_6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!--  <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+        </div>
+
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_7">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_7" name="image" id="img_img_box_7" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_7' }}" href="{{ read_link(site.name + '_img_box_7') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_7" src="{{ read_image(site.name + '_img_box_7', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_7',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_7' }}"> {{ read_text(site.name +  '_box_7') }}</h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_7' }}" content="{{ read_link(site.name + '_img_box_7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+       
+        </div>
+
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_8">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_8" name="image" id="img_img_box_8" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_8' }}" href="{{ read_link(site.name + '_img_box_8') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_8" src="{{ read_image(site.name + '_img_box_8', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_8',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_8' }}"> {{ read_text(site.name +  '_box_8') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_8' }}" content="{{ read_link(site.name + '_img_box_8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+    </div>
+
+    <div class="">
+    <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+        <div class="col-lg-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_img_box_9">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_9" name="image" id="img_img_box_9" >
+           </div>
+           {% end %}
+           <a id="{{ site.name + '_img_box_9' }}" href="{{ read_link(site.name + '_img_box_9') }}" target="_blank">
+           <img class="desaturada desaturada2" id="{{ site.name }}_img_box_9" src="{{ read_image(site.name + '_img_box_9', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_9',500) }}'" alt="item" style="position: absolute;">
+           </a>
+
+           <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_9' }}"> {{ read_text(site.name +  '_box_9') }} </h1>
+
+           <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_9' }}" content="{{ read_link(site.name + '_img_box_9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+       </div>
+
+       <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+   </div>
+
+       <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_10">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_10" name="image" id="img_img_box_10" >
+               </div>
+               {% end %}
+                <a id="{{ site.name + '_img_box_10' }}" href="{{ read_link(site.name + '_img_box_10') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_10" src="{{ read_image(site.name + '_img_box_10', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_10',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px; ">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_10' }}"> {{ read_text(site.name +  '_box_10') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_10' }}" content="{{ read_link(site.name + '_img_box_10') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+
+
+        <div class="hidden-md hidden-lg col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_12">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_12" name="image" id="img_img_box_12" >
+                </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_12' }}" href="{{ read_link(site.name + '_img_box_12') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_12" src="{{ read_image(site.name + '_img_box_12', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_12',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_12' }}"> {{ read_text(site.name +  '_box_12') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_12' }}" content="{{ read_link(site.name + '_img_box_12') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+
+        <div class="col-md-3  col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_11">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_11" name="image" id="img_img_box_11" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_11' }}" href="{{ read_link(site.name + '_img_box_11') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_11" src="{{ read_image(site.name + '_img_box_11', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_11',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_11' }}"> {{ read_text(site.name +  '_box_11') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_11' }}" content="{{ read_link(site.name + '_img_box_11') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+
+        <div class="hidden-sm hidden-xs col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_12">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_12" name="image" id="img_img_box_12" >
+                </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_12' }}" href="{{ read_link(site.name + '_img_box_12') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_12" src="{{ read_image(site.name + '_img_box_12', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_12',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_12' }}"> {{ read_text(site.name +  '_box_12') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_12' }}" content="{{ read_link(site.name + '_img_box_12') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+          
+        </div>
+    </div>
+
+    <div class="">
+           <div class="hidden-md hidden-lg col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_14">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_14" name="image" id="img_img_box_14" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_14' }}" href="{{ read_link(site.name + '_img_box_14') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_14" src="{{ read_image(site.name + '_img_box_14', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_14',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+                 <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_14' }}"> {{ read_text(site.name +  '_box_14') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_14' }}" content="{{ read_link(site.name + '_img_box_14') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!--  <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+         
+    </div>
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_13">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_13" name="image" id="img_img_box_13" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_13' }}" href="{{ read_link(site.name + '_img_box_13') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_13" src="{{ read_image(site.name + '_img_box_13', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_13',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px;">
+               </a>
+
+                 <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_13' }}"> {{ read_text(site.name +  '_box_13') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_13' }}" content="{{ read_link(site.name + '_img_box_13') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!--  <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+         
+       </div>
+
+       <div class="hidden-sm hidden-xs col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_14">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_14" name="image" id="img_img_box_14" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_14' }}" href="{{ read_link(site.name + '_img_box_14') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_14" src="{{ read_image(site.name + '_img_box_14', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_14',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+                 <h1 class="text-box {{editabletext}}" text-id="{{ site.name + '_box_14' }}"> {{ read_text(site.name +  '_box_14') }} </h1>
+
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_14' }}" content="{{ read_link(site.name + '_img_box_14') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!--  <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+         
+    </div>
+
+    <div class="col-md-3 col-xs-6 img-box col-lg-3 espacio-box">
+        <div class="col-lg-12 pad0">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+               <label for="img_img_box_15">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_15" name="image" id="img_img_box_15" >
+           </div>
+           {% end %}
+           <a id="{{ site.name + '_img_box_15' }}" href="{{ read_link(site.name + '_img_box_15') }}" target="_blank">
+           <img class="desaturada desaturada2" id="{{ site.name }}_img_box_15" src="{{ read_image(site.name + '_img_box_15', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_15',500) }}'" alt="item" style="position: absolute;  width: 103%; object-fit: cover !important; height: 343px;">
+           </a>
+
+           <h1 class="text-box cent {{editabletext}}" text-id="{{ site.name + '_box_15' }}"> {{ read_text(site.name +  '_box_15') }} </h1>
+
+           <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_15' }}" content="{{ read_link(site.name + '_img_box_15') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+       </div>
+
+       <!-- <img class="desaturada"src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+       
+    </div>
+
+        <div class="col-md-3 col-xs-6 col-lg-3 img-box espacio-box">
+            <div class="col-lg-12 pad0">
+                {% if is_admin %}
+                <div class="image-upload lapiz visible-movil">
+                   <label for="img_img_box_16">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_img_box_16" name="image" id="img_img_box_16" >
+               </div>
+               {% end %}
+               <a id="{{ site.name + '_img_box_16' }}" href="{{ read_link(site.name + '_img_box_16') }}" target="_blank">
+               <img class="desaturada desaturada2" id="{{ site.name }}_img_box_16" src="{{ read_image(site.name + '_img_box_16', 1) }}" onload="this.src='{{ read_image(site.name + '_img_box_16',500) }}'" alt="item" style="position: absolute;">
+               </a>
+
+                <h1 class="text-box {{editabletext}}"  text-id="{{ site.name + '_box_17' }}"> {{ read_text(site.name + '_box_17') }} </h1>
+               <!--editable link-->
+                {% if is_admin %}
+                <img class="change-image editablelink" link-id="{{ site.name + '_img_box_16' }}" content="{{ read_link(site.name + '_img_box_16') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+                {% end %}
+           </div>
+
+           <!-- <img class="desaturada" src="https://84static.loadingplay.com/static/images/85bb633caddd01b2ecfa8e87fdf05815_Caja_grilla.png" style="position: absolute;"> -->
+        
+        </div>
+    </div>
+</div>
+

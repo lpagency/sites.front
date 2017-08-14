@@ -1,0 +1,126 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+{% end %}
+
+{% block body %}
+<div class="container">
+      <div class="row">
+        <div class="col-md-12 col-lg-12 ">
+          <div class="col-md-offset-2">
+            <div class="banner-below-text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_bannerGaleria' }}">{{ read_text(site.name +  'text_bannerGaleria') }}</div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-md-12 margin">
+          <div class="col-md-offset-2 col-lg-offset-2">
+            <div class="col-md-12">
+      
+              <div class="col-md-6 col-lg-6">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                <label for="img_side_banner1_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner1_galeria" name="image" id="img_side_banner1_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner1_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner1_galeria" src="{{ read_image(site.name + 'side_banner1_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner1_galeria',) }}'" alt="item" class="gallery-image"></a>
+
+
+            {% if is_admin %}
+              <div class="image-upload lapiz visible-movil lapiz-galeria">
+                <label for="img_side_banner2_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner2_galeria" name="image" id="img_side_banner2_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner2_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner2_galeria" src="{{ read_image(site.name + 'side_banner2_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner2_galeria',) }}'" alt="item" class="gallery-image"></a>
+
+
+            {% if is_admin %}
+              <div class="image-upload lapiz visible-movil lapiz-galeria2">
+                <label for="img_side_banner3_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner3_galeria" name="image" id="img_side_banner3_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner3_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner3_galeria" src="{{ read_image(site.name + 'side_banner3_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner3_galeria',) }}'" alt="item" class="gallery-image"></a>
+
+
+              </div>
+              <div class="col-md-6 col-lg-6">
+
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                <label for="img_side_banner4_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner4_galeria" name="image" id="img_side_banner4_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner4_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner4_galeria" src="{{ read_image(site.name + 'side_banner4_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner4_galeria',) }}'" alt="item" class="gallery-image"></a>
+
+
+            {% if is_admin %}
+              <div class="image-upload lapiz visible-movil lapiz-galeria">
+                <label for="img_side_banner5_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner5_galeria" name="image" id="img_side_banner5_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner5_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner5_galeria" src="{{ read_image(site.name + 'side_banner5_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner5_galeria',) }}'" alt="item" class="gallery-image"></a>
+
+
+            {% if is_admin %}
+              <div class="image-upload lapiz visible-movil lapiz-galeria2">
+                <label for="img_side_banner6_galeria">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}side_banner6_galeria" name="image" id="img_side_banner6_galeria"/>
+            </div>
+            {% end %}
+            <a href="{{ read_image(site.name + 'side_banner6_galeria', 500) }}" data-lightbox="image-1" data-title="gallery-image"><img id="{{ site.name }}side_banner6_galeria" src="{{ read_image(site.name + 'side_banner6_galeria', 1) }}" onload="this.src='{{ read_image(site.name + 'side_banner6_galeria',) }}'" alt="item" class="gallery-image"></a>
+              </div>
+        
+            </div>
+          </div>
+        </div>
+</div>
+{% include ../home/footer.html %}
+{% end %}

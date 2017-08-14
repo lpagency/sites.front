@@ -1,0 +1,215 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<div class="" style="margin-top:20px;"></div>
+
+<!-- <section class="height_list_product movil-menu" style="display: block;position: relative;width: 100%;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_sucursales">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_sucursales" name="image" id="img_sucursales" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_sucursales " src="{{ read_image(site.name + '_sucursales', 1) }}" onload="this.src='{{ read_image(site.name + '_sucursales',500) }}'" class=" img_planes_banner desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="text_planes text-center {{editabletext}}" text-id="{{ site.name + '_text_sucursales0' }}"> 
+            {{ read_text(site.name +  '_text_sucursales0') }}
+            </h1>
+        </div>
+    <div class="clearfix" ></div>
+</section> -->
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+  <a href="{{ site_base }}/formulario">
+   <div class="box-ros">
+     <!-- <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> -->
+     <i class="fa fa-envelope" aria-hidden="true"></i>
+     <div class="texto-rer"> Reserva <br> tu evaluación <br> sin costo</div>
+   </div>
+ </a>
+</div>
+
+<div class="container">
+    <div class="col-md-12">
+       <div class="texto-visitas {{editabletext}}" text-id="{{ site.name + '_text_1' }}"> 
+            {{ read_text(site.name +  '_text_1') }} </div>
+    </div>
+
+    <div class="col-md-12 col-sm-12 col-xs-12">
+       <hr class="visit"> 
+   </div>
+</div>
+
+
+<!-- ***cajas ubicaciones** -->
+
+<div class="container">
+    <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_1">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_1" name="image" id="img_box_ubicacion_1" >
+       </div>
+       {% end %}
+       <a href="{{site_base}}/sucursal_vitacura">
+       <img id="{{ site.name }}_box_ubicacion_1" src="{{ read_image(site.name + '_box_ubicacion_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_1') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1' }}"> {{ read_text(site.name +  '_loc_1') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1_1' }}"> {{ read_text(site.name +  '_loc_1_1') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1_1_1' }}"> {{ read_text(site.name +  '_loc_1_1_1') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_1_1_1_1' }}"> {{ read_text(site.name +  '_loc_1_1_1_1') }}</div>
+      <a href="{{site_base}}/sucursal_vitacura">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+    </div>
+
+  <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_2" name="image" id="img_box_ubicacion_2" >
+       </div>
+       {% end %}
+       <a href="{{site_base}}/sucursal_las_condes">
+       <img id="{{ site.name }}_box_ubicacion_2" src="{{ read_image(site.name + '_box_ubicacion_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_2') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2' }}"> {{ read_text(site.name +  '_loc_2') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2_2' }}"> {{ read_text(site.name +  '_loc_2_2') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2_2_2' }}"> {{ read_text(site.name +  '_loc_2_2_2') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_2_2_2_2' }}"> {{ read_text(site.name +  '_loc_2_2_2_2') }}</div>
+       <a href="{{site_base}}/sucursal_las_condes">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+  </div>
+
+  <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_3">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_3" name="image" id="img_box_ubicacion_3" >
+       </div>
+       {% end %}
+       <a href="{{site_base}}/sucursal_colon">
+       <img id="{{ site.name }}_box_ubicacion_3" src="{{ read_image(site.name + '_box_ubicacion_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_3') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3' }}"> {{ read_text(site.name +  '_loc_3') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3_3' }}"> {{ read_text(site.name +  '_loc_3_3') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3_3_3' }}"> {{ read_text(site.name +  '_loc_3_3_3') }}</div>
+       <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3_3_3_3' }}"> {{ read_text(site.name +  '_loc_3_3_3_3') }}</div>
+      <a href="{{site_base}}/sucursal_colon">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+    </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_4">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_4" name="image" id="img_box_ubicacion_4" >
+       </div>
+       {% end %}
+       <a href="">
+       <img id="{{ site.name }}_box_ubicacion_4" src="{{ read_image(site.name + '_box_ubicacion_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_4') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_4' }}"> {{ read_text(site.name +  '_loc_4') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_4_4' }}"> {{ read_text(site.name +  '_loc_4_4') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_4_4_4' }}"> {{ read_text(site.name +  '_loc_4_4_4') }}</div>
+       <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_3_3_3_3' }}"> {{ read_text(site.name +  '_loc_4_4_4_4') }}</div>
+      <a href="">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+    </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_5">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_5" name="image" id="img_box_ubicacion_5">
+       </div>
+       {% end %}
+       <a href="">
+       <img id="{{ site.name }}_box_ubicacion_5" src="{{ read_image(site.name + '_box_ubicacion_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_5') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5' }}"> {{ read_text(site.name +  '_loc_5') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5_5' }}"> {{ read_text(site.name +  '_loc_5_5') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5_5_5' }}"> {{ read_text(site.name +  '_loc_5_5_5') }}</div>
+       <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_5_5_5_5' }}"> {{ read_text(site.name +  '_loc_5_5_5_5') }}</div>
+      <a href="">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+    </div>
+
+      <div class="col-md-4 col-sm-12 col-xs-12">
+     <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload">
+          <label for="img_box_ubicacion_6">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_box_ubicacion_6" name="image" id="img_box_ubicacion_6" >
+       </div>
+       {% end %}
+       <a href="">
+       <img id="{{ site.name }}_box_ubicacion_6" src="{{ read_image(site.name + '_box_ubicacion_6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ubicacion_6') }}'" class="box-ubicacion" alt="item">
+       </a>
+     </div>
+     
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_6' }}"> {{ read_text(site.name +  '_loc_6') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_6_6' }}"> {{ read_text(site.name +  '_loc_6_6') }}</div>
+      <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_6_6_6' }}"> {{ read_text(site.name +  '_loc_6_6_6') }}</div>
+       <div class="texto-ubi {{editabletext}}" text-id="{{ site.name + '_loc_6_6_6_6' }}"> {{ read_text(site.name +  '_loc_6_6_6_6') }}</div>
+      <a href="">
+      <button type="button" class="btn btn-default mapa">Ver Mapa</button> </a>
+      <hr class="textos"> 
+    </div>
+</div>
+
+
+
+<section style="height:150px;">
+</section>
+{% include '../home/footer.html' %}
+{% end %}

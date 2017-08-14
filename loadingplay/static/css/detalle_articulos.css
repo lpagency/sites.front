@@ -1,0 +1,277 @@
+
+.banner-detalles{
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: 0px;
+    width: 103%;
+    height: 508px; 
+    position: relative;
+    margin-left: -15px;
+    margin-top: -22px;
+
+}
+
+.banner-deta-dos{
+    background-repeat: no-repeat;
+    object-fit: cover;
+    background-position: 0px;
+    width: 103%;
+     height: 508px; 
+    position: relative;
+    margin-left: -15px;
+    margin-top: 0px;
+
+}
+
+/*img.desaturada{
+    filter: grayscale(100%);
+-webkit-filter: grayscale(100%);
+-moz-filter: grayscale(100%);
+-ms-filter: grayscale(100%);
+-o-filter: grayscale(100%);
+}
+
+img.desaturada:hover{
+    filter: grayscale(0%);
+-webkit-filter: grayscale(0%);
+-moz-filter: grayscale(0%);
+-ms-filter: grayscale(0%);
+-o-filter: grayscale(0%)
+}*/
+
+
+.detalle_text{
+    text-align: center;
+     position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    color: white;
+    font-weight: 800;
+    bottom: 178px;
+    font-size: 54px;
+    text-transform: uppercase;
+}
+
+.detalle_text2{
+    font-weight: 500;
+    top:-211px;
+    font-size: 25px;
+    text-transform: inherit;
+
+}
+
+.detalle_text-uno{
+    text-align: center;
+     position: relative;
+    z-index: 1;
+    vertical-align: middle;
+    color: white;
+    font-weight: 800;
+    bottom: 175px;
+    font-size: 54px;
+    text-transform: uppercase;
+}
+
+.detalle_text-dos{
+    font-weight: 500;
+    top: -200px;
+    font-size: 25px;
+    text-transform: inherit;
+
+}
+
+.inf_detalle{
+    position: relative;
+    bottom:88px;
+    margin-top: 96px;
+}
+
+.inf_detalle2 {
+    position: relative;
+    bottom:88px;
+    margin-top: 96px;
+}
+
+.fi{
+    margin-top: 41px;
+}
+
+.cuadro{
+    border: solid 1px black;
+    width: 74%;
+    height: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.cuadro2{
+    border: solid 1px black;
+    width: 74%;
+    height: 400px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.div-video{
+    width: 100%; 
+    height: 432px;
+    overflow: hidden; 
+    object-fit:cover;
+    margin-top: 19px;
+}
+
+@media (max-width: 1280px){
+    .div-video{
+        height: 430px;
+        margin-top: -67px;
+    }
+    
+    .banner-detalles{
+      height: 429px;
+      margin-top: -10px;
+    }
+    
+    .detalle_text{
+        bottom: 161px;
+        left: 6px;
+    }
+    
+    .detalle_text2{
+        top: -185px;
+    } 
+    
+    .inf_detalle {
+     bottom: 114px;
+     font-size: 29px;
+   }
+
+   .cuadro{
+    width: 69%;
+    height: 478px;
+    bottom: 70px;
+    left: 39px;
+    position: relative;
+   }
+   
+   .banner-deta-dos{
+      margin-top: -67px;
+      height: 483px;
+   }
+
+   .detalle_text-uno{
+     bottom: 158px;
+   }
+   
+   .detalle_text-dos{
+     top: -186px;
+     font-size: 27px;
+   }
+
+   .inf_detalle2 {
+      bottom: 92px;
+      font-size: 29px;
+   }
+
+   .cuadro2{
+    width: 69%;
+    height: 478px;
+    bottom: 50px;
+    left: 10px;
+    position: relative;
+   }
+   
+   .det{
+     top: 8px;
+   }
+   
+   .det2{
+        top: 103px;
+        left: 7px;
+        height: 70px;
+   }
+   
+   .box-de{
+     height: 87%;
+   }
+}
+
+@media (max-width: 820px){
+    .banner-detalles{
+        bottom: 22px !important;
+    }
+}
+
+
+@media (max-width: 767px){
+    .banner-detalles{
+        bottom: 74px !important;
+    }
+}
+
+@media (max-width: 701px){
+    .banner-detalles{
+        height: 465px;
+    }
+    
+    .detalle_text{
+        bottom: 222px;
+    }
+
+    .detalle_text2 {
+    top: -251px;
+     }
+}
+
+
+
+@media screen and (max-width: 700px){
+.banner-detalles{
+
+    bottom: 54px !important;
+    width: 104%;
+    }
+
+.inf_detalle{
+    position: relative;
+    bottom:139px;
+}  
+
+
+.art{
+    padding-right: 24px;
+    padding-left: 24px !important;
+    margin-bottom: 28px;
+}
+
+.cuadro{
+    width: 100%;
+    left: 0px;
+}
+
+.cuadro2{
+    width: 100%;
+}
+
+.detalle_text{
+    bottom: 346px;
+    font-size: 39px;
+}
+
+.detalle_text2{
+    top: -364px;
+    font-size: 24px;
+}
+
+
+.detalle_text-uno{
+   bottom: 290px;
+   font-size: 39px;
+}
+
+.detalle_text-dos{
+    top: -312px;
+    font-size: 24px;
+}
+
+
+}

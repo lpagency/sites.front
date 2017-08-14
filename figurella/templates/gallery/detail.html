@@ -1,0 +1,171 @@
+{% extends "../base.html" %}
+{% block title %}
+    {{ site.name }}
+{% end %}
+{% block css %}
+<link href="{{ site_base }}/static/js/lightGallery/dist/css/lightgallery.css" rel="stylesheet">
+{% end %}
+
+{% block javascript %}
+    <!-- archivos para galería -->
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/dist/jquery.fancybox.js?v=2.1.5"></script>
+    <script src="{{ site_base }}/static/js/lightGallery/dist/js/lightgallery.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $("a#single_image").fancybox();
+        $('.fancybox').fancybox();
+        $("#lightgallery").lightGallery({ cssEasing: 'cubic-bezier(0.250, 0.100, 0.250, 1.000)'}); 
+        $("#home").css("text-align", "left");
+        });
+
+    </script>
+    <!-- archivos para galería -->
+{% end %}
+{% block header %}
+{% include '../home/header.html' %}
+
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="position-img" style="height: 435px;width: 100%;position: relative;">
+
+        <img class="img_galeria decolor2"src="{{ gallery.getImageList()[0]["thumb_500"] }}" class="img-responsive" data-original="{{ gallery.getImageList()[0]["thumb_500"] }}" alt="item">
+        <div class="box">    
+            <h1 class="text_galer_detail text-center">
+                {{ gallery.title }}
+            </h1>
+        </div>
+</section>
+
+<section class="hlg">
+    <div id="wrap">
+        <!-- registration -->
+        <div class="container-fluid-art cart-list productlist mb-2">
+            <div class="row">
+                <div class="col-sm-12 blog-content">
+                    <article>
+                        <header class="box">
+                            <h1 class="h1-art text_title_galer">
+                                {{ gallery.caption }}
+                            </h1>
+                        </header>
+
+                        <div class="content articulo-text" style="text-align:left;">
+                            <div class="row row_center">
+                                <div class="col-sm-12 especial p-art">
+                                    <p class="p-art">
+                                        {{ gallery.description }}
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- galeria -->
+                            <div class="row">
+                                <div class="col-sm-12 especial">
+                                    <ul id="lightgallery" class="list-unstyled row" >
+                                    {% for i in gallery.getImageList() %}
+                                        <li class="col-sm-4 text-center height-product article-img" data-responsive="{{ i["thumb_200"] }},{{ i["thumb_500"] }}" data-src="{{ i["thumb_500"] }}" data-sub-html="">
+                                            <a href="">
+                                            <div class="container_galeria">
+                                                <img class="img-responsive img-gallery mover" src="{{ i["thumb_500"] }}">
+                                            </div>
+
+                                                
+                                            </a>
+                                        </li>
+                                    {% end %}
+                                    </ul>
+                                </div>
+                            </div>
+                            <!-- fin galeria -->
+                            <div class="row">
+                                <div class="col-sm-12 especial">
+                                    
+                                </div>
+                            </div>
+                            <div class="row">
+                             
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="col-sm-3 blog-sidebar">
+                    <div class="widget" style="text-align:left;">
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- row 4 -->
+        </div>
+
+        <div class="container-fluid productlist">
+            <article>
+                
+            </article>
+            <div class="row cont-rel">
+                <!--{{! content }}-->
+            </div>
+        </div>
+        <div class="carritoproductos clearfix">
+            <div class="flecha clearfix">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- <section style="height:220px;">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class="text_galer2 text-center {{editabletext}}" text-id="{{ site.name + '_text_galeria2' }}"> {{ read_text(site.name +  '_text_galeria2') }}
+        </h1>
+    </div>
+</section> -->
+
+<!-- <section style="display: block;height: 550px;">
+    <div class="" style="position: relative;">
+        {% if is_admin %}
+        <div class="image-upload visible-movil">
+            <label for="img_gallerybanner2">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_img_gallerybanner2" name="image" id="img_gallerybanner2" >
+        </div>
+        {% end %}
+        <div style="width: 100%">
+            <a id="{{ site.name + '_img_gallerybanner2' }}" href="{{ read_link(site.name + '_img_gallerybanner2') }}">
+                <img class="decolor img_banner_gal img-responsive" id="{{ site.name }}_img_detail_gallery" src="{{ read_image(site.name + '_img_gallerybanner2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_gallerybanner2',500) }}'" alt="" style=" ">
+          
+                <div class="parent4">    
+                    <h1 class="col-lg-12 col-md-12 col-xs-12 text-center text-gal {{editabletext}}" text-id="{{ site.name + '_img_gallerybanner2' }}"> {{ read_text(site.name +  '_img_gallerybanner2') }}
+                    </h1>
+                    <h3 class="col-lg-12 col-md-12 col-xs-12 text-center text-gal-2 {{editabletext}}" text-id="{{ site.name + '_img_detail_gallery' }}"> {{ read_text(site.name +  '_img_detail_gallery') }}
+                    </h3>
+                </div>
+            </a> -->
+            <!--editable link-->
+ <!--            {% if is_admin %}
+            <img class="change-image editablelink" link-id="{{ site.name + '_img_gallerybanner2' }}" content="{{ read_link(site.name + '_img_gallerybanner2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;">
+            {% end %}
+        </div>
+    </div>
+</section> -->
+
+<section class="hg3">
+    <div class="col-md-12 col-sm-12 box">
+        <h1 class=" text_galer3 text-center {{editabletext}}" text-id="{{ site.name + '_text_galeria3' }}"> {{ read_text(site.name +  '_text_galeria3') }}
+        </h1>
+    </div>
+</section>
+
+{% include '../home/footer.html' %}
+
+{% end %}

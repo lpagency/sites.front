@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+
+{% block css %}
+<style type="text/css">
+.return{
+    visibility: hidden;
+}
+#header-top{
+    display: none!important;
+}
+</style>
+
+{% end %}
+
+{% block javascript %}
+<script>
+
+</script>
+{% end %}
+
+
+<div id="container">
+        <div id="content">
+            <h1 style="display: none;">Complementa Diseño</h1>
+            <div id="tf_loading" class="tf_loading"></div>
+            <div id="tf_bg" class="tf_bg">
+
+
+                <img src="{{ read_image(site.name + '_slide1', 500) }}" alt="Slider 6" longdesc="{{ read_image(site.name + '_slide1', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide2', 500) }}" alt="Slide 5" longdesc="{{ read_image(site.name + '_slide2', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide3', 500) }}" alt="Slide 04" longdesc="{{ read_image(site.name + '_slide3', 500) }}" />
+
+                <img src="{{ read_image(site.name + '_slide4', 500) }}" alt="Slide 01" longdesc="{{ read_image(site.name + '_slide4', 500) }}" />
+            
+                <img src="{{ read_image(site.name + '_slide5', 500) }}" alt="Slide 02" longdesc="{{ read_image(site.name + '_slide5', 500) }}" />
+                
+                <img src="{{ read_image(site.name + '_slide6', 500) }}" alt="Slide 03" longdesc="{{ read_image(site.name + '_slide6', 500) }}" />
+
+                <!-- <img src="https://84static.loadingplay.com/static/images/cb6b839e3ab435d2529737755ca52daa_slide-06-1280x1024.png" alt="Slide 03" longdesc="https://84static.loadingplay.com/static/images/cb6b839e3ab435d2529737755ca52daa_slide-06-1280x1024.png" /> -->
+            </div>
+
+        </div>
+</div>
+
+
+<div id="scroll_top">
+    <a href="http://complementadiseno.cl/"></a>
+</div>
+
+
+
+{% end %}

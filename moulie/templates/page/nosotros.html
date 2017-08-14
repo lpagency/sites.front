@@ -1,0 +1,146 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section class="height_nosotros" style="display: block;">
+     <div class="" >
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_nosotros">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_nosotros" name="image" id="img_nosotros" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_nosotros" src="{{ read_image(site.name + '_nosotros', 1) }}" onload="this.src='{{ read_image(site.name + '_nosotros',500) }}'" class=" img_nosotros" alt="item">
+    </div>
+
+    <div class="box">
+        <h1 class="col-md-12 col-xs-12 text_nosotros text-center {{editabletext}}" text-id="{{ site.name + '_text_nosotros' }}"> 
+            {{ read_text(site.name +  '_text_nosotros') }}
+        </h1>
+    </div>
+
+    <div class="clearfix" ></div>
+</section>
+
+<section style="height:200px;">
+    <div class="box">
+        <h1 class="col-md-12 col-xs-12 text_nosotros2 text-center {{editabletext}}" text-id="{{ site.name + '_text_nosotros2' }}"> 
+                {{ read_text(site.name +  '_text_nosotros2') }}
+        </h1>
+    </div>
+</section>
+
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-4 col-sm-4 pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nosotros1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nosotros1" name="image" id="img_nosotros1" >
+            </div>
+            {% end %}
+            <div class="box-img">
+                <img id="{{ site.name }}_nosotros1" src="{{ read_image(site.name + '_nosotros1', 1) }}" onload="this.src='{{ read_image(site.name + '_nosotros1',500) }}'" class=" img_nosotros1" alt="item">
+            </div>
+        </div>
+
+        <div class="col-md-8 col-sm-8">
+            <div class="box m0">
+                <h1 class="text_nosotros3 {{editabletext}}" text-id="{{ site.name + '_text_nosotros3' }}"> 
+                {{ read_text(site.name +  '_text_nosotros3') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros4 {{editabletext}}" text-id="{{ site.name + '_text_nosotros4' }}"> 
+                {{ read_text(site.name +  '_text_nosotros4') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="#" role="button">IR A LA CATEGORIA</a>
+        </div>
+
+    </div>
+</section>
+
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-offset-4 col-md-4 col-sm-offset-4 col-sm-4pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nosotros2">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nosotros2" name="image" id="img_nosotros2" >
+            </div>
+            {% end %}
+            <div class="box-img2 m0">
+                <img id="{{ site.name }}_nosotros2" src="{{ read_image(site.name + '_nosotros2', 1) }}" onload="this.src='{{ read_image(site.name + '_nosotros2',500) }}'" class=" img_nosotros2" alt="item">
+            </div>
+        </div>
+
+        <div class="col-md-4 col-sm-4">
+            <div class="box m0">
+                <h1 class="text_nosotros5 {{editabletext}}" text-id="{{ site.name + '_text_nosotros5' }}"> 
+                {{ read_text(site.name +  '_text_nosotros5') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros6 {{editabletext}}" text-id="{{ site.name + '_text_nosotros6' }}"> 
+                {{ read_text(site.name +  '_text_nosotros6') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="#" role="button">IR A LA CATEGORIA</a>
+        </div>
+
+    </div>
+</section>
+
+<section style="height: 250px;">
+    <div class="col-md-12 col-sm-12 pad0">
+        <div class="col-md-8 col-sm-8">
+            <div class="box m0">
+                <h1 class="text_nosotros7 {{editabletext}}" text-id="{{ site.name + '_text_nosotros7' }}"> 
+                {{ read_text(site.name +  '_text_nosotros7') }}
+                </h1>
+            </div>
+            <div class="box m0">
+                <h1 class="text_nosotros8 {{editabletext}}" text-id="{{ site.name + '_text_nosotros8' }}"> 
+                {{ read_text(site.name +  '_text_nosotros8') }}
+                </h1>
+            </div>
+            <a class="btn btn-default btn-resena" href="#" role="button">IR A LA CATEGORIA</a>
+        </div>
+        <div class="col-md-4 col-sm-4 pad0" >
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+                <label for="img_nosotros3">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_nosotros3" name="image" id="img_nosotros3" >
+            </div>
+            {% end %}
+            <div class="box-img3">
+                <img id="{{ site.name }}_nosotros3" src="{{ read_image(site.name + '_nosotros3', 1) }}" onload="this.src='{{ read_image(site.name + '_nosotros3',500) }}'" class=" img_nosotros3" alt="item">
+            </div>
+        </div>
+    </div>
+</section>
+{% end %}

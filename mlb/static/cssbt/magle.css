@@ -1,0 +1,648 @@
+/* reset .row */
+.row
+{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+/* swipper slider */
+.swiper-container 
+{
+  width: 100%;
+  /*height: 100%;*/
+  margin-left: auto;
+  margin-right: auto;
+  height: 540px;
+}
+.swiper-slide 
+{
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+/* swipper slider */
+/* about us */
+.mlb-text
+{
+  z-index: 200;
+
+}
+.mlb-text p
+{
+  font-weight: 300;
+  font-style: italic;
+  font-size: 19px;
+  line-height: 27px;
+}
+.mlb-text p span
+{
+  font-weight: 700;
+}
+.mlb-text h2
+{
+  font-weight: 700;
+}
+.mlb-aboutus-header
+{
+  overflow: hidden; 
+  height: 160px;
+}
+.mlb-aboutus-header .bkg
+{
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.28); 
+  z-index: 150; 
+  position: absolute !important; 
+  top: 0;
+}
+.mlb-aboutus-header h2
+{
+  z-index: 200;
+  color: white;
+  position: relative;
+  font-weight: 700;
+}
+.mlb-aboutus-header img,
+.mlb-aboutus-footer img
+{
+  position: absolute;
+  top: -50%;
+  z-index: 100;
+  left: 0;
+  height: auto;
+  /*object-fit: cover;*/
+}
+
+/* addcart clases*/
+.mlb-cart-add-products
+{
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);  
+  right: 0;
+  position: absolute;
+  /* -webkit-transition: all .5s ease-in-out; */
+  /*-moz-transition: all .5s ease-in-out;*/
+  /*-o-transition: all .5s ease-in-out;*/
+  /* transition: all .5s ease-in-out; */
+  z-index: 1100;
+  width: auto;
+  opacity: 1;
+
+}
+.mlb-btn button
+{
+  margin: 10px;
+}
+/* register clases */
+.mlb-register-content
+{     
+  background-color: white;
+  -webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);
+  -moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);
+  box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.38);  
+  margin-top: 150px;
+  position: relative;
+  opacity: 0; 
+  /* height: 350px; */ 
+  -webkit-transition: all .5s ease-in-out;
+  -moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  padding: 0px;
+}
+.mlb-opacity
+{
+  opacity: 1;
+}
+.mlb-top
+{
+  margin-top: 100px;
+}
+.mlb-header-button
+{
+  width: 50%;
+  float: left;
+}
+.mlb-header-button h2
+{
+ font-size: 25px;
+ font-weight: 100;
+ color: gray;
+}
+.mlb-header-button-active h2
+{
+  font-size: 25px;
+  font-weight: 600;
+  color: black;
+}
+/* register clases */
+.mlb-product
+{
+ height: 460px;
+}
+.mlb-product h1
+{
+  font-size: 19px !important;
+
+  margin-top: 13px !important;
+  float: left;
+  width: 100%;
+  font-weight: 700;
+  padding: 5px;
+}
+.mlb-product h2
+{
+  width: 100%;
+  margin-top:0px;
+  float: left;
+  /*margin: 8px 0px 40px 0px;*/ 
+  font-size: 18px;
+}
+
+.info-product,
+.info-article
+{
+  display: block;   
+  position: absolute;   
+  z-index: 1;      
+  overflow: hidden;   
+  width: 300px;      
+  margin: auto;   
+  top: 0;   
+  bottom: 0;   
+  left: 0;   
+  right: 0;
+  color: black;
+  height: 300px;
+}
+.info-article
+{
+  width: 180px;
+  background-color: rgba(255, 255, 255, 0.59);
+  padding: 10px;
+  height: 330px;
+  border: 2px solid black;
+  -webkit-box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.59);
+  -moz-box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.59);
+  box-shadow: 0px 0px 0px 10px rgba(255,255,255,0.59);
+  margin:auto;
+  text-align: center;
+}
+.info-product h2,
+.info-article h2,
+.info-product-detail h2
+{
+  font-size: 29px;
+  font-weight: 800;
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+}
+.info-article h2
+{
+  font-size: 17px;
+
+  font-weight: 700;
+}
+.info-product i
+{
+  font-weight: 800;   
+}
+.info-product p,
+.info-article p
+{
+  font-size: 14px;
+  text-transform: uppercase;
+  /*font-variant: small-caps;*/
+  margin: 20px 0px;
+}
+.info-article p
+{
+  font-size: 12px;
+
+  text-transform: none;
+  padding: 0px 10px;
+  line-height: 1.8;
+  color: rgb(83, 83, 83);
+}
+.info-product h1
+{
+  font-size: 33px !important;
+  margin-bottom: 22px;
+}
+.info-product button,
+.info-article button,
+.info-product-detail button,
+.mlb-btn button
+{
+  background-color: rgba(255, 255, 255, 0.81);
+  color:rgba(0, 0, 0, 0.39);
+  text-transform: uppercase;
+  border: 0px;
+  margin: 0;
+}
+.info-article button
+{
+  background-color: transparent;
+  color: black;
+  /*margin: 0;*/
+}
+.banner-principal,
+.banner-secundario
+{
+  text-align: left;
+  display: inline-block;
+  margin: auto auto auto 8%;
+  /*height: 210px;*/
+}
+.color-white
+{
+  color: white !important;
+}
+.banner-secundario
+{
+  text-align: right;
+  margin: auto 8% auto auto;
+  width: 400px;
+}
+.banner-principal-product
+{
+  height: 270px;
+}
+.banner-principal h2,
+.banner-secundario h2
+{
+  margin-bottom: 5px;
+}
+footer a{
+
+  color: white !important;
+
+}
+footer li
+{
+  width: 100% !important;
+  float: left !important;
+}
+.textos-footer li a
+{
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+h1
+{
+  font-size: 22px !important;
+  font-weight: 500;
+  margin: 5px 0px;
+  letter-spacing: 2px;
+}
+
+.container-fluid-magle
+{
+	/*max-width: 1160px !important;*/
+	padding: 10px 60px !important;
+	margin: 0px auto;
+	height: auto;
+	display: inline-block;
+}
+.bg-black-magle
+{
+	background-color: black;
+	color: white;
+  padding-top: 15px !important;
+  padding-bottom: 0px !important;
+}
+.line-bottom-magle
+{
+	border-bottom: 1px solid gray; 
+	
+}
+
+/* trasladar clases a un menú solo para menús */
+.menu-4 {
+  padding: 4px !important;
+  background-color: black;
+  width: 100% !important;
+  text-align: right;
+}
+.menu-4 ul
+{
+
+}
+.menu-4 li
+{
+	font-size: 12px;
+	font-weight: 100;
+	text-transform: uppercase;
+	width: auto !important;
+	padding: 0px 10px;
+}
+.menu-4 li a{
+	font-weight: 100 !important;
+	font-size: 11px !important;
+	color: white !important;
+}
+.menu-4 li a:hover{
+	background-color:none !important;
+	font-weight: 400 !important;
+
+}
+.menu-3
+{
+  padding: 3px 0px !important;
+
+}
+.menu-3 li
+{
+	width: auto !important;
+	padding: 8px 10px;
+}
+.mlb-aboutus-footer
+{
+  height: auto;
+  padding: 140px 0px !important;
+  overflow: hidden;
+}
+#open-mlb-menu-movil
+{
+  color: black;
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  top: 10px;
+  left: 0;
+  font-size: 30px;
+  z-index: 2000;
+  background-color: white;
+  display: none;
+}
+.mlb-menu-movil
+{
+  width: 280px;
+  height: 100%;
+  left: -280px;
+  position: fixed;
+  background-color: black;
+  top: 0;
+  z-index: 2000;
+}
+.mlb-menu-movil ul
+{
+  width: 100%;
+  color: white;
+  font-size: 19px;
+  list-style: none;
+  padding: 10px 0px;
+}
+.mlb-menu-movil li
+{
+  padding: 5px 20px;
+  text-align: left;
+
+}
+.mlb-menu-movil li a
+{
+  color: rgb(172, 172, 172);
+}
+.mlb-menu-movil-top
+{
+  margin-top: 30px;
+}
+.mlb-logo-header
+{
+  max-height: 70px;
+  max-width: 250px;
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
+.sobre-botones:hover .box-product .box-product-info
+{
+  display: block !important;
+}
+
+.image-upload.header{
+  left: 320px ;
+  top: 15px ;
+  right:auto; 
+  z-index:1999;
+}
+
+.text_footer{
+  margin-top: 30px;
+  text-align: right;
+}
+
+.icon-shopping-cart{
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5)
+}
+
+.icon-shopping-cart>span {
+    font: 11px/15px Arial,Helvetica,sans-serif;
+    display: block;
+    position: absolute;
+    left: 72%;
+    background: #2b97f3;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    color: #FFF;
+    text-indent: 0;
+    min-width: 6px;
+    padding: 0 4px;
+    margin: -18px 0 0 -2px;
+    top: 50%;
+    height: 14px;
+    -webkit-transform: scale(0.8);
+    transform:scale(0.8);
+}
+
+
+@media only screen and (max-width:480px) {
+  .info-product, 
+  .info-article 
+  {
+    width: 200px;
+    height: 300px;
+    margin: auto;
+    text-align: center !important;
+  }
+  .info-product h2, 
+  .info-article h2 
+  {
+    font-size: 25px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .info-product h1 
+  {
+    margin-bottom: 20px;
+  }
+  .info-product p, 
+  .info-article p
+  {
+    margin: 10px 0px;
+  }
+  .mlb-cart-add-products 
+  {
+   width: 90%; 
+   right: 5%;
+ }
+
+ .info-product button, 
+ .info-article button, 
+ .mlb-btn button 
+ {
+  margin: 0px 10% 10px 10%;
+  width: 80%;
+}
+/* páginas interiores */
+.mlb-aboutus-header 
+{
+  height: 190px;
+}
+.mlb-aboutus-footer
+{
+
+  padding: 10px 0px !important;
+}
+.mlb-top {
+  margin-top: 30px;
+}
+#open-mlb-menu-movil
+{
+  display: inline;
+}
+.mlb-logo-header
+{
+  margin-left: 35px;
+  max-height: 49px;
+  max-width: 210px;
+}
+
+.header{
+  top: 10px !important;
+  left: 220px !important;
+}
+.line-bottom-magle {
+  border-bottom: 1px solid gray;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1100;
+}
+.swiper-container {
+  margin: 60px auto 0px auto !important;
+}
+
+/*++++++++++ Detalle producto++++++++++++++++*/
+.product-detail.description{
+  margin-top: 60px; 
+}
+
+.product .tit-mobile{
+  position: relative;
+  z-index: 2;
+}
+
+.product .slider-detail{
+  position: relative;
+  margin-top: -70px;  
+}
+
+/*++++++++++ Detalle producto++++++++++++++++*/
+
+/*++++++++++ Categorias ++++++++++++++++*/
+
+.mlb-aboutus-header .hide-show{
+  top:50px;
+}
+
+.mlb-aboutus-header h2{
+  margin-top:70px;
+}
+
+/*++++++++++ Categorias ++++++++++++++++*/
+
+
+/*++++++++++ Carro de compras ++++++++++++++++*/
+.cart-list{
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
+  /*height: 450px;*/
+}
+
+/*++++++++++ Carro de compras ++++++++++++++++*/  
+
+/*++++++++++ listado productos++++++++++++++++*/  
+.mlb-product h2 {
+  margin: 0px;
+}
+
+.mlb-product
+{
+ height: 500px;
+}
+/*++++++++++ listado productos++++++++++++++++*/  
+
+.container-fluid-magle
+{
+  /*max-width: 1160px !important;*/
+  padding: 10px 10px !important;
+}
+
+.text_footer{
+  right: 0px !important;
+  text-align: left;
+}
+
+.container-fluid.cart-list {
+  text-align: center;
+  margin: 0;
+  padding: 0px !important;
+}
+
+#myModal{
+  top:70px;
+}
+
+}
+
+@media only screen and (max-width:320px) {
+  /*++++++++++ listado productos++++++++++++++++*/  
+  .mlb-product
+  {
+   height: 360px;
+  }
+ /*++++++++++ listado productos++++++++++++++++*/  
+
+ table.table{
+    width: 90% !important;
+  }
+
+  .modal-body{
+    padding-left: 0px !important;
+  }
+}
+

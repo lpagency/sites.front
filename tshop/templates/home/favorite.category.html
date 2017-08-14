@@ -1,0 +1,294 @@
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+<section class="section-hero white-bg lef" id="section-category">
+        <div class="container">
+            <div class="hero-section-header ">
+                <h3 class="hero-section-title {{editabletext}}"  text-id="{{ site.name + '_texto-favorite' }}">  {{ read_text(site.name + '_texto-favorite') }} </h3>
+            </div>
+            <div class="row row-centered">
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box' }}">  {{ read_text(site.name + '_texto-box') }} </span>
+                        </a>
+                        <div class="img-block"> 
+                          {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_box_in">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_box_in" name="image" id="img_box_in" >
+                </div>
+                {% end %}
+                <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                <img id="{{ site.name }}_box_in" src="{{ read_image(site.name + '_box_in', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                </a>
+
+                       <!--  <img alt="img" src="https://7static.loadingplay.com/static/images/4b22e8331e6548b317b9e91f9a9e998d_1.png" class="img-responsive"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box2' }}">  {{ read_text(site.name + '_texto-box2') }} </span>
+                        </a>
+                        <div class="img-block"> 
+                         {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_box_in2">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_box_in2" name="image" id="img_box_in2" >
+                            </div>
+                            {% end %}
+                    <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                    <img id="{{ site.name }}_box_in2" src="{{ read_image(site.name + '_box_in2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in2', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                    </a>
+
+                     <!--    <img alt="img" src="https://84static.loadingplay.com/static/images/39c87e8af3e9038161ea4d576d0c59da_2.png" class="img-responsive"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box3' }}">  {{ read_text(site.name + '_texto-box3') }} </span>
+                        </a>
+                        <div class="img-block">
+                          {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_box_in3">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_box_in3" name="image" id="img_box_in3" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                        <img id="{{ site.name }}_box_in3" src="{{ read_image(site.name + '_box_in3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in3', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                        </a>
+                        <!--  <img alt="img" src="https://84static.loadingplay.com/static/images/a9843f854471238fe9f46d5b8834b6ab_3.png" class="img-responsive"> -->
+                         </div>
+                    </div>
+                </div>
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box4' }}">  {{ read_text(site.name + '_texto-box4') }} </span>
+                        </a>
+                        <div class="img-block"> 
+                         {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_box_in4">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_box_in4" name="image" id="img_box_in4" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                        <img id="{{ site.name }}_box_in4" src="{{ read_image(site.name + '_box_in4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in4', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                        </a>
+                       <!--  <img alt="img" src="https://7static.loadingplay.com/static/images/98d07309d98cb75e98e096ebc79434d9_4.png" class="img-responsive"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box5' }}">  {{ read_text(site.name + '_texto-box5') }} </span>
+                        </a>
+                        <div class="img-block"> 
+                           {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_box_in5">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_box_in5" name="image" id="img_box_in5" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                        <img id="{{ site.name }}_box_in5" src="{{ read_image(site.name + '_box_in5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in5', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                        </a>
+
+                     <!--    <img alt="img" src="https://84static.loadingplay.com/static/images/9b6425734cfe57fca2a942ab77d638c1_5.png" class="img-responsive"> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="block-explore col-centered col-sm-4 col-xs-4 col-xs-min-12">
+                    <div class="inner">
+                        <a class="overly hw100" href="{{site_base}}/list_products">
+                            <span class="explore-title {{editabletext}}"  text-id="{{ site.name + '_texto-box6' }}">  {{ read_text(site.name + '_texto-box6') }} </span>
+                        </a>
+                        <div class="img-block"> 
+                         {% if is_admin %}
+                            <div class="image-upload">
+                                <label for="img_box_in6">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png';">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_box_in6" name="image" id="img_box_in6" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
+                        <img id="{{ site.name }}_box_in6" src="{{ read_image(site.name + '_box_in6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_in6', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+                        </a>
+                      <!--   <img alt="img" src="https://7static.loadingplay.com/static/images/3dc5079a155b84b4bbab3c0bab2ee8a0_6.png" class="img-responsive"> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+       
+    <section class="section-hero hide" id="section-category">
+        <div class="container">
+            <div class="hero-section-header ">
+                <h3 class="hero-section-title">OUR FAVORITE CATEGORY</h3>
+            </div>
+            <div class="row featuredPostContainer ">
+                <div class="featuredImageLook3 flat">
+                    <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                        <div class="inner">
+                            <div class="box-content-overly box-content-overly-white flat">
+                                <div class="box-text-table">
+                                    <div class="box-text-cell ">
+                                        <div class="box-text-cell-inner dark">
+                                            <h1 class="uppercase">Handbags</h1>
+                                            <hr class="submini">
+                                            <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="img-title"> Handbags</div>
+                                <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/2.jpg" class="img-responsive"></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                            <div class="inner">
+                                <div class="box-content-overly box-content-overly-white flat">
+                                    <div class="box-text-table">
+                                        <div class="box-text-cell ">
+                                            <div class="box-text-cell-inner dark">
+                                                <h1 class="uppercase"> Designers</h1>
+                                                <hr class="submini">
+                                                <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="img-title"> Designers</div>
+                                    <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/1.jpg" class="img-responsive"></a>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                <div class="inner">
+                                    <div class="box-content-overly box-content-overly-white flat">
+                                        <div class="box-text-table">
+                                            <div class="box-text-cell ">
+                                                <div class="box-text-cell-inner dark">
+                                                    <h1 class="uppercase">Sale Offers</h1>
+                                                    <hr class="submini">
+                                                    <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="img-title"> Sale Offers</div>
+                                        <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/3.jpg" class="img-responsive"></a>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                    <div class="inner">
+                                        <div class="box-content-overly box-content-overly-white flat">
+                                            <div class="box-text-table">
+                                                <div class="box-text-cell ">
+                                                    <div class="box-text-cell-inner dark">
+                                                        <h1 class="uppercase">T Collections</h1>
+                                                        <hr class="submini">
+                                                        <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="img-title">T Collections</div>
+                                            <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/4.jpg" class="img-responsive"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                        <div class="inner">
+                                            <div class="box-content-overly box-content-overly-white flat">
+                                                <div class="box-text-table">
+                                                    <div class="box-text-cell ">
+                                                        <div class="box-text-cell-inner dark">
+                                                            <h1 class="uppercase">Latest Trends </h1>
+                                                            <hr class="submini">
+                                                            <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="img-title"> Latest Trends</div>
+                                                <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/5.jpg" class="img-responsive"></a>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                            <div class="inner">
+                                                <div class="box-content-overly box-content-overly-white flat">
+                                                    <div class="box-text-table">
+                                                        <div class="box-text-cell ">
+                                                            <div class="box-text-cell-inner dark">
+                                                                <h1 class="uppercase">Dresses</h1>
+                                                                <hr class="submini">
+                                                                <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="img-title"> Dresses</div>
+                                                    <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/look3/6.jpg" class="img-responsive"></a>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                                <div class="inner">
+                                                    <div class="box-content-overly box-content-overly-white flat">
+                                                        <div class="box-text-table">
+                                                            <div class="box-text-cell ">
+                                                                <div class="box-text-cell-inner dark">
+                                                                    <h1 class="uppercase">Dresses</h1>
+                                                                    <hr class="submini">
+                                                                    <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="img-title"> Dresses</div>
+                                                        <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/category/3.jpg" class="img-responsive"></a>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3 col-sm-4 col-xs-4 col-xs-min-12">
+                                                    <div class="inner">
+                                                        <div class="box-content-overly box-content-overly-white flat">
+                                                            <div class="box-text-table">
+                                                                <div class="box-text-cell ">
+                                                                    <div class="box-text-cell-inner dark">
+                                                                        <h1 class="uppercase">Dresses</h1>
+                                                                        <hr class="submini">
+                                                                        <a href="category2.html" class="btn btn-flat btn-dark btn-sm"> SHOP NOW</a></div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="img-title"> Dresses</div>
+                                                            <a href="category2.html" class="img-block"> <img alt="img" src="{{site_base}}/static/images/category/1.jpg" class="img-responsive"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+    </section>
