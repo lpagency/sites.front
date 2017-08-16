@@ -1,9 +1,11 @@
-.add-one.che{
-	float: inherit;
+.add-one.che {
+    float: inherit;
     background-color: #BA6C54;
     color: white;
     font-size: 9px;
-    padding: 4px;
+    padding: 3px;
+    position: relative;
+    left: 5px;
 }
 
 .volver-vitri{
@@ -19,11 +21,13 @@
     color: gray;
 }
 
-.remove-one.che{
-	background-color: #BA6C54;
+.remove-one.che {
+    background-color: #BA6C54;
     color: white;
     font-size: 9px;
-    padding: 4px;
+    padding: 3px;
+    position: relative;
+    left: 2px;
 }
 
 
@@ -347,6 +351,8 @@ a.ter-chek {
     font-size: 11px;
     line-height: 16px;
     text-align: left;
+    position: relative;
+    left: 7%;
 }
 
 .texto-datos {
@@ -354,13 +360,15 @@ a.ter-chek {
     color: #DE7E2A;
     margin-top: 19px;
     font-size: 11px;
+    position: relative;
+    left: 7%;
 }
 
 .despe{
     color: #DE7E2A;
     text-align: left;
     position: relative;
-    right: 9px;
+    right: -3px;
     font-size: 15px;
     font-style: italic;
 }
@@ -375,7 +383,7 @@ a.ter-chek {
     border-radius: 0px;
     height: 38px;
     font-size: 15px;
-    left: -8px;
+    left: 3px;
     position: relative;
     padding-top: 5px;
 }
@@ -391,7 +399,7 @@ label.payment-label {
     top: 32px !important;
     z-index: 1030 !important;
     font-size: 12px !important;
-    left: 37px !important;
+    left: 54px !important;
     /* margin-top: -10px; */
     color: white !important;
 }
@@ -404,7 +412,7 @@ label.payment-label {
     height: 32px !important;
     overflow: hidden !important;
     position: relative !important;
-    margin-left: 4px !important;
+    margin-left: 30px !important;
     background: #555252 !important;
     margin-bottom: 24% !important;
     margin-top: -24px !important;
@@ -420,9 +428,9 @@ label.payment-label {
     border-radius: 0px;
     height: 33px;
     font-size: 12px;
-    left: 16px;
+    left: 40px;
     position: relative;
-    padding-top: 5px;
+    padding-top: 7px;
 }
 
 .t-1{
@@ -458,6 +466,8 @@ label.payment-label {
     position: relative;
     top: 5px;
     font-weight: 600;
+    position: relative;
+    left: 7%;
 }
 
 .despacho-tick {
@@ -516,13 +526,15 @@ input.chi[type=radio], input.chi[type=checkbox] {
     margin-top: -24px;
 }
 
-.nombre-chek{
-     width: 29%;
+.nombre-chek {
+    width: 25%;
     height: 41px;
     top: 10px;
     position: relative;
-    font-size: 12px;
+    font-size: 11px;
     line-height: 17px;
+    padding-left: 0px;
+    padding-right: 10px;
 }
 
 .img-cart{
@@ -543,9 +555,15 @@ input.chi[type=radio], input.chi[type=checkbox] {
 
 .eliminar-cheki{
     text-align: center;
+    width: 9%;
 }
 
 .corri{
     position: relative;
     right: 32px;
+}
+
+.logo_webpay-dos{
+    position: relative;
+    left: 7%;
 }

@@ -372,14 +372,17 @@ function TagURL(listaTag)
         if($(".ch-"+nombre).hasClass("c-variable_uno")){
           $(".c-variable_1").removeClass("hidden");
           $(".c-variable_2").addClass("hidden");
+          $(".c-variable_3").addClass("hidden");
         }
-        if($(".ch-"+nombre).hasClass("c-variable_2")){
+        if($(".ch-"+nombre).hasClass("c-variable_dos")){
           $(".c-variable_2").removeClass("hidden");
+          $(".c-variable_1").addClass("hidden");
           $(".c-variable_2").addClass("hidden");
         }
-        if($(".ch-"+nombre).hasClass("c-variable_3")){
+        if($(".ch-"+nombre).hasClass("c-variable_tres")){
           $(".c-variable_3").removeClass("hidden");
           $(".c-variable_2").addClass("hidden");
+          $(".c-variable_1").addClass("hidden");
         }
 
         $(".texto-ruta").html(textoRuta +" / "+ va);
