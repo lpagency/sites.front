@@ -1225,7 +1225,7 @@ div.upload input, div.image-upload input{
     text-align: center;
     /* width: 100%; */
     position: relative;
-    margin-left: 18px;
+    margin-left: 6px;
 }
 
 .box-talla-2{
@@ -2324,7 +2324,7 @@ td.tot {
     left: 46%;
 }
 .container-g{
-    width: 1230px;
+    width: 1240px;
     margin: 0 auto;
 }
 
@@ -2587,6 +2587,8 @@ select {
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     z-index: 1000;
+     min-width: 196px;
+
 }
 
 
@@ -2884,6 +2886,14 @@ th.mayoristas{
     position: relative;
     margin-top: -48px;
     margin-bottom: -12px;
+}
+
+.filtro-color{
+   width: 100px;
+}
+
+.filtro-tipos{
+  width: 100px;
 }
 /*------------------------------------------Responsive--------------------------------------------*/
 
@@ -3850,8 +3860,8 @@ hr.detalle {
 
 .carousel {
     position: relative;
-    bottom: -73px;
-    margin-bottom: 15px;
+    bottom: -34px;
+    margin-bottom: 51px;
 }
 
 .centrado {
@@ -3880,6 +3890,26 @@ hr.detalle {
     color: gray;
     text-transform: lowercase;
     font-size: 13px;
+}
+
+.modal-dialog.carrito {
+    margin-top: 93px;
+    float: right;
+    /* left: 123px; */
+    left: 0px;
+}
+
+.img-cart {
+    width: 68%;
+    object-fit: cover;
+    height: 94px;
+    position: relative;
+    top: 0px;
+}
+
+td.money.lib {
+    position: relative;
+    left: 34%;
 }
 
 }

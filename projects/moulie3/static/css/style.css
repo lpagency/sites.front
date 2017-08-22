@@ -33,6 +33,31 @@ a:hover{
     -webkit-box-shadow: 10px 10px 2px 0px transparent;
 }
 
+.linea-1-img{
+    margin-top: 0px;
+    margin-bottom: 32px;
+}
+
+.linea-2-img {
+    margin-top: -38px;
+    margin-bottom: 26px;
+    width: 80%;
+}
+
+
+div.upload input, div.image-upload input {
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    width: 100%;
+}
+
 li{
 	list-style: none;
 }
@@ -656,7 +681,7 @@ hr.inter {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.titulo-small{
+.titulo-small {
     width: 44%;
     font-size: 16px;
     margin-top: 31px;
@@ -665,6 +690,7 @@ hr.inter {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 13px;
+    margin-bottom: 12px;
 }
 
 .titulo-small-2{
@@ -849,6 +875,79 @@ hr.contact.dos{
 .banner_top {
     display: none;
 }
+
+.fondo-form-venta{
+    height: 400px;
+    width: 100%;
+    object-fit: cover !important;
+    filter: grayscale(0%) brightness(95%);
+    -webkit-filter: grayscale(0%) brightness(95%);
+    -moz-filter: grayscale(0%) brightness(95%);
+    -ms-filter: grayscale(0%) brightness(95%);
+    -o-filter: grayscale(0%) brightness(95%);
+}
+
+.distrib-venta {
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 57px;
+    font-size: 22px;
+    width: 75%;
+    font-family: 'Alegreya SC', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #B7974E;
+    padding-left: 60px;
+    padding-right: 100px;
+
+}
+
+.box-medios {
+    width: 100%;
+    position: relative;
+    height: 141px;
+    object-fit: scale-down;
+    filter: grayscale(0%) brightness(95%);
+    -webkit-filter: grayscale(0%) brightness(95%);
+    -moz-filter: grayscale(0%) brightness(95%);
+    -ms-filter: grayscale(0%) brightness(95%);
+    -o-filter: grayscale(0%) brightness(95%);
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 0px;
+}
+
+
+.texto-medio{
+    position: absolute;
+    top: 0px;
+    text-align: center;
+    width: 100%;
+     font-family: 'Alegreya SC', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+     color: #B7974E;
+}
+
+.medios {
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 57px;
+    font-size: 22px;
+    width: 100%;
+    font-family: 'Alegreya SC', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #B7974E;
+    padding-left: 100px;
+    padding-right: 100px;
+}
+
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width: 1199px){
     .logo.mob{
@@ -1250,6 +1349,39 @@ hr.contact {
     top: -28px;
     float: left;
     left: 14px;
+}
+
+.distrib-venta {
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 57px;
+    font-size: 22px;
+    width: 100%;
+    font-family: 'Alegreya SC', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #B7974E;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: -36px;
+}
+
+.medios {
+    text-align: center;
+    position: relative;
+    left: 0px;
+    margin-top: 57px;
+    font-size: 22px;
+    width: 100%;
+    font-family: 'Alegreya SC', serif;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #B7974E;
+     padding-left: 10px; 
+     padding-right: 10px; 
 }
 
 }

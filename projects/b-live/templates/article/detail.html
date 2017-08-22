@@ -26,10 +26,16 @@
 
 
 </style>
+<script>
+   $(“#menu-toggle”).click(function(e) {
+       e.preventDefault();
+       $(#wrapper”).toggleClass(“toggled”);
+   });
+   </script>
 {% end %}
 
 {% block header %}
-{% include '../home/header.html' %}
+{% include '../home/header_inside.html' %}
 {% end %}
 
 {% block javascript %}

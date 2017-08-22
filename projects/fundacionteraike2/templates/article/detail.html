@@ -30,8 +30,8 @@
         <div class="logo-border"></div>
               <div class="header-desktop-menu menulist">
                 <ul class="header-menu">
-                 <li><a href="{{ site_base }}/quienes_somos">Quienes somos</a></li>
-                    <li><a href="{{ site_base }}/que_hacemos">Que hacemos</a></li>
+                 <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
+                    <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
                     <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
                     <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
                     <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
@@ -58,8 +58,8 @@
                   </a>
                 </div>
                   <ul>
-                    <li><a href="{{ site_base }}/quienes_somos">Quienes somos</a></li>
-                    <li><a href="{{ site_base }}/que_hacemos">Que hacemos</a></li>
+                    <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
+                    <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
                     <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
                     <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
                     <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
@@ -74,10 +74,10 @@
             <div class="banner-div-home">
             <img src="{{ article["thumb_500"] }}">
               <p class="text-header">{{ article["title"] }}</p>
-              <div class="menu-icon">
+           <!--    <div class="menu-icon">
                 <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
               </div>
-        <div class="menu-text">Menu</div>
+        <div class="menu-text">Menu</div> -->
             </div>
           </div>
         </div>
@@ -103,6 +103,16 @@
 <link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
 <link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
 <link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+
+<style type="text/css">
+
+  @media (max-width: 767px){
+
+    body{
+      overflow-x: hidden;
+    }
+}
+</style>
 {% end %}
 
 {% block body %}
@@ -141,6 +151,16 @@
         </div>
       </div>
     </div> -->
+   <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+      <a href="javascript:history.back(-1)">
+        <button type="button" class="btn btn-default">Volver</button>
+        </a>
+    </div>
+  </div>
+
+  <div class="" style="margin-bottom:40px;"></div>
+
 </div>
 {% include ../home/footer.html %}
 {% end %}

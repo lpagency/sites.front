@@ -36,7 +36,7 @@ a:focus{
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 16px 11px;
+    padding: 16px 9px;
     color: rgba(84, 84, 84, 0.79);
     font-weight: 500;
     font-size: 13px;
@@ -46,7 +46,7 @@ a:focus{
 }
 
 header.grin {
-    background:rgba(245, 245, 245, 0.9);
+    background:#E5E5E4;
     z-index: 9999;
     top: 0%;
     width: 100%;
@@ -133,7 +133,7 @@ header.grin {
 }
 
 .navbar-nav.navbar-right:last-child {
-    margin-right: -6px;
+    margin-right: -21px;
     margin-top: -51px;
 }
 
@@ -143,6 +143,93 @@ header.grin {
     top: -29px;
     float: left;
     left: 17px;
+}
+
+.btn-primary {
+    color: rgba(84, 84, 84, 0.79);
+    background-color: transparent;
+    border-color: transparent;
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 13px;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 0px;
+    position: relative;
+}
+
+.dropdown-toggle:focus {
+    outline: none;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: rgba(84, 84, 84, 0.79);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 16px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: white;
+    white-space: nowrap;
+}
+.dropdown-menu {
+    position: absolute;
+    top: 118%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 214px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: rgba(33, 67, 192, 0.8);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: white;
+    text-decoration: none;
+    background-color: #1d2459;
+}
+
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+    top: 91%;
+}
+
+.navbar-right .dropdown-menu {
+    right: 0;
+    left: 23px;
 }
 
 /*---------------------------------------RESPONSIVE------------------------------------------------*/

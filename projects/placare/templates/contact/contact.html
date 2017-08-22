@@ -83,15 +83,15 @@
 
       $("#OpenAlert").click();
 
-    var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(50,50,50);
+        var base_url = $.environmentVar(
+            'http://apibodegas.ondev.today/',
+            'http://apibodegas.ondev.today/',
+            'http://apibodegas.ondev.today/');
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today');
+        var app_public = $.environmentVar(33,33,33);
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
@@ -158,14 +158,12 @@
 
 </div>
 </div>
+
 </div>
 
   <div class="container min contact product text-left  fondo-contact" style="display: inherit;">
                 <div class="col-md-12 col-sm-12 col-xs-12">      
-
-                <div class="container min">
-
-                    <div class="col-xs-12 col-md-6 col-sm-6 coli">
+                    <div class="col-xs-12 col-md-6 col-sm-12 coli">
                         <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
                         </div>
                          <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
@@ -175,20 +173,20 @@
                         </div>
 
                     </div>  
-                    <div class="col-xs-12 col-md-6 col-sm-6 align-form-contact fondo-contact">
+                    <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact">
 
                         <div>
                         <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
                             <div class="row clearfix">
                                 <div class="col-xs-12 col-sm-12">
-                                <div class="form-group">
+                                <div class="form-group con">
                                         <label class="control-label">Nombre</label>
                                         <div class=" controls">
                                             <input name="name" placeholder="Tu nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
                                         <span id="helpBlock2" class="hidden help-block help-nombre">Tu nombre</span>
                                     </div>
-                                    <div class="form-group">
+                                    <div class="form-group con">
                                         <label class="control-label">Email</label>
                                         <div class=" controls">
                                             <input name="email" placeholder="Tu Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
@@ -198,7 +196,7 @@
                                     </div>
                                 </div>  
                             </div>  
-                            <div class="form-group">
+                            <div class="form-group con">
                                 <label class="control-label">Mensaje</label>
                                 <div class="controls">
                                     <textarea name="message" placeholder="Escribe tu mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
@@ -210,7 +208,7 @@
                         </form> 
                         </div>
                      </div>
-                    </div>        
+                          
             </div>
             
             

@@ -11,7 +11,12 @@
         <meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
 
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet">
+      <!--   <link href="https://fonts.googleapis.com/css?family=Jura:300,400,500,600,700" rel="stylesheet"> -->
+      <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+      <!--     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
         <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -423,6 +428,16 @@ if(!$("html").hasClass("touch")){
     });
     </script>
     <script type="text/javascript" src="{{ site_base }}/static/js/map_store.js"></script>
+
+    <script type="text/javascript">
+        $('ul.nav div.dropdown').hover(function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
 
     <script type="text/javascript">
 // $(window).scroll(function(){
