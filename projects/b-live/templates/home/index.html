@@ -5,11 +5,17 @@
 {% end %}
 
 {% block header %}
-{% include '../home/header.html' %}
+{% include '../home/header_inside.html' %}
 {% end %}
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<script>
+   $(“#menu-toggle”).click(function(e) {
+       e.preventDefault();
+       $(#wrapper”).toggleClass(“toggled”);
+   });
+   </script>
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
       $(this).addClass("active");
@@ -53,6 +59,7 @@
         // $('.product-list2').ecommerce('product_box', config);
     });
 </script>
+
 
 {% end %}
 

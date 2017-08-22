@@ -19,6 +19,10 @@ a:hover{
     text-decoration: none;
 }
 
+a:hover, a:focus {
+    color: #2f2c2c;
+    text-decoration: none !important;
+}
 
 li{
 	list-style: none;
@@ -110,12 +114,12 @@ div.upload input, div.image-upload input {
 
 .pin {
     float: left !important;
-    background: rgba(119, 119, 119, 0.43) !important;
+    background: #FF9D36 !important;
     font-size: 15px !important;
-    padding: 15px 11px !important;
-    color: gray !important;
-    font-weight: 600 !important;
-    height: 51px;
+    padding: 12px 11px !important;
+    color: white !important;
+    font-weight: 100 !important;
+    height: 42px;
     width: 31%;
     cursor: pointer;
 }
@@ -131,7 +135,7 @@ div.upload input, div.image-upload input {
 }
 
 .fondo-contact {
-    width: 47%;
+    width: 50%;
     height: auto;
 }
 
@@ -213,21 +217,24 @@ div.upload input, div.image-upload input {
     border-bottom: 1px solid #ccc;
 }
 
-.coli{
+.coli {
     margin-top: 50px;
     position: relative;
-    right: 45px;
+    right: 30px;
 }
 
 .btn-block {
     display: block;
-    width: 100%;
+    width: 107%;
     border-radius: 0px;
+    float: left;
+    position: relative;
+    right: 35px;
 }
 
 .btn-block:hover {
     display: block;
-    width: 100%;
+    width: 107%;
     border-radius: 0px;
     background-color: white;
     color: gray;
@@ -237,7 +244,17 @@ div.upload input, div.image-upload input {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+    float: left;
+    position: relative;
+    right: 35px;
 }
+
+.modal-title {
+    margin: 0;
+    line-height: 1.42857143;
+    font-weight: 300;
+}
+
 /*------------------------------------------Responsive---------------------------------*/
 
 @media (max-width: 991px){
@@ -250,14 +267,46 @@ div.upload input, div.image-upload input {
 
 .align-form-contact {
     padding-left: 0px;
-    padding-right: 29px;
+    padding-right: 0px;
     margin-top: 55px;
+    width: 100%;
 }
 
 .coli {
     margin-top: 50px;
     position: relative;
     right: 14px;
+}
+
+.form-group.con {
+    margin-bottom: 19px;
+    margin-left: -8px;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    border-radius: 0px;
+    float: left;
+    position: relative;
+    right: 6px;
+}
+
+.btn-block:hover {
+    display: block;
+    width: 100%;
+    border-radius: 0px;
+    background-color: white;
+    color: gray;
+    border: 1px solid gray;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    float: left;
+    position: relative;
+    right:0px;
 }
 
 }

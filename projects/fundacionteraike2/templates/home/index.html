@@ -76,8 +76,8 @@
             {% end %}
           </div>
 
-          <div class="col-md-4 col-lg-4 noticias-image-half">
-          <div class="noticias-image-half image-overlay">
+          <div class="col-md-4 col-lg-4 noticias-image image-overlay">
+        
             {% if is_admin %}
             <div class="image-upload lapiz visible-movil">
               <label for="img_top_banner1">
@@ -88,33 +88,13 @@
             {% end %}
             <a id="{{ site.name + '_side_banner2_2' }}" href="{{ read_link(site.name + '_side_banner2_2') }}">
             <img id="{{ site.name }}top_banner1" src="{{ read_image(site.name + 'top_banner1', 1) }}" onload="this.src='{{ read_image(site.name + 'top_banner1',) }}'" alt="item" class="image">
-            <div class="overlay-pe">
-              <div class="text-pe text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner_pe' }}">{{ read_text(site.name +  'text_side_banner_pe') }}</div>
+            <div class="overlay-full">
+              <div class="text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner_pe' }}">{{ read_text(site.name +  'text_side_banner_pe') }}</div>
             </div>
             </a>
             {% if is_admin %}
             <img class="change-image editablelink import" link-id="{{ site.name + '_side_banner2_2' }}" content="{{ read_link(site.name + '_side_banner2_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 0px;z-index: 2000!important;"> 
             {% end %}
-            </div>
-            <div class="noticias-image-half image-overlay">
-            {% if is_admin %}
-            <div class="image-upload lapiz visible-movil lapicito">
-              <label for="img_top_banner2">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-              </label>
-              <input type="file" class="editableimage" image-id="{{ site.name }}top_banner2" name="image" id="img_top_banner2"/>
-            </div>
-            {% end %}
-            <a id="{{ site.name + '_side_banner2_3' }}" href="{{ read_link(site.name + '_side_banner2_3') }}">
-            <img id="{{ site.name }}top_banner2" src="{{ read_image(site.name + 'top_banner2', 1) }}" onload="this.src='{{ read_image(site.name + 'top_banner2',) }}'" alt="item" class="image">
-            <div class="overlay-pe2">
-              <div class="text-pe text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner_pe2' }}">{{ read_text(site.name +  'text_side_banner_pe2') }}</div>
-            </div>
-            </a>
-            {% if is_admin %}
-            <img class="change-image editablelink import" link-id="{{ site.name + '_side_banner2_3' }}" content="{{ read_link(site.name + '_side_banner2_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 173px;z-index: 2000!important;"> 
-            {% end %}
-            </div>
           </div>
 
 

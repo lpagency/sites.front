@@ -170,8 +170,8 @@ div.image-upload.part1 {
 }
 
 .img-container img {
-    width:100px;
-    height:100px;
+    width:85px;
+    height:85px;
     padding: 0px;
 }
 
@@ -488,7 +488,7 @@ hr.len {
     text-transform: uppercase;
 }
 
-.sku-detalle{
+.sku-detalle {
     text-align: left;
     position: absolute;
     bottom: -36px;
@@ -498,8 +498,8 @@ hr.len {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-transform: uppercase;
-    font-size: 18px;
+    /*text-transform: uppercase;*/
+    font-size: 10px;
     width: 100%;
 }
 
@@ -622,6 +622,13 @@ a.talla {
 .size-item strike
 {
     color: #ccc;
+}
+
+.variant-value.active {
+    background-color: rgb(91, 81, 83);
+}
+.variant-value.active>div{
+    color: white;
 }
 
 
@@ -1006,7 +1013,7 @@ a.variables:active{
     position: relative;
     width: 100%;
     height: 295px;
-    margin-bottom:-8px;
+    margin-bottom:0px;
 }
 
 .conti:hover {
@@ -1014,7 +1021,7 @@ a.variables:active{
     width: 100%;
     border: 1px solid gray;
     height: 295px;
-    margin-bottom:-8px;
+    margin-bottom:0px;
 }
 
 .image {
@@ -1082,6 +1089,21 @@ input[type=radio], input[type=checkbox] {
     z-index: 100000;
 }
 
+.filtro-filtros{
+    height: 23px;
+}
+.filtro-categorias{
+    height: 23px;
+}
+.filtro-marca{
+    height: 23px;
+}
+.filtro-talla{
+    height: 23px;
+  
+}
+
+
 .vari{
     width: 100%;
     margin-top: 20px;
@@ -1123,12 +1145,18 @@ input[type=radio], input[type=checkbox] {
 .fa-check-square {
     right: -3px;
     position: relative;
-    top: 2px;
+    top: -14px;
     font-size: 20px !important;
     color: #526CD0;
     width: 100%;
     float: left;
     margin-top: -24px;
+}
+
+.fil{
+    position: relative;
+    top: -17px;
+    right: -13.5%;
 }
 
 .fa-check-square.other {
@@ -1186,6 +1214,37 @@ input.check[type=radio], input.check[type=checkbox] {
     font-size: 30px;
     -webkit-appearance: none;
     z-index: 100000;
+}
+
+.conti-de {
+    position: relative;
+    width: 100%;
+    height: 295px;
+    margin-bottom:8px;
+}
+
+.conti-de:hover {
+    position: relative;
+    width: 100%;
+    border: 1px solid gray;
+    height: 295px;
+    margin-bottom:8px;
+}
+
+.filtro-talla.c-variable_1 {
+    height: 23px;
+    width: 9%;
+}
+
+.filtro-talla.c-variable_2 {
+    height: 23px;
+    width: 16%;
+    display: inline-block;
+}
+
+.filtro-talla.c-variable_3 {
+    height: 23px;
+    width: 14%;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
@@ -1254,6 +1313,7 @@ input.check[type=radio], input.check[type=checkbox] {
     left: -132px;
     position: relative;
 }
+
 
 .container.min.dos {
     padding-left: 0px;
@@ -1677,13 +1737,13 @@ a.text {
     float: right;
     background-color: #FF0F53;
     color: white;
-    width: 20%;
-    text-align: left;
-    padding-left: 6px;
+    width: 52%;
+    text-align: right;
+    padding-left: 5px;
     margin-top: -20px;
     left: 0%;
     position: relative;
-    top: 0px;
+    top: 42px;
 }
 
 /*.letrero-sale {
@@ -2126,7 +2186,7 @@ a.text.detalle {
 }
 
 hr.listado {
-    margin-top: -1px;
+    margin-top: -82px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid rgba(153, 153, 153, 0.38);
@@ -2165,10 +2225,10 @@ hr.listado {
     }
 
 
-    .pinki {
-    margin-top: -310px;
+   .pinki {
+    margin-top: -277px;
     }
-
+    
     .kinti{
         visibility: hidden;
     }
@@ -2178,6 +2238,28 @@ hr.listado {
       margin-right: 12px !important;
       border: 1px solid rgba(128, 128, 128, 0.14);
     }
+
+    .fil {
+    position: relative;
+    top: -17px;
+    right: -4.5%;
+    margin-bottom: -14px;
+    }
+
+    .fa-check-square {
+    right: -3px;
+    position: relative;
+    top: 1px;
+    font-size: 20px !important;
+    color: #526CD0;
+    width: 100%;
+    float: left;
+    margin-top: -24px;
+   }
+
+   .filtro-categorias {
+     height: 100%; 
+   }
 
 }
 
@@ -2534,6 +2616,13 @@ a.text.detalle {
     margin-bottom: 34px;
     text-align: left;
     width: 18%;
+}
+
+.fil {
+    position: relative;
+    top: -17px;
+    right: -6.5%;
+    margin-bottom: -14px;
 }
 
 }
@@ -3073,6 +3162,13 @@ a.text {
     top: 9px;
     margin-top: 33px;
     margin-bottom: 10px;
+}
+
+.fil {
+    position: relative;
+    top: -18px;
+    right: -9.5%;
+    margin-bottom: -14px;
 }
 
 }

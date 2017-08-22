@@ -128,15 +128,15 @@
             <div class="row home-title">
                 <!-- <h2>Juegos, Cumpleaños y Café</h2> -->
                 {% if is_admin %}
-                <h2><span class="editabletext" text-id="{{ site.name + '_texto1' }}" >{{ read_text(site.name + '_texto1') }}</span></h2>
+                <h2><span class="editabletext" text-id="{{ site.name + '_texto1_new' }}" >{{ read_text(site.name + '_texto1_new') }}</span></h2>
                 {% else %}
-                <h2> {{ read_text(site.name + '_texto1') }} </h2>
+                <h2> {{ read_text(site.name + '_texto1_new') }} </h2>
                 {% end %}
                 <!-- <p>Todo para ti y tu hijo</p> -->
                 {% if is_admin %}
-                <p><span class="editabletext" text-id="{{ site.name + '_texto2' }}" >{{ read_text(site.name + '_texto2') }}</span></p>
+                <p><span class="editabletext" text-id="{{ site.name + '_texto2_new' }}" >{{ read_text(site.name + '_texto2_new') }}</span></p>
                 {% else %}
-                <p> {{ read_text(site.name + '_texto2') }} </p>
+                <p> {{ read_text(site.name + '_texto2_new') }} </p>
                 {% end %}
                 <div class="clearfix"></div>
                 <div class="search_wrapper row" >

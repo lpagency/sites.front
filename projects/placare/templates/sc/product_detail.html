@@ -13,7 +13,7 @@
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">
 <style type="text/css">
 
- 
+
 </style>
 {% end %}
 
@@ -26,37 +26,79 @@
     $(document).ready(function()
     {
 
-            $(document).on('click', '.tallas', function()
-            {
-                $('.size-item').removeClass('active');
-                $('.size-item').children().css("color", "rgb(91, 81, 83)");
-                $('.size-item').css("background-color", "white");
-                $(this).addClass('active');
-                $(this).children().css("color", "white");
-                $(this).css("background-color", "rgb(91, 81, 83)");
-            });
+            // $(document).on('click', '.tallas', function()
+            // {
+            //     $('.size-item').removeClass('active');
+            //     $('.size-item').children().css("color", "rgb(91, 81, 83)");
+            //     $('.size-item').css("background-color", "white");
+            //     $(this).addClass('active');
+            //     $(this).children().css("color", "white");
+            //     $(this).css("background-color", "rgb(91, 81, 83)");
+            // });
 
             // $(this).css("background-color", "rgb(91, 81, 83)");
             // $(this).parent(".num-tal").css("color", "white");
 
         var base_url = $.environmentVar(
             'http://apibodegas.ondev.today',
-            'https://apibodegas.loadingplay.com/',
+            'http://apibodegas.ondev.today',
             'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
-            'https://pay.loadingplay.com',
+            'http://lpcheckout.ondev.today',
             'https://pay.loadingplay.com');
-        var app_public = $.environmentVar(33,50,50);
-        $(document).ecommerce('product_detail', {
+        var app_public = $.environmentVar(33,33,50);
+        var site_name = $.environmentVar('placare', 'placare', 'placare');
+        var variants_loaded = false;
+
+        var options = {
             'app_public' : app_public,
             'base_url' : base_url,
             'checkout_url': checkout_url,
             'product_id' : {{ product_id }},
-            'container' : '.product-detail',
-            onLoad: function(product){
+            'site_name': site_name,
+            'variants': {
+                'product_sku': '',
+                'container': '.variants-container',
+                'variant_template': '<div class="col-md-12 mover">{{! values }}</div>',
+                'value_template': '\
+                    <div \
+                        class="col-md-4 col-sm-4 col-xs-4 size-item \
+                            tallas variant-value" variant="{{! variant_name }}"\
+                        value="{{! value }}" >\
+                            <div class="num-tal">{{! value }}</div>\
+                    </div>',
+                'active_class': 'active'
+            }, onLoad: function(product)
+            {
+                // check if variants were triggered
+                if (!variants_loaded)
+                {
+                    // add some settings
+                    options.variants.product_sku = product.sku;
 
-                $(".texto-ruta-detalle").html(localStorage.getItem("subcategoriaProd").toString());
+                    // load variants
+                    $('.product-detail').ecommerce('load_variants', options);
+
+                    $('.variants-container').on(
+                        'combination:selected', function()
+                        {
+                            $('.add-to-cart').removeAttr('disabled');
+                        });
+
+                    variants_loaded = true;  // execute this onces
+                }
+
+                // inicialización del codigo de las imagenes
+                try
+                {
+                    $(".texto-ruta-detalle").html(
+                        localStorage.getItem("subcategoriaProd").toString());
+                }
+                catch(ex)
+                {
+                    // nothing here
+                }
 
                 related(product.bullet_3);
                 related2(product.bullet_3);
@@ -67,7 +109,7 @@
                         $("#article-reladed").html(data);
                     });
                 }
-        
+
                 var mainImage = $("#mainImage");
                     $(".img-container img").hover(function(){
                      var src = $(this).attr("src");
@@ -85,8 +127,6 @@
 
                 var promo = Utils.money(promotion);
                 var original = Utils.money(main);
-
-                console.log(original);
 
                 if(promotion != 0){
                   var resta = Math.trunc((main - promotion)*100/main);
@@ -125,8 +165,8 @@
                     });
                 });
             }
-
-        });
+        };
+        $('.product-detail').ecommerce('product_detail', options);
 
         // productos relacionados
         var related = function(tag)
@@ -190,7 +230,7 @@
     </section>
 
 
-        
+
            <section>
                   <div class=" hidden-lg hidden-sm hidden-md visible-xs">
                     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -246,18 +286,18 @@
                             <div class="texto-oferta">Existe una oferta adicional a este producto</div>
                             <div class="ver-oferta">Ver oferta</div>
 
-                            
+
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion"> </div>
                             </div>
-                            
+
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                  <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                  <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
                             </div>
-                             <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                   <div class="col-md-12 mover">
                                             <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas">
                                                 <div class="num-tal"> 36</div>
@@ -281,10 +321,32 @@
                              </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled >
+                                AGREGAR AL CARRO
                             </button>
 
-                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car-2"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled >
+                                COMPRAR AHORA!
                             </button>
                              </div>
 
@@ -293,19 +355,19 @@
                             </div>
 
                             <div align="center">
-                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! description }}</h3>
-                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! bullet_1 }}</h3>
-                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! bullet_2 }}</h3>
 
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
                                  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
                             <div id="demo" class="collapse">
-                            <h3 class="descr_prod_detail ellipsis multiline"> 
+                            <h3 class="descr_prod_detail ellipsis multiline">
                             {{! description }}</h3>
-                            <h3 class="medidas ellipsis multiline"> 
+                            <h3 class="medidas ellipsis multiline">
                             {{! bullet_1 }}</h3>
 
                             </div>
@@ -314,16 +376,38 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-3"> </div>
-                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs"> 
+                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs">
                                 {{! bullet_2 }}</h3>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
                             <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled>
+                                    AGREGAR AL CARRO
                             </button>
 
-                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car-2"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled >
+                                    COMPRAR AHORA!
                             </button>
                             </div>
                              </div>
@@ -340,14 +424,14 @@
                 <div class="box-det">
                     <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs visible-md visible-lg visible-sm">
                         <div class="col-xs-3 col-md-2 col-sm-3">
-                         
-                         <div class="img-container">  
+
+                         <div class="img-container">
                             <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
                          </div>
                          <div class="img-container">
-                             <img class="{{! images[2][’thumb_1’]|hide_if_empty }} " src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" /> 
+                             <img class="{{! images[2][’thumb_1’]|hide_if_empty }} " src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
                          </div>
-                      
+
                           <div class="img-container">
                             <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
                           </div>
@@ -369,16 +453,16 @@
                         <div id="mainDiv">
                            <div class="main-img-container">
                               <img id='mainImage' class="img_prod_detail" src="{{! images[1]['thumb_500'] }}"/>
-                           </div>   
+                           </div>
                         </div>
                         </div>
                         <div align="center">
-                           <h1 class="name  sku-detalle" class="line">{{! sku }}</h1>
+                           <h1 class="name  sku-detalle" class="line">Sku Producto:{{! sku }}</h1>
                         </div>
                     </div>
 
-                
- 
+
+
                     <div id="product-detail-id" class="col-md-6 col-sm-12 col-xs-12 dir hidden-xs">
                         <div align="center">
                             <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>
@@ -392,45 +476,47 @@
                             <div class="texto-oferta">Existe una oferta adicional a este producto</div>
                             <div class="ver-oferta">Ver oferta</div>
 
-                            
+
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion"> </div>
                             </div>
-                            
+
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                  <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6">
                                  <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
                             </div>
-                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                  <div class="col-md-12 mover">
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas">
-                                                <div class="num-tal"> 36</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
-                                                <div class="num-tal"> 37</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
-                                                <div class="num-tal"> 38</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
-                                                <div class="num-tal"> 39</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
-                                                <div class="num-tal"> 40</div>
-                                            </div>
-                                            <div class="col-md-4 col-sm-4 col-xs-4 size-item tallas" size="">
-                                                <div class="num-tal"> 41</div>
-                                            </div>
-                                    </div>
-                             </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12 variants-container">
+                            </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled>
+                                    AGREGAR AL CARRO
                             </button>
 
-                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car-2"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-id="{{! id }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                disabled>
+                                    COMPRAR AHORA!
                             </button>
                              </div>
 
@@ -439,19 +525,19 @@
                             </div>
 
                             <div align="center">
-                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! description }}</h3>
-                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! bullet_1 }}</h3>
-                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs"> 
+                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! bullet_2 }}</h3>
 
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
                                  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
                             <div id="demo" class="collapse">
-                            <h3 class="descr_prod_detail ellipsis multiline"> 
+                            <h3 class="descr_prod_detail ellipsis multiline">
                             {{! description }}</h3>
-                            <h3 class="medidas ellipsis multiline"> 
+                            <h3 class="medidas ellipsis multiline">
                             {{! bullet_1 }}</h3>
 
                             </div>
@@ -460,16 +546,16 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-3"> </div>
-                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs"> 
+                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs">
                                 {{! bullet_2 }}</h3>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
                             <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO 
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO
                             </button>
 
-                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA! 
+                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA!
                             </button>
                             </div>
                              </div>
@@ -479,14 +565,14 @@
                 </div>
             </div>
         </div>
-            
-   
+
+
     </div>
 
 </script>
 
 
-<!-- 
+<!--
 {% end %} -->
 
 
@@ -496,7 +582,7 @@
 
 <div class="" style="height:435px;display:block;margin:auto auto 0 auto;"></div>
 <div class="container-fluid">
-    
+
     <div class="container product-page"></div>
 
     </div>
@@ -530,7 +616,7 @@
             <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados de la misma categoria</strong></h1>
         </div>
     <div class="product-related hidden-xs">
-        
+
     </div>
     <div class="swiper-container hidden-lg">
         <!-- Additional required wrapper -->
