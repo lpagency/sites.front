@@ -10,12 +10,7 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
-<script>
-   $(“#menu-toggle”).click(function(e) {
-       e.preventDefault();
-       $(#wrapper”).toggleClass(“toggled”);
-   });
-   </script>
+
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
       $(this).addClass("active");
@@ -82,7 +77,7 @@
                 {% if is_admin %}
                    <div class="image-upload lapiz bi visible-movil">
                        <label for="img_banner_1">
-                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                           <img class="lapizeditable change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
                        </label>
                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
                    </div>
