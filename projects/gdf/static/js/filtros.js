@@ -1,66 +1,150 @@
-// $(document).ready(function()
-// {
-// 	var fil = $(".texto-filtros").html();
+$(document).ready(function()
+{
+    window.fil = $(".texto-filtros").html();
+    window.z = 0;
+    var hyper = Utils.getUrlParameter('tag');
+    if(hyper == undefined)
+    {
+        hyper = "";
+    }
+    else
+    {
+        hyper = Utils.getUrlParameter('tag').split(',');
+    }
 
-// 	$(document).on("click", ".num-tal-2", function()
-// 	{
-// 		fil = $(".texto-filtros").html();
+    window.listaTag = [];
 
-// 		var talla = $(this).attr('tag');
-// 		$(".texto-filtros").html('<div class="'+ talla +'">'+ talla +'(<i class="fa fa-times fa-'+talla+'" aria-hidden="true"></i>)</div>'+fil);
+});
 
-// 		var classTalla = "."+talla;
 
-// 		$(document).on("click", ".fa-"+talla, function()
-// 		{
-// 			$( classTalla ).remove();
-// 		});
-// 	});
 
-// 	$(document).on("change", ".categ-color", function(ev)
-// 	{
-// 		var Color = $(this).attr("tag");
-// 		fil = $(".texto-filtros").html();
 
-// 		if(Color == "animal print")
-// 		{
-// 			var color2 = "animal";
-// 			$(".texto-filtros").html('<div class="'+ Color +'">'+ Color +'(<i class="fa fa-times fa-'+color2+'" aria-hidden="true"></i>)</div>'+fil);
-// 			var classColor = "."+color2;
+//<-------------------FUNCIONES-------------------->
 
-// 			$(document).on("click", ".fa-"+color2, function()
-// 			{
-// 				$( classColor ).remove();
-// 				$(".c-"+color2).prop('checked', false);
-// 			});
-// 		}
-// 		else
-// 		{
-// 			$(".texto-filtros").html('<div class="'+ Color +'">'+ Color +'(<i class="fa fa-times fa-'+Color+'" aria-hidden="true"></i>)</div>'+fil);
-// 			var classColor = "."+Color;
 
-// 			$(document).on("click", ".fa-"+Color, function()
-// 			{
-// 				$( classColor ).remove();
-// 				$(".c-"+Color).prop('checked', false);
-// 			});
-// 		}
+//<-----------------FUNCION CHECK------------------>
 
-// 	});
+function check(tag, value)
+{
 
-// 	$(document).on("change", ".categ-tipo", function(ev)
-// 	{
-// 		var tipo = $(this).attr("tag");
-// 		fil = $(".texto-filtros").html();
+    var nombre = tag;
+    var block = "";
 
-// 		$(".texto-filtros").html('<div class="'+ tipo +'">'+ tipo +'(<i class="fa fa-times fa-'+tipo+'" aria-hidden="true"></i>)</div>'+fil);
+    if($(".c-"+nombre).is(':checked'))
+    {
+        if(value == undefined)
+        {
+            block = 
+                '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
 
-// 		var classtipo = "."+tipo;
+            var classNombre = "."+nombre;
+            var nombre2 = "+"+nombre;
 
-// 		$(document).on("click", ".fa-"+tipo, function()
-// 		{
-// 			$( classtipo ).remove();
-// 			$(".c-"+tipo).prop('checked', false);
-// 		});
-// 	});
-// });
+            $(".texto-filtros").html($(".texto-filtros").html() + block);
+
+            window.listaTag.push(nombre2);
+            window.config.tag = window.listaTag.toString();
+
+            $('.products').ecommerce('destroy');
+            $('.products').ecommerce(window.config);
+        }
+        else
+        {
+            block = 
+                '<div class="'+ nombre +'">'+ value +'(<i class="fa fa-times fa-'+nombre
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+
+            var classNombre = "."+nombre;
+            var nombre2 = "+"+nombre;
+
+            $(".texto-filtros").html($(".texto-filtros").html() + block);
+
+            window.listaTag.push(nombre2);
+            window.config.tag = window.listaTag.toString();
+
+            $('.products').ecommerce('destroy');
+            $('.products').ecommerce(window.config);
+        }
+    }
+    else
+    {
+        $( "."+nombre ).remove();
+        var nombre2 = "+"+nombre;
+
+        for(x in window.listaTag){
+            if(window.listaTag[x] == nombre2){
+                window.listaTag.splice(x,1);
+                window.config.tag =window.listaTag.toString();
+            };
+        };
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+    }
+
+};
+
+function checkTallas(tag)
+{
+
+    var nombre = tag;
+    var block = "";
+
+    block = 
+        '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
+        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+
+        var classNombre = "."+nombre;
+        var nombre2 = "+"+nombre;
+
+        $(".texto-filtros").html($(".texto-filtros").html() + block);
+
+        window.listaTag.push(nombre2);
+        window.config.tag = window.listaTag.toString();
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+}
+
+//<---------------END FUNCION CHECK---------------->
+
+//<---------------FUNCION LIMPIAR------------------>
+
+function limpiar()
+{
+
+    $(".texto-filtros").html("");
+
+    window.listaTag = [];
+
+    window.config.tag = window.listaTag;
+
+    $(".categ-tipo").attr('checked', false);
+    $(".categ-color").attr('checked', false);
+
+    $('.products').ecommerce('destroy');
+    $('.products').ecommerce(config);
+};
+
+//<-------------END FUNCION LIMPIAR---------------->
+
+//<----------------FUNCION BORRAR------------------>
+
+function borrar(nombre)
+{
+
+    $( "."+nombre ).remove();
+    $( ".c-"+nombre).attr('checked', false);
+    var nombre2 = "+"+nombre;
+
+    for(x in window.listaTag){
+        if(window.listaTag[x] == nombre2){
+            window.listaTag.splice(x,1);
+            window.config.tag =window.listaTag.toString();
+        };
+    };
+
+    $('.products').ecommerce('destroy');
+    $('.products').ecommerce(window.config);
+};

@@ -1,6 +1,6 @@
 .logo {
     position: absolute;
-    left: 44px;
+    left: 25px;
     right: 0;
     margin-right: auto;
     margin-left: auto;
@@ -290,8 +290,8 @@ a.remove-tag {
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 10px 9px;
-    left: 5%;
+    padding: 10px 0px;
+    left: 24%;
     letter-spacing: 1.7px;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
@@ -320,7 +320,7 @@ span.units-total{
 
 .btn.hed {
     display: inline-block;
-    padding: 0px 20px;
+    padding: 0px 0px;
     margin-bottom: 0;
     font-size: 11px;
     font-weight: 600;
@@ -404,7 +404,22 @@ a:focus {
     outline-offset: -2px;
 }
 
+.text-header-edi {
+    position: relative;
+    display: block;
+    padding: 12px 0px;
+    left: 5%;
+    letter-spacing: 1.7px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+}
 
+.navbar-nav {
+    float: left;
+    margin: 0;
+    width: 66%;
+}
 
 /*------------------------------------------------Responsive---------------------------*/
 @media (max-width: 1199px){
@@ -414,9 +429,9 @@ a:focus {
 
     .btn.hed {
     display: inline-block;
-    padding: 6px 20px;
+    padding: 6px 0px;
     margin-bottom: 0;
-    font-size: 9px;
+    font-size: 0.6rem;
     font-weight: 400;
     line-height: 0px;
     text-align: center;
@@ -435,15 +450,17 @@ a:focus {
     letter-spacing: 1.7px;
 }
 
-
+.text-header-edi {
+font-size: 0.6rem;
 }
 
 
+}
 
 @media (max-width: 991px){
     .btn.hed {
     display: inline-block;
-    padding: 6px 20px;
+    padding: 6px 0px;
     margin-bottom: 0;
     font-size: 9px;
     font-weight: 400;
@@ -462,6 +479,12 @@ a:focus {
     top: 12px;
     position: relative;
     letter-spacing: 1.7px;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    width: 82%;
 }
 
 }
@@ -563,6 +586,13 @@ a:focus {
     color: rgb(85, 85, 85);
     background-color: rgba(231, 231, 231, 0.32);
 }
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    width: 100%;
+}
+
 
 }
 

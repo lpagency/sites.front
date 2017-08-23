@@ -69,7 +69,7 @@ $(document).ready(function()
         'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(50,50,50);
 
-    var config = {
+    window.config = {
         'app_public': app_public,
         'base_url': base_url,
         'products_per_page' : 16, 
@@ -94,8 +94,6 @@ $(document).ready(function()
             }
 
             var id = $("[name=id-car]");
-
-            console.log(id.length);
 
             if(id.length === 0){
 
@@ -193,120 +191,4 @@ $(document).ready(function()
 
             // alert($(this).attr("tag"));
     });
-    $(document).ready(function()
-    {
-    var fil = $(".texto-filtros").html();
-
-    var listaFiltros = [];
-
-    $(document).on("click", ".num-tal-2", function()
-    {
-        fil = $(".texto-filtros").html();
-
-        var talla = $(this).attr('tag');
-        $(".texto-filtros").html('<div class="'+ talla +'">'+ talla +'(<i class="fa fa-times fa-'+talla+'" aria-hidden="true"></i>)</div>'+fil);
-
-        var classTalla = "."+talla;
-
-        $(document).on("click", ".fa-"+talla, function()
-        {
-            $( classTalla ).remove();
-        });
-    });
-
-    $(document).on("change", ".categ-color", function(ev)
-    {
-        var Color = $(this).attr("tag");
-        fil = $(".texto-filtros").html();
-
-        listaFiltros.push(Color);
-
-        console.log(listaFiltros.toString());
-        config.tag =listaFiltros.toString();
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(config);
-
-        if(Color == "animal print")
-        {
-            var color2 = "animal";
-            $(".texto-filtros").html('<div class="'+ Color +'">'+ Color +'(<i class="fa fa-times fa-'+color2+'" aria-hidden="true"></i>)</div>'+fil);
-            var classColor = "."+color2;
-
-            $(document).on("click", ".fa-"+color2, function()
-            {
-                $( classColor ).remove();
-                $(".c-"+color2).prop('checked', false);
-
-                for(var x in listaFiltros){
-                    if(listaFiltros[x] == Color){
-                        listaFiltros.splice(x,1);
-                        console.log(listaFiltros.toString());
-                        config.tag =listaFiltros.toString();
-
-                        $('.products').ecommerce('destroy');
-                        $('.products').ecommerce(config);
-                    }
-                }
-            });
-        }
-        else
-        {
-            $(".texto-filtros").html('<div class="'+ Color +'">'+ Color +'(<i class="fa fa-times fa-'+Color+'" aria-hidden="true"></i>)</div>'+fil);
-            var classColor = "."+Color;
-
-            $(document).on("click", ".fa-"+Color, function()
-            {
-                $( classColor ).remove();
-                $(".c-"+Color).prop('checked', false);
-
-                for(var x in listaFiltros){
-                    if(listaFiltros[x] == Color){
-                        listaFiltros.splice(x,1);
-                        console.log(listaFiltros.toString());
-                        config.tag =listaFiltros.toString();
-
-                        $('.products').ecommerce('destroy');
-                        $('.products').ecommerce(config);
-                    }
-                }
-            });
-        }
-
-    });
-
-    $(document).on("change", ".categ-tipo", function(ev)
-    {
-        var tipo = $(this).attr("tag");
-        fil = $(".texto-filtros").html();
-
-        listaFiltros.push(tipo);
-        console.log(listaFiltros.toString());
-        config.tag =listaFiltros.toString();
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(config);
-
-        $(".texto-filtros").html('<div class="'+ tipo +'">'+ tipo +'(<i class="fa fa-times fa-'+tipo+'" aria-hidden="true"></i>)</div>'+fil);
-
-        var classtipo = "."+tipo;
-
-        $(document).on("click", ".fa-"+tipo, function()
-        {
-            $( classtipo ).remove();
-            $(".c-"+tipo).prop('checked', false);
-
-            for(var x in listaFiltros){
-                if(listaFiltros[x] == tipo){
-                    listaFiltros.splice(x,1);
-                    console.log(listaFiltros.toString());
-                    config.tag =listaFiltros.toString();
-
-                    $('.products').ecommerce('destroy');
-                    $('.products').ecommerce(config);
-                }
-            }
-        });
-    });
-});
 });

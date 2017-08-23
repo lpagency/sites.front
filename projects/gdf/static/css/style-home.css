@@ -1243,6 +1243,7 @@ ul.text1 {
 .punto-2 {
     top: 0px;
     width: 100%;
+    left: 0%;
 }
 
 .box-registro {
@@ -1349,7 +1350,7 @@ img.hand-2 {
 }
 
 .gyly {
-    margin-top: 7px;
+    margin-top: -415px;
 }
 
 .logos-pagos {
@@ -1360,35 +1361,29 @@ img.hand-2 {
     margin-top: 23px;
 }
 
+.text-footer2 {
+    font-size: 0.8rem;
+    font-family: 'Open Sans Condensed', sans-serif;
+    color: rgb(91, 81, 83);
+    font-weight: 700;
+    -ms-transform: scaleY(1.2);
+    -moz-transform: scaleY(1.2);
+    -webkit-transform: scaleX(1.2);
+    -o-transform: scaleY(1.2);
+    letter-spacing: 1px;
+    margin-bottom: 38px;
+}
+
+.fondo_footer {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    position: relative;
+}
+
 }
 
 @media (max-width: 700px){
-  .redes-footer {
-    margin-top: 0px;
-    width: 25px;
-    height: 40px;
-    object-fit: scale-down;
-    display: block;
-}
-
-.text-footer {
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-weight: bold !important;
-    color: #424242;
-    font-size: 13px;
-    text-align: left;
-    letter-spacing: 0.8px;
-    margin-top: 20px;
-}
-
-ul.text1 {
-    float: none!important;
-    margin: 0px !important;
-    width: 76%;
-    margin: 0 auto!important;
-    z-index: 1;
-    text-align: left;
-}
 
 .inscribete {
     margin: 0 auto;
@@ -1551,11 +1546,10 @@ img.hand-2 {
 
 .logos-pagos {
     width: 230px;
-    /* float: left; */
     left: 4px;
     position: relative;
     margin-top: 23px;
-    float: left;
+    float: initial;
 }
 
 }
@@ -1689,15 +1683,6 @@ img.hand-2 {
     left: -20px;
 }
 
-ul.text1 {
-    float: none!important;
-    margin: 0px !important;
-    width: 80%;
-    margin: 0 auto!important;
-    z-index: 1;
-    text-align: left;
-}
-
 }
 
 
@@ -1792,14 +1777,6 @@ img.hand-2 {
 }
 
 @media (max-width: 414px){
-  ul.text1 {
-    float: none!important;
-    margin: 0px !important;
-    width: 92%;
-    margin: 0 auto!important;
-    z-index: 1;
-    text-align: left;
-}
 
 .btn-default.registro {
     color: #333;
@@ -1895,7 +1872,7 @@ img.hand {
 .punto-2 {
     top: 0px;
     width: 100%;
-    left: -16px;
+    left: 0px;
 }
 
 .content-4 {
