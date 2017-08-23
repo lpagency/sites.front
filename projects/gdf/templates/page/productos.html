@@ -228,7 +228,7 @@
         <div class="col-md-12">
           <div align="center">
             <button type="button" class="btn btn-default-fil">FILTRAR</button>
-            <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+            <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
           </div>
         </div>
     </ul>
@@ -243,30 +243,30 @@
                <div class="text-center talla-onclick">TALLA </div>
                <div class="col-md-12 box-talla" style="">
                 <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                    <div class="num-tal-2" tag="35">35</div>
+                    <div class="num-tal-2" tag="35" onclick="checkTallas('35')">35</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                    <div class="num-tal-2" tag="36">36</div>
+                    <div class="num-tal-2" tag="36" onclick="checkTallas('36')">36</div>
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                  <div class="num-tal-2" tag="37">37</div>
+                  <div class="num-tal-2" tag="37" onclick="checkTallas('37')">37</div>
               </div>
           </div>
           <div class="col-md-12 box-talla" style="">
             <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-               <div class="num-tal-2" tag="38">38</div>
+               <div class="num-tal-2" tag="38" onclick="checkTallas('38')">38</div>
            </div>
            <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-               <div class="num-tal-2" tag="39">39</div>
+               <div class="num-tal-2" tag="39" onclick="checkTallas('39')">39</div>
            </div>
            <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-               <div class="num-tal-2" tag="40">40</div>
+               <div class="num-tal-2" tag="40" onclick="checkTallas('40')">40</div>
            </div>
        </div>
        <div class="col-md-12">
         <div align="center">
           <button type="button" class="btn btn-default-fil">FILTRAR</button>
-          <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+          <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
         </div>
     </div>
 </ul>
@@ -284,37 +284,37 @@
   <div class="col-md-12">
   <div class="col-md-6 col-sm-6 col-xs-12">
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-taupe" type="radio" name="animal" value="Cat" tag="taupe"/> TAUPE </div>
+    <div class="filtro-color"><input class="categ-color c-taupe" type="checkbox" name="animal" value="Cat" tag="taupe" onclick="check('taupe')" /> TAUPE </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-negro" type="radio" name="animal" value="Cat" tag="negro"/> NEGRO </div>
+    <div class="filtro-color"><input class="categ-color c-negro" type="checkbox" name="animal" value="Cat" tag="negro" onclick="check('negro')" /> NEGRO </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-blanco" type="radio" name="animal" value="Cat" tag="blanco"/> BLANCO </div>
+    <div class="filtro-color"><input class="categ-color c-blanco" type="checkbox" name="animal" value="Cat" tag="blanco" onclick="check('blanco')" /> BLANCO </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-cafe" type="radio" name="animal" value="Cat" tag="cafe"/> CAFE </div>
+    <div class="filtro-color"><input class="categ-color c-cafe" type="checkbox" name="animal" value="Cat" tag="cafe" onclick="check('cafe')" /> CAFE </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-chocolate" type="radio" name="animal" value="Cat" tag="chocolate"/> CHOCOLATE </div>
+    <div class="filtro-color"><input class="categ-color c-chocolate" type="checkbox" name="animal" value="Cat" tag="chocolate" onclick="check('chocolate')" /> CHOCOLATE </div>
     </form>
   </div>
 
    <div class="col-md-6 col-sm-6 col-xs-12">
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-camel" type="radio" name="animal" value="Cat" tag="camel"/> CAMEL </div>
+    <div class="filtro-color"><input class="categ-color c-camel" type="checkbox" name="animal" value="Cat" tag="camel" onclick="check('camel')" /> CAMEL </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-oxido" type="radio" name="animal" value="Cat" tag="oxido"/> OXIDO </div>
+    <div class="filtro-color"><input class="categ-color c-oxido" type="checkbox" name="animal" value="Cat" tag="oxido" onclick="check('oxido')" /> OXIDO </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-arena" type="radio" name="animal" value="Cat" tag="arena"/> ARENA </div>
+    <div class="filtro-color"><input class="categ-color c-arena" type="checkbox" name="animal" value="Cat" tag="arena" onclick="check('arena')" /> ARENA </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-animal" type="radio" name="animal" value="Cat" tag="animal print"/> ANIMAL PRINT </div>
+    <div class="filtro-color"><input class="categ-color c-animal_print" type="checkbox" name="animal" value="Cat" tag="animal print" onclick="check('animal_print', 'animal print')" /> ANIMAL PRINT </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-color"><input class="categ-color c-gris" type="radio" name="animal" value="Cat" tag="gris"/> GRIS </div>
+    <div class="filtro-color"><input class="categ-color c-gris" type="checkbox" name="animal" value="Cat" tag="gris" onclick="check('gris')" /> GRIS </div>
     </form>
   </div>
   </div>
@@ -322,7 +322,7 @@
    <div class="col-md-12">
     <div align="center">
     <button type="button" class="btn btn-default-fil">FILTRAR</button>
-    <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+    <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
     </div>
   </div>
 </ul>
@@ -340,25 +340,25 @@
   <div class="col-md-12">
   <div class="col-md-6 col-sm-6 col-xs-12" style="">
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas"/> BOTAS </div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas" onclick="check('botas')" /> BOTAS </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines"/> BOTINES </div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines" onclick="check('botines')" /> BOTINES </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras"/> BUCANERAS </div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras" onclick="check('bucaneras')" /> BUCANERAS </div>
     </form>
   </div>
 
    <div class="col-md-6 col-sm-6 col-xs-12">
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="zapatillas"/> ZAPATILLAS </div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-" name="animal" value="Cat" tag="zapatillas" onclick="check('zapatillas')" /> ZAPATILLAS </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="zapatos"/> ZAPATOS </div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-" name="animal" value="Cat" tag="zapatos" onclick="check('zapatos')" /> ZAPATOS </div>
     </form>
     <form action="" class="chek">
-    <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="sandalias"/> SANDALIAS</div>
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-" name="animal" value="Cat" tag="sandalias" onclick="check('sandalias')" /> SANDALIAS</div>
     </form>
   </div>
   </div>
@@ -366,7 +366,7 @@
    <div class="col-md-12">
     <div align="center">
     <button type="button" class="btn btn-default-fil">FILTRAR</button>
-    <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+    <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
     </div>
   </div>
 </ul>
@@ -460,7 +460,7 @@
 
 
     <div class="paginacion col-md-8 col-sm-8 col-xs-8 hidden-xs visible-lg visible-md visible-sm">
-    <div class="texto-filtros"><!--AQUI VAN LOS FILTROS--></div>
+    <div class="texto-filtros" style="z-index: 100"><!--AQUI VAN LOS FILTROS--></div>
         <ul style="display:none;">
             <i class="fa fa-angle-left" aria-hidden="true"></i>
             <li><a href="#" class="active">1</a></li>
