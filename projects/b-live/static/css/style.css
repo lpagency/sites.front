@@ -27,6 +27,9 @@ li
 {
 	list-style: none;
 }
+div.upload input, div.image-upload input{
+    width: 100%;
+}
 .mg-5
 {
     margin-top: 5%;
@@ -143,6 +146,8 @@ li
 /*------ S E R V I C E ---------*/
 .tittle-service-home
 {
+    position: relative;
+    z-index: 222;
     font-family: 'Open Sans', sans-serif;
     font-size: 4rem;
     font-weight: 100;

@@ -235,17 +235,23 @@
     vertical-align: middle;
     display: inline-block;
 }
-
+.titlenotice{
+    position: absolute;
+    bottom: 125px;
+    left: 38px;
+    color: white;
+    font-size: 2rem;
+}
 .til-ban
 {
     position: absolute;
-    bottom: 0px;
-    left:0px;
+    bottom: 0;
+    left: 35px;
     text-align: left;
-    width: 80%;
-    margin-bottom: 89px;
+    width: 70%;
+    margin-bottom: 50px;
     color: white;
-    font-weight: 300;
+    font-weight: 700;
 }
 
 .dan
@@ -309,6 +315,58 @@ hr.len
 {
     margin-right: 19px;
     margin-left: -28px;
+}
+.tittle-service-home-art
+{
+    position: relative;
+    z-index: 222;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 4rem;
+    font-weight: 100;
+    color:#fff;
+    text-align: left;
+}
+.list-service-art {
+    position: relative;
+    top: 92px;
+    right: 13%;
+    font-size: 2.5rem;
+    font-weight: bold;
+    /* width: 89%; */
+    /* margin-left: 29px; */
+}
+.texto-listart{
+    color: rgb(141, 143, 143);
+    font-size: 2.4rem;
+    margin: 5% 0;
+    height: auto;
+}
+.service-banner-art
+{
+    position: absolute;
+    width: 100%;
+    top: 8%;
+    right: 18px;
+    color: #fff;
+}
+.fondo-arts
+{ 
+    width: 113%;
+    height: 470px;
+    object-fit: cover;
+    margin-top: -51px;
+    filter: grayscale(0%) brightness(50%);
+    -webkit-filter: grayscale(0%) brightness(50%);
+    -moz-filter: grayscale(0%) brightness(50%);
+    -ms-filter: grayscale(0%) brightness(50%);
+    -o-filter: grayscale(0%) brightness(50%);
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0 !important;
+    position: relative;
+    right: 90px;
+    top: 51px;
 }
 /*----------------------------------------Responsive---------------------------*/
 

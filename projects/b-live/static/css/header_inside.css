@@ -3,7 +3,7 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  */
-
+/*
  body {
     overflow-x: hidden;
  }
@@ -21,9 +21,9 @@
     display: none;
 }
 
-/* Toggle Styles */
+/* Toggle Styles 
 
-#wrapper {
+#menu2 {
     padding-left: 0;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -31,17 +31,17 @@
     transition: all 0.5s ease;
 }
 
-#wrapper.toggled {
+#menu2.toggled {
     padding-left: 0px;
 }
 
-#sidebar-wrapper {
+#sidebar-menu2 {
     z-index: 1000;
     position: absolute;
-    /*left: 0px;*/
+    /*left: 0px;*
     width: 0;
     height: 425px;
-   /* margin-left: 0px;*/
+   /* margin-left: 0px;*
     overflow-y: auto;
     background: rgba(245, 245, 245, 0.9);
     -webkit-transition: all 0.5s ease;
@@ -52,22 +52,22 @@
     overflow-y: hidden;
 }
 
-#wrapper.toggled #sidebar-wrapper {
+#menu2.toggled #sidebar-menu2 {
     width: 250px;
 }
 
-#page-content-wrapper {
+#page-content-menu2 {
     width: 100%;
     position: absolute;
     padding: 15px;
 }
 
-#wrapper.toggled #page-content-wrapper {
+#menu2.toggled #page-content-menu2 {
     position: absolute;
     margin-right: 0px;
 }
 
-/* Sidebar Styles */
+/* Sidebar Styles *
 
 .sidebar-nav {
     position: absolute;
@@ -123,45 +123,45 @@
 
 
 @media (max-width: 991px){
-    #sidebar-wrapper{
+    #sidebar-menu2{
    margin-top: -18px !important;
 }
 
 }
 
 @media(min-width:768px) {
-    #wrapper {
+    #menu2 {
         padding-left: 0;
     }
 
-    #wrapper.toggled {
+    #menu2.toggled {
     padding-left: 0px;
     }
 
-    #sidebar-wrapper {
+    #sidebar-menu2 {
         width: 0;
     }
 
-    #wrapper.toggled #sidebar-wrapper {
+    #menu2.toggled #sidebar-menu2 {
         width: 250px;
     }
 
-    #page-content-wrapper {
+    #page-content-menu2 {
         padding: 20px;
         position: relative;
     }
 
-    #wrapper.toggled #page-content-wrapper {
+    #menu2.toggled #page-content-menu2 {
         position: relative;
         margin-right: 0;
     }
 }
 
 @media (max-width: 767px){
-    #wrapper.toggled #sidebar-wrapper {
+    #menu2.toggled #sidebar-menu2 {
     width: 100%;
 }
-   #sidebar-wrapper {
+   #sidebar-menu2 {
     background: rgba(102, 0, 255, 0.87);
     height: 430px;
 }
@@ -200,15 +200,142 @@
 
 
 @media (max-width: 405px){
-    #sidebar-wrapper {
+    #sidebar-menu2 {
     margin-top: -18px !important;
 }
 
 }
 
 @media (max-width: 360px){
-    #sidebar-wrapper {
+    #sidebar-menu2 {
     margin-top: -68px !important;
 }
 
+}*/
+
+.ancre {
+  display: none;
+}
+#hamburger {
+  margin: 22px 18px;  
+  top: 10px;
+  box-sizing: border-box;
+  position: absolute;
+  height: 12px;
+  width: 20px;
+  z-index: 9;
+  right: 60px
+
+}
+#hamburger>div {
+  width: 20px;
+  height: 2px;
+  margin-top: 5px;
+  background-color: #fff;
+}
+#hamburger>div:after, #hamburger>div:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 2px;
+  background-color: #fff;
+}
+#hamburger>div:before {
+  margin-top: -5px;
+}
+#hamburger>div:after {
+  margin-top: 5px;
+}
+a#menu2:target ~ #menu2 {
+  left: 0;
+  z-index: 37;
+}
+a#menu2:target ~ #close {
+  width: 100%;
+  cursor: default;
+}
+#menu2 {
+  transition: all 0.3s ease;
+  position: fixed;
+  width: 300px;
+  left: -380px;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.28);
+  overflow: hidden;
+  z-index: 5;
+}
+#menu2>#image {
+  width: 100%;
+  height: 170px;
+}
+#right-ul {
+  height: calc(100% - 170px);
+    position: relative;
+  right: 30px;
+}
+#close {
+  position: absolute;
+  height: 100%;
+  z-index: 4;
+}
+nav { 
+    position: absolute;
+    z-index: 7;
+    width: 111%;
+    background-color: rgba(0,0,0,.25);
+    height: 75px;
+    right: -56px;
+}
+ul {
+  padding: 20px 0 0 60px;
+  margin: 0;
+}
+li {
+  list-style: none;
+  line-height: 2.5em;
+  font-size: 15px;
+}
+#contenu {
+  width: 100%;
+  padding: 11px;
+  box-sizing: border-box;
+}
+main {
+  border-radius: 2px;
+  height: 50px;
+  width: 100%;
+  background-color: #fafafa;
+  box-shadow: 0 0 2px #878787;
+}
+.fa-times{
+    position: absolute;
+    color: rgba(0, 0, 0, 0.48);
+    font-size: 23px;
+    right: 5px;
+}
+.logo
+{
+    max-width: 300px;
+    max-height: 100px;
+    object-fit: contain;
+    position: relative;
+    z-index: 2;
+    left: 49px;
+    top: 20px;
+}
+.fa-times:hover, .fa-times:focus {
+    color: rgba(0,0,0,.5);
+    text-decoration: none;
+    }
+
+    .texto-header{
+    position: relative;
+    left: 10px;
+    height: 315px;
+    color: white;
+    font-weight: bold;
+    overflow: hidden;
+    font-size: 1.4rem;
+    width: 90%;
 }
