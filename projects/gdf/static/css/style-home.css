@@ -287,12 +287,12 @@ p {
 }
 
 .logos-pagos {
-    width: 236px;
+    width: 254px;
     /* float: left; */
-    left: -8px;
+    left: 2px;
     position: relative;
     margin-top: 11px;
-    margin-bottom:-12px;
+    margin-bottom: -12px;
 }
 
 .logos-pagos img {
@@ -313,7 +313,7 @@ p {
 
 .box-registro2 {
     margin-left: -23px;
-    margin-top: -41px;
+    margin-top: 0px;
 }
 
 .text-footer2 {
@@ -350,17 +350,17 @@ p {
 
 .incrb-text1{
     text-align: left;
-    right: 0px;
+    right: 10px;
     position: relative;
     top: 7px;
-    font-size: 0.7rem;
-    /* font-family: 'Open Sans Condensed', sans-serif; */
+    font-size: 0.8rem;
+    font-family: 'Open Sans Condensed';
     letter-spacing: 1.4px;
     font-weight: 600;
     color: rgb(91, 81, 83);
     -ms-transform: scaleY(1.2);
     -moz-transform: scaleY(1.2);
-    -webkit-transform: scaleY(1.1);
+    -webkit-transform: scaleX(1.1);
     -o-transform: scaleY(1.2);
     float: right;
 }
@@ -686,19 +686,22 @@ ul.text1 {
 
 /*LOGIN*/
 
-.img_registro_mayorista{
-    width: 170px;
+.img_registro_mayorista {
+    width: 200px;
     position: relative;
     bottom: -4px;
-    height: 52px;
+    height: auto; 
+    margin-bottom: -12px;
+
 }
 
 .img_login_mayorista{
-    width: 170px;
+    width: 200px;
     position: relative;
 /*    bottom: 10px;*/
     top: 17px;
-    height: 52px;
+    height: auto;
+
 }
 
 /*********REGISTRO********/
@@ -1033,6 +1036,17 @@ input.tel {
 
 .gyly{
   margin-top: -393px;
+}
+
+.dropdown.fil-productos {
+    display: inline-block;
+    padding: 0px;
+    border-top: 2px solid rgba(204, 108, 78, 1);
+}
+
+.pop{
+    margin-left: 56px;
+    margin-top: 26px;
 }
 
 /*--------------------------------------------Responsive----------------------------------------------------*/
