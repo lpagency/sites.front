@@ -1,13 +1,13 @@
 <header class="container" style="position: relative;">
-    <a id="wrapper" class="ancre"></a>
+    <a id="menu2" class="ancre"></a>
     <a id="close" class="ancre"></a>
-    <a href="#wrapper" id="hamburger">
+    <a href="#menu2" id="hamburger">
         <div>
         </div>
         <p class="text-menu-hamburger">MENU</p>
     </a>
     <a href="#close" id="close"></a>
-    <div id="wrapper">
+    <div id="menu2">
         <a href="#close" class="fa fa-times"></a>
         <div id="image" class="caja-logo">
             <a href="{{ site_base }}">
@@ -24,15 +24,14 @@
                 <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
             </a>
         </div>
+        <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
         <div id="right-ul">
             <ul>
-                <li>Chaussettes</li>
-                <li>Caleçons</li>
-                <li>Pulls</li>
-                <li>T-Shirts</li>
-                <li>Shorts</li>
-                <li>Jeans</li>
-                <li>Joggings</li>
+                <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
+                <li><a href="{{site_base}}/#" class="">Equipo</a></li>
+                <li><a href="{{site_base}}/#" class="">Servicios</a></li>
+                <li><a href="{{site_base}}/listado_articulos" class="">Casos de éxito</a></li>
+                <li><a href="{{site_base}}/contact" class="">Contáctanos</a></li>
             </ul>
         </div>
     </div>

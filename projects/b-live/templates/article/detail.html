@@ -138,9 +138,9 @@
                         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2_listart" name="image" id="img_banner_2_listart" >
                     </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_2_listart" src="{{ read_image(site.name + '_banner_2_listart', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2_listart',500) }}'"  class="banner-home-1 fondo-only" alt="item">
+                <img id="{{ site.name }}_banner_2_listart" src="{{ read_image(site.name + '_banner_2_listart', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2_listart',500) }}'"  class="banner-home-1 fondo-arts" alt="item">
                 <!-- *** [TITULO "SERVICIO"] *** -->
-            <div class="service-banner-home">
+            <div class="service-banner-art">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div align="center">
                       <div class="tittle-service-home-art text-center {{editabletext}}" text-id="{{ site.name + 'tittle-service-one_listart' }}"> {{ read_text(site.name +  'tittle-service-one_listart') }} </div>
@@ -148,7 +148,7 @@
                 </div>
             </div>
             <!-- *** [LISTA DE SERVICIOS] *** -->
-            <div class="service-banner-home">
+            <div class="service-banner-art">
                 <div class="col-md-4 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service-art">
                     <ul class="list-service-ul">
                         <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_0' }}"> {{ read_text(site.name +  '_listart_0') }}
@@ -181,15 +181,32 @@
     </div>
 </section>
 
-    <div id="contenedor" class="container-fluid productlist">
+    <div id="contenedor" class="container-fluid productlist" style="position: relative;right: 3%;">
             <article>
                 <header>
                     <h1 class="h1-art especial text-center" >Contenido relacionado a este articulo</h1>
                 </header>
             </article>
-            <div class="row cont-rel">
-                {{ getRelatedArticles(article["id"]) }}
-            </div>
+                <!-- *articulos* -->
+<section>
+     <div class="container">
+      <!--   <div class="row"> -->
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
+        <!-- </div> -->
+    </div>
+  
+</section>
+<section id="contenedor">
+    <div class="container">
+        <div class="row spa article_list">
+           {{ getArticleList(tag='blive,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }}
+        </div>
+    </div>
+
+</section>
      </div>
 
         <div  class="carritoproductos clearfix">
