@@ -26,6 +26,16 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
 <script type="text/javascript">
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
     $(document).ready(function()
     {
     //   
@@ -390,71 +400,177 @@
 </section>
 
 <section class="visible-xs hidden-lg hidden-sm hidden-md">
-    <div align="center">
-        <div class="container-g">
-            <div class="col-md-2 col-sm-2 col-xs-6">
-                <div class="dropdown">
-                  <button class="btn btn-primary filtrar dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR <a href="" style="color:#cc6c4e;"> > </a>
-                  </button> 
-                  <ul class="dropdown-menu filtrar">
-                   <div class="text-center talla-onclick">Tallas</div>
-                   <div class="col-md-12 box-talla" style="">
+    <div class="dropdown">
+        <button class="btn btn-filtros-movil dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
+            <i class="fa fa-angle-right fil-2" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu">
+              <li class="dropdown-submenu x4">
+                <a class="test" tabindex="-1" href="#">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+                <ul class="dropdown-menu gri">
+                  <div class="col-xs-12 lol">
+                    <div class="dropdown fil-productos">
+                      <ul class=" filtrar">
+                       <div class="text-center talla-onclick"> </div>
+                       <div class="col-md-12 box-talla" style="">
+                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                            <div class="num-tal-2" tag="35">35</div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                            <div class="num-tal-2" tag="36">36</div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                          <div class="num-tal-2" tag="37">37</div>
+                      </div>
+                  </div>
+                  <div class="col-md-12 box-talla" style="">
                     <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                        <div class="num-tal-2">35</div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                        <div class="num-tal-2">36</div>
-                    </div>
-                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                      <div class="num-tal-2">37</div>
+                       <div class="num-tal-2" tag="38">38</div>
+                   </div>
+                   <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                       <div class="num-tal-2" tag="39">39</div>
+                   </div>
+                   <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                       <div class="num-tal-2" tag="40">40</div>
+                   </div>
+               </div>
+               <div class="col-xs-12"> 
+                   <div class="col-xs-6">
+                      <button type="button" class="btn btn-default-fil">FILTRAR</button>
+                  </div>
+                  <div class="col-xs-6">
+                      <button type="button" class="btn btn-default-ord">LIMPIAR</button>
                   </div>
               </div>
-              <div class="col-md-12 box-talla" style="">
-                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                   <div class="num-tal-2">38</div>
-               </div>
-               <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                   <div class="num-tal-2">39</div>
-               </div>
-               <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                   <div class="num-tal-2">40</div>
-               </div>
-           </div>
-           <div class="col-xs-6">
-            <button type="button" class="btn btn-default-fil">Aplicar filtro</button>
-        </div>
-        <div class="col-xs-6">
-          <button type="button" class="btn btn-default-ord">Limpiar</button>
+          </ul>
       </div>
-  </ul>
-</div>
-</div>
+  </div>
+</ul>
+</li>
 
-<div class="col-md-2 col-sm-2 col-xs-6">
-    <div class="dropdown">
-      <button class="btn btn-primary ordenar dropdown-toggle" type="button" data-toggle="dropdown">ORDENAR <a href="" style="color:#cc6c4e;"> > </a>
-      </button> 
+<li class="dropdown-submenu x4">
+    <a class="test" tabindex="-1" href="#">COLOR <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+    <ul class="dropdown-menu color">
+       <div class="text-center talla-onclick"></div>
+
+       <div class="col-md-12">
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-taupe" type="radio" name="animal" value="Cat" tag="taupe"/> TAUPE </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-negro" type="radio" name="animal" value="Cat" tag="negro"/> NEGRO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-blanco" type="radio" name="animal" value="Cat" tag="blanco"/> BLANCO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-cafe" type="radio" name="animal" value="Cat" tag="cafe"/> CAFE </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-chocolate" type="radio" name="animal" value="Cat" tag="chocolate"/> CHOCOLATE </div>
+            </form>
+        </div>
+
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-camel" type="radio" name="animal" value="Cat" tag="camel"/> CAMEL </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-oxido" type="radio" name="animal" value="Cat" tag="oxido"/> OXIDO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-arena" type="radio" name="animal" value="Cat" tag="arena"/> ARENA </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-animal" type="radio" name="animal" value="Cat" tag="animal print"/> ANIMAL PRINT </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-gris" type="radio" name="animal" value="Cat" tag="gris"/> GRIS </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xs-12"> 
+       <div class="col-xs-6">
+          <button type="button" class="btn btn-default-fil">FILTRAR</button>
+      </div>
+      <div class="col-xs-6">
+          <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+      </div>
+  </div>
+</ul>
+</li>
+
+<li class="dropdown-submenu x4">
+    <a class="test" tabindex="-1" href="#">TIPO<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+    <ul class="dropdown-menu tipo">
+       <div class="text-center talla-onclick"></div>
+
+       <div class="col-md-12">
+        <div class="col-xs-6" style="">
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas"/> BOTAS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines"/> BOTINES </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras"/> BUCANERAS </div>
+            </form>
+        </div>
+
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="zapatillas"/> ZAPATILLAS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="zapatos"/> ZAPATOS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-" name="animal" value="Cat" tag="sandalias"/> SANDALIAS</div>
+            </form>
+        </div>
+    </div>
+
+    <div class="col-xs-12"> 
+       <div class="col-xs-6">
+          <button type="button" class="btn btn-default-fil">FILTRAR</button>
+      </div>
+      <div class="col-xs-6">
+          <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+      </div>
+  </div>
+</ul>
+</li>
+
+<li class="dropdown-submenu x4">
+    <a class="test" tabindex="-1" href="#">ORDENAR<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
       <ul class="dropdown-menu ordenar">
-         <div class="" style="height: 100px;">
+       <div align="center">
+         <div class="" style="height: 100px; width:96%">
             <div class="col-md-12">
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Precio:<a href="#!" class="mod menor">menor a mayor</a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Precio:<a href="#!" class="mod mayor">mayor a menor</a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">Lo nuevo<a href="#!" class="mod llegada">  </a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">En sale<a href="#!" class="mod"></a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod menor">:MENOR A MAYOR</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod mayor"> :MAYOR A MENOR</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOMBRE<a href="#!" class="mod nombre">A-Z</a></div>
+                <!-- <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div> -->
+            </div>
             </div>
         </div>
-         <div class="col-xs-6">
-            <button type="button" class="btn btn-default-fil">Filtrar</button>
-        </div>
-        <div class="col-xs-6">
-             <button type="button" class="btn btn-default-ord">Limpiar</button>
-        </div>
-    </ul>
-</div>
-</div>
-</div>
-</div>
 
+        <div class="col-xs-12"> 
+         <div class="col-xs-6">
+          <button type="button" class="btn btn-default-fil">FILTRAR</button>
+      </div>
+      <div class="col-xs-6">
+          <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+      </div>
+  </div>
+    </ul>
+</li>
+</ul>
+</div>
+    
+                            
 </section>
 <!-- ***fin filtros movil*** -->
 

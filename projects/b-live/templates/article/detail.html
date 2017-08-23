@@ -9,6 +9,12 @@
 <link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
 <script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+<script>
+   $(“#menu-toggle”).click(function(e) {
+       e.preventDefault();
+       $(#wrapper”).toggleClass(“toggled”);
+   });
+   </script>
 {% end %}
 <style type="text/css">
     html, body{
@@ -100,7 +106,7 @@
                            <div align="center">
                                <div class="col-sm-12">
                                    <div class="">
-                                        <div id="description" class="p-art dan" style="color:  #7a7c7c; margin-top: 20px;font-size: 2.1rem;margin-bottom: 15px;font-weight: 500;padding: 0px;text-align: justify;font-family: &quot;Open Sans&quot;, Arial, sans-serif;">
+                                        <div id="description" class="p-art dan detail-arts">
                                             {{ article["description"] }}
                                         </div>
                                     </div>
@@ -149,7 +155,7 @@
             </div>
             <!-- *** [LISTA DE SERVICIOS] *** -->
             <div class="service-banner-art">
-                <div class="col-md-4 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service-art">
+                <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service-art">
                     <ul class="list-service-ul">
                         <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_0' }}"> {{ read_text(site.name +  '_listart_0') }}
                         </div>
@@ -181,12 +187,23 @@
     </div>
 </section>
 
-    <div id="contenedor" class="container-fluid productlist" style="position: relative;right: 3%;">
-            <article>
-                <header>
-                    <h1 class="h1-art especial text-center" >Contenido relacionado a este articulo</h1>
-                </header>
-            </article>
+<section class="list-art-home mg-b5">
+    <div class="container">
+        <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="box-text-gal mg-5">
+                    <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_list-art' }}"> {{ read_text(site.name +  '_til_list-art') }}</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div align="center">
+                    <div class="bajada text-center {{editabletext}}" text-id="{{ site.name + '_baj_list-art' }}"> {{ read_text(site.name +  '_baj_list-art') }} </div>
+                </div>
+            </div>
+        </div>
+</section>
                 <!-- *articulos* -->
 <section>
      <div class="container">

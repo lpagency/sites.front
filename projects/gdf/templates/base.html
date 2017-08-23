@@ -67,6 +67,12 @@
 
 
 <body id="home">
+    {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+    {% else %}
+    {% set editabletext = '' %}
+    {% end %}
+
     {% block header %}{% end %}
     <!-- boton para navegar -->
     {% if is_admin %} {% end %}
@@ -75,12 +81,6 @@
 
     {% include 'product/product_box.html' %} 
     {% include 'product/product_art.html' %}
-
-    {% if is_admin %}
-    {% set editabletext = 'editabletext' %}
-    {% else %}
-    {% set editabletext = '' %}
-    {% end %}
 
     {% block body %}{% end %}
     <!-- Modal -->
