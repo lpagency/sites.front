@@ -107,7 +107,26 @@ a.a-footer{
     position: relative;
     bottom: 2px;
 }
+.caja_footer{
+    position: relative;
+    display: inline-flex;
+    max-width: 150px;
+    padding: 0 1%;
+}
+.caja_datos{
 
+    position: relative;
+    max-width: 445px;
+    float: right;
+    /* left: 65%; */
+    bottom: 8px;
+}
+.footer_gral{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    color: #808080;
+}
 /*----------------------------------------------Responsive-----------------------------------*/
 @media (max-width: 1271px){
 .no-dot {
