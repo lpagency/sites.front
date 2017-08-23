@@ -1,63 +1,42 @@
-<header class="container">
-     
-<div class="header_wrapper"> 
-    <!-- fin editar imagen -->
-    <!-- <img class="fondo" src="{{! site_base }}/static/img/home.jpg"> -->
-    <div class="top_wrapper">
-     <!--  <div class="container"> -->
-          <div class="row">
-            <div class="logo_wrapper col-md-3 col-sm-4 col-xs-12">
-            <div class="caja-logo">
-                <a href="{{ site_base }}">
-                    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
-                    {% if is_admin %} 
-                        <div class="image-upload">
-                            <!-- id input debe ir en for de label -->
-                            <label for="{{ site.name }}_site_logo">
-                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-                            </label>
-                            <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
-                        </div>
-                    {% end %}
-                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
-                </a>
-                </div>
-            </div>
-            <div class="menu_wrapper col-md-9 col-sm-8 col-xs-12">
-                <div class="row">
-                    <nav class="navbar navbar-default">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed segundo " data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-md-2 hidden-xs hidden-sm">
-                                        <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
-                                    </div>
-                               </div>
-                            </div>
+<header class="container"" style="position: relative;">
+    <a id="wrapper" class="ancre"></a>
+    <a id="close" class="ancre"></a>
+    <a href="#wrapper" id="hamburger">
+        <div>
+        </div>
+        <p class="text-menu-hamburger">MENU</p>
+    </a>
+    
+    <div id="wrapper">
 
-                            <ul class="menu-side nav navbar-nav navbar-right nav1 adaptable"> 
-                                <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
-                                <li><a href="{{site_base}}/#" class="">Equipo</a></li>
-                                <li><a href="{{site_base}}/#" class="">Servicios</a></li>
-                                <li><a href="{{site_base}}/listado_articulos" class="">Casos de éxito</a></li>
-                                <li><a href="{{site_base}}/contact" class="">Contáctanos</a></li>
-                              </ul>
-                            </div>
-                        </nav>
+        <div id="image" class="caja-logo">
+            <a href="{{ site_base }}">
+                    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
+                {% if is_admin %} 
+                    <div class="image-upload">
+                        <!-- id input debe ir en for de label -->
+                        <label for="{{ site.name }}_site_logo">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
                     </div>
-                </div>
-            </div>
-       <!--  </div> -->
+                {% end %}
+                <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
+            </a>
+        </div>
+        <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
+        <div id="right-ul">
+            <ul>
+                <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
+                <li><a href="{{site_base}}/#" class="">Equipo</a></li>
+                <li><a href="{{site_base}}/#" class="">Servicios</a></li>
+                <li><a href="{{site_base}}/listado_articulos" class="">Casos de éxito</a></li>
+                <li><a href="{{site_base}}/contact" class="">Contáctanos</a></li>
+            </ul>
+        </div>
     </div>
-</div>
+  <nav>
+  </nav>
 </header>
 
 
