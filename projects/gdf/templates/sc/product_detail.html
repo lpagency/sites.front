@@ -18,29 +18,46 @@
             console.log($(this).attr("src"));
             $("#img_detail").attr("src", $(this).attr('src'));
         });
-    var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(50,50,50);
-
-        $(document).ecommerce('product_detail', {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(50,50,50);
+        var site_name = $.environmentVar('testgdf', 'testgdf', 'testgdf');
+        var variants_loaded = false;
+        var options = {
             'app_public' : app_public,
             'base_url' : base_url,
             'checkout_url': checkout_url,
             'product_id' : {{ product_id }},
+            'site_name': site_name,
             'container': '.product_detail',
-            onLoad: function(product){
-                // console.log(product);
-                if(product.bullet_1 === "sale"){
+            'variants': {
+                'product_sku': '',
+                'container': '.variants-container',
+                'variant_template': '<div class="centrado">{{! values }}</div>',
+                'value_template': '\
+                    <div \
+                        class="col-md-2 size-item-1 \
+                            tallas variant-value" variant="{{! variant_name }}"\
+                        value="{{! value }}" >\
+                            <div class="num-tal-1">{{! value }}</div>\
+                    </div>',
+                'active_class': 'active'},
+            onLoad: function(product)
+            {
+
+                if(product.bullet_1 === "sale")
+                {
                     $(".precio").addClass("anterior-oferta-sale-detalle");
                     $(".promo").removeClass("hidden");
                 }
-                else{
+                else
+                {
                     $(".precio").removeClass("price");
                     $(".precio").addClass("price-p");
                 }
@@ -57,14 +74,25 @@
 
                 related2(prodBull.toLowerCase());
 
-                // if (product.bullet_1 != "" ){
-                //     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                //     {
-                //         $("#article-reladed").html(data);
-                //     });
-                // }
+                if (!variants_loaded)
+                {
+                    // add some settings
+                    options.variants.product_sku = product.sku;
+                    options.onLoad = $.noop;
+                    // load variants
+                    $('.product_detail').ecommerce('load_variants', options);
+                    $('.variants-container').on(
+                        'combination:selected', function()
+                        {
+                            $('.add-to-cart').removeAttr('disabled');
+                        });
+
+                    variants_loaded = true;  // execute this onces
+                }
             }
-        });
+        }
+
+        $('.product_detail').ecommerce('product_detail', options);
 
         // productos relacionados
         var related = function(tag)
@@ -238,31 +266,7 @@
                 <div class="text-center color-detalle">Color: Serpiente Gris</div>
                 <div class="text-center stock-detalle">en stock</div>
                 <div class="text-center talla-detalle">TALLAS</div>
-                <div class="col-md-12 box-talla-2" style="">
-                    <div class="centrado">
-                    <div class="col-md-2 size-item-1 active onclick="" ontouchstart="" ">
-                        <div class="num-tal-1">35</div>
-                    </div>
-                     <div class="col-md-2 size-item-1">
-                        <div class="num-tal-1">36</div>
-                    </div>
-                     <div class="col-md-2 size-item-1">
-                        <div class="num-tal-1">37</div>
-                    </div>
-                    </div>
-                </div>
-                <div class="col-md-12 box-talla-2" style="">
-                    <div class="centrado">
-                     <div class="col-md-2 size-item-1">
-                        <div class="num-tal-1">38</div>
-                    </div>
-                     <div class="col-md-2 size-item-1">
-                        <div class="num-tal-1">39</div>
-                    </div>
-                     <div class="col-md-2 size-item-1">
-                        <div class="num-tal-1">40</div>
-                    </div>
-                    </div>
+                <div class="col-md-12 box-talla-2 variants-container" style="">
                 </div>
             </div>
             <div class="clearfix"></div>
@@ -271,7 +275,7 @@
                     <!-- <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button> -->
                    <!--  <button type="button" class="btn btn-default btn-nutr {{! bullet_1 |hide_if_empty}}" data-toggle="modal" data-target="#myModal_detail">Información</button> -->
 
-                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" data-target="#myModal" >AGREGAR A LA BOLSA</button>
+                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" data-target="#myModal" disabled>AGREGAR A LA BOLSA</button>
                 </div>
 
             </div>
