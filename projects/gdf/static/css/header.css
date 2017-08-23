@@ -1,6 +1,6 @@
 .logo {
     position: absolute;
-    left: 44px;
+    left: 25px;
     right: 0;
     margin-right: auto;
     margin-left: auto;
@@ -457,12 +457,10 @@ font-size: 0.6rem;
 
 }
 
-
-
 @media (max-width: 991px){
     .btn.hed {
     display: inline-block;
-    padding: 6px 20px;
+    padding: 6px 0px;
     margin-bottom: 0;
     font-size: 9px;
     font-weight: 400;
@@ -481,6 +479,12 @@ font-size: 0.6rem;
     top: 12px;
     position: relative;
     letter-spacing: 1.7px;
+}
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    width: 82%;
 }
 
 }
@@ -582,6 +586,13 @@ font-size: 0.6rem;
     color: rgb(85, 85, 85);
     background-color: rgba(231, 231, 231, 0.32);
 }
+
+.navbar-nav {
+    float: left;
+    margin: 0;
+    width: 100%;
+}
+
 
 }
 
