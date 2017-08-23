@@ -1,42 +1,50 @@
-<header class="container">
-    <a id="wrapper" class="ancre"></a>
-    <a id="close" class="ancre"></a>
-    <a href="#wrapper" id="hamburger">
-        <div>
-        </div>
-        <p class="text-menu-hamburger">MENU</p>
+<header class="container" style="position: relative;">
+  <!-- Navigation -->
+    <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
+      <i class="fa fa-bars"></i> MENU
     </a>
-    
-    <div id="wrapper">
-
-        <div id="image" class="caja-logo">
-            <a href="{{ site_base }}">
-                    <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
-                {% if is_admin %} 
-                    <div class="image-upload">
-                        <!-- id input debe ir en for de label -->
-                        <label for="{{ site.name }}_site_logo">
-                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-                        </label>
-                        <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
-                    </div>
-                {% end %}
-                <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
-            </a>
+    <nav id="sidebar-wrapper">
+      <div class="logo_wrapper">
+        <div class="caja-logo">
+          <a href="{{ site_base }}">
+            <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" style="width: 100%;"> -->
+            {% if is_admin %} 
+              <div class="image-upload">
+                <!-- id input debe ir en for de label -->
+                <label for="{{ site.name }}_site_logo">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
+              </div>
+            {% end %}
+            <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
+          </a>
         </div>
-        <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
-        <div id="right-ul">
-            <ul>
-                <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
-                <li><a href="{{site_base}}/#" class="">Equipo</a></li>
-                <li><a href="{{site_base}}/#" class="">Servicios</a></li>
-                <li><a href="{{site_base}}/listado_articulos" class="">Casos de éxito</a></li>
-                <li><a href="{{site_base}}/contact" class="">Contáctanos</a></li>
-            </ul>
-        </div>
-    </div>
-  <nav>
-  </nav>
+      </div>
+      <div class="menu-ul-list">
+        <ul class="sidebar-nav">
+          <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
+            <i class="fa fa-times"></i>
+          </a>
+          <li class="sidebar-brand">
+            <a class="js-scroll-trigger" href="#top">Start Bootstrap</a>
+          </li>
+          <li>
+            <a class="js-scroll-trigger" href="#top">Home</a>
+          </li>
+          <li>
+            <a class="js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li>
+            <a class="js-scroll-trigger" href="#services">Services</a>
+          </li>
+          <li>
+            <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+          </li>
+          <li>
+            <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
 </header>
-
-
