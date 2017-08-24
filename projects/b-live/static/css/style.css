@@ -207,10 +207,10 @@ div.upload input, div.image-upload input{
 }
 /* contact*/
 .titlecontact2{
-    position: absolute;
-    bottom: 45px;
+    position: relative;
     color: white;
     font-size: 2rem;
+    height: 100%;
 }
 
 }
@@ -218,18 +218,20 @@ div.upload input, div.image-upload input{
     color: white;
     text-align: left;
     left: 30px;
-    position: absolute;
+    position: relative;
 }
 
 .txt-contact{
-
+    overflow: hidden;
     position: absolute;
-    bottom: -77px;
+    top: 415px;
     color: white;
     text-align: left;
     left: 38px;
     font-size: 35px;
     font-weight: 700;
+    height: 100px;
+
 }
 input, textarea{
     border-radius: 0 !important;
