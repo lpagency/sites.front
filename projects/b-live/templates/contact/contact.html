@@ -2,9 +2,8 @@
 
 
 {% block header %}
-{% include '../home/header.html' %}
+{% include '../home/header_inside.html' %}
 {% end %}
-
 
 {% block javascript %}
 
@@ -127,6 +126,7 @@
 
 
 {% block css %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
 <link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
 <style type="text/css">
     .controls input, .controls textarea
@@ -145,25 +145,33 @@
 {% end %}
 <div class="background-content">
 
-<div class="container">
-<div class="" style="height:33px;"></div>
-<div class="img-mobilee" style="position: relative;">
-<!--     {% if is_admin %}
-    <div class="image-upload con visible-movil">
-        <label for="img_banner_contact-loading">
-            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact-loading" name="image" id="img_banner_contact-loading" >
-    </div>
-    {% end %}
-    <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form img-mobile" alt="item"> -->
-        <div class="container">
-           <div class="col-md-12">
-               <h3 class="description distrib contact {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-weight: 200;margin-top: 150px;"> {{ read_text(site.name +  '_ti_con') }}</h3>
-               <hr class="page-contact">
-            </div>
+<div>
+       <section>
+    <div>
+        <div align="center">
+    <div class="img-mobile" style="background:url('{{ read_image(site.name + '_sup',500) }}'); height:550px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(85%); -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(85%); -ms-filter: grayscale(0%) brightness(85%);-o-filter: grayscale(0%) brightness(85%); background-position:center; margin-top: -73px;margin-bottom: 60px; width:100%" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_sup">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_sup" name="image" id="img_sup" >
         </div>
-</div>
+        {% end %}
+        <img id="{{ site.name }}_sup" src="{{ read_image(site.name + '_sup', 1) }}" onload="this.src='{{ read_image(site.name + '_sup',500) }}'" class="banner_su hidden" alt="item">
+    </div>
+    </div>
+  <!--
+    <div class="container">
+        <div class="col-md-12">
+            <div class="text-center titulo-about-2 {{editabletext}}" text-id="{{ site.name + '_suu' }}"> {{ read_text(site.name +  '_suu') }}</div>
+
+           <div class="text-center titulo-about-3 {{editabletext}}" text-id="{{ site.name + '_suu_2' }}"> {{ read_text(site.name +  '_suu_2') }}</div> -->
+
+        </div>
+    </div>
+ </div>
+</section>
 </div>
 
     <!-- fin editar imagen -->
@@ -171,34 +179,11 @@
 
             
             <div class="container contact product text-left  fondo-contact" style="display: inherit;">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="">
                 <div class="row">       
 
                 <div class="container">
-
-                    <div class="col-xs-12 col-md-4 col-sm-12">
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
-                        </div>
-                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
-                        </div>
-
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_3' }}"> {{ read_text(site.name +  '_h_contact_3') }}
-                        </div>
-                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_4' }}"> {{ read_text(site.name +  '_h_contact_4') }}
-                        </div>
-
-
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_5' }}"> {{ read_text(site.name +  '_h_contact_5') }}
-                        </div>
-                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_6' }}"> {{ read_text(site.name +  '_h_contact_6') }}
-                        </div>
-
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_7' }}"> {{ read_text(site.name +  '_h_contact_7') }}
-                        </div>
-
-
-                    </div>  
-                    <div class="col-xs-12 col-md-8 col-sm-12 align-form-contact fondo-contact">
+                    <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact">
 
                         <div>
                         <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
@@ -233,12 +218,32 @@
                         </form> 
                         </div>
                      </div>
-                    </div>      
+                    </div>  
+
+                    <div class="col-xs-12 col-md-4 col-sm-12" style="float: right;" >
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
+                        </div>
+                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
+                        </div>
+
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_3' }}"> {{ read_text(site.name +  '_h_contact_3') }}
+                        </div>
+                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_4' }}"> {{ read_text(site.name +  '_h_contact_4') }}
+                        </div>
+
+
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_5' }}"> {{ read_text(site.name +  '_h_contact_5') }}
+                        </div>
+                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_6' }}"> {{ read_text(site.name +  '_h_contact_6') }}
+                        </div>
+
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_7' }}"> {{ read_text(site.name +  '_h_contact_7') }}
+                        </div>
+
+
+                    </div>  
                 </div>  
             </div>
-            
-            
-
-    </div>
+            </div>
 {% include '../home/footer.html' %}     
 {% end %}

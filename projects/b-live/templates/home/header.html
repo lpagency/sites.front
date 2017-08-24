@@ -18,32 +18,23 @@
             {% end %}
             <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
           </a>
+          <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle" style="left: 80px;">
+            <i class="fa fa-times"></i>
+          </a>
         </div>
       </div>
     <nav id="sidebar-wrapper">
+    <div class="caja-logo"></div>
+      <div class="col-md-2 hidden-xs hidden-sm">
+      <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
+      </div>
       <div class="menu-ul-list">
-        <ul class="sidebar-nav">
-          <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle">
-            <i class="fa fa-times"></i>
-          </a>
-          <li class="sidebar-brand">
-            <a class="js-scroll-trigger" href="#top">Start Bootstrap</a>
-          </li>
-          <li>
-            <a class="js-scroll-trigger" href="#top">Home</a>
-          </li>
-          <li>
-            <a class="js-scroll-trigger" href="#about">About</a>
-          </li>
-          <li>
-            <a class="js-scroll-trigger" href="#services">Services</a>
-          </li>
-          <li>
-            <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
-          </li>
-          <li>
-            <a class="js-scroll-trigger" href="#contact" onclick=$( "#menu-close").click();>Contact</a>
-          </li>
+        <ul class="sidebar-nav"> 
+          <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
+          <li><a href="{{site_base}}/#" class="">Equipo</a></li>
+          <li><a href="{{site_base}}/#" class="">Servicios</a></li>
+          <li><a href="{{site_base}}/listado_articulos" class="">Casos de éxito</a></li>
+          <li><a href="{{site_base}}/contact" class="">Contáctanos</a></li>
         </ul>
       </div>
     </nav>
