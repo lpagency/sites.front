@@ -506,7 +506,7 @@ font-size: 0.6rem;
     right: 0px;
     font-size: 16px;
     font-weight: 300;
-    top: -14px;
+    top: -2px;
     right: 0px;
     z-index: 99;
     border: 1px solid black;
@@ -542,6 +542,15 @@ font-size: 0.6rem;
     margin-top: -34px;
     position: relative;
     left: -18px;
+    color: #cc6c4e;
+    font-size: 19px;
+}
+
+.fa-caret-right.edi {
+    float: right;
+    margin-top: -3px;
+    position: relative;
+    left: -5px;
     color: #cc6c4e;
     font-size: 19px;
 }
@@ -585,13 +594,27 @@ font-size: 0.6rem;
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
     color: rgb(85, 85, 85);
-    background-color: rgba(231, 231, 231, 0.32);
+    background-color: transparent;
 }
 
 .navbar-nav {
     float: left;
     margin: 0;
     width: 100%;
+}
+
+.text-header-edi {
+    font-size: 0.6rem;
+    position: relative;
+    display: block;
+    padding: 10px 12px;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E09B8A;
+    font-family: 'Open Sans', sans-serif!important;
+    letter-spacing: 1px;
+    width: 100%;
+    left: 0px !important;
 }
 
 

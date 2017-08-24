@@ -193,10 +193,11 @@
               </li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-               <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header">NUEVO</a>
+               <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header">NUEVO</a> <i class="fa fa-caret-right" aria-hidden="true"></i> </li>
+               <li style="left: 27px;" class="text-header-edi {{editabletext}}" text-id="{{ site.name + '_edit' }}"> {{ read_text(site.name +  '_edit') }} <i class="fa fa-caret-right edi" aria-hidden="true"></i> </li>
                <li><a href="{{ site_base }}/productos?tag=sale" class="text-header sale" style="color: #DA8672 !important;">SALE</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
               <li><a href="#" style="">¡Blog!</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
-              </li>
+              
             </ul>
             </div>
             <!-- /.navbar-collapse -->
