@@ -5,11 +5,14 @@
 {% end %}
 
 {% block header %}
-{% include '../home/header.html' %}
+{% include '../home/header_inside.html' %}
 {% end %}
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/servicios.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
+
 {% end %}
 
 {% block javascript %}
@@ -27,7 +30,7 @@
             'https://checkout.loadingplay.com',
             'http://lpcheckout.ondev.today/',
             'https://checkout.loadingplay.com');
-        var app_public = $.environmentVar(14,43,14);
+        var app_public = $.environmentVar(29,29,29);
 
         $(document).ecommerce('product_detail', {
             'app_public' : app_public,
@@ -74,37 +77,26 @@
 <script type="text/template" id="product_detail">
   <section>
       <div style="position: relative;">
-         <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-detalle" id="img_detail">
+         <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-service" id="img_detail">
         <div align="center">
           <div class="lateral l-movil" style="position: relative; margin-top: -403px; float:left; left:40px;">
-            <div class="reser">  
-              <div id="reserva" class="paxer-widget-calendar" style="height: 272px; width: 209px; z-index:1000;">  
-
-             </div>
-           </div>
+            
          </div>
        </div>
         </div>
       <div class="container">
           <div align="center">
-          <div class="col-md-4 col-sm-offset-8 col-xs-offset-8 col-md-offset-8">
-              <h1 class="name name_prod_detail ellipsis multiline" class="line" href="#">{{! name }}</h1>
+            <div class="col-md-12" style="position: relative; bottom: 60px;">
+              <p class="titleservice2">BLIVE | Servicios </p>
+              <h1 class="name ellipsis multiline titleservice" href="#">{{! name }}</h1>
+            </div>
+            <h3 class="bajadaservice ellipsis multiline">{{! bullet_2 }}</h3>
+            <h3 class="descriptservice ellipsis multiline">{{! description }}</h3>
           </div>
-              <h3 class="descr_prod_detail ellipsis multiline"> 
-             {{! description }}</h3>
+          <hr>
+          <div class="btn-to-contact">
+            <input type="button" onclick="location.href='{{site_base}}/contact' " value="Contáctanos" name="boton" /> 
           </div>
-           <div class="col-xs-12 col-md-4 col-sm-6 image_little">
-                        <div align="center">
-                          <img class="{{! images[0]['thumb_500']|hide_if_empty}} col-xs-3 little img_prod_little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />             
-                            <!-- *************** -->
-                            <!-- <img class="{{! images[1][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" /> -->
-                            <!-- *************** -->
-                            <img class="{{! images[2]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[2]['thumb_500']}}" />
-                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
-                            <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" />
-                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3 little img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" />
-                             </div>
-                        </div>
        </div>
      </div>
     </section>
@@ -138,63 +130,7 @@
 
 
 <div class="product-detail"></div>
-   <div align="center">
-      <div class="fin text-center {{editabletext}}" text-id="{{ site.name + '_ple' }}"> {{ read_text(site.name +  '_ple') }}</div>
-      <hr class="len">
-      <div class="fin-2 text-center {{editabletext}}" text-id="{{ site.name + '_ple_2' }}"> {{ read_text(site.name +  '_ple_2') }}</div>
-   </div>
 
-<!-- ***productos relacionados** -->
-<!-- <hr class="detail">
-<div class="container dano">
-    <div class="row">
-        <div class="col-md-12">
-            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
-            <hr class="lin">
-        </div>
-    </div>
-    <div class="row product-related">
-    </div>
-</div> -->
-
-
-
-
-<!-- <div class="container-fluid">
-    <div class="space80">
-         <div class="productlist dano">
-                <article>
-                    <header>
-                        <h1 class="h1-art especial" >Contenido Relacionado</h1>
-                    </header>
-                </article>
-
-                <div class="row cont-rel">
-                    {{ getArticleList() }}
-                </div>
-
-         </div>
-    </div>
- </div>
-
-<div class="space80"></div>
-
-<div class="container-fluid dano">
-    <div class="row">
-        <div class="col-12">
-            <h1 class="text-relac text-left"><strong class="editabletext">Contenido relacionado</strong></h1>
-        </div>
-    </div>
-    <div class="row product-related">
-    </div>
-</div> -->
-       
-
-
-<!-- 
-<div align="center">
-    <h1>fdjfidjfidfidjfidifjdi</h1>
-</div> -->
 
 
 {% include '../home/footer.html' %}
