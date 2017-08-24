@@ -506,7 +506,7 @@ font-size: 0.6rem;
     right: 0px;
     font-size: 16px;
     font-weight: 300;
-    top: -14px;
+    top: -2px;
     right: 0px;
     z-index: 99;
     border: 1px solid black;
@@ -546,6 +546,15 @@ font-size: 0.6rem;
     font-size: 19px;
 }
 
+.fa-caret-right.edi {
+    float: right;
+    margin-top: -3px;
+    position: relative;
+    left: -5px;
+    color: #cc6c4e;
+    font-size: 19px;
+}
+
 
 /*----menu movil---*/
 
@@ -580,11 +589,12 @@ font-size: 0.6rem;
     background-color: white;
     position: relative;
     top: -53px;
+    padding: 0px;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
     color: rgb(85, 85, 85);
-    background-color: rgba(231, 231, 231, 0.32);
+    background-color: transparent;
 }
 
 .navbar-nav {
@@ -593,23 +603,37 @@ font-size: 0.6rem;
     width: 100%;
 }
 
+.text-header-edi {
+    font-size: 0.6rem;
+    position: relative;
+    display: block;
+    padding: 10px 12px;
+    font-size: 12px;
+    text-align: left;
+    border-bottom: 1px solid #E09B8A;
+    font-family: 'Open Sans', sans-serif!important;
+    letter-spacing: 1px;
+    width: 100%;
+    left: 0px !important;
+}
+
 
 }
 
 @media (max-width: 375px){
-    .search-box .input-search {
+.search-box .input-search {
     height: 47px;
     border-radius: 1px;
     padding-right: 0px;
     padding-left: 10px;
-    width: 105%;
+    width: 101%;
     position: absolute;
     border: 0;
     right: 0px;
     font-size: 16px;
     font-weight: 300;
-    top: -14px;
-    right: 77px;
+    top: -5px;
+    right: 0px;
     z-index: 99;
     border: 1px solid black;
     float: left;
@@ -625,30 +649,6 @@ font-size: 0.6rem;
 }
 
 @media (max-width: 360px){
-    .search-box .input-search {
-    height: 47px;
-    border-radius: 1px;
-    padding-right: 0px;
-    padding-left: 10px;
-    width: 105%;
-    position: absolute;
-    border: 0;
-    right: 0px;
-    font-size: 16px;
-    font-weight: 300;
-    top: -14px;
-    right: 70px;
-    z-index: 99;
-    border: 1px solid black;
-    float: left;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
-    font-family: 'Open Sans', sans-serif!important;
-    letter-spacing: 1px;
-}
 
 }
 
@@ -658,14 +658,14 @@ font-size: 0.6rem;
     border-radius: 1px;
     padding-right: 0px;
     padding-left: 10px;
-    width: 139%;
+    width: 101%;
     position: absolute;
     border: 0;
     right: 0px;
     font-size: 16px;
     font-weight: 300;
-    top: -65px;
-    right: -67px;
+    top: -3px;
+    right: 0px;
     z-index: 99;
     border: 1px solid black;
     float: left;

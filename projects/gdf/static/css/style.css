@@ -536,9 +536,21 @@ h1 {
   font-weight: 400;
 }
 /************************/
-div.upload input, div.image-upload input{
+div.upload input, div.image-upload input {
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
     width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
+
 .box-list-prod {
     width: 100%;
     height: 251px;
