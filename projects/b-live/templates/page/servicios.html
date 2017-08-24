@@ -5,7 +5,7 @@
 {% end %}
 
 {% block header %}
-{% include '../home/header.html' %}
+{% include '../home/header_inside.html' %}
 {% end %}
 
 
@@ -46,6 +46,10 @@
         // $('.product-list2').ecommerce('product_box', config);
     });
 </script>
+{% end %}
+{% block css %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/listado_articulos.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
 {% end %}
 
 
