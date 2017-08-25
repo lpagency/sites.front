@@ -23,13 +23,15 @@
         </div>
       <nav id="sidebar-wrapper">
       <div class="caja-logo">
-        
+        <a id="menu-close" href="#" class="btn btn-light btn-lg pull-right toggle" style="left: 80px;">
+              <i class="fa fa-times"></i>
+            </a>
       </div>
         <div class="col-md-2 hidden-xs hidden-sm">
         <div class="texto-header {{editabletext}}" text-id="{{ site.name + '_header_text' }}"> {{ read_text(site.name +  '_header_text') }} </div>
         </div>
         <div class="menu-ul-list">
-          <ul class="sidebar-nav">
+          <ul class="sidebar-nav"> 
             <li><a href="{{site_base}}/#" class="">Quienes somos</a></li>
             <li><a href="{{site_base}}/#" class="">Equipo</a></li>
             <li><a href="{{site_base}}/servicios" class="">Servicios</a></li>
