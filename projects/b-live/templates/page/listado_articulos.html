@@ -5,7 +5,7 @@
 {% end %}
 
 {% block header %}
- {% include '../home/header.html' %}
+ {% include '../home/header_inside.html' %}
 {% end %}
 
 
@@ -65,7 +65,12 @@ $(document).ready(function(){
 </script>
 
 {% end %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/servicios.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
 
+{% end %}
 
 {% block body %}
 {% if is_admin %}
@@ -119,10 +124,10 @@ $(document).ready(function(){
 
      <div class="container">
       <!--   <div class="row"> -->
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='hotel,posicion 1') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='hotel,posicion 2') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='hotel,posicion 3') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='hotel,posicion 4') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
         <!-- </div> -->
     </div>
   
