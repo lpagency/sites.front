@@ -110,7 +110,7 @@ div.image-upload.part1 {
     bottom: 29px;
     width: 81%;
     text-align: left;
-    left: 0px;
+    left: 10px;
     color: #4A4949;
     font-size: 14px;
     font-weight: 400;
@@ -251,7 +251,7 @@ hr.len {
     margin-top: 19px;
     margin-bottom: 29px;
     position: relative;
-    left: 5%;
+    left: -3%;
     float: left;
     font-size: 13px;
     font-weight: 200;
@@ -279,7 +279,7 @@ hr.len {
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    left: 0px;
+    left: 10px;
     color: #4A4949;
 }
 
@@ -302,7 +302,7 @@ hr.len {
 .oferta {
     color: #FF0F53;
     float: left;
-    left: 0px;
+    left: 10px;
     position: relative;
     bottom: 18px;
     font-size: 12px;
@@ -312,7 +312,7 @@ hr.len {
 .original {
     color: #4A4949;
     float: left;
-    left: 0px;
+    left: 10px;
     position: relative;
     bottom: 18px;
     font-size: 12px;
@@ -453,6 +453,9 @@ hr.len {
     text-align: left;
     position: relative;
     left: 0%;
+    color: #282c3f;
+    font-weight: 700;
+    font-size: 13px;
 }
 
 .fa-plus{
@@ -995,7 +998,7 @@ a.variables:active{
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin-bottom: 37px;
+    margin-bottom: 16px;
     font-style: italic;
 }
 
@@ -1027,7 +1030,7 @@ a.variables:active{
 .conti:hover {
     position: relative;
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid rgba(153, 153, 153, 0.38);
     height: 295px;
     margin-bottom:0px;
 }
@@ -1071,7 +1074,7 @@ a.text {
     padding: 7px 38px;
     top: 129px;
     position: relative;
-    border: 1px solid gray;
+    border: 1px solid rgba(153, 153, 153, 0.38);
 }
 
 a.text.detalle {
@@ -1081,7 +1084,7 @@ a.text.detalle {
     padding: 5px 71px;
     top: 131px;
     position: relative;
-    border: 1px solid gray;
+    border: 1px solid rgba(153, 153, 153, 0.38);
 }
 
 /*.filtrosRec{
@@ -1235,7 +1238,7 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de:hover {
     position: relative;
     width: 100%;
-    border: 1px solid gray;
+    border: 1px solid rgba(153, 153, 153, 0.38);
     height: 295px;
     margin-bottom:8px;
 }
@@ -1279,6 +1282,30 @@ a.variables3:hover, a.variables3:focus, a.variables3:active{
     color: #2f2c2c;
     text-decoration: none !important;
     border-bottom: 1px solid #526CD0;
+}
+
+.standar{
+    text-align: left;
+    float: left;
+    color: #526cd0;
+    font-weight: 700;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    width: 100%;
+}
+
+.op{
+    text-align: left;
+    float: left;
+    color: #696e79;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    width: 60%;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
