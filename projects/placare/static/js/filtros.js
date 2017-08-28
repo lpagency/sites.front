@@ -176,6 +176,8 @@
                 $(".c-variable_2").addClass('hidden');
                 $(".c-variable_3").addClass('hidden');
 
+                $(".vari").css("margin-bottom", "5%");
+
             });
 
             $(document).on("click", ".variables2", function(ev){
@@ -188,6 +190,8 @@
                 $(".c-variable_1").addClass('hidden');
                 $(".c-variable_3").addClass('hidden');
 
+                $(".vari").css("margin-bottom", "5%");
+
             });
 
             $(document).on("click", ".variables3", function(ev){
@@ -199,6 +203,8 @@
 
                 $(".c-variable_2").addClass('hidden');
                 $(".c-variable_1").addClass('hidden');
+
+                $(".vari").css("margin-bottom", "5%");
 
             });
 
