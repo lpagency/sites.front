@@ -83,15 +83,15 @@
       $("#OpenAlert").click();
       // base_url 'http://localhost:8520/'
       // checkout_url 'http://localhost:8522/'
-    var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'http:s//pay.loadingplay.com',
-        'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(29,29,29);
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,

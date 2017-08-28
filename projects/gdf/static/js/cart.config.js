@@ -59,15 +59,17 @@ $(document).ready(function()
         $("#todo").addClass("active");
     }
 
-   var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(50,50,50);
+        var base_url = $.environmentVar(
+            'http://apibodegas.ondev.today',
+            'http://apibodegas.ondev.today',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(10,10,50);
+        var site_name = $.environmentVar('gdf', 'gdf', 'testgdf');
+        var variants_loaded = false;
 
     window.config = {
         'app_public': app_public,

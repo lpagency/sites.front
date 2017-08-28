@@ -24,13 +24,13 @@
     {
         var base_url = $.environmentVar(
             'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
+            'https://apibodegas.loadingplay.com/',
             'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'https://checkout.loadingplay.com',
-            'http://lpcheckout.ondev.today/',
+            'https://checkout.loadingplay.com',
             'https://checkout.loadingplay.com');
-        var app_public = $.environmentVar(29,29,29);
+        var app_public = $.environmentVar(29,29,58);
 
         $(document).ecommerce('product_detail', {
             'app_public' : app_public,
@@ -94,8 +94,8 @@
             <h3 class="descriptservice ellipsis multiline">{{! description }}</h3>
           </div>
           <hr>
-          <div class="btn-to-contact">
-            <input type="button" onclick="location.href='{{site_base}}/contact' " value="Contáctanos" name="boton" /> 
+          <div class="btn-to-contact col-md-12" align="center">
+            <input class="btn-contactanos" type="button" onclick="location.href='{{site_base}}/contact' " value="Contáctanos" name="boton" /> 
           </div>
        </div>
      </div>

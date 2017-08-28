@@ -4,14 +4,16 @@
 $(document).ready(function()
     {
         var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(50,50,50);
+            'http://apibodegas.ondev.today',
+            'http://apibodegas.ondev.today',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'http://lpcheckout.ondev.today',
+            'http://lpcheckout.ondev.today',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(10,10,50);
+        var site_name = $.environmentVar('gdf', 'gdf', 'testgdf');
+        var variants_loaded = false;
 
     // functions 
     // productos relacionados
