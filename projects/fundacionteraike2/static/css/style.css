@@ -522,6 +522,11 @@ img.change-image {
     margin-top: 20px;
     border-radius: 20px;
     object-fit: cover;
+    filter: grayscale(0%) brightness(78%);
+    -webkit-filter: grayscale(0%) brightness(78%);
+    -moz-filter: grayscale(0%) brightness(78%);
+    -ms-filter: grayscale(0%) brightness(78%);
+    -o-filter: grayscale(0%) brightness(78%);
 }
 .noticias-image-half img {
     width: 100%;
@@ -529,6 +534,11 @@ img.change-image {
     margin-top: 20px;
     border-radius: 20px;
     object-fit: cover;
+    filter: grayscale(0%) brightness(78%);
+    -webkit-filter: grayscale(0%) brightness(78%);
+    -moz-filter: grayscale(0%) brightness(78%);
+    -ms-filter: grayscale(0%) brightness(78%);
+    -o-filter: grayscale(0%) brightness(78%);
 }
 /*image overlay**/
 
@@ -540,11 +550,11 @@ img.change-image {
     right: 0;
     height: 90%;
     width: 92%;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 4%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
 }
 .overlay-pe {
@@ -555,11 +565,11 @@ img.change-image {
     right: 0;
     height: 45%;
     width: 92%;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 4%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
 }
 .overlay-pe2 {
@@ -570,13 +580,14 @@ img.change-image {
     right: 0;
     height: 45%;
     width: 92%;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 4%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
 }
+
 .overlay-full {
     position: absolute;
     top: 0;
@@ -585,11 +596,11 @@ img.change-image {
     right: 0;
     height: 94%;
     width: 92%;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 4%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
 }
 
@@ -617,11 +628,11 @@ img.change-image {
     right: 0;
     height: 90%;
     width: 92%;
-    margin-top: 18px;
+    margin-top: 20px;
     margin-left: 4%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #000000;
+    background-color: rgba(255, 255, 255, 0.32);
     border-radius: 20px;
 }
 
@@ -635,7 +646,7 @@ img.change-image {
     max-height: 300px;
     padding: 5px;
     font-size: 18px;
-    position: relative;
+    position: absolute;
     top: 154px;
     left: 50%;
     font-weight: bold;
@@ -644,6 +655,16 @@ img.change-image {
     width: 86%;
     overflow: hidden;
 }
+
+.text-conti{
+    margin-top: -100px;
+}
+
+.text-conti-2{
+    margin-top: -215px;
+    margin-bottom: 117px;
+}
+
 
 a:hover{
     text-decoration: none !important;
@@ -668,7 +689,7 @@ a:hover{
     color: white;
     padding: 5px;
     font-size: 18px;
-    position: relative;
+    position: absolute;
     top: 154px;
     left: 50%;
     font-weight: bold;
@@ -676,6 +697,10 @@ a:hover{
     -ms-transform: translate(-50%, -50%);
     width: 93%;
     overflow: hidden;
+}
+
+.chin{
+    margin-bottom: 3px;
 }
 
 .text-noticias a:hover{
