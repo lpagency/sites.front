@@ -68,10 +68,10 @@
                 
               </div>
            </a>
-           {% if is_admin %}
+            <div class="text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner2_1' }}">{{ read_text(site.name +  'text_side_banner2_1') }}</div>
+            {% if is_admin %}
             <img class="change-image editablelink import" link-id="{{ site.name + '_side_banner2_1' }}" content="{{ read_link(site.name + '_side_banner2_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 0px;z-index: 2000!important;"> 
             {% end %}
-            <div class="text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner2_1' }}">{{ read_text(site.name +  'text_side_banner2_1') }}</div>
           </div>
 
           <div class="col-md-4 col-lg-4 noticias-image image-overlay">
