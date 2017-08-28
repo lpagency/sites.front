@@ -73,6 +73,11 @@
         {% end %}
 
         {% block scripts %}
+        <script type="text/javascript">
+            $(document).on("click", ".menu-responsive", function(ev){
+                ev.preventDefault();
+            });
+        </script>
         {% end %}
     </body>
 </html>
