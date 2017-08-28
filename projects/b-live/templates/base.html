@@ -15,7 +15,7 @@
         <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
         <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400" rel="stylesheet">
         <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
-       <!--         <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100' rel='stylesheet' type='text/css'> -->
+       <!-- <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500,700,900,100' rel='stylesheet' type='text/css'> -->
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
         <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
@@ -36,7 +36,7 @@
         <!-- autocomplete
         <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css" />
         <!-autocomplete -->
-        <link rel="stylesheet" href="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.css">
+        <link rel="stylesheet" href="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.css">
 
         <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css">
         <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.css">
@@ -100,7 +100,7 @@
         <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
 
         <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
-        <script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.js"></script>
 
                 <!-- carga de productos -->
 <!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
@@ -130,6 +130,72 @@
                 <div class="rect5"></div>
             </div>
         </div> -->
+
+        <script>
+            
+            
+/* NUEVO MENU */
+(function($) {
+  "use strict"; // Start of use strict
+
+  // Closes the sidebar menu
+  $("#menu-close").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+  });
+
+  // Opens the sidebar menu
+  $("#menu-toggle").click(function(e) {
+    e.preventDefault();
+    $("#sidebar-wrapper").toggleClass("active");
+  });
+
+  // Smooth scrolling using jQuery easing
+  $('a.js-scroll-trigger[href*="#"]:not([href="#"])').click(function() {
+    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      if (target.length) {
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, "easeInOutExpo");
+        return false;
+      }
+    }
+  });
+
+  // Closes responsive menu when a scroll trigger link is clicked
+  $('.js-scroll-trigger').click(function() {
+    $("#sidebar-wrapper").removeClass("active");
+  });
+
+  //#to-top button appears after scrolling
+  var fixed = false;
+  $(document).scroll(function() {
+    if ($(this).scrollTop() > 250) {
+      if (!fixed) {
+        fixed = true;
+        $('#to-top').show("slow", function() {
+          $('#to-top').css({
+            position: 'fixed',
+            display: 'block'
+          });
+        });
+      }
+    } else {
+      if (fixed) {
+        fixed = false;
+        $('#to-top').hide("slow", function() {
+          $('#to-top').css({
+            display: 'none'
+          });
+        });
+      }
+    }
+  });
+
+})(jQuery); // End of use strict
+        </script>
 
         <script type="text/javascript">
             $(document).ready(function () {

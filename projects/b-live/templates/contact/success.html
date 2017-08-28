@@ -17,15 +17,15 @@
       $("#OpenAlert").click();
       // base_url 'http://localhost:8520/'
       // checkout_url 'http://localhost:8522/'
-    var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'http:s//pay.loadingplay.com',
-        'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(15,15,15);
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com',
+            'https://checkout.loadingplay.com');
+        var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
@@ -79,9 +79,9 @@
 {% block body %}
     <div id="wrap">
     <section>
-    <div class="container">
+    <div>
         <div align="center">
-    <div class="img-mobile" style="background:url('{{ read_image(site.name + '_sup',500) }}'); height:550px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(85%); -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(85%); -ms-filter: grayscale(0%) brightness(85%);-o-filter: grayscale(0%) brightness(85%); background-position:center; margin-top: -73px;margin-bottom: 60px; width:97%" data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="img-mobile" style="background:url('{{ read_image(site.name + '_sup',500) }}'); height:550px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(85%); -webkit-filter: grayscale(0%) brightness(85%); -moz-filter: grayscale(0%) brightness(85%); -ms-filter: grayscale(0%) brightness(85%);-o-filter: grayscale(0%) brightness(85%); background-position:center; margin-top: -73px;margin-bottom: 60px; width:100%" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
         <div class="image-upload part1 lapiz visible-movil">
             <label for="img_sup">
@@ -94,9 +94,9 @@
     </div>
     </div>
 
-    <div class="container">
+    <div class="container" style="margin-bottom: 5%;">
         <div class="col-md-12">
-            <div class="text-center titulo-about-2 {{editabletext}}" text-id="{{ site.name + '_suu' }}"> {{ read_text(site.name +  '_suu') }}</div>
+            <div class="text-center titulo-about-2 {{editabletext}}" text-id="{{ site.name + '_success' }}"> {{ read_text(site.name +  '_success') }}</div>
 
             <!-- <div class="text-center titulo-about-3 {{editabletext}}" text-id="{{ site.name + '_suu_2' }}"> {{ read_text(site.name +  '_suu_2') }}</div> -->
 
