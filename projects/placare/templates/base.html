@@ -386,13 +386,13 @@
     <td class="vert-align text-left">{{! name }}</td>
     <td class="vert-align">{{! combination }}</td>
     <td class="vert-align money">{{! price }}</td>
-    <td class="text-center vert-align">
+    <td class="text-center vert-align" style="border-bottom: 1px solid #ddd;">
         <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
         {{! quantity }}
         <a href="#!" class="add-one" product-id="{{! id }}">+</a>
     </td>
-    <td class="remove-from-cart text-center" product-id="{{! id }}" aria-hidden="true"> X  </td>
-    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+    <td class="remove-from-cart text-center" style="border-bottom: 1px solid #ddd;" product-id="{{! id }}" aria-hidden="true"> X  </td>
+    <td class="text-center vert-align" style="border-bottom: 1px solid #ddd;"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
 </tr>
 </script>
 
@@ -420,7 +420,7 @@
     </tr>
     <tr>
         <td>Total:</td>
-        <td id="total" class="text-right money lib">{{! total }}</td>
+        <td id="total" class="text-left money lib">{{! total }}</td>
         <td></td>
     </tr>
 </script>
