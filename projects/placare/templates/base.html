@@ -382,6 +382,21 @@
 
 <!-- este es el script para unidades -->
 <script type="text/x-template" id="shopping-cart-product">
+<tr>
+    <td class="vert-align text-left">{{! name }}</td>
+    <td class="vert-align">{{! combination }}</td>
+    <td class="vert-align money">{{! price }}</td>
+    <td class="text-center vert-align">
+        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+        {{! quantity }}
+        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+    </td>
+    <td class="remove-from-cart text-center" product-id="{{! id }}" aria-hidden="true"> X  </td>
+    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
+</tr>
+</script>
+
+<!-- <script type="text/x-template" id="shopping-cart-product">
     <tr>
         <td class="vert-align text-left">{{! name }}</td>
         <td class="vert-align">{{! combination }}</td>
@@ -398,7 +413,7 @@
             </a>
         </td>
     </tr>
-</script>
+</script> -->
 
 <script type="text/x-template" id="shopping-cart-total" >
     <tr>
