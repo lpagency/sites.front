@@ -29,14 +29,14 @@
 </div>
 
 <div type="template" id="product_template" class="hidden">
-    <div class="col-sm-4 mlb-product especial">   
+    <div class="col-sm-4 mlb-product especial">
         <div class="col-sm-12 sobre-botones caja-m" style="padding: 10px !important; z-index: 1;" onclick="">
             <div class="cont-boxes">
                 <div class="box-product" onclick="">
-                    <div class="vertical-center-cont"> 
-                        <div class="horizontal-center-cont"> 
+                    <div class="vertical-center-cont">
+                        <div class="horizontal-center-cont">
                             <div class="box-product-info" onclick="">
-                                <!--<button type="button" class="add-to-cart btn btn-outline" product-id="{{! id }}" product-name="{{! name }}" product-upp="{{! upp }}" product-price="{{! main_price }}">DETALLE</button> -->        
+                                <!--<button type="button" class="add-to-cart btn btn-outline" product-id="{{! id }}" product-name="{{! name }}" product-upp="{{! upp }}" product-price="{{! main_price }}">DETALLE</button> -->
                                 <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
                                   <!--   <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button> -->
                                     <button type="button" class="btn btn-outline">DETALLE</button>
@@ -52,7 +52,7 @@
         <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" style="z-index: 2;">
         <h1>{{! name }}</h1>
         </a>
-        <h2 class="money">{{! main_price}}</h2>
+        <h2>{{! main_price|money }}</h2>
     </div>
 </div>
 
@@ -73,23 +73,23 @@
         }
 
         // configure for each enviroment
-        if ( isLocalHost() ) 
+        if ( isLocalHost() )
         {
              base_url = 'https://apibodegas.loadingplay.com/',
             checkout_url = 'https://checkout.loadingplay.com/';
 
             // base_url = 'http://apibodegas.ondev.today/';
             // checkout_url = 'http://apibodegas.ondev.today/';
-        } 
-        else if ( isDevelopment() ) 
+        }
+        else if ( isDevelopment() )
         {
-            
+
             base_url = 'http://apibodegas.ondev.today/',
             checkout_url = 'https://checkout.loadingplay.com/';
         }
 
         // initialize ecommerce
-        var facade = $(document).ecommerce(
+        var facade = $('.products').ecommerce(
             {
                 'app_public' : 3,
                 'products_per_page' : 24,
