@@ -39,7 +39,7 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.split(search).join(replacement);
 };
 
-$(document).ready(function() 
+$(document).ready(function()
 {
     var params = getIncludeParameters();
     var tag = '';
@@ -51,7 +51,7 @@ $(document).ready(function()
     }
     catch(ex)
     {
-        // nothing here... 
+        // nothing here...
     }
 
     $("#"+tag).addClass("active");
@@ -75,7 +75,7 @@ $(document).ready(function()
         // }
         config.tag=$(this).attr('tag');
         // console.log(config);
-        
+
         // facade.page = 1; // o 1 no estoy seguro
         $(".products").html("");
         $(document).ecommerce('destroy');

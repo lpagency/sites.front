@@ -80,22 +80,25 @@
             }, onLoad: function(product)
             {
                 // check if variants were triggered
-                if (!variants_loaded)
+                if (variants_loaded)
                 {
-                    // add some settings
-                    options.variants.product_sku = product.sku;
-
-                    // load variants
-                    $('.product-detail').ecommerce('load_variants', options);
-
-                    $('.variants-container').on(
-                        'combination:selected', function()
-                        {
-                            $('.add-to-cart').removeAttr('disabled');
-                        });
-
-                    variants_loaded = true;  // execute this onces
+                    return;
                 }
+                // add some settings
+                options.variants.product_sku = product.sku;
+
+                // load variants
+                $('.product-detail').ecommerce('load_variants', options);
+
+                $('.variants-container').on(
+                    'combination:selected', function(e, d)
+                    {
+                        $('.add-to-cart').attr('product-combination', d);
+                        $('.add-to-cart').removeAttr('disabled');
+                    });
+
+                variants_loaded = true;  // execute this onces
+                options.onLoad = $.noop;
 
                 // inicialización del codigo de las imagenes
                 try
@@ -112,10 +115,10 @@
                 related2(product.bullet_3);
 
                 if (product.bullet_1 != "" ){
-                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                    {
-                        $("#article-reladed").html(data);
-                    });
+                    // $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    // {
+                    //     $("#article-reladed").html(data);
+                    // });
                 }
 
                 var mainImage = $("#mainImage");
@@ -186,11 +189,10 @@
                 'templateOrigin' : '#product_template_home',
                 'tag' : '',
                 'ignore_stock' : true,
-                    'onLoad':function(){
-                         // $('.ellipsis').ellipsis();
-                        $(".ellipsis").dotdotdot();
-
-                     }
+                'onLoad':function(){
+                    // $('.ellipsis').ellipsis();
+                    // $(".ellipsis").dotdotdot();
+                 }
             };
             $('.product-related').ecommerce('product_box', config);
         };
@@ -204,11 +206,11 @@
                 'templateOrigin' : '#product_template_home2',
                 'tag' : '',
                 'ignore_stock' : true,
-                    'onLoad':function(){
-                         // $('.ellipsis').ellipsis();
-                        $(".ellipsis").dotdotdot();
+                'onLoad':function(){
+                    // $('.ellipsis').ellipsis();
+                    // $(".ellipsis").dotdotdot();
 
-                     }
+                 }
             };
             $('.product-related2').ecommerce('product_box', config);
         };
@@ -336,9 +338,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled >
                                 AGREGAR AL CARRO
                             </button>
@@ -350,9 +353,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled >
                                 COMPRAR AHORA!
                             </button>
@@ -397,9 +401,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled>
                                     AGREGAR AL CARRO
                             </button>
@@ -411,9 +416,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled >
                                     COMPRAR AHORA!
                             </button>
@@ -506,9 +512,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled>
                                     AGREGAR AL CARRO
                             </button>
@@ -520,9 +527,10 @@
                                 data-toggle="modal"
                                 data-target="#myModal"
                                 product-upp="{{! upp }}"
-                                product-id="{{! id }}"
                                 product-name="{{! name }}"
                                 product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
                                 disabled>
                                     COMPRAR AHORA!
                             </button>
@@ -564,10 +572,34 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
                             <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
+                                disabled>
+                                    AGREGAR AL CARRO
                             </button>
 
-                            <button type="button" class="btn add-to-cart btn-success car-2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">COMPRAR AHORA!
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car-2"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                lp-cart-add
+                                disabled>
+                                    COMPRAR AHORA!
                             </button>
                             </div>
                              </div>
