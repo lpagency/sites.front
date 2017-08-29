@@ -325,7 +325,7 @@
 
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
-        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js?1"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?1"></script>
 <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
 <!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
 <!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
@@ -387,11 +387,11 @@
     <td class="vert-align">{{! combination }}</td>
     <td class="vert-align money">{{! price }}</td>
     <td class="text-center vert-align">
-        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+        <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
         {{! quantity }}
-        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+        <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" >+</a>
     </td>
-    <td class="remove-from-cart text-center" product-id="{{! id }}" aria-hidden="true"> X  </td>
+    <td class="remove-from-cart text-center" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
     <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
 </tr>
 </script>
@@ -466,21 +466,6 @@
         </script>
 
 
-        <script>
-/*            $(document).ajaxComplete(function()
-            {
-                var hash = window.location.hash;
-                // window.location.href= hash;
-
-                if (hash !== "")
-                {
-                    $('html,body').animate({
-                        scrollTop: $(hash).offset().top
-                    });
-                }
-            });
-*/        </script>
-
 
     <script type="text/javascript">
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -491,25 +476,6 @@
         ga('create', '{{ get_config("analytics") }}', 'auto');
         ga('send', 'pageview');
     </script>
-
-     <script type="text/javascript">
-    //     $(".carousel").on("touchstart", function(event){
-    //             var xClick = event.originalEvent.touches[0].pageX;
-    //         $(this).one("touchmove", function(event){
-    //             var xMove = event.originalEvent.touches[0].pageX;
-    //             if( Math.floor(xClick - xMove) > 5 ){
-    //                 $(".carousel").carousel('next');
-    //             }
-    //             else if( Math.floor(xClick - xMove) < -5 ){
-    //                 $(".carousel").carousel('prev');
-    //             }
-    //         });
-    //         $(".carousel").on("touchend", function(){
-    //                 $(this).off("touchmove");
-    //         });
-    //     });
-    // </script>
-
 
 
     </body>
