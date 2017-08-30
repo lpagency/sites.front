@@ -298,51 +298,44 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
 
-
-<!--         <script src="/path/to/parallax.js"></script> -->
-
-<!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
-
-        <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
-
-        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
-
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
-        <!-- <script src="/node_modules/readmore-js/readmore.min.js"></script> -->
 
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
-        <!-- {%!  end %} -->
         <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
 
         <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.js"></script>
 
-
-                <!-- carga de productos -->
-<!--          <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
+        <!-- carga de productos -->
+        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/plugins/jquery.lazyload.js"></script> -->
         <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
 
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
-        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js?2"></script>
+        <!-- <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js?2"></script> -->
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?1"></script>
         <!-- CHIEN CAMBIAR DE VUELTA EN CASO DE NO FUNCIONAR
         <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?1"></script>
-<!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
-<!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
-<!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script> -->
+        -->
 
-        <!-- <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script> -->
+        <!--
+        <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/static/js/jquery.ellipsis.js"></script>
+        -->
 
         <script type="text/javascript" src="{{ site_base }}/common/js/parallax.min.js"></script>
 
 
          <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
 
-<!--         <div type="template" id="product_loading" style="display:none;" >
+        <!--
+        <div type="template" id="product_loading" style="display:none;" >
             <div class="spinner">
                 <div class="rect1"></div>
                 <div class="rect2"></div>
@@ -350,7 +343,8 @@
                 <div class="rect4"></div>
                 <div class="rect5"></div>
             </div>
-        </div> -->
+        </div>
+        -->
 
         <script type="text/javascript">
             $(document).ready(function () {
@@ -381,7 +375,7 @@
         </script>
 
 <!-- este es el script para unidades -->
-<script type="text/x-template" id="shopping-cart-product">
+<!-- <script type="text/x-template" id="shopping-cart-product">
 <tr>
     <td class="vert-align text-left">{{! name }}</td>
     <td class="vert-align">{{! combination }}</td>
@@ -394,13 +388,13 @@
     <td class="remove-from-cart text-center" product-id="{{! id }}" aria-hidden="true"> X  </td>
     <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
 </tr>
-</script>
+</script> -->
 
-<!-- <script type="text/x-template" id="shopping-cart-product">
+<script type="text/x-template" id="shopping-cart-product">
     <tr>
         <td class="vert-align text-left">{{! name }}</td>
         <td class="vert-align">{{! combination }}</td>
-        <td class="vert-align money">{{! price }}</td>
+        <td class="vert-align">{{! price|money }}</td>
         <td class="text-center vert-align">
             <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
             {{! quantity }}
@@ -413,14 +407,14 @@
             </a>
         </td>
     </tr>
-</script> -->
+</script>
 
 <script type="text/x-template" id="shopping-cart-total" >
     <tr>
     </tr>
     <tr>
         <td>Total:</td>
-        <td id="total" class="text-right money lib">{{! total }}</td>
+        <td id="total" class="text-right lib">{{! total|money }}</td>
         <td></td>
     </tr>
 </script>
