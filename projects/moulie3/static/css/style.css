@@ -587,14 +587,13 @@ hr.inter {
 
 }
 
-
 .align-form-contact {
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
-    padding-left: 190px;
+    padding-left: 223px;
     /* vertical-align: middle! important; */
     margin-top: 30px;
-    padding-right: 222px;
+    padding-right: 179px;
     padding-bottom: 20px;
 }
 
@@ -876,15 +875,17 @@ hr.contact.dos{
     display: none;
 }
 
-.fondo-form-venta{
+.fondo-form-venta {
     height: 400px;
-    width: 100%;
+    width: 62%;
     object-fit: cover !important;
     filter: grayscale(0%) brightness(95%);
     -webkit-filter: grayscale(0%) brightness(95%);
     -moz-filter: grayscale(0%) brightness(95%);
     -ms-filter: grayscale(0%) brightness(95%);
     -o-filter: grayscale(0%) brightness(95%);
+    left: 19px;
+    position: relative;
 }
 
 .distrib-venta {
@@ -892,16 +893,15 @@ hr.contact.dos{
     position: relative;
     left: 0px;
     margin-top: 57px;
-    font-size: 22px;
+    font-size: 18px;
     width: 75%;
     font-family: 'Alegreya SC', serif;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #B7974E;
-    padding-left: 60px;
+    padding-left: 100px;
     padding-right: 100px;
-
 }
 
 .box-medios {
@@ -949,6 +949,7 @@ hr.contact.dos{
 }
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
+
 @media (max-width: 1199px){
     .logo.mob{
   width: 150px !important;
@@ -1025,14 +1026,26 @@ hr.inter {
     height: 640px;
 }
 
-.align-form-contact {
+/*.align-form-contact {
     margin-left: auto;
     margin-right: auto;
     padding-left: 100px;
-    /* vertical-align: middle! important; */
     margin-top: 30px;
     padding-right: 200px;
     padding-bottom: 20px;
+}*/
+
+.fondo-form-venta {
+    height: 400px;
+    width: 70%;
+    object-fit: cover !important;
+    filter: grayscale(0%) brightness(95%);
+    -webkit-filter: grayscale(0%) brightness(95%);
+    -moz-filter: grayscale(0%) brightness(95%);
+    -ms-filter: grayscale(0%) brightness(95%);
+    -o-filter: grayscale(0%) brightness(95%);
+    left: 26px;
+    position: relative;
 }
 
 .distrib {
@@ -1258,6 +1271,22 @@ hr.ubicacion {
     position: relative;
     top: 0px;
     left: 0px;
+}
+
+}
+
+@media (max-width: 1160px){
+    .fondo-form-venta {
+    height: 400px;
+    width: 70%;
+    object-fit: cover !important;
+    filter: grayscale(0%) brightness(95%);
+    -webkit-filter: grayscale(0%) brightness(95%);
+    -moz-filter: grayscale(0%) brightness(95%);
+    -ms-filter: grayscale(0%) brightness(95%);
+    -o-filter: grayscale(0%) brightness(95%);
+    left: 26px;
+    position: relative;
 }
 
 }

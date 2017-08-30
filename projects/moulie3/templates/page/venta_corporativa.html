@@ -111,32 +111,31 @@
     {% set editabletext = '' %}
 {% end %}
 <div class="background-content">
-<div>
-<div class="" style="position: relative;">
-
-<!-- 	<img class="fondo-form"src="https://7static.loadingplay.com/static/images/a9638bcba8ce78ab5a8b3564617b6917_Banner_principal_2.png"> -->
-	<!-- editar imagen -->
-    {% if is_admin %}
-    <div class="image-upload pin con visible-movil">
-        <label for="img_banner_venta">
-            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_venta" name="image" id="img_banner_venta" >
-    </div>
-    {% end %}
-    <img id="{{ site.name }}_banner_venta" src="{{ read_image(site.name + '_banner_venta', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_venta',500) }}'" class="desaturada fondo-form-venta" alt="item">
-  
     <div class="container">
-        <div align="center">
-            <div class="description distrib-venta  {{editabletext}}" text-id="{{ site.name + '_ti_venta' }}" style="text-align: center"> {{ read_text(site.name +  '_ti_venta') }}</div>
-             <div class="description distrib contact hidden-md hidden-lg hidden-sm visible-xs {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left"> {{ read_text(site.name +  '_ti_con') }}</div>
-            <hr class="contact hidden-md hidden-lg hidden-sm visible-xs">
-           
+        <div class="" style="position: relative;">
+            <div align="center">
+                {% if is_admin %}
+                <div class="image-upload pin con visible-movil">
+                    <label for="img_banner_venta">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_venta" name="image" id="img_banner_venta" >
+                </div>
+                {% end %}
+                <img id="{{ site.name }}_banner_venta" src="{{ read_image(site.name + '_banner_venta', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_venta',500) }}'" class="desaturada fondo-form-venta" alt="item">
+
+                <div class="container">
+                    <div align="center">
+                        <div class="description distrib-venta  {{editabletext}}" text-id="{{ site.name + '_ti_venta' }}" style="text-align: center"> {{ read_text(site.name +  '_ti_venta') }}</div>
+                        <div class="description distrib contact hidden-md hidden-lg hidden-sm visible-xs {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left"> {{ read_text(site.name +  '_ti_con') }}</div>
+                        <hr class="contact hidden-md hidden-lg hidden-sm visible-xs">
+
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-
-</div>
-</div>
 
     <!-- fin editar imagen -->
 	 <div class="container" >
@@ -259,14 +258,14 @@
                                 <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                            <input name="Name_First" placeholder="Nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                            <input name="Name_First" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
                                         <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
                                     </div>
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                          <input name="PhoneNumber_countrycode" placeholder="Teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
+                                          <input name="PhoneNumber_countrycode" placeholder="teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
                                       </div>
                                       <span id="helpBlock2" class="hidden help-block help-fono">Escribe tu teléfono</span>
                                      </div>
@@ -274,7 +273,7 @@
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                            <input name="Email" placeholder="Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input name="Email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                             <input type="hidden" name="subject" value="contactanos" />
                                         </div>
                                         <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
@@ -282,7 +281,7 @@
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class="controls">
-                                            <textarea name="SingleLine" placeholder="Empresa" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:46px;"></textarea>
+                                            <textarea name="SingleLine" placeholder="empresa" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:46px;"></textarea>
                                         </div>
                                         <span id="helpBlock4" class="hidden help-block help-comentario">Empresa</span>
                                     </div>
@@ -296,7 +295,7 @@
                             <div class="form-group form-moulie">
                                 <label class="control-label"></label>
                                 <div class="controls">
-                                    <textarea name="MultiLine" placeholder="Mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
+                                    <textarea name="MultiLine" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
                                 </div>
                                 <span id="helpBlock4" class="hidden help-block help-comentario">Mensaje</span>
                             </div>
