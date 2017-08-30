@@ -46,8 +46,6 @@
                         window.z = products.length + z;
                         var h =" - "+z.toString()+" Items";
 
-                        console.log(z);
-
                         $(".descuento-lis").each(function()
                             {
                                 var main = $(this).attr("main-price");
@@ -232,6 +230,7 @@ function uncheck(tag, value)
         $( "."+tag ).remove();
         $(".ch-"+tag).addClass("hidden");
         var textoRuta = $(".texto-ruta").html();
+        $(".h-"+tag).css("text-decoration", "none");
 
         textoRuta = textoRuta.replace(" / "+tag, "");
 
@@ -252,6 +251,7 @@ function uncheck(tag, value)
     {
         var va = value;
         var nombre2 = "+"+tag;
+        $(".h-"+tag).css("text-decoration", "none");
 
         $( "."+tag ).remove();
         $(".ch-"+tag).addClass("hidden");
@@ -297,6 +297,7 @@ function check(tag, value)
 
         $(".ch-"+nombre).removeClass("hidden");
         $(".filtrosRec").html($(".filtrosRec").html() + block);
+        $(".h-"+nombre).css("text-decoration", "underline");
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -327,6 +328,7 @@ function check(tag, value)
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
+        $(".h-"+nombre).css("text-decoration", "underline");
 
         lista = Utils.getUrlParameter('tag').split(',');
 
@@ -378,6 +380,7 @@ function TagURL(listaTag)
                 var classNombre = "." + nombre;
                 var textoRuta = $(".texto-ruta").html();
                 var fa = "fa-" + nombre;
+                $(".h-"+nombre).css("text-decoration", "underline");
 
                 $(b).attr("checked", true);
                 $(".ch-"+nombre).removeClass("hidden");
@@ -416,6 +419,7 @@ function TagURL(listaTag)
                     var classNombre = "." + nombre;
                     var textoRuta = $(".texto-ruta").html();
                     var fa = "fa-" + nombre;
+                    $(".h-"+nombre).css("text-decoration", "underline");
 
                     $(b).attr("checked", true);
                     $(".ch-"+nombre).removeClass("hidden");
