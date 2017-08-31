@@ -1,9 +1,9 @@
 <header class="grin">
     <div class="menu">
         <div class="navbar mbtm0" role="navigation">
-            <div class="container min">   
+            <div class="container-fluid">   
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="">
                         <div class="navbar-header">
                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                                 <span class="sr-only">Toggle navigation</span>
@@ -43,11 +43,12 @@
                                   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" onclick="window.location.href='{{ site_base }}/lineas_de_negocios'">PRODUCTOS
                                     </button>
                                     <ul class="dropdown-menu" style="display: none">
-                                      <li><a href="{{ site_base}}/listado_productos?tag=control_acceso">CONTROL DE ACCESO</a></li>
-                                      <li><a href="{{ site_base}}/listado_productos?tag=cenicero">BASUREROS / CENICEROS</a></li>
-                                      <li><a href="{{ site_base}}/listado_productos?tag=mobilario_urbano">MOBILIARIO URBANO</a></li>
-                                      <li><a href="{{ site_base}}/listado_productos?tag=productos_especiales">PRODUCTOS ESPECIALES</a></li>
-                                      <li><a href="{{ site_base}}/listado_productos?tag=productos_nuevos">MOBILIARIO NUEVOS</a></li>
+                                      <li><a class="azul" href="{{ site_base}}/listado_productos?tag=control_acceso">CONTROL DE ACCESO</a></li>
+                                      <li><a class="verde" href="{{ site_base}}/listado_productos?tag=productos_ecologicos">PRODUCTOS ECOLÓGICOS</a></li>
+                                      <li><a class="amarillo" href="{{ site_base}}/listado_productos?tag=mobilario_urbano">MOBILIARIO URBANO</a></li>
+                                      <li><a class="naranjo" href="{{ site_base}}/listado_productos?tag=espacios_publicos">ESPACIOS PÚBLICOS</a></li>
+                                      <li><a class="rojo" href="{{ site_base}}/listado_productos?tag=productos_especiales">PRODUCTOS ESPECIALES</a></li>
+                                      <li><a class="gris" href="{{ site_base}}/listado_productos?tag=productos_nuevos">MOBILIARIO NUEVOS</a></li>
                                     </ul>
                                   </div>
                                 <li>
@@ -68,10 +69,8 @@
                                 </li>
                                 <li>
                                     <a class="tag" href="{{ site_base}}/listado_productos?tag=tienda">TIENDA</a>
+                                     <img class="img-carrito" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png" />
                                 </li> 
-                                <li>
-                                    <a> | <img class="img-carrito" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png" /></a>
-                                </li>
 
                             </ul>
                        </div>
@@ -83,16 +82,11 @@
     </div>
 
 <!-- ***********MENU MOVIL************** -->
-<div class="container min">
+<div class="container-fluid">
    <div id="wrapper">
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" style="margin-top: -19px;">
+        <div id="sidebar-wrapper" style="margin-top: -35px;">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                       Menu
-                    </a>
-                </li>
                 <li>
                     <a href="#">INDUCROM</a>
                 </li>
