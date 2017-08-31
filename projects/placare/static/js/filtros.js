@@ -173,6 +173,7 @@
 
                 $(".c-variable_2").addClass('hidden');
                 $(".c-variable_3").addClass('hidden');
+                $(".c-variable_4").addClass('hidden');
 
                 $(".vari").css("margin-bottom", "5%");
 
@@ -187,6 +188,7 @@
 
                 $(".c-variable_1").addClass('hidden');
                 $(".c-variable_3").addClass('hidden');
+                $(".c-variable_4").addClass('hidden');
 
                 $(".vari").css("margin-bottom", "5%");
 
@@ -201,6 +203,22 @@
 
                 $(".c-variable_2").addClass('hidden');
                 $(".c-variable_1").addClass('hidden');
+                $(".c-variable_4").addClass('hidden');
+
+                $(".vari").css("margin-bottom", "5%");
+
+            });
+
+            $(document).on("click", ".variables4", function(ev){
+
+                ev.preventDefault();
+                var variable = $(this).attr("tag");
+                $(this).removeClass("activo");
+                $(".c-"+variable).removeClass("hidden");
+
+                $(".c-variable_2").addClass('hidden');
+                $(".c-variable_1").addClass('hidden');
+                $(".c-variable_3").addClass('hidden');
 
                 $(".vari").css("margin-bottom", "5%");
 
@@ -389,16 +407,28 @@ function TagURL(listaTag)
                     $(".c-variable_1").removeClass("hidden");
                     $(".c-variable_2").addClass("hidden");
                     $(".c-variable_3").addClass("hidden");
+                    $(".c-variable_4").addClass("hidden");
                 }
                 if($(".ch-"+nombre).hasClass("c-variable_dos")){
                     $(".c-variable_2").removeClass("hidden");
                     $(".c-variable_1").addClass("hidden");
-                    $(".c-variable_2").addClass("hidden");
+                    $(".c-variable_3").addClass("hidden");
+                    $(".c-variable_4").addClass("hidden");
+
                 }
                 if($(".ch-"+nombre).hasClass("c-variable_tres")){
                     $(".c-variable_3").removeClass("hidden");
                     $(".c-variable_2").addClass("hidden");
                     $(".c-variable_1").addClass("hidden");
+                    $(".c-variable_4").addClass("hidden");
+                }
+
+                if($(".ch-"+nombre).hasClass("c-variable_cuatro")){
+                    $(".c-variable_4").removeClass("hidden");
+                    $(".c-variable_2").addClass("hidden");
+                    $(".c-variable_1").addClass("hidden");
+                    $(".c-variable_3").addClass("hidden");
+                    $(".vari").css("height", "169px");
                 }
 
                 $(".texto-ruta").html(textoRuta +" / "+ va);
