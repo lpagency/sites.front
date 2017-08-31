@@ -45,7 +45,7 @@ a:hover{
 }
 
 
-div.upload input, div.image-upload input {
+/*div.upload input, div.image-upload input {
     position: absolute;
     left: auto;
     right: 0px;
@@ -56,7 +56,7 @@ div.upload input, div.image-upload input {
     -moz-opacity: 0;
     opacity: 0;
     width: 100%;
-}
+}*/
 
 li{
 	list-style: none;
@@ -608,7 +608,7 @@ hr.inter {
 .btn-block {
     display: block;
     width: 100px;
-    margin-top: -49px;
+    margin-top: 0px;
     border-radius: 0px;
     background: #7184A4;
     color: white;
@@ -620,7 +620,7 @@ hr.inter {
 .btn-block:hover {
     display: block;
     width: 100px;
-    margin-top: -49px;
+    margin-top: 0px;
     border-radius: 0px;
     background:white;
     color: #7184A4;
@@ -942,7 +942,13 @@ hr.contact.dos{
     padding-left: 100px;
     padding-right: 100px;
 }
-
+.ran{
+    border: 1px solid rgba(128, 128, 128, 0.36);
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 
 @media (max-width: 1199px){
