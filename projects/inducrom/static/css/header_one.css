@@ -36,7 +36,7 @@ a:focus{
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 16px 8px;
+    padding: 16px 21px;
     color: rgba(84, 84, 84, 0.79);
     font-weight: 500;
     font-size: 13px;
@@ -65,7 +65,7 @@ header.grin {
     background-color: transparent;
     border-color: transparent;
     position: relative;
-    bottom: 91px;
+    bottom: 84px;
     float: left;
     left: -2%;
     font-size: 23px;
@@ -76,7 +76,7 @@ header.grin {
     background-color: transparent;
     border-color: transparent;
     position: relative;
-    bottom: 91px;
+    bottom:84px;
     float: left;
     left: -2%;
     font-size: 23px;
@@ -87,7 +87,7 @@ header.grin {
     background-color: transparent;
     border-color: transparent;
     position: relative;
-    bottom: 91px;
+    bottom: 84px;
     float: left;
     left: -2%;
     font-size: 23px;
@@ -126,6 +126,9 @@ header.grin {
 
 .img-carrito {
     width: 15px;
+    float: right;
+    position: relative;
+    bottom: 33px;
 }
 
 .cor{
@@ -133,16 +136,17 @@ header.grin {
 }
 
 .navbar-nav.navbar-right:last-child {
-    margin-right: -21px;
-    margin-top: -51px;
+    margin-right: 13px;
+    margin-top: 0px;
+    width: 82%;
 }
 
 .img-carrito-lateral {
     position: relative;
-    width: 17px;
-    top: -29px;
-    float: left;
-    left: 17px;
+    width: 15px;
+    top: -23px;
+    float: right;
+    right: 42px;
 }
 
 .btn-primary {
@@ -151,7 +155,7 @@ header.grin {
     border-color: transparent;
     display: inline-block;
     padding: 6px 12px;
-    margin-bottom: 0;
+    margin-bottom: 15px;
     font-size: 13px;
     line-height: 1.42857143;
     text-align: center;
@@ -169,7 +173,7 @@ header.grin {
     font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    left: 6px;
+    left: 28px;
     position: relative;
 }
 
@@ -185,13 +189,17 @@ header.grin {
 
 .dropdown-menu>li>a {
     display: block;
-    padding: 16px 20px;
+    padding: 7px 20px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
     color: white;
     white-space: nowrap;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
+
+
 .dropdown-menu {
     position: absolute;
     top: 118%;
@@ -205,7 +213,7 @@ header.grin {
     font-size: 14px;
     text-align: left;
     list-style: none;
-    background-color: rgba(33, 67, 192, 0.8);
+    background-color: #E5E5E4;
     -webkit-background-clip: padding-box;
     background-clip: padding-box;
     border: 1px solid #ccc;
@@ -217,7 +225,7 @@ header.grin {
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     color: white;
     text-decoration: none;
-    background-color: #1d2459;
+    background-color:rgba(128, 128, 128, 0.17);
 }
 
 
@@ -230,6 +238,30 @@ header.grin {
 .navbar-right .dropdown-menu {
     right: 0;
     left: 33px;
+}
+
+a.azul{
+    color: #34495e !important;
+}
+
+a.verde{
+    color: #61AA42 !important;
+}
+
+a.amarillo{
+   color: #ffb606 !important;
+}
+
+a.naranjo{
+  color: #e67e22 !important;
+}
+
+a.gris{
+   color:  gray !important;
+}
+
+a.rojo{
+  color: #c0392b  !important;
 }
 
 /*---------------------------------------RESPONSIVE------------------------------------------------*/
@@ -301,7 +333,7 @@ header.grin {
     background-color: transparent;
     border-color: transparent;
     position: relative;
-    bottom: 90px;
+    bottom:104px;
     float: left;
     left: 0px;
     font-size: 23px;
@@ -312,7 +344,7 @@ header.grin {
     background-color: transparent;
     border-color: transparent;
     position: relative;
-    bottom: 90px;
+    bottom: 104px;
     float: left;
     left: 0px;
     font-size: 23px;

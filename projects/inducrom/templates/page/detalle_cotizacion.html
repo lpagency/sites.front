@@ -17,10 +17,6 @@
     display: none;
 }
 
-/*.img-carrito{
-    display: none;
-}*/
-
 .producto-detalle-cotizacion{
     display: block;
 }
@@ -38,12 +34,7 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
-<script>
-  $("#menu-toggle").click(function(e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
-  });
-</script>
+
 <script type="text/javascript">
 
 function setCookie(cname,cvalue) {
@@ -269,9 +260,11 @@ function getCookie1(cname) {
 {% end %}
 {% block body %}
   <section>
- <div class="container min contact product" style="display: inherit; top: 42px;position: relative;">
+ <div class="container-fluid contact product" style="display: inherit;position: relative;padding-right: 34px;
+    padding-left: 20px;">
     <div class="row">       
-        <div class="container min" style="margin-bottom: 100px; margin-top: 10%;">
+        <div class="container-fluid" style="margin-bottom: 100px; margin-top: 10%;">
+            <div class="texto-coti {{editabletext}}" text-id="{{ site.name + '_coti_1' }}"> {{ read_text(site.name +  '_coti_1') }}</div>
             <!-- <div class="col-xs-12 col-sm-8 align-form-contact fondo-contact"> -->
                         <div class="col-sm-6 col-md-6 col-xs-12 piki">
                          <form action='https://forms.zohopublic.com/sytes/form/Inducromformulariocotizacion/formperma/4d6FE15d100k_AhG5CKC1040C/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
@@ -293,11 +286,17 @@ function getCookie1(cname) {
                                             </div>
                                             <span id="helpBlock2" class="hidden help-block help-apellido">Escribe tus apellidos</span>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="control-label"></label>
+                                            <div class="controls">
+                                                <input type="text" class="form-control input-form input-lg rut requiredField" id="rut" name="rut" placeholder="Rut">
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label"></label>
                                             <div class=" controls">
-                                                <input name="PhoneNumber_countrycode" placeholder="Telefono" class="form-control input-form input-lg telefono requiredField" type="text" id="itTelefono" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                                <input name="PhoneNumber_countrycode" placeholder="Teléfono" class="form-control input-form input-lg telefono requiredField" type="text" id="itTelefono" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                             </div>
                                             <span id="helpBlock2" class="hidden help-block help-telefono">Escribe tu numero de telefono</span>
                                         </div>
@@ -305,10 +304,24 @@ function getCookie1(cname) {
                                         <div class="form-group">
                                             <label class="control-label"></label>
                                             <div class=" controls">
-                                                <input name="Email" placeholder="Email" class="form-control input-form input-lg email requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                                <input name="Email" placeholder="E-mail" class="form-control input-form input-lg email requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                                 <input type="hidden" name="subject" value="contactanos" />
                                             </div>
                                             <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
+                                        </div>
+                                          <div class="form-group">
+                                            <label class="control-label"></label>
+                                            <div class="controls">
+                                                <textarea name="message" placeholder="Ciudad" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height: 48px;"></textarea>
+                                            </div>
+                                            <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Ciudad</span>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label"></label>
+                                            <div class="controls">
+                                                <textarea name="message" placeholder="Solicitud" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                            </div>
+                                            <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Solicitud</span>
                                         </div>
                                   </div>  
                               </div>
