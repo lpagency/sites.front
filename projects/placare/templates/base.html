@@ -87,8 +87,8 @@
                                             <tr>
                                                 <th>Nombre</th>
                                                 <th>Talla</th>
-                                                <th>Precio</th>
                                                 <th class="text-center">Cant</th>
+                                                <th class="text-center2">Precio</th>
                                                 <th class="text-center">Eliminar</th>
                                             </tr>
                                         </thead>
@@ -390,12 +390,12 @@
     <tr>
         <td class="vert-align text-left">{{! name }}</td>
         <td class="vert-align">{{! combination }}</td>
-        <td class="vert-align">{{! price|money }}</td>
-        <td class="text-center vert-align fri">
+        <td class="text-center vert-align fri" style="border-bottom: 1px solid #ddd;">
             <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
             {{! quantity }}
             <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" >+</a>
         </td>
+        <td class="text-center2 vert-align">{{! price|money }}</td>
         <td class="remove-from-cart text-center fri" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
         <td class="text-center vert-align fri">
             <a class="borrarproducto" cart-id="">
@@ -410,7 +410,7 @@
     </tr>
     <tr>
         <td>Total:</td>
-        <td id="total" class="text-left lib">{{! total|money }}</td>
+        <td id="total" colspan="3" class="text-left total-modal lib">{{! total|money }}</td>
         <td></td>
     </tr>
 </script>
