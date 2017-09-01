@@ -121,10 +121,11 @@ div.image-upload.gu {
     margin-left: auto;
     width: 200px;
     bottom: 0;
-    top: -51px;
+    top: 12px;
     float: left;
     object-fit: scale-down;
 }
+
 .img-carrito {
     width: 22px;
     position: absolute;
@@ -206,21 +207,6 @@ a.upi {
 
 }
 
-@media (max-width: 455px){
-    .logo {
-    position: absolute;
-    left: 0px;
-    right: 0;
-    margin-right: auto;
-    margin-left: auto;
-    width: 230px;
-    bottom: 0;
-    top: -63px;
-    float: left;
-    object-fit: scale-down;
-}
-
-}
 
 @media (max-width: 414px){
     .logo {
@@ -231,7 +217,7 @@ a.upi {
     margin-left: auto;
     width: 200px;
     bottom: 0;
-    top: -52px;
+    top: 12px;
     float: left;
     object-fit: scale-down;
 }
@@ -244,7 +230,7 @@ a.upi {
 
 .caja {
     left: 13%;
-    width: 270px;
+    width: 264px;
 }
 
 }
@@ -259,16 +245,17 @@ a.upi {
 }
 
 .caja {
-    height: 51px;
-    width: 200px;
-    float: left;
-    margin-top: 2px;
-    margin-bottom: 0px;
-    left: 7%;
-    position: relative;
-    z-index: 1;
+    left: 13%;
+    width: 256px;
 }
 
+}
+
+@media (max-width: 360px){
+    .caja {
+    left: 13%;
+    width: 239px;
+}
 
 }
 
@@ -278,20 +265,6 @@ a.upi {
     left: 12px;
 }
 
-.caja {
-    height: 51px;
-    width: 172px;
-    float: left;
-    margin-top: 2px;
-    margin-bottom: 0px;
-    left: -20%;
-    position: relative;
-    z-index: 1;
-}
-
-
-
-
 .logo {
     position: absolute;
     left: 0px;
@@ -300,9 +273,14 @@ a.upi {
     margin-left: auto;
     width: 160px;
     bottom: 0;
-    top: -39px;
+    top: 16px;
     float: left;
     object-fit: scale-down;
+}
+
+.caja {
+    left: 29%;
+    width: 175px;
 }
 
 }
