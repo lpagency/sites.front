@@ -23,60 +23,65 @@
 
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
 
-<script type="text/javascript">
-    $(document).ready(function()
-    {
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
 
-      $(document).on("click", ".background-color-producto", function(){
-        $(this).css("border", "black solid 2px");
-      });
+            $(document).on("click", ".background-color-producto", function()
+            {
+                $(this).css("border", "black solid 2px");
+            });
 
-    //   
-    $(document).on("click", ".categ", function(ev){
+            $(document).on("click", ".categ", function(ev)
+            {
 
-    $(".subcateg").removeClass('active');
-        $(this).addClass('active');
-    });
+                $(".subcateg").removeClass('active');
+                $(this).addClass('active');
+            });
 
-    var hyper2 = Utils.getUrlParameter('search_query');
+            var hyper2 = Utils.getUrlParameter('search_query');
 
-    if(hyper2 != undefined){
-      $(".tag-header").html("Resultados");
-    }
+            if(hyper2 != undefined)
+            {
+              $(".tag-header").html("Resultados");
+            }
 
-    var hyper = Utils.getUrlParameter('tag').split(',');
+            var hyper = Utils.getUrlParameter('tag').split(',');
 
-    if(hyper[0] == "mujer"){
-      $(".tag-header").html("Mujeres");
-    }
+            if(hyper[0] == "mujer")
+            {
+              $(".tag-header").html("Mujeres");
+            }
 
-    if(hyper[0] == "hombre"){
-      $(".tag-header").html("Hombres");
-    }
+            if(hyper[0] == "hombre")
+            {
+              $(".tag-header").html("Hombres");
+            }
 
-    if(hyper[0] == "nino"){
-      $(".tag-header").html("Niños");
-    }
+            if(hyper[0] == "nino")
+            {
+              $(".tag-header").html("Niños");
+            }
 
-    if(hyper[0] == "oferta"){
-      $(".tag-header").html("Oferta");
-    }
+            if(hyper[0] == "oferta")
+            {
+              $(".tag-header").html("Oferta");
+            }
+        });
+    </script>
 
-    });
-</script>
-
-<script type="text/javascript">
-    $("#testButton").live("touchstart", function() {
-      $(this).addClass("active");
-    }).live("touchend", function() {
-      $(this).removeClass("active");
-    });
-
-</script>
+    <script type="text/javascript">
+        $("#testButton").live("touchstart", function()
+        {
+            $(this).addClass("active");
+        }).live("touchend", function() {
+            $(this).removeClass("active");
+        });
+    </script>
 {% end %}
 
 
