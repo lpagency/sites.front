@@ -1388,10 +1388,34 @@ img.hand-2 {
 
 .modal-content.car {
     border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
+    border: transparent;
     box-shadow: 0 0px 0px rgba(0,0,0,.5);
     width: 50%;
     overflow-x: hidden;
+}
+
+.modal-title.carri {
+    margin: 0;
+    line-height: 1.42857143;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(204, 108, 78, 0.31);
+}
+
+.modal-title.carri-2 {
+    margin: 0;
+    line-height: 1.42857143;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: gray;
+    margin-top: 12px;
+    margin-bottom: -2px;
+    font-family: 'Open Sans';
+    font-weight: 200;
+}
+
+.fade {
+    background: white;
 }
 
 }
@@ -1565,26 +1589,11 @@ img.hand-2 {
     float: initial;
 }
 
-.modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 50%;
-    overflow-x: hidden;
-}
 
 }
 
 
 @media (max-width: 630px){
-.modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 50%;
-    overflow: hidden;
-}
-
 img.hand {
     float: left;
     width: 22px;
@@ -1601,13 +1610,6 @@ img.hand-2 {
 }
 
 @media (max-width: 600px){
-  .modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 60%;
-    overflow: hidden;
-}
 
 img.hand-2 {
     float: right;
@@ -1735,12 +1737,6 @@ img.hand {
 }
 
 @media (max-width: 490px){
-    .modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 70%;
-}
 
   img.hand-2 {
     float: right;
@@ -1763,16 +1759,6 @@ img.hand {
 
 }
 
-@media (max-width: 460px){
-    .modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 80%;
-}
-
-}
-
 @media (max-width: 420px){
   img.hand {
     float: left;
@@ -1786,6 +1772,14 @@ img.hand-2 {
     width: 22px;
     right: 19%;
     position: absolute;
+}
+
+.modal-content.car {
+    border-radius: 0px;
+    border: transparent;
+    box-shadow: 0 0px 0px rgba(0,0,0,.5);
+    width: 100%;
+    overflow-x: hidden;
 }
 
 }
@@ -1897,15 +1891,6 @@ img.hand {
 
 }
 
-@media (max-width: 400px){
-    .modal-content.car {
-    border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
-    box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 90%;
-}
-
-}
 
 @media (max-width: 375px){
 

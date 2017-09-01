@@ -3617,6 +3617,7 @@ a.two {
 
 td.name-car {
     left: 80px;
+    color: rgba(204, 108, 78, 1);
 }
 
 td.money.uno {
@@ -4086,6 +4087,59 @@ li.dropdown-submenu.x4 {
     margin-bottom: -12px;
 }
 
+.btn-compra.mo{
+    background-color: transparent !important;
+    color: rgba(204, 108, 78, 1) !important;
+    border-radius: 0px; 
+    height: 33px;
+    float: left;
+    width: 100%;
+    border: 1px solid rgba(204, 108, 78, 1) !important;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-family: 'Open Sans';
+
+}
+
+.btn-compra.vir{
+    background-color: rgba(204, 108, 78, 1) !important;
+    color: white !important;
+    border-radius: 0px;
+    height: 33px;
+    float: left;
+    width: 100%;
+    border: 1px solid rgba(204, 108, 78, 1) !important;
+    margin-top: 12px;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-family: 'Open Sans';
+
+}
+
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 0px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid transparent;
+    width: 100%;
+}
+
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px;
+    border-bottom: 1px solid transparent;
+}
+
+tr.ver {
+    border-bottom: 1px solid transparent;
+}
+
+.cancelar-modal{
+    position: relative;
+    top: 23px;
+    text-decoration: underline !important;
+}
+
 }
 
 
@@ -4208,13 +4262,6 @@ td.tot {
     left: -18px;
 }
 
-.modal-dialog.carrito {
-    margin-top: 64px;
-    float: right;
-    /* left: 123px; */
-    left: 137px;
-}
-
 }
 
 @media (max-width: 620px){
@@ -4234,13 +4281,6 @@ td.tot {
 }
 
 @media (max-width: 600px){
-    .modal-dialog.carrito {
-    margin-top: 64px;
-    float: right;
-    /* left: 123px; */
-    left: 100px;
-}
-
 
 .box-4 {
     width: 100%;
@@ -4296,15 +4336,6 @@ td.tot {
     width: 100%;
     position: relative;
     margin-left: 95px;
-}
-
-}
-
-@media (max-width: 560px){
-    .modal-dialog.carrito{
-    margin-top: 93px;
-    float: right;
-    left: 80px;
 }
 
 }
@@ -4613,14 +4644,6 @@ img.little-2{
 
 }
 
-@media (max-width: 490px){
-    .modal-dialog.carrito{
-    margin-top: 93px;
-    float: right;
-    left: 60px;
-}
-
-}
 
 @media (max-width: 480px){
     .dropdown-menu.filtrar {
@@ -4758,14 +4781,6 @@ img.little-2{
 
 }
 
-@media (max-width: 460px){
-    .modal-dialog.carrito{
-    margin-top: 93px;
-    float: right;
-    left: 0px;
-}
-
-}
 
 @media (max-width: 450px){
     .dropdown-menu.filtrar {
