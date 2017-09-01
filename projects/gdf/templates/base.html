@@ -484,7 +484,7 @@
     <script type="text/javascript" src="common/js/plugins/loadingplay/fileuploader/dist/fileuploader.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?2"></script>
     <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
 
@@ -496,7 +496,7 @@
     <td class="hidden" name="id-car">{{! id }}</td>
     <td class="vert-align name-car">{{! name }}</td>
     <td class="vert-align money uno">{{! price }}</td>
-    <td class="vert-align talla-car">Talla</td>
+    <td class="vert-align talla-car">{{! combination }}</td>
     <td class="vert-align color-car">Color</td>
     <td class="text-center vert-align">
     <a href="#!" class="remove-one" product-id="{{! id }}"></a>
@@ -524,7 +524,7 @@
 </script>
 <script type="text/x-template" id="shopping-cart-checkout-form" >
 <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
-    <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+    <input name="site_id" class="form-control required" type="hidden" value="10">
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
     <div class="form-group text-center">

@@ -51,6 +51,25 @@
             onLoad: function(product)
             {
 
+                if (variants_loaded)
+                {
+                    return;
+                }
+
+                // add some settings
+                options.variants.product_sku = product.sku;
+                options.onLoad = $.noop;
+                // load variants
+                $('.product_detail').ecommerce('load_variants', options);
+                $('.variants-container').on('combination:selected', function(e, d)
+                {
+                    $('.add-to-cart').attr('product-combination', d);
+                    $('.add-to-cart').removeAttr('disabled');
+                });
+
+                variants_loaded = true;  // execute this onces
+                options.onLoad = $.noop;
+
                 if(product.bullet_1 === "sale")
                 {
                     $(".precio").addClass("anterior-oferta-sale-detalle");
@@ -73,22 +92,6 @@
                 related(tagProd.toLowerCase());
 
                 related2(prodBull.toLowerCase());
-
-                if (!variants_loaded)
-                {
-                    // add some settings
-                    options.variants.product_sku = product.sku;
-                    options.onLoad = $.noop;
-                    // load variants
-                    $('.product_detail').ecommerce('load_variants', options);
-                    $('.variants-container').on(
-                        'combination:selected', function()
-                        {
-                            $('.add-to-cart').removeAttr('disabled');
-                        });
-
-                    variants_loaded = true;  // execute this onces
-                }
             }
         }
 
@@ -275,7 +278,19 @@
                     <!-- <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button> -->
                    <!--  <button type="button" class="btn btn-default btn-nutr {{! bullet_1 |hide_if_empty}}" data-toggle="modal" data-target="#myModal_detail">Información</button> -->
 
-                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" data-target="#myModal" disabled>AGREGAR A LA BOLSA</button>
+                    <button type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                product-id="{{! id }}"
+                                product-img="{{! images[1]['thumb_500'] }}"
+                                lp-cart-add
+                                disabled >AGREGAR A LA BOLSA</button>
                 </div>
 
             </div>
