@@ -226,16 +226,16 @@ $(document).ready(function(){
       <button class="btn btn-primary ordenar dropdown-toggle" type="button" data-toggle="dropdown">ORDENAR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
       </button> 
       <ul class="dropdown-menu ordenar">
-         <div class="" style="height: 100px;">
+         <div class="" style="height: 62px;">
             <div class="col-md-12">
                 <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod menor"> (menor a mayor)</a></div>
                 <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod mayor"> (mayor a menor)</a></div>
                 <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOMBRE<a href="#!" class="mod nombre">  (A-Z)</a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div>
+                <!-- <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div> -->
             </div>
         </div>
 
-        <div class="col-md-12">
+        <div class="col-md-12 hidden">
           <div align="center">
             <button type="button" class="btn btn-default-fil">FILTRAR</button>
             <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
@@ -291,7 +291,7 @@ $(document).ready(function(){
     <ul class="dropdown-menu color">
      <div class="text-center talla-onclick">COLOR</div>
   
-  <div class="col-md-12">
+  <div class="col-md-12" style="padding: 0px;">
   <div class="col-md-6 col-sm-6 col-xs-12">
     <form action="" class="chek">
     <div class="filtro-color"><input class="categ-color c-taupe" type="checkbox" name="animal" value="Cat" tag="taupe" onclick="check('taupe')" /> TAUPE </div>
@@ -347,7 +347,7 @@ $(document).ready(function(){
     <ul class="dropdown-menu tipo">
      <div class="text-center talla-onclick">TIPO</div>
   
-  <div class="col-md-12">
+  <div class="col-md-12" style="padding: 0px;">
   <div class="col-md-6 col-sm-6 col-xs-12" style="">
     <form action="" class="chek">
     <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas" onclick="check('botas')" /> BOTAS </div>

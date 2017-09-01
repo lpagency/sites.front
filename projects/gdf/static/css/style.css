@@ -323,7 +323,7 @@ img.desaturada {
     position: relative;
     left: 0px;
     width: 100%;
-    border-bottom: 1px solid;
+    /*border-bottom: 1px solid;*/
     margin-top: -2px;
     font-family: 'Open Sans Condensed', sans-serif;
 }
@@ -419,6 +419,7 @@ a.mod{
 .talla-onclick{
     content: #D38067;
     color:#D38067;
+    font-size: 13px;
 }
 /* arrow for the expanding part */
 .onclick-menu-content:before {
@@ -474,11 +475,6 @@ a.mod{
     margin-bottom: 11px;
     width: 31px;
     height: 30px;
-    filter: grayscale(100%) brightness(50%)!important;
-    -webkit-filter: grayscale(50%) brightness(50%)!important;
-    -moz-filter: grayscale(100%) brightness(50%)!important;
-    -ms-filter: grayscale(100%) brightness(50%)!important;
-    -o-filter: grayscale(100%) brightness(50%)!important;
     margin-left:0px;
 }
 
@@ -496,28 +492,30 @@ a.mod{
 
 .btn-default-fil {
     background-color: #D16B52 !important;
-    width: 87%;
+    width: 111%;
     border-radius: 0px;
     color: white !important;
     height: 26px;
     font-size: 13px;
     position: relative;
     padding-top: 4px;
-    margin-bottom: 3px;
+    margin-bottom: -3px;
     margin-top: 9px;
+    margin-left: -8px;
 }
 
 .btn-default-ord {
     background-color: white !important;
-    width: 87%;
+    width: 111%;
     border-radius: 0px;
     color: #D16B52 !important;
     height: 26px;
     font-size: 13px;
     position: relative;
     padding-top: 4px;
-    border:1px solid #D16B52 !important;
+    border: 1px solid #D16B52 !important;
     margin-top: 9px;
+    margin-left: -8px;
 }
 
 
@@ -1238,7 +1236,13 @@ div.upload input, div.image-upload input {
     text-align: center;
     /* width: 100%; */
     position: relative;
-    margin-left: 6px;
+    margin-left: 29px;
+    top: 13px;
+    font-weight: 700;
+    font-family: 'Open Sans', sans-serif!important;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .box-talla-2{
@@ -2464,10 +2468,10 @@ select {
     z-index: 1000;
     /* display: none; */
     float: left;
-    width: 100%;
+    min-width: 186px;
     padding: 5px 0;
     margin: 2px 0 0;
-    font-size: 14px;
+    font-size: 12px;
     text-align: left;
     list-style: none;
     background-color: #fff;
@@ -2506,7 +2510,7 @@ select {
     /* display: none; */
     float: left;
     width: 183px;
-    padding: 5px 0;
+    padding: 0px 0;
     margin: 2px 0 0;
     font-size: 14px;
     text-align: left;
@@ -2546,7 +2550,7 @@ select {
     z-index: 1000;
     /* display: none; */
     float: left;
-    min-width: 229px;
+    min-width: 184px;
     padding: 5px 0;
     margin: 2px 0 0;
     font-size: 10px;
@@ -2601,7 +2605,7 @@ select {
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     z-index: 1000;
-    min-width: 237px;
+    min-width: 187px;
 }
 
 
