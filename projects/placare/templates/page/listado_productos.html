@@ -1,23 +1,24 @@
 {% extends "../base.html" %}
 
 {% block title %}
-{{ site.name }}
+    {{ site.name }}
 {% end %}
 
 {% block header %}
-{% include '../home/header.html' %}
+    {% include '../home/header.html' %}
 {% end %}
+
 {% block css %}
 
-{% if is_admin %}
-{% end %}
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<style type="text/css">
-
-  body , html{
-    overflow-x:hidden;
-  }
-</style>
+    {% if is_admin %}
+    {% end %}
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+    <style type="text/css">
+        body , html
+        {
+            overflow-x:hidden;
+        }
+    </style>
 {% end %}
 
 
