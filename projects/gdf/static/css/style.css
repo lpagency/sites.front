@@ -3616,20 +3616,30 @@ a.two {
 }
 
 td.name-car {
-    left: 80px;
+    left: 0px;
     color: rgba(204, 108, 78, 1);
+    float: left;
+    text-align: left;
 }
 
 td.money.uno {
-    left: 28px;
+    left: -44px;
+    text-align: left;
+    top: 88px;
 }
 
 td.talla-car {
-    left: 2px;
+    left: -89px;
+    float: left;
+    text-align: left;
+    top: 44px;
 }
 
 td.color-car {
-    left: -29px;
+    left: -90px;
+    float: left;
+    text-align: left;
+    top: 45px;
 }
 
 .dropdown {
@@ -3890,11 +3900,12 @@ hr.detalle {
 }
 
 .img-cart-modal {
-    width: 68%;
+    width: 21%;
     object-fit: cover;
-    height: 94px;
+    height: 123px;
     position: relative;
     top: 0px;
+    float: left;
 }
 
 td.money.lib {
@@ -4225,13 +4236,6 @@ a.mod {
 }
 
 
-.img-cart-modal {
-    width: 100%;
-    object-fit: cover;
-    height: 96px;
-    position: relative;
-    top: 3px;
-}
 
 td.tot {
     position: relative;
