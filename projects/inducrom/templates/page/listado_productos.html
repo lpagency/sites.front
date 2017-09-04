@@ -31,6 +31,38 @@
         $(".cotizar").addClass("hidden");
       }
 
+      var tags = Utils.getUrlParameter("tag");
+      var log = "";
+
+      if( tags == "control_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+      }
+
+      var catProd = $(".buscaCat").html(" Home | Subcategorias | " + log);
+
+      localStorage.setItem("subcategoriaProd"," Home | Subcategorias | " + log);
 
       $("#OpenAlert").click();
 
