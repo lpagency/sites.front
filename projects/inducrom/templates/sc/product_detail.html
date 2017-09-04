@@ -53,6 +53,9 @@
                 if(product.tags[x] == "tienda"){
                   $(".comprar").removeClass("hidden");
                 }
+                if(product.tags[x] == "cotizar"){
+                  $(".precio").addClass("hidden");
+                }
               }
 
                 related(product.bullet_3);
