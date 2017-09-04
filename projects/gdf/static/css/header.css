@@ -413,12 +413,19 @@ a:focus {
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
     font-size: 11px;
+    color: rgb(91, 81, 83);
 }
 
 .navbar-nav {
     float: left;
     margin: 0;
     width: 66%;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: white !important;
+    text-decoration: none;
+    background-color: rgba(204, 108, 78, 1) !important;
 }
 
 /*------------------------------------------------Responsive---------------------------*/

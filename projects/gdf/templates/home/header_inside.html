@@ -93,7 +93,7 @@
                         </div>
                         <!-- <li><a href="{{ site_base }}/productos?tag=carteras" class="text-header ">CARTERAS</a></li> -->
                         <div class="dropdown col-md-2 col-sm-3">
-                            <button class="ro2 btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="estilos">ESTILOS
+                            <button class="ro btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="estilos" onclick="window.location.href='{{ site_base }}/productos?tag=estilos'">ESTILOS
                             </button>
                               <ul class="roMenu dropdown-menu estilos">
                                 <li><a href="{{ site_base }}/productos?tag=botines">Botines</a></li>
@@ -105,7 +105,7 @@
                         </div>
                         <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header">NUEVO</a></li>
                         <li style="left: 27px;" class="text-header-edi {{editabletext}}" text-id="{{ site.name + '_edit' }}"> {{ read_text(site.name +  '_edit') }}</li>
-                        <li><a  href="{{ site_base }}/productos?tag=sale"  style="color: rgba(204, 108, 78, 1) !important;  left: 46px;" class="text-header sale">SALE</a></li>
+                        <li><a  href="{{ site_base }}/productos?tag=sale"  style="color: rgba(204, 108, 78, 1) !important;  left: 46px; z-index: 100;" class="text-header sale">SALE</a></li>
                         <li><a  style="font-style: italic; left: 65px;" href="{{site_base}}/blog" class="text-header font_tag adultos">¡Blog!</a></li>
                     </ul>
                 </div>

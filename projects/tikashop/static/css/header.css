@@ -1,0 +1,132 @@
+.logo {
+    height: 51px;
+    width: 300px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    position: relative;
+    right: 52px;
+}
+
+.caja-logo {
+    height: 51px;
+    width: 200px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 21px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 22px 15px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.navbar-default {
+    background-color: white;
+    border-color: white;
+    -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    box-shadow: 2px 1px 4px 0px #999;
+}
+
+/*-------------------------------------------Responsive----------------------*/
+
+
+@media (max-width: 1199px){
+	.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 22px 10px;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+}
+
+
+@media (max-width: 994px){
+	.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 22px 7px;
+    font-size: 10px;
+    font-weight: 300;
+}
+
+.logo {
+    height: 51px;
+    width: 300px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    position: relative;
+    right: 20px;
+}
+
+}
+
+@media (max-width: 991px){
+	.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 22px 5px;
+    font-size: 9px;
+    font-weight: 300;
+
+}
+
+.container.header {
+    width: 100%;
+}
+
+}
+
+@media (max-width: 830px){
+.logo {
+    height: 41px;
+    width: 150px;
+    float: left;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    object-fit: scale-down;
+    position: relative;
+    right: 0px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 22px 8px;
+    font-size: 8px;
+    font-weight: 300;
+
+}
+
+}
+
+@media (max-width: 768px){
+	.caja-logo {
+    height: 51px;
+    width: 150px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 21px;
+}
+
+}
+
+@media (max-width: 767px){
+	.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 15px 15px;
+    font-size: 12px;
+    font-weight: 300;
+
+}
+}
