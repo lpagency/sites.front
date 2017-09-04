@@ -73,7 +73,12 @@
             </div>
             <div class="banner-div-home">
             <img src="{{ article["thumb_500"] }}">
+            <div class="hidden-xs hidden-sm">
               <p class="text-header">{{ article["title"] }}</p>
+            </div>
+              <div class="col-md-12 col-sm-12 col-xs-12 visible-xs visible-sm hidden-md hidden-lg ">
+              <p class="text-header">{{ article["title"] }}</p>
+            </div>
            <!--    <div class="menu-icon">
                 <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
               </div>
@@ -119,7 +124,7 @@
 <div class="container">
 <div class="clearfix" style="height: 40px"></div>
 <div class="row">
-        <div class="col-md-12 col-lg-12 ">
+        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
           <div class="col-md-offset-2">
             <div class="banner-below-text">
             {{ article["caption"] }}
