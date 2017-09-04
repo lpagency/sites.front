@@ -482,6 +482,26 @@ a.log {
 
 }
 
+@media (max-width: 420px){
+ .overlay-full {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 88%;
+    width: 92%;
+    margin-top: 10px;
+    margin-left: 4%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+    border-radius: 20px;
+    margin-top: 0px;
+}
+
+}
+
 @media only screen and (max-width: 415px){
 
 .overlay-full{
@@ -544,6 +564,35 @@ a.log {
     border-radius: 160px;
     right: 15px;
     position: relative;
+}
+
+}
+
+@media (max-width: 414px){
+	.overlay-full {
+    height: 88%;
+    top: 0px;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 92%;
+    margin-top: 0px;
+    margin-left: 15px;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+    border-radius: 20px;
+}
+
+.text-conti-2 {
+    margin-top: -54px;
+    margin-bottom: 0px;
 }
 
 }
