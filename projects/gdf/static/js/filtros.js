@@ -36,7 +36,7 @@ function check(tag, value)
         {
             block = 
                 '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -46,14 +46,12 @@ function check(tag, value)
             window.listaTag.push(nombre2);
             window.config.tag = window.listaTag.toString();
 
-            $('.products').ecommerce('destroy');
-            $('.products').ecommerce(window.config);
         }
         else
         {
             block = 
                 '<div class="'+ nombre +'">'+ value +'(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -63,8 +61,6 @@ function check(tag, value)
             window.listaTag.push(nombre2);
             window.config.tag = window.listaTag.toString();
 
-            $('.products').ecommerce('destroy');
-            $('.products').ecommerce(window.config);
         }
     }
     else
@@ -78,9 +74,6 @@ function check(tag, value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
     }
 
 };
@@ -93,7 +86,7 @@ function checkTallas(tag)
 
     block = 
         '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
-        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
@@ -102,9 +95,6 @@ function checkTallas(tag)
 
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
 }
 
 //<---------------END FUNCION CHECK---------------->
@@ -144,6 +134,17 @@ function borrar(nombre)
             window.config.tag =window.listaTag.toString();
         };
     };
+
+    $('.products').ecommerce('destroy');
+    $('.products').ecommerce(window.config);
+};
+
+//<------------END FUNCION BORRAR------------------>
+
+//<----------------FUNCION FILTAR------------------>
+
+function filtrar(nombre)
+{
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(window.config);
