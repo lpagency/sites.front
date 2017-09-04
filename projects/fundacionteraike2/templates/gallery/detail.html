@@ -100,7 +100,12 @@
             </div>
             {% end %}
             <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
+            <div class="hidden-xs hidden-sm">
               <p class="text-header">{{ gallery.title }}</p>
+            </div>
+            <div class="col-md-12 col-sm-12 col-xs-12 visible-xs visible-sm hidden-md hidden-lg">
+              <p class="text-header">{{ gallery.title }}</p>
+            </div>
        <!--        <div class="menu-icon">
                 <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
               </div>
