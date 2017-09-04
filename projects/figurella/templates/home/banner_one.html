@@ -63,7 +63,10 @@
                                          </div>
 
                                          {% end %}
-                                       <!--  <img src="http://placehold.it/770x300&text=one"> --> 
+                                       <!--  <img src="http://placehold.it/770x300&text=one"> -->
+                                       {% if is_admin %}
+                                       <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_1' }}" content="{{ read_link(site.name + '_img_slider_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 24px;position: relative;z-index: 2;">
+                                       {% end %} 
                                        </div>
 
 
@@ -77,7 +80,13 @@
                                          </div>
 
                                          {% end %}
-                                        <!-- <img src="http://placehold.it/770x300&text=two"> --></div>
+                                        <!-- <img src="http://placehold.it/770x300&text=two"> -->
+                                      {% if is_admin %}
+                                       <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_2' }}" content="{{ read_link(site.name + '_img_slider_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 24px;position: relative;z-index: 2;">
+                                       {% end %}
+
+
+                                       </div>
 
                                         <div class="item cel" data-slide-number="2" style="background:url('{{ read_image(site.name + '_img_slider_3') }}'); height:530px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; ">
                                         {% if is_admin %}
@@ -89,7 +98,12 @@
                                          </div>
 
                                          {% end %}
-                                        <!-- <img src="http://placehold.it/770x300&text=three"> --></div>
+                                        <!-- <img src="http://placehold.it/770x300&text=three"> -->
+                                       {% if is_admin %}
+                                       <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_3' }}" content="{{ read_link(site.name + '_img_slider_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 24px;position: relative;z-index: 2;">
+                                       {% end %}
+
+                                       </div>
 
                                         <div class="item cel" data-slide-number="3" style="background:url('{{ read_image(site.name + '_img_slider_4') }}'); height:530px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; ">
                                         {% if is_admin %}
@@ -101,7 +115,12 @@
                                          </div>
 
                                          {% end %}
-                                        <!-- <img src="http://placehold.it/770x300&text=four"> --></div>
+                                        <!-- <img src="http://placehold.it/770x300&text=four"> -->
+                                      {% if is_admin %}
+                                       <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_4' }}" content="{{ read_link(site.name + '_img_slider_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 24px;position: relative;z-index: 2;">
+                                       {% end %}
+
+                                      </div>
                                     </div><!-- Carousel nav -->
                               
                                     </div>
@@ -126,19 +145,19 @@
                         <!-- Bottom switcher of slider -->
                         <ul class="hide-bullets">
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-0"><img src="{{ read_image(site.name + '_img_slider_1', 200) }}"></a>
+                                <a class="thumbnail"  id="{{ site.name + '_img_slider_1' }}" href="{{ read_link(site.name + '_img_slider_1') }}"><img src="{{ read_image(site.name + '_img_slider_1', 200) }}"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-1"><img src="{{ read_image(site.name + '_img_slider_2', 200) }}"></a>
+                                <a class="thumbnail"  id="{{ site.name + '_img_slider_2' }}" href="{{ read_link(site.name + '_img_slider_2') }}"><img src="{{ read_image(site.name + '_img_slider_2', 200) }}"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-2"><img src="{{ read_image(site.name + '_img_slider_3', 200) }}"></a>
+                                <a class="thumbnail"  id="{{ site.name + '_img_slider_3' }}" href="{{ read_link(site.name + '_img_slider_3') }}"><img src="{{ read_image(site.name + '_img_slider_3', 200) }}"></a>
                             </li>
 
                             <li class="col-sm-2">
-                                <a class="thumbnail" id="carousel-selector-3"><img src="{{ read_image(site.name + '_img_slider_4', 200) }}"></a>
+                                <a class="thumbnail"  id="{{ site.name + '_img_slider_4' }}" href="{{ read_link(site.name + '_img_slider_4') }}"><img src="{{ read_image(site.name + '_img_slider_4', 200) }}"></a>
                             </li>
 
                         </ul>                 
