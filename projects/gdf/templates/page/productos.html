@@ -18,14 +18,8 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
 <script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
-<script type="text/javascript">
-    $(document).ready(function(){
-        $(document).on("click", ".talla", function(){
-            alert("ñdjklfasñdklfj");
-            $(".color").css("margin-top", "36%");
-        });
-    });
-</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/banners.js"></script>
+
 <script type="text/javascript">
 $(document).ready(function(){
   $('.dropdown-submenu a.test').on("click", function(e){
@@ -98,27 +92,191 @@ $(document).ready(function(){
 {% end %}
 
 <section class="container-g">
+
 <section class="h-list-prod hidden-xs" style="">
     <div class="col-md-12">
 
     <!-- BANNER COLECCION -->
 
-        <div class="banner_coleccion banner_top">
+        <div class="banner_coleccion banner_top" style="display: none">
             {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-            <label for="img_banner">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}banner{{request.path.replace('/', '_')}}" name="image" id="img_banner"/>
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_prod">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_prod" name="image" id="img_list_prod" >
             </div>
             {% end %}
-            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" class=" img_banner desaturada" alt="item">
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_prod" src="{{ read_image(site.name + '_list_prod', 1) }}" onload="this.src='{{ read_image(site.name + '_list_prod',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER zapatos -->
+
+        <div class="banner_top banner_zapatos" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_zapatos">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_zapatos" name="image" id="img_list_zapatos" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_zapatos" src="{{ read_image(site.name + '_list_zapatos', 1) }}" onload="this.src='{{ read_image(site.name + '_list_zapatos',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER botas -->
+
+        <div class="banner_top banner_botas" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_botas">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_botas" name="image" id="img_list_botas" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_botas" src="{{ read_image(site.name + '_list_botas', 1) }}" onload="this.src='{{ read_image(site.name + '_list_botas',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER botines -->
+
+        <div class="banner_top banner_botines" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_botines">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_botines" name="image" id="img_list_botines" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_botines" src="{{ read_image(site.name + '_list_botines', 1) }}" onload="this.src='{{ read_image(site.name + '_list_botines',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER zapatillas -->
+
+        <div class="banner_top banner_zapatillas" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_zapatillas">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_zapatillas" name="image" id="img_list_zapatillas" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_zapatillas" src="{{ read_image(site.name + '_list_zapatillas', 1) }}" onload="this.src='{{ read_image(site.name + '_list_zapatillas',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER sandalias -->
+
+        <div class="banner_top banner_sandalias" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_sandalias">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_sandalias" name="image" id="img_list_sandalias" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_sandalias" src="{{ read_image(site.name + '_list_sandalias', 1) }}" onload="this.src='{{ read_image(site.name + '_list_sandalias',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER raices -->
+
+        <div class="banner_top banner_raices" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_raices">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_raices" name="image" id="img_list_raices" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_raices" src="{{ read_image(site.name + '_list_raices', 1) }}" onload="this.src='{{ read_image(site.name + '_list_raices',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER festival -->
+
+        <div class="banner_top banner_festival" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_festival">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_festival" name="image" id="img_list_festival" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_festival" src="{{ read_image(site.name + '_list_festival', 1) }}" onload="this.src='{{ read_image(site.name + '_list_festival',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER clasicos -->
+
+        <div class="banner_top banner_clasicos" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_clasicos">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_clasicos" name="image" id="img_list_clasicos" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_clasicos" src="{{ read_image(site.name + '_list_clasicos', 1) }}" onload="this.src='{{ read_image(site.name + '_list_clasicos',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER capsula -->
+
+        <div class="banner_top banner_capsula" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_capsula">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_capsula" name="image" id="img_list_capsula" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_capsula" src="{{ read_image(site.name + '_list_capsula', 1) }}" onload="this.src='{{ read_image(site.name + '_list_capsula',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+    <!-- BANNER SALE -->
+
+        <div class="banner_top banner_sale" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_sale">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_sale" name="image" id="img_list_sale" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_sale" src="{{ read_image(site.name + '_list_sale', 1) }}" onload="this.src='{{ read_image(site.name + '_list_sale',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
         </div>
 
     </div>
 </section>
-
-
 
 <section class="hidden-xs visible-lg visible-md visible-sm">
     <div class="pop">
