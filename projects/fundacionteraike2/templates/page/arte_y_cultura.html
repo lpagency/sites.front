@@ -1,0 +1,76 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
+<script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
+<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+<style type="text/css">
+@media (max-width: 767px){
+  body{
+  overflow-x:hidden; 
+   }
+  
+  }
+
+</style>
+{% end %}
+
+
+{% block body %}
+<!-- ***contenidoo*+ -->
+
+<!-- *****Banner uno****** -->
+<div class="container">
+
+  <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="texto_page_edu {{editabletext}}" text-id="{{ site.name + 'text_banner2_page_arte' }}">{{ read_text(site.name +  'text_banner2_page_arte') }}
+     </div>
+ </div>
+
+
+      <div class="col-md-12 col-sm-12 col-xs-12">
+       <button type="button" class="btn btn-info edu" data-toggle="collapse" data-target="#demo">Ver más </button>
+       <div id="demo" class="collapse" style="margin-top: 55px;">
+         <div class="texto_page_edu_es {{editabletext}}" text-id="{{ site.name + 'text_banner2_page_arte_2' }}">{{ read_text(site.name +  'text_banner2_page_arte_2') }}
+     </div>
+
+       </div>
+     </div>
+
+
+
+
+
+
+
+
+</div>
+{% include ../home/footer.html %}
+{% end %}
