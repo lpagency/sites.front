@@ -36,7 +36,7 @@ function check(tag, value)
         {
             block = 
                 '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -51,7 +51,7 @@ function check(tag, value)
         {
             block = 
                 '<div class="'+ nombre +'">'+ value +'(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -86,7 +86,7 @@ function checkTallas(tag)
 
     block = 
         '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
-        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i>)</div>';
+        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
