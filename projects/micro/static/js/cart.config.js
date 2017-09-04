@@ -110,9 +110,6 @@ $(document).ready(function()
             config.operator = "or";
         }else{
             var multiple_tag = tag + ", " + $(this).attr('tag');
-            if(tag == "para_ninos"){
-                multiple_tag = $(this).attr('tag');
-            }
             config.tag = multiple_tag;
             config.operator = "and";
         }
@@ -121,5 +118,6 @@ $(document).ready(function()
         $(document).ecommerce('destroy');
         $(document).ecommerce(config);
         console.log(config.tag);
+        console.log(config.operator);
     });
 });

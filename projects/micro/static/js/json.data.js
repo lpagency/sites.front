@@ -328,7 +328,7 @@ var categories =[
 	},
 	{
 		"name": "MINI",
-		"tag": "mini_deluxe"
+		"tag": "m_mini"
 	},
 	{
 		"name": "MAXI",
