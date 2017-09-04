@@ -15,30 +15,30 @@
         <div class="col-md-12 col-lg-12">
           <div class="top-header-home">
             <div class="logo-div-home">
-            {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-            <label for="img_header">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
-            </div>
-            {% end %}
-            <a href="{{ site_base }}">
-            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
-            </a>
-           <!--  <img src="img/logo_2.png" class="logo"> -->
-        <div class="logo-border"></div>
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                <label for="img_header">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
+              </div>
+              {% end %}
+              <a href="{{ site_base }}">
+                <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
+              </a>
+              <!--  <img src="img/logo_2.png" class="logo"> -->
+              <div class="logo-border"></div>
               <div class="header-desktop-menu menulist">
                 <ul class="header-menu">
-                 <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
-                    <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
-                    <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
-                    <li><a href="{{ site_base }}/noticias">Noticias </a></li>
-                    <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
-                    <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
+                  <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
+                  <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
+                  <li><a href="http://www.fundacionteraike.cl/article/detail/educacion/1901">Educación</a></li>
+                  <li><a href="http://www.fundacionteraike.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
+                  <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
+                  <li><a href="http://www.fundacionteraike.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
+                  <li><a href="{{ site_base }}/noticias">Noticias </a></li>
+                  <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
+                  <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
                 </ul>
               </div>
               <div class="mobilemenu">
@@ -47,23 +47,23 @@
                   <div>
                     {% if is_admin %}
                     <div class="image-upload lapiz visible-movil">
-                    <label for="img_header">
-                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-                    </label>
-                    <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
+                      <label for="img_header">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                      </label>
+                      <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
+                    </div>
+                    {% end %}
+                    <a href="{{ site_base }}">
+                      <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+                    </a>
                   </div>
-                  {% end %}
-                  <a href="{{ site_base }}">
-                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
-                  </a>
-                </div>
                   <ul>
                     <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
                     <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/educacion/1901">Educación</a></li>
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
+                    <li><a href="http://www.fundacionteraike.cl/article/detail/educacion/1901">Educación</a></li>
+                    <li><a href="http://www.fundacionteraike.cl/article/detail/arte_y_cultura/1900">Arte y Cultura</a></li>
                     <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
-                    <li><a href="http://fundacionteraike2.lpe.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
+                    <li><a href="http://www.fundacionteraike.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
                     <li><a href="{{ site_base }}/noticias">Noticias </a></li>
                     <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
                     <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
@@ -77,8 +77,8 @@
               <p class="text-header">{{ article["title"] }}</p>
             </div>
               <div class="col-md-12 col-sm-12 col-xs-12 visible-xs visible-sm hidden-md hidden-lg ">
-              <p class="text-header">{{ article["title"] }}</p>
-            </div>
+                  <p class="text-header">{{ article["title"] }}</p>
+              </div>
            <!--    <div class="menu-icon">
                 <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
               </div>
