@@ -46,8 +46,6 @@ function check(tag, value)
             window.listaTag.push(nombre2);
             window.config.tag = window.listaTag.toString();
 
-            $('.products').ecommerce('destroy');
-            $('.products').ecommerce(window.config);
         }
         else
         {
@@ -63,8 +61,6 @@ function check(tag, value)
             window.listaTag.push(nombre2);
             window.config.tag = window.listaTag.toString();
 
-            $('.products').ecommerce('destroy');
-            $('.products').ecommerce(window.config);
         }
     }
     else
@@ -78,9 +74,6 @@ function check(tag, value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
     }
 
 };
@@ -102,9 +95,6 @@ function checkTallas(tag)
 
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
 }
 
 //<---------------END FUNCION CHECK---------------->
@@ -144,6 +134,17 @@ function borrar(nombre)
             window.config.tag =window.listaTag.toString();
         };
     };
+
+    $('.products').ecommerce('destroy');
+    $('.products').ecommerce(window.config);
+};
+
+//<------------END FUNCION BORRAR------------------>
+
+//<----------------FUNCION FILTAR------------------>
+
+function filtrar(nombre)
+{
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(window.config);
