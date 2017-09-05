@@ -5,19 +5,31 @@
                         <div class="nav-stack__upper">
                             <div class="col-xs-6">
                                 <a href="">
-                                    <img alt="logo" class="logo" src="{{ site_base }}/static/img/burns2.jpg">
+                                  <div class="caja-logo">
+                                  <div style="position:relative;">
+                                    {% if is_admin %}
+                                    <div class="image-upload lapiz visible-movil">
+                                       <label for="img_logo_header">
+                                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                     </label>
+                                     <input type="file" class="editableimage" image-id="{{ site.name }}_logo_header" name="image" id="img_logo_header" >
+                                 </div>
+                                 {% end %}
+                                   <img id="{{ site.name }}_logo_header" src="{{ read_image(site.name + '_logo_header', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_header',) }}'" class="box-chic" alt="item">
+                                </div>
+                                </div>
                                 </a>
                             </div>
                             <div class="col-xs-6 text-right">
                                 <a href="#purchase-template" class="btn btn--sm btn--square" id="open-cart" data-toggle="modal" data-target="#myModal">
-                                    <span class="btn__text">Tu carro</span>
+                                    <span class="btn__text">Tu Compra</span>
                                 </a>
                             </div>
                         </div>
                     </div>
                     
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-sm-12 hidden-sm">
                             <div class="nav-bar">
                                 <div class="nav-module logo-module left">
                                     <a href="index.html">
@@ -118,4 +130,34 @@
                 </div></div></div></nav>
         
         </div>
+
+
+
+        <!-- ******************MENU MOVIL********** -->
+
+ <nav id="nav" role="navigation" class="visible-sm visible-xs hidden-lg hidden-md">
+    <a href="#nav" title="Show navigation">Show navigation</a>
+    <a href="#" title="Hide navigation">Hide navigation</a>
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li>
+            <a href="/" aria-haspopup="true">Blog</a>
+            <ul>
+                <li><a href="/">Design</a></li>
+                <li><a href="/">HTML</a></li>
+                <li><a href="/">CSS</a></li>
+                <li><a href="/">JavaScript</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="/" aria-haspopup="true">Work</a>
+            <ul>
+                <li><a href="/">Web Design</a></li>
+                <li><a href="/">Typography</a></li>
+                <li><a href="/">Front-End</a></li>
+            </ul>
+        </li>
+        <li><a href="/">About</a></li>
+    </ul>
+</nav>
     
