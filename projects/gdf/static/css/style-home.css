@@ -9,7 +9,7 @@ html {
 }
 
 .texto-filtros {
-    top: 26px;
+/*    top: 26px;
     position: absolute;
     left: 6%;
     display: -webkit-box;
@@ -22,7 +22,22 @@ html {
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
+    margin: 0 0 17px;*/
+    top: 26px;
+    position: absolute;
+    left: 5%;
+    display: inline-flex;
+    display: -ms-flexbox;
+    /* display: -webkit-inline-box; */
+    /* -webkit-box-orient: horizontal; */
+    /* -webkit-box-direction: normal; */
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-align: baseline;
+    -ms-flex-align: baseline;
+    align-items: baseline;
     margin: 0 0 17px;
+    margin-left: 19px;
 }
 
 .colores-dispo{
