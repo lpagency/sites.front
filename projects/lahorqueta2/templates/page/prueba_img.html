@@ -1,0 +1,118 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script  type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script  type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js"></script>
+
+<script type="text/javascript">
+$('elemento-a-animar').smoove(options);
+
+</script>
+
+<script type="text/javascript">
+$('.bloque').smoove({offset:'40%'});
+</script>
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+   <section>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:300px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos" name="image" id="img_productos" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos' }}"> {{ read_text(site.name +  '_productos') }}</div>
+        </div>
+    </div>
+ 
+</section>
+
+
+
+
+ <section>
+  <div class="contenedor">
+    <span style="font-size:30px;color:black;">Utiliza Smoove en el script para crear suaves efectos fade-in a medida que se desplaza hacia abajo</span>
+    <div class="fila">
+      <div class="colm-2"><div class="bloque"></div></div>
+      <div class="colm-2"><div class="bloque"></div></div>
+    </div>
+    <span style="font-size:30px;color:black;margin-top: 20px;margin-bottom: 10px;">También puedes mover objetos a lo largo de la pantalla...</span>
+    <div class="fila">
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="-200px"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="-100px"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="100px"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="200px"></div></div>
+    </div>
+   <span style="font-size:30px;color:black;margin-top: 20px;margin-bottom: 10px;">...o rotarlos</span>
+    <div class="fila">
+      <div class="colm-4"><div class="bloque" data-move-x="-500px" data-rotate="90deg"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="-200px" data-rotate="45deg"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-y="200px" data-move-x="200px" data-rotate="-45deg"></div></div>
+      <div class="colm-4"><div class="bloque" data-move-x="500px" data-rotate="-90deg"></div></div>
+    </div>
+   
+    <span style="font-size:30px;color:black;margin-top: 20px;margin-bottom: 10px;">Puedes incluso usar divertidos efectos en 3D</span>
+    <div class="fila">
+      <div class="colm-3"><div class="bloque" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+      <div class="colm-3"><div class="bloque" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+      <div class="colm-3"><div class="bloque" data-rotate-x="90deg" data-move-z="-500px" data-move-y="200px"></div></div>
+    </div>
+    <div class="fila">
+      <div class="colm-4"><div class="bloque" data-rotate-y="180deg" data-move-z="-200px" data-move-x="-300px"></div></div>
+      <div class="colm-4"><div class="bloque" data-rotate-x="180deg" data-rotate-y="180deg" data-move-z="-700px"></div></div>
+      <div class="colm-4"><div class="bloque" data-rotate-x="180deg" data-rotate-y="45deg" data-move-z="-500px"></div></div>
+      <div class="colm-4"><div class="bloque" data-rotate-y="180deg" data-move-z="-100px" data-move-x="500px"></div></div>
+    </div>
+    <div class="fila">
+      <div class="colm-2"><div class="bloque" data-rotate-y="270deg" data-move-x="-150%"></div></div>
+      <div class="colm-2"><div class="bloque" data-rotate-y="270deg" data-move-x="150%"></div></div>
+    </div>
+    <span style="font-size:30px;color:black;margin-top: 20px;margin-bottom: 10px;">Escalarlos y sesgarlos...</span>
+    <div class="fila">
+      <div class="colm-2"><div class="bloque" data-scale="5" ></div></div>
+      <div class="colm-2"><div class="bloque" data-scale="0.2" data-skew="90deg,90deg"></div></div>
+    </div>
+    
+    <span style="font-size:30px;color:black;margin-top: 20px;margin-bottom: 10px;">Mezcla y haz tus propios efectos!</span>
+  </div>
+</section>
+
+
+</body>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+
