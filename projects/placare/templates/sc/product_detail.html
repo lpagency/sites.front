@@ -101,15 +101,6 @@
                 options.onLoad = $.noop;
 
                 // inicialización del codigo de las imagenes
-                try
-                {
-                    $(".texto-ruta-detalle").html(
-                        localStorage.getItem("subcategoriaProd").toString());
-                }
-                catch(ex)
-                {
-                    // nothing here
-                }
 
                 related(product.bullet_3);
                 related2(product.bullet_3);
@@ -233,7 +224,7 @@
        <div class="container min">
         <div class="col-md-6 col-sm-6 col-xs-12">
 
-            <div class="texto-header-pro texto-ruta-detalle"></div>
+            <div class="texto-header-pro texto-ruta-detalle">{{! bullet_2 }}</div>
 
         </div>
         </div>
@@ -559,8 +550,8 @@
                             {{! description }}</h3>
                            <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! bullet_1 }}</h3>
-                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
-                            {{! bullet_2 }}</h3>
+<!--                        <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
+                            </h3> -->
                             <div class="standar">Opciones de Compra </div>
                             <div class="op"><br> Despachos a todo chile <br> Paga con RedCompra, Tarjeta de Crédito o Transferencia Electrónica. <br> Cambios y Devoluciones sin costo. 10 dias para cambiar tu producto. </div>
 
