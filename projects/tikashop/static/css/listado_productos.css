@@ -1,11 +1,23 @@
 .container-0 {
-  position: 100%;
+
+}
+
+.container-0:hover {
+  background-color: white;
+      -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .image {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 70%;
+    height: 274px;
+    margin-bottom: 10px;
+    margin-top: 12px;
+    object-fit: contain;
 }
 
 .overlay {
@@ -29,12 +41,49 @@
     color: white;
     font-size: 20px;
     position: absolute;
-    top: 50%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
-    background-color: #B40404;
+    background-color:#0a8452;
     width: 40%;
     height: 40px;
     padding: 5px;
+    cursor: pointer;
+    font-weight: 300;
+}
+
+.inf{
+    position: relative;
+    margin-bottom: 140px;
+    font-size: 20px;
+    bottom: -29px;
+    color: white;
+    margin-left: -5px;
+    font-weight: 300;
+}
+
+.art-hi{
+  background-color: black;
+  margin-bottom: 0px;
+}
+
+.modal-content.pro {
+    position: relative;
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 0px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,.5);
+}
+
+.btn-default.com {
+    color: white;
+    background-color: #B40404;
+    border-color: #B40404;
+    border-radius: 0px;
 }

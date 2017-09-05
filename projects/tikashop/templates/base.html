@@ -139,7 +139,33 @@
     </div>
     </div>
 
-    <!-- **modal categorias productos** -->
+    <!-- **modal descripcion producto** -->
+    <div class="container">
+      <!-- Modal -->
+      <div class="modal fade" id="myModal-pro" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content pro">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title text-center">Descripción del producto</h4>
+          </div>
+          <div class="modal-body">
+              <p>Nombre del producto</p>
+              <p>Precio: $20.000</p>
+              <p>Hay muchas variaciones de los pasajes de Lorem Ipsum disponibles, pero la mayoría sufrió alteraciones en alguna manera, ya sea porque se le agregó humor, o palabras aleatorias que no parecen ni un poco creíbles. Si vas a utilizar un pasaje de Lorem Ipsum, necesitás estar seguro de que no hay nada avergonzante escondido en el medio del texto. Todos los generadores de Lorem Ipsum que se encuentran en Internet tienden a repetir trozos predefinidos cuando sea necesario, haciendo a este el único generador verdadero (válido) en la Internet. </p>
+              <button type="button" class="btn add-to-cart btn-default com" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO</button>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+      
+  </div>
+</div>
+
+</div>
 
 
     <!-- gif loading editableimage -->
@@ -253,49 +279,55 @@
         </form>
     </script> -->
 <script type="text/x-template" id="shopping-cart-product">
-<tr>
-    <td class="vert-align text-left">{{! name }}</td>
-    <td class="vert-align money">{{! price }}</td>
-    <td class="text-center vert-align">
-        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
-        {{! quantity }}
-        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
-    </td>
-    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
-</tr>
+    <tr>
+        <td class="vert-align text-left">{{! name }}</td>
+        <td class="vert-align">{{! combination }}</td>
+        <td class="text-center vert-align fri" style="border-bottom: 1px solid #ddd;">
+            <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
+            {{! quantity }}
+            <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" >+</a>
+        </td>
+        <td class="text-center2 vert-align">{{! price|money }}</td>
+        <td class="remove-from-cart text-center fri" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
+        <td class="text-center vert-align fri">
+            <a class="borrarproducto" cart-id="">
+                <i class="icon-close"></i>
+            </a>
+        </td>
+    </tr>
 </script>
+
 <script type="text/x-template" id="shopping-cart-total" >
-<tr>
-    
-</tr>
-</thead>
-<tr>
-    <td>Total:</td> 
-    <td id="total" class="text-right money lib">{{! total }}</td>
-    <td></td>
-</tr>
+    <tr>
+    </tr>
+    <tr>
+        <td>Total:</td>
+        <td id="total" colspan="3" class="text-left total-modal lib">{{! total|money }}</td>
+        <td></td>
+    </tr>
 </script>
+
 <script type="text/x-template" id="shopping-cart-units-total" >
     <span> {{! units_total }}</span>
 </script>
+
 <script type="text/x-template" id="shopping-cart-checkout-form" >
-<form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
-    <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
-    <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
-    <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
-    <div class="form-group text-center">
-         <button type="submit" class="btn bn" style="
-            background-color: rgba(0, 0, 0, 0.24); color: #777; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;">PAGAR
-        </button>
-    
-    </div>
-</form>
-   <div class=""> 
-             <a class="modal-close pin" data-dismiss="modal" aria-hidden="true">VOLVER</a>
-               
-           </a>        
+    <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+        <input name="site_id" class="form-control required" type="hidden" value="33">
+        <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+        <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+        <div class="form-group text-center">
+             <button type="submit" class="btn bn" style="background-color:#B40404;color: white;width: 31%;border-radius: 0px;height: 43px;font-weight: 100;float: right;">
+                PAGAR
+            </button>
         </div>
+        <div class="">
+            <a class="modal-close pin" data-dismiss="modal" aria-hidden="true">VOLVER</a>
+        </div>
+    </form>
 </script>
+
+
 
 
 
