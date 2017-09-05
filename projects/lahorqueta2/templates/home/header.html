@@ -1,0 +1,107 @@
+
+<div class="linea">
+ <a class="navbar-brand" href="">
+  <div style="position:relative">
+     <div class="caja-logo">
+         {% if is_admin %}
+         <div class="image-upload lapiz visible-movil">
+            <label for="img_header_logo">
+               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+           </label>
+           <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+       </div>
+       {% end %}
+       <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+   </div>
+</div>
+</a>
+<button type="button" class="btn btn-default carro" id="open-cart" data-toggle="modal" data-target="#myModal">TU COMRPA <span class="units-total">0</span> </button>
+
+<div class="container lini"></div>
+
+</div>
+<nav class="navbar navbar-default navbar-custom">
+    <div class="container header">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle hidden-xs" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+
+            <div align="center">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                Menu <i class="fa fa-bars"></i>
+            </button>
+            </div>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="">QUIENES SOMOS</a>
+                </li>
+                <div class="dropdown col-md-2 col-sm-2">
+                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
+                       TIENDA ONLINE
+                   </a>
+                   <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                      <li><a href="#">Some action</a></li>
+                      <li class="dropdown-submenu">
+                        <a tabindex="-1" href="#">Hover me for more options</a>
+                        <ul class="dropdown-menu">
+                          <li><a tabindex="-1" href="#">Second level</a></li>
+                          <li class="dropdown-submenu">
+                            <a href="#">Even More..</a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">3rd level</a></li>
+                                <li><a href="#">3rd level</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Second level</a></li>
+                        <li><a href="#">Second level</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="dropdown col-md-3 col-sm-3">
+            <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
+                PRODUCTOS DE TERRAZA
+            </a>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+              <li><a href="#">Some action</a></li>
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">Hover me for more options</a>
+            </li>
+        </ul>
+    </div>
+    <div class="dropdown col-md-3 col-sm-3">
+        <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">PRODUCTOS DE JARDIN
+        </a>
+        <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+          <li><a href="#">Some action</a></li>
+          <li class="dropdown-submenu">
+            <a tabindex="-1" href="#">Hover me for more options</a>
+        </li>
+    </ul>
+</div>
+<div class="dropdown col-md-2 col-sm-2">
+    <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
+        OFERTAS 
+ </a>
+ <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+  <li><a href="#">Some action</a></li>
+  <li class="dropdown-submenu">
+    <a tabindex="-1" href="#">Hover me for more options</a>
+</li>
+</ul>
+</div>
+</ul>
+</div>
+<!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+

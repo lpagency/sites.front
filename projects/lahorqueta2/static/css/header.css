@@ -1,0 +1,269 @@
+.logo {
+    height: 55px;
+    width: 200px;
+    float: left;
+    margin-top: 15px;
+    margin-bottom: 21px;
+    object-fit: scale-down;
+}
+
+.caja-logo {
+    height: 51px;
+    width: 250px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 21px;
+}
+
+.linea {
+    background-color: #EFEFEF;
+    height: 127px;
+    position: relative;
+}
+
+.navbar-default {
+    background-color: #EFEFEF;
+    border-color: transparent;
+}
+
+.btn-default.carro {
+    color: #333;
+    background-color: #EFEFEF;
+    /* border-color: #ccc; */
+    float: right;
+    position: relative;
+    right: 74px;
+    border-radius: 0px;
+    width: 19%;
+    top: 24px;
+    height: 43px;
+    border: 2px solid #ccc;
+}
+
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+   border: 2px solid black;
+   -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.lini{
+	border-bottom: 1px solid rgba(128, 128, 128, 0.22);
+    top: 45px;
+    position: relative;
+}
+
+.navbar-left {
+    float: left!important;
+    margin-left: -44px;
+    margin-top: -11px;
+    width: 73%;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.btn-primary.tienda {
+    color: #777;
+    background-color: transparent;
+    border-color: transparent;
+    font-size: 11px;
+    padding: 11px 0px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #232323;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+    transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    font-size: 11px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 147%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: black;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+.dropdown-menu>li>a {
+    display: block;
+    padding: 9px 20px;
+    clear: both;
+    font-weight: 400;
+    line-height: 1.42857143;
+    color: gray;
+    white-space: nowrap;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    color: white;
+    text-decoration: none;
+    background-color: transparent;
+    margin-left: 10px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+
+.navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
+    color: #555;
+    background-color: transparent;
+}
+
+.nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
+    background-color: #eee;
+    border-color: transparent;
+}
+
+
+
+
+
+
+/*----------------------------------------RESPONSIVE------------------------------*/
+@media (max-width: 991px){
+	.navbar-left {
+    float: left!important;
+    margin-left: -44px;
+    margin-top: -11px;
+    width: 118%;
+}
+
+}
+
+@media (max-width: 767px){
+	.navbar-toggle {
+    position: relative;
+    float: inherit;
+    padding: 9px 10px;
+    margin-top: -10px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+}
+
+
+
+@media (max-width: 630px){
+	.btn-default.carro {
+    color: #333;
+    background-color: #EFEFEF;
+    /* border-color: #ccc; */
+    float: right;
+    position: relative;
+    right: 74px;
+    border-radius: 0px;
+    width: 160px;
+    top: 24px;
+    height: 43px;
+    border: 2px solid #ccc;
+}
+
+}
+
+
+@media (max-width: 440px){
+	.btn-default.carro {
+    color: #333;
+    background-color: #EFEFEF;
+    /* border-color: #ccc; */
+    float: right;
+    position: relative;
+    right: 24px;
+    border-radius: 0px;
+    width: 129px;
+    top: 24px;
+    height: 43px;
+    border: 2px solid #ccc;
+}
+
+}
+
+@media (max-width:414px){
+	.caja-logo {
+    height: 51px;
+    width: 200px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 21px;
+}
+
+}
