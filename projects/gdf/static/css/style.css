@@ -2301,26 +2301,38 @@ td.color-car {
 }
 
 td.color-car{
-    top: 50px;
+    top: 45px;
     position: relative;
-    left: -52px;
+    left: -56px;
     text-align: right;
+    font-size: 12px;
 }
 td.talla-car {
-    top: 30px;
+    top: 25px;
     position: relative;
-    left: -18px;
+    left: -25px;
     text-align: right;
+    font-size: 12px;
 }
 
-td.name-car {
-    font-size: 11px;
+.name-car {
+/*    font-size: 11px;
     text-align: right;
     left: 71px;
     position: relative;
     font-weight: bold;
     color: rgb(91, 81, 83);
+    letter-spacing: 1px;*/  
+    width: 76px;
+    position: absolute;
+    right: 40px;
+    font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
+    top: 5px;
+    font-weight: 500;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px;
 }
 
 td.cantidad-car{
@@ -2334,17 +2346,18 @@ td.cantidad-car{
 td.money.uno{
     position: relative;
     top: 75px;
-    left: 32px;
+    left: 16px;
     color: rgba(204, 108, 78, 1);
     text-align: right;
+    font-size: 12px;
 }
 
 a.two {
     color: gray;
     font-size: 13px;
     position: relative;
-    top: 1px;
-    left: -37px;
+    top: 2px;
+    left: -32px;
 }
 
 .fa-trash{
@@ -2366,12 +2379,12 @@ tr.ver{
 
 td.money.lib {
     position: relative;
-    left: 16%;
+    left: 23%;
 }
 
 td.tot {
     position: relative;
-    left: 12%;
+    left: 28%;
 }
 
 
