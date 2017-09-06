@@ -91,6 +91,7 @@
     top: 40px;
     position: relative;
     font-size: 12px;
+    width: 107%
 }
 
 .form-group.footer{
@@ -123,6 +124,28 @@
     left: -46px;
     position: relative;  
     }
+}
+
+@media (max-width: 1199px){
+    .breadcrumb {
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    list-style: none;
+    background-color: transparent;
+    border-radius: 0px;
+    top: 40px;
+    position: relative;
+    font-size: 12px;
+    width: 115%;
+}
+.breadcrumb-item {
+    display: inline-block;
+    padding: 0px 20px;
+    color: gray;
+    font-weight: 300;
+    font-size: 11px;
+}
+
 }
 
 @media (max-width: 1040px){
