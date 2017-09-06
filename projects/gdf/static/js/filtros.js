@@ -35,7 +35,7 @@ function check(tag, value)
         if(value == undefined)
         {
             block = 
-                '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
+                '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre + '(<i class="fa fa-times fa-'+nombre
                 +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
             var classNombre = "."+nombre;
@@ -85,7 +85,7 @@ function checkTallas(tag)
     var block = "";
 
     block = 
-        '<div class="'+ nombre +'">'+ nombre +'(<i class="fa fa-times fa-'+nombre
+        '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre +'(<i class="fa fa-times fa-'+nombre
         +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
 
         var classNombre = "."+nombre;

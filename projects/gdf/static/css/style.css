@@ -343,9 +343,10 @@ img.desaturada {
 }
 
 
-a.mod{
-    font-size: 11px !important;
-    font-weight: 600;
+a.mod {
+    font-size: 13px !important;
+    font-weight: 500;
+    color: gray !important;
 }
 
 a.mod:hover{
@@ -2317,9 +2318,9 @@ td.talla-car {
 }
 
 .name-car {
-    width: 76px;
-    position: absolute;
-    right: 40px;
+    width: 69px;
+    position: relative;
+    right: -65px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     top: 16px;
@@ -2349,8 +2350,9 @@ td.money.uno{
 a.two {
     font-size: 14px;
     position: relative;
-    top: 12px;
-    left: -32px;
+    top: 13px;
+    left: -42px;
+
 }
 
 .fa-trash{
@@ -2373,11 +2375,14 @@ tr.ver{
 td.money.lib {
     position: relative;
     left: 23%;
+    top: 6px;
 }
 
 td.tot {
     position: relative;
     left: 28%;
+    top: 6px;
+
 }
 
 
@@ -2864,10 +2869,10 @@ p.vol{
 .ordena-nombre{
     float: right;
     position: relative;
-    left: -82px;
+    left: -89px;
     margin-top: -56px;
     color: gray;
-    font-size:  13px;
+    font-size: 13px;
     text-transform: lowercase;
 }
 
@@ -3687,20 +3692,20 @@ td.name-car {
 }
 
 td.money.uno {
-    left: -44px;
+    left: 15px;
     text-align: left;
-    top: 88px;
+    top: 81px;
 }
 
 td.talla-car {
-    left: -89px;
+    left: -19px;
     float: left;
     text-align: left;
     top: 44px;
 }
 
 td.color-car {
-    left: -90px;
+    left: -9px;
     float: left;
     text-align: left;
     top: 45px;
@@ -4327,7 +4332,7 @@ td.tot {
 
 @media (max-width: 630px){
     a.two {
-    left: -18px;
+    left: 0px;
 }
 
 }
