@@ -79,6 +79,48 @@ $(document).ready(function(){
 
     });
 </script>
+<script type="text/javascript">
+  function esconder(ev, sec)
+  {
+    if(sec == undefined)
+    {
+      if($("."+ev).hasClass("hidden"))
+      {
+        $("."+ev).removeClass("hidden");
+      }
+      else
+      {
+        $("."+ev).addClass("hidden");
+        $(".drop").css("margin-top", "10px");
+      }
+    }
+    else
+    {
+      if($("."+ev).hasClass("hidden"))
+      {
+        $("."+ev).removeClass("hidden");
+        if(sec == ".color")
+        {
+          $(sec).css("margin-top", "20%");
+        }
+        if(sec == ".tipo")
+        {
+          $(sec).css("margin-top", "64%");
+        }
+        if(sec == ".ordenar")
+        {
+          $(sec).css("margin-top", "40%");
+        }
+      }
+      else
+      {
+        $("."+ev).addClass("hidden");
+        $(".drop").css("margin-top", "10px");
+      }
+    }
+  }
+</script>
+
 
 {% end %}
 
@@ -496,52 +538,53 @@ $(document).ready(function(){
         <button class="btn btn-filtros-movil dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
             <i class="fa fa-angle-right fil-2" aria-hidden="true"></i></button>
             <ul class="dropdown-menu">
-              <li class="dropdown-submenu x4">
-                <a class="test" tabindex="-1">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
-                <ul class="dropdown-menu collapse" id="tallas">
+              <li class="dropdown-submenu x4 tallas drop">
+                <a class="test" tabindex="-1" onclick="esconder('tallas2', '.color')">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i></a>
+              </li>
+                <li class="dropdown-submenu x4 tallas2 hidden">
                   <div class="col-xs-12 lol">
                     <div class="dropdown fil-productos">
                       <ul class=" filtrar">
-                       <div class="text-center talla-onclick"> </div>
-                       <div class="col-md-12 box-talla" style="">
-                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                        <div class="text-center talla-onclick"> </div>
+                        <div class="col-md-12 box-talla" style="">
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
                             <div class="num-tal-2" tag="35" onclick="checkTallas('35')">35</div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                          </div>
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
                             <div class="num-tal-2" tag="36" onclick="checkTallas('36')">36</div>
+                          </div>
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                            <div class="num-tal-2" tag="37"onclick="checkTallas('37')">37</div>
+                          </div>
                         </div>
-                        <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                          <div class="num-tal-2" tag="37"onclick="checkTallas('37')">37</div>
-                      </div>
+                        <div class="col-md-12 box-talla" style="">
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                           <div class="num-tal-2" tag="38" onclick="checkTallas('38')">38</div>
+                         </div>
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
+                           <div class="num-tal-2" tag="39" onclick="checkTallas('39')">39</div>
+                         </div>
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
+                           <div class="num-tal-2" tag="40" onclick="checkTallas('40')">40</div>
+                         </div>
+                       </div>
+                       <div class="col-xs-12"> 
+                         <div class="col-xs-6">
+                           <button type="button" class="btn btn-default-fil">FILTRAR</button>
+                         </div>
+                         <div class="col-xs-6">
+                           <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+                         </div>
+                       </div>
+                      </ul>
+                    </div>
                   </div>
-                  <div class="col-md-12 box-talla" style="">
-                    <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                       <div class="num-tal-2" tag="38" onclick="checkTallas('38')">38</div>
-                   </div>
-                   <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                       <div class="num-tal-2" tag="39" onclick="checkTallas('39')">39</div>
-                   </div>
-                   <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                       <div class="num-tal-2" tag="40" onclick="checkTallas('40')">40</div>
-                   </div>
-               </div>
-               <div class="col-xs-12"> 
-                   <div class="col-xs-6">
-                      <button type="button" class="btn btn-default-fil">FILTRAR</button>
-                  </div>
-                  <div class="col-xs-6">
-                      <button type="button" class="btn btn-default-ord">LIMPIAR</button>
-                  </div>
-              </div>
-          </ul>
-      </div>
-  </div>
-</ul>
-</li>
+               </li>
 
-<li class="dropdown-submenu x4 color">
-    <a class="test" tabindex="-1" href="#">COLOR <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
-    <ul class="dropdown-menu color">
+<li class="dropdown-submenu x4 color drop">
+    <a class="test" tabindex="-1" onclick="esconder('color2', '.tipo')">COLOR <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 color2 hidden">
        <div class="text-center talla-onclick"></div>
 
        <div class="col-md-12">
@@ -590,12 +633,12 @@ $(document).ready(function(){
           <button type="button" class="btn btn-default-ord">LIMPIAR</button>
       </div>
   </div>
-</ul>
 </li>
 
-<li class="dropdown-submenu x4">
-    <a class="test" tabindex="-1" href="#">TIPO<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
-    <ul class="dropdown-menu tipo">
+<li class="dropdown-submenu x4 tipo drop">
+    <a class="test" tabindex="-1" onclick="esconder('tipo2', '.ordenar')">TIPO<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 tipo2 hidden">
        <div class="text-center talla-onclick"></div>
 
        <div class="col-md-12">
@@ -632,12 +675,12 @@ $(document).ready(function(){
           <button type="button" class="btn btn-default-ord">LIMPIAR</button>
       </div>
   </div>
-</ul>
 </li>
 
-<li class="dropdown-submenu x4">
-    <a class="test" tabindex="-1" href="#">ORDENAR<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
-      <ul class="dropdown-menu ordenar">
+<li class="dropdown-submenu x4 ordenar drop">
+    <a class="test" tabindex="-1" onclick="esconder('ordenar2')">ORDENAR<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 ordenar2 hidden">
        <div align="center">
          <div class="" style="height: 100px; width:96%">
             <div class="col-md-12">
@@ -657,8 +700,7 @@ $(document).ready(function(){
           <button type="button" class="btn btn-default-ord">LIMPIAR</button>
       </div>
   </div>
-    </ul>
-</li>
+    </li>
 </ul>
 </div>
 <div class="texto-filtros" style="z-index: 100"><!--AQUI VAN LOS FILTROS--></div>
