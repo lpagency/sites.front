@@ -267,6 +267,30 @@
                         </div>
                     </div>
                 </div>
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div align="center">
+                        <div class="con-3">
+                            <div style="position:relative;">
+                                {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_about_9">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage" image-id="{{ site.name }}_about_9" name="image" id="img_about_9">
+                                </div>
+                                {% end %}
+                                <img id="{{ site.name }}_about_9" src="{{ read_image(site.name + '_about_9', 1) }}" onload="this.src='{{ read_image(site.name + '_about_9',) }}'" class="image-3" alt="item"> 
+                            </div>
+                            <!-- <img src="https://84static.loadingplay.com/static/images/040c0832bcd77ca6f533d97f970cab2b_sytes.png" alt="Avatar" class="image" style="width:100%"> -->
+                            <div class="middle-3">
+                                <div class="text-3">Sebastian Benavente</div>
+                            </div>
+                        </div>
+                        <div align="center">
+                            <div class="texto-info {{editabletext}}" text-id="{{ site.name + '_about_9' }}"> {{ read_text(site.name +  '_about_9') }} </div>
+                        </div>
+                    </div>
+                </div>
 
      </div>
 </section>
