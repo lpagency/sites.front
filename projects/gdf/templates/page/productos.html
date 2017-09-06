@@ -86,7 +86,9 @@ $(document).ready(function(){
     {
       if($("."+ev).hasClass("hidden"))
       {
+        $(".sub").addClass("hidden");
         $("."+ev).removeClass("hidden");
+        $(".drop").css("margin-top", "10px");
       }
       else
       {
@@ -98,7 +100,9 @@ $(document).ready(function(){
     {
       if($("."+ev).hasClass("hidden"))
       {
+        $(".sub").addClass("hidden");
         $("."+ev).removeClass("hidden");
+        $(".drop").css("margin-top", "10px");
         if(sec == ".color")
         {
           $(sec).css("margin-top", "20%");
@@ -541,7 +545,7 @@ $(document).ready(function(){
               <li class="dropdown-submenu x4 tallas drop">
                 <a class="test" tabindex="-1" onclick="esconder('tallas2', '.color')">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i></a>
               </li>
-                <li class="dropdown-submenu x4 tallas2 hidden">
+                <li class="dropdown-submenu x4 sub tallas2 hidden">
                   <div class="col-xs-12 lol">
                     <div class="dropdown fil-productos">
                       <ul class=" filtrar">
@@ -584,7 +588,7 @@ $(document).ready(function(){
 <li class="dropdown-submenu x4 color drop">
     <a class="test" tabindex="-1" onclick="esconder('color2', '.tipo')">COLOR <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
 </li>
-<li class="dropdown-submenu x4 color2 hidden">
+<li class="dropdown-submenu x4 sub color2 hidden">
        <div class="text-center talla-onclick"></div>
 
        <div class="col-md-12">
@@ -638,7 +642,7 @@ $(document).ready(function(){
 <li class="dropdown-submenu x4 tipo drop">
     <a class="test" tabindex="-1" onclick="esconder('tipo2', '.ordenar')">TIPO<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
 </li>
-<li class="dropdown-submenu x4 tipo2 hidden">
+<li class="dropdown-submenu x4 sub tipo2 hidden">
        <div class="text-center talla-onclick"></div>
 
        <div class="col-md-12">
@@ -680,7 +684,7 @@ $(document).ready(function(){
 <li class="dropdown-submenu x4 ordenar drop">
     <a class="test" tabindex="-1" onclick="esconder('ordenar2')">ORDENAR<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
 </li>
-<li class="dropdown-submenu x4 ordenar2 hidden">
+<li class="dropdown-submenu x4 sub ordenar2 hidden">
        <div align="center">
          <div class="" style="height: 100px; width:96%">
             <div class="col-md-12">
