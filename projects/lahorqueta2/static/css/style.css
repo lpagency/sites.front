@@ -103,13 +103,40 @@ li{
     font-weight: 200;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 135px;
+    width: 80%;
 }
 
-.vin{
+.vin {
     width: 100%;
-    height: 304px;
+    height: 374px;
 }
 
+.frase-3{
+    text-align: left;
+    font-size: 22px;
+    margin-top: 66px;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    left: 18%;
+    position: relative;
+    width: 81%;
+}
+
+
+.frase-4{
+    text-align: left;
+    font-size: 15px;
+    color: gray;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 155px;
+    left: 18%;
+    position: relative;
+    top: 38px;
+    width: 81%;
+}
 
 /*---------------------------------------RESPONSIVE---------------------*/
 @media (max-width: 991px){
@@ -189,6 +216,31 @@ li{
     top: 228px;
     text-align: left;
     color: white;
+}
+
+.frase-3 {
+    text-align: left;
+    font-size: 22px;
+    margin-top: 66px;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    left: 0%;
+    position: relative;
+    width: 100%;
+}
+
+.frase-4 {
+    text-align: left;
+    font-size: 15px;
+    color: gray;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 155px;
+    left: 0%;
+    position: relative;
+    top: 38px;
+    width: 100%;
 }
 
 }
