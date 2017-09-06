@@ -325,7 +325,7 @@ img.desaturada {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
-    color: rgba(0, 0, 0, 0.81);
+    color: inherit;
     float: left;
     position: relative;
     left: 0px;
@@ -344,12 +344,17 @@ img.desaturada {
 
 
 a.mod {
-    font-size: 13px !important;
-    font-weight: 500;
-    color: gray !important;
+    font-size: 10px !important;
+    font-weight: 600;
+    color: inherit !important;
+    font-family: 'Open Sans', sans-serif;
 }
 
 a.mod:hover{
+    color: white !important;
+}
+
+.hove:hover{
     color: white !important;
 }
 
