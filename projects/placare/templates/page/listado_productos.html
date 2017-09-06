@@ -109,9 +109,9 @@
 <section>
    <div class="container min dos">
     <div class="col-md-3 col-sm-3 col-xs-12">
- <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
-          <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 0px;margin-bottom: 50px;border-right: 1px solid rgba(128, 128, 128, 0.4);width: 92%;left: 8%;">
-          <div class="text-fil"> TIPO DE ZAPATO </div>
+      <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
+        <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 0px;margin-bottom: 50px;border-right: 1px solid rgba(128, 128, 128, 0.4);width: 92%;left: 8%;">
+          <div class="text-fil"> TIPO DE CALZADO </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-filtros">
                 <input type="checkbox" class="categ c-ballerinas" name="vehicle1" tag="ballerinas" value="Bike" onclick="check('ballerinas')">
@@ -149,34 +149,10 @@
                 <i class="fa fa-check-square ch-zapatos hidden" aria-hidden="true" onclick="uncheck('zapatos')"></i>
               </div>
           </form>
+
           <div class="clearfix"></div>
 
-           <div class="text-fil"> OCASIÓN  </div>
-          <form action="/action_page.php" class="chek">
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-casuales" name="vehicle1" tag="casuales" value="Bike" onclick="check('casuales')"> 
-                <div class="fil h-casuales" onclick="check('casuales')">Casuales</div> 
-                <i class="fa fa-check-square ch-casuales hidden" aria-hidden="true" onclick="uncheck('casuales')"></i>
-              </div>
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-confort" name="vehicle2" tag="confort" value="Car" onclick="check('confort')"> 
-                <div class="fil h-confort" onclick="check('confort')">Confort </div>
-                <i class="fa fa-check-square ch-confort hidden" aria-hidden="true" onclick="uncheck('confort')"></i>
-              </div>
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-fiesta" name="vehicle3" tag="fiesta" value="Boat" onclick="check('fiesta')"> 
-                <div class="fil h-fiesta" onclick="check('fiesta')">Fiesta</div> 
-                <i class="fa fa-check-square ch-fiesta hidden" aria-hidden="true" onclick="uncheck('fiesta')"></i>
-              </div>
-               <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-vestir" name="vehicle3" tag="vestir" value="Boat" onclick="check('vestir')"> 
-                <div class="fil h-vestir" onclick="check('vestir')">Vestir</div> 
-                <i class="fa fa-check-square ch-vestir hidden" aria-hidden="true" onclick="uncheck('vestir')"></i>
-              </div>
-          </form>
-          <div class="clearfix"></div>
-
-          <div class="text-fil"> COLOR <i class="fa fa-plus botonMasColor" aria-hidden="true"></i> </div>
+          <div class="text-fil"> COLOR PRINCIPAL <i class="fa fa-plus botonMasColor" aria-hidden="true"></i> </div>
             <div>
             <form action="/action_page.php" class="chek">
             <div class="filtro-color">
@@ -233,10 +209,8 @@
             </div>
             </form>
 
-            </div>
-
           <div class="clearfix"></div>
-         <div class="text-fil"> MATERIAL </div>
+         <div class="text-fil"> MATERIAL DEL ZAPATO </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-talla">
                 <input type="checkbox" class="categ c-cuero" name="vehicle1" tag="cuero" value="Bike" onclick="check('cuero','cuero')">
@@ -244,11 +218,12 @@
                 <i class="fa fa-check-square ch-cuero hidden" aria-hidden="true" onclick="uncheck('cuero','cuero')"></i>
               </div>
               <div class="filtro-talla">
-                <input type="checkbox" class="categ c-eco" name="vehicle2" tag="eco" value="Cara" onclick="check('eco','eco')">
+                <input type="checkbox" class="categ c-eco" name="vehicle2" tag="eco" value="Cara" onclick="check('eco','eco cuero')">
                 <div class="fil h-eco" onclick="check('eco')"> Eco cuero </div> 
                 <i class="fa fa-check-square ch-eco hidden" aria-hidden="true" onclick="uncheck('eco','eco')"></i>
               </div>
           </form>
+
           <div class="clearfix"></div>
 
           <div class="text-fil"> MARCA </div>
@@ -264,6 +239,84 @@
                <i class="fa fa-check-square ch-manzini hidden" aria-hidden="true" onclick="uncheck('manzini')"></i>
                </div>
           </form>
+
+          <div class="clearfix"></div>
+
+           <div class="text-fil"> OCASIÓN</div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-casuales" name="vehicle1" tag="casuales" value="Bike" onclick="check('casuales')"> 
+                <div class="fil h-casuales" onclick="check('casuales')">Casuales</div> 
+                <i class="fa fa-check-square ch-casuales hidden" aria-hidden="true" onclick="uncheck('casuales')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-confort" name="vehicle2" tag="confort" value="Car" onclick="check('confort')"> 
+                <div class="fil h-confort" onclick="check('confort')">Confort </div>
+                <i class="fa fa-check-square ch-confort hidden" aria-hidden="true" onclick="uncheck('confort')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-fiesta" name="vehicle3" tag="fiesta" value="Boat" onclick="check('fiesta')"> 
+                <div class="fil h-fiesta" onclick="check('fiesta')">Fiesta</div> 
+                <i class="fa fa-check-square ch-fiesta hidden" aria-hidden="true" onclick="uncheck('fiesta')"></i>
+              </div>
+               <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-vestir" name="vehicle3" tag="vestir" value="Boat" onclick="check('vestir')"> 
+                <div class="fil h-vestir" onclick="check('vestir')">Vestir</div> 
+                <i class="fa fa-check-square ch-vestir hidden" aria-hidden="true" onclick="uncheck('vestir')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> TIPO DE CIERRE </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-abierto" name="vehicle1" tag="abierto" value="Bike" onclick="check('abierto','abierto')">
+                <div class="fil h-abierto" onclick="check('abierto')"> Abierto </div>
+                <i class="fa fa-check-square ch-abierto hidden" aria-hidden="true" onclick="uncheck('abierto','abierto')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-cerrado" name="vehicle2" tag="cerrado" value="Cara" onclick="check('cerrado','cerrado')">
+                <div class="fil h-cerrado" onclick="check('cerrado')"> Cerrado </div> 
+                <i class="fa fa-check-square ch-cerrado hidden" aria-hidden="true" onclick="uncheck('cerrado','cerrado')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> MATERIAL SUELA </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-eva" name="vehicle1" tag="eva" value="Bike" onclick="check('eva','eva')">
+                <div class="fil h-eva" onclick="check('eva')"> Eva </div>
+                <i class="fa fa-check-square ch-eva hidden" aria-hidden="true" onclick="uncheck('eva','eva')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-kraton" name="vehicle2" tag="kraton" value="Cara" onclick="check('kraton','kraton')">
+                <div class="fil h-kraton" onclick="check('kraton')"> Kratón </div> 
+                <i class="fa fa-check-square ch-kraton hidden" aria-hidden="true" onclick="uncheck('kraton','kraton')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-poliuretano" name="vehicle2" tag="poliuretano" value="Cara" onclick="check('poliuretano','poliuretano')">
+                <div class="fil h-poliuretano" onclick="check('poliuretano')"> Poliuretano </div> 
+                <i class="fa fa-check-square ch-poliuretano hidden" aria-hidden="true" onclick="uncheck('poliuretano','poliuretano')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> MATERIAL FORRO </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-forro_cuero" name="vehicle1" tag="forro_cuero" value="Bike" onclick="check('forro_cuero','cuero')">
+                <div class="fil h-forro_cuero" onclick="check('forro_cuero', 'cuero')"> Cuero </div>
+                <i class="fa fa-check-square ch-forro_cuero hidden" aria-hidden="true" onclick="uncheck('forro_cuero','cuero')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-forro_eco" name="vehicle2" tag="forro_eco" value="Cara" onclick="check('forro_eco','eco cuero')">
+                <div class="fil h-forro_eco" onclick="check('forro_eco','eco')"> Eco cuero </div> 
+                <i class="fa fa-check-square ch-forro_eco hidden" aria-hidden="true" onclick="uncheck('forro_eco','eco')"></i>
+              </div>
+          </form>
+
+            </div>
         </div>
 
   </section>
@@ -294,13 +347,13 @@
           <div class="limpiar">LIMPIAR TODO </div>
           </div>
           <div class="col-md-12 col-sm-12 col-xs-12 kinti">
-              <a href="#!" class="variables1" tag="variable_1">Talla </a>
+              <a href="#!" class="variables1" tag="variable_1">Tallas Disponibles </a>
               <a class=""> &nbsp </a>
-              <a href="#!" class="variables2" tag="variable_2">Plataforma </a>
-               <a class=""> &nbsp </a>
-              <a href="#!" class="variables3" tag="variable_3">Forma Taco</a>
+              <a href="#!" class="variables3" tag="variable_3">Tipo de Taco</a>
               <a class=""> &nbsp </a>
-              <a href="#!" class="variables4" tag="variable_4">Tamaño Taco</a>
+              <a href="#!" class="variables4" tag="variable_4">Altura Taco</a>
+              <a class=""> &nbsp </a>
+              <a href="#!" class="variables2" tag="variable_2">Altura Plataforma </a>
           </div>
           <form action="/action_page.php" class="chek">
            <div class="col-md-3 col-sm-3 col-xs-12 vari">
