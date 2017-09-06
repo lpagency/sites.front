@@ -6,13 +6,13 @@ $(document).ready(function()
         var base_url = $.environmentVar(
             'http://apibodegas.ondev.today',
             'http://apibodegas.ondev.today',
-            'https://apibodegas.loadingplay.com/');
+            'http://apibodegas.ondev.today');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
-            'https://pay.loadingplay.com');
-        var app_public = $.environmentVar(10,10,50);
-        var site_name = $.environmentVar('gdf', 'gdf', 'testgdf');
+            'http://lpcheckout.ondev.today');
+        var app_public = $.environmentVar(10,10,10);
+        var site_name = $.environmentVar('gdf', 'gdf', 'gdf');
         var variants_loaded = false;
 
     // functions 
