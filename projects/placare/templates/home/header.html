@@ -52,9 +52,26 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav sa">
-              <li class="#"><a href="{{ site_base}}/listado_productos?tag=mujer,-hombre">MUJERES</a></li>
-              <li><a href="{{ site_base}}/listado_productos?tag=hombre,-mujer">HOMBRES</a></li>
-      <!--         <li><a href="{{ site_base}}/listado_productos?tag=nino">NIÑO</a></li> -->
+              <!-- <li class="#"><a href="{{ site_base}}/listado_productos?tag=mujer,-hombre">MUJERES</a></li> -->
+              <div class="dropdown col-md-4">
+                <button class="btn btn-primary header dropdown-toggle" type="button" data-toggle="dropdown">MUJERES
+                </button>
+                  <ul class="dropdown-menu hed">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </div>
+                <div class="dropdown col-md-4">
+                <button class="btn btn-primary header dropdown-toggle" type="button" data-toggle="dropdown">HOMBRES
+                  </button>
+                  <ul class="dropdown-menu hed">
+                    <li><a href="#">HTML</a></li>
+                    <li><a href="#">CSS</a></li>
+                    <li><a href="#">JavaScript</a></li>
+                  </ul>
+                </div>
+              <!-- <li><a href="{{ site_base}}/listado_productos?tag=hombre,-mujer">HOMBRES</a></li> -->
               <li><a href="{{ site_base}}/listado_productos?tag=oferta">OFERTA</a></li>
             </ul>
             <form id="searchform" role="search" action="{{ site_base }}/listado_productos" method="get" >

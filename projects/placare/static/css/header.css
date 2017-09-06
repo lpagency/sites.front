@@ -153,6 +153,47 @@ li.slogan a{
     color: #999;
 }
 
+
+
+.btn-primary.header {
+    color: gray;
+    background-color: transparent;
+    border-color: transparent;
+    float: inherit;
+    margin-top: 16px;
+    border-radius: 0px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn-primary.header:hover {
+    color: gray;
+    background-color: transparent;
+    border-color: transparent;
+    float: inherit;
+    margin-top: 16px;
+    border-radius: 0px;
+    text-align: left;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    font-size: 12px;  
+    font-weight: 500;
+
+}
+
+.btn-primary.header:hover, .btn-primary.header:focus, .btn-primary.header:active, .btn-primary.header.active, .open>.dropdown-toggle.btn-primary.header {
+    color: rgba(128, 128, 128, 0.65);
+    background-color: transparent;
+    border-color: transparent;
+}
+
+
+
 /*------------------------------------------Responsive--------------------------------*/
 @media (max-width: 1199px){
     .text-slogan {
