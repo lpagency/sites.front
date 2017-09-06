@@ -40,6 +40,16 @@ $(document).ready(function(){
         $(".banner_festival").css("display", "block");
     }
 
+    if(/tag=estilos/.test(hyper)){
+
+        $(".banner_estilos").css("display", "block");
+    }
+
+    if(/tag=nuevo/.test(hyper)){
+
+        $(".banner_nuevo").css("display", "block");
+    }
+
     if(/tag=clasicos/.test(hyper)){
 
         $(".banner_clasicos").css("display", "block");
