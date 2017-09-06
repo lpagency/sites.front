@@ -494,8 +494,8 @@
        <img src="{{! images[0][2] }}" alt="" class="img-cart-modal">
    </td>
     <td class="hidden" name="id-car">{{! id }}</td>
-    <td class="vert-align name-car">{{! name }}</td>
-    <td class="vert-align money uno">{{! price }}</td>
+    <td> <div class="vert-align name-car">{{! name }} </div> </td>
+    <td class="vert-align money uno">${{! price }}</td>
     <td class="vert-align talla-car">Talla:{{! combination }}</td>
     <td class="vert-align color-car">Color{{! bullet_1 }}</td>
     <td class="text-center vert-align">
@@ -528,7 +528,8 @@
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
     <div class="form-group text-center">
-         <button type="submit" class="btn bn btn-compra mo" style="background-color:#ddd;color:#797072;width: 31%;border-radius: 0px;height: 33px;float: left;  width: 100%;">IR A PAGAR
+         <button type="submit" class="btn bn btn-compra mo" style="    background-color: #ddd;color: #797072;width: 31%;border-radius: 0px;height: 24px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1px;font-size: 11px;font-weight: 500;
+">IR A PAGAR
         </button>
 
          <button type="submit" class="btn bn btn-compra vir hidden-md hidden-sm hidden-lg visible-xs" style="">SEGUIR VITRINIANDO
