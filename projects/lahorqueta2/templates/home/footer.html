@@ -1,3 +1,146 @@
+<div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar">
+  <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="text-left fot">
+                <div class="clearfix"></div>
+                    <ul class="no-doti">
+                     <div class="caja-logo">
+                       {% if is_admin %}
+                       <div class="image-upload lapiz visible-movil">
+                        <label for="img_footer_logo">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                       </label>
+                       <input type="file" class="editableimage" image-id="{{ site.name }}_footer_logo" name="image" id="img_footer_logo" >
+                     </div>
+                     {% end %}
+                     <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="img-responsive logo" alt="item">
+                   </div>
+                    <div class="ul-1 {{editabletext}}" text-id="{{ site.name + '_footer_0' }}"> {{ read_text(site.name +  '_footer_0') }}
+                    </div>                    
+                    </ul>
+            </div>
+              </div>
+           
+             <div class="col-md-2 col-sm-2 col-xs-12">
+            <div class="inform-comerc text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot">
+                        <div class="ul-2 {{editabletext}}" text-id="{{ site.name + '_footer_son' }}"> {{ read_text(site.name +  '_footer_son') }}
+                        </div>
+                         <div class="pas-2 {{editabletext}}" text-id="{{ site.name + '_footer_22' }}"> {{ read_text(site.name +  '_footer_22') }}
+                        </div>
+                         <div class="pas-2 {{editabletext}}" text-id="{{ site.name + '_footer_23' }}"> {{ read_text(site.name +  '_footer_23') }}
+                        </div>
+                        <div class="pas-2 {{editabletext}}" text-id="{{ site.name + '_footer_wew' }}"> {{ read_text(site.name +  '_footer_wew') }}
+                        </div>
+                        <div class="pas-2 {{editabletext}}" text-id="{{ site.name + '_lod' }}"> {{ read_text(site.name +  '_lod') }}
+                        </div>
+                   
+                    </ul>
+            </div>
+            </div>
+            
 
+            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="inform-comerc-2 text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot op">
+                         <div class="pas-3 {{editabletext}}" text-id="{{ site.name + '_footer_ex_2' }}"> {{ read_text(site.name +  '_footer_ex_2') }}
+                        </div>
+                         <div class="pas-3 {{editabletext}}" text-id="{{ site.name + '_footer_ex_3' }}"> {{ read_text(site.name +  '_footer_ex_3') }}
+                        </div>
+                         <div class="pas-3 {{editabletext}}" text-id="{{ site.name + '_footer_ex_5' }}"> {{ read_text(site.name +  '_footer_ex_5') }}
+                        </div>
+                    </ul>
+            </div>
+            </div>
+             
 
-<div style="margin-bottom:200px"></div>
+            <div class="col-md-4 col-sm-4 col-xs-12">
+            <div class=" text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot d-o">
+                        <div class="ul-2 pas-4 {{editabletext}}" text-id="{{ site.name + '_footer_30' }}"> {{ read_text(site.name +  '_footer_30') }}
+                        </div>
+                        <div class="pas-4 {{editabletext}}" text-id="{{ site.name + '_footer_31' }}"> {{ read_text(site.name +  '_footer_31') }}
+                        </div>
+                        <p class="pas-4">
+                           {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                                Logout</a>
+                           {% end %}
+                        </p> 
+
+                    </ul>
+            </div>
+            </div>
+
+            <div class="container">
+
+              <div class="col-md-12 col-sm-12 col-xs-12">
+                   <hr class="lini">
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12">
+                 <div class="coy {{editabletext}}" text-id="{{ site.name + '_copy' }}"> {{ read_text(site.name +  '_copy') }}
+                 </div>
+              </div>
+
+              <div class="col-md-6 col-sm-6 col-xs-12 ye">
+                <div class="col-md-2 col-sm-2 col-xs-12 nimi">
+                 <div class="">
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil">
+                    <label for="img_footer_ico_1">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_1" name="image" id="img_footer_ico_1" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_footer_ico_1" src="{{ read_image(site.name + '_footer_ico_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_1',) }}'" class="img-redes" alt="item">
+                 </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 nimi">
+                  <div class="">
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil">
+                    <label for="img_footer_ico_2">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_2" name="image" id="img_footer_ico_2" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_footer_ico_2" src="{{ read_image(site.name + '_footer_ico_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_2',) }}'" class="img-redes" alt="item">
+                 </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 nimi">
+                  <div class="">
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil">
+                    <label for="img_footer_ico_3">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_3" name="image" id="img_footer_ico_3" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_footer_ico_3" src="{{ read_image(site.name + '_footer_ico_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_3',) }}'" class="img-redes" alt="item">
+                 </div>
+                </div>
+                <div class="col-md-2 col-sm-2 col-xs-12 nimi">
+                  <div class="">
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil">
+                    <label for="img_footer_ico_4">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_4" name="image" id="img_footer_ico_4" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_footer_ico_4" src="{{ read_image(site.name + '_footer_ico_4', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_4',) }}'" class="img-redes" alt="item">
+                 </div>
+                </div>
+              </div>
+
+            </div>
+    </div>
