@@ -3,12 +3,7 @@
 }
 
 .container-0:hover {
-  background-color: white;
-      -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+
 }
 
 .image {
@@ -18,6 +13,19 @@
     margin-bottom: 10px;
     margin-top: 12px;
     object-fit: contain;
+    border: 1px solid #0a8452;
+    margin-top: 17px;
+}
+
+
+.image:hover{
+    border: 1px solid #B40404;
+    margin-top: 17px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 
 .overlay {

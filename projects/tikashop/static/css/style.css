@@ -52,7 +52,8 @@ div.upload input, div.image-upload input {
 
 .pin {
     float: left !important;
-    background: #B40404 !important;
+    background: 
+     !important;
     font-size: 15px !important;
     padding: 12px 11px !important;
     color: white !important;
@@ -95,4 +96,22 @@ div.upload input, div.image-upload input {
     background-repeat: repeat-x;
 }
 
+
+.fa-circle{
+    font-size: 10px !important;
+    color: #0a8452;
+    position: relative;
+    bottom:1px;
+}
+
 /*------------------------------------Responsive-------------------------------------------------------*/
+
+@media (max-width: 991px){
+    .container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-left: auto;
+    width: 100%;
+}
+
+}

@@ -5,10 +5,11 @@
     position: relative;
     height: auto;
     padding: 0;
+    margin-top: -1px;
 }
 
 .logo-footer {
-    width: 7%;
+    width: 65%;
     position: relative;
     bottom: -37px;
     margin-left: 11px;
@@ -38,19 +39,20 @@
     border-bottom: 1px solid white;
     margin-bottom: 19px;
 }
+
 .farm {
-    width: 35%;
+    width: 60%;
     position: relative;
-    bottom: -1px;
-    margin-left: 278px;
+    bottom: -11px;
+    margin-left: 0px;
 }
 
 .sociales {
     padding: 30px 0px;
     width: 38px;
-    top: -19px;
+    top: -36px;
     position: relative;
-    left: 97px;
+    left: 76px;
 }
 
 .pas-3 {
@@ -61,5 +63,27 @@
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    margin-left:-33px;
+    margin-left: -33px;
+    top: 18px;
+    position: relative;
+}
+
+.no-dot{
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+
+
+/*-----------------------------Responsive---------------------------------/*/
+
+
+@media (max-width: 991px){
+    .sociales {
+    padding: 30px 0px;
+    width: 38px;
+    top: -36px;
+    position: relative;
+    left: 0px;
+    
 }
