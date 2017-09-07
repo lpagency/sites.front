@@ -74,10 +74,6 @@ $(document).ready(function()
         'onLoad': function(products) 
         {
             var prod = $(".product-grid").html();
-
-            if(prod != ""){
-                $(".product-grid").html(prod + '<div class="spinner"><div class="rect2 regl"></div><div class="rect3 regl"></div><div class="rect4 regl"></div><div class="rect5 regl"></div></div>');
-            }
         }
     };
 
