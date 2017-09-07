@@ -23,11 +23,13 @@
                 //Y tener mejor manipulación de dichos valores
                 var nombre = $("#itNombre").val();
                 var correo = $("#itMail").val();
+                var pedido = $("#itPedido").val();
+                var productos = $("#itProductos").val();
                 var asunto = $("#itComentario").val();
 
                 var error_count = 0;
  
-                // --- Condicionales anidados ----
+                //Condicionales anidados 
                 //Si nombre está vacío
                 //Muestra el mensaje
                 //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
@@ -40,6 +42,28 @@
                 else{
                     $("#itNombre").parents(".form-group").removeClass("has-error");
                     $(".help-nombre").addClass('hidden');
+                }
+
+                if(pedido == ""){
+                    $("#itpedido").parents(".form-group").addClass("has-error");
+                    $(".help-pedido").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itPedido").parents(".form-group").removeClass("has-error");
+                    $(".help-pedido").addClass('hidden');
+                }
+
+                if(productos == ""){
+                    $("#itProductos").parents(".form-group").addClass("has-error");
+                    $(".help-productos").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itproductos").parents(".form-group").removeClass("has-error");
+                    $(".help-productos").addClass('hidden');
                 }
 
                 //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
@@ -176,30 +200,45 @@
                     <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact">
 
                         <div>
-                        <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
+
+                        <form action='https://forms.zohopublic.com/sytes/form/placareformulariodevoluciones/formperma/j5jC45m42J05A09KA55MCH60a/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                             <div class="row clearfix">
                                 <div class="col-xs-12 col-sm-12">
                                 <div class="form-group con">
                                         <label class="control-label">Nombre</label>
                                         <div class=" controls">
-                                            <input name="name" placeholder="Tu nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                            <input name="Name_First" placeholder="Tu nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
-                                        <span id="helpBlock2" class="hidden help-block help-nombre">Tu nombre</span>
+                                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
                                     </div>
                                     <div class="form-group con">
                                         <label class="control-label">Email</label>
                                         <div class=" controls">
-                                            <input name="email" placeholder="Tu Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input name="Email" placeholder="Tu Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                             <input type="hidden" name="subject" value="contactanos" />
                                         </div>
-                                        <span id="helpBlock3" class="hidden help-block help-mail">Email</span>
+                                        <span id="helpBlock3" class="hidden help-block help-mail">Escribe un Email valido</span>
+                                    </div>
+                                    <div class="form-group con">
+                                        <label class="control-label">Numero de pedido</label>
+                                        <div class=" controls">
+                                            <input name="SingleLine" placeholder="Tu numero de pedido" class="form-control input-lg requiredField" type="text" id="itPedido" data-error-invalid="Invalid email address" data-error-empty="Ingrese numero de pedido">
+                                        </div>
+                                        <span id="helpBlock3" class="hidden help-block help-pedido">Escribe el numero de pedido</span>
                                     </div>
                                 </div>  
-                            </div>  
+                            </div>
                             <div class="form-group con">
-                                <label class="control-label">Mensaje</label>
+                                        <label class="control-label">Productos</label>
+                                        <div class=" controls">
+                                            <textarea name="MultiLine" placeholder="Tus productos" class="form-control input-lg requiredField" type="text" id="itProductos" data-error-invalid="Invalid email address" data-error-empty="Ingrese productos"></textarea>
+                                        </div>
+                                        <span id="helpBlock3" class="hidden help-block help-productos">Escribe los productos a devolver</span>
+                                    </div>
+                            <div class="form-group con">
+                                <label class="control-label">Razones</label>
                                 <div class="controls">
-                                    <textarea name="message" placeholder="Escribe tu mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                    <textarea name="MultiLine1" placeholder="Escribe tus razones de devolucion" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
                                 </div>
                                 <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Mensaje</span>
                             </div>
