@@ -271,6 +271,7 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
+    color: rgba(128, 128, 128, 0.79);
 }
 
 .firma-2 {
@@ -279,6 +280,7 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
+    color: rgba(128, 128, 128, 0.79);
 }
 
 .firma-3 {
@@ -287,6 +289,7 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
+    color: rgba(128, 128, 128, 0.79);
 }
 
 .form-group.footer{
@@ -422,6 +425,20 @@ hr.f-min-2 {
 .alme{
     margin-left: -23px;
 }
+
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content:  none;
+}
+
+.wer{
+     text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 200;
+}
+
 /*----------------------------------------------Responsive-----------------------------------*/
 
 @media (max-width: 991px){
