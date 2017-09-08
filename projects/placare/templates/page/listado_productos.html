@@ -30,6 +30,9 @@
     <script type="text/javascript">
         $(document).ready(function()
         {
+             // EXCLUSIVO PARA PLACARE
+            $("meta[name=title]").attr("content", "Placare - Listado Productos");
+            $("meta[name=description]").attr("content", "Colocar descripción");
 
             $(document).on("click", ".background-color-producto", function()
             {
@@ -71,6 +74,7 @@
             {
               $(".tag-header").html("Oferta");
             }
+
         });
     </script>
 
