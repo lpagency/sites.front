@@ -1,0 +1,85 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<!-- *contenido* -->
+<body id="lapimport">
+
+<section>
+ <div class="container"> 
+ <div class="col-md-12 col-sm-12 col-xs-12"> 
+   <div class="til-za {{editabletext}}" text-id="{{ site.name + '_texto_za' }}"> {{ read_text(site.name +  '_texto_za') }} </div>
+ </div>
+ </div>
+</section>
+
+ 
+ <section>
+ <div class="container"> 
+  <div align="center"> 
+    <div class="col-md-12 col-sm-12 col-xs-12">
+     <div style="position:relative;" class="pos">
+      {% if is_admin %}
+      <div class="image-upload lapiz visible-movil">
+       <label for="img_zapato_ingles_1">
+         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+       </label>
+       <input type="file" class="editableimage" image-id="{{ site.name }}_zapato_ingles_1" name="image" id="img_zapato_ingles_1" >
+     </div>
+     {% end %}
+
+     <a id="{{ site.name + '_zapato_ingles_1' }}" href="{{ read_link(site.name + '_zapato_ingles_1') }}">
+      <img id="{{ site.name }}_zapato_ingles_1" src="{{ read_image(site.name + '_zapato_ingles_1', 1) }}" onload="this.src='{{ read_image(site.name + '_zapato_ingles_1',) }}'" class="img-za" alt="item">
+    </a>
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_zapato_ingles_1' }}" content="{{ read_link(site.name + '_zapato_ingles_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+    {% end %}
+  </div>
+
+  <div align="center">
+   <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_zapato_ingles_1' }}"> {{ read_text(site.name +  '_t_zapato_ingles_1') }}</div>
+   <div class="text-box text-center {{editabletext}}" text-id="{{ site.name + '_t_zapato_ingles_2' }}"> {{ read_text(site.name +  '_t_zapato_ingles_2') }}</div>
+ </div>
+
+</div>
+</div>
+ </div>
+</section>
+
+
+
+
+
+</body>
+
+<div style="height:30%;"></div>
+
+
+{% include '../home/footer.html' %}
+{% end %}
+
+
