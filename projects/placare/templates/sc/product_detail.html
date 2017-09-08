@@ -166,8 +166,13 @@
                         $(this).off("touchmove");
                     });
                 });
+
+                // EXCLUSIVO PARA PLACARE
+                $("meta[name=title]").attr("content", product.bullet_1);
+                $("meta[name=description]").attr("content", product.bullet_2);
             }
         };
+
         $('.product-detail').ecommerce('product_detail', options);
 
         // productos relacionados
