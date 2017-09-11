@@ -140,6 +140,26 @@
             $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
         });
     </script>
+
+    <script type="text/javascript">
+                $(".carousel").on("touchstart", function(event){
+                    var xClick = event.originalEvent.touches[0].pageX;
+                    $(this).one("touchmove", function(event){
+                        var xMove = event.originalEvent.touches[0].pageX;
+                        if( Math.floor(xClick - xMove) > 5 ){
+                            $(".carousel").carousel('next');
+                        }
+                        else if( Math.floor(xClick - xMove) < -5 ){
+                            $(".carousel").carousel('prev');
+                        }
+                    });
+                    $(".carousel").on("touchend", function(){
+                        $(this).off("touchmove");
+                    });
+                });
+    </script>
+
+    
 <script type="text/template" id="product_detail">
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
