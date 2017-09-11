@@ -206,7 +206,7 @@
                 {{! sku }}
             </td>
             <td>
-            <div class="ellipsis multiline mumu" style="position: relative;left: 19px;text-align: left;width:265px;font-size: 12px;height: 21px;float: left;margin-top: 2px;">
+            <div class="ellipsis multiline mumu" style="position: relative;left: 58px;text-align: left;width: 407px;font-size: 12px;height: 21px;float: left;margin-top: 2px;">
                 {{! name }}
             </div>
             </td>
@@ -464,6 +464,26 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
+</script>
+
+<script type="text/javascript">
+
+$(".carousel").on("touchstart", function(event){
+    var xClick = event.originalEvent.touches[0].pageX;
+    $(this).one("touchmove", function(event){
+        var xMove = event.originalEvent.touches[0].pageX;
+        if( Math.floor(xClick - xMove) > 5 ){
+            $(".carousel").carousel('next');
+        }
+        else if( Math.floor(xClick - xMove) < -5 ){
+            $(".carousel").carousel('prev');
+        }
+    });
+    $(".carousel").on("touchend", function(){
+        $(this).off("touchmove");
+    });
+});
+
 </script>
 
     </body>

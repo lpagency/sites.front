@@ -100,9 +100,9 @@ $(document).ready(function(){
 </section>
 
 <section> 
-  <div class="container-fluid">
+  <div class="container">
   <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="texto-header-arti"> Home | Subcategorias </div>
+    <div class="texto-header-arti"> Home | Categorias </div>
   </div>
   </div>
 </section>
@@ -111,7 +111,7 @@ $(document).ready(function(){
 <!-- *********CINCO BANNER******** -->
 
 <section style="margin-bottom: 80px;">
- <div class="container-fluid" style="padding-right: 35px;">
+ <div class="container" style="">
   <div align="center">
      <div class="col-md-3 coli col-xs-6 col-sm-6">
       <div class="img-one" style="position:relative;">
@@ -198,23 +198,44 @@ $(document).ready(function(){
 
      </div>
 
-    <div class="col-md-3 coli col-xs-6 col-sm-6">
+  <div class="col-md-3 coli col-xs-6 col-sm-6">
       <div class="img-one" style="position:relative;">
         {% if is_admin %}
         <div class="image-upload lapiz visible-movil">
-         <label for="img_lin_5">
+         <label for="img_lin_55">
            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
          </label>
-         <input type="file" class="editableimage" image-id="{{ site.name }}_lin_5" name="image" id="img_lin_5" >
+         <input type="file" class="editableimage" image-id="{{ site.name }}_lin_55" name="image" id="img_lin_55" >
        </div>
        {% end %}
-       <a id="{{ site.name + '_lin_5' }}" href="{{ read_link(site.name + '_lin_5') }}">
-        <img id="{{ site.name }}_lin_5" src="{{ read_image(site.name + '_lin_5', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_5',) }}'" class="img-edit" alt="item">
+       <a id="{{ site.name + '_lin_55' }}" href="{{ read_link(site.name + '_lin_55') }}">
+        <img id="{{ site.name }}_lin_55" src="{{ read_image(site.name + '_lin_55', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_55',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
     {% if is_admin %}
-    <img class="change-image editablelink" link-id="{{ site.name + '_lin_5' }}" content="{{ read_link(site.name + '_lin_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+    <img class="change-image editablelink" link-id="{{ site.name + '_lin_55' }}" content="{{ read_link(site.name + '_lin_55') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+    {% end %}
+
+     </div>
+
+       <div class="col-md-3 coli col-xs-6 col-sm-6">
+      <div class="img-one" style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_lin_66">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_lin_66" name="image" id="img_lin_66" >
+       </div>
+       {% end %}
+       <a id="{{ site.name + '_lin_66' }}" href="{{ read_link(site.name + '_lin_66') }}">
+        <img id="{{ site.name }}_lin_66" src="{{ read_image(site.name + '_lin_66', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_66',) }}'" class="img-edit" alt="item">
+        </a> 
+    </div>
+
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_lin_66' }}" content="{{ read_link(site.name + '_lin_66') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
     {% end %}
 
      </div>
@@ -226,7 +247,7 @@ $(document).ready(function(){
 <!-- *****Section iconos grises********* -->
 
 <section style="margin-top: 14px;">
- <div class="container min">
+ <div class="container">
   <div class="box">
     <div align="center">
     <div class="col-md-2 col-xs-6">

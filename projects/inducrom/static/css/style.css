@@ -37,8 +37,8 @@ img.editablelink {
     margin-bottom: 17px;
 }
 
-.container.min {
-    width: 980px;
+.container {
+    width: 1260px;
 }
 
 .img-edit {
@@ -50,8 +50,8 @@ img.editablelink {
     margin-bottom: -60px;
 }
 
-.col-md-3.coli{
-   width: 20%;
+.col-md-3.coli {
+    width: 16%;
 }
 
 .fondo-form{
@@ -94,7 +94,7 @@ img.editablelink {
 }
 
 .fondo-contact {
-    width: 117%;
+    width: 107%;
     height: auto;
 }
 .titulo-about{
@@ -170,10 +170,10 @@ img.editablelink {
     border-radius: 0px;
 }
 
-#contenedor{
+/*#contenedor{
     padding-left: 20px;
     padding-right: 20px;
-}
+}*/
 
 .box-catag {
     width: 92%;
@@ -237,10 +237,16 @@ img.editablelink {
 .align-form-contact {
     padding-left: 0px;
     padding-right: 0px;
+    margin-left: 0%;
 }
 
-.container.min {
-    width: 750px;
+.container {
+    width: 100%;
+}
+
+.fondo-contact {
+    width: 100%;
+    height: auto;
 }
 
 }
@@ -250,7 +256,7 @@ img.editablelink {
         width: 50%;
     }
 
-    .container.min {
+    .container {
     width: 100%;
 }
 
@@ -269,6 +275,27 @@ img.editablelink {
     width: 100% \9;
     max-width: 100%;
     margin-bottom: -93px;
+}
+
+.texto-coti {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 0px;
+}
+
+}
+
+@media (max-width: 530px){
+    .texto-coti {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 40px;
 }
 
 }
