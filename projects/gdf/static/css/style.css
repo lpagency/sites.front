@@ -257,23 +257,16 @@ img.desaturada {
 }
 
 .paginacion {
-/*    margin: 20px 0;
-    margin: 4px 0;
-    letter-spacing: 2px;
-    font-weight: 100;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 0.8rem;
-    top: -25px;
-    margin-bottom: 2%;*/
     margin: 20px 0;
     margin: 4px 0;
     letter-spacing: 2px;
     font-weight: 100;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 0.8rem;
-    top: -25px;
-    margin-bottom: 2%;
+    top: -28px;
+    margin-bottom: -2%;
     width: 93%;
+    z-index: 100;
 }
  
 .paginacion ul {
@@ -761,7 +754,7 @@ div.upload input, div.image-upload input {
     top: 12%;
     color:rgba(204, 108, 78, 1);
     font-family: 'Open Sans', sans-serif;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .price.anterior-oferta-sale {
@@ -2872,14 +2865,15 @@ p.vol{
     top: -9px;
 }
 
-.ordena-nombre{
+.ordena-nombre {
     float: right;
     position: relative;
     left: -89px;
-    margin-top: -56px;
+    margin-top: -26px;
     color: gray;
     font-size: 13px;
     text-transform: lowercase;
+    bottom: 4px;
 }
 
 .centrado-mayo{
