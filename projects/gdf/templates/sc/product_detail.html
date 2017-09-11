@@ -124,10 +124,10 @@
                 'templateOrigin' : '#product_template_home',
                 'tag' : tag,
                 'ignore_stock' : true,
-                'onLoad':function()
-                {
+                'onLoad':function(){
                     // $('.ellipsis').ellipsis();
-                }
+                    // $(".ellipsis").dotdotdot();
+                 }
             };
             $('.product2').ecommerce('product_box', config);
         };
@@ -358,9 +358,6 @@
  <div class="clearfix"></div>
 </script>
 
-
-{% include '../product/product_home.html' %}
-{% include '../product/product_home2.html' %}
 
 {% end %}
 {% block body %} 
