@@ -105,6 +105,18 @@ $(document).ready(function()
 
                 $(".lo-sentimos").removeClass('hidden');
             }
+
+            var p;
+
+            for (p in products)
+            {
+                var n = products[p].tags.indexOf("colores");
+
+                if(n != -1)
+                {
+                    $("."+products[p].id).removeClass("hidden");
+                }
+            }
         }
     };
 
