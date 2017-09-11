@@ -76,8 +76,8 @@ img.editablelink {
     padding-left: 30px;
     padding-right: 30px;
 }
-.description-contact{
-    margin-top: 30px;
+.description-contact {
+    margin-top: -26px;
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 200;
@@ -200,6 +200,21 @@ img.editablelink {
     margin-top: -20px;
 }
 
+#mapa-contact{
+    width: 33%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 145px;
+}
+
+.top-map{
+    border: 1px solid gray;
+}
+
+.tell{
+    text-align: center;
+}
+
 /*------------------------------------------RESPONSIVE------------------------------------------*/
 @media (max-width: 1111px){
     .mobile{
@@ -249,6 +264,13 @@ img.editablelink {
     height: auto;
 }
 
+#mapa-contact {
+    width: 60%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 240px;
+}
+
 }
 
 @media (max-width: 767px){
@@ -288,6 +310,21 @@ img.editablelink {
 
 }
 
+@media (max-width: 700px){
+    .description-contact {
+    margin-top: 51px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 200;
+}
+#mapa-contact {
+    width: 100%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 290px;
+}
+
+}
 @media (max-width: 530px){
     .texto-coti {
     text-align: center;
