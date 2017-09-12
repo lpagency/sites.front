@@ -257,13 +257,17 @@
                         <div align="center">
                             <h1 class="name-detail" class="line" href="#">{{! name }}</h1>
                             <div align="center">
-                            <div class="col-md-2 col-sm-2 col-xs-12">
-                            <div class="product-price original-de">{{! main_price|money }} </div>
+                            <div class="col-md-12">
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                <div class="product-price original-de">{{! main_price|money }} </div>
+                                </div>
+                                <div class="col-md-2 col-sm-2 col-xs-12">
+                                <div class="product-price oferta-de"> {{! promotion_price|money }} </div>
                             </div>
-                            <div class="col-md-2 col-sm-2 col-xs-12">
-                            <div class="product-price oferta-de"> {{! promotion_price|money }} </div>
                             </div>
-                            </div>
+                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO </button>
+                        </div>
+                            
 
                      </div>
             </section>
