@@ -8,7 +8,7 @@ var checkout_url = $.environmentVar(
      'https://pay.loadingplay.com',
      'https://pay.loadingplay.com',
      'https://pay.loadingplay.com');
-var app_public = $.environmentVar(29,29,47);
+var app_public = $.environmentVar(29,47,47);
 
 var initMap = function(){
     $.ajax({
