@@ -10,7 +10,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/slick-1.8.0/slick/slick.css/>
 <style type="text/css">
 @media (max-width: 1199px){
     .fondo {
@@ -23,7 +23,7 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/slick-1.8.0/slick/slick.min.js></script>
 <script type="text/javascript">
 
     $(document).ready(function()
@@ -77,6 +77,8 @@
             }
         });
 
+        $(".carousel2").slick();
+
         // productos relacionados
         var related = function(tag)
         {
@@ -125,7 +127,7 @@
 
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
   
   $(document).ready(function()
   {
@@ -146,7 +148,7 @@
 });
   });
 
-</script>
+</script> -->
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -169,7 +171,7 @@
 
 <script type="text/template" id="product_detail">
 <div class="container-fluid">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
+<div id="myCarousel" class="carousel2 slide" data-ride="carousel">
     <!-- Indicators -->
 
     <!-- Wrapper for slides -->
