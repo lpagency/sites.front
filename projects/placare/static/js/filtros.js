@@ -1,228 +1,238 @@
-        $(document).ready(function()
+$(document).ready(function()
+{
+    window.z = 0;
+    var hyper = Utils.getUrlParameter('tag');
+    if(hyper == undefined)
+    {
+        hyper = "";
+    }
+    else
+    {
+        hyper = Utils.getUrlParameter('tag').split(',');
+    }
+
+    $(".limpiar").addClass("hidden");
+
+    window.listaTag = [];
+
+    var base_url = $.environmentVar(
+        'http://apibodegas.ondev.today/',
+        'http://apibodegas.ondev.today/',
+        'http://apibodegas.ondev.today/');
+    var checkout_url = $.environmentVar(
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today');
+    var app_public = $.environmentVar(33,33,33);
+
+    window.config = {
+        'app_public': app_public,
+        'base_url': base_url,
+        'products_per_page' : 9, 
+        'tag': '',
+        'ignore_stock': false,
+        'infinite_scroll': true,
+        // 'maxProducts': 100,
+        'checkout_url': checkout_url, 
+        'operator' :'or',
+        'onLoad': function(products) 
         {
-            window.z = 0;
-            var hyper = Utils.getUrlParameter('tag');
-            if(hyper == undefined){
-                hyper = "";
-            }else{
-                hyper = Utils.getUrlParameter('tag').split(',');
-            }
-
-            $(".limpiar").addClass("hidden");
-
-            window.listaTag = [];
-
-        var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/');
-        var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(33,33,33);
-
-            window.config = {
-                    'app_public': app_public,
-                    'base_url': base_url,
-                    'products_per_page' : 9, 
-                    'tag': '',
-                    'ignore_stock': false,
-                    'infinite_scroll': true,
-                    // 'maxProducts': 100,
-                    'checkout_url': checkout_url, 
-                    'operator' :'or',
-                    'onLoad': function(products) 
-                    {
 
 
-                        $(".letrero-nuevo").each(function(){
-                            var tags = $(this).attr("nuevo");
-                            if(tags.search("nuevo") != -1){
-                                $(this).removeClass("hidden");
-                            }
-                        });
-
-                        window.z = products.length + z;
-                        var h =" - "+z.toString()+" Items";
-
-                        $(".descuento-lis").each(function()
-                            {
-                                var main = $(this).attr("main-price");
-                                var promotion = $(this).attr("promotion-price");
-
-                                if(promotion != 0){
-                                    var resta = Math.trunc((main - promotion)*100/main);
-                                    $(this).removeClass("hidden");
-                                    $(this).html("("+resta+"%)");
-                                }
-
-                            });
-
-                        $(".oferta").each(function()
-                            {
-                            if($(this).attr("promotion-price") != 0)
-                            {
-                                $(this).removeClass("hidden");
-                            }
-                        });
-
-                        $(".original-tachado").each(function()
-                            {
-                            if($(this).attr("promotion-price") != 0)
-                            {
-                                $(this).removeClass("hidden");
-                            }
-                        });
-
-                        $(".original").each(function()
-                            {
-                            if($(this).attr("promotion-price") != 0)
-                            {
-                                $(this).addClass("hidden");
-                            }
-                        });
-
-                        $(".letrero-sale").each(function()
-                            {
-                            if($(this).attr("promotion-price") != 0)
-                            {
-                                $(this).removeClass("hidden");
-                            }
-                        });
-
-                        $(".tag-header2").html(h);
-                    }
-            };
-
-            //<-------------ORDENAR MAYOR, MENOR Y POR NOMBRE------------->
-
-            $(document).on("click", ".mayor", function(ev)
+            $(".letrero-nuevo").each(function()
             {
-                ev.preventDefault();
-                config.column = "main_price";
-                config.direction = "desc";
-
-                $('.products').html("");
-                $('.products').ecommerce("destroy");
-
-                $('.products').ecommerce(config);
-
-                return false;
-
+                var tags = $(this).attr("nuevo");
+                if(tags.search("nuevo") != -1)
+                {
+                    $(this).removeClass("hidden");
+                }
             });
 
+            window.z = products.length + z;
+            var h =" - "+z.toString()+" Items";
 
-            $(document).on("click", ".menor", function(ev)
+            $(".descuento-lis").each(function()
             {
-                ev.preventDefault();
-                config.column = "main_price";
-                config.direction = "asc";
+                var main = $(this).attr("main-price");
+                var promotion = $(this).attr("promotion-price");
 
-                $('.products').html("");
-                $(document).ecommerce("destroy");
-
-                $(document).ecommerce(config);
-
-                return false;
+                if(promotion != 0)
+                {
+                    var resta = Math.trunc((main - promotion)*100/main);
+                    $(this).removeClass("hidden");
+                    $(this).html("("+resta+"%)");
+                }
 
             });
 
-            $(document).on("click", ".nombre", function(ev)
+            $(".oferta").each(function()
             {
-                ev.preventDefault();
-                config.column = "name";
-                config.direction = "asc";
-
-                $('.products').html("");
-                $(document).ecommerce("destroy");
-
-                $(document).ecommerce(config);
-
-                return false;
-
+                if($(this).attr("promotion-price") != 0)
+                {
+                    $(this).removeClass("hidden");
+                }
             });
 
-            //<-------------END ORDENAR MAYOR, MENOR Y POR ORDEN------------->
-            try
+            $(".original-tachado").each(function()
             {
-                listaTag = Utils.getUrlParameter('tag').split(',');
-                window.onload = TagURL(listaTag);
-            }
-            catch (ex)
+                if($(this).attr("promotion-price") != 0)
+                {
+                    $(this).removeClass("hidden");
+                }
+            });
+
+            $(".original").each(function()
             {
-                listaTag = [];
-                window.onload = TagURL(listaTag);
-            }
-            config.tag = listaTag.join(',');
-            $('.products').ecommerce(config);
+                if($(this).attr("promotion-price") != 0)
+                {
+                    $(this).addClass("hidden");
+                }
+            });
 
-            $(document).ecommerce(config);
-
-            $(".limpiar").click(function()
+            $(".letrero-sale").each(function()
             {
-                limpiar(config, hyper);
+                if($(this).attr("promotion-price") != 0)
+                {
+                    $(this).removeClass("hidden");
+                }
             });
 
-            $(document).on("click", ".variables1", function(ev){
+            $(".tag-header2").html(h);
+        }
+    };
 
-                ev.preventDefault();
-                var variable = $(this).attr("tag");
-                $(this).removeClass("activo");
-                $(".c-"+variable).removeClass("hidden");
+    //<-------------ORDENAR MAYOR, MENOR Y POR NOMBRE------------->
 
-                $(".c-variable_2").addClass('hidden');
-                $(".c-variable_3").addClass('hidden');
-                $(".c-variable_4").addClass('hidden');
+    $(document).on("click", ".mayor", function(ev)
+    {
+        ev.preventDefault();
+        config.column = "main_price";
+        config.direction = "desc";
 
-                $(".vari").css("margin-bottom", "5%");
+        $('.products').html("");
+        $('.products').ecommerce("destroy");
 
-            });
+        $('.products').ecommerce(config);
 
-            $(document).on("click", ".variables2", function(ev){
+        return false;
 
-                ev.preventDefault();
-                var variable = $(this).attr("tag");
-                $(this).removeClass("activo");
-                $(".c-"+variable).removeClass("hidden");
+    });
 
-                $(".c-variable_1").addClass('hidden');
-                $(".c-variable_3").addClass('hidden');
-                $(".c-variable_4").addClass('hidden');
 
-                $(".vari").css("margin-bottom", "5%");
+    $(document).on("click", ".menor", function(ev)
+    {
+        ev.preventDefault();
+        config.column = "main_price";
+        config.direction = "asc";
 
-            });
+        $('.products').html("");
+        $(document).ecommerce("destroy");
 
-            $(document).on("click", ".variables3", function(ev){
+        $(document).ecommerce(config);
 
-                ev.preventDefault();
-                var variable = $(this).attr("tag");
-                $(this).removeClass("activo");
-                $(".c-"+variable).removeClass("hidden");
+        return false;
 
-                $(".c-variable_2").addClass('hidden');
-                $(".c-variable_1").addClass('hidden');
-                $(".c-variable_4").addClass('hidden');
+    });
 
-                $(".vari").css("margin-bottom", "5%");
+    $(document).on("click", ".nombre", function(ev)
+    {
+        ev.preventDefault();
+        config.column = "name";
+        config.direction = "asc";
 
-            });
+        $('.products').html("");
+        $(document).ecommerce("destroy");
 
-            $(document).on("click", ".variables4", function(ev){
+        $(document).ecommerce(config);
 
-                ev.preventDefault();
-                var variable = $(this).attr("tag");
-                $(this).removeClass("activo");
-                $(".c-"+variable).removeClass("hidden");
+        return false;
 
-                $(".c-variable_2").addClass('hidden');
-                $(".c-variable_1").addClass('hidden');
-                $(".c-variable_3").addClass('hidden');
+    });
 
-                $(".vari").css("margin-bottom", "5%");
+    //<-------------END ORDENAR MAYOR, MENOR Y POR ORDEN------------->
+    try
+    {
+        listaTag = Utils.getUrlParameter('tag').split(',');
+        window.onload = TagURL(listaTag);
+    }
+    catch (ex)
+    {
+        listaTag = [];
+        window.onload = TagURL(listaTag);
+    }
+    config.tag = listaTag.join(',');
+    $('.products').ecommerce(config);
 
-            });
+    $(document).ecommerce(config);
+
+    $(".limpiar").click(function()
+    {
+        limpiar(config, hyper);
+    });
+
+    $(document).on("click", ".variables1", function(ev)
+    {
+
+        ev.preventDefault();
+        var variable = $(this).attr("tag");
+        $(this).removeClass("activo");
+        $(".c-"+variable).removeClass("hidden");
+
+        $(".c-variable_2").addClass('hidden');
+        $(".c-variable_3").addClass('hidden');
+        $(".c-variable_4").addClass('hidden');
+
+        $(".vari").css("margin-bottom", "5%");
+
+    });
+
+    $(document).on("click", ".variables2", function(ev)
+    {
+
+        ev.preventDefault();
+        var variable = $(this).attr("tag");
+        $(this).removeClass("activo");
+        $(".c-"+variable).removeClass("hidden");
+
+        $(".c-variable_1").addClass('hidden');
+        $(".c-variable_3").addClass('hidden');
+        $(".c-variable_4").addClass('hidden');
+
+        $(".vari").css("margin-bottom", "5%");
+
+    });
+
+    $(document).on("click", ".variables3", function(ev)
+    {
+
+        ev.preventDefault();
+        var variable = $(this).attr("tag");
+        $(this).removeClass("activo");
+        $(".c-"+variable).removeClass("hidden");
+
+        $(".c-variable_2").addClass('hidden');
+        $(".c-variable_1").addClass('hidden');
+        $(".c-variable_4").addClass('hidden');
+
+        $(".vari").css("margin-bottom", "5%");
+
+    });
+
+    $(document).on("click", ".variables4", function(ev)
+    {
+
+        ev.preventDefault();
+        var variable = $(this).attr("tag");
+        $(this).removeClass("activo");
+        $(".c-"+variable).removeClass("hidden");
+
+        $(".c-variable_2").addClass('hidden');
+        $(".c-variable_1").addClass('hidden');
+        $(".c-variable_3").addClass('hidden');
+
+        $(".vari").css("margin-bottom", "5%");
+
+    });
 
 
 });
@@ -254,8 +264,10 @@ function uncheck(tag, value)
 
         $(".texto-ruta").html(textoRuta);
 
-        for(x in window.listaTag){
-            if(window.listaTag[x] == nombre2){
+        for(x in window.listaTag)
+        {
+            if(window.listaTag[x] == nombre2)
+            {
                 window.listaTag.splice(x,1);
                 window.config.tag =window.listaTag.toString();
             }
@@ -279,8 +291,10 @@ function uncheck(tag, value)
 
         $(".texto-ruta").html(textoRuta);
 
-        for(x in window.listaTag){
-            if(window.listaTag[x] == nombre2){
+        for(x in window.listaTag)
+        {
+            if(window.listaTag[x] == nombre2)
+            {
                 window.listaTag.splice(x,1);
                 window.config.tag =window.listaTag.toString();
             }
@@ -306,8 +320,8 @@ function check(tag, value)
 
         var nombre = tag;
         var block = 
-                            '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
@@ -340,8 +354,8 @@ function check(tag, value)
         var nombre = tag;
         var va = value;
         var block = 
-                            '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
@@ -392,8 +406,8 @@ function TagURL(listaTag)
                 var nombre = $(b).attr("tag");
                 var va = $(b).attr("value");
                 var block =
-                    '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                            +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                        '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                        +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
                 var classNombre = "." + nombre;
                 var textoRuta = $(".texto-ruta").html();
@@ -403,27 +417,31 @@ function TagURL(listaTag)
                 $(b).attr("checked", true);
                 $(".ch-"+nombre).removeClass("hidden");
 
-                if($(".ch-"+nombre).hasClass("c-variable_uno")){
+                if($(".ch-"+nombre).hasClass("c-variable_uno"))
+                {
                     $(".c-variable_1").removeClass("hidden");
                     $(".c-variable_2").addClass("hidden");
                     $(".c-variable_3").addClass("hidden");
                     $(".c-variable_4").addClass("hidden");
                 }
-                if($(".ch-"+nombre).hasClass("c-variable_dos")){
+                if($(".ch-"+nombre).hasClass("c-variable_dos"))
+                {
                     $(".c-variable_2").removeClass("hidden");
                     $(".c-variable_1").addClass("hidden");
                     $(".c-variable_3").addClass("hidden");
                     $(".c-variable_4").addClass("hidden");
 
                 }
-                if($(".ch-"+nombre).hasClass("c-variable_tres")){
+                if($(".ch-"+nombre).hasClass("c-variable_tres"))
+                {
                     $(".c-variable_3").removeClass("hidden");
                     $(".c-variable_2").addClass("hidden");
                     $(".c-variable_1").addClass("hidden");
                     $(".c-variable_4").addClass("hidden");
                 }
 
-                if($(".ch-"+nombre).hasClass("c-variable_cuatro")){
+                if($(".ch-"+nombre).hasClass("c-variable_cuatro"))
+                {
                     $(".c-variable_4").removeClass("hidden");
                     $(".c-variable_2").addClass("hidden");
                     $(".c-variable_1").addClass("hidden");
@@ -443,8 +461,8 @@ function TagURL(listaTag)
 
                     var nombre = $(b).attr("tag");
                     var block =
-                        '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+                            '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                            +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
 
                     var classNombre = "." + nombre;
                     var textoRuta = $(".texto-ruta").html();
@@ -513,8 +531,10 @@ function borrar(nombre,value)
         textoRuta = textoRuta.replace(" / "+nombre, "");
         $(".texto-ruta").html(textoRuta);
 
-        for(x in window.listaTag){
-            if(window.listaTag[x] == nombre2){
+        for(x in window.listaTag)
+        {
+            if(window.listaTag[x] == nombre2)
+            {
                 window.listaTag.splice(x,1);
                 window.config.tag =window.listaTag.toString();
             };
@@ -535,8 +555,10 @@ function borrar(nombre,value)
         textoRuta = textoRuta.replace(" / "+value, "");
         $(".texto-ruta").html(textoRuta);
 
-        for(x in window.listaTag){
-            if(window.listaTag[x] == nombre2){
+        for(x in window.listaTag)
+        {
+            if(window.listaTag[x] == nombre2)
+            {
                 window.listaTag.splice(x,1);
                 window.config.tag =window.listaTag.toString();
             };
