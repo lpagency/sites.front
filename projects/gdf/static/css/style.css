@@ -2269,11 +2269,11 @@ hr.derecha{
     -o-transition: all 0.5s ease 0s;
 }
 
-.modal-dialog.carrito{
+.modal-dialog.carrito {
     margin-top: 93px;
     float: right;
-    /*left: 123px;*/
-    left: 151px;
+    left: 38%;
+    width: auto;
 }
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
@@ -2284,36 +2284,29 @@ hr.derecha{
     width: 100%;
 }
 
-.img-cart-modal{
+.img-cart-modal {
     position: relative;
     top: 0;
-    left: -0.5580357143%;
+    left: 0px;
     z-index: 68;
-    width: 94px;
-    height: 94px;
-    margin-bottom: 5px;
+    width: 65px;
+    height: 65px;
+    margin-bottom: 16px;
     margin-top: 5px;
 }
 
-td.color-car {
-    top: 50px;
-    position: relative;
-    left: -54px;
-    text-align: right;
-}
-
 td.color-car{
-    top: 51px;
+    top: 44px;
     position: relative;
-    left: -46px;
+    left: 25px;
     text-align: right;
     font-size: 10px;
 }
 
 td.talla-car {
-    top: 35px;
+    top: 29px;
     position: relative;
-    left: -18px;
+    left: 54px;
     text-align: right;
     font-size: 10px;
 }
@@ -2321,14 +2314,15 @@ td.talla-car {
 .name-car {
     width: 69px;
     position: relative;
-    right: -65px;
+    left: 93px;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
-    top: 16px;
-    font-weight: 500;
+    top: 9px;
+    font-weight: 700;
     /* -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
     font-size: 11px;
+    text-align: right;
 }
 
 td.cantidad-car{
@@ -2341,19 +2335,19 @@ td.cantidad-car{
 
 td.money.uno{
     position: relative;
-    top: 67px;
-    left: 18px;
+    top: 62px;
+    left: -19px;
     color: rgba(204, 108, 78, 1);
     text-align: right;
     font-size: 10px;
+    margin-bottom: 10px;
 }
 
 a.two {
     font-size: 14px;
     position: relative;
-    top: 13px;
-    left: -42px;
-
+    top: 6px;
+    left: -2px;
 }
 
 .fa-trash{
@@ -3686,7 +3680,9 @@ hr.detalle {
 }
 
 a.two {
-    left: 0px;
+    left: -18px;
+    top: 15px;
+    color: rgba(128, 128, 128, 0.47) !important;
 }
 
 td.name-car {
@@ -3697,20 +3693,21 @@ td.name-car {
 }
 
 td.money.uno {
-    left: 15px;
+    left: -154px;
     text-align: left;
-    top: 81px;
+    top: 104px;
+    font-size: 13px;
 }
 
 td.talla-car {
-    left: -19px;
+    left: -61px;
     float: left;
     text-align: left;
     top: 44px;
 }
 
 td.color-car {
-    left: -9px;
+    left: -60px;
     float: left;
     text-align: left;
     top: 45px;
@@ -4176,7 +4173,7 @@ li.dropdown-submenu.x4 {
     background-color: transparent !important;
     color: rgba(204, 108, 78, 1) !important;
     border-radius: 0px; 
-    height: 33px;
+    height: 50px !important;
     float: left;
     width: 100%;
     border: 1px solid rgba(204, 108, 78, 1) !important;
@@ -4190,7 +4187,7 @@ li.dropdown-submenu.x4 {
     background-color: rgba(204, 108, 78, 1) !important;
     color: white !important;
     border-radius: 0px;
-    height: 33px;
+    height: 50px;
     float: left;
     width: 100%;
     border: 1px solid rgba(204, 108, 78, 1) !important;
@@ -4223,6 +4220,40 @@ tr.ver {
     position: relative;
     top: 23px;
     text-decoration: underline !important;
+}
+
+.name-car {
+    width: 69px;
+    position: relative;
+    left: 8px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 24px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    text-align: left;
+}
+
+.can{
+    position: relative;
+    top: 76px;
+    text-align: left;
+    right: 97px;
+    font-size: 11px;
+}
+
+.k-1{
+    padding: 0px;
+    padding-right: 0px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.k-2{
+    padding: 0px;
 }
 
 }
@@ -4335,12 +4366,6 @@ td.tot {
 
 }
 
-@media (max-width: 630px){
-    a.two {
-    left: 0px;
-}
-
-}
 
 @media (max-width: 620px){
 .nombre-tag {
@@ -5410,11 +5435,7 @@ img.little-2 {
 }
 
 @media (max-width: 320px){
-.modal-dialog.carrito {
-    margin-top: 93px;
-    float: right;
-    left: 3px;
-}
+
 .nombre-categoria {
     text-align: left;
     margin-top: -22px;
@@ -5522,6 +5543,52 @@ img.little-2 {
     margin-bottom: 20px;
 }
 
+a.two {
+    left: -37px;
+    top: 15px;
+}
+
+.name-car {
+    width: 69px;
+    position: relative;
+    left: 24px;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 24px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 11px;
+    text-align: left;
+}
+
+td.talla-car {
+    left: -46px;
+    float: left;
+    text-align: left;
+    top: 44px;
+}
+
+td.color-car {
+    left: -46px;
+    float: left;
+    text-align: left;
+    top: 45px;
+}
+.can {
+    position: relative;
+    top: 76px;
+    text-align: left;
+    right: 84px;
+    font-size: 11px;
+}
+
+td.money.uno {
+    left: -141px;
+    text-align: left;
+    top: 104px;
+    font-size: 13px;
+}
 
 }
 
