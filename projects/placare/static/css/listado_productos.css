@@ -1048,6 +1048,7 @@ a.variables:active{
     width: 109%;
     height: 275px;
     margin-bottom:7px;
+    border: 1px solid white;
 }
 
 .conti:hover {
@@ -1087,6 +1088,10 @@ a.variables:active{
 }
 */
 .conti:hover .middle {
+  opacity: 1;
+}
+
+.conti-de:hover .middle {
   opacity: 1;
 }
 
@@ -1150,7 +1155,7 @@ input[type=radio], input[type=checkbox] {
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    margin: 16px -11px -35px;
+    margin: 16px -11px -114px;
     height: 100%;
 }
 

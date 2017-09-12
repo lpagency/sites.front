@@ -4,6 +4,12 @@ html {
   overflow-x: hidden;
 }
 
+.modal-header {
+    min-height: 16.43px;
+    padding: 15px;
+    border-bottom: 1px solid transparent; 
+}
+
 .fade{
     background: transparent;
 }
@@ -22,26 +28,25 @@ html {
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    margin: 0 0 17px;
+    margin: -4px 0 17px;
     margin-left: 19px;
     font-style: italic;
-    color: gray;
+    color: #5b5153;
 }
 
-.colores-dispo{
-    
+.colores-dispo {
     font-style: italic;
     font-size: 12px;
     margin-top: 1px;
     text-align: center;
+    color: rgb(91,81,83);
 }
-
 .modal-content.car {
     border-radius: 0px;
     border: 1px solid rgba(128, 128, 128, 0.73);
     box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 44%;
-    overflow-x: hidden;
+    width: 27%;
+    /* overflow-x: hidden; */
 }
 
 .modal-title {

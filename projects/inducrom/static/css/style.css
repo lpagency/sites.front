@@ -37,8 +37,8 @@ img.editablelink {
     margin-bottom: 17px;
 }
 
-.container.min {
-    width: 980px;
+.container {
+    width: 1260px;
 }
 
 .img-edit {
@@ -50,8 +50,8 @@ img.editablelink {
     margin-bottom: -60px;
 }
 
-.col-md-3.coli{
-   width: 20%;
+.col-md-3.coli {
+    width: 16%;
 }
 
 .fondo-form{
@@ -76,8 +76,8 @@ img.editablelink {
     padding-left: 30px;
     padding-right: 30px;
 }
-.description-contact{
-    margin-top: 30px;
+.description-contact {
+    margin-top: -26px;
     margin-bottom: 30px;
     font-size: 25px;
     font-weight: 200;
@@ -94,7 +94,7 @@ img.editablelink {
 }
 
 .fondo-contact {
-    width: 117%;
+    width: 107%;
     height: auto;
 }
 .titulo-about{
@@ -153,7 +153,7 @@ img.editablelink {
     margin-bottom: 15px;
     width: 87%;
     position: relative;
-    top: 38px;
+    top: 26px;
     z-index: 1000;
     border-radius: 0px;
 }
@@ -165,15 +165,15 @@ img.editablelink {
     margin-bottom: 15px;
     width: 87%;
     position: relative;
-    top: 38px;
+    top: 26px;
     z-index: 1000;
     border-radius: 0px;
 }
 
-#contenedor{
+/*#contenedor{
     padding-left: 20px;
     padding-right: 20px;
-}
+}*/
 
 .box-catag {
     width: 92%;
@@ -198,6 +198,27 @@ img.editablelink {
     color: gray;
     font-weight: 200;
     margin-top: -20px;
+}
+
+#mapa-contact{
+    width: 33%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 145px;
+}
+
+.top-map{
+    border: 1px solid gray;
+}
+
+.tell{
+    text-align: center;
+}
+
+img.lugar{
+    float: left;
+    position: relative;
+    left: 37%;
 }
 
 /*------------------------------------------RESPONSIVE------------------------------------------*/
@@ -237,10 +258,23 @@ img.editablelink {
 .align-form-contact {
     padding-left: 0px;
     padding-right: 0px;
+    margin-left: 0%;
 }
 
-.container.min {
-    width: 750px;
+.container {
+    width: 100%;
+}
+
+.fondo-contact {
+    width: 100%;
+    height: auto;
+}
+
+#mapa-contact {
+    width: 60%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 240px;
 }
 
 }
@@ -250,7 +284,7 @@ img.editablelink {
         width: 50%;
     }
 
-    .container.min {
+    .container {
     width: 100%;
 }
 
@@ -271,6 +305,42 @@ img.editablelink {
     margin-bottom: -93px;
 }
 
+.texto-coti {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 0px;
+}
+
+}
+
+@media (max-width: 700px){
+    .description-contact {
+    margin-top: 51px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 200;
+}
+#mapa-contact {
+    width: 100%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 290px;
+}
+
+}
+@media (max-width: 530px){
+    .texto-coti {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 40px;
+}
+
 }
 
 @media (max-width: 414px){
@@ -281,6 +351,13 @@ img.editablelink {
     width: 100% \9;
     max-width: 100%;
     margin-bottom: -130px;
+}
+
+#mapa-contact {
+    width: 100%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 105px;
 }
 
 }

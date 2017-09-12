@@ -1,4 +1,4 @@
-+<script type="text/template" id="product_template_home" class="hidden">
+<script type="text/template" id="product_template_home" class="hidden">
 <div class="col-md-2 col-sm-2 col-xs-6 product-box hidden-xs visible-lg visible-sm visible-md" main-price="{{! main_price }}" promotion-price="{{! promotion_price }}" >
   <a class="" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
     <div class="conti-de">
@@ -8,7 +8,8 @@
       <div class="up-ex ellipsis multiline">{{! brand }} </div>
       <div class="inf ellipsis multiline">{{! name }}</div>
       <div class="product-price original" promotion-price="{{! promotion_price }}" >{{! main_price|money }} </div>
-      <div class="product-price hidden oferta" promotion-price="{{! promotion_price }}">{{! promotion_price|money }} </div>
+      <div class="product-price hidden oferta" promotion-price="{{! promotion_price }}">{{! promotion_price|money }} 
+      </div>
       <div class="product-price hidden original-tachado" promotion-price="{{! promotion_price }}">{{! main_price|money }} </div>
       <div class="product-price hidden descuento-lis" main-price="{{! main_price }}" promotion-price="{{! promotion_price }}"></div> 
       <div class="middle">
