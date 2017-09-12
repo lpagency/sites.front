@@ -3806,6 +3806,7 @@ a.nombre-tag{
     position: relative;
     padding-top: 7px;
     border: 1px solid #D16B52 !important;
+    margin-left: 1px;
 }
 
 .btn-default-fil {
@@ -3818,7 +3819,8 @@ a.nombre-tag{
     position: relative;
     padding-top: 4px;
     margin-bottom: 3px;
-    border-color: #D16B52 ;
+    border-color: #D16B52;
+    margin-left: 0px;
 }
 
 .m-ordenar {
@@ -4035,7 +4037,7 @@ td.money.lib {
     display: none;
     float: left;
     width: 100%;
-    padding: 5px 0;
+    padding: 0;
     margin: 2px 0 0;
     font-size: 14px;
     text-align: left;
@@ -4050,14 +4052,14 @@ td.money.lib {
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
 }
 
-.fa-caret-down.mibi{
+.fa-caret-down.mibi {
     position: relative;
     float: right;
     margin-bottom: -15px;
-    top: 4px;
+    top: -7px;
     cursor: pointer;
-    z-index:-1;
-    left: 0px;
+    z-index: -1;
+    left: -22px;
     color: rgba(204, 108, 78, 1);
 }
 
@@ -4071,6 +4073,7 @@ td.money.lib {
     display: inline-block;
     padding: 0px;
     border-top: 0px solid transparent;
+    margin-top: -28px;
 }
 
 .dropdown-menu.gri {
@@ -4097,8 +4100,9 @@ td.money.lib {
 }
 
 li.dropdown-submenu.x4 {
-    height: 34px;
-    margin-top: 10px;
+    margin-top: 3% !important;
+    margin-bottom: 7px !important;
+   /* border-bottom: 1px solid rgba(128, 128, 128, 0.42);*/
 }
 
 .dropdown-menu.color {
@@ -4254,6 +4258,12 @@ tr.ver {
 
 .k-2{
     padding: 0px;
+}
+
+.lim {
+    padding: 0px;
+    margin-top: -7px;
+    margin-bottom: -1px;
 }
 
 }
@@ -5219,6 +5229,12 @@ img.little-2 {
     margin-top: -38px;
     margin-bottom: -33px;
     top: 28px;
+}
+
+.lim {
+    padding: 0px;
+    margin-top: -9px;
+    margin-bottom: -1px;
 }
 
 }
