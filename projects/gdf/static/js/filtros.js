@@ -35,8 +35,8 @@ function check(tag, value)
         if(value == undefined)
         {
             block = 
-                '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre + '(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
+                '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre + '&nbsp(<p class="fa-'+nombre
+                +'" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer; float: right;">X)</p></div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -50,8 +50,8 @@ function check(tag, value)
         else
         {
             block = 
-                '<div class="'+ nombre +'">'+ value +'(<i class="fa fa-times fa-'+nombre
-                +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
+                '<div class="'+ nombre +'">'+ value +'&nbsp(<p class="fa-'+nombre
+                +'" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer; float: right;">X)</p></div>';
 
             var classNombre = "."+nombre;
             var nombre2 = "+"+nombre;
@@ -85,8 +85,8 @@ function checkTallas(tag)
     var block = "";
 
     block = 
-        '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre +'(<i class="fa fa-times fa-'+nombre
-        +'" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer"></i>)</div>';
+        '<div class="'+ nombre +'" style="padding-right:10px;">'+ nombre +'&nbsp(<p class="fa-'+nombre
+        +'" onclick="borrar('+"'"+nombre+"'"+')" style="cursor:pointer; float: right">X)</p></div>';
 
         var classNombre = "."+nombre;
         var nombre2 = "+"+nombre;
