@@ -269,7 +269,11 @@ a.rojo{
     padding: 6px 23px;
 }
 
-
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: white;
+    background-color: transparent;
+    border-color: transparent;
+}
 
 /*---------------------------------------RESPONSIVE------------------------------------------------*/
 @media (max-width: 1191px){
@@ -598,7 +602,7 @@ a.rojo{
     background-color: transparent;
     border-color: transparent;
     padding: 6px 23px;
-    font-weight: 200;
+    font-weight: 100;
     font-size: 17px;
     width: 100%;
     left: 18px;
