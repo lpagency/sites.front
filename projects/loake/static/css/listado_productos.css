@@ -111,8 +111,12 @@ div.image-upload.part1 {
 
 
 .img_prod_detail:hover{
-    transform:scale(1.4);
-    left: -9%;
+    max-width: 490px;
+    transform:scale(1.2);
+    transition: 1.6s ease;
+    -moz-transition: 1.6s ease; /* Firefox */
+    -webkit-transition: 1.6s ease; /* Chrome - Safari */
+    -o-transition: 1.6s ease; /* Opera */
 }
 
 .img_prod_little {
