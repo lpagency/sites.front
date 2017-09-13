@@ -1153,7 +1153,7 @@ hr.hr-pro {
     font-size: 20px;
     -ms-transform: scaleY(1.2);
     -moz-transform: scaleY(1.2);
-    -webkit-transform: scaleX(1.2);
+    -webkit-transform: scaleX(1.6);
     -o-transform: scaleY(1.2);
     font-weight: 400;
     color: rgba(0, 0, 0, 0.72);
@@ -1327,7 +1327,7 @@ a.partes:hover {
     max-width: 133px;
     float: left;
     left: 0%;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 .up-ex {
@@ -1849,7 +1849,9 @@ a.partes:hover {
 }
 
 .inf {
-    width: 77%;
+    width: 82%;
+    bottom: 27px;
+    font-size: 8px;
 }
 
 .texto-header-pro-2 {
@@ -1973,9 +1975,6 @@ a.subcateg:hover {
 
 
 @media (max-width: 400px){
-.inf {
-    width: 76%;
-}
 
 .menos {
     float: left;
@@ -2007,10 +2006,6 @@ td.mumu-3 {
     /* height: 75px; */
 }
 
-.inf {
-    width: 75%;
-}
-
 .inf-rel {
     width: 81%;
     height: 37px;
@@ -2030,9 +2025,6 @@ td.mumu-3 {
     width: 80%;
 }
 
-.inf {
-    width: 73%;
-}
 
 .inf-rel {
     width: 80%;
@@ -2091,7 +2083,6 @@ td.mumu-3 {
 }
 
 .inf {
-    width: 69%;
     font-size: 7px;
 }
 
