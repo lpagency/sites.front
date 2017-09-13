@@ -11,9 +11,10 @@
 
 {% block javascript %}
 
-<script type="text/javascript">
-
-</script>
+    <script type="text/javascript">
+      var demoTrigger = document.querySelector('.demo-trigger');
+      new Luminous(demoTrigger);
+    </script>
 {% end %}
 
 
@@ -49,67 +50,6 @@
  
 </section>
 
- <section>
-   <div class="container-fluid">
-    <div class="clearfix-dos"> </div>
-         <div class="col-md-6 col-xs-12">
-             <div alig="center">
-               <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
-                 {% if is_admin %}
-        <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_cat_3">
-                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
-        </div>
-        {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
-               <!--  <p class="inf">{{! name }}</p> -->
-                </a>
-              </div>
-          </div>   
-          <div class="col-md-6 col-xs-12">
-             <div alig="center">
-               <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
-                 {% if is_admin %}
-        <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_cat_3">
-                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
-        </div>
-        {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
-               <!--  <p class="inf">{{! name }}</p> -->
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
-                </a>
-              </div>
-          </div> 
-          <div class="col-md-6 col-xs-12">
-             <div alig="center">
-               <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
-                 {% if is_admin %}
-        <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_cat_3">
-                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
-        </div>
-        {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
-               <!--  <p class="inf">{{! name }}</p> -->
-               <!--  <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
-                <p class="inf">{{! name }}</p>
-                </a>
-              </div>
-          </div> 
-
-
-    </div>
-</section>
 
 
 </body>

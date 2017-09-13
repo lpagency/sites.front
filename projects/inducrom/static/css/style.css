@@ -211,8 +211,9 @@ img.editablelink {
     border: 1px solid gray;
 }
 
-.tell{
+.tell {
     text-align: center;
+    color: rgba(84, 84, 84, 0.79);
 }
 
 img.lugar{
@@ -221,10 +222,19 @@ img.lugar{
     left: 37%;
 }
 
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: -19px;
+    margin-bottom: 23px;
+    right: 164px;
+}
+
 /*------------------------------------------RESPONSIVE------------------------------------------*/
 @media (max-width: 1111px){
     .mobile{
        margin-top: -83px !important;
+       margin-bottom: -58px !important;
     }
 
     .fondo-form{
@@ -277,6 +287,29 @@ img.lugar{
     margin-bottom: 240px;
 }
 
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
 }
 
 @media (max-width: 767px){
@@ -290,6 +323,7 @@ img.lugar{
 
 .mobile {
     margin-top: 0px !important;
+    margin-bottom: 7px !important;
 }
 
  .fondo-form{
@@ -312,6 +346,30 @@ img.lugar{
     color: gray;
     font-weight: 200;
     margin-top: 0px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
 }
 
 }
@@ -358,6 +416,30 @@ img.lugar{
     position: relative;
     top: 12px;
     margin-bottom: 105px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 77%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 77%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
 }
 
 }

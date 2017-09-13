@@ -11,6 +11,7 @@
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/sc.css">
 <style type="text/css">
 
 
@@ -168,8 +169,8 @@
                 });
 
                 // EXCLUSIVO PARA PLACARE
-                $("meta[name=title]").attr("content", product.bullet_1);
-                $("meta[name=description]").attr("content", product.bullet_2);
+                $("title").html(product.bullet_2);
+                $("meta[name=description]").attr("content", product.bullet_3);
             }
         };
 
@@ -229,7 +230,7 @@
        <div class="container min">
         <div class="col-md-6 col-sm-6 col-xs-12">
 
-            <div class="texto-header-pro texto-ruta-detalle">{{! bullet_2 }}</div>
+            <div class="texto-header-pro texto-ruta-detalle">{{! bullet_1 }}</div>
 
         </div>
         </div>
@@ -369,10 +370,6 @@
                             <div align="center">
                             <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! description }}</h3>
-                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
-                            {{! bullet_1 }}</h3>
-                            <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
-                            {{! bullet_2 }}</h3>
 
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
                                  <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
@@ -388,8 +385,6 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-3"> </div>
-                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs">
-                                {{! bullet_2 }}</h3>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
@@ -553,8 +548,6 @@
                             Descripción del producto</h3>
                             <h3 class="descr_prod_detail ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             {{! description }}</h3>
-                           <h3 class="medidas ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
-                            {{! bullet_1 }}</h3>
 <!--                        <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             </h3> -->
                             <div class="standar visible-xs visible-md visible-lg visible-sm">Opciones de Compra </div>
@@ -572,8 +565,6 @@
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-3"> </div>
-                                <h3 class="material ellipsis multiline hidden-md hidden-lg hidden-sm visible-xs">
-                                {{! bullet_2 }}</h3>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
@@ -677,7 +668,7 @@
 <div class="container min">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <hr>
-            <h1 class="text-relac text-center"><strong class="editabletext">Descubre otros productos</strong></h1>
+            <div class="text-relac text-center {{editabletext}}" text-id="{{ site.name + '_pro_relacionados' }}"> {{ read_text(site.name +  '_pro_relacionados') }}</div>
         </div>
     <div class="product-related hidden-xs">
 
