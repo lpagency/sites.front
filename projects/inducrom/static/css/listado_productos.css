@@ -155,16 +155,6 @@ div.image-upload.part1 {
     max-width: 360px;
 }
 
-/*.img_prod_little{
-    width: 170%;
-    margin-bottom: 13px;
-    position: relative;
-    object-fit: scale-down;
-    top: 9px;
-    left: 0px;
-    margin-left: 0px;
-}
-*/
 
 img.little{
     width: 100%;
@@ -184,9 +174,9 @@ img.little{
 .descr_prod_detail {
     position: relative;
     font-size: 24px;
-    width: 130%;
+    width: 100%;
     text-align: left;
-   /* height: 343px;*/
+    /* height: 343px; */
     top: 42px;
     /* float: right; */
     color: gray;
@@ -195,6 +185,7 @@ img.little{
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    left: 20%;
 }
 
 .fin {
@@ -612,7 +603,7 @@ img.mini{
     max-width: 317px;
     float: right;
     margin-bottom: 10px;
-    object-fit: cover;
+    object-fit: contain;
     left: 21%;
 }
 
