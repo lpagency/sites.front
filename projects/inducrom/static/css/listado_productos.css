@@ -955,47 +955,52 @@ hr.hr-pro {
 
 .subcateg {
     color: black;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
-    padding: 0px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
+    padding: 6px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
     text-align: center;
+    border: 1px solid rgba(128, 128, 128, 0.54);
+    width: 40%;
 }
 a.subcateg:hover {
-    font-size: 16px;
-    padding: 0px 10px;
+    font-size: 13px;
+    padding: 6px 0px;
     color: gray;
     font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
     text-align: center;
+    width: 40%;
 }
 
 .subcateg.active {
     background-color: transparent;
-    font-size: 16px;
-    padding: 0px 10px;
+    font-size: 13px;
+    padding: 6px 0px;
     color: gray;
     font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
     text-align: center;
+    width: 40%;
 }
 
 
 .subcateg:hover {
-    font-size: 16px;
-    padding: 0px 10px;
+    font-size: 13px;
+    padding: 6px 0px;
     color:gray;
     font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
     text-align: center;
+    width: 40%;
 }
 
 .partes.active {
@@ -1165,50 +1170,6 @@ hr.hr-pro {
     bottom: 42px;
 }
 
-.subcateg {
-    color: black;
-    font-size: 16px;
-    font-weight: 400;
-    padding: 0px 10px;
-    margin-left: 2px;
-    margin-right: 2px;
-    display: block;
-    text-align: left;
-}
-a.subcateg:hover {
-    font-size: 16px;
-    padding: 0px 10px;
-    color: gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
-    display: block;
-    text-align: left;
-}
-
-.subcateg.active {
-    background-color: transparent;
-    font-size: 16px;
-    padding: 0px 10px;
-    color: gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
-    display: block;
-    text-align: left;
-}
-
-
-.subcateg:hover {
-    font-size: 16px;
-    padding: 0px 10px;
-    color:gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
-    display: block;
-    text-align: left;
-}
 
 .partes.active {
     background-color: transparent;
@@ -1406,6 +1367,12 @@ a.partes:hover {
     color: rgba(0, 0, 0, 0.72);
 }
 
+.mtl{
+    margin-top: -81px !important;
+    margin-bottom: 91px !important;
+}
+
+
 }
 
 @media (max-width: 700px){
@@ -1423,47 +1390,40 @@ a.partes:hover {
 .subcateg {
     color: black;
     font-size: 15px;
-    font-weight: 400;
-    padding: 0px 10px;
-    /* border: 1px solid black; */
-    margin-left: 2px;
-    margin-right: 2px;
+    padding: 0px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
 }
 
 a.subcateg:hover {
     font-size: 15px;
-    padding: 0px 10px;
+    padding: 0px 0px;
     color: gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
-    text-align: left;
+
 }
 
 .subcateg.active {
     background-color: transparent;
     font-size: 15px;
-    padding: 0px 10px;
+    padding: 0px 0px;
     color: gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
-    text-align: left;
 }
 
 
 .subcateg:hover {
     font-size: 15px;
-    padding: 0px 10px;
+    padding: 0px 0px;
     color:gray;
-    font-weight: 400;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-left: 0px;
+    margin-right: 0px;
     display: block;
-    text-align: left;
 }
 
 .partes.active {
@@ -1974,27 +1934,51 @@ td.mumu-3{
   padding: 0px;
 }
 
+.subcateg {
+    color: black;
+    font-size: 15px;
+    padding: 0px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+    width: 77%;
 }
 
-@media (max-width: 412px){
-    .subcateg {
+a.subcateg:hover {
+    font-size: 15px;
     padding: 0px 0px;
-    width: 80%;
+    color: gray;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+    width: 77%;
+
 }
-    .subcateg.active {
+
+.subcateg.active {
+    background-color: transparent;
+    font-size: 15px;
     padding: 0px 0px;
-    width: 80%;
+    color: gray;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+     width: 77%;
 }
-    .subcateg:hover {
+
+
+.subcateg:hover {
+    font-size: 15px;
     padding: 0px 0px;
-    width: 80%;
-}
-    a.subcateg:hover {
-    padding: 0px 0px;
-    width: 80%;
+    color:gray;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: block;
+     width: 77%;
 }
 
 }
+
 
 
 @media (max-width: 400px){
@@ -2138,7 +2122,7 @@ td.mumu-3 {
 }
 
 .texto-header-pro {
-    margin-top: -5px;
+    margin-top: -91px;
     margin-bottom: 36px;
     position: relative;
     left: 17px;
@@ -2155,6 +2139,11 @@ td.mumu-3 {
 .inf-rel {
     width: 77%;
     height: 37px;
+}
+
+.mtl {
+    margin-top: -50px !important;
+    margin-bottom: 91px !important;
 }
 
 
