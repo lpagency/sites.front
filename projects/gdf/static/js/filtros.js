@@ -3,6 +3,7 @@ $(document).ready(function()
     window.fil = $(".texto-filtros").html();
     window.z = 0;
     var hyper = Utils.getUrlParameter('tag');
+
     if(hyper == undefined)
     {
         hyper = "";
