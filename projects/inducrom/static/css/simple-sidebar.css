@@ -159,8 +159,8 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: white;
-  /*  font-weight: 500;*/
+    color: rgba(84, 84, 84, 0.79);
+    /* font-weight: 500; */
     font-size: 18px;
     text-align: center;
     padding-left: 0px;
@@ -189,6 +189,22 @@
 
 }
 
+@media (max-width: 414px){
+    .sidebar-nav {
+    position: absolute;
+    top: 23px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    text-indent: 0px;
+    line-height: 29px;
+}
+
+}
 
 @media (max-width: 405px){
     #sidebar-wrapper {
