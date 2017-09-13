@@ -329,7 +329,7 @@ function check(tag, value)
 
         $(".ch-"+nombre).removeClass("hidden");
         $(".filtrosRec").html($(".filtrosRec").html() + block);
-        $(".h-"+nombre).css("text-decoration", "underline");
+        $(".h-"+nombre).css("text-decoration", "none");
 
         if($(".limpiar").hasClass("hidden"))
         {
