@@ -257,7 +257,7 @@ hr.len {
 
 .texto-header-pro {
     margin-top: 19px;
-    margin-bottom: 29px;
+    margin-bottom: 9px;
     position: relative;
     left: -3%;
     float: left;
@@ -353,20 +353,21 @@ hr.len {
     position: relative;
     left: -13px;
     float: left;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.72);
+    color: #282c3f;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .texto-header-pro-3 {
     height: 74px;
     margin-bottom: -21px;
     position: relative;
-    left: 53px;
-    top: -22px;
-    font-size: 16px;
-    color: gray;
+    left: 85px;
+    top: -27px;
+    font-size: 18px;
+    color: #878b94;
     width: 15%;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
@@ -381,31 +382,36 @@ hr.len {
 }
 
 .btn-primary {
-    color: rgba(128, 128, 128, 0.83);
+    color: #7e818c;
     background-color: white;
     border-color: rgba(128, 128, 128, 0.4);
     float: right;
     margin-top: -39px;
     border-radius: 0px;
     width: 30%;
-    text-align: left;
+    text-align:left;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    left: 2%;
+    position: relative;
 }
 
 .btn-primary:hover {
-    color: rgba(128, 128, 128, 0.83);
+    color: #7e818c;
     background-color: white;
     border-color: rgba(128, 128, 128, 0.4);
     float: right;
     margin-top: -39px;
     border-radius: 0px;
     width: 30%;
-    text-align: left;
+    text-align:left;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    left: 2%;
+    position: relative;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
@@ -477,8 +483,9 @@ hr.len {
     left: 0%;
     color: #282c3f;
     font-weight: 700;
-    font-size: 13px;
-    padding-top: 10px;
+    font-size: 15px;
+    padding-top: 0px;
+    margin-top: -3px;
 }
 
 .fa-plus{
@@ -903,8 +910,8 @@ transition-delay:.2s;
 }
 
 .limpiar {
-    color: #5265D1;
-    font-size: 10px;
+    color: #5265D0;
+    font-size: 12px;
     font-weight: 600;
     margin-top: 29px;
     margin-bottom: -15px;
@@ -1136,16 +1143,23 @@ input[type=radio], input[type=checkbox] {
 
 .filtro-filtros{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-categorias{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-marca{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-talla{
     height: 23px;
-  
+    font-size: 15px;
+    color: #282c3f;  
 }
 
 
@@ -1169,29 +1183,32 @@ input[type=radio], input[type=checkbox] {
 
 .variables1{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .variables2{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .variables3{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .fa-check-square {
     right: -3px;
     position: relative;
-    top: -14px;
+    top: -20px;
     font-size: 20px !important;
     color: #526CD0;
     width: 100%;
@@ -1202,8 +1219,10 @@ input[type=radio], input[type=checkbox] {
 
 .fil {
     position: relative;
-    top: -21px;
+    top: -24px;
     right: -13.5%;
+    font-size: 15px;
+    color: #282c3f;  
 }
 
 .fa-check-square.other {
@@ -1373,9 +1392,10 @@ text-align: left;
 
 .variables4{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
