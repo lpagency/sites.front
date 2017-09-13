@@ -3751,7 +3751,7 @@ td.color-car {
     border-radius: 0px;
 }
 
-.nombre-categoria{
+.nombre-categoria {
     text-align: left;
     margin-top: -22px;
     font-weight: 600;
@@ -3759,21 +3759,24 @@ td.color-car {
     -moz-osx-font-smoothing: grayscale;
     font-family: 'Open Sans', sans-serif!important;
     width: 100%;
-    position: relative; 
+    position: relative;
     float: left;
+    z-index: 1030;
+    right: 17px;
 }
 
 .nombre-tag{
     text-align: left;
-    /*float: left;*/
-    margin-top: -22px;
-    left: -130px;
+    /* float: left; */
+    margin-top: -23px;
+    left: -161px;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif!important;
-    position: absolute; 
+    position: absolute;
+    z-index: 1030;
 }
 
 a.nombre-tag{
@@ -3864,13 +3867,14 @@ a.mod {
     color: #DA8672;
 }
 
-.colores-dispo{
+.colores-dispo {
     font-family: 'Open Sans', sans-serif!important;
     letter-spacing: 1px;
-    font-size: 10px;
+    font-size: 11px;
     top: 3px;
     position: relative;
     text-align: center;
+    font-style: inherit;
 }
 
 .box-talla-2 {
@@ -5105,8 +5109,8 @@ img.little-2 {
 .nombre-tag {
     text-align: left;
     /* float: left; */
-    margin-top: -22px;
-    left: -20px;
+    margin-top: -24px;
+    left: -51px;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -5248,6 +5252,46 @@ img.little-2 {
     margin-bottom: -1px;
 }
 
+.price {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    left: 0;
+    right: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: uppercase;
+    top: 12%;
+    color: rgba(204, 108, 78, 1);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+}
+
+.price.anterior-oferta-sale {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    font-size: 11px;
+    left: 0;
+    right: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: uppercase;
+    top: 2px;
+    text-decoration: line-through !important;
+    color: rgb(91, 81, 83);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
 }
 
 @media (max-width: 400px){
@@ -5317,6 +5361,19 @@ img.little-2 {
 
 .lol{
     right: 26px;
+}
+
+.nombre-tag {
+    text-align: left;
+    /* float: left; */
+    margin-top: -24px;
+    left: -42px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif!important;
+    position: absolute;
 }
 
 }
@@ -5390,6 +5447,19 @@ img.little-2 {
     position: relative;
     top: 12px;
     margin-bottom: 20px;
+}
+
+.nombre-tag {
+    text-align: left;
+    /* float: left; */
+    margin-top: -24px;
+    left: -37px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif!important;
+    position: absolute;
 }
 
 }
@@ -5468,6 +5538,19 @@ img.little-2 {
     margin-bottom: 20px;
 }
 
+.nombre-tag {
+    text-align: left;
+    /* float: left; */
+    margin-top: -24px;
+    left: -30px;
+    position: relative;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif!important;
+    position: absolute;
+}
+
 }
 
 @media (max-width: 320px){
@@ -5484,20 +5567,19 @@ img.little-2 {
     float: left;
     font-size: 12px;
 }
-
 .nombre-tag {
     text-align: left;
     /* float: left; */
     margin-top: -25px;
-    left: 0px;
+    left: -27px;
     position: relative;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 300;
     font-family: 'Open Sans', sans-serif!important;
     position: absolute;
+    font-size: 13px;
 }
-
 .dropdown-menu.filtrar {
     position: relative;
     top: 3px;
