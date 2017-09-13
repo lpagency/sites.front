@@ -747,12 +747,14 @@ a.talla {
 }
 
 .text-relac {
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 30px;
     text-align: left;
     left: 5px;
     position: relative;
     font-weight: 600;
+    text-transform: uppercase;
+    color: #000000;
 }
 
 .mini{
@@ -1065,7 +1067,7 @@ a.variables:active{
 .conti:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid #edebef;
     height: 275px;
     margin-bottom:7px;
 }
@@ -1110,7 +1112,7 @@ a.text {
     background-color: transparent;
     color:#526CD0;
     font-size: 13px;
-    padding: 3px 53px;
+    padding: 3px 50px;
     top: 124px;
     position: relative;
     border: 1px solid transparent;
@@ -1122,8 +1124,8 @@ a.text.detalle {
     background-color: transparent;
     color: #526CD0;
     font-size: 12px;
-    padding: 7px 47px;
-    top: 132px;
+    padding: 7px 45px;
+    top: 120px;
     position: relative;
     border: 1px solid transparent;
     border-top: 1px solid rgba(153, 153, 153, 0.38);
@@ -1296,7 +1298,7 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de {
     position: relative;
     width: 109%;
-    height: 295px;
+    height: 270px;
     margin-bottom:8px;
     border: 1px solid white;
 }
@@ -1304,9 +1306,9 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
-    height: 295px;
-    margin-bottom:8px;
+    border: 1px solid #edebef;
+    height: 270px;
+    margin-bottom: 8px;
 }
 
 .filtro-talla.c-variable_1 {
@@ -1396,6 +1398,14 @@ text-align: left;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #696b79;
+}
+
+hr.lon {
+    margin-top: -8px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #edebef;
+    width: 99%;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
