@@ -62,11 +62,11 @@
 
 
 
-      var catProd = $(".buscaCat").html(" Home | Subcategorias | " + log);
+      var catProd = $(".buscaCat").html(" Home | " + log);
 
       $(".buscaCat").css("text-transform", "capitalize");
 
-      localStorage.setItem("subcategoriaProd"," Home | Subcategorias | " + log);
+      localStorage.setItem("subcategoriaProd"," Home | " + log);
 
       $("#OpenAlert").click();
 
@@ -190,7 +190,7 @@ $(document).ready(function(){
 <section> 
   <div class="container">
   <div class="col-md-6 col-sm-6 col-xs-12">
-    <div class="texto-header-pro buscaCat"> Home / Subcategorias </div>
+    <div class="texto-header-pro buscaCat"> Home /  </div>
   </div>
   <div class="hidden-xs hidden-sm visible-lg visible-md">
     <div class="texto-header-pro-2 tituloCategoria"></div>
