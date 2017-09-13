@@ -10,7 +10,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/bower_components/swiper/dist/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
 <link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
 <style type="text/css">
 @media (max-width: 1199px){
@@ -24,11 +24,11 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/bower_components/swiper/dist/js/swiper.jquery.min.js"></script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
 <script type="text/javascript">
 
     $(document).ready(function()
-    {
+        {
 
        var base_url = $.environmentVar(
     'https://apibodegas.loadingplay.com/',
@@ -89,6 +89,16 @@
                 'tag' : tag,
                 'ignore_stock' : true,
                     'onLoad':function(){
+
+                         $(".product-related").slick({
+                          slidesToShow: 6,
+                          slidesToScroll: 1,
+                          autoplay: true,
+                          autoplaySpeed: 2000,
+                          prevArrow: false,
+                          nextArrow: false,
+                          infinite: true,
+                        });
                      }
                 
             };
@@ -116,6 +126,18 @@
 
 </script>
 
+<script type="text/javascript">
+
+$(document).ready(function() {
+   $("#myCarousel").swiperight(function() {
+      $(this).carousel('prev');
+    });
+   $("#myCarousel").swipeleft(function() {
+      $(this).carousel('next');
+   });
+});
+
+</script>
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -123,7 +145,7 @@
     });
     </script>
     
-  <script type="text/javascript">
+    <script type="text/javascript">
         $('ul.nav div.dropdown').hover(function() 
         {
             $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
@@ -133,33 +155,16 @@
         });
     </script>
 
-    <script>        
-  var mySwiper = new Swiper ('.swiper-container', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-    
-    // If we need pagination
-    pagination: '.swiper-pagination',
-    
-    // Navigation arrows
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    
-    // And if we need scrollbar
-    scrollbar: '.swiper-scrollbar',
-  })        
-  </script>
 
 
 
 <script type="text/template" id="product_detail">
 <div class="container-fluid">
-<div id="myCarousel" class="carousel slide hidden-xs">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
 
     <!-- Wrapper for slides -->
-    <div class="carousel-inner">
+    <div class="carousel-inner" role="listbox">
       <div class="item active">
         <img class="{{! images[0]['thumb_500']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" alt="Chania"  width="460" height="345">
       </div>
@@ -182,29 +187,6 @@
     <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
       <span class="sr-only">Next</span>
     </a>
-</div>
-<div class="swiper-container visible-xs">
-    <!-- Additional required wrapper -->
-    <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide">
-          <img class="{{! images[0]['thumb_500']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" alt="Chania"  width="460" height="345">
-        </div>
-        <div class="swiper-slide">
-          <img class="{{! images[2]['thumb_500']|hide_if_empty }} little" src="{{! images[2]['thumb_500'] }}"  alt="Chania" onload="this.src={{! images[2]['thumb_500']}}" width="460" height="345">
-        </div>
-        <div class="swiper-slide">
-          <img class="{{! images[3]['thumb_500']|hide_if_empty }} little" src="{{! images[3]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[3]['thumb_500']}}"  width="460" height="345">
-        </div>
-        <div class="swiper-pagination"></div>
-    
-    <!-- If we need navigation buttons -->
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-    
-    <!-- If we need scrollbar -->
-    <div class="swiper-scrollbar"></div>
-    </div>
 </div>
 </div>
 
@@ -300,7 +282,7 @@
 {% block body %}
 
 
-<div class="demo" style="height:530px;display:block;margin:auto auto 0 auto;"></div>
+<div class="" style="height:530px;display:block;margin:auto auto 0 auto;"></div>
 <div class="container-fluid">
     <div class="container  product-page"></div>
     </div>
