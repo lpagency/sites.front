@@ -69,16 +69,16 @@ a.desktop-submit {
 
 .img-bolsa{
     width: 16%;
-    margin-top: 17px;
+    margin-top: 20px;
     margin-left: 1px;
     float: right;
 }
 
 li.icon{
     position: relative;
-    left: 99px;
-    margin-top: 20px;
-    color:#999;
+    left: 87px;
+    margin-top: 23px;
+    color: #999;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
@@ -99,10 +99,13 @@ li.icon{
     display: block;
     padding: 10px 15px;
     margin-top: 8px;
-    font-size: 12px;
+    font-size: 15px;
     float: left;
     left: 0px;
-    top: 4px;
+    top: 6px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 600;
 }
 
 .navbar-nav.navbar-right.dos:last-child {
@@ -146,17 +149,16 @@ li.slogan a{
     float: left;
     margin: 0;
     position: relative;
-    left: 3%;
+    left: 0%;
+    width: 35%;
 }
 
 .navbar-default .navbar-nav>li>a {
     color: #999;
 }
 
-
-
 .btn-primary.header {
-    color: gray;
+    /*color: gray;*/
     background-color: transparent;
     border-color: transparent;
     float: inherit;
@@ -166,12 +168,12 @@ li.slogan a{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    font-size: 12px;
-    font-weight: 500;
+    font-size: 15px;
+    font-weight: 600;
 }
 
 .btn-primary.header:hover {
-    color: gray;
+    /*color: gray;*/
     background-color: transparent;
     border-color: transparent;
     float: inherit;
@@ -181,8 +183,8 @@ li.slogan a{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    font-size: 12px;  
-    font-weight: 500;
+    font-size: 15px;  
+    font-weight: 600;
 
 }
 
@@ -190,6 +192,13 @@ li.slogan a{
     color: rgba(128, 128, 128, 0.65);
     background-color: transparent;
     border-color: transparent;
+    text-decoration: underline #db8800;
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: rgba(128, 128, 128, 0.83);
+    background-color: transparent;
+    text-decoration: underline #db8800 !important;
 }
 
 .hed{
@@ -213,6 +222,16 @@ li.slogan a{
     border-radius: 0px;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
+}
+
+.pal{
+    position: relative;
+    left: 17%;
+    font-size: 49px;
+    bottom: 2px;
+    color: #999;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
