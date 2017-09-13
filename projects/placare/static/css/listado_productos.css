@@ -1824,7 +1824,7 @@ a.text {
 .mover {
     margin-top: 25px;
     position: relative;
-    left: -29px;
+    left: 0px;
 }
 
 .img-pro {
@@ -1920,18 +1920,6 @@ a.text {
     top: 42px;
 }
 
-/*.letrero-sale {
-    float: right;
-    background-color: #FF9D36;
-    color: white;
-    width: 20%;
-    text-align: left;
-    padding-left: 6px;
-    left: 0%;
-    position: relative;
-    top: 0px;
-}*/
-
 #product-detail-id {
     margin-top: 35px;
     margin-bottom: -420px;
@@ -1973,17 +1961,17 @@ a.text {
 }
 
 .linea-separacion-movil {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #edebef;
     position: relative;
     left: -15px;
     width: 100%;
-    top: -2px;
+    top: 54px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .linea-separacion-2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid solid #edebef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2363,7 +2351,7 @@ hr.listado {
     margin-top: -82px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    border-top: 1px solid #ebedef;
     width: 99%;
 }
 
@@ -2434,6 +2422,14 @@ hr.listado {
    .filtro-categorias {
      height: 100%; 
    }
+
+   hr.lon {
+    margin-top: 32px;
+    margin-bottom: 34px;
+    border: 0;
+    border-top: 1px solid #edebef;
+    width: 99%;
+}
 
 }
 
@@ -2663,7 +2659,7 @@ a.talla {
 
 
 .linea-separacion-2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid #ebedef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2672,7 +2668,7 @@ a.talla {
 }
 
 .linea-separacion-3 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid #ebedef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2989,7 +2985,7 @@ a.text {
 .nombre-talla {
     float: left;
     position: relative;
-    left: -13px;
+    left: 0px;
     text-align: left;
     margin-top: 26px;
     font-size: 8px;
@@ -3227,6 +3223,39 @@ a.text {
     color: rgba(0, 0, 0, 0.62);
     font-weight: 500;
     text-decoration: line-through;
+    left: 11px;
+}
+
+.up-ex-detalle {
+    float: left;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    top: -43px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 12px;
+    color: #696e79;
+}
+
+.texto-detalle {
+    text-align: left;
+    position: relative;
+    top: -28px;
+    margin-bottom: 22px;
+    font-size: 16px;
+    /* border-top-color: black; */
+    color: #696e79;
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: inherit;
+    left: 12px;
 }
 
 .descuento-detalle {
@@ -3329,9 +3358,9 @@ a.text {
 }
 
 .linea-separacion-movil {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #ebedef;
     position: relative;
-    left: -15px;
+    left: 0px;
     width: 100%;
     top: 9px;
     margin-top: 33px;
@@ -3343,6 +3372,22 @@ a.text {
     top: -18px;
     right: -9.5%;
     margin-bottom: -14px;
+}
+
+.linea-separacion-2 {
+    border-bottom: 1px solid #ebedef;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    position: relative;
+    top: 20px;
+}
+
+.resis {
+    width: 106%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
 }
 
 }
@@ -3390,17 +3435,6 @@ a.text {
 }
 
 @media (max-width: 375px){
-    .nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 8px;
-    width: 100%;
-    font-weight: 600;
-}
-
 .image {
     opacity: 1;
     display: block;
@@ -3570,6 +3604,13 @@ a.talla {
     left: -4px;
 }
 
+.resis {
+    width: 109%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+}
+
 }
 
 @media (max-width: 360px){
@@ -3582,19 +3623,7 @@ a.text {
     position: relative;
     border: 1px solid gray;
 }
-/*
-.texto-header-pro-3 {
-    height: 74px;
-    margin-bottom: -35px;
-    position: relative;
-    left: 23%;
-    top: -20px;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.72);
-    width: 100%;
-    text-align: center;
-}*/
+
 .size-item.active {
     color: white;
     left: 0px;
@@ -3654,16 +3683,6 @@ a.text {
     font-size: 13px;
 }
 
-.nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 7px;
-    width: 100%;
-    font-weight: 600;
-}
 
 }
 
@@ -3747,17 +3766,6 @@ a.text {
     position: relative;
     height: 500px;
     margin-top: -28px;
-}
-
-.nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 7px;
-    width: 124%;
-    font-weight: 600;
 }
 
 .size-item.active {
