@@ -7,8 +7,8 @@ hr {
 }
 
 .ul-1{
-    font-size: 12px;
-    color: #555;
+    font-size: 16px;
+    color: #000000;
     font-weight: 600;
     width: 100%;
     text-rendering: optimizeLegibility;
@@ -17,12 +17,16 @@ hr {
     top: 9px;
     position: relative;
     margin-bottom: 23px;
+    text-transform: uppercase;
 }
 
 .pas {
-    font-weight: 400;
-    font-size: 12px;
-    color: gray;
+    font-weight: 200;
+    font-size: 15px;
+    color: #696b79;
+    text-transform: capitalize;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .inform-comerc{
@@ -39,8 +43,8 @@ hr {
 }
 
 .ul-2{
-    font-size: 12px;
-    color: #555;
+    font-size: 16px;
+    color: #000000;
     font-weight: 600;
     width: 100%;
     text-rendering: optimizeLegibility;
@@ -49,11 +53,12 @@ hr {
     top: 9px;
     position: relative;
     margin-bottom: 23px;
+    text-transform: uppercase;
 }
 
 .ul-22 {
-    font-size: 12px;
-    color: #555;
+    font-size: 14px;
+    color: #535766;
     font-weight: 600;
     width: 100%;
     text-rendering: optimizeLegibility;
@@ -68,9 +73,9 @@ hr {
 }
 
 .ul-22-0 {
-    font-size: 10px;
-    color: #555;
-    font-weight: 600;
+    font-size: 14px;
+    color: #696b79;
+    font-weight: 300;
     width: 90%;
     right: 49px;
     text-align: left;
@@ -79,8 +84,6 @@ hr {
     -moz-osx-font-smoothing: grayscale;
     position: relative;
     margin-bottom: 32px;
-
-
 }
 
 
@@ -273,7 +276,8 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
-    color: rgba(128, 128, 128, 0.79);
+    color: #94969f;
+    font-size: 13px;
 }
 
 .firma-2 {
@@ -282,7 +286,8 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
-    color: rgba(128, 128, 128, 0.79);
+    color: #94969f;
+    font-size: 13px;
 }
 
 .firma-3 {
@@ -291,7 +296,8 @@ div.image-upload.fo {
     right: 25px;
     margin-top: 10px;
     margin-bottom: 30px;
-    color: rgba(128, 128, 128, 0.79);
+    color: #94969f;
+    font-size: 13px;
 }
 
 .form-group.footer{
@@ -300,15 +306,14 @@ div.image-upload.fo {
 }
 
 
-.f-min{
-    border-top: 1px solid #E9E9ED;
-    border-bottom: 1px solid  #E9E9ED;
+.f-min {
+    border-top: 1px solid #ebedef;
+    border-bottom: 1px solid #ebedef;
 }
 
-
-.kop{
-    font-size: 12px;
-    color: #555;
+.kop {
+    font-size: 13px;
+    color: #282c3f;
     font-weight: 600;
     width: 100%;
     text-rendering: optimizeLegibility;
@@ -320,13 +325,14 @@ div.image-upload.fo {
     right: 29px;
     text-align: left;
     margin-top: 13px;
+    text-transform: uppercase;
 }
 
 hr.new-f {
     margin-top: 32px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid #E9E9ED;
+    border-top: 1px solid #ebedef;
     width: 106%;
     right: 80px;
     position: relative;
@@ -336,7 +342,7 @@ hr.f-min-2 {
     margin-top: 20px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px #E9E9ED;
+    border-top: 1px #ebedef;
     width: 98%;
     position: relative;
     right: 11px;
@@ -388,11 +394,10 @@ hr.f-min-2 {
 
 .breadcrumb>li {
     display: inline-block;
-    color: rgba(128, 128, 128, 0.79);
+    color: #696b79;
     font-weight: 300;
-    font-size: 13px;
+    font-size: 15px
 }
-
 
 .container.min-2{
     width: 943px;
@@ -412,11 +417,12 @@ hr.f-min-2 {
 }
 
 .col-md-2.y-4 {
-     width:172px;
+    width: 232px;
 }
 
 .col-md-2.y-5 {
-     width:172px;
+     width:232px;
+     margin-left: -33px;
 }
 
 .alme {
@@ -461,41 +467,27 @@ div.image-upload.fe {
     z-index: 100000;
 }
 
+.opi {
+    text-align: left;
+    float: left;
+    color: #94989f;
+    font-weight: 300;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 13px;
+    width: 100%;
+}
+
 /*----------------------------------------------Responsive-----------------------------------*/
 
 @media (max-width: 991px){
     .no-doti {
     position: relative;
-    left: -36px;
-    width: 130%;
-}
-
-.ul-2 {
-    font-size: 11px;
-    color: #555;
-    font-weight: 600;
+    left:0px;
     width: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    top: 9px;
-    position: relative;
-    margin-bottom: 23px;
 }
 
-
-.ul-1 {
-    font-size: 11px;
-    color: #555;
-    font-weight: 600;
-    width: 100%;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    top: 9px;
-    position: relative;
-    margin-bottom: 23px;
-}
 
 .container.min-2{
     width: 100%;
@@ -607,6 +599,7 @@ div.image-upload.fe {
     margin-top: 10px;
     font-weight: 600;
     right: 0px;
+    left: 0px;
 }
 
 .btn-default.sus:hover {
@@ -618,6 +611,7 @@ div.image-upload.fe {
     margin-top: 10px;
     font-weight: 600;
     right: 0px;
+    left: 0px;
 }
 
 .btn-default.sus-h {
@@ -629,11 +623,12 @@ div.image-upload.fe {
     margin-top: 12px;
     font-weight: 600;
     float: left;
-    height: 27px;
+    height: 38px;
     right: 0px;
     position: relative;
-    padding-top: 2px;
+    padding-top: 8px;
     margin-bottom: 20px;
+    left: 0px;
 }
 
 
@@ -645,7 +640,7 @@ div.image-upload.fe {
     width: 100%;
     margin-top: 12px;
     font-weight: 600;
-    height: 27px;
+    height: 38px;
     float: left;
     position: relative;
     right: 0px;
@@ -655,6 +650,8 @@ div.image-upload.fe {
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
     margin-bottom: 20px;
+    left: 0px;
+    padding-top: 8;
 }
 
 .ul-22 {
@@ -700,6 +697,117 @@ div.image-upload.fe {
     margin-bottom: 95px;
 }
 
+.col-md-2.y-1 {
+    width: 100%;
+    margin-left: 0px;
+}
+.col-md-2.y-2 {
+    width: 100%;
+}
+
+.col-md-2.y-5 {
+    width: 100%;
+    margin-left: 0px;
+}
+
+.alme {
+    margin-left: 0px;
+    padding: 0px;
+    padding-right: 0px;
+}
+
+.kop {
+    font-size: 13px;
+    color: #282c3f;
+    font-weight: 600;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: 9px;
+    position: relative;
+    margin-bottom: 10px;
+    right: 0px;
+    text-align: left;
+    margin-top: 13px;
+    text-transform: uppercase;
+}
+.firma {
+    text-align: left;
+    position: relative;
+    right: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #94969f;
+    font-size: 13px;
+}
+.firma-2 {
+    text-align: left;
+    position: relative;
+    right: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #94969f;
+    font-size: 13px;
+}
+
+.firma-3 {
+    text-align: left;
+    position: relative;
+    right: 0px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: #94969f;
+    font-size: 13px;
+}
+
+.vop {
+    font-size: 14px;
+    color: #555;
+    font-weight: 600;
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: 9px;
+    position: relative;
+    margin-bottom: 0px;
+    right: 0px;
+    text-align: left;
+    margin-top: 13px;
+}
+
+.vop-2 {
+    font-size: 12px;
+    color: rgba(128, 128, 128, 0.87);
+    width: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    top: 9px;
+    position: relative;
+    margin-bottom: 5px;
+    right: 0px;
+    text-align: left;
+    margin-top: 5px;
+    font-weight: 500;
+}
+
+
+hr.new-f {
+    margin-top: -9px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ebedef;
+    width: 79%;
+    right: -67px;
+    position: relative;
+}
+
+.f-min {
+    border-top: 1px solid #ebedef;
+    border-bottom: 1px solid transparent;
+}
 
 }
 
@@ -785,6 +893,26 @@ div.image-upload.fe {
 
 .inform-comerc {
     z-index: 0;
+}
+
+.f-min {
+    border-top: 1px solid #ebedef;
+    border-bottom: 1px solid transparent;
+    padding: 0px;
+}
+
+.container.min-2{
+    padding:0px;
+}
+
+hr.new-f {
+    margin-top: -9px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #ebedef;
+    width: 70%;
+    right: -67px;
+    position: relative;
 }
 
 }

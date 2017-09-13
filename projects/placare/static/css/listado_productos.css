@@ -115,7 +115,7 @@ div.image-upload.part1 {
     width: 81%;
     text-align: left;
     left: 10px;
-    color: #282c3f;
+    color:#3e4152;
     font-size: 14px;
     font-weight: 400;
     margin-bottom: -15px;
@@ -266,6 +266,8 @@ hr.len {
     color: rgba(128, 128, 128, 0.77);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+     text-transform: capitalize;
+
 }
 
 .container.min.dos {
@@ -281,13 +283,13 @@ hr.len {
     width: 100%;
     position: relative;
     top: -32px;
-    margin-bottom: 0px;
-    font-size: 12px;
+    margin-bottom: -6px;
+    font-size: 14px;
     font-weight: 600;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    left: 10px;
+    left: 9px;
     color: #282c3f;
 }
 
@@ -308,12 +310,12 @@ hr.len {
 }
 
 .oferta {
-    color: #282c3f;
+   color: #282c3f;
     float: left;
     left: 10px;
     position: relative;
     bottom: 18px;
-    font-size: 12px;
+    font-size: 14px;
     width: 45%;
     font-weight: 800;
 }
@@ -333,7 +335,7 @@ hr.len {
     left: -6px;
     position: relative;
     bottom: 18px;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: line-through;
     width: 34%;
 }
@@ -745,12 +747,14 @@ a.talla {
 }
 
 .text-relac {
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 30px;
     text-align: left;
     left: 5px;
     position: relative;
     font-weight: 600;
+    text-transform: uppercase;
+    color: #000000;
 }
 
 .mini{
@@ -847,12 +851,6 @@ padding:10px;
 
 }
 
-/*.hovereffect:hover img {
--ms-transform:scale(1.2);
--webkit-transform:scale(1.2);
-transform:scale(1.2);
-}*/
-
 .hovereffect:hover .overlay {
 opacity:1;
 filter:alpha(opacity=100);
@@ -872,13 +870,13 @@ transition-delay:.2s;
 }
 
 .descuento-lis {
-    font-size: 11px;
+    font-size: 13px;
     float: right;
     position: relative;
     color: #FF5722;
-    left: -12px;
+    left: -6px;
     margin-bottom: 20px;
-    margin-top: -18px;
+    margin-top: -37px;
 }
 
 .letrero-nuevo {
@@ -1069,7 +1067,7 @@ a.variables:active{
 .conti:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid #edebef;
     height: 275px;
     margin-bottom:7px;
 }
@@ -1112,22 +1110,26 @@ a.variables:active{
 
 a.text {
     background-color: transparent;
-    color: gray;
-    font-size: 16px;
-    padding: 3px 48px;
+    color:#526CD0;
+    font-size: 13px;
+    padding: 3px 50px;
     top: 124px;
     position: relative;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    font-weight: 600;
 }
 
 a.text.detalle {
     background-color: transparent;
-    color: gray;
+    color: #526CD0;
     font-size: 12px;
-    padding: 7px 47px;
-    top: 132px;
+    padding: 7px 45px;
+    top: 120px;
     position: relative;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    font-weight: 600;
 }
 
 
@@ -1296,7 +1298,7 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de {
     position: relative;
     width: 109%;
-    height: 295px;
+    height: 270px;
     margin-bottom:8px;
     border: 1px solid white;
 }
@@ -1304,9 +1306,9 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
-    height: 295px;
-    margin-bottom:8px;
+    border: 1px solid #edebef;
+    height: 270px;
+    margin-bottom: 8px;
 }
 
 .filtro-talla.c-variable_1 {
@@ -1396,6 +1398,14 @@ text-align: left;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #696b79;
+}
+
+hr.lon {
+    margin-top: -8px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #edebef;
+    width: 99%;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
