@@ -42,7 +42,6 @@
                             <img class="lupa" src="https://7static.loadingplay.com/static/images/416fd58ddf89ebb45e1bab07ca85ae2e_icono_lupa_web.png">
                             <input type="text" name="search_query" class="form-control input_buscar search" placeholder="buscar" value="{% try %}{{search_query}}{% except %}{% end %}">
                         </div>
-                     <!-- <button type="submit" class="btn btn-default">Enviar</button> -->
                     </form>
                 </div>
             
@@ -138,7 +137,7 @@
                         <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
                             <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
                                 <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
-                                <div class="closeSearch"><!-- <i class="fa fa-times-circle size CloseInput" style=""></i> --></div>
+                                <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div>
                             </form>
                         </div>
                     </div>
