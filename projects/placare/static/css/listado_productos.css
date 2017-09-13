@@ -203,7 +203,7 @@ div.image-upload.part1 {
 
 .descr_prod_detail {
     position: relative;
-    font-size: 13px;
+    font-size: 15px;
     width: 100%;
     text-align: left;
     /* height: 343px; */
@@ -962,13 +962,20 @@ a.variables:active{
 
 .more-products {
     margin: auto;
-    width: 50%;
-    border-radius: 0px;
-    color: gray;
-    font-weight: 300;
-    font-size: 11px;
+    width: 320px;
+    border-radius: 1px;
+    color: #526cd0;
+    font-weight: 700;
+    font-size: 13px;
     top: 45px;
     position: relative;
+    border-color: #526cd0;
+}
+
+.btn-default.more-products:hover, .btn-default.more-products:focus, .btn-default.more-products:active, .btn-default.more-products.active, .open>.dropdown-toggle.btn-default.more-products {
+    color:white;
+    background-color: #526cd0;
+    border-color: #526cd0;
      -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1307,7 +1314,7 @@ input.check[type=radio], input.check[type=checkbox] {
 
 .desi{
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     color: #696e79;
     position: relative;
     top: 40px;
@@ -1337,19 +1344,19 @@ a.variables3:hover, a.variables3:focus, a.variables3:active{
     float: left;
     color: #526cd0;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     width: 100%;
 }
 
 .op{
-    text-align: left;
+text-align: left;
     float: left;
-    color: #696e79;
+    color: #94989f;
     font-weight: 300;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
+    font-size: 13px;
     width: 60%;
 }
 
