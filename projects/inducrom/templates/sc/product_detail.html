@@ -24,11 +24,12 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/jquery.mobile.custom/jquery.mobile.custom.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/jquery-touchswipe/jquery.touchSwipe.min.js"></script>
 <script type="text/javascript">
 
     $(document).ready(function()
-        {
+    {
 
        var base_url = $.environmentVar(
     'https://apibodegas.loadingplay.com/',
@@ -126,18 +127,6 @@
 
 </script>
 
-<script type="text/javascript">
-
-$(document).ready(function() {
-   $("#myCarousel").swiperight(function() {
-      $(this).carousel('prev');
-    });
-   $("#myCarousel").swipeleft(function() {
-      $(this).carousel('next');
-   });
-});
-
-</script>
     <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
@@ -145,7 +134,7 @@ $(document).ready(function() {
     });
     </script>
     
-    <script type="text/javascript">
+  <script type="text/javascript">
         $('ul.nav div.dropdown').hover(function() 
         {
             $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
@@ -155,6 +144,27 @@ $(document).ready(function() {
         });
     </script>
 
+<script>
+  $(document).ready(function()
+  {  
+
+    //Enable swiping...
+    $(".carousel-inner").swipe( 
+    {
+      //Generic swipe handler for all directions
+      swipeLeft:function(event, direction, distance, duration, fingerCount)
+      {
+        $(this).parent().carousel('next'); 
+      },
+      swipeRight: function()
+      {
+        $(this).parent().carousel('prev'); 
+      },
+      //Default is 75px, set to 0 for demo so any distance triggers swipe
+      threshold:0
+    });
+  });
+</script>
 
 
 
@@ -308,7 +318,7 @@ $(document).ready(function() {
             <div class="text-relac text-center">Productos relacionados</div>
         </div>
     </div>
-            <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" style="position: relative;top: 1px;">
+            <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
 
     </div>
     <div class="row product-related-2 visible-xs hidden-md hidden-lg hidden-sm">
