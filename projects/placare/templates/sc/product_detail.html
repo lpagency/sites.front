@@ -13,7 +13,9 @@
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/sc.css">
 <style type="text/css">
-
+.col-xs-12{
+    padding:0px;
+}
 
 </style>
 {% end %}
@@ -290,12 +292,12 @@
                              <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
                                 <div class="linea-separacion-movil"> </div>
                             </div>
-                            <div class="texto-oferta">Existe una oferta adicional a este producto</div>
-                            <div class="ver-oferta">Ver oferta</div>
+                            <div class="texto-oferta hidden-xs">Existe una oferta adicional a este producto</div>
+                            <div class="ver-oferta hidden-xs">Ver oferta</div>
 
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion"> </div>
+                                <div class="linea-separacion hidden-xs"> </div>
                             </div>
 
                             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -372,19 +374,17 @@
                             {{! description }}</h3>
 
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
-                                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
-                            <div id="demo" class="collapse">
+                                 <button type="button" class="btn btn-info" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
+                            <div id="demo" class="">
                             <h3 class="descr_prod_detail ellipsis multiline">
                             {{! description }}</h3>
-                            <h3 class="medidas ellipsis multiline">
-                            {{! bullet_1 }}</h3>
 
                             </div>
                             </div>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion-3"> </div>
+                                <div class="linea-separacion-3 hidden-xs"> </div>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
@@ -486,12 +486,12 @@
                              <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
                                 <div class="linea-separacion-movil"> </div>
                             </div>
-                            <div class="texto-oferta">Existe una oferta adicional a este producto</div>
-                            <div class="ver-oferta">Ver oferta</div>
+                            <div class="texto-oferta hidden-xs">Existe una oferta adicional a este producto</div>
+                            <div class="ver-oferta hidden-xs">Ver oferta</div>
 
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion"> </div>
+                                <div class="linea-separacion hidden-xs"> </div>
                             </div>
 
                             <div class="col-md-6 col-sm-6 col-xs-6">
@@ -552,8 +552,8 @@
                             </h3> -->
                             <div class="standar visible-xs visible-md visible-lg visible-sm">Opciones de Compra </div>
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
-                                 <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
-                            <div id="demo" class="collapse">
+                                 <button type="button" class="btn btn-info" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
+                            <div id="demo" class="">
                             <h3 class="descr_prod_detail ellipsis multiline">
                             {{! description }}</h3>
                             <h3 class="medidas ellipsis multiline">
@@ -564,7 +564,7 @@
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion-3"> </div>
+                                <div class="linea-separacion-3 hidden-xs"> </div>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
