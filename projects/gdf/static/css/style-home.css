@@ -20,9 +20,6 @@ html {
     left: 5%;
     display: inline-flex;
     display: -ms-flexbox;
-    /* display: -webkit-inline-box; */
-    /* -webkit-box-orient: horizontal; */
-    /* -webkit-box-direction: normal; */
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
     -webkit-box-align: baseline;
@@ -33,6 +30,7 @@ html {
     font-style: italic;
     color: #5b5153;
 }
+
 
 .colores-dispo {
     font-style: italic;
@@ -1063,6 +1061,7 @@ input.tel {
     display: inline-block;
     padding: 0px;
     border-top: 2px solid rgba(204, 108, 78, 1);
+     z-index: 10000; 
 }
 
 .pop{
