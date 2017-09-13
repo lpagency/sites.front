@@ -116,6 +116,13 @@ function limpiar()
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
+
+    $(".talla35").attr('onclick',"checkTallas('35'); deshabilitar('35');");
+    $(".talla36").attr('onclick',"checkTallas('36'); deshabilitar('36');");
+    $(".talla37").attr('onclick',"checkTallas('37'); deshabilitar('37');");
+    $(".talla38").attr('onclick',"checkTallas('38'); deshabilitar('38');");
+    $(".talla39").attr('onclick',"checkTallas('39'); deshabilitar('39');");
+    $(".talla40").attr('onclick',"checkTallas('40'); deshabilitar('40');");
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -144,9 +151,15 @@ function borrar(nombre)
 
 //<----------------FUNCION FILTAR------------------>
 
-function filtrar(nombre)
+function filtrar()
 {
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(window.config);
 };
+
+function deshabilitar(tag)
+{
+    console.log(tag);
+    $(".talla"+tag).attr('onclick','').unbind('click');
+}

@@ -21,6 +21,23 @@
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 
+
+<script type="text/javascript">
+  function setCookie(cname,cvalue) {
+    document.cookie = cname + "=" + cvalue + ";path=/";
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    var hyper = Utils.getUrlParameter('tag');
+
+    setCookie("url", hyper);
+
+  });
+</script>
+
 <script type="text/javascript">
     $(document).ready(function()
     {

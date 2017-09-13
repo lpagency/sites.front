@@ -554,24 +554,24 @@ $(document).ready(function(){
                         <div class="text-center talla-onclick"> </div>
                         <div class="col-md-12 box-talla" style="">
                           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                            <div class="num-tal-2" tag="35" onclick="checkTallas('35')">35</div>
+                            <div class="num-tal-2 talla35" tag="35" onclick="checkTallas('35'); deshabilitar('35');">35</div>
                           </div>
                           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                            <div class="num-tal-2" tag="36" onclick="checkTallas('36')">36</div>
+                            <div class="num-tal-2 talla36" tag="36" onclick="checkTallas('36'); deshabilitar('36');">36</div>
                           </div>
                           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                            <div class="num-tal-2" tag="37"onclick="checkTallas('37')">37</div>
+                            <div class="num-tal-2 talla37" tag="37" onclick="checkTallas('37'); deshabilitar('37');">37</div>
                           </div>
                         </div>
                         <div class="col-md-12 box-talla" style="">
                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                           <div class="num-tal-2" tag="38" onclick="checkTallas('38')">38</div>
+                           <div class="num-tal-2 talla38" tag="38" onclick="checkTallas('38'); deshabilitar('38');">38</div>
                          </div>
                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                           <div class="num-tal-2" tag="39" onclick="checkTallas('39')">39</div>
+                           <div class="num-tal-2 talla39" tag="39" onclick="checkTallas('39'); deshabilitar('39');">39</div>
                          </div>
                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                           <div class="num-tal-2" tag="40" onclick="checkTallas('40')">40</div>
+                           <div class="num-tal-2 talla40" tag="40" onclick="checkTallas('40'); deshabilitar('40');">40</div>
                          </div>
                        </div>
                       </ul>
@@ -674,10 +674,10 @@ $(document).ready(function(){
     </li>
     <div class="col-xs-12 lim"> 
        <div class="col-xs-6 lim">
-         <button type="button" class="btn btn-default-fil">FILTRAR</button>
+         <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
      </div>
      <div class="col-xs-6 lim">
-         <button type="button" class="btn btn-default-ord">LIMPIAR</button>
+         <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
      </div>
  </div>
 </ul>
