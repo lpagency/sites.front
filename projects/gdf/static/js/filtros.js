@@ -82,6 +82,7 @@ function check(tag, value)
 function checkTallas(tag)
 {
 
+    $(".filtrar").css("display", "block");
     var nombre = tag;
     var block = "";
 
@@ -105,6 +106,9 @@ function checkTallas(tag)
 function limpiar()
 {
 
+    $(".demo3").css("display", "none");
+    $(".movil").css("display", "none");
+
     $(".texto-filtros").html("");
 
     window.listaTag = [];
@@ -117,12 +121,39 @@ function limpiar()
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
 
-    $(".talla35").attr('onclick',"checkTallas('35'); deshabilitar('35');");
-    $(".talla36").attr('onclick',"checkTallas('36'); deshabilitar('36');");
-    $(".talla37").attr('onclick',"checkTallas('37'); deshabilitar('37');");
-    $(".talla38").attr('onclick',"checkTallas('38'); deshabilitar('38');");
-    $(".talla39").attr('onclick',"checkTallas('39'); deshabilitar('39');");
-    $(".talla40").attr('onclick',"checkTallas('40'); deshabilitar('40');");
+    if($(window).width() < 800)
+    {
+
+        $(".talla35").removeClass("hover2");
+        $(".talla36").removeClass("hover2");
+        $(".talla37").removeClass("hover2");
+        $(".talla38").removeClass("hover2");
+        $(".talla39").removeClass("hover2");
+        $(".talla40").removeClass("hover2");
+
+        $(".talla35").attr('onclick',"checkTallas('35'); deshabilitar('35');");
+        $(".talla36").attr('onclick',"checkTallas('36'); deshabilitar('36');");
+        $(".talla37").attr('onclick',"checkTallas('37'); deshabilitar('37');");
+        $(".talla38").attr('onclick',"checkTallas('38'); deshabilitar('38');");
+        $(".talla39").attr('onclick',"checkTallas('39'); deshabilitar('39');");
+        $(".talla40").attr('onclick',"checkTallas('40'); deshabilitar('40');");
+    }
+    else
+    {
+        $(".talla35").removeClass("hover");
+        $(".talla36").removeClass("hover");
+        $(".talla37").removeClass("hover");
+        $(".talla38").removeClass("hover");
+        $(".talla39").removeClass("hover");
+        $(".talla40").removeClass("hover");
+
+        $(".talla_35").attr('onclick',"checkTallas('35'); deshabilitarDesk('35');");
+        $(".talla_36").attr('onclick',"checkTallas('36'); deshabilitarDesk('36');");
+        $(".talla_37").attr('onclick',"checkTallas('37'); deshabilitarDesk('37');");
+        $(".talla_38").attr('onclick',"checkTallas('38'); deshabilitarDesk('38');");
+        $(".talla_39").attr('onclick',"checkTallas('39'); deshabilitarDesk('39');");
+        $(".talla_40").attr('onclick',"checkTallas('40'); deshabilitarDesk('40');");
+    }
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -156,10 +187,20 @@ function filtrar()
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(window.config);
+
+    $(".demo3").css("display", "none");
+    $(".movil").css("display", "none");
+
 };
 
 function deshabilitar(tag)
 {
-    console.log(tag);
     $(".talla"+tag).attr('onclick','').unbind('click');
+    $(".talla"+tag).addClass("hover2");
+}
+
+function deshabilitarDesk(tag)
+{
+    $(".talla_"+tag).attr('onclick','').unbind('click');
+    $(".talla"+tag).addClass("hover");
 }
