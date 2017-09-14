@@ -70,10 +70,17 @@ $(document).ready(function(){
             if($(".movil").css("display")=="none")
             {
                 $(".movil").css("display","block");
+                $(".btn-filtros-movil").css("color", "white");
+                $(".btn-filtros-movil").css("background-color", "rgba(204, 108, 78, 1)");
+                $(".btn-filtros-movil").css("border-color", "rgba(204, 108, 78, 1)");
+                $(".btn-filtros-movil").css("-webkit-font-smoothing", "antialiased");
             }
             else
             {
                 $(".movil").css("display","none");
+                $(".btn-filtros-movil").css("color", "rgb(91, 81, 83)");
+                $(".btn-filtros-movil").css("background-color", "transparent");
+                $(".btn-filtros-movil").css("border-color", "rgba(204, 108, 78, 1)");
             }
         });
     });
