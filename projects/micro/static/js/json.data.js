@@ -159,6 +159,26 @@ var categories =[
 	{
 		"name": "CANDADO",
 		"tag": "micro_candado"
+	},
+	{
+		"name": "BOLSOS",
+		"tag": "micro_bolsos"
+	},
+	{
+		"name": "CINTAS",
+		"tag": "micro_cintas"
+	},
+	{
+		"name": "CINTURON DE SEGURIDAD",
+		"tag": "micro_cinturon_seguridad"
+	},
+	{
+		"name": "MANGOS DE GOMA",
+		"tag": "micro_mangos_goma"
+	},
+	{
+		"name": "FRENO DE MANO",
+		"tag": "micro_freno_mano"
 	}]
 },
 {
