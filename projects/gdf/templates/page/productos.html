@@ -51,6 +51,35 @@ $(document).ready(function(){
 </script>
 
 <script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", ".demo2", function()
+        {
+            if($(".demo3").css("display")=="none")
+            {
+                $(".demo3").css("display","block");
+            }
+            else
+            {
+                $(".demo3").css("display","none");
+            }
+        });
+
+        $(document).on("click", ".btn-filtros-movil", function()
+        {
+            if($(".movil").css("display")=="none")
+            {
+                $(".movil").css("display","block");
+            }
+            else
+            {
+                $(".movil").css("display","none");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
     $("#testButton").live("touchstart", function() {
       $(this).addClass("active");
     }).live("touchend", function() {
@@ -387,30 +416,30 @@ $(document).ready(function(){
 
         <div class="col-md-1 col-sm-3 col-xs-2  yan-1">
             <div class="dropdown fil-productos">
-              <button class="btn btn-primary filtrar dropdown-toggle" type="button" data-toggle="dropdown">TALLAS <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+              <button class="btn btn-primary filtrar dropdown-toggle demo2" type="button" data-toggle="dropdown">TALLAS <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
               </button> 
-              <ul class="dropdown-menu filtrar">
+              <ul class="dropdown-menu filtrar demo3" style="display: none">
                <div class="text-center talla-onclick">TALLA </div>
                <div class="col-md-12 box-talla" style="">
-                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                    <div class="num-tal-2" tag="35" onclick="checkTallas('35')">35</div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla35" style="">
+                    <div class="num-tal-2 talla_35" tag="35" onclick="checkTallas('35'); deshabilitarDesk('35')">35</div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-                    <div class="num-tal-2" tag="36" onclick="checkTallas('36')">36</div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla36">
+                    <div class="num-tal-2 talla_36" tag="36" onclick="checkTallas('36'); deshabilitarDesk('36')">36</div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-                  <div class="num-tal-2" tag="37" onclick="checkTallas('37')">37</div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla37" style="">
+                  <div class="num-tal-2 talla_37" tag="37" onclick="checkTallas('37'); deshabilitarDesk('37')">37</div>
               </div>
           </div>
           <div class="col-md-12 box-talla" style="">
-            <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-               <div class="num-tal-2" tag="38" onclick="checkTallas('38')">38</div>
+            <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla38" style="">
+               <div class="num-tal-2 talla_38" tag="38" onclick="checkTallas('38'); deshabilitarDesk('38')">38</div>
            </div>
-           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click">
-               <div class="num-tal-2" tag="39" onclick="checkTallas('39')">39</div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla39">
+               <div class="num-tal-2 talla_39" tag="39" onclick="checkTallas('39'); deshabilitarDesk('39')">39</div>
            </div>
-           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click" style="">
-               <div class="num-tal-2" tag="40" onclick="checkTallas('40')">40</div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-2 size-item-click talla40" style="">
+               <div class="num-tal-2 talla_40" tag="40" onclick="checkTallas('40'); deshabilitarDesk('40')">40</div>
            </div>
        </div>
        <div class="col-md-12">
@@ -543,7 +572,7 @@ $(document).ready(function(){
     <div class="dropdown">
         <button class="btn btn-filtros-movil dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
             <i class="fa fa-angle-right fil-2" aria-hidden="true"></i></button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu movil" style="display: none">
               <li class="dropdown-submenu x4 tallas drop">
                 <a class="test" tabindex="-1" onclick="esconder('tallas2', '.color')">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i></a>
               </li>
