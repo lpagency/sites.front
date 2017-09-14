@@ -6,19 +6,7 @@
 {% end %}
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/common/js/bower/file_uploader/dist/fileuploader.js"></script>
 <script type="text/javascript" src="{{ site_base }}/common/js/bower/jquery.cookie/jquery.cookie.js"></script>
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        $("input[name=file]").fileuploader(
-        {
-            uploadurl : 'https://static.loadingplay.com/image/upload',
-            multi: false,
-            files_supported : '.odt|.pdf|.doc|.docx'
-        });
-    });
-</script>
 
 <script type="text/javascript">
 
@@ -250,20 +238,20 @@
                             </p>
                         </form> -->
                         <div>
-						<form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate id="newsletter">
+						<form action='https://forms.zohopublic.com/sytes/form/moulieformulariotrabajaconnosotros/formperma/D5Hb7kG12g4B253Ca6j4CH0H6/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                            <!--  <div class="row clearfix"> -->
                             <div class="col-xs-12 col-sm-6">
                                 <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                            <input name="name" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                            <input name="Name_First" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
                                         <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
                                     </div>
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                          <input name="number" placeholder="teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
+                                          <input name="PhoneNumber_countrycode" placeholder="teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
                                       </div>
                                       <span id="helpBlock2" class="hidden help-block help-fono">Escribe tu teléfono</span>
                                      </div>
@@ -271,7 +259,7 @@
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class=" controls">
-                                            <input name="email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input name="Email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                             <input type="hidden" name="subject" value="contactanos" />
                                         </div>
                                         <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu email</span>
@@ -280,14 +268,14 @@
                                     <div class="form-group form-moulie">
                                         <label class="control-label"></label>
                                         <div class="controls">
-                                            <textarea name="message" placeholder="asunto" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:48px;"></textarea>
+                                            <textarea name="SingleLine" placeholder="asunto" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:48px;"></textarea>
                                         </div>
                                         <span id="helpBlock4" class="hidden help-block help-comentario">Asunto</span>
                                     </div>
 
                                     <div class="form-group form-moulie ran">
                                        <label class="control-label tra">Adjuntar CV</label>
-                                       <input type="file" name="file" class="imgup-add-input" placeholder="Adjuntar CV"/>
+                                       <input type="file" name="FileUpload" class="imgup-add-input" placeholder="Adjuntar CV"/>
                                     </div>
                                   <!--   </div> -->
                                   
@@ -298,7 +286,7 @@
                             <div class="form-group form-moulie">
                                 <label class="control-label"></label>
                                 <div class="controls">
-                                    <textarea name="message" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
+                                    <textarea name="MultiLine" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
                                 </div>
                                 <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu comentario</span>
                             </div>
