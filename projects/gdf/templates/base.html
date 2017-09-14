@@ -436,9 +436,9 @@
                     <div class="modal-header">
                         <button type="button" class="close hidden-md hidden-sm hidden-lg visible-xs" data-dismiss="modal">&times;</button>
                         <h4 class="modal-title hidden-xs">BOLSA DE COMPRAS</h4>
-                        <h4 class="modal-title carri hidden-md hidden-sm hidden-lg visible-xs">YUJUUUUU!!!</h4>
+                        <h4 class="modal-title carri hidden-md hidden-sm hidden-lg visible-xs hidden">YUJUUUUU!!!</h4>
                         <div class="modal-title hidden-xs" style="font-style:italic;">¡Qué buen gusto!</div>
-                        <div class="modal-title carri-2 hidden-md hidden-sm hidden-lg visible-xs" style="">¡Tu producto ya fue agregado a la bolsa de compras!</div>
+                        <div class="modal-title carri-2 hidden-md hidden-sm hidden-lg visible-xs hidden" style="">¡Tu producto ya fue agregado a la bolsa de compras!</div>
                     </div>
                     <div class="modal-body mlb-btn">
                         <div class="container-fluid cart-list" ng-controller="">
@@ -533,15 +533,11 @@
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
     <div class="form-group text-center">
-         <button type="submit" class="btn bn btn-compra mo" style="background-color: #ddd;color: #E03DDD8;width: 31%;border-radius: 0px;height: 24px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1px;font-size: 11px;font-weight: 500;
-">IR A PAGAR
+         <button type="submit" class="btn bn btn-compra mo" style="background-color: #ddd;color: #E03DDD8;width: 31%;border-radius: 0px;height: 24px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1px;font-size: 11px;font-weight: 500;">IR A PAGAR
         </button>
 
          <button type="submit" class="btn bn btn-compra vir hidden-md hidden-sm hidden-lg visible-xs" style="">SEGUIR VITRINIANDO
         </button>
-
-        <a href="" class="cancelar-modal hidden-md hidden-lg hidden-sm visible-xs"> Cancelar </a>
-    
     </div>
 </form>
 </script>
@@ -649,6 +645,17 @@
         }, function() 
         {
             $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            $(document).on("click", ".add-to-cart", function()
+            {
+                $(".carri").removeClass("hidden");
+                $(".carri-2").removeClass("hidden");
+            });
         });
     </script>
 
