@@ -577,7 +577,7 @@ $(document).ready(function(){
 
 <section class="visible-xs hidden-lg hidden-sm hidden-md">
     <div class="dropdown">
-        <button class="btn btn-filtros-movil dropdown-toggle" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
+        <button class="btn btn-filtros-movil dropdown-toggle" style="font-weight: 600; padding: 3% 0px;" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
             <i class="fa fa-angle-right fil-2" aria-hidden="true"></i></button>
             <ul class="dropdown-menu movil" style="display: none">
               <li class="dropdown-submenu x4 tallas drop">
@@ -621,7 +621,7 @@ $(document).ready(function(){
 <li class="dropdown-submenu x4 sub color2 hidden">
        <div class="text-center talla-onclick"></div>
 
-       <div class="col-md-12">
+       <div class="col-md-12" style="padding: 5% 0;">
         <div class="col-xs-6">
             <form action="" class="chek">
                 <div class="filtro-color"><input class="categ-color c-taupe" type="radio" name="animal" value="Cat" tag="taupe" onclick="check('taupe')" /> TAUPE </div>
@@ -666,7 +666,7 @@ $(document).ready(function(){
 <li class="dropdown-submenu x4 sub tipo2 hidden">
        <div class="text-center talla-onclick"></div>
 
-       <div class="col-md-12">
+       <div class="col-md-12"  style="padding: 5% 0;">
         <div class="col-xs-6" style="">
             <form action="" class="chek">
                 <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas" onclick="check('botas')"/> BOTAS </div>
@@ -700,9 +700,9 @@ $(document).ready(function(){
        <div align="center">
          <div class="" style="height: 100px; width:96%">
             <div class="col-md-12">
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod menor">:MENOR A MAYOR</a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">PRECIO<a href="#!" class="mod mayor"> :MAYOR A MENOR</a></div>
-                <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOMBRE<a href="#!" class="mod nombre">A-Z</a></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><input style="margin: 3% 0;" type="radio" href="#!" class="mod menor"/><p style="position: absolute;left: 11%;top: 7px;">PRECIO: MENOR A MAYOR</p></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><input  style="margin: 3% 0;"  type="radio" href="#!" class="mod mayor"/><p style="position: absolute;left: 11%;top: 7px;">PRECIO :MAYOR A MENOR</p></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left; border:none"><input  style="margin: 3% 0;"  type="radio" href="#!" class="mod nombre"/><p style="position: absolute;left: 11%;top: 7px;">NOMBRE: A-Z</p></div>
                 <!-- <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div> -->
             </div>
             </div>
