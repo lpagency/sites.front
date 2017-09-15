@@ -85,7 +85,7 @@ $(document).ready(function()
         {
             if (products.length === 0)
             {
-                $(".products").html("no hay productos con estos filtros");
+                $(".products").html("Uppppps No hemos encontrado productos :( ");
             }
             var hyper = window.location.search;
 
