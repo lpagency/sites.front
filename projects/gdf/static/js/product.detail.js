@@ -11,7 +11,7 @@ $(document).ready(function()
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(10,10,10);
+        var app_public = $.environmentVar(50,50,50);
         var site_name = $.environmentVar('gdf', 'gdf', 'gdf');
         var variants_loaded = false;
 

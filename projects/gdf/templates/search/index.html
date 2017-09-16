@@ -11,7 +11,7 @@
 
 {% block javascript %}
 <script type="text/javascript">
-$(document).ready(function() 
+$(document).ready(function()
 {
 
         var base_url = $.environmentVar(
@@ -22,7 +22,7 @@ $(document).ready(function()
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(10,10,10);
+        var app_public = $.environmentVar(50,50,50);
         var site_name = $.environmentVar('gdf', 'gdf', 'gdf');
         var variants_loaded = false;
     var config = {
@@ -45,13 +45,13 @@ $(document).ready(function()
 });
 </script>
 
-{% end %} 
-{% block body %} 
-{% if is_admin %} 
-{% set editabletext = 'editabletext' %} 
-{% else %} 
-{% set editabletext = '' %} 
-{% end %} 
+{% end %}
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
 
 {% include '../home/menu_fixed.html' %}
 <section style="position: relative;" class="bottom_movil">

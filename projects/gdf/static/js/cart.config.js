@@ -39,7 +39,7 @@ String.prototype.replaceAll = function(search, replacement) {
     return target.split(search).join(replacement);
 };
 
-$(document).ready(function() 
+$(document).ready(function()
 {
     var params = getIncludeParameters();
     var tag = '';
@@ -51,7 +51,7 @@ $(document).ready(function()
     }
     catch(ex)
     {
-        // nothing here... 
+        // nothing here...
     }
 
     $("#"+tag).addClass("active");
@@ -67,21 +67,21 @@ $(document).ready(function()
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(10,10,10);
+        var app_public = $.environmentVar(50,50,50);
         var site_name = $.environmentVar('gdf', 'gdf', 'gdf');
         var variants_loaded = false;
 
     window.config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 16, 
+        'products_per_page' : 16,
         'tag': tag,
         'ignore_stock': false,
         'infinite_scroll': false,
         // 'maxProducts': 100,
         'checkout_url': checkout_url,
         'operator' :'and',
-        'onLoad': function(products) 
+        'onLoad': function(products)
         {
             if (products.length === 0)
             {
@@ -181,7 +181,7 @@ $(document).ready(function()
         ev.stopPropagation();
         ev.preventDefault();
 
-        
+
 
         // $(".subcateg").css("border-bottom", "");
         // $(this).css("border-bottom", "dashed 1px rgba(0, 0, 0, 0.33)");
@@ -197,7 +197,7 @@ $(document).ready(function()
 
         config.tag=$(this).attr('tag');
         // console.log(config);
-        
+
         // facade.page = 1; // o 1 no estoy seguro
         $(".products").html("");
         $(document).ecommerce('destroy');
