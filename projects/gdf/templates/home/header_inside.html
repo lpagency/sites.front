@@ -42,7 +42,6 @@
                             <img class="lupa" src="https://7static.loadingplay.com/static/images/416fd58ddf89ebb45e1bab07ca85ae2e_icono_lupa_web.png">
                             <input type="text" name="search_query" class="form-control input_buscar search" placeholder="buscar" value="{% try %}{{search_query}}{% except %}{% end %}">
                         </div>
-                     <!-- <button type="submit" class="btn btn-default">Enviar</button> -->
                     </form>
                 </div>
             
@@ -131,16 +130,11 @@
                     <span class="sr-only">Toggle navigation</span>
                      <i class="fa fa-bars"></i>
                 </button>
-                  <img id="lupa" class="lupa pull-right" src="https://7static.loadingplay.com/static/images/f659f71e3b73807bd8d5433c4398a5dd_lupaa_.png">
+                  <img id="lupa" class="lupa pull-right" src="https://7static.loadingplay.com/static/images/843f23ab4c4a6472056806e74215f2a6_icono_bolsa_de_compra_y_lupa.png">
 
                   <div align="center">
                     <div class="col-xs-12">
-                        <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
-                            <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
-                                <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
-                                <div class="closeSearch"><!-- <i class="fa fa-times-circle size CloseInput" style=""></i> --></div>
-                            </form>
-                        </div>
+            
                     </div>
                 </div>
 
@@ -175,18 +169,21 @@
               <li class=>
                 <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">COLLECCION </a> <i class="fa fa-caret-right" aria-hidden="true"></i>
                 <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Raices 2017</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Todas las colecciones</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Raíces 2017</a></li>
                   <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Festival PV 2017</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Clasicos 2.0</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Cápsula Metálica</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Clásicos 2.0</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/productos?tag=">Cápsula Metálicos</a></li>
                 </ul>
               </li>
               <li>
                 <a href="#" class="text-header" data-toggle="dropdown">ESTILOS</a> <i class="fa fa-caret-right" aria-hidden="true"></i>
                 <ul class="dropdown-menu">
+                <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Todos los estilos</a></li>
                  <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Botines</a></li>
                  <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Botas</a></li>
                  <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Zapatos</a></li> 
+                 <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Babuchas</a></li> 
                  <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Zapatillas</a></li> 
                  <li><a  tabindex="-1" href="{{ site_base }}/productos?tag=">Sandalias</a></li>
                 </ul>
@@ -196,7 +193,7 @@
                <li><a href="{{ site_base }}/productos?tag=nuevo" class="text-header">NUEVO</a> <i class="fa fa-caret-right" aria-hidden="true"></i> </li>
                <li style="left: 27px;" class="text-header-edi {{editabletext}}" text-id="{{ site.name + '_edit' }}"> {{ read_text(site.name +  '_edit') }} <i class="fa fa-caret-right edi" aria-hidden="true"></i> </li>
                <li><a href="{{ site_base }}/productos?tag=sale" class="text-header sale" style="color: #DA8672 !important;">SALE</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
-              <li><a href="#" style="">¡Blog!</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
+              <li><a href="#" style="font-style: italic;">¡Blog!</a> <i class="fa fa-caret-right" aria-hidden="true"></i></li>
               
             </ul>
             <div class="col-md-6 col-sm-6 col-xs-12 bott">
@@ -238,6 +235,15 @@
             </div>
             <!-- /.navbar-collapse -->
         </div>
+
+        <!-- ***Buscador**** -->
+        <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
+          <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
+            <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+            <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div>
+          </form>
+        </div>
+      <!-- ***Fin buscador**+ -->
         <!-- /.container -->
     </nav>
 

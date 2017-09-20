@@ -423,9 +423,9 @@ a:focus {
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    color: white !important;
+    color: inherit !important;
     text-decoration: none;
-    background-color: rgba(204, 108, 78, 1) !important;
+    background-color: transparent; !important;
 }
 
 /*------------------------------------------------Responsive---------------------------*/
@@ -513,7 +513,7 @@ font-size: 0.6rem;
     right: 0px;
     font-size: 16px;
     font-weight: 300;
-    top: -2px;
+    top: 50px;
     right: 0px;
     z-index: 99;
     border: 1px solid black;
@@ -530,18 +530,18 @@ font-size: 0.6rem;
 .searchBtn-static {
     position: static;
     margin-bottom: -26px;
+    overflow: visible !important;
 }
 
-.closeSearch{
-     font-size: 23px !important;
+.closeSearch {
+    font-size: 22px !important;
     cursor: pointer;
     float: right;
-    left: -83px;
+    left: -36px;
     position: relative;
-    top: -4px;
+    top: 58px;
     z-index: 100;
     color: #DA8672;
-
 }
 
 .fa-caret-right{
@@ -622,6 +622,8 @@ font-size: 0.6rem;
     letter-spacing: 1px;
     width: 100%;
     left: 0px !important;
+    font-weight: 700;
+
 }
 
 .navbar-fixed-top .navbar-collapse, .navbar-fixed-bottom .navbar-collapse {
@@ -632,15 +634,16 @@ font-size: 0.6rem;
 
 .dropdown-menu>li>a {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 16px 16px;
     clear: both;
     font-weight: 400;
     line-height: 1.42857143;
     color: #333;
     white-space: nowrap;
-    letter-spacing: 1.7px;
-    font-size: 11px;
+    letter-spacing: 1.1px;
+    font-size: 14px;
     border-bottom: 1px solid rgba(128, 128, 128, 0.4);
+    position: relative;
 }
 
 }

@@ -102,11 +102,12 @@ div.image-upload.gu {
 
 .lupa {
     z-index: 10;
-    width: 19px;
+    width: 22px;
     top: 18px;
     position: relative;
     object-fit: cover;
     height: 18px;
+    right: 50px;
 }
 
 .navbar-default {
@@ -131,7 +132,7 @@ div.image-upload.gu {
     width: 22px;
     position: absolute;
     top: -39px;
-    left: -59px;
+    left: -50px;
 }
 
 .back-white{
@@ -165,6 +166,7 @@ a.upi {
     font-family: 'Open Sans', sans-serif!important;
     letter-spacing: 1px;
     width: 100%;
+    font-weight: 700;
 }
 
 .sale{
@@ -176,12 +178,13 @@ a.upi {
     font-size: 30px;
     margin-top: -13px;
 }
+
 .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
-    padding: 12px 15px 12px 25px;
+    padding: 12px 15px 12px 14px;
 }
 
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
-    color: #777;
+    color: #ABABAB  !important;
     border-bottom: 1px solid #E09B8A;
 }
 
@@ -207,26 +210,22 @@ a.upi {
     bottom: -18px;
     position: relative;
     object-fit: cover;
-    left: -15px;
+    left: -51px;
     width: 19px;
     height: 18px;
-}
-
-.img-carrito {
-    left: -80px;
 }
 
 }
 
 
 @media (max-width: 414px){
-    .logo {
+.logo {
     position: absolute;
     left: 0px;
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    width: 200px;
+    width: 170px;
     bottom: 0;
     top: 12px;
     float: left;
@@ -240,7 +239,7 @@ a.upi {
 }
 
 .caja {
-    left: 13%;
+    left: 19%;
     width: 264px;
 }
 
@@ -252,12 +251,34 @@ a.upi {
 .img-carrito {
     width: 22px;
     position: relative;
-    left: -58px;
+    left: -23px;
 }
 
 .caja {
     left: 13%;
     width: 256px;
+}
+
+.logo {
+    position: absolute;
+    left: 0px;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 160px;
+    bottom: 0;
+    top: 12px;
+    float: left;
+    object-fit: scale-down;
+}
+
+.lupa {
+    bottom: -18px;
+    position: relative;
+    object-fit: cover;
+    left: -49px;
+    width: 19px;
+    height: 18px;
 }
 
 }
@@ -282,7 +303,7 @@ a.upi {
     right: 0;
     margin-right: auto;
     margin-left: auto;
-    width: 160px;
+    width: 140px;
     bottom: 0;
     top: 16px;
     float: left;

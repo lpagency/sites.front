@@ -3,15 +3,17 @@
 
 $(document).ready(function() 
 {
+    
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(14,43,14);
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(15,15,15);
+    var site_name = $.environmentVar('complementa', 'complementa', 'complementa');
 
     // functions 
     // productos relacionados

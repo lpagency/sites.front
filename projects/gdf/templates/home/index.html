@@ -9,7 +9,6 @@
 {% end %}
 
 
-
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/figurella.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
@@ -28,6 +27,16 @@
 <script type="text/javascript">
   $(document).ready(function(){
     $('.lupa').click(function(){
+
+      $('#search-mobile').toggle(1000);
+
+    });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('.CloseInput').click(function(){
 
       $('#search-mobile').toggle(1000);
 

@@ -10,7 +10,8 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
+<link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
 <style type="text/css">
 @media (max-width: 1199px){
     .fondo {
@@ -23,7 +24,9 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
+
 <script type="text/javascript">
 
     $(document).ready(function()
@@ -37,7 +40,7 @@
     'https://checkout.loadingplay.com',
     'https://checkout.loadingplay.com',
     'https://checkout.loadingplay.com');
-     var app_public = $.environmentVar(29,47,47);
+     var app_public = $.environmentVar(47,47,47);
         
 
         $(document).ecommerce('product_detail', {
@@ -83,7 +86,7 @@
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
-                'maxProducts' : 8,
+                'maxProducts' : 10,
                 'templateOrigin' : '#product_template_home',
                 'tag' : tag,
                 'ignore_stock' : true,
@@ -92,7 +95,7 @@
                          $(".product-related").slick({
                           slidesToShow: 6,
                           slidesToScroll: 1,
-                          autoplay: true,
+                          autoplay: false,
                           autoplaySpeed: 2000,
                           prevArrow: false,
                           nextArrow: false,
@@ -126,25 +129,15 @@
 </script>
 
 <script type="text/javascript">
-  
-  $(document).ready(function()
-  {
-    $(".carousel").on("touchstart", function(event){
-    var xClick = event.originalEvent.touches[0].pageX;
-    $(this).one("touchmove", function(event){
-        var xMove = event.originalEvent.touches[0].pageX;
-        if( Math.floor(xClick - xMove) > 5 ){
-            $(".carousel").carousel("next");
-        }
-        else if( Math.floor(xClick - xMove) < -5 ){
-            $(".carousel").carousel("prev");
-        }
+
+$(document).ready(function() {
+   $("#myCarousel").swiperight(function() {
+      $(this).carousel('prev');
     });
-    $(".carousel").on("touchend", function(){
-        $(this).off("touchmove");
-    });
+   $("#myCarousel").swipeleft(function() {
+      $(this).carousel('next');
+   });
 });
-  });
 
 </script>
     <script>
@@ -317,7 +310,7 @@
             <div class="text-relac text-center">Productos relacionados</div>
         </div>
     </div>
-            <div id="my-carousel" class="carousel slide row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
+            <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
 
     </div>
     <div class="row product-related-2 visible-xs hidden-md hidden-lg hidden-sm">

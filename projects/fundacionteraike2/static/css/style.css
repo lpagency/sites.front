@@ -1,3 +1,23 @@
+.overlay-full-hacer {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 94%;
+    width: 96%;
+    margin-top: 20px;
+    margin-left: 2%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, 0.32);
+    border-radius: 20px;
+}
+
+.image-overlay:hover .overlay-full-hacer{
+    opacity: 0.7;
+}
+
 .texto_page_edu {
     font-size: 19px;
     color: #858993;

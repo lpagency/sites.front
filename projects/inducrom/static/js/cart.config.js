@@ -67,7 +67,7 @@ $(document).ready(function()
     'https://checkout.loadingplay.com',
     'https://checkout.loadingplay.com',
     'https://checkout.loadingplay.com');
-     var app_public = $.environmentVar(29,47,47);
+     var app_public = $.environmentVar(47,47,47);
 
     var config = {
         'app_public': app_public,

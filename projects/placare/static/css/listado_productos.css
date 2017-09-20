@@ -67,7 +67,7 @@ label.c-variable_1{
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 400;
     margin-left: 10px;
 }
 
@@ -76,7 +76,7 @@ label.c-variable_2{
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 400;
     margin-left: 10px;
 }
 
@@ -85,7 +85,15 @@ label.c-variable_3{
     display: inline-block;
     max-width: 100%;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 400;
+    margin-left: 10px;
+}
+
+label.c-variable_4{
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 5px;
+    font-weight: 400;
     margin-left: 10px;
 }
 
@@ -115,7 +123,7 @@ div.image-upload.part1 {
     width: 81%;
     text-align: left;
     left: 10px;
-    color: #282c3f;
+    color:#3e4152;
     font-size: 14px;
     font-weight: 400;
     margin-bottom: -15px;
@@ -203,7 +211,7 @@ div.image-upload.part1 {
 
 .descr_prod_detail {
     position: relative;
-    font-size: 13px;
+    font-size: 15px;
     width: 100%;
     text-align: left;
     /* height: 343px; */
@@ -257,7 +265,7 @@ hr.len {
 
 .texto-header-pro {
     margin-top: 19px;
-    margin-bottom: 29px;
+    margin-bottom: 9px;
     position: relative;
     left: -3%;
     float: left;
@@ -266,6 +274,8 @@ hr.len {
     color: rgba(128, 128, 128, 0.77);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+     text-transform: capitalize;
+
 }
 
 .container.min.dos {
@@ -281,13 +291,13 @@ hr.len {
     width: 100%;
     position: relative;
     top: -32px;
-    margin-bottom: 0px;
-    font-size: 12px;
+    margin-bottom: -6px;
+    font-size: 14px;
     font-weight: 600;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    left: 10px;
+    left: 9px;
     color: #282c3f;
 }
 
@@ -308,23 +318,24 @@ hr.len {
 }
 
 .oferta {
-    color: #282c3f;
+   color: #282c3f;
     float: left;
     left: 10px;
     position: relative;
     bottom: 18px;
-    font-size: 12px;
+    font-size: 14px;
     width: 45%;
     font-weight: 800;
 }
 
 .original {
-    color: #4A4949;
+    color: #282c3f;
     float: left;
     left: 10px;
     position: relative;
     bottom: 18px;
-    font-size: 12px;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .original-tachado {
@@ -333,7 +344,7 @@ hr.len {
     left: -6px;
     position: relative;
     bottom: 18px;
-    font-size: 12px;
+    font-size: 13px;
     text-decoration: line-through;
     width: 34%;
 }
@@ -351,26 +362,31 @@ hr.len {
     margin-top: 11px;
     margin-bottom: 0px;
     position: relative;
-    left: -13px;
+    left: 0px;
     float: left;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.72);
+    color: #282c3f;
     width: 100%;
+    text-transform: uppercase;
 }
 
 .texto-header-pro-3 {
     height: 74px;
     margin-bottom: -21px;
     position: relative;
-    left: 53px;
-    top: -22px;
-    font-size: 16px;
-    color: gray;
+    left: 97px;
+    top: -26px;
+    font-size: 18px;
+    color: #878b94;
     width: 15%;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.mii{
+    padding:0px;
 }
 
 .fa-angle-down{
@@ -381,31 +397,36 @@ hr.len {
 }
 
 .btn-primary {
-    color: rgba(128, 128, 128, 0.83);
+    color: #7e818c;
     background-color: white;
     border-color: rgba(128, 128, 128, 0.4);
     float: right;
     margin-top: -39px;
     border-radius: 0px;
     width: 30%;
-    text-align: left;
+    text-align:left;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
+    left: 2%;
+    position: relative;
 }
 
 .btn-primary:hover {
-    color: rgba(128, 128, 128, 0.83);
+    color: #7e818c;
     background-color: white;
     border-color: rgba(128, 128, 128, 0.4);
     float: right;
     margin-top: -39px;
     border-radius: 0px;
     width: 30%;
-    text-align: left;
+    text-align:left;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    left: 2%;
+    position: relative;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
@@ -420,20 +441,21 @@ hr.len {
     clear: both;
     font-weight: 200;
     line-height: 1.42857143;
-    color: rgba(0, 0, 0, 0.8);
+    color: #7e818c;
     white-space: nowrap;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-size: 14px;
 }
 
 .dropdown-menu {
     position: absolute;
     top: 100%;
-    left: 70%;
+    left: 72%;
     z-index: 1000;
     display: none;
     float: right;
-    min-width: 191px;
+    min-width: 196px;
     padding: 5px 0;
     margin: 2px 0 0;
     font-size: 14px;
@@ -477,8 +499,9 @@ hr.len {
     left: 0%;
     color: #282c3f;
     font-weight: 700;
-    font-size: 13px;
-    padding-top: 10px;
+    font-size: 15px;
+    padding-top: 0px;
+    margin-top: -3px;
 }
 
 .fa-plus{
@@ -738,12 +761,14 @@ a.talla {
 }
 
 .text-relac {
-    font-size: 17px;
+    font-size: 15px;
     margin-bottom: 30px;
     text-align: left;
     left: 5px;
     position: relative;
     font-weight: 600;
+    text-transform: uppercase;
+    color: #000000;
 }
 
 .mini{
@@ -840,12 +865,6 @@ padding:10px;
 
 }
 
-/*.hovereffect:hover img {
--ms-transform:scale(1.2);
--webkit-transform:scale(1.2);
-transform:scale(1.2);
-}*/
-
 .hovereffect:hover .overlay {
 opacity:1;
 filter:alpha(opacity=100);
@@ -865,13 +884,13 @@ transition-delay:.2s;
 }
 
 .descuento-lis {
-    font-size: 11px;
+    font-size: 13px;
     float: right;
     position: relative;
     color: #FF5722;
-    left: -12px;
+    left: -6px;
     margin-bottom: 20px;
-    margin-top: -18px;
+    margin-top: -37px;
 }
 
 .letrero-nuevo {
@@ -903,8 +922,8 @@ transition-delay:.2s;
 }
 
 .limpiar {
-    color: #5265D1;
-    font-size: 10px;
+    color: #5265D0;
+    font-size: 12px;
     font-weight: 600;
     margin-top: 29px;
     margin-bottom: -15px;
@@ -962,13 +981,20 @@ a.variables:active{
 
 .more-products {
     margin: auto;
-    width: 50%;
-    border-radius: 0px;
-    color: gray;
-    font-weight: 300;
-    font-size: 11px;
+    width: 320px;
+    border-radius: 1px;
+    color: #526cd0;
+    font-weight: 700;
+    font-size: 13px;
     top: 45px;
     position: relative;
+    border-color: #526cd0;
+}
+
+.btn-default.more-products:hover, .btn-default.more-products:focus, .btn-default.more-products:active, .btn-default.more-products.active, .open>.dropdown-toggle.btn-default.more-products {
+    color:white;
+    background-color: #526cd0;
+    border-color: #526cd0;
      -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -ms-transition: all 0.5s ease;
@@ -1055,7 +1081,7 @@ a.variables:active{
 .conti:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid #edebef;
     height: 275px;
     margin-bottom:7px;
 }
@@ -1098,22 +1124,26 @@ a.variables:active{
 
 a.text {
     background-color: transparent;
-    color: gray;
-    font-size: 16px;
-    padding: 3px 48px;
+    color:#526CD0;
+    font-size: 13px;
+    padding: 3px 50px;
     top: 124px;
     position: relative;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    font-weight: 600;
 }
 
 a.text.detalle {
     background-color: transparent;
-    color: gray;
+    color: #526CD0;
     font-size: 12px;
-    padding: 7px 47px;
-    top: 132px;
+    padding: 7px 45px;
+    top: 120px;
     position: relative;
-    border: 1px solid rgba(153, 153, 153, 0.38);
+    border: 1px solid transparent;
+    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    font-weight: 600;
 }
 
 
@@ -1129,16 +1159,23 @@ input[type=radio], input[type=checkbox] {
 
 .filtro-filtros{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-categorias{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-marca{
     height: 23px;
+    font-size: 15px;
+    color: #282c3f;
 }
 .filtro-talla{
     height: 23px;
-  
+    font-size: 15px;
+    color: #282c3f;  
 }
 
 
@@ -1162,29 +1199,32 @@ input[type=radio], input[type=checkbox] {
 
 .variables1{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .variables2{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .variables3{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
 }
 
 .fa-check-square {
     right: -3px;
     position: relative;
-    top: -14px;
+    top: -20px;
     font-size: 20px !important;
     color: #526CD0;
     width: 100%;
@@ -1195,8 +1235,10 @@ input[type=radio], input[type=checkbox] {
 
 .fil {
     position: relative;
-    top: -21px;
+    top: -24px;
     right: -13.5%;
+    font-size: 15px;
+    color: #282c3f;  
 }
 
 .fa-check-square.other {
@@ -1270,7 +1312,7 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de {
     position: relative;
     width: 109%;
-    height: 295px;
+    height: 270px;
     margin-bottom:8px;
     border: 1px solid white;
 }
@@ -1278,9 +1320,9 @@ input.check[type=radio], input.check[type=checkbox] {
 .conti-de:hover {
     position: relative;
     width: 109%;
-    border: 1px solid rgba(153, 153, 153, 0.38);
-    height: 295px;
-    margin-bottom:8px;
+    border: 1px solid #edebef;
+    height: 270px;
+    margin-bottom: 8px;
 }
 
 .filtro-talla.c-variable_1 {
@@ -1296,7 +1338,7 @@ input.check[type=radio], input.check[type=checkbox] {
 
 .filtro-talla.c-variable_3 {
     height: 23px;
-    width: 14%;
+    width: 15%;
 }
 
 .filtro-talla.c-variable_4 {
@@ -1307,7 +1349,7 @@ input.check[type=radio], input.check[type=checkbox] {
 
 .desi{
     float: left;
-    font-size: 13px;
+    font-size: 15px;
     color: #696e79;
     position: relative;
     top: 40px;
@@ -1337,19 +1379,19 @@ a.variables3:hover, a.variables3:focus, a.variables3:active{
     float: left;
     color: #526cd0;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 13px;
     width: 100%;
 }
 
 .op{
-    text-align: left;
+text-align: left;
     float: left;
-    color: #696e79;
+    color: #94989f;
     font-weight: 300;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 12px;
+    font-size: 13px;
     width: 60%;
 }
 
@@ -1366,9 +1408,18 @@ a.variables3:hover, a.variables3:focus, a.variables3:active{
 
 .variables4{
     font-weight: 300;
-    font-size: 13px;
+    font-size: 14px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #696b79;
+}
+
+hr.lon {
+    margin-top: -8px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #edebef;
+    width: 99%;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
@@ -1787,7 +1838,7 @@ a.text {
 .mover {
     margin-top: 25px;
     position: relative;
-    left: -29px;
+    left: 0px;
 }
 
 .img-pro {
@@ -1883,18 +1934,6 @@ a.text {
     top: 42px;
 }
 
-/*.letrero-sale {
-    float: right;
-    background-color: #FF9D36;
-    color: white;
-    width: 20%;
-    text-align: left;
-    padding-left: 6px;
-    left: 0%;
-    position: relative;
-    top: 0px;
-}*/
-
 #product-detail-id {
     margin-top: 35px;
     margin-bottom: -420px;
@@ -1936,17 +1975,17 @@ a.text {
 }
 
 .linea-separacion-movil {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #edebef;
     position: relative;
     left: -15px;
     width: 100%;
-    top: -2px;
+    top: 54px;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
 .linea-separacion-2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid solid #edebef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2326,7 +2365,7 @@ hr.listado {
     margin-top: -82px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid rgba(153, 153, 153, 0.38);
+    border-top: 1px solid #ebedef;
     width: 99%;
 }
 
@@ -2397,6 +2436,14 @@ hr.listado {
    .filtro-categorias {
      height: 100%; 
    }
+
+   hr.lon {
+    margin-top: 32px;
+    margin-bottom: 34px;
+    border: 0;
+    border-top: 1px solid #edebef;
+    width: 99%;
+}
 
 }
 
@@ -2626,7 +2673,7 @@ a.talla {
 
 
 .linea-separacion-2 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid #ebedef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2635,7 +2682,7 @@ a.talla {
 }
 
 .linea-separacion-3 {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.27);
+    border-bottom: 1px solid #ebedef;
     position: relative;
     left: -13px;
     width: 100%;
@@ -2952,7 +2999,7 @@ a.text {
 .nombre-talla {
     float: left;
     position: relative;
-    left: -13px;
+    left: 0px;
     text-align: left;
     margin-top: 26px;
     font-size: 8px;
@@ -3190,6 +3237,39 @@ a.text {
     color: rgba(0, 0, 0, 0.62);
     font-weight: 500;
     text-decoration: line-through;
+    left: 11px;
+}
+
+.up-ex-detalle {
+    float: left;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    top: -43px;
+    margin-bottom: 0px;
+    font-size: 12px;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 12px;
+    color: #696e79;
+}
+
+.texto-detalle {
+    text-align: left;
+    position: relative;
+    top: -28px;
+    margin-bottom: 22px;
+    font-size: 16px;
+    /* border-top-color: black; */
+    color: #696e79;
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-transform: inherit;
+    left: 12px;
 }
 
 .descuento-detalle {
@@ -3292,9 +3372,9 @@ a.text {
 }
 
 .linea-separacion-movil {
-    border-bottom: 1px solid rgba(0, 0, 0, 0.25);
+    border-bottom: 1px solid #ebedef;
     position: relative;
-    left: -15px;
+    left: 0px;
     width: 100%;
     top: 9px;
     margin-top: 33px;
@@ -3306,6 +3386,22 @@ a.text {
     top: -18px;
     right: -9.5%;
     margin-bottom: -14px;
+}
+
+.linea-separacion-2 {
+    border-bottom: 1px solid #ebedef;
+    position: relative;
+    left: 0px;
+    width: 100%;
+    position: relative;
+    top: 20px;
+}
+
+.resis {
+    width: 106%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
 }
 
 }
@@ -3353,17 +3449,6 @@ a.text {
 }
 
 @media (max-width: 375px){
-    .nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 8px;
-    width: 100%;
-    font-weight: 600;
-}
-
 .image {
     opacity: 1;
     display: block;
@@ -3533,6 +3618,13 @@ a.talla {
     left: -4px;
 }
 
+.resis {
+    width: 109%;
+    position: fixed;
+    bottom: 0px;
+    z-index: 100;
+}
+
 }
 
 @media (max-width: 360px){
@@ -3545,19 +3637,7 @@ a.text {
     position: relative;
     border: 1px solid gray;
 }
-/*
-.texto-header-pro-3 {
-    height: 74px;
-    margin-bottom: -35px;
-    position: relative;
-    left: 23%;
-    top: -20px;
-    font-size: 15px;
-    font-weight: 400;
-    color: rgba(0, 0, 0, 0.72);
-    width: 100%;
-    text-align: center;
-}*/
+
 .size-item.active {
     color: white;
     left: 0px;
@@ -3617,16 +3697,6 @@ a.text {
     font-size: 13px;
 }
 
-.nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 7px;
-    width: 100%;
-    font-weight: 600;
-}
 
 }
 
@@ -3710,17 +3780,6 @@ a.text {
     position: relative;
     height: 500px;
     margin-top: -28px;
-}
-
-.nombre-talla {
-    float: left;
-    position: relative;
-    left: -13px;
-    text-align: left;
-    margin-top: 26px;
-    font-size: 7px;
-    width: 124%;
-    font-weight: 600;
 }
 
 .size-item.active {

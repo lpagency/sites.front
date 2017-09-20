@@ -191,7 +191,7 @@ header.grin {
     display: block;
     padding: 7px 20px;
     clear: both;
-    font-weight: 400;
+    font-weight: 600;
     line-height: 1.42857143;
     color: white;
     white-space: nowrap;
@@ -694,20 +694,44 @@ a.rojo{
 .img-carrito-lateral {
     position: relative;
     width: 17px;
-    top: -29px;
+    top: -22px;
     float: left;
     left: 37%;
 }
 
 }
 
+@media (max-width: 375px){
+    .img-carrito-lateral {
+    position: relative;
+    width: 17px;
+    top: -22px;
+    float: left;
+    left: 34%;
+}
+
+}
+
 @media (max-width: 360px){
-    .caja-logo {
+.caja-logo {
     height: 51px;
     width: 210px;
     float: initial;
-    margin-top: -54px;
+    margin-top: -6px;
     margin-bottom: 21px;
+}
+
+.navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 53px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
 }
 
 .btn-default.uni:hover {
@@ -734,5 +758,37 @@ a.rojo{
 
 }
 
+
+@media (max-width: 320px){
+    .navbar-toggle {
+    position: relative;
+    float: right;
+    padding: 9px 10px;
+    margin-top: 4px;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.caja-logo {
+    height: 51px;
+    width: 210px;
+    float: initial;
+    margin-top: -52px;
+    margin-bottom: 21px;
+}
+
+.img-carrito-lateral {
+    position: relative;
+    width: 17px;
+    top: -24px;
+    float: left;
+    left: 31%;
+}
+
+}
 
 

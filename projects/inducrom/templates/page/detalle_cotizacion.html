@@ -36,6 +36,15 @@
 <script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
 
 <script type="text/javascript">
+    $(document).ready(function(){
+        var cookieCotizar = getCookie("url");
+        var urlVolver = "{{ site_base }}/listado_productos?tag="+cookieCotizar;
+
+        $(".demo").attr("href", urlVolver);
+    });
+</script>
+
+<script type="text/javascript">
 
 function setCookie(cname,cvalue) {
 
@@ -365,8 +374,8 @@ function getCookie1(cname) {
                                 <input type="hidden" name="submitted" id="submitted3" value="true">
                                
                             </form>
-                                <a href="{{site_base}}/listado_productos?tag=cotizar">
-                                    <button type="volver" class="btn btn-store btn-block volver" src="{{site_base}}/listado_productos?tag=cotizar">Seguir cotizando 
+                                <a class="demo" href="">
+                                    <button type="volver" class="btn btn-store btn-block volver" src="">Seguir cotizando 
                                     </button>
                                 </a>
 

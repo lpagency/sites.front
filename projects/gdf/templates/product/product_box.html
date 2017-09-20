@@ -40,9 +40,9 @@
                 <h1 class="name ellipsis multiline">{{! name }} <i class="fa fa-heart-o" aria-hidden="true"></i></h1>
             </div>
             <div style="padding-bottom: 10px;">
-                <div class="precio price anterior-oferta-sale">{{! main_price|money }}</div>
-                <div class="price">{{! promotion_price|money }}</div>
-                <div class="colores-dispo"> + colores disponibles </div>
+                <div class="precio price">{{! main_price|money }}</div>
+                <div class="promo price hidden">{{! promotion_price|money }}</div>
+                <div class="colores-dispo {{! id }} hidden"> + colores disponibles </div>
             </div>
              
         </div>

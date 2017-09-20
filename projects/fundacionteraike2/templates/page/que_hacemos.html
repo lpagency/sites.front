@@ -44,7 +44,48 @@
       <div class="div">
       <div class="row">
         <div class="col-md-12 col-lg-12">
-          {{ getArticleList(html="page/que_hacemos_art.html",tag="que_hacemos") }}
+         <div class="col-md-6 col-lg-6 col-xs-12 col-sm-6 noticias-image image-overlay">
+          {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_side_hacer_1">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}side_hacer_1" name="image" id="img_side_hacer_1"/>
+          </div>
+          {% end %}
+          <a id="{{ site.name + '_side_hacer_1' }}" href="{{ read_link(site.name + '_side_hacer_1') }}">
+            <img id="{{ site.name }}side_hacer_1" src="{{ read_image(site.name + 'side_hacer_1', 1) }}" onload="this.src='{{ read_image(site.name + 'side_hacer_1',) }}'" alt="item" class="image"> 
+
+            <div class="overlay-full-hacer">
+            </div>
+          </a>
+          {% if is_admin %}
+          <img class="change-image editablelink import" link-id="{{ site.name + '_side_hacer_1' }}" content="{{ read_link(site.name + '_side_hacer_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 0px;z-index: 2000!important;"> 
+          {% end %}
+          <div class="text text_main text-left {{editabletext}}" text-id="{{ site.name + 'side_hacer_1' }}">{{ read_text(site.name +  'side_hacer_1') }}</div>
+        </div>
+
+
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 noticias-image image-overlay">
+          {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_side_hacer_2">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}side_hacer_2" name="image" id="img_side_hacer_2"/>
+          </div>
+          {% end %}
+          <a id="{{ site.name + '_side_hacer_2' }}" href="{{ read_link(site.name + '_side_hacer_2') }}">
+            <img id="{{ site.name }}side_hacer_2" src="{{ read_image(site.name + 'side_hacer_2', 1) }}" onload="this.src='{{ read_image(site.name + 'side_hacer_2',) }}'" alt="item" class="image"> 
+
+            <div class="overlay-full-hacer">
+            </div>
+          </a>
+          {% if is_admin %}
+          <img class="change-image editablelink import" link-id="{{ site.name + '_side_hacer_2' }}" content="{{ read_link(site.name + '_side_hacer_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 0px;z-index: 2000!important;"> 
+          {% end %}
+          <div class="text text_main text-left {{editabletext}}" text-id="{{ site.name + 'side_hacer_2' }}">{{ read_text(site.name +  'side_hacer_2') }}</div>
+        </div>
           </div>
         </div>
       </div>
