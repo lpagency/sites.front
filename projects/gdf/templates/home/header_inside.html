@@ -134,12 +134,7 @@
 
                   <div align="center">
                     <div class="col-xs-12">
-                        <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
-                            <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
-                                <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
-                               <!--  <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div> -->
-                            </form>
-                        </div>
+            
                     </div>
                 </div>
 
@@ -240,6 +235,15 @@
             </div>
             <!-- /.navbar-collapse -->
         </div>
+
+        <!-- ***Buscador**** -->
+        <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
+          <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
+            <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+            <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div>
+          </form>
+        </div>
+      <!-- ***Fin buscador**+ -->
         <!-- /.container -->
     </nav>
 
