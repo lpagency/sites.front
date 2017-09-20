@@ -41,16 +41,16 @@
             // configure for each enviroment
             if ( isLocalHost() ) 
             {
-                base_url = 'http://localhost:8520/';
-                checkout_url = 'http://localhost:8522/';
+                base_url = 'http://apibodegas.ondev.today/',
+                checkout_url = 'http://betapay.loadingplay.com';
 
                 // base_url = 'http://apibodegas.ondev.today/';
                 // checkout_url = 'http://lpcheckout.ondev.today/';
             } 
             else if ( isDevelopment() ) 
             {
-                base_url = 'http://apibodegas.ondev.today/';
-                checkout_url = 'http://lpcheckout.ondev.today/';
+                base_url = 'http://apibodegas.ondev.today/',
+                checkout_url = 'http://betapay.loadingplay.com';
             }
 
             // initialize ecommerce
@@ -120,7 +120,7 @@
                             <div class="main-price hidden-xs">
                                 <span class="money" style="font-size:30px;">{{! main_price }}</span>
                             </div>
-                            <button type="button" class="btn add-to-cart" style="background-color: rgba(0, 0, 0, 0.24);" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" >Añadir al carro</button>
+                            <button type="button" class="btn add-to-cart" style="background-color: rgba(0, 0, 0, 0.24);" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" lp-cart-add>Añadir al carro</button>
                         </div>
                     </form>
                     </div>
