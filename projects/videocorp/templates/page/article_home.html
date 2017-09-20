@@ -1,0 +1,17 @@
+<div class="col-md-12">
+    
+    <div class="col-md-4 col-xs-12 tamano">
+    <div class="image-div">
+            <a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}">
+              <img class="img-responsive mini-art-home image-div2" src="{{ article["thumb_500"] }}" />
+            </a>
+    </div>
+    </div>
+
+    <div class="col-md-6 col-xs-12">
+        <h4><strong>{{ article["title"] }}</strong></h4>
+        <p class="text-left dos ellipsis multiline">{{ article["caption"] }} </p>
+    </div>
+
+</div>
+
