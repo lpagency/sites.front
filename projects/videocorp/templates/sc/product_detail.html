@@ -28,7 +28,7 @@
         'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com');
-         var app_public = $.environmentVar(47,47,47);
+         var app_public = $.environmentVar(50,50,50);
         
 
         $(document).ecommerce('product_detail', 
@@ -62,24 +62,7 @@
                 
             };
             $('.product-related').ecommerce('product_box', config);
-
-            var config = {
-                'app_public' : app_public,
-                'base_url' : base_url,
-                'maxProducts' : 8,
-                'templateOrigin' : '#product_template_home',
-                'tag' : '',
-                'ignore_stock' : true,
-                    'onLoad':function(){
-
-                     }
-                };
-            $('.product-related-2').ecommerce('product_box',config);
         };
-
-        $(document).on("click", ".cotizar", function(){
-          location.href = "{{ site_base}}/detalle_cotizacion";
-        });
 
     });
 
@@ -123,7 +106,7 @@
             <h1>{{! name }}</h1>
             <div> {{!main_price|money}} </div>
 
-            <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar hidden" id="open-cart" data-toggle="modal" data-target="#myModal">COMPRAR</button>
+            <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar" id="open-cart" data-toggle="modal" data-target="#myModal">COMPRAR</button>
 
             <h3>{{! description }}</h3>
               
