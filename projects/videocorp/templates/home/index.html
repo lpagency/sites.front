@@ -1,0 +1,45 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block scripts %}
+<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
+<script>
+  jQuery(document).ready(function(){
+    jQuery('.menulist').toggle();
+    jQuery('#hideshow').on('click', function(event) {
+      event.preventDefault();
+      jQuery('.menulist').toggle('hidde');
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $(document).on("click", ".editablelink", function(ev){
+      ev.preventDefault();
+    });
+  });
+</script>
+{% end %}
+
+{% block css%}
+{% end %}
+
+{% block body %}
+<div class="container">
+  <h1>VIDEOCORP</h1>
+  <a href="{{ site_base }}/listado_productos">PRODUCTS LIST</a>
+</div>
+{% include ../home/footer.html %}
+{% end %}
