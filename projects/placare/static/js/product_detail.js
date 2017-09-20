@@ -9,9 +9,9 @@ $(document).ready(function()
         'http://apibodegas.ondev.today/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://betapay.loadingplay.com',
-         'http://betapay.loadingplay.com',
-        'https://pay.loadingplay.com');
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(53,53,53);
     var site_name = $.environmentVar('placare', 'placare', 'placare');
 
