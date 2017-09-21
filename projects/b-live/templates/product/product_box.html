@@ -4,6 +4,23 @@
     <div class="col-md-12">
       <div class="col-md-6 col-xs-12 zig">
           <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+            <img src="{{! images[0][3] }}" alt="" class="mini-articulos" >
+          </a>
+      </div>
+
+      <div class="col-md-6 col-xs-12 lef">
+          <h1 class="tres"> {{! name }} </h1>
+          <p class="cuatro ellipsis multiline">{{! bullet_1 }}</p>
+          <p class="cuatro ellipsis multiline"><a class="vermasbtn" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">Ver Más</a></p>
+      </div>
+    </div>
+</script>
+
+<script type="text/template" id="product_template2">
+  <div class="clearfix-dos"> </div>
+    <div class="col-md-12">
+      <div class="col-md-6 col-xs-12 zig">
+          <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
             <h1> {{! name }} </h1>
           </a>
       </div>
