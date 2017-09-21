@@ -8,13 +8,6 @@
 {% if is_admin %}
 <link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
-<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
-<script>
-   $(“#menu-toggle”).click(function(e) {
-       e.preventDefault();
-       $(#wrapper”).toggleClass(“toggled”);
-   });
-   </script>
 {% end %}
 <style type="text/css">
     html, body{
@@ -42,6 +35,23 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<!-- <script>
+   $(“#menu-toggle”).click(function(e) {
+       e.preventDefault();
+       $(#wrapper”).toggleClass(“toggled”);
+   });
+   </script> -->
+<script type="text/javascript">
+  $(document).ready(function(){
+    var h = $(".tags").html();
+    var tag = h.split(",");
+    for(x in tag)
+    {
+      $(".list-service-ul").html($(".list-service-ul").html()+'<div>'+tag[x]+'</div>');
+    }
+  });
+</script>
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
 {% end %}
 
 {% block body %}
@@ -115,7 +125,10 @@
                             <!-- </div> -->
                             <div class="col-sm-12 especial p-art" style="text-align: right;">
                             </div>
-                            <div class="col-sm-12 p-art ">
+                            <div class="hidden tags">
+                              {{",".join(article["tags"])}}
+                            </div>
+                            <div class="col-sm-12 p-art">
                                 tags | <a>{{ "</a> , <a>".join(article["tags"]) }}</a>
                             </div>
                         </div>
@@ -157,14 +170,7 @@
             <div class="service-banner-art">
                 <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service-art">
                     <ul class="list-service-ul">
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_0' }}"> {{ read_text(site.name +  '_listart_0') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_1' }}"> {{ read_text(site.name +  '_listart_1') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_2' }}"> {{ read_text(site.name +  '_listart_2') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_3' }}"> {{ read_text(site.name +  '_listart_3') }}
-                        </div>             
+                        
                     </ul>
                 </div>
                 <!--
