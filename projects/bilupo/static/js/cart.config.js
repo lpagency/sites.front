@@ -56,7 +56,7 @@ $(document).ready(function()
         '/bilupo/checkout',
         '/checkout',
         '/checkout');
-    var app_public = $.environmentVar(8,42,42);
+    var app_public = $.environmentVar(42,42,42);
 
     var config = {
         'app_public': app_public,
