@@ -10,6 +10,7 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
@@ -33,11 +34,11 @@
             'https://checkout.loadingplay.com',
             'https://checkout.loadingplay.com',
             'https://checkout.loadingplay.com');
-        var app_public = $.environmentVar(29,29,58);
+        var app_public = $.environmentVar(58,58,58);
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
-            'maxProducts' : 8,
+            'maxProducts' : 12,
             'templateOrigin' : '#product_template',
             'tag' : '',
             'ignore_stock' : true,
@@ -127,29 +128,8 @@
             </div>
             <!-- *** [LISTA DE SERVICIOS] *** -->
             <div class="service-banner-home">
-                <div class="col-md-4 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service">
-                    <ul class="list-service-ul">
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_0' }}"> {{ read_text(site.name +  '_home_0') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_1' }}"> {{ read_text(site.name +  '_home_1') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_2' }}"> {{ read_text(site.name +  '_home_2') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_3' }}"> {{ read_text(site.name +  '_home_3') }}
-                        </div>             
-                    </ul>
-                </div>
-                <div class="col-md-4 col-sm-12 col-xs-12 text-left list-service">
-                    <ul class="list-service-ul">
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_4' }}"> {{ read_text(site.name +  '_home_4') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_5' }}"> {{ read_text(site.name +  '_home_5') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_6' }}"> {{ read_text(site.name +  '_home_6') }}
-                        </div> 
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_home_7' }}"> {{ read_text(site.name +  '_home_7') }}
-                        </div>                     
-                    </ul>
+                <div class="col-md-4 col-sm-12 col-md-offset-1 col-xs-12 text-left product-list list-service">
+                    
                 </div>
             </div>
             </div>
