@@ -34,6 +34,104 @@
 
         <!-- body -->
         {% block body %}{% end %}
+        <div align="center">
+            <div class="modal fade" id="myModal" role="dialog" style="margin-top: 36px; z-index:10000">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title ">Resumen de tu compra</h4>
+                        </div>
+                        <div class="modal-body mlb-btn">
+                            <div class="container-fluid cart-list" ng-controller="">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                <th>Nombre</th>
+                                                <th>Precio</th>
+                                                <th class="text-center">Cant</th>
+                                                <th class="text-right"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="shopping-cart">
+                                        </tbody>
+                                    </table>
+                                    <div class="checkout-form"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/x-template" id="shopping-cart-product">
+        <tr class="producto-carro">
+            <td class="vert-align text-left">{{! name }}</td>
+            <td class="vert-align money">{{! price }}</td>
+            <td class="text-center vert-align">
+                <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+                {{! quantity }}
+                <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+            </td>
+            <td class="text-center vert-align">
+                <a class="borrarproducto" cart-id=""><i class="icon-close"></i></a>
+            </td>
+        </tr>
+        <tr class="producto-detalle-cotizacion">
+            <td class="mumu-2" style="width: 100px; font-size: 12px;">
+                {{! sku }}
+            </td>
+            <td>
+            <div class="ellipsis multiline mumu" style="position: relative;left: 58px;text-align: left;width: 407px;font-size: 12px;height: 21px;float: left;margin-top: 2px;">
+                {{! name }}
+            </div>
+            </td>
+            <td style="">
+                <i class="fa fa-minus menos remove-one" product-id="{{! id }}" aria-hidden="true"></i>
+            </td>
+            <td class="mumu-3" style="text-align: left;font-size: 12px;left: 33px;position: relative;">
+                 {{! quantity }} 
+            </td>
+            <td>
+                <i class="fa fa-plus mas add-one" product-id="{{! id }}" aria-hidden="true"></i>
+            </td>
+        </tr>
+    </script>
+    <script type="text/x-template" id="shopping-cart-total" >
+        <tr>
+            
+        </tr>
+        </thead>
+            <tr class="producto-carro">
+                <td>Total:</td> 
+                <td id="total" class="text-right money lib">{{! total }}</td>
+                <td></td>
+            </tr>
+    </script>
+    <script type="text/x-template" id="shopping-cart-units-total" >
+        <span> {{! units_total }}</span>
+    </script>
+    <script type="text/x-template" id="shopping-cart-checkout-form" >
+        <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+            <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+            <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+            <div class="form-group text-center">
+                 <button type="submit" class="btn bn" style="
+                    background-color: rgba(0, 0, 0, 0.24); color: #777; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;">PAGAR
+                </button>
+            
+            </div>
+        </form>
+        <div class=""> 
+             <a class="modal-close bac" data-dismiss="modal" aria-hidden="true">VOLVER</a>
+        </div>
+    </script>
         <!-- /body -->
 
         <!-- bt inicio -->
