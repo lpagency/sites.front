@@ -172,6 +172,17 @@
         {% end %}
 
         {% block scripts %}
+            <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+            <script type="text/template" id="product_template">
+                <div class="col-md-3 col-sm-3 col-xs-6" >
+                    <a class="" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                        <div class="conti">
+                            <img src="{{! images[0][3] }}" alt="" class="img-responsive image" >
+                            <div class="inf ellipsis multiline">{{! name }}</div>
+                        </div>
+                    </a>
+                </div>
+            </script>
         {% end %}
     </body>
 </html>

@@ -41,68 +41,18 @@
 
   <section class="h-banner">
   <div id="myCarousel" class="col-md-12 carousel slide carousel-fade" data-ride="carousel" data-interval="3500">
-    <!-- Indicators -->
-  <!--   <ol class="carousel-indicators hidden-xs">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol> -->
-
     <!-- Wrapper for slides -->
     <div class="carousel-inner banner-carousel carousel-h" role="listbox">
       <div class=" item active banner-index" style="">
-          {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-               <label for="img_slider_1">
-                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_1" name="image" id="img_slider_1" >
-           </div>
-           {% end %}
-            <a id="{{ site.name + '_img_slider_1' }}" href="{{ read_link(site.name + '_img_slider_1') }}">
-            <img id="{{ site.name }}_img_slider_1" src="{{ read_image(site.name + '_img_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_1',500) }}'" class="img_banner desaturada img-height" alt="item">
-            </a>
-            <!--editable link-->
-            {% if is_admin %}
-            <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_1' }}" content="{{ read_link(site.name + '_img_slider_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
-            {% end %}
+        <img src="https://static.pexels.com/photos/33109/fall-autumn-red-season.jpg">
       </div>
 
       <div class=" item background banner-index" style="">
-             {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-               <label for="img_slider_2">
-                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_2" name="image" id="img_slider_2" >
-           </div>
-           {% end %}
-           <a id="{{ site.name + '_img_slider_2' }}" href="{{ read_link(site.name + '_img_slider_2') }}">
-            <img id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" class="img_banner desaturada img-height" alt="item">
-            </a>
-            <!--editable link-->
-            {% if is_admin %}
-            <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_2' }}" content="{{ read_link(site.name + '_img_slider_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
-            {% end %}
+        <img src="https://wallpaperscraft.com/image/milky_way_stars_mountains_night_germany_bavaria_sky_45888_1920x1080.jpg">
       </div>
 
-<div class=" item background banner-index" style="">
-             {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-               <label for="img_slider_3">
-                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_3" name="image" id="img_slider_3" >
-           </div>
-           {% end %}
-            <a id="{{ site.name + '_img_slider_3' }}" href="{{ read_link(site.name + '_img_slider_3') }}">
-            <img id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" class="img_banner desaturada img-height" alt="item">
-            </a>
-            <!--editable link-->
-            {% if is_admin %}
-            <img class="change-image editablelink" link-id="{{ site.name + '_img_slider_3' }}" content="{{ read_link(site.name + '_img_slider_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
-            {% end %}
-      </div>
+      <div class=" item background banner-index" style="">
+        <img src="https://images4.alphacoders.com/171/thumb-1920-171916.jpg">
     </div>
 
 
@@ -121,78 +71,31 @@
 
 </section>
   <div class="col-md-12 col-sm-12 col-xs-12">
-     <div class="{{editabletext}}" text-id="{{ site.name + 'text_index' }}">{{ read_text(site.name +  'text_index') }}</div>
+     <div>ESTA ES UNA FRASE DESCRIPTIVA DE LA VISION DEL SERVICIO CON SUS PRINCIPALES VIRTUDES Y DEFERENCIALES</div>
   </div>
   <a href="{{ site_base }}/productos">PRODUCTS LIST</a>
+  <a href="{{ site_base }}/articulos">ARTICLE LIST</a>
   <div class="clearfix" style="padding-bottom: 100px"></div>
   <div class="img_index">
-    {% if is_admin %}
-      <div class="image-upload lapiz-index visible-movil" style="position: relative;">
-        <label for="img_banner_index_1">
-          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_img_banner_index_1" name="image" id="img_banner_index_1" >
-      </div>
-    {% end %}
-    <a id="{{ site.name + '_img_banner_index_1' }}" href="{{ read_link(site.name + '_img_banner_index_1') }}">
-      <img id="{{ site.name }}_img_banner_index_1" src="{{ read_image(site.name + '_img_banner_index_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_banner_index_1',500) }}'" class="img_banner img-h img-height" alt="item">
-    </a>
   </div>
 
   <div class="img_index">
-    {% if is_admin %}
-      <div class="image-upload lapiz-index visible-movil" style="position: relative;">
-        <label for="img_banner_index_2">
-          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_img_banner_index_2" name="image" id="img_banner_index_2" >
-      </div>
-    {% end %}
-    <a id="{{ site.name + '_img_banner_index_2' }}" href="{{ read_link(site.name + '_img_banner_index_2') }}">
-      <img id="{{ site.name }}_img_banner_index_2" src="{{ read_image(site.name + '_img_banner_index_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_banner_index_2',500) }}'" class="img_banner img-h img-height" alt="item">
-    </a>
+    <img src="https://7static.loadingplay.com/static/images/6dffade835c328cfce509d000378b1c4_Captura_de_pantalla__a_las_.59">
   </div>
 
   <div class="img_index">
-    {% if is_admin %}
-      <div class="image-upload lapiz-index visible-movil" style="position: relative;">
-        <label for="img_banner_index_3">
-          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_img_banner_index_3" name="image" id="img_banner_index_3" >
-      </div>
-    {% end %}
-    <a id="{{ site.name + '_img_banner_index_3' }}" href="{{ read_link(site.name + '_img_banner_index_3') }}">
-      <img id="{{ site.name }}_img_banner_index_3" src="{{ read_image(site.name + '_img_banner_index_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_banner_index_3',500) }}'" class="img_banner img-h img-height" alt="item">
-    </a>
+    <img src="https://84static.loadingplay.com/static/images/6a22e6c6cfc0f50a88786e6969c757ce_Captura_de_pantalla__a_las_.00">
   </div>
 
   <div class="img_index">
-    {% if is_admin %}
-      <div class="image-upload lapiz-index visible-movil" style="position: relative;">
-        <label for="img_banner_index_4">
-          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_img_banner_index_4" name="image" id="img_banner_index_4" >
-      </div>
-    {% end %}
-    <a id="{{ site.name + '_img_banner_index_4' }}" href="{{ read_link(site.name + '_img_banner_index_4') }}">
-      <img id="{{ site.name }}_img_banner_index_4" src="{{ read_image(site.name + '_img_banner_index_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_banner_index_4',500) }}'" class="img_banner img-h img-height" alt="item">
-    </a>
+    <img src="https://7static.loadingplay.com/static/images/8bb5a1d2f20ac86801336f0e88a3bee2_Captura_de_pantalla__a_las_.59">
   </div>
 
   <div class="img_index">
-    {% if is_admin %}
-      <div class="image-upload lapiz-index visible-movil" style="position: relative;">
-        <label for="img_banner_index_5">
-          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-        </label>
-        <input type="file" class="editableimage" image-id="{{ site.name }}_img_banner_index_5" name="image" id="img_banner_index_5" >
-      </div>
-    {% end %}
-    <a id="{{ site.name + '_img_banner_index_5' }}" href="{{ read_link(site.name + '_img_banner_index_5') }}">
-      <img id="{{ site.name }}_img_banner_index_5" src="{{ read_image(site.name + '_img_banner_index_5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_banner_index_5',500) }}'" class="img_banner img-h img-height" alt="item">
-    </a>
+    <img src="https://7static.loadingplay.com/static/images/18b5c07b322fc7c63265d82a2fc3f329_Captura_de_pantalla__a_las_.59">
+  </div>
+  <div class="img_index">
+    <img src="https://84static.loadingplay.com/static/images/b888aeab72ee40a7970a59519335ad8d_Captura_de_pantalla__a_las_.00">
   </div>
 </div>
 {% include ../home/footer.html %}
