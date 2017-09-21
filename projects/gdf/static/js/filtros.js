@@ -124,12 +124,12 @@ function limpiar()
     if($(window).width() < 800)
     {
 
-        $(".talla35").removeClass("hover2");
-        $(".talla36").removeClass("hover2");
-        $(".talla37").removeClass("hover2");
-        $(".talla38").removeClass("hover2");
-        $(".talla39").removeClass("hover2");
-        $(".talla40").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
+        $(".size-item-click").removeClass("hover2");
 
         $(".talla35").attr('onclick',"checkTallas('35'); deshabilitar('35');");
         $(".talla36").attr('onclick',"checkTallas('36'); deshabilitar('36');");
@@ -196,7 +196,7 @@ function filtrar()
 function deshabilitar(tag)
 {
     $(".talla"+tag).attr('onclick','').unbind('click');
-    $(".talla"+tag).addClass("hover2");
+    $(".talla"+tag).parent().addClass("hover2");
 }
 
 function deshabilitarDesk(tag)
