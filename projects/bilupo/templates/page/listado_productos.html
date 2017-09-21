@@ -31,26 +31,18 @@ $(document).ready(function()
 });
 </script>
 
-<!-- 
-<script type="text/template" id="shopping-cart-units-total" >
-    <span class="quantity" style="font-family: arial; font-size: 15px"><b>{{! units_total }}</b></span>
-</script> 
--->
-
-<!-- 
-<script type="text/x-template" id="shopping-cart-product">
-    <div> {{! name }} | {{! quantity }}
-        <button class="remove-from-cart" product-id="{{! id }}">Remove</button>
-        <button class="remove-one" product-id="{{! id }}">-</button>
-        <button class="add-one" product-id="{{! id }}">+</button>
-        <span class="product-total">{{! total }}</span>
-    </div>
-</script>
--->
-
 <script type="text/template" class="categories" >
     <a href="#" class="contenidoDrop filtro" tag="{{!tag}}">{{!name}}</a>
    <!-- <div class="filtro info contenidoDrop"  tag="{{!tag}}">{{!info}}</div> -->
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(document).on("click", ".buscarPorFiltros", function(){
+            $(".loading_2").removeClass("hidden");
+            $(".loading_2").toogle("slow");
+        });
+    });
 </script>
 
 <script type="text/javascript">
@@ -335,15 +327,6 @@ body{
 </style>
 
 <div class="contenedor" style="padding-top: 170px;  margin-left: auto; margin-right: auto; position: relative;">
-    <!--<div class="filtroAloShoro" id="filtroMayorMenor" align="right">
-        <div class="dropdown" style="z-index: 10">
-            <input type="text" placeholder="Precio: menor a mayor" id="myInput" style="padding-left: 5%;font-family:'Open Sans', sans-serif; font-size: 12px; width: 100%; padding-right: 5%">
-            <button class="dropbtn"><span class="fa fa-chevron-down"></span></button>
-            <div class="dropdown-content dropdownlist">
-                <a href="#" class="contenidoDrop">Precio: mayor a menor</a>
-            </div>
-        </div>
-    </div>-->
     <div class="container">
     <div class="buscador hidden-sm hidden-md hidden-xs" style="float: right;width: 17%;margin-top: -5%;margin-right: 5%;padding-top: 70px;" align="right">
         <form action="{{site_base}}/listado_productos" method="get">
@@ -352,20 +335,6 @@ body{
             </button>
             <input class="txtBuscar" type="text" name="search_query" placeholder="Buscar" style="float: right; height: 60%; margin-top: 5%; padding-left:5%; font-family:'Open Sans', sans-serif; font-size: 12px ">
         </form>
-        <!-- <div class="dropdown drop-ordenar">
-            <input type="text" class="ordenar-text" placeholder="Ordenar..." style="padding-left: 5%; font-family:'Open Sans', sans-serif; font-size: 12px">
-            <button class="dropbtnup" data-toggle="dropdown">
-                <span class="fa fa-chevron-down" id="btnDown"></span>
-            </button>
-            <ul class="dropdown-menu ordenar">
-                <div class="" style="height: 43px;">
-                    <div class="col-md-12">
-                        <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><a href="#!" class="mod ref menor">Menor a mayor</a></div>
-                        <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><a href="#!" class="mod ref mayor">Mayor a menor</a></div>
-                    </div>
-                </div>
-            </ul>
-        </div> -->
     </div>
     <div class="ordena-position">
         <div class="dropdown drop-ordenar">
@@ -485,7 +454,15 @@ body{
                     <div class="rect5"></div>
                 </div>
             </div> 
+            <div class="spinner loading_2 hidden">
+                    <div class="rect2"></div>
+                    <div class="rect3"></div>
+                    <div class="rect4"></div>
+                    <div class="rect5"></div>
+                </div>
+            </div> 
     </div>
+    <div> 
     </div>
 </div>
 
