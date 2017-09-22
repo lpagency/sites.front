@@ -257,7 +257,7 @@
                         <div align="center">
                             <h1 class="name-detail" class="line" href="#">{{! name }}</h1>
                             <div align="center">
-                            <div class="col-md-12">
+                            <div class="col-md-12 col-sm-12 col-xs-12 prin">
                                 <div class="col-md-2 col-sm-2 col-xs-12">
                                 <div class="product-price original-de">{{! main_price|money }} </div>
                                 </div>
@@ -265,7 +265,24 @@
                                 <div class="product-price oferta-de"> {{! promotion_price|money }} </div>
                             </div>
                             </div>
-                            <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO </button>
+                            <div class="item__addtocart">
+                              <input type="text" value="1" name="quantity" class="prod">
+                              <button type="submit" class="btn btn--primary vpe add-to-cart" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO
+                              </button>
+                            </div>
+                            <div class="texto-de">Descripción</div>
+                            <h3 class="descr_prod_detail ellipsis multiline">{{! description }}</h3>
+                            <div class="texto-de">Información</div>
+                            <div class="texto-bu">{{! bullet_1 }}</div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                             <hr>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                             <img class="redes-detalle" src="https://84static.loadingplay.com/static/images/5aad0cec1a4d63e1677c11cdb366e87d_facebook_.png">
+                             <img class="redes-detalle" src="https://84static.loadingplay.com/static/images/5aad0cec1a4d63e1677c11cdb366e87d_facebook_.png">
+                             <img class="redes-detalle" src="https://84static.loadingplay.com/static/images/5aad0cec1a4d63e1677c11cdb366e87d_facebook_.png">
+                             <img class="redes-detalle" src="https://84static.loadingplay.com/static/images/5aad0cec1a4d63e1677c11cdb366e87d_facebook_.png">
+                            </div>
                         </div>
                             
 

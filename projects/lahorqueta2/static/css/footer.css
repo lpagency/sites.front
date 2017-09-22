@@ -92,3 +92,62 @@ hr.lini {
 	width: 22%;
     float: right;
 }
+
+.form--merge input {
+    border-radius: 50px 0 0 50px;
+}
+
+.form--merge button[type="submit"] {
+    border-radius: 0 50px 50px 0;
+    position: relative;
+    margin: 0;
+}
+
+input[type], textarea, select {
+    -webkit-appearance: none;
+    background: #ffffff;
+    padding: 0.8125em;
+    border-radius: 50px;
+    border: none;
+    left: 9%;
+    height: 54px;
+}
+
+button.enviarr {
+    height: 56px;
+    /* font-size: 0.625em !important; */
+    letter-spacing: 1px;
+    color: #fff;
+    background: #425cbb;
+    border-color: #425cbb;
+    bottom: 0px;
+    width: 65px;
+}
+
+
+
+
+/*-------------------------------------------RESPONSIVE-----------------------------*/
+
+@media (max-width: 767px){
+    input[type], textarea, select {
+    -webkit-appearance: none;
+    background: #ffffff;
+    padding: 0.8125em;
+    border-radius: 50px;
+    border: none;
+    left: 5%;
+    height: 54px;
+}
+
+.ye {
+    width: 22%;
+    float: left;
+}
+
+.img-redes {
+    width: 20%;
+    margin-bottom: 10px;
+}
+
+}

@@ -63,17 +63,14 @@
                         </div>
                         <div class="pas-4 {{editabletext}}" text-id="{{ site.name + '_footer_31' }}"> {{ read_text(site.name +  '_footer_31') }}
                         </div>
-                        <p class="pas-4">
-                           {% if user is None %}
-                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
-                              {% else %}
-                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
-                                Logout</a>
-                           {% end %}
-                        </p> 
-
                     </ul>
             </div>
+
+            <form action="http://mrareco.createsend.com/t/d/s/kieth/" class="form--merge form--no-labels" data-error="Please fill all fields correctly." data-success="Thanks for signing up! Please check your inbox for confirmation email." id="subForm" method="post" name="subForm">
+            <!-- <p><label for="fieldEmail">Email Address</label><br> -->
+            <input class="col-md-8 col-sm-6 col-xs-6 validate-required validate-email" id="fieldEmail" name="cm-kieth-kieth" required="" type="email" placeholder="Email Address"><p></p>
+            <p><button class="enviarr" type="submit">Go</button></p>
+            </form>
             </div>
 
             <div class="container">

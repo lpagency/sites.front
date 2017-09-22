@@ -195,6 +195,15 @@
 
 
 /*----------------------------------------RESPONSIVE------------------------------*/
+@media (max-width: 1199px){
+.navbar-left {
+    float: left!important;
+    margin-left: -48px;
+    margin-top: -11px;
+    width: 100%;
+}
+
+}
 @media (max-width: 991px){
 	.navbar-left {
     float: left!important;
@@ -217,6 +226,13 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.navbar-left {
+    float: left!important;
+    margin-left: 0px;
+    margin-top: -11px;
+    width: 100%;
 }
 
 }

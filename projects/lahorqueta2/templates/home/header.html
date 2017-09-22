@@ -1,6 +1,6 @@
 <div class="container-fluid">
 <div class="linea">
- <a class="navbar-brand" href="">
+<a class="navbar-brand" href="">
   <div style="position:relative">
      <div class="caja-logo">
          {% if is_admin %}
@@ -11,10 +11,13 @@
            <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
        </div>
        {% end %}
+  
        <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+    
    </div>
 </div>
 </a>
+
 <button type="button" class="btn btn-default carro" id="open-cart" data-toggle="modal" data-target="#myModal">TU COMRPA <span class="units-total">0</span> </button>
 
 <div class="container lini"></div>
@@ -53,13 +56,6 @@
                         <a tabindex="-1" href="#">Hover me for more options</a>
                         <ul class="dropdown-menu">
                           <li><a tabindex="-1" href="#">Second level</a></li>
-                          <li class="dropdown-submenu">
-                            <a href="#">Even More..</a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">3rd level</a></li>
-                                <li><a href="#">3rd level</a></li>
-                            </ul>
-                        </li>
                         <li><a href="#">Second level</a></li>
                         <li><a href="#">Second level</a></li>
                     </ul>
