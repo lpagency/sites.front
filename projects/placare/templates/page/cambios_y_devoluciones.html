@@ -14,7 +14,14 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 <script type="text/javascript">
+
     $(document).ready(function()
     {
        // EXCLUSIVO PARA PLACARE

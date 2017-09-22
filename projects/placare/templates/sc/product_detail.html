@@ -34,6 +34,13 @@
         $("#wrapper").toggleClass("toggled");
     });
 </script>
+<script type='text/javascript'>
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+</script>
 
 <script type="text/javascript">
 
@@ -303,9 +310,6 @@
                              <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
                                 <div class="linea-separacion-movil"> </div>
                             </div>
-                            <div class="texto-oferta hidden-xs">Existe una oferta adicional a este producto</div>
-                            <div class="ver-oferta hidden-xs">Ver oferta</div>
-
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion hidden-xs"> </div>
@@ -355,7 +359,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled >
-                                AGREGAR AL CARRO
+                                AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </button>
 
                             <button
@@ -372,7 +376,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled >
-                                COMPRAR AHORA!
+                                COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                              </div>
 
@@ -414,7 +418,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled>
-                                    AGREGAR AL CARRO
+                                    AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </button>
 
                             <button
@@ -431,7 +435,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled >
-                                    COMPRAR AHORA!
+                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                             </div>
                              </div>
@@ -497,8 +501,6 @@
                              <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
                                 <div class="linea-separacion-movil"> </div>
                             </div>
-                            <div class="texto-oferta hidden-xs">Existe una oferta adicional a este producto</div>
-                            <div class="ver-oferta hidden-xs">Ver oferta</div>
 
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -529,7 +531,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled>
-                                    AGREGAR AL CARRO
+                                    AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </button>
 
                             <button
@@ -546,7 +548,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled>
-                                    COMPRAR AHORA!
+                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                              </div>
 
@@ -594,7 +596,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled>
-                                    AGREGAR AL CARRO
+                                    AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </button>
 
                             <button
@@ -611,7 +613,7 @@
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
                                 disabled>
-                                    COMPRAR AHORA!
+                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                             </div>
                              </div>
