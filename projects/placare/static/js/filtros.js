@@ -454,6 +454,7 @@ function TagURL(listaTag)
 
                 $(".filtrosRec").html($(".filtrosRec").html() + block);
                 $(".limpiar").removeClass("hidden");
+                $(".vari").css("margin-bottom", "5%");
             }
             else
             {
