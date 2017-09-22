@@ -111,13 +111,13 @@
 
 <!-- ********************************************MENUU MOVIL******************* -->
 
- <!-- Navigation -->
- <div class="container">
+
+ <!-- <div class="container">
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top  hidden-lg hidden-md hidden-sm visible-xs">
         <div class="container header">
-            <!-- Brand and toggle get grouped for better mobile display -->
+           
             <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" id="menu-toggle">
                     <span class="sr-only">Toggle navigation</span>
                      <i class="fa fa-bars"></i>
                 </button>
@@ -139,12 +139,10 @@
              <li> <img class="lupita" src="https://7static.loadingplay.com/static/images/00b8e08bfc6dc648c60d3fd4811a7b80_lupa.png">
              </li>
              <li class="" id="open-cart" data-toggle="modal" data-target="#myModal">
-              <!-- <a href="" class="com"> Comprar </a> -->
               <img class="img-bolsa" src="https://7static.loadingplay.com/static/images/1ce8436ded946db43060507a3b826882_iconoplacare.png">
             </li>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                      <li class="#">
@@ -153,9 +151,6 @@
                      <li>
                       <a href="{{ site_base}}/listado_productos?tag=hombre">HOMBRES</a>
                      </li>
-                    <!--  <li>
-                      <a href="{{ site_base}}/listado_productos?tag=nino">NIÑO</a>
-                     </li> -->
                      <li>
                       <a href="{{ site_base}}/listado_productos?tag=oferta">OFERTA</a>
                      </li>
@@ -174,10 +169,10 @@
                     </li>
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
+         
         </div>
-        <!-- /.container -->
-                    <div align="center" class="hidden-lg hidden-md hidden-sm visible-xs">
+    
+            <div align="center" class="hidden-lg hidden-md hidden-sm visible-xs">
                 <div class="col-lg-6"  style="margin-top: 0px;">
                   <div class="input-group movil buscar-movil" style="display: none">
                     <input type="text" class="form-control movil" placeholder="Busqueda por productos & marcas">
@@ -188,4 +183,97 @@
                 </div>
             </div>
     </nav>
+</div> -->
+
+<div class="back-menu navbar-fixed-top">
+  <div style="position:relative">
+   <div class="caja-logo">
+     {% if is_admin %}
+     <div class="image-upload lapiz visible-movil">
+      <label for="img_header_logo">
+       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+     </label>
+     <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+   </div>
+   {% end %}
+   <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+ </div>
+</div> 
+<li> <img class="lupita" src="https://7static.loadingplay.com/static/images/00b8e08bfc6dc648c60d3fd4811a7b80_lupa.png">
+</li>
+<li class="" id="open-cart" data-toggle="modal" data-target="#myModal">
+  <img class="img-bolsa" src="https://7static.loadingplay.com/static/images/1ce8436ded946db43060507a3b826882_iconoplacare.png">
+</li>
+<div align="center" class="hidden-lg hidden-md hidden-sm visible-xs">
+  <div class="col-xs-12"  style="margin-top: 0px;">
+    <div class="input-group movil buscar-movil" style="display: none">
+      <input type="text" class="form-control movil" placeholder="Busqueda por productos & marcas">
+      <span class="input-group-btn">
+        <button class="btn btn-default movil" type="button">Buscar</button>
+      </span>
+    </div>
+  </div>
 </div>
+</div>
+<div class="container">
+    <div id="wrapper">
+        <div id="sidebar-wrapper">
+            <ul class="sidebar-nav">
+                <li class="sidebar-brand">
+                    <div class="compi" href="#">
+                        COMPRAR POR
+                    </div>
+                </li>
+<!--                 <li>
+                    <a href="#">MUJER</a>
+                </li>
+                <li>
+                    <a href="#">HOMBRE</a>
+                </li>
+                <li>
+                    <a href="#">OFERTAS</a>
+                </li> -->
+                <li class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                  <li class="dropdown-submenu"> 
+                          <a tabindex="-1" href="#">MUJER <i class="fa fa-angle-right" aria-hidden="true"></i> </a>
+                          <ul class="dropdown-menu">
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+ballerinas" class="den">BALLERINAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+botines" class="den">BOTINES</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+mocasines" class="den">MOCASINES</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+plataformas" class="den">PLATAFORMAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+playeras" class="den">PLAYERAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+sandalias" class="den">SANDALIAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+zapatos" class="den">ZAPATOS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre" class="den">TODOS</a></li>
+                      </ul>
+                  </li>
+               </li>
+                <li class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                  <li class="dropdown-submenu">
+                          <a tabindex="-1" href="#">HOMBRE <i class="fa fa-angle-right" aria-hidden="true"></i></a> 
+                          <ul class="dropdown-menu">
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+ballerinas" class="den">BALLERINAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+botines" class="den">BOTINES</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+mocasines" class="den">MOCASINES</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+plataformas" class="den">PLATAFORMAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+playeras" class="den">PLAYERAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+sandalias" class="den">SANDALIAS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+zapatos" class="den">ZAPATOS</a></li>
+                          <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer" class="den">TODOS</a></li>
+                      </ul>
+                  </li>
+               </li>
+               <li><a href="#">OFERTAS</a></li>
+            </ul>
+        </div>
+
+        <div id="page-content-wrapper">
+          <a href="#menu-toggle" id="menu-toggle">
+                <i class="fa fa-bars"></i>
+          </a>
+            </div>
+        </div>
+
+    </div>
+  </div>
+

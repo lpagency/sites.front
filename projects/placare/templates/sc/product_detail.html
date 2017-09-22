@@ -28,6 +28,13 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/swiper.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
+
 <script type="text/javascript">
 
     $(document).ready(function()

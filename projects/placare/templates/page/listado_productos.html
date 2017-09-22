@@ -86,6 +86,12 @@
             $(this).removeClass("active");
         });
     </script>
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    </script>
 {% end %}
 
 
