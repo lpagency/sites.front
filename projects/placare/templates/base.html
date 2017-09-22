@@ -501,6 +501,20 @@
         });
     </script>
 
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+
+    $(".mobile").css("display", "none");
+
+    $(document).on("click", ".bars", function()
+    {
+
+      $(".mobile").toggle("slow");
+
+    });
+  });
+</script>
 
 
     </body>
