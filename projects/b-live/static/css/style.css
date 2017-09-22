@@ -23,8 +23,15 @@ a:hover
     text-decoration: none;
     color:#484848;
 }
-
-
+a:focus {
+    outline:none;
+    outline:none;
+    outline-offset: -2px;
+}
+a:hover, a:focus {
+    color: transparent;
+    text-decoration: none;
+}
 li
 {
 	list-style: none;
@@ -156,6 +163,17 @@ div.upload input, div.image-upload input{
     font-weight: 100;
     color:#fff;
 }
+.nombre-servicios-home{
+    display: inherit;
+    font-size: 2.5rem;
+    color: white;
+    font-weight: 700;
+}
+.productos-servicios-home{
+    margin-top: 1%; 
+    display: inline-block; 
+    height: 110px;"
+}
 .img-banners-home
 {
     max-width: 1265px;
@@ -169,7 +187,7 @@ div.upload input, div.image-upload input{
 {
     position: relative;
     top: 92px;
-    left: 5%;
+    ;
     font-size: 2.5rem;
     font-weight: bold;
     /* width: 89%; */
