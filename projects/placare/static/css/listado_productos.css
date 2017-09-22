@@ -646,11 +646,11 @@ hr.len {
 
 a.talla {
     float: left;
-    /* width: 100%; */
     position: relative;
     top: 40px;
     color: #526cd0;
     left: 27%;
+    z-index: 100;
 }
 
 .size-item.active{
@@ -661,9 +661,9 @@ a.talla {
     border-radius: 48px;
     padding:15px 0px;
     margin-bottom: 11px;
-    width:56px;
-    height: 54px;
-    margin-left: 3px;
+    width:50px;
+    height: 50px;
+    margin-left: 9px;
     font-size: 13px;
     border-radius: 48px!important;
     border: 2px solid rgba(91, 81, 83, 0.37);
@@ -674,13 +674,13 @@ a.talla {
 .size-item{
     padding:15px 0px;
     margin-bottom: 11px;
-    width: 56px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 3px;
+    margin-left: 9px;
     font-size: 13px;
     border-radius: 48px!important;
     border: 2px solid rgb(91, 81, 83);
@@ -689,16 +689,20 @@ a.talla {
 
 .size-item strike
 {
-    color: #ccc;
+    color: white;
 }
 
 .variant-value.active {
-    background-color: rgb(91, 81, 83);
+    background-color: #000;
 }
+
 .variant-value.active>div{
     color: white;
 }
 
+.num-tal:hover{
+    color: white;
+}
 
 .num-tal{
     color: rgb(91, 81, 83);
@@ -707,14 +711,14 @@ a.talla {
     float: left;
     /* padding: 5px 8px; */
     margin-bottom: 11px;
-    width: 56px;
-    height: 54px;
+    width: 50px;
+    height: 50px;
     font-size: 13px;
     font-weight: 600;
 }
 
 .size-item:hover {
-    color: rgb(91, 81, 83);
+    color: white;
     left: 0px;
     position: relative;
     float: left;
@@ -722,17 +726,18 @@ a.talla {
     border: 2px solid rgba(91, 81, 83, 0.37);
     padding: 15px 0px;
     margin-bottom: 11px;
-    width: 56px;
-    height: 54px;
-    margin-left: 3px;
+    width: 50px;
+    height: 50px;
+    margin-left: 9px;
     font-size: 13px;
     font-weight: 600;
+    background-color: #000;
 }
 
 .mover {
     margin-top: 34px;
     position: relative;
-    left: -29px;
+    left: -38px;
     margin-bottom: -5px;
 }
 
