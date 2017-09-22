@@ -28,6 +28,22 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/swiper.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/Swiper-3.4.2/dist/js/swiper.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+
+    $(".mobile2").css("display", "none");
+
+    $(document).on("click", ".bars", function()
+    {
+
+      $(".mobile2").toggle("slow");
+
+    });
+  });
+</script>
+
 <script>
     $("#menu-toggle").click(function(e) {
         e.preventDefault();
