@@ -46,14 +46,16 @@
 <!-- ***contenidoo*+ -->
 
 <!-- *****Banner uno****** -->
+
 <div class="container">
-
-  <div class="col-md-12 col-sm-12 col-xs-12">
-     <div class="texto_page_edu {{editabletext}}" text-id="{{ site.name + 'text_banner2_page_edu' }}">{{ read_text(site.name +  'text_banner2_page_edu') }}
-     </div>
-  </div>
-
-
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="col-md-offset-2">
+            <div class="banner-below-text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_bannereducacion' }}">{{ read_text(site.name +  'text_bannereducacion') }}</div>
+          </div>
+        </div>
+      </div>
+    
     <div class="col-md-12 col-sm-12 col-xs-12">
        <button type="button" class="btn btn-info edu" data-toggle="collapse" data-target="#demo">Ver más </button>
        <div id="demo" class="collapse" style="margin-top: 55px;">
@@ -62,7 +64,6 @@
 
        </div>
      </div>
-
 </div>
 {% include ../home/footer.html %}
 {% end %}
