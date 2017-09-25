@@ -212,7 +212,11 @@
 <section>
      <div class="container">
       <!--   <div class="row"> -->
-          {{ getArticleList(html="page/article_home.html") }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
+          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
+        <!-- </div> -->
     </div>
   
 </section>
