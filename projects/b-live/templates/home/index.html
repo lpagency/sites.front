@@ -160,23 +160,28 @@
     <!-- *articulos* -->
 <section>
      <div class="container" style="position: relative; bottom: 130px;">
-      <!--   <div class="row"> -->
+      <!--   <div class="row"> 
+
           {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
           {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
           {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
           {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
-        <!-- </div> -->
+         </div> -->
+         
+           {{ getArticleList(html="page/article_home.html") }}
+
+          
     </div>
   
 </section>
-<section id="contenedor">
+<!--<section id="contenedor">
     <div class="container">
         <div class="row spa article_list">
            {{ getArticleList(tag='blive,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }}
         </div>
     </div>
 
-</section>
+</section>-->
 
 <!--
 <section>
