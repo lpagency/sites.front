@@ -355,7 +355,7 @@ div.upload input, div.image-upload input {
 
 @media (max-width: 767px){
     body{
-        background-color:rgba(213, 214, 217, 0.14);
+     /*   background-color:rgba(213, 214, 217, 0.14);*/
         overflow-x: hidden;
     }
 
@@ -369,4 +369,13 @@ div.upload input, div.image-upload input {
     width: 102%;
     margin-left: -5px;
     }
+}
+
+@media (max-width: 414px){
+    .box-med {
+    width: 101%;
+    height: 300px;
+    object-fit: cover;
+}
+
 }

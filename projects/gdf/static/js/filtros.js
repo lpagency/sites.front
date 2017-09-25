@@ -196,6 +196,7 @@ function filtrar()
 function deshabilitar(tag)
 {
     $(".talla"+tag).attr('onclick','').unbind('click');
+    $(".talla"+tag).attr('onclick',"habilitar('"+tag+"')");
     $(".talla"+tag).parent().addClass("hover2");
 }
 
@@ -203,4 +204,12 @@ function deshabilitarDesk(tag)
 {
     $(".talla_"+tag).attr('onclick','').unbind('click');
     $(".talla"+tag).addClass("hover");
+}
+
+function habilitar(tag)
+{
+    $(".talla"+tag).attr('onclick','').unbind('click');
+    $(".talla"+tag).attr('onclick',"checkTallas('"+tag+"'); deshabilitar('"+tag+"')");
+    $(".talla"+tag).parent().removeClass("hover2");
+    $( "."+tag ).remove();
 }

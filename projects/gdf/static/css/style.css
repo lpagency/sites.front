@@ -330,10 +330,9 @@ img.desaturada {
     letter-spacing: 0.4px;
 }
 
-
-.m-ordenar:hover{
- background-color:transparent !important;
- color: inherit !important
+.m-ordenar:hover {
+    background-color: rgba(204, 108, 78, 1);
+    color: white;
 }
 
 
@@ -787,6 +786,7 @@ div.upload input, div.image-upload input {
     color:rgba(204, 108, 78, 1);
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
+    margin-bottom: 4px;
 }
 
 .price.anterior-oferta-sale {
@@ -2341,7 +2341,7 @@ td.talla-car {
 }
 
 .name-car {
-    width: 69px;
+    width: 74px;
     position: relative;
     left: 93px;
     font-family: 'Open Sans', sans-serif;
@@ -2352,6 +2352,7 @@ td.talla-car {
     -moz-osx-font-smoothing: grayscale;
     font-size: 11px;
     text-align: right;
+    text-transform: uppercase;
 }
 
 td.cantidad-car{
@@ -2365,7 +2366,7 @@ td.cantidad-car{
 td.money.uno{
     position: relative;
     top: 62px;
-    left: -19px;
+    left: -14px;
     color: rgba(204, 108, 78, 1);
     text-align: right;
     font-size: 10px;
@@ -2398,13 +2399,13 @@ tr.ver{
 
 td.money.lib {
     position: relative;
-    left: 23%;
+    left: 0%;
     top: 6px;
 }
 
 td.tot {
     position: relative;
-    left: 28%;
+    left: 0%;
     top: 6px;
 
 }
@@ -2887,6 +2888,7 @@ p.vol{
     font-size: 13px;
     text-transform: lowercase;
     bottom: 4px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .centrado-mayo{
@@ -3053,6 +3055,34 @@ th.mayoristas{
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 6px 12px rgba(0,0,0,.175);
     z-index: 1000;
+}
+
+
+.ordena-nombre {
+    float: right;
+    position: relative;
+    left: -154px;
+    margin-top: -26px;
+    color: gray;
+    font-size: 12px;
+    text-transform: lowercase;
+    bottom: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.btn-primary.ordenar{
+    font-size: 0.7rem;
+}
+
+.btn-primary.filtrar{
+     font-size: 0.7rem;
+}
+
+.btn-primary.color{
+     font-size: 0.7rem;
+}
+.btn-primary.tipo{
+    font-size: 0.7rem;
 }
 
 }

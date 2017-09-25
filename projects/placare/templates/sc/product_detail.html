@@ -70,20 +70,6 @@
 
         });
 
-
-            // $(document).on('click', '.tallas', function()
-            // {
-            //     $('.size-item').removeClass('active');
-            //     $('.size-item').children().css("color", "rgb(91, 81, 83)");
-            //     $('.size-item').css("background-color", "white");
-            //     $(this).addClass('active');
-            //     $(this).children().css("color", "white");
-            //     $(this).css("background-color", "rgb(91, 81, 83)");
-            // });
-
-            // $(this).css("background-color", "rgb(91, 81, 83)");
-            // $(this).parent(".num-tal").css("color", "white");
-  
         var base_url = $.environmentVar(
             'http://apibodegas.ondev.today/',
             'http://apibodegas.ondev.today/',
@@ -137,17 +123,21 @@
                 variants_loaded = true;  // execute this onces
                 options.onLoad = $.noop;
 
-                // inicialización del codigo de las imagenes
+                // inicialización del codigo de las im
 
-                related(product.bullet_3);
-                related2(product.bullet_3);
+                var res = [];
 
-                if (product.bullet_1 != "" ){
-                    // $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                    // {
-                    //     $("#article-reladed").html(data);
-                    // });
+                for( i in product.tags)
+                {
+                    if(product.tags[i].name.search("mat") != -1)
+                    {
+                        res.push(product.tags[i].name);
+                    }
                 }
+
+                related(res.toString());
+                related_random("Poliuretano");
+                related2(res.toString());
 
                 var mainImage = $("#mainImage");
                     $(".img-container img").hover(function(){
@@ -218,9 +208,9 @@
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
-                'maxProducts' : 12,
+                'maxProducts' : 6,
                 'templateOrigin' : '#product_template_home',
-                'tag' : '',
+                'tag' : tag,
                 'ignore_stock' : true,
                 'onLoad':function(){
                     // $('.ellipsis').ellipsis();
@@ -230,14 +220,31 @@
             $('.product-related').ecommerce('product_box', config);
         };
 
+        var related_random = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 6,
+                'templateOrigin' : '#product_template_home',
+                'tag' : tag,
+                'ignore_stock' : true,
+                'onLoad':function(){
+                    // $('.ellipsis').ellipsis();
+                    // $(".ellipsis").dotdotdot();
+                 }
+            };
+            $('.product-random').ecommerce('product_box', config);
+        };
+
         var related2 = function(tag)
         {
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
-                'maxProducts' : 8,
+                'maxProducts' : 6,
                 'templateOrigin' : '#product_template_home2',
-                'tag' : '',
+                'tag' : tag,
                 'ignore_stock' : true,
                 'onLoad':function(){
                     // $('.ellipsis').ellipsis();
@@ -700,6 +707,10 @@
             <div class="text-relac text-center {{editabletext}}" text-id="{{ site.name + '_pro_relacionados' }}"> {{ read_text(site.name +  '_pro_relacionados') }}</div>
         </div>
     <div class="product-related hidden-xs">
+
+    </div>
+    <br/>
+    <div class="product-random hidden-xs">
 
     </div>
     <div class="swiper-container hidden-lg">
