@@ -15,7 +15,6 @@
 
 {% block scripts %}
 <script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
-<script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
 <script>
   jQuery(document).ready(function(){
     jQuery('.menulist').toggle();
@@ -29,9 +28,11 @@
 
 {% block css%}
 <link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
-<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
 <link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
 <style type="text/css">
+.editable.text_main{
+  display: none;
+}
 @media (max-width: 767px){
   body{
   overflow-x:hidden; 
@@ -47,15 +48,26 @@
 <!-- ***contenidoo*+ -->
 
 <!-- *****Banner uno****** -->
+
+
 <div class="container">
+   <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="col-md-offset-2">
+            <div class="texto-por text-left {{editabletext}}" text-id="{{ site.name + '00' }}">{{ read_text(site.name +  '00') }}</div>
+          </div>
+        </div>
+    </div>
 
-  <div class="col-md-12 col-sm-12 col-xs-12">
-     <div class="texto_page_edu {{editabletext}}" text-id="{{ site.name + 'text_banner2_page_arte' }}">{{ read_text(site.name +  'text_banner2_page_arte') }}
-     </div>
- </div>
-
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="col-md-offset-2">
+            <div class="banner-below-text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_banneredu' }}">{{ read_text(site.name +  'text_banneredu') }}</div>
+          </div>
+        </div>
+      </div>
+    
+       <div class="col-md-12 col-sm-12 col-xs-12">
        <button type="button" class="btn btn-info edu" data-toggle="collapse" data-target="#demo">Ver más </button>
        <div id="demo" class="collapse" style="margin-top: 55px;">
          <div class="texto_page_edu_es {{editabletext}}" text-id="{{ site.name + 'text_banner2_page_edu_200' }}">{{ read_text(site.name +  'text_banner2_page_edu_200') }}
@@ -63,9 +75,7 @@
 
        </div>
      </div>
-
-
-
 </div>
+
 {% include ../home/footer.html %}
 {% end %}
