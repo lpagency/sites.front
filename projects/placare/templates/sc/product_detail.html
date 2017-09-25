@@ -136,7 +136,7 @@
                 }
 
                 related(res.toString());
-                related_random();
+                related_random("Poliuretano");
                 related2(res.toString());
 
                 var mainImage = $("#mainImage");
@@ -220,16 +220,14 @@
             $('.product-related').ecommerce('product_box', config);
         };
 
-        var related_random = function()
+        var related_random = function(tag)
         {
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
                 'maxProducts' : 6,
                 'templateOrigin' : '#product_template_home',
-                'tag' : '',
-                'column' : 'main_price',
-                'direction' : 'desc',
+                'tag' : tag,
                 'ignore_stock' : true,
                 'onLoad':function(){
                     // $('.ellipsis').ellipsis();
