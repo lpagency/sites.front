@@ -15,7 +15,6 @@
 
 {% block scripts %}
 <script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
-<script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
 <script>
   jQuery(document).ready(function(){
     jQuery('.menulist').toggle();
@@ -29,9 +28,11 @@
 
 {% block css%}
 <link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
-<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
 <link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
 <style type="text/css">
+.editable.text_main{
+  display: none;
+}
 @media (max-width: 767px){
   body{
   overflow-x:hidden; 
@@ -48,6 +49,14 @@
 <!-- *****Banner uno****** -->
 
 <div class="container">
+     <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="col-md-offset-2">
+            <div class="texto-por text-left {{editabletext}}" text-id="{{ site.name + '00_ed' }}">{{ read_text(site.name +  '00_ed') }}</div>
+          </div>
+        </div>
+    </div>
+
       <div class="row">
         <div class="col-md-12 col-lg-12">
           <div class="col-md-offset-2">
