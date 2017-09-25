@@ -74,6 +74,14 @@ $(document).ready(function(){
             }
         });
 
+        $(document).on("click",".demo4_desk", function()
+        {
+            if($(".demo3").css("display")=="block")
+            {
+                $(".demo3").css("display","none");
+            }
+        });
+
         $(document).on("click", ".btn-filtros-movil", function()
         {
             if($(".movil").css("display")=="none")
@@ -408,7 +416,7 @@ $(document).ready(function(){
     <div class="container-g">
       <div class="col-md-1 col-sm-3 col-xs-2">
     <div class="dropdown fil-productos">
-      <button class="btn btn-primary ordenar dropdown-toggle" type="button" data-toggle="dropdown">ORDENAR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+      <button class="btn btn-primary ordenar dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">ORDENAR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
       </button> 
       <ul class="dropdown-menu ordenar">
          <div class="" style="height: 62px;">
@@ -471,7 +479,7 @@ $(document).ready(function(){
 
 <div class="col-md-1 col-sm-3 col-xs-2 yan-2">
   <div class="dropdown fil-productos">
-    <button class="btn btn-primary color dropdown-toggle" type="button" data-toggle="dropdown">COLOR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    <button class="btn btn-primary color dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">COLOR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
     </button> 
     <ul class="dropdown-menu color">
      <div class="text-center talla-onclick">COLOR</div>
@@ -527,7 +535,7 @@ $(document).ready(function(){
 
 <div class="col-md-1 col-sm-3 col-xs-2 yan-3">
   <div class="dropdown fil-productos">
-    <button class="btn btn-primary tipo dropdown-toggle" type="button" data-toggle="dropdown">TIPO <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    <button class="btn btn-primary tipo dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">TIPO <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
     </button> 
     <ul class="dropdown-menu tipo">
      <div class="text-center talla-onclick">TIPO</div>
