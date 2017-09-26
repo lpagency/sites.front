@@ -1682,12 +1682,10 @@ a.talla {
 
 a.text {
     background-color: transparent;
-    color: gray;
     font-size: 16px;
     padding: 7px 26px;
     top: 129px;
     position: relative;
-    border: 1px solid gray;
 }
 
 .op {
@@ -3069,16 +3067,16 @@ a.talla {
 .conti {
     position: relative;
     width: 100%;
-    border: 0px solid gray;
-    height: 430px;
+    border: 1px solid #E9E9ED;
+    height: 370px;
     margin-bottom: 0px;
 }
 
 .conti:hover {
     position: relative;
     width: 100%;
-    border: 0px solid gray;
-    height: 430px;
+    border: 1px solid #E9E9ED;
+    height: 370px;
     margin-bottom: 0px;
 }
 
@@ -3101,7 +3099,7 @@ a.text {
     background-color: transparent;
     font-size: 16px;
     padding: 7px 67px;
-    top: 214px;
+    top: 166px;
     position: relative;
     border: 1px solid transparent;
     border-top: 1px solid #E9E9ED;
@@ -3404,12 +3402,12 @@ a.text.detalle {
 
 a.text {
     background-color: transparent;
-    color: gray;
+    /* color: gray; */
     font-size: 16px;
     padding: 7px 64px;
-    top: 214px;
+    top: 166px;
     position: relative;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
 }
 
 .btn-success.car-2 {
@@ -3450,6 +3448,20 @@ a.text.detalle {
     border-top: 1px solid #E9E9ED;
 }
 
+.image {
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    width: 100%;
+    height: 267px;
+    object-fit: cover;
+    margin-bottom: -17px;
+    padding-left: 0px;
+    left: 0%;
+    position: relative;
+}
+
 }
 
 @media (max-width: 375px){
@@ -3461,36 +3473,18 @@ a.text.detalle {
     width: 100%;
     height: 270px;
     object-fit: contain;
-    margin-bottom: 8px;
+    margin-bottom: -21px;
     padding-left: 0px;
     left: 0%;
     position: relative;
 }
 
-.conti:hover {
-    position: relative;
-    width: 100%;
-    border: 0px solid gray;
-    height: 380px;
-    margin-bottom: 0px;
-}
-
-.conti {
-    position: relative;
-    width: 100%;
-    border: 0px solid gray;
-    height: 380px;
-    margin-bottom:0px;
-}
-
 a.text {
     background-color: transparent;
-    color: gray;
     font-size: 16px;
     padding: 7px 60px;
-    top: 190px;
+    top: 167px;
     position: relative;
-    border: 1px solid gray;
 }
 
 a.text.detalle {
@@ -3647,12 +3641,9 @@ a.talla {
 @media (max-width: 360px){
 a.text {
     background-color: transparent;
-    color: gray;
     font-size: 16px;
-    padding: 7px 57px;
-    top: 189px;
+    padding: 7px 54px;
     position: relative;
-    border: 1px solid gray;
 }
 
 .size-item:hover {
@@ -3714,6 +3705,22 @@ a.text.detalle {
 
 
 @media (max-width: 320px){
+.conti {
+    position: relative;
+    width: 100%;
+    border: 1px solid #E9E9ED;
+    height: 340px;
+    margin-bottom: 0px;
+}
+
+.conti:hover {
+    position: relative;
+    width: 100%;
+    border: 1px solid #E9E9ED;
+    height: 340px;
+    margin-bottom: 0px;
+}
+
 
 .descuento-detalle {
     position: relative;
@@ -3738,30 +3745,13 @@ a.text.detalle {
     position: relative;
 }
 
-.conti:hover {
-    position: relative;
-    width: 100%;
-    border: 0px solid gray;
-    height: 330px;
-    margin-bottom: 0px;
-}
-
-.conti {
-    position: relative;
-    width: 100%;
-    border: 0px solid gray;
-    height: 330px;
-    margin-bottom: 0px;
-}
 
 a.text {
     background-color: transparent;
-    color: gray;
     font-size: 16px;
-    padding: 7px 47px;
-    top: 169px;
+    padding: 7px 43px;
+    top: 154px;
     position: relative;
-    border: 1px solid gray;
 }
 
 .original-tachado {
