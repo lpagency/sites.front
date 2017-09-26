@@ -1,5 +1,15 @@
 var tags_url =[
 {
+    "name": "Desarrollo y validación con comunidades locales",
+    "url": "desarrollo_y_validacion_con_comunidades_locales",
+    "id": 6278
+},
+{
+    "name": "Constitución del Derecho Real de Conservación (DRC)",
+    "url": "constitucion_del_derecho_real_de_conservacion_(drc)",
+    "id": 6275
+},
+{
     "name": "Asesoría inicial para entender el que? Como? y Para que? de la Conservación y la Sustentabilidad",
     "url": "asesoria_inicial_para_entender_el_que_como_y_para_que_de_la_conservacion_y_la_sustentabilidad",
     "id": 6273
@@ -10,11 +20,6 @@ var tags_url =[
     "id": 6274
 },
 {
-    "name": "Constitución del Derecho Real de Conservación (DRC)",
-    "url": "constitucion_del_derecho_real_de_conservacion_(drc)",
-    "id": 6275
-},
-{
     "name": "Monitoreo a través de un Plan de Conservación de Área",
     "url": "monitoreo_a_traves_de_un_plan_de_conservacion_de_area",
     "id": 6276
@@ -23,12 +28,4 @@ var tags_url =[
     "name": "Desarrollo de un Plan Comunicacional",
     "url": "desarrollo_de_un_plan_comunicacional",
     "id": 6277
-},
-{
-    "name": "Desarrollo y validación con comunidades locales",
-    "url": "desarrollo_y_validacion_con_comunidades_locales",
-    "id": 6278
 }];
-
-
-// href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
