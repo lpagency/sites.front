@@ -34,22 +34,44 @@
 {% end %}
 
 {% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/data.tags.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
-<!-- <script>
-   $(“#menu-toggle”).click(function(e) {
-       e.preventDefault();
-       $(#wrapper”).toggleClass(“toggled”);
-   });
-   </script> -->
-<script type="text/javascript">
-  $(document).ready(function(){
-    var h = $(".tags").html();
-    var tag = h.split(",");
-    for(x in tag)
-    {
-      $(".list-service-ul").html($(".list-service-ul").html()+'<div>'+tag[x]+'</div>');
-    }
+<!-- <script type="text/javascript">
+  $(document).ready(function()
+  {
+      var h = $(".tags").html();
+      var tag = h.split(",");
+
+      for(x in tag)
+      {
+          for(i in tags_url)
+          {
+              if(tag[x])
+          }
+      }
+
   });
+</script> -->
+<script type="text/javascript">
+
+  $(document).ready(function()
+  {
+      var h = $(".tags").html();
+      var tag = h.split(",");
+
+      for(i in tag)
+      {
+          for(t in tags_url)
+          {
+              if(tag[i] == tags_url[t].name)
+              {
+                  console.log(tag[i]);
+                  $(".list-service-ul").html($(".list-service-ul").html()+'<div><a href="{{ site_base }}/sc/product/detail/'+tags_url[t].url+'/'+tags_url[t].id+'">'+tag[i]+'</a></div>');
+              }
+          }
+      }
+  });
+
 </script>
 <script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
 {% end %}
