@@ -255,6 +255,123 @@ div.upload input, div.image-upload input{
 input, textarea{
     border-radius: 0 !important;
 }
+/* QUIENES SOMOS */
+.blog-content {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    
+}
+.til-ban-qs{
+    position: absolute;
+    top: -137px;
+    left: 35px;
+    text-align: left;
+    width: 70%;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 700;
+    min-height: 50px;
+}
+.btn-contactanos{
+
+    background-color: white;
+    padding: 2% 3%;
+}
+.image-somos{
+    display: block;
+    width: 96% !important;
+    height: 350px !important;
+    margin-top: 80px;
+    object-fit: scale-down;
+}
+
+.texto_quienes_w {
+    font-size: 19px;
+    color: #858993;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 0px;
+    padding-right:0px;
+}
+
+.texto_quienes {
+    font-size: 16px;
+    color: #858993;
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+.texto_quienes-til{
+    font-size: 23px;
+    color: #858993;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 21px;
+    padding-right: 21px;
+}
+
+
+.image-cir img{
+    width: 94%;
+    height: 316px;
+    margin-top: 20px;
+    border-radius: 20px;
+    object-fit: cover;
+    border-radius: 160px;
+}
+
+.overlay-full-quienes {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 95%;
+    width: 94%;
+    margin-top: 18px;
+    margin-left: 3%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #000000;
+    border-radius: 160px;
+}
+
+.image-overlay:hover .overlay-full-quienes {
+    opacity: 0.7;
+}
+
+.body {
+    background: #ffffff;
+    overflow-x: hidden;
+}
+
+.text-info-ab{
+    color: gray;
+    padding: 5px;
+    font-size: 16px;
+    position: relative;
+    top: 38px;
+    left: 0%;
+    /*font-weight: 400;*/
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+    font-family: 'Open Sans', sans-serif;
+}
+img.change-image {
+    width: 40px !important;
+    height: 40px !important;
+    object-fit: cover !important;
+}
 /*----------------------------------------Responsive---------------------------*/
 
 @media (max-width: 1200px){
