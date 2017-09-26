@@ -6,9 +6,13 @@ $(document).ready(function(){
     {
         $(".nombre-tag").html("Colección 2017");
     }
+    if(hyper == "luna")
+    {
+        $(".nombre-tag").html("Luna PV 2018");
+    }
     if(hyper == "raices")
     {
-        $(".nombre-tag").html("Raices 2017");
+        $(".nombre-tag").html("Raices OI 2017");
     }
     if(hyper == "festival")
     {

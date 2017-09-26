@@ -13,7 +13,7 @@ $(document).ready(function()
             'http://lpcheckout.ondev.today',
             'http://betapay.loadingplay.com');
         var app_public = $.environmentVar(50,50,50);
-        var site_name = $.environmentVar('gdf', 'gdf', 'gdf');
+        var site_name = $.environmentVar('testgdf', 'testgdf', 'testgdf');
         var variants_loaded = false;
 
     // functions 
