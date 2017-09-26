@@ -7,13 +7,11 @@ $(document).ready(function()
         var base_url = $.environmentVar(
             'http://apibodegas.ondev.today/',
             'http://apibodegas.ondev.today/',
-            /*'https://apibodegas.loadingplay.com/'*/
             'http://apibodegas.ondev.today/');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
-            /*'http://betapay.loadingplay.com'*/
-            'http://lpcheckout.ondev.today',);
+            'http://lpcheckout.ondev.today');
         var app_public = $.environmentVar(50,50,50);
         var site_name = $.environmentVar('testgdf', 'testgdf', 'testgdf');
         var variants_loaded = false;
