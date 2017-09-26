@@ -103,7 +103,7 @@ div.image-upload.gu {
 .lupa {
     z-index: 10;
     width: 22px;
-    top: 18px;
+    top: 15px;
     position: relative;
     object-fit: cover;
     height: 18px;
@@ -113,6 +113,7 @@ div.image-upload.gu {
 .navbar-default {
     background-color: transparent;
     border-color: #e7e7e7;
+    min-height: 30px;
 }
 
 .logo {
@@ -175,8 +176,10 @@ a.upi {
 
 .fa-bars {
     color: rgba(204, 108, 78, 1);
-    font-size: 30px;
-    margin-top: -13px;
+    font-size: 21px;
+    margin-top: -15px;
+    top: -3px;
+    position: relative;
 }
 
 .navbar-nav .open .dropdown-menu>li>a, .navbar-nav .open .dropdown-menu .dropdown-header {
@@ -186,6 +189,20 @@ a.upi {
 .navbar-default .navbar-nav .open .dropdown-menu>li>a {
     color: #BBBBBB !important;
     border-bottom: 1px solid #E09B8A;
+}
+
+}
+
+@media (max-width: 700px){
+    .caja {
+    height: 51px;
+    width: 300px;
+    float: left;
+    margin-top: -68px;
+    margin-bottom: 0px;
+    left: 60%;
+    position: relative;
+    z-index: 1;
 }
 
 }
@@ -207,13 +224,15 @@ a.upi {
 @media (max-width: 470px){
 
 .lupa {
-    top: 18px;
+    top: 11px;
     position: relative;
     object-fit: cover;
     left: -64px;
     width: 19px;
     height: 18px;
 }
+
+
 }
 
 
@@ -226,7 +245,7 @@ a.upi {
     margin-left: auto;
     width: 170px;
     bottom: 0;
-    top: 12px;
+    top: 9px;
     float: left;
     object-fit: scale-down;
 }
@@ -235,6 +254,7 @@ a.upi {
     border-color: transparent;
     float: left;
     left: 0px;
+    top: 0px;
 }
 
 .caja {
@@ -242,11 +262,18 @@ a.upi {
     width: 264px;
 }
 
+.img-carrito {
+    width: 22px;
+    position: absolute;
+    top: -43px;
+    left: -50px;
+}
+
 }
 
 @media (max-width: 400px){
-    .lupa {
-    top: 17px;
+.lupa {
+    top: 10px;
     position: relative;
     object-fit: cover;
     left: -64px;
@@ -278,13 +305,13 @@ a.upi {
     margin-left: auto;
     width: 160px;
     bottom: 0;
-    top: 12px;
+    top: 10px;
     float: left;
     object-fit: scale-down;
 }
 
 .lupa {
-    top: 18px;
+    top: 11px;
     position: relative;
     object-fit: cover;
     left: -60px;
@@ -298,6 +325,19 @@ a.upi {
     .caja {
     left: 13%;
     width: 239px;
+}
+
+.logo {
+    position: absolute;
+    left: 0px;
+    right: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 160px;
+    bottom: 0;
+    top: 11px;
+    float: left;
+    object-fit: scale-down;
 }
 
 }
@@ -316,7 +356,7 @@ a.upi {
     margin-left: auto;
     width: 140px;
     bottom: 0;
-    top: 16px;
+    top: 12px;
     float: left;
     object-fit: scale-down;
 }
@@ -327,7 +367,7 @@ a.upi {
 }
 
 .lupa {
-    top: 18px;
+    top: 12px;
     position: relative;
     object-fit: cover;
     left: -56px;
