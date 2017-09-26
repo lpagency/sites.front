@@ -1,240 +1,79 @@
 {% extends "../base.html" %}
+
 {% block title %}
-    {{ site.name }}
+{{ site.name }}
 {% end %}
-{% block css %}
-<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+
+{% block header %}
+{% if is_admin %} 
+{% set editabletext = 'editabletext' %} 
+{% else %} 
+{% set editabletext = '' %} 
+{% end %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block scripts %}
+
+
+{% end %}
+
+{% block css%}
+<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
 <link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
-{% if is_admin %}
-<link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
-<link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
-{% end %}
 <style type="text/css">
-    html, body{
-       height: 100%;
-    }
-
-      @media screen and (max-width: 700px){
-        .ol{
-          visibility: hidden;
-        }
-      
-        .franja-color{
-            background: transparent;
-        }
-    }
-
+@media (max-width: 767px){
+  body{
+  overflow-x:hidden; 
+   }
+  
+  }
 
 </style>
 {% end %}
 
-{% block header %}
-{% include '../home/header_inside.html' %}
-
-{% end %}
-
-{% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
-<!-- <script>
-   $(“#menu-toggle”).click(function(e) {
-       e.preventDefault();
-       $(#wrapper”).toggleClass(“toggled”);
-   });
-   </script> -->
-<script type="text/javascript">
-  $(document).ready(function(){
-    var h = $(".tags").html();
-    var tag = h.split(",");
-    for(x in tag)
-    {
-      $(".list-service-ul").html($(".list-service-ul").html()+'<div>'+tag[x]+'</div>');
-    }
-  });
-</script>
-<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
-{% end %}
 
 {% block body %}
-
-        <!-- registration -->
-        
-<section>
-      <div class="mobile-det" style="background:url('{{ article['thumb_500'] }}'); background-attachment:fixed; height:620px; background-size:cover; margin-top: -180px;  filter: grayscale(0%) brightness(65%);-webkit-filter: grayscale(0%) brightness(65%);
-    -moz-filter: grayscale(0%) brightness(65%);-ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%);">
-       
-        <img class="fondo-articulo hidden" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
-
-               <!--  <div class="col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="text-center det-art {{editabletext}}" text-id="{{ site.name + '_det_1' }}"> {{ read_text(site.name +  '_det_1') }}</h1>
-                </div> -->
-       </div>
-
-</section>
-<!-- 
-<section >
-        <div class="container"> 
-           <div class="row">
-               <div class="col-md-12">
-                   <h2 class="text-center sub-detail-art {{editabletext}}" text-id="{{ site.name + '_det_2' }}"> {{ read_text(site.name +  '_det_2') }}</h2>
+<!-- ***contenidoo*+ -->
+<section style="position: relative;">
+      <div class="mobile fullscreen background parallax" style="position: relative;bottom: 52px;background:url('{{ read_image(site.name + '_productos',500) }}');background-attachment:fixed;height: 350px;background-size:cover;margin-top: 0px;filter: grayscale(0%) brightness(65%);-webkit-filter: grayscale(0%) brightness(65%);-moz-filter: grayscale(0%) brightness(65%);-ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%);background-position:center;" data-img-width="1600" data-img-height="860" data-diff="100">
+        {% if is_admin %}
+               <div class="image-upload part1 lapiz visible-movil">
+                   <label for="img_banner_quienes_somos">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_quienes_somos" name="image" id="img_banner_quienes_somos" >
                </div>
-           </div>
-        </div>
-</section> -->
-
-
-
-        <div id="first-page-scroll" class="container cart-list productlist" >
-         <!--    <div class="row cero" > -->
-                <div class="col-sm-12 blog-content" style="margin-bottom: 30px;position: relative;right: 20px;padding-left: 0;padding-right: 0;">
-                        <input type="hidden" id="article-description-ajax-url" value="{{ site.url }}article/update-description">
-                        <input type="hidden" id="article-content-id" value="{{article['id']}}">
-                        <div class="col-sm-12 blog-content" style="margin-bottom: 30px;">
-                            <p class="titlenotice">BLIVE | Casos de éxito</p>
-                            <h1 class="text-center h1-art til-ban">
-                                {{ article["title"] }}
-                            </h1>
-                            <div class="post-date" style="text-align:center;">
-                                <br>
-                            <!-- {{ article["creation_date"].strftime("%d %b %Y") }} -->
-                            </div>
-                        </div>
-
-                        <div class="content articulo-text" style="text-align:center;float:left;position: relative;left: 20px;">
-                            <div class="col-sm-12 especial">
-                                <h2 class="h2-art til-ban-2" style="color:  #7a7c7c; font-weight: 500; text-align:left; font-size: 2.5rem;line-height: 1.5;">{{ article["caption"] }}</h2>
-                            </div>
-                            
-                            <div align="center">
-                                <div class="col-md-12 col-sm-12 col-xs-12 content-picture">
-                                    <!-- <div>
-                                        <img class="medium" src="{{ site_base }}/static/img/0013.png" class="lazy" data-original="{{ article["thumb_500"] }}" offsetx="{{ article["offset_x"] }}" offsety="{{ article["offset_y"] }}" alt="item">
-                                    </div> -->
-                                </div>
-                            </div>
-                            
-                           <!--  <div class="col-sm-12 especial"> -->
-                           <div align="center">
-                               <div class="col-sm-12">
-                                   <div class="">
-                                        <div id="description" class="p-art dan detail-arts">
-                                            {{ article["description"] }}
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- </div> -->
-                            <div class="col-sm-12 especial p-art" style="text-align: right;">
-                            </div>
-                            <div class="hidden tags">
-                              {{",".join(article["tags"])}}
-                            </div>
-                    
-                        </div>
-                </div>
-                <div class="col-sm-3 blog-sidebar">
-                    <div class="widget" style="text-align:left;">
-                    </div>
-                </div>
-          <!--   </div> -->
-            
-            
-            <!-- row 4 -->
-            <hr>
-            <div class="texto-listart {{editabletext}}" text-id="{{ site.name + '_listart_text' }}"> {{ read_text(site.name +  '_listart_text') }} </div
-        </div>
-      <section class=" img-service-home">
-    <div class="container">
-        <div class="row">
-            <!-- *** [IMAGEN DE FONDO "SERVICIO"] *** -->
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                {% if is_admin %}
-                   <div class="image-upload lapiz bi visible-movil">
-                       <label for="img_banner_2">
-                           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-                        </label>
-                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2_listart" name="image" id="img_banner_2_listart" >
-                    </div>
-                {% end %}
-                <img id="{{ site.name }}_banner_2_listart" src="{{ read_image(site.name + '_banner_2_listart', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2_listart',500) }}'"  class="banner-home-1 fondo-arts" alt="item">
-                <!-- *** [TITULO "SERVICIO"] *** -->
-            <div class="service-banner-art">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div align="center">
-                      <div class="tittle-service-home-art text-center {{editabletext}}" text-id="{{ site.name + 'tittle-service-one_listart' }}"> {{ read_text(site.name +  'tittle-service-one_listart') }} </div>
-                    </div>
-                </div>
-            </div>
-            <!-- *** [LISTA DE SERVICIOS] *** -->
-            <div class="service-banner-art">
-                <div class="col-md-8 col-sm-12 col-md-offset-1 col-xs-12 text-left list-service-art">
-                    <ul class="list-service-ul">
-                        
-                    </ul>
-                </div>
-                <!--
-                <div class="col-md-4 col-sm-12 col-xs-12 text-left list-service">
-                    <ul class="list-service-ul">
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_4' }}"> {{ read_text(site.name +  '_listart_4') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_5' }}"> {{ read_text(site.name +  '_listart_5') }}
-                        </div>
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_6' }}"> {{ read_text(site.name +  '_listart_6') }}
-                        </div> 
-                        <div class=" {{editabletext}} text-limit-ul" text-id="{{ site.name + '_listart_7' }}"> {{ read_text(site.name +  '_listart_7') }}
-                        </div>                     
-                    </ul>
-                </div>
-                -->
-            </div>
-            </div>
-        </div>
-    </div>
+        {% end %}
+                <img id="{{ site.name }}_banner_quienes_somos" src="{{ read_image(site.name + '_banner_quienes_somos', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_quienes_somos',500) }}'" class="banner_uno_list hidden" alt="item">  
+       </div>
+      <div class="container blog-content" style="margin-bottom: 30px;">
+            <p class="titlenotice">BLIVE | Quienes Somos</p>
+            <h1 class="text-center titulo {{editabletext}} h1-art til-ban-qs" text-id="{{ site.name + '_til_quienes_somos' }}">
+                 {{ read_text(site.name +  '_til_quienes_somos') }}
+            </h1>
+        </div>    
 </section>
 
-<section class="list-art-home mg-b5">
-    <div class="container">
-        <div class="row">
-             <div class="col-md-12 col-sm-12 col-xs-12">
-                <div class="box-text-gal mg-5">
-                    <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_list-art' }}"> {{ read_text(site.name +  '_til_list-art') }}</h1>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12 col-sm-12 col-xs-12">
-                <div align="center">
-                    <div class="bajada text-center {{editabletext}}" text-id="{{ site.name + '_baj_list-art' }}"> {{ read_text(site.name +  '_baj_list-art') }} </div>
-                </div>
-            </div>
-        </div>
-</section>
-                <!-- *articulos* -->
-<section>
-     <div class="container">
-      <!--   <div class="row"> -->
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 1') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 2') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 3') }}
-          {{ getArticleList(limit=1, html="page/article_home.html", tag='blive,posicion 4') }}
-        <!-- </div> -->
-    </div>
-  
-</section>
-<section id="contenedor">
-    <div class="container">
-        <div class="row spa article_list">
-           {{ getArticleList(tag='blive,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }}
-        </div>
-    </div>
+<!-- *****Banner uno****** -->
+<div class="container">
 
-</section>
-     </div>
+  <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="texto_quienes_w {{editabletext}}" text-id="{{ site.name + 'text_banner2_quienes' }}">{{ read_text(site.name +  'text_banner2_quienes') }}</div>
+  </div>
 
-        <div  class="carritoproductos clearfix">
-            <div class="flecha clearfix">
-            </div>
-        </div>
- 
 
-{% include '../home/footer.html' %}
+<!-- *****Textos***** -->
+ <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="texto_quienes_w {{editabletext}}" text-id="{{ site.name + 'text_quienes_2' }}">{{ read_text(site.name +  'text_quienes_2') }}</div>
+  </div>
+<div class="btn-to-contact col-md-12" align="center">
+            <input class="btn-contactanos" type="button" onclick="location.href='{{site_base}}/contact' " value="Contáctanos" name="boton" /> 
+          </div>
+
+
+</div>
+<div style="height: 100px;"></div>
+</div>
+{% include ../home/footer.html %}
 {% end %}
