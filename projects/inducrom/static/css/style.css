@@ -225,7 +225,11 @@ img.lugar{
     right: 164px;
     cursor: pointer;
 }
-
+.img-gallery {
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 29px;
+}
 /*------------------------------------------RESPONSIVE------------------------------------------*/
 @media (max-width: 1111px){
     .mobile{
@@ -366,6 +370,14 @@ img.lugar{
     top: 12px;
     z-index: 1000;
     border-radius: 0px;
+}
+
+.box-clientes {
+    width: 82%;
+    height: 195px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin-left: 0px;
 }
 
 }

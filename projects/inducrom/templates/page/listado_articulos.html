@@ -92,7 +92,7 @@ $(document).ready(function(){
        
        <div class="col-md-12">
             <div class="box-text-gal">
-                <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_li' }}"> {{ read_text(site.name +  '_til_li') }}</h1>
+                <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_li_no' }}"> {{ read_text(site.name +  '_til_li_no') }}</h1>
             </div>
 
         </div>
@@ -129,7 +129,7 @@ $(document).ready(function(){
 <section id="contenedor">
     <div class="container">
         <div class="row">
-            {{ getArticleList() }}
+            {{ getArticleList(tag="noticias") }}
         </div>
     </div>
 </section>
