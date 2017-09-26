@@ -1240,9 +1240,18 @@ ul.text1 {
   }
 
 .img_registro_mayorista {
-     bottom: 10px; 
-     margin-top: 40px;
-  }
+    bottom: 10px;
+    margin-top: 40px;
+    width: 100%;
+}
+
+.img_login_mayorista {
+    width: 100%;
+    position: relative;
+    /* bottom: 10px; */
+    top: -73px;
+    height: auto;
+}
 
 .input_inscr {
     top: 8px;
@@ -2007,6 +2016,13 @@ img.hand {
 
 @media (max-width: 375px){
 
+.img_login_mayorista {
+    width: 100%;
+    position: relative;
+    /* bottom: 10px; */
+    top: -30px;
+    height: auto;
+}
 
 }
 
@@ -2035,6 +2051,14 @@ img.hand-2 {
     margin-bottom: -2px;
     font-family: 'Open Sans';
     font-weight: 200;
+}
+
+.img_login_mayorista {
+    width: 100%;
+    position: relative;
+    /* bottom: 10px; */
+    top: -10px;
+    height: auto;
 }
 
 }
@@ -2125,6 +2149,14 @@ img.hand-2 {
     margin-bottom: -2px;
     font-family: 'Open Sans';
     font-weight: 200;
+}
+
+.img_login_mayorista {
+    width: 100%;
+    position: relative;
+    /* bottom: 10px; */
+    top: 8px;
+    height: auto;
 }
 
 }
