@@ -15,7 +15,7 @@ min-height: 600px;
 }
 a
 {
-    color: gray;
+    color: whitesmoke;
 }
 
 a:hover
@@ -29,7 +29,7 @@ a:focus {
     outline-offset: -2px;
 }
 a:hover, a:focus {
-    color: transparent;
+    color: #ccc;
     text-decoration: none;
 }
 li
@@ -121,7 +121,7 @@ div.upload input, div.image-upload input{
     height: 100%;
     width: 100%;
     position:absolute;
-    top:100px;
+    top:59px;
 }
 .texto-team2
 {
@@ -132,7 +132,7 @@ div.upload input, div.image-upload input{
     height: 100%;
     width: 100%;
     position:absolute;
-    top: 240px;
+    top: 160px;
 }
 .fondo-only 
 { 
@@ -165,14 +165,16 @@ div.upload input, div.image-upload input{
 }
 .nombre-servicios-home{
     display: inherit;
-    font-size: 2.5rem;
+    font-size: 2.2rem;
     color: white;
     font-weight: 700;
+    display: inline-block;
 }
 .productos-servicios-home{
     margin-top: 1%; 
     display: inline-block; 
-    height: 110px;"
+    height: 110px;
+    padding: 0 7%;
 }
 .img-banners-home
 {
