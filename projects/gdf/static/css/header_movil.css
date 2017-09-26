@@ -107,7 +107,7 @@ div.image-upload.gu {
     position: relative;
     object-fit: cover;
     height: 18px;
-    right: 50px;
+    right: 65px;
 }
 
 .navbar-default {
@@ -207,14 +207,13 @@ a.upi {
 @media (max-width: 470px){
 
 .lupa {
-    bottom: -18px;
+    top: 18px;
     position: relative;
     object-fit: cover;
-    left: -51px;
+    left: -64px;
     width: 19px;
     height: 18px;
 }
-
 }
 
 
@@ -241,6 +240,18 @@ a.upi {
 .caja {
     left: 19%;
     width: 264px;
+}
+
+}
+
+@media (max-width: 400px){
+    .lupa {
+    top: 17px;
+    position: relative;
+    object-fit: cover;
+    left: -64px;
+    width: 19px;
+    height: 18px;
 }
 
 }
@@ -273,10 +284,10 @@ a.upi {
 }
 
 .lupa {
-    bottom: -18px;
+    top: 18px;
     position: relative;
     object-fit: cover;
-    left: -49px;
+    left: -60px;
     width: 19px;
     height: 18px;
 }
@@ -292,9 +303,9 @@ a.upi {
 }
 
 @media (max-width: 320px){
-    .navbar-default .navbar-toggle {
+.navbar-default .navbar-toggle {
     float: left;
-    left: 12px;
+    left: 0px;
 }
 
 .logo {
@@ -311,8 +322,17 @@ a.upi {
 }
 
 .caja {
-    left: 29%;
+    left: 25%;
     width: 175px;
+}
+
+.lupa {
+    top: 18px;
+    position: relative;
+    object-fit: cover;
+    left: -56px;
+    width: 19px;
+    height: 18px;
 }
 
 }
