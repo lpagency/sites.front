@@ -405,7 +405,7 @@ function TagURL(listaTag)
 
             if($(b).hasClass("check") && $(b).hasClass("categ"))
             {
-                var nombre = $(b).attr("tag");
+                var nombre = $(b).attr("value2");
                 var va = $(b).attr("value");
                 var block =
                         '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
@@ -461,11 +461,25 @@ function TagURL(listaTag)
             {
                 if ($(b).hasClass("categ"))
                 {
+                    if($(b).attr("value2") != undefined)
+                    {
+                        var nombre2 = $(b).attr("value2");
+                        var nombre = $(b).attr("tag");
+                        var block =
+                                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                                +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
 
-                    var nombre = $(b).attr("tag");
-                    var block =
-                            '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                            +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+                        $(".texto-ruta").html(textoRuta +" / "+ nombre2);
+                    }
+                    else
+                    {
+                        var nombre = $(b).attr("tag");
+                        var block =
+                                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+
+                        $(".texto-ruta").html(textoRuta +" / "+ nombre); 
+                    }
 
                     var classNombre = "." + nombre;
                     var textoRuta = $(".texto-ruta").html();
@@ -474,8 +488,6 @@ function TagURL(listaTag)
 
                     $(b).attr("checked", true);
                     $(".ch-"+nombre).removeClass("hidden");
-
-                    $(".texto-ruta").html(textoRuta +" / "+ nombre);
 
                     $(".filtrosRec").html($(".filtrosRec").html() + block);
                     $(".limpiar").removeClass("hidden");
