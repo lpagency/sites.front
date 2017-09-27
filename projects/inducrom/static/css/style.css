@@ -379,6 +379,11 @@ img.lugar{
     margin-bottom: 20px;
     margin-left: 0px;
 }
+img.lugar {
+    float: left;
+    position: relative;
+    left: 6%;
+}
 
 }
 
@@ -461,6 +466,82 @@ img.lugar{
 
 .form-moulie{
   margin-bottom: 80px;
+}
+
+.description.distrib.contact{
+      margin-top: 83px;
+}
+
+.tell {
+    text-align: center;
+    color: rgba(84, 84, 84, 0.79);
+    margin-bottom: 20px;
+}
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 150px;
+    cursor: pointer;
+}
+
+.mapi{
+    width: 100% !important;
+}
+
+}
+
+@media (max-width: 400px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 140px;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 375px){
+    img.lugar {
+    float: left;
+    position: relative;
+    left: 0%;
+}
+
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 128px;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 360px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 118px;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 320px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: -49px;
+    margin-bottom: 23px;
+    right: 100px;
+    cursor: pointer;
 }
 
 }
