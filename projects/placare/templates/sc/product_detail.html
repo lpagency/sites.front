@@ -140,9 +140,9 @@
                 related2(res.toString());
 
                 var mainImage = $("#mainImage");
-                    $(".img-container img").hover(function(){
+                $(".img-container img").click(function(){
                      var src = $(this).attr("src");
-                     $("#mainImage").attr("src",src);
+                     $(".img_prod_detail").attr("src",src);
                  });
 
                 mainImage.on("click",function(){
@@ -313,9 +313,6 @@
 
                          <div class="img-container main-1 index">
                              <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" />
-                         </div>
-                         <div class="img-container main-1 index">
-                             <img class="{{! images[7]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[7]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[7]['thumb_500']}}" />
                          </div>
                          </div>
                     </div>
@@ -497,9 +494,6 @@
 
                          <div class="img-container main-1 index">
                              <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" />
-                         </div>
-                         <div class="img-container main-1 index">
-                             <img class="{{! images[7]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[7]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[7]['thumb_500']}}" />
                          </div>
                         </div>
 
