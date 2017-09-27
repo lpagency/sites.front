@@ -15,7 +15,7 @@
          <img id="{{ site.name }}_footer_1" src="{{ read_image(site.name + '_footer_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_1',500) }}'" class="img-foot" alt="item">
        </div>
 
-       <li>
+       <li class="hidden-xs">
          {% if user is None %}
          <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
          {% else %}
@@ -45,7 +45,7 @@
        </div>
      </div>
 
-       <li>
+       <li class="hidden-xs">
          {% if user is None %}
          <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
          {% else %}
@@ -70,7 +70,7 @@
 </div>
 
 <div class="col-md-12 col-sm-12 col-xs-12">
-  <div align="center">
+  <div align="center" class="loki">
       <div class="form-group footer">
         <div style="" class="incrb-text2 {{editabletext}}" text-id="{{ site.name + '_tomi' }}"> {{ read_text(site.name +  '_tomi') }} </div> 
         <form action='https://forms.zohopublic.com/sytes/form/Loakemailsuscripcion/formperma/K360bAB5JKMBeaMh544j_fHH2/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
@@ -87,6 +87,14 @@
       <a href="https://www.loadingplay.com/" target="_blank">
       <div class="firma">Sytes tech. Developed by Loadingplay.</div>
       </a>
+       <li class="hidden-md hidden-sm hidden-lg visible-xs">
+         {% if user is None %}
+         <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+         {% else %}
+         <a href="{{ site_base }}/auth/logout" class="a-footer" >
+          Logout</a>
+          {% end %}
+        </li> 
     </div>
 </div>
 
