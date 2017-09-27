@@ -1742,6 +1742,15 @@ a.text {
 
 @media (max-width: 767px){
 
+.text-fil {
+    border-bottom: 1px solid transparent;
+    float: left;
+    width: 100%;
+    text-align: left;
+    position: relative;
+    left: 0px;
+}
+
 .btn-primary {
     color: rgba(128, 128, 128, 0.65);
     background-color: white;
@@ -2376,7 +2385,15 @@ a.text.detalle {
 }
 
 .mtl {
-    padding-top: 29px !important;
+    padding-top: 29px !important;  
+    border-right: 1px solid transparent !important;
+    width: 100% !important;
+    left: 0% !important;
+    margin-top: -29px !important;
+}
+
+.modal-footer {
+    border-top: 1px solid transparent;
 }
 
 .modal-body.fili {
