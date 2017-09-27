@@ -27,6 +27,20 @@
     <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
 
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+
+        $(".mobile2").css("display", "none");
+
+        $(document).on("click", ".bars", function()
+        {
+
+          $(".mobile2").toggle("slow");
+
+        });
+      });
+    </script>
 
     <script type="text/javascript">
         $(document).ready(function()
