@@ -1742,6 +1742,20 @@ a.text {
 
 @media (max-width: 767px){
 
+.btn-primary {
+    color: rgba(128, 128, 128, 0.65);
+    background-color: white;
+    border-color: rgba(128, 128, 128, 0.4);
+    float: left;
+    margin-top: 0px;
+    border-radius: 0px;
+    width: 50%;
+    text-align: left;
+    margin-bottom: 0px;
+    left: -15px;
+    position: relative;
+}
+
 .img_prod_little {
     width: 100%;
     margin-bottom: 2px;
@@ -1854,28 +1868,6 @@ a.text {
     left: 0px;
     margin-bottom: 21px;
     font-size: 11px;
-}
-.btn-primary {
-    color: rgba(128, 128, 128, 0.65);
-    background-color: white;
-    border-color: rgba(128, 128, 128, 0.4);
-    float: right;
-    margin-top: -35px;
-    border-radius: 0px;
-    width: 38%;
-    text-align: left;
-    margin-bottom: 30px;
-}
-.btn-primary:hover {
-    color: rgba(128, 128, 128, 0.65);
-    background-color: white;
-    border-color: rgba(128, 128, 128, 0.4);
-    float: right;
-    margin-top: -35px;
-    border-radius: 0px;
-    width: 38%;
-    text-align: left;
-    margin-bottom: 30px;
 }
 
 .texto-detalle {
@@ -2108,7 +2100,7 @@ a.talla {
     left: -13px;
     text-align: left;
     margin-top: 73px;
-    font-size: 10px;
+    font-size: 13px;
     width: 100%;
     font-weight: 600;
 }
@@ -2378,8 +2370,9 @@ a.text.detalle {
   margin-top: -31px;
 }
 
-.mii{
-  margin-bottom: -24px;
+.mii {
+    margin-bottom: -24px;
+    margin-top: 20px;
 }
 
 .mtl {
@@ -2556,6 +2549,14 @@ hr.listado {
     box-shadow: 0 1px 3px rgba(0,0,0,.08);
 }
 
+.opciones-compra{
+    color: #7177F7;
+    text-align: left;
+    left: 11px;
+    position: relative;
+    bottom: 32px;
+}
+
 }
 
 
@@ -2578,8 +2579,10 @@ a.text.detalle {
     border: 1px solid transparent;
     border-top: 1px solid #E9E9ED;
 }
+
+
 .text-relac {
-    font-size: 20px;
+    font-size: 14px;
     margin-bottom: 30px;
     text-align: left;
 }
@@ -3015,10 +3018,10 @@ a.text {
 .nombre-talla {
     float: left;
     position: relative;
-    left: 0px;
+    /*left: 0px;*/
     text-align: left;
     margin-top: 26px;
-    font-size: 8px;
+    font-size: 13px;
     width: 100%;
     font-weight: 600;
 }
@@ -3378,7 +3381,7 @@ a.text {
 .linea-separacion-2 {
     border-bottom: 1px solid #ebedef;
     position: relative;
-    left: 0px;
+    left: -10px;
     width: 100%;
     position: relative;
     top: 20px;
@@ -3462,6 +3465,42 @@ a.text.detalle {
     height: 85px;
     padding: 0px;
     height: 73px !important;
+}
+
+.col-xs-12.cre{
+    padding: 0px;
+}
+
+.btn-info {
+    color: gray;
+    background-color: transparent;
+    border-color: transparent;
+    float: left;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    right: 19px;
+    position: relative;
+    width: 100%;
+    text-align: left;
+}
+
+.descr_prod_detail {
+    position: relative;
+    font-size: 14px;
+    width: 100%;
+    text-align: left;
+    /* height: 343px; */
+    top: -41px;
+    float: left;
+    color: gray;
+    font-weight: 200;
+    line-height: 19px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 20px;
+    font-style: inherit;
+    margin-left: -5px;
 }
 
 }
@@ -3646,7 +3685,7 @@ a.text.detalle {
     margin-bottom: 11px;
     width: 50px;
     height: 50px;
-    margin-left: 8px;
+    margin-left: 5px;
     font-size: 10px;
     font-weight: 600;
 }
@@ -3660,7 +3699,7 @@ a.text.detalle {
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 8px;
+    margin-left: 5px;
     font-size: 10px;
     border-radius: 48px!important;
     border: 2px solid rgb(91, 81, 83);
@@ -3772,7 +3811,7 @@ a.text {
     margin-bottom: 11px;
     width: 50px;
     height: 50px;
-    margin-left: 5px;
+    margin-left: 2px;
     font-size: 10px;
     font-weight: 600;
 }
@@ -3786,7 +3825,7 @@ a.text {
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 5px;
+    margin-left: 2px;
     font-size: 10px;
     border-radius: 48px!important;
     border: 2px solid rgb(91, 81, 83);
@@ -3889,6 +3928,12 @@ a.text.detalle {
     right: 32px;
     font-size: 13px;
 }
+.mover {
+    margin-top: 25px;
+    position: relative;
+    left: -17px;
+    width: 107%;
+}
 
 }
 
@@ -3969,8 +4014,8 @@ a.text {
 
 .carousel {
     position: relative;
-    height: 500px;
-    margin-top: -28px;
+    height: 342px;
+    margin-top: 1px;
 }
 
 .original-de {
@@ -4041,8 +4086,9 @@ a.text {
 .mover {
     margin-top: 25px;
     position: relative;
-    left: -9px;
-    width: 105%;
+    left: -2px;
+    width: 100%;
+    padding: 0px;
 }
 
 a.talla {
@@ -4112,5 +4158,14 @@ a.text.detalle {
     top: 6px;
 }
 
+.linea-solin {
+    border-bottom: 1px solid #edebef;
+    position: relative;
+    left: -15px;
+    width: 100%;
+    top: 43px;
+    margin-top: -5px;
+    margin-bottom: 26px;
+}
 
 }
