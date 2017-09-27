@@ -39,6 +39,7 @@ $(document).ready(function()
         'onLoad': function(products) 
         {
 
+            console.log(products);
 
             $(".letrero-nuevo").each(function()
             {
