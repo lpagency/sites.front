@@ -87,7 +87,7 @@
          </div>
     </div> 
 
-        <div class="col-md-4 col-sm-4 col-xs-12"> 
+        <div class="col-md-4 col-sm-4 col-xs-12 hin"> 
            <div style="position:relative;">
               {% if is_admin %}
               <div class="image-upload lapiz visible-movil">
@@ -105,9 +105,11 @@
      {% if is_admin %}
      <img class="change-image editablelink" link-id="{{ site.name + '_home_2' }}" content="{{ read_link(site.name + '_home_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
      {% end %}
-      <div class="text-loki {{editabletext}}" text-id="{{ site.name + '_loki_1' }}"> {{ read_text(site.name +  '_loki_1') }}</div>
+     <div class="col-md-12 col-sm-12 col-xs-12">
+         <div class="text-loki {{editabletext}}" text-id="{{ site.name + '_loki_1' }}"> {{ read_text(site.name +  '_loki_1') }}</div>
+      </div>
      </div>
-        <div class="col-md-4 col-sm-4 col-xs-12"> 
+        <div class="col-md-4 col-sm-4 col-xs-12 hin"> 
            <div style="position:relative;">
               {% if is_admin %}
               <div class="image-upload lapiz visible-movil">
@@ -125,7 +127,9 @@
      {% if is_admin %}
      <img class="change-image editablelink" link-id="{{ site.name + '_home_3' }}" content="{{ read_link(site.name + '_home_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
      {% end %}
-      <div class="text-loki {{editabletext}}" text-id="{{ site.name + '_loki_11' }}"> {{ read_text(site.name +  '_loki_11') }}</div>
+     <div class="col-md-12 col-sm-12 col-xs-12">
+         <div class="text-loki {{editabletext}}" text-id="{{ site.name + '_loki_11' }}"> {{ read_text(site.name +  '_loki_11') }}</div>
+      </div>
      </div>
 
 </div>
