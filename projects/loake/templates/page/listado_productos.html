@@ -46,6 +46,16 @@
       $(".l-shoemaker").removeClass("hidden");
     }
 
+    if(hyper == 'accesorios')
+    {
+      $(".l-accesorios").removeClass("hidden");
+    }
+
+    if(hyper == 'complementos')
+    {
+      $(".l-complementos").removeClass("hidden");
+    }
+
   });
 
 </script>
@@ -153,6 +163,36 @@
         </div>
         {% end %}
         <img id="{{ site.name }}_productos_lifestyle" src="{{ read_image(site.name + '_productos_lifestyle', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_lifestyle',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+        <!-- BANNER ACCESORIOS -->
+
+    <div class="mobile l-accesorios img-mobile hidden-xs hidden" style="background:url('{{ read_image(site.name + '_productos_accesorios',500) }}'); height:350px; background-size:cover; margin-top:0px;
+  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 95%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_accesorios">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_accesorios" name="image" id="img_productos_accesorios">
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_accesorios" src="{{ read_image(site.name + '_productos_accesorios', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_accesorios',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+        <!-- BANNER COMPLEMENTOS -->
+
+    <div class="mobile l-lifestyle img-mobile hidden-xs hidden" style="background:url('{{ read_image(site.name + '_productos_complementos',500) }}'); height:350px; background-size:cover; margin-top:0px;
+  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 95%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_complementos">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_complementos" name="image" id="img_productos_complementos">
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_complementos" src="{{ read_image(site.name + '_productos_complementos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_complementos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
   </div>
 </section>
