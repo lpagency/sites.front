@@ -52,7 +52,8 @@
 
 
 {% block body %}
-
+{{ is_admin }}
+{{ user }}
 {% if is_admin %}
 {% set editabletext = 'editabletext' %}
 {% else %}
@@ -178,7 +179,12 @@
 
 <section id="">
     <div class="container min">
-         {{ getArticleList(tag="home") }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 1') }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 2') }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 3') }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 4') }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 5') }}
+      {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 6') }}
     </div>
 </section>
 <div class="" style="margin-bottom:50px;"></div>
