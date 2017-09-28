@@ -26,6 +26,31 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
 
 <script type="text/javascript">
+  
+  $(document).ready(function()
+  {
+    var hyper = Utils.getUrlParameter("tag");
+
+    if(hyper == 'l_lifestyle')
+    {
+      $(".l-lifestyle").removeClass("hidden");
+    }
+
+    if(hyper == 'l_1880')
+    {
+      $(".l-1880").removeClass("hidden");
+    }
+
+    if(hyper == 'l_shoemaker')
+    {
+      $(".l-shoemaker").removeClass("hidden");
+    }
+
+  });
+
+</script>
+
+<script type="text/javascript">
     $(document).ready(function()
     {
 
@@ -84,18 +109,51 @@
 <body id="lapimport">
    <section>
     <div align="center">
-    <div class="mobile img-mobile hidden-xs" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:350px; background-size:cover; margin-top:0px;
+
+<!-- BANNER 1880 -->
+
+    <div class="mobile l-1880 img-mobile hidden-xs hidden" style="background:url('{{ read_image(site.name + '_productos_1880',500) }}'); height:350px; background-size:cover; margin-top:0px;
   filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 95%;" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
         <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_productos">
+            <label for="img_productos_1880">
                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
             </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_productos" name="image" id="img_productos">
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_1880" name="image" id="img_productos_1880">
         </div>
         {% end %}
-        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_productos_1880" src="{{ read_image(site.name + '_productos_1880', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_1880',500) }}'" class="banner_uno_list hidden" alt="item">
     </div> 
+
+<!-- BANNER SHOEMAKER -->
+
+    <div class="mobile l-shoemaker img-mobile hidden-xs hidden" style="background:url('{{ read_image(site.name + '_productos_shoemaker',500) }}'); height:350px; background-size:cover; margin-top:0px;
+  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 95%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_shoemaker">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_shoemaker" name="image" id="img_productos_shoemaker">
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_shoemaker" src="{{ read_image(site.name + '_productos_shoemaker', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_shoemaker',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div> 
+
+    <!-- BANNER LIFESTYLE -->
+
+    <div class="mobile l-lifestyle img-mobile hidden-xs hidden" style="background:url('{{ read_image(site.name + '_productos_lifestyle',500) }}'); height:350px; background-size:cover; margin-top:0px;
+  filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 95%;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_lifestyle">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_lifestyle" name="image" id="img_productos_lifestyle">
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_lifestyle" src="{{ read_image(site.name + '_productos_lifestyle', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_lifestyle',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
   </div>
 </section>
 
