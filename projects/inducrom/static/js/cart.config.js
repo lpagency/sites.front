@@ -76,7 +76,7 @@ $(document).ready(function()
         'tag': tag,
         'ignore_stock': false,
         'infinite_scroll': true,
-        // 'maxProducts': 100,
+        'maxProducts': 200,
         'checkout_url': checkout_url,
         'operator' :'or',
         'onLoad': function(products) 
