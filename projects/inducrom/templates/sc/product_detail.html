@@ -32,6 +32,8 @@
     $(document).ready(function()
         {
 
+      var b = "Home";
+
        var base_url = $.environmentVar(
     'https://apibodegas.loadingplay.com/',
     'https://apibodegas.loadingplay.com/',
@@ -52,6 +54,15 @@
             onLoad: function(product)
             {
 
+              for(i in product.tags)
+              {
+                var breadcrumb = product.tags[i].replace("_"," ").replace("_"," ");
+
+                b = b + " | " + breadcrumb;
+              }
+
+              $(".buscaCat").html(b);
+
               for(x in product.tags){
                 if(product.tags[x] == "tienda"){
                   $(".comprar").removeClass("hidden");
@@ -71,15 +82,9 @@
                     });
                 }
 
-                console.log(localStorage.getItem("subcategoriaProd").toString());
-
-                var subCat = localStorage.getItem("subcategoriaProd").toString();
-
-
-                $(".buscaCat").html(subCat + " | " + product.name.toString());
-
             }
-        });
+
+        })
 
         // productos relacionados
         var related = function(tag)
