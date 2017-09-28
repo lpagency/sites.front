@@ -96,11 +96,11 @@
                          $(".product-related").slick({
                           slidesToShow: 6,
                           slidesToScroll: 1,
-                          autoplay: false,
+                          autoplay: true,
                           autoplaySpeed: 2000,
                           prevArrow: false,
                           nextArrow: false,
-                          infinite: true,
+                          infinite: true
                         });
                      }
                 
@@ -111,7 +111,7 @@
                 'app_public' : app_public,
                 'base_url' : base_url,
                 'maxProducts' : 8,
-                'templateOrigin' : '#product_template_home',
+                'templateOrigin' : '#product_template_home2',
                 'tag' : '',
                 'ignore_stock' : true,
                     'onLoad':function(){
@@ -311,7 +311,7 @@ $(document).ready(function() {
             <div class="text-relac text-center">Productos relacionados</div>
         </div>
     </div>
-            <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
+    <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
 
     </div>
     <div class="row product-related-2 visible-xs hidden-md hidden-lg hidden-sm">
