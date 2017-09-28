@@ -200,6 +200,11 @@ $(document).ready(function(){
         {% end %}
         <img id="{{ site.name }}_productos_in" src="{{ read_image(site.name + '_productos_in', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_in',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
+     <div class="col-md-12">
+            <div class="box-text-gal">
+                <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_producc' }}"> {{ read_text(site.name +  '_producc') }}</h1>
+            </div>
+      </div>
 </section>
 
 <div class="container">
