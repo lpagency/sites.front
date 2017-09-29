@@ -491,7 +491,7 @@
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
 
     <script type="text/x-template" id="shopping-cart-product">
-<tr class="ver">
+<tr>
     <td>
        <img src="{{! images[0][2] }}" alt="" class="img-cart-modal">
    </td>
@@ -516,7 +516,7 @@
     
 </tr>
 </thead>
-<tr>
+<tr class="ver">
     <td class="tot hidden-xs">Total:</td> 
     <td id="total" class="text-right money lib hidden-xs">{{! total|money }}</td>
 </tr>
@@ -533,7 +533,7 @@
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
     <div class="form-group text-center">
-         <button type="submit" class="btn bn btn-compra mo" style="    background-color: white;color: rgba(204, 108, 78, 1);width: 31%;border-radius: 0px;height: 41px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1.5px; font-size: 16px; font-weight: bold;border: 2px solid rgba(204, 108, 78, 1);font-family: 'Open Sans', sans-serif;">IR A PAGAR
+         <button type="submit" class="btn bn btn-compra mo" style="    background-color: white;color: rgba(204, 108, 78, 1);width: 31%;border-radius: 0px;height: 41px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1.5px; font-size: 16px; font-weight: bold;border: 2px solid rgba(204, 108, 78, 1);font-family: 'Open Sans', sans-serif; margin-top: 17px;">IR A PAGAR
         </button>
 
          <button type="submit" class="btn bn btn-compra vir hidden-md hidden-sm hidden-lg visible-xs" style="">SEGUIR VITRINIANDO
