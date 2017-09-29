@@ -261,12 +261,13 @@ img.desaturada {
     margin: 20px 0;
     margin: 4px 0;
     letter-spacing: 2px;
-    font-weight: 100;
-    font-size: 0.8rem;
+    font-weight: 600;
+    font-size: 0.6rem;
     top: -28px;
     margin-bottom: 1%;
     width: 93%;
     z-index: 100;
+    text-transform: uppercase;
 }
  
 .paginacion ul {
@@ -369,8 +370,13 @@ a.mod:hover{
 }
 
 /************/
-.inline-menu{
+.inline-menu {
     display: inline-block;
+    color: #6a6263;
+    float: left;
+    font-style: italic;
+    text-align: left;
+    margin-left: 12px;
 }
 .onclick-menu {
     position: relative;
@@ -1011,8 +1017,9 @@ div.upload input, div.image-upload input {
 }
 
 
-.h_detail_prod{
+.h_detail_prod {
     height: 353px;
+    left: -13px;
 }
 
 .cuadro_product{
