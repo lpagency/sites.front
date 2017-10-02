@@ -54,12 +54,16 @@
             onLoad: function(product)
             {
 
+              console.log(product.tags);
+
               for(i in product.tags)
               {
                 var breadcrumb = product.tags[i].replace("_"," ").replace("_"," ");
 
                 b = b + " | " + breadcrumb;
               }
+
+              console.log(b);
 
               $(".buscaCat").html(b);
 
@@ -89,6 +93,7 @@
         // productos relacionados
         var related = function(tag)
         {
+
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
@@ -137,12 +142,18 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-   $("#myCarousel").swiperight(function() {
-      $(this).carousel('prev');
-    });
-   $("#myCarousel").swipeleft(function() {
-      $(this).carousel('next');
-   });
+
+  $(".carousel").on("swipe", function(){
+
+    var swipe = function(event, direction, distance, duration, fingerCount, fingerData) {
+
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+
+    },
+    allowPageScroll = "vertical";
+
+  })
 });
 
 </script>
@@ -170,6 +181,13 @@ $(document).ready(function() {
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
