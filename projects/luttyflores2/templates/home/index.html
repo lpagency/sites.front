@@ -125,10 +125,6 @@
            </div>
           
            {% end %}
-
-      <!--   <img class="img_banner" id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" alt="item" style=" "> -->
-
-   <!--        <img src="{{ read_image(site.name + '_slide2', 500) }}" alt="Slide 2" longdesc="{{ read_image(site.name + '_slide2', 500) }}" /> -->
       </div>
     
       <div class="mov item " style="background:url('{{ read_image(site.name + '_img_slider_3') }}'); height:100%; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; " data-img-width="1600" data-img-height="890" data-diff="100">
@@ -141,8 +137,6 @@
            </div>
         
            {% end %}
-        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" alt="item" style=" "> -->
-     <!--      <img src="{{ read_image(site.name + '_slide3', 500) }}" alt="Slide 3" longdesc="{{ read_image(site.name + '_slide3', 500) }}" /> -->
       </div>
 
       <div  class="mov item" style="background:url('{{ read_image(site.name + '_img_slider_4') }}'); height:100%; width:100%; background-repeat:no-repeat; background-size:cover; background-position:center; " data-img-width="1600" data-img-height="890" data-diff="100">
@@ -155,8 +149,6 @@
            </div>
            
            {% end %}
-        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_4" src="{{ read_image(site.name + '_img_slider_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_4',500) }}'" alt="item" style=" "> -->
-      <!--   <img src="{{ read_image(site.name + '_slide4', 500) }}" alt="Slide 4" longdesc="{{ read_image(site.name + '_slide4', 500) }}" /> -->
         </div>
     </div>
     <!-- Left and right controls -->
@@ -198,12 +190,12 @@
        <a id="{{ site.name + '_box_home_1' }}" href="{{ read_link(site.name + '_box_home_1') }}">
          <img id="{{ site.name }}_box_home_1" src="{{ read_image(site.name + '_box_home_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_home_1',) }}'" class="box-gra" alt="item">
       </a>
-      <!--  <img src="https://7static.loadingplay.com/static/images/fb1025f549f4c01c2a27ff6354556f4f_Casa-de-Campo-La-Romana-221209-2.png" class="box-chic">  -->
     </div>
 
     {% if is_admin %}
     <img class="change-image editablelink" link-id="{{ site.name + '_box_home_1' }}" content="{{ read_link(site.name + '_box_home_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
     {% end %}
+    <div class="texto-hu {{editabletext}}" text-id="{{ site.name + '_ti' }}"> {{ read_text(site.name +  '_ti') }}</div>
 
    </div>
 
@@ -224,7 +216,8 @@
                {% if is_admin %}
                   <img class="change-image editablelink" link-id="{{ site.name + '_box_home_2' }}" content="{{ read_link(site.name + '_box_home_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
                 {% end %}
-         <!--  <img class="img-uno" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
+
+                <div class="texto-hu-2 {{editabletext}}" text-id="{{ site.name + '_ti_2' }}"> {{ read_text(site.name +  '_ti_2') }}</div>
     </div>
 
     <div style="position: inherit;" class="">
@@ -242,8 +235,9 @@
 
                {% if is_admin %}
                   <img class="change-image editablelink" link-id="{{ site.name + '_box_home_3' }}" content="{{ read_link(site.name + '_box_home_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-                {% end %}
-         <!--  <img class="img-uno" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->      
+                {% end %}  
+
+                 <div class="texto-hu-2 {{editabletext}}" text-id="{{ site.name + '_ti_3' }}"> {{ read_text(site.name +  '_ti_3') }}</div> 
 </div>
 </div>
 
@@ -262,7 +256,6 @@
        <a id="{{ site.name + '_box_home_4' }}" href="{{ read_link(site.name + '_box_home_4') }}">
          <img id="{{ site.name }}_box_home_4" src="{{ read_image(site.name + '_box_home_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_home_4',) }}'" class="box-gra" alt="item">
       </a>
-      <!--  <img src="https://7static.loadingplay.com/static/images/fb1025f549f4c01c2a27ff6354556f4f_Casa-de-Campo-La-Romana-221209-2.png" class="box-chic">  -->
     </div>
 
     {% if is_admin %}
@@ -270,6 +263,7 @@
     {% end %}
     <!--editable link-->
   </div>
+      <div class="texto-hu {{editabletext}}" text-id="{{ site.name + '_ti_4' }}"> {{ read_text(site.name +  '_ti_4') }}</div>
 </div>
 </div>
 </section>
