@@ -994,7 +994,7 @@ hr.new-f {
 }
 
 .f-min {
-    border-top: 1px solid #ebedef;
+    border-top: 1px solid transparent;
     border-bottom: 1px solid transparent;
     padding: 0px;
 }
@@ -1055,6 +1055,14 @@ hr.new-f {
     right: 0px;
     text-align: left;
     margin-top: 17px;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #E9E9ED;
+    width: 97%;
 }
 
 }
