@@ -154,7 +154,8 @@
         $(document).on("click", ".contact-submit", function()
         {
             $(this).html("Enviando...");
-            $(this).attr("disabled", true);
+            /*$(this).attr("disabled", true);*/
+            
         });
     });
 </script>
@@ -303,9 +304,11 @@
                             <div class="form-group ">
                                 <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block contact contact-submit" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar 
                                 </button>
+
                             </div>
+                            <input type="hidden" name="submitted" id="submitted3" value="true">
                         </p>
-                        <input type="hidden" name="submitted" id="submitted3" value="true">
+                        
                       </div>  
                   </div>  
               </div>
