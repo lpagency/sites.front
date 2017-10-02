@@ -370,10 +370,20 @@ div.upload input, div.image-upload input {
 }
 
 @media (max-width: 414px){
+.box-med {
+    width: 101%;
+    height: 369px;
+    object-fit: contain;
+}
+
+}
+
+@media (max-width: 320px){
     .box-med {
     width: 101%;
-    height: 300px;
-    object-fit: cover;
+    height: 369px;
+    object-fit: contain;
+    margin-bottom: -75px;
 }
 
 }
