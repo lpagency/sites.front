@@ -32,7 +32,11 @@
     $(document).ready(function()
         {
 
+      var breadcrumb = "";
+
       var b = "Home";
+
+      var miga = [];
 
        var base_url = $.environmentVar(
     'https://apibodegas.loadingplay.com/',
@@ -56,12 +60,31 @@
 
               for(i in product.tags)
               {
-                var breadcrumb = product.tags[i].replace("_"," ").replace("_"," ");
 
-                b = b + " | " + breadcrumb;
+                if(product.tags[i].indexOf('cat') > -1)
+                {
+
+                  if(product.tags[i].indexOf('cat1') > -1)
+                  {
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[0] = breadcrumb;
+
+                  }
+
+                  if(product.tags[i].indexOf('cat2') > -1)
+                  {
+
+                    related(product.tags[i]);
+
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[1] = breadcrumb;
+                  }
+                }
               }
 
-              $(".buscaCat").html(b);
+              $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]);
 
               for(x in product.tags){
                 if(product.tags[x] == "tienda"){
@@ -72,8 +95,6 @@
                   $(".precio").addClass("hidden");
                 }
               }
-
-                related(product.bullet_3);
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
@@ -89,6 +110,7 @@
         // productos relacionados
         var related = function(tag)
         {
+
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
@@ -137,12 +159,18 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-   $("#myCarousel").swiperight(function() {
-      $(this).carousel('prev');
-    });
-   $("#myCarousel").swipeleft(function() {
-      $(this).carousel('next');
-   });
+
+  $(".carousel").on("swipe", function(){
+
+    var swipe = function(event, direction, distance, duration, fingerCount, fingerData) {
+
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+
+    },
+    allowPageScroll = "vertical";
+
+  })
 });
 
 </script>
@@ -170,6 +198,13 @@ $(document).ready(function() {
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
