@@ -78,6 +78,8 @@ $(document).ready(function()
         'infinite_scroll': true,
         'maxProducts': 200,
         'checkout_url': checkout_url,
+        'column': 'position',
+        'order': 'asc',
         'operator' :'or',
         'onLoad': function(products) 
         {
