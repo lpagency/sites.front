@@ -190,10 +190,11 @@
 }
 
 
-
-
-
-
+.btn:focus, .btn:active:focus, .btn.active:focus {
+    outline: thin dotted;
+    outline: 0px auto -webkit-focus-ring-color;
+    outline-offset: 0px;
+}
 /*----------------------------------------RESPONSIVE------------------------------*/
 @media (max-width: 1199px){
 .navbar-left {
