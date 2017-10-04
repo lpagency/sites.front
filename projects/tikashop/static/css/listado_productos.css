@@ -51,12 +51,32 @@
 .text {
     color: white;
     font-size: 20px;
-    position: absolute;
-    top: 85%;
-    left: 50%;
+    position: relative;
+    top: 9%;
+    left: -6%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     background-color:#0a8452;
+    width: 40%;
+    height: 40px;
+    padding: 5px;
+    cursor: pointer;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.text2 {
+    margin-top: 4.3%;
+    border-radius: 0px;
+    border: none;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #0a8452;
     width: 40%;
     height: 40px;
     padding: 5px;

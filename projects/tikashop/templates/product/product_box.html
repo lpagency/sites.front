@@ -6,9 +6,37 @@
 		  <p class="inf ellipsis multiline">{{! name }}</p>
 		  <p class="inf3 ellipsis multiline">{{! description }}</p>
 		  <p class="inf2 ellipsis multiline">{{! main_price|money}}</p>
-          <div class="text" data-toggle="modal" data-target="#myModal-pro">Ver más</div>
-          <div class="btn add-to-cart btn-default com" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" style="margin-top: 46%;">Comprar</div>
+          <div class="text" data-toggle="modal" data-target="#myModal-pro_{{! id }}">Ver más</div>
+          <div class="btn add-to-cart btn-default text2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</div>
 		</div>
   </div> 
+
+    <!-- **modal descripcion producto** -->
+      <!-- Modal -->
+      <div class="modal fade" id="myModal-pro_{{! id }}" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content pro">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title text-center">Descripción del producto</h4>
+          </div>
+          <div class="modal-body">
+              <img src="{{! images[0][3] }}" alt="" class="image" >
+              <p>{{! name }}</p>
+              <p>Precio: {{! main_price|money}}</p>
+              <p>{{! description }}</p>
+              <button type="button" class="btn add-to-cart btn-default com" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO</button>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          </div>
+      </div>
+      
+  </div>
+</div>
+
+
 
 </script>
