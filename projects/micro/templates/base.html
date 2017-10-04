@@ -32,7 +32,7 @@
     <!-- desarrollo -->
     <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less">
     <script src="{{ site_base }}/common/js/less/dist/less.js" type="text/javascript"></script>
-    
+
 
     <!-- produccion -->
     <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less"> -->
@@ -79,7 +79,7 @@
         <!-- /LOGO -->
     </a>
   </div>
- 
+
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
        otro elemento que se pueda ocultar al minimizar la barra -->
   <div class="collapse navbar-collapse navbar-ex1-collapse navbar3 navbcolor">
@@ -96,7 +96,7 @@
         <!-- <li><a href="{{ site_base }}/home_comunidad" class="text-header dropdown-toggle">Comunidad</a>
         </li> -->
        <!--  <li><a class="text-header" href="{{ site_base }}/contact">CONTACTO</a></li> -->
-        
+
     </ul>
   </div>
 </nav>
@@ -110,7 +110,7 @@
     <!-- botón agregar -->
     <!-- header -->
 
-    {% include 'product/product_box.html' %} 
+    {% include 'product/product_box.html' %}
     {% include 'product/product_art.html' %}
 
     {% if is_admin %}
@@ -149,7 +149,7 @@
 <!-- Modal -->
   <div class="modal fade" id="myModal-pro" role="dialog">
     <div class="modal-dialog">
-    
+
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header-pro">
@@ -179,7 +179,7 @@
             </div>
         </div>
       </div>
-      
+
     </div>
   </div>
 
@@ -217,7 +217,31 @@
     <script type="text/javascript">
     var site_base = "{{ site_base }}"
     </script>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <!--FUNCION UTILS!!!! WAYO DEL FUTURO-->
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var charsToSearch = ["1", "2", "3", "4", "5", "6","7","8","9","0"];
+
+            Utils.changeName = function(name)
+            {
+                if(charsToSearch.indexOf(name.charAt(0)) != -1)
+                {
+                    name = name.replace(/[0-9]/g,"");
+
+                    return name;
+                }
+                else
+                {
+                    return name;
+                }
+            }
+
+        });
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
@@ -238,7 +262,7 @@
     <script src="{{ site_base }}/common/js/categories/js/category_plugin.js" type="text/javascript"></script>
     <script src="{{ site_base }}/static/js/json.data.js" type="text/javascript"></script>
 
-    
+
     <!-- <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> -->
     <script type="text/javascript" src="{{ site_base }}/static/js/checkout.js"></script>
 
@@ -336,7 +360,7 @@
     });
     </script>
     -->
- 
+
     {% if is_admin %}
     <script type="text/javascript">
     var site_name = "{{ site.name }}";
@@ -372,24 +396,24 @@
         ga('create', '{{ get_config("analytics") }}', 'auto');
         ga('send', 'pageview');
     </script>
-   
+
     <script type="text/javascript">
        jQuery(document).ready(function($) {
- 
+
         $('#myCarousel').carousel({
                 interval: 5000
         });
- 
+
         $('#carousel-text').html($('#slide-content-0').html());
- 
+
         //Handles the carousel thumbnails
        $('[id^=carousel-selector-]').click( function(){
             var id = this.id.substr(this.id.lastIndexOf("-") + 1);
             var id = parseInt(id);
             $('#myCarousel').carousel(id);
         });
- 
- 
+
+
         // When the carousel slides, auto update the text
         $('#myCarousel').on('slid.bs.carousel', function (e) {
                  var id = $('.item.active').data('slide-number');

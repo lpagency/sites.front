@@ -13,7 +13,7 @@
 {% end %}
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
 
 <script type="text/javascript">
@@ -21,30 +21,6 @@
       $(this).addClass("active");
     }).live("touchend", function() {
       $(this).removeClass("active");
-    });
-</script>
-
-<!--FUNCION UTILS!!!! WAYO DEL FUTURO-->
-
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        var charsToSearch = ["1", "2", "3", "4", "5", "6","7","8","9","0"];
-
-        Utils.changeName = function(name)
-        {
-            if(charsToSearch.indexOf(name.charAt(0)) != -1)
-            {
-                name = name.replace(/[0-9]/g,"");
-
-                return name;
-            }
-            else
-            {
-                return name;
-            }
-        }
-
     });
 </script>
 
@@ -118,14 +94,14 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
         {% end %}
         <img id="{{ site.name }}_para_ninos" src="{{ read_image(site.name + '_para_ninos', 1) }}" onload="this.src='{{ read_image(site.name + '_para_ninos',500) }}'" class=" img_banner_list desaturada" alt="item">
         <div class="" align="center">
-            <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_para_ninos' }}"> 
+            <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_para_ninos' }}">
             {{ read_text(site.name +  '_text_para_ninos') }}
             </h1>
         </div>
     <div class="clearfix" ></div>
 </section>
 
-    
+
 <section class="h_submenu fondo_nuest_prod">
     <div class="categorias container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" id="9" style="padding-top: 1em;padding-bottom: 30px;">
             <!-- <a href="#" id="Categoria1" class="w_menu_menu subya-menu subcateg mbtm5" tag="categoria_1" role="button">Categoria1</a>
