@@ -1,8 +1,7 @@
- <!-- Navigation -->
- <div class="container">
+
+ <div class="container head-container">
     <nav class="container navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container header">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -24,25 +23,61 @@
                </div>
                      </a>
             </div>
-
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
                         <a href="http://es.tikachips.com/">TIKA</a>
                     </li>
-                      <li>
-                        <a href="">OCASIÓN 1 </a>
-                    </li>
-                      <li>
-                        <a href="">OCASIÓN 2 </a>
-                    </li>
-                      <li>
-                        <a href="">OCASIÓN 3 </a>
-                    </li>  
-                    <li>
-                        <a href="">OCASIÓN 4</a>
-                    </li>
+                    <li class="dropdown">
+                      <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA CHIPS <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Patagonia</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_stixs">Furiosas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Chiloé</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_crackers">Zapallo</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_veggies">Merkén</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA STIXS <b class="caret"></b></a>
+                          <ul class="dropdown-menu">
+                            <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Palafito</a></li>
+                          </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA CRACKERS <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Chia & Romero</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_stixs">Raspberry & Pimienta</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Curcuma & Sesamo</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA POP <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Caramelo & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_stixs">Oliva & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Coco, Caramelo & Vainilla</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Coco, Caramelo & Chocolate</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA NATIVAS <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Andinas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_stixs">Pepper</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Pesto</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Patriota</a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="{{ site_base }}/productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TORTIKA CHIPS <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                          <li class="color"><a class="color" href="{{ site_base }}/productos?tag=patagonia">Semillas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_stixs">Hierbitas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/productos#tika_tortikas">Trio</a></li>
+                        </ul>
+                      </li>
                     <li>
                         <a href="{{ site_base}}/contact">CONTACTANOS</a>
                     </li>
@@ -50,20 +85,10 @@
                       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                       <span class="units-total">0</span> 
                     </li>
-<!--                     <li>
-                     <a href=""></a>
-                    </li>
-                    <li>
-                     <a href=""></a>
-                    </li>
-                    <li>
-                     <a href=""></a>
-                    </li> -->
-
                 </ul>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
     </nav>
 </div>
+
+
