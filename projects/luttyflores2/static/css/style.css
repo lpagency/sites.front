@@ -221,7 +221,7 @@ div.image-upload.par1 {
 
 .text-intro-prov {
     margin-bottom: 45px;
-    font-size: 23px;
+    font-size: 21px;
     color: gray;
     top: 15px;
     position: relative;
@@ -229,6 +229,8 @@ div.image-upload.par1 {
     margin-top: 20px;
     text-align: left;
     margin-left: 23px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .titulo-about {
@@ -265,6 +267,8 @@ div.image-upload.par1 {
     padding-left: 25px;
     padding-right: 25px;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .texto_quienes-til {
@@ -276,6 +280,8 @@ div.image-upload.par1 {
     padding-left: 21px;
     padding-right: 21px;
     font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .titulo-peq {
@@ -514,6 +520,8 @@ div.upload input, div.image-upload input {
     font-weight: 300;
     margin-top: 20px;
     margin-left: 0px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .texto-con {
@@ -536,8 +544,22 @@ div.upload input, div.image-upload input {
     bottom: 0px;
     position: relative;
     right: 38px;
-
 }
+
+.mar {
+    margin-bottom: 23px;
+    position: relative;
+    bottom: 0px;
+    left: 0%;
+    color: gray;
+    font-weight: 300;
+    font-size: 17px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
+    margin-top: 57px;
+}
+
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width:1199px){
     .container.min{
