@@ -74,11 +74,13 @@
             if(hyper[0] == "perro")
             {
               $(".tag-header").html("PERROS");
+              $(".perros").removeClass("hidden");
             }
 
             if(hyper[0] == "gato")
             {
               $(".tag-header").html("GATOS");
+              $(".gatos").removeClass("hidden");
             }
 
             if(hyper[0] == "nino")
@@ -140,31 +142,68 @@
         <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="margin-bottom: 50px;border-right: 1px solid #E9E9ED; width: 92%;left: 8%;  margin-top: 13px;">
           <div class="text-fil-2"> MARCAS </div>
           <form action="/action_page.php" class="chek">
-              <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-dog_chow" name="vehicle1" tag="dog_chow" value="Bike" value2="Dog Chow" onclick="check('dog_chow','Dog Chow')">
-                <div class="fil h-dog_chow" onclick="check('dog_chow','Dog Chow')">Dog Chow</div> 
+              <div class="filtro-filtros perros hidden">
+                <input type="checkbox" class="categ hidden perros c-dog_chow" name="vehicle1" tag="dog_chow" value="Bike" value2="Dog Chow" onclick="check('dog_chow','Dog Chow')">
+                <div class="fil hidden perros h-dog_chow" onclick="check('dog_chow','Dog Chow')">Dog Chow</div> 
                 <i class="fa fa-check-square ch-dog_chow hidden" aria-hidden="true" onclick="uncheck('dog_chow','Dog Chow')"></i>
               </div>
-              <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-doko" name="vehicle2" tag="doko" value="Car" value2="Doko" onclick="check('doko','Doko')"> 
-                <div class="fil h-doko" onclick="check('doko','Doko')">Doko</div> 
+              <div class="filtro-filtros perros hidden">
+                <input type="checkbox" class="categ hidden perros c-doko" name="vehicle2" tag="doko" value="Car" value2="Doko" onclick="check('doko','Doko')"> 
+                <div class="fil hidden perros h-doko" onclick="check('doko','Doko')">Doko</div> 
                 <i class="fa fa-check-square ch-doko hidden" aria-hidden="true" onclick="uncheck('doko','Doko')"></i>
               </div>
-              <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-pro_plan" name="vehicle3" tag="pro_plan" value="Boat" value2="Pro Plan" onclick="check('pro_plan','Pro Plan')"> 
-                <div class="fil h-pro_plan" onclick="check('pro_plan','Pro Plan')">Pro Plan</div> 
+              <div class="filtro-filtros perros hidden">
+                <input type="checkbox" class="categ hidden perros c-pro_plan" name="vehicle3" tag="pro_plan" value="Boat" value2="Pro Plan" onclick="check('pro_plan','Pro Plan')"> 
+                <div class="fil hidden perros h-pro_plan" onclick="check('pro_plan','Pro Plan')">Pro Plan</div> 
                 <i class="fa fa-check-square ch-pro_plan hidden" aria-hidden="true" onclick="uncheck('pro_plan','Pro Plan')"></i>
               </div>
-              <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-excetlent" name="vehicle3" tag="excetlent" value="Boat" value2="Excellent" onclick="check('excetlent','Excellent')"> 
-                <div class="fil h-excetlent" onclick="check('excetlent','Excellent')">Excellent</div> 
+              <div class="filtro-filtros perros hidden">
+                <input type="checkbox" class="categ hidden perros c-excetlent" name="vehicle3" tag="excetlent" value="Boat" value2="Excellent" onclick="check('excetlent','Excellent')"> 
+                <div class="fil hidden perros h-excetlent" onclick="check('excetlent','Excellent')">Excellent</div> 
                 <i class="fa fa-check-square ch-excetlent hidden" aria-hidden="true" onclick="uncheck('excetlent','Excellent')"></i>
               </div>
-              <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-doguitos" name="vehicle3" tag="doguitos" value="Boat" value2="Doguitos" onclick="check('doguitos','Doguitos')"> 
-                <div class="fil h-doguitos" onclick="check('doguitos','Doguitos')">X</div> 
+              <div class="filtro-filtros perros hidden">
+                <input type="checkbox" class="categ hidden perros c-doguitos" name="vehicle3" tag="doguitos" value="Boat" value2="Doguitos" onclick="check('doguitos','Doguitos')"> 
+                <div class="fil hidden perros h-doguitos" onclick="check('doguitos','Doguitos')">Doguitos</div> 
                 <i class="fa fa-check-square ch-doguitos hidden" aria-hidden="true" onclick="uncheck('doguitos','Doguitos')"></i>
               </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-cat_chow" name="vehicle3" tag="cat_chow" value="Boat" value2="Cat Chow" onclick="check('cat_chow','Cat Chow')"> 
+                <div class="fil hidden gatos h-cat_chow" onclick="check('cat_chow','Cat Chow')">Cat Chow</div> 
+                <i class="fa fa-check-square ch-cat_chow hidden" aria-hidden="true" onclick="uncheck('cat_chow','Cat Chow')"></i>
+              </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-gati" name="vehicle3" tag="gati" value="Boat" value2="Gati" onclick="check('gati','Gati')"> 
+                <div class="fil hidden gatos h-gati" onclick="check('gati','Gati')">Gati</div> 
+                <i class="fa fa-check-square ch-gati hidden" aria-hidden="true" onclick="uncheck('gati','Gati')"></i>
+              </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-proplan" name="vehicle3" tag="proplan" value="Boat" value2="Proplan" onclick="check('proplan','Proplan')"> 
+                <div class="fil hidden gatos h-proplan" onclick="check('proplan','Proplan')">Proplan</div> 
+                <i class="fa fa-check-square ch-proplan hidden" aria-hidden="true" onclick="uncheck('proplan','Proplan')"></i>
+              </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-fancy_feast" name="vehicle3" tag="fancy_feast" value="Boat" value2="Fancy Feast" onclick="check('fancy_feast','Fancy Feast')"> 
+                <div class="fil hidden gatos h-fancy_feast" onclick="check('fancy_feast','Fancy Feast')">Fancy Feast</div> 
+                <i class="fa fa-check-square ch-fancy_feast hidden" aria-hidden="true" onclick="uncheck('fancy_feast','Fancy Feast')"></i>
+              </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-felix" name="vehicle3" tag="felix" value="Boat" value2="Felix" onclick="check('felix','Felix')"> 
+                <div class="fil hidden gatos h-felix" onclick="check('felix','Felix')">Felix</div> 
+                <i class="fa fa-check-square ch-felix hidden" aria-hidden="true" onclick="uncheck('felix','Felix')"></i>
+              </div>
+
+              <div class="filtro-filtros gatos hidden">
+                <input type="checkbox" class="categ hidden gatos c-tidy_cat" name="vehicle3" tag="tidy_cat" value="Boat" value2="Tidy Cat" onclick="check('tidy_cat','Tidy Cat')"> 
+                <div class="fil hidden gatos h-tidy_cat" onclick="check('tidy_cat','Tidy Cat')">Tidy Cat</div> 
+                <i class="fa fa-check-square ch-tidy_cat hidden" aria-hidden="true" onclick="uncheck('tidy_cat','Tidy Cat')"></i>
+              </div>
+
               <div class="filtro-filtros">
                 <input type="checkbox" class="categ c-categoria3_sandalias" name="vehicle3" tag="categoria3_sandalias" value="Boat" value2="Sandalias" onclick="check('categoria3_sandalias','sandalias')"> 
                 <div class="fil h-categoria3_sandalias" onclick="check('categoria3_sandalias','sandalias')">X</div> 
