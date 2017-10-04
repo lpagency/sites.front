@@ -2368,7 +2368,7 @@ a.text.detalle {
     width: 50%;
     text-align: left;
     margin-bottom: 0px;
-    right: 15px;
+    left: -15px;
     position: relative;
 }
 
@@ -2523,12 +2523,22 @@ hr.listado {
     .fa-check-square {
     right: -3px;
     position: relative;
-    top: -3px;
+    top: -6px;
     font-size: 20px !important;
     color: #526CD0;
     width: 100%;
     float: left;
     margin-top: -24px;
+    }
+
+    .filtro-color {
+    height: 3em;
+    }
+
+    .filtro-filtros {
+    height: 33px;
+    font-size: 15px;
+    color: #282c3f;
     }
 
    .filtro-categorias {
@@ -3420,12 +3430,12 @@ a.text {
     margin-top: 33px;
     margin-bottom: 10px;
 }
-
 .fil {
     position: relative;
-    top: -18px;
+    top: -24px;
     right: -9.5%;
     margin-bottom: -14px;
+    font-size: 15px;
 }
 
 .linea-separacion-2 {
