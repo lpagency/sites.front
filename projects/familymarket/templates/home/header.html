@@ -2,16 +2,16 @@
 <!-- ********HEADER DESKTOP*********** -->
 <div class="container-fluid hidden-xs visible-lg visible-md visible-sm" style="border-bottom:1px solid #E9E9ED;">
         <div class="container">
-          <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="text-slogan {{editabletext}}" text-id="{{ site.name + '_productos' }}"> {{ read_text(site.name +  '_productos') }}</div>
-          </div>
-            <ul class="nav navbar-nav navbar-right dos">
+          <ul class="nav navbar-nav navbar-left dos">
               <li class="slogan"><a href="#">CONDICIONES Y ZONAS DE DESPACHO</a></li>
               <li class=""><a href="#" style="color:#eaeaec;">|</a></li>
               <li class="slogan"><a href="#">TERMINOS Y CONDICIONES</a></li>
               <li class=""><a href="#" style="color:#eaeaec;">|</a></li>
               <li class="slogan"><a href="{{ site_base }}/contact">CONTACTANOS</a></li>
             </ul>
+          <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="text-slogan {{editabletext}}" text-id="{{ site.name + '_productos' }}"> {{ read_text(site.name +  '_productos') }}</div>
+          </div>
         </div>
 </div>
 <div class="container min">
@@ -54,7 +54,7 @@
                  <div class="dropdown col-md-3">
                 <button class="btn btn-primary header dropdown-toggle" type="button" data-toggle="dropdown" tag="" onclick="window.location.href='{{ site_base }}/listado_productos?tag=perro'">PERROS
                 </button>
-                  <ul class="dropdown-menu hed">
+        <!--           <ul class="dropdown-menu hed">
                     <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+ballerinas">Café</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+botines">Nescafe Dolce Gusto</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre,+mocasines">Nesspresso</a></li>
@@ -71,12 +71,12 @@
                     <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre">Galletas</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=mujer,-hombre">Mascotas</a></li>
 
-                  </ul>
+                  </ul> -->
                 </div>
                 <div class="dropdown col-md-3" style="left: 13px;">
                 <button class="btn btn-primary header dropdown-toggle" type="button" data-toggle="dropdown" tag="" onclick="window.location.href='{{ site_base }}/listado_productos?tag=gato'">GATOS
                   </button>
-                  <ul class="dropdown-menu hed">
+                  <!-- <ul class="dropdown-menu hed">
                     <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+ballerinas">Nescafe</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+botines">Nescafe Dolce Gusto</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer,+mocasines">Savory</a></li>
@@ -114,7 +114,7 @@
                     <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer">Chamito</a></li>
                     <li><a href="{{ site_base }}/listado_productos?tag=hombre,-mujer">Chandelle</a></li>
 
-                  </ul>
+                  </ul> -->
                 </div>
 
                 <div class="dropdown col-md-3" style="left: 14px;">
