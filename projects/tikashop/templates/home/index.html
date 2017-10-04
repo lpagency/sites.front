@@ -13,6 +13,8 @@
 {% end %}
 
 {% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
 <script type="text/javascript">
   $(document).ready(function()
   {
@@ -159,6 +161,9 @@
     <div class="col-md-12 col-sm-12 col-xs-12">
        <hr>
     </div>
+    <div class="col-md-12 col-sm-12 col-xs-12">
+       <div class="text_main texto_index text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner_index' }}">{{ read_text(site.name +  'text_side_banner_index') }}</div>
+    </div>
    </div>
 </section>
 
@@ -183,7 +188,7 @@
       </div>
 
       <div class="dropdown  col-md-2 col-sm-12 col-xs-12 gre">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OCACIONES DE CONSUMO
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OCASIONES DE CONSUMO
        <i class="fa fa-angle-down" aria-hidden="true"></i></button>
         <ul class="dropdown-menu hola">
           <li><a class="subcateg" tag="plain">Cumpleaños</a></li>
