@@ -5,6 +5,17 @@ div.image-upload.part1 {
     z-index: 100000;
 }
 
+.product-price-3 {
+    position: relative;
+    top: -48px;
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+}
+
 .titulo-prou {
     position: absolute;
     text-align: center;
@@ -174,11 +185,11 @@ hr.len {
 
 .overlay {
     position: absolute;
-    top: -2px;
+    top: 0px;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 88%;
+    height: 76%;
     width: 100%;
     opacity: 0;
     transition: .5s ease;
