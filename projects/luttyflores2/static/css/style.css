@@ -516,7 +516,28 @@ div.upload input, div.image-upload input {
     margin-left: 0px;
 }
 
+.texto-con {
+    margin-bottom: 0px;
+    position: relative;
+    bottom: 0px;
+    left: 0%;
+    height: 150px;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 88%;
+}
 
+.map-mo{
+    border: 0;
+    height: 390px;
+    bottom: 0px;
+    position: relative;
+    right: 38px;
+
+}
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width:1199px){
     .container.min{
@@ -585,6 +606,29 @@ div.upload input, div.image-upload input {
     margin-top: 80px;
     object-fit: cover;
     border-radius: 180px;
+}
+
+.map-mo {
+    border: 0;
+    height: 390px;
+    bottom: 0px;
+    position: relative;
+    right: 0px;
+    width: 100%;
+}
+
+.texto-con {
+    margin-bottom: 100px;
+    position: relative;
+    bottom: 0px;
+    left: 0%;
+    height: 150px;
+    color: gray;
+    font-weight: 300;
+    font-size: 15px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    width: 100%;
 }
 
 }
