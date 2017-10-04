@@ -221,29 +221,61 @@ div.image-upload.par1 {
 
 .text-intro-prov {
     margin-bottom: 45px;
-    font-size: 30px;
-    color: #555;
+    font-size: 23px;
+    color: gray;
     top: 15px;
     position: relative;
     font-weight: 300;
     margin-top: 20px;
+    text-align: left;
+    margin-left: 23px;
 }
-
 
 .titulo-about {
     font-family: 'Oxygen', sans-serif;
     position: absolute;
     bottom: 0px;
     color: white;
-    font-size: 27px;
-    width: 92%;
-    padding-bottom: 41px;
+    font-size: 22px;
+    width: 78%;
+    padding-bottom: 12px;
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 7px;
+    padding-right: 7px;
     line-height: 35px;
+    text-align: left;
+}
+
+.image-somos {
+    display: block;
+    width: 100%;
+    height: 350px;
+    margin-top: 80px;
+    object-fit: scale-down;
+}
+
+.texto_quienes {
+    font-size: 20px;
+    color: #858993;
+    text-align: left;
+    margin-top: 84px;
+    margin-bottom: 30px;
+    padding-left: 25px;
+    padding-right: 25px;
+    font-weight: 300;
+}
+
+.texto_quienes-til {
+    font-size: 20px;
+    color: #858993;
+    text-align:left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding-left: 21px;
+    padding-right: 21px;
+    font-weight: 300;
 }
 
 .titulo-peq {
@@ -255,6 +287,29 @@ div.image-upload.par1 {
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.image-somos-cir {
+    display: block;
+    width: 73%;
+    height: 314px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
+.overlay.us {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(255, 255, 255, 0.38);
+    border-radius: 166px;
 }
 
 div.image-upload.con {
@@ -450,6 +505,17 @@ div.upload input, div.image-upload input {
     font-weight: 300;
 }
 
+.kop {
+    margin-bottom: 45px;
+    font-size: 17px;
+    color: gray;
+    top: 15px;
+    position: relative;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width:1199px){
@@ -512,6 +578,15 @@ div.upload input, div.image-upload input {
     padding-right: 13px;
 }
 
+.image-somos-cir {
+    display: block;
+    width: 325px;
+    height: 314px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
 }
 
 @media (max-width: 700px){
@@ -570,11 +645,16 @@ div.upload input, div.image-upload input {
 
 }
 
-@media (max-width: 420px){
-
-}
 
 @media (max-width: 414px){
+.image-somos-cir {
+    display: block;
+    width: 317px;
+    height: 314px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
 
 }
 
@@ -607,6 +687,27 @@ div.upload input, div.image-upload input {
     top: 56px;
 }
 
+.image-somos-cir {
+    display: block;
+    width: 303px;
+    height: 300px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
+}
+
+@media (max-width: 375px){
+    .image-somos-cir {
+    display: block;
+    width: 100%;
+    height: 271px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
 }
 
 @media (max-width: 320px){
@@ -621,6 +722,16 @@ div.upload input, div.image-upload input {
 .constr {
     display: inline-block;
     top: 93px;
-    }
+}
+
+.image-somos-cir {
+    display: block;
+    width: 100%;
+    height: 236px;
+    margin-top: 80px;
+    object-fit: cover;
+    border-radius: 180px;
+}
+
 
 }
