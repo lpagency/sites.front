@@ -77,7 +77,7 @@
                 'app_public' : app_public,
                 'base_url' : base_url,
                 'maxProducts' : 8,
-                'templateOrigin' : '#product_template',
+                'templateOrigin' : '#product_template_home',
                 'tag' : '',
                 'ignore_stock' : true,
                     'onLoad':function(){
@@ -191,9 +191,14 @@
 </div>
 
 
+<div class="container min">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+     <div class="reli {{editabletext}}" text-id="{{ site.name + '_reli' }}"> {{ read_text(site.name +  '_reli') }}</div>
+  </div>
  <div class="product-related">
 
     </div>
+</div>
 
 
 {% include '../home/footer.html' %}
