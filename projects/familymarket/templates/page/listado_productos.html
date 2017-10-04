@@ -81,6 +81,7 @@
             {
               $(".tag-header").html("GATOS");
               $(".gatos").removeClass("hidden");
+              $(".opw").html("TIPO DE GATO");
             }
 
             if(hyper[0] == "nino")
@@ -218,38 +219,38 @@
 
           <div class="clearfix"></div>
 
-          <div class="text-fil"> OPCIONES DE CONSUMO </div>
+          <div class="text-fil opw"> OPCIONES DE CONSUMO </div>
             <div>
             <form action="/action_page.php" class="chek">
-            <div class="filtro-color">
+            <div class="filtro-color hidden perros">
               <input type="checkbox" class="categ c-cachorro" tag="cachorro" value2="Cachorro" style="cursor: pointer;" onclick="check('cachorro','Cachorro')">
               <div class="fil h-cachorro" onclick="check('cachorro','Cachorro')">Cachorro</div>
               <i class="fa fa-check-square ch-cachorro hidden" aria-hidden="true" onclick="uncheck('cachorro','Cachorro')"></i>
             </div>
-            <div class="filtro-color">
+            <div class="filtro-color hidden perros">
                <input type="checkbox" class="categ c-raza_pequenia" tag="raza_pequenia" value2="Raza Pequeña" style="cursor: pointer;" onclick="check('raza_pequenia','Raza Pequeña')">
                <div class="fil h-raza_pequenia" onclick="check('raza_pequenia','Raza Pequeña')">Razas Pequeñas</div>
                <i class="fa fa-check-square ch-raza_pequenia hidden" aria-hidden="true" onclick="uncheck('raza_pequenia','Raza Pequeña')"></i>
             </div>
-            <div class="filtro-color">
+            <div class="filtro-color hidden perros">
                <input type="checkbox" class="categ c-raza_mediana" tag="raza_mediana" value2="Raza Mediana" style="cursor: pointer;" onclick="check('raza_mediana','Raza Mediana')">
                <div class="fil h-raza_mediana" onclick="check('raza_mediana','Raza Mediana')">Razas Medianas</div>
                <i class="fa fa-check-square ch-raza_mediana hidden" aria-hidden="true" onclick="uncheck('raza_mediana','Raza Mediana')"></i>
             </div>
-             <div class="filtro-color">
+             <div class="filtro-color hidden perros">
                <input type="checkbox" class="categ c-raza_adulta" tag="raza_adulta" value2="Raza Adulta" style="cursor: pointer;" onclick="check('raza_adulta','Raza Adulta')">
                <div class="fil h-raza_adulta" onclick="check('raza_adulta','Raza Adulta')">Razas Adultas</div>
                <i class="fa fa-check-square ch-raza_adulta hidden" aria-hidden="true" onclick="uncheck('raza_adulta','Raza Adulta')"></i>
             </div>
-            <div class="filtro-color">
-               <input type="checkbox" class="categ c-Color-Cafe" value2="Café" tag="Color-Cafe" style="cursor: pointer;" onclick="check('Color-Cafe','Café')">
-               <div class="fil h-Color-Cafe" onclick="check('Color-Cafe', 'Café')">X</div>
-               <i class="fa fa-check-square ch-Color-Cafe hidden" aria-hidden="true" onclick="uncheck('Color-Cafe','Café')"></i>
+            <div class="filtro-color hidden gatos">
+               <input type="checkbox" class="categ c-gatito" value2="Gatito" tag="gatito" style="cursor: pointer;" onclick="check('gatito','Gatito')">
+               <div class="fil h-gatito" onclick="check('gatito', 'Gatito')">Gatito</div>
+               <i class="fa fa-check-square ch-gatito hidden" aria-hidden="true" onclick="uncheck('gatito','Gatito')"></i>
             </div>
-            <div class="filtro-color">
-               <input type="checkbox" class="categ c-Color-Dorado" tag="Color-Dorado" value2="Dorado" style="cursor: pointer;" onclick="check('Color-Dorado', 'Dorado')">
-               <div class="fil h-Color-Dorado" onclick="check('Color-Dorado','Dorado')">X</div>
-               <i class="fa fa-check-square ch-Color-Dorado hidden" aria-hidden="true" onclick="uncheck('Color-Dorado','Dorado')"></i>
+            <div class="filtro-color hidden gatos">
+               <input type="checkbox" class="categ c-adulto" tag="adulto" value2="Adulto" style="cursor: pointer;" onclick="check('adulto', 'Adulto')">
+               <div class="fil h-adulto" onclick="check('adulto','Adulto')">Adulto</div>
+               <i class="fa fa-check-square ch-adulto hidden" aria-hidden="true" onclick="uncheck('adulto','Adulto')"></i>
              </div>
             <div class="filtro-color">
                <input type="checkbox" class="categ c-Color-Gris" tag="Color-Gris" value2="Gris" style="cursor: pointer;" onclick="check('Color-Gris', 'Gris')">
