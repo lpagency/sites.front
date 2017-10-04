@@ -14,22 +14,32 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>
 <script type="text/javascript">
+
     $(document).ready(function()
     {
-
+      // EXCLUSIVO PARA PLACARE
+      $("title").html("Family Market - Cambios y Devoluciones");
+      $("meta[name=description]").attr("content", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.");
+ 
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
             'http://apibodegas.ondev.today/',
             'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/');
+            'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(33,33,33);
-        var config = {
+            'https://betapay.loadingplay.com');
+        var app_public = $.environmentVar(2,2,2);
+        var site_name = $.environmentVar('familymarket', 'familymarket', 'familymarket');
             'app_public' : app_public,
             'base_url' : base_url,
             'maxProducts' : 16,

@@ -26,7 +26,7 @@ div.image-upload.part1 {
     text-align: center;
     left: 0%;
     color: gray;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
     margin-bottom: 35px;
     -webkit-font-smoothing: antialiased;
@@ -173,16 +173,16 @@ hr.len {
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 85%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.36);
+    position: absolute;
+    top: -2px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 88%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.36);
 }
 
 .fufi:hover .overlay {

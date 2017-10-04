@@ -4,10 +4,11 @@ html {
   overflow-x: hidden;
 }
 
+
 .modal-header {
     min-height: 16.43px;
-    padding: 15px;
-    border-bottom: 1px solid transparent; 
+    padding: 0px;
+    border-bottom: 1px solid transparent;
 }
 
 .fade{
@@ -15,9 +16,9 @@ html {
 }
 
 .texto-filtros {
-    top: 26px;
+    top: 33px;
     position: absolute;
-    left: 5%;
+    left: 54px;
     display: inline-flex;
     display: -ms-flexbox;
     -ms-flex-flow: row wrap;
@@ -25,10 +26,10 @@ html {
     -webkit-box-align: baseline;
     -ms-flex-align: baseline;
     align-items: baseline;
-    margin: -4px 0 17px;
+    margin: -7px 0 17px;
     margin-left: 19px;
     font-style: italic;
-    color: #5b5153;
+    color: #6a6263;
 }
 
 .colores-dispo {
@@ -42,17 +43,33 @@ html {
 
 .modal-content.car {
     border-radius: 0px;
-    border: 1px solid rgba(128, 128, 128, 0.73);
+    border: 1px solid #d9d9d9;;
     box-shadow: 0 0px 0px rgba(0,0,0,.5);
-    width: 25%;
+    width: 29%;
     /* overflow-x: hidden; */
 }
-
 .modal-title {
     margin: 0;
     line-height: 1.42857143;
-    font-size: 0.68rem;
+    font-size: 12px;
     letter-spacing: 1px;
+    width: 70%;
+    margin-bottom: 13px;
+}
+
+.modal-title.bolsi {
+    margin: 0;
+    line-height: 1.428571;
+    letter-spacing: 1px;
+    font-weight: 600 !important;
+    font-size: 12px;
+    color: rgb(91, 81, 83) !important;
+    border-bottom: 1px solid rgb(204, 108, 78);
+    width: 100%;
+    margin-top: 14px;
+    padding-bottom: 3px;
+    margin-bottom: 13px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .img-height{
@@ -334,7 +351,7 @@ p {
 
 .box-registro2 {
     margin-left: -23px;
-    margin-top: 0px;
+    margin-top: 21px;
 }
 
 .text-footer2 {
@@ -642,7 +659,7 @@ background-color: #fefefe;}
 }
 
 .redes-footer {
-    margin-top: -15px;
+    margin-top: -27px;
     width: 28px;
     height: 41px;
     object-fit: scale-down;
@@ -980,7 +997,7 @@ input.tel {
 }
 
 .modal {
-    z-index: 9999999;
+    z-index: 999999;
 }
 
 .fa-angle-right.slider{

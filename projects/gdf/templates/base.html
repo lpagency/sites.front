@@ -434,10 +434,10 @@
                 <div class="box-content">
                 <div class="modal-content car">
                     <div class="modal-header">
-                        <button type="button" class="close hidden-md hidden-sm hidden-lg visible-xs" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title hidden-xs">BOLSA DE COMPRAS</h4>
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title bolsi hidden-xs">BOLSA DE COMPRAS</h4>
                         <h4 class="modal-title carri hidden-md hidden-sm hidden-lg visible-xs hidden">YUJUUUUU!!!</h4>
-                        <div class="modal-title hidden-xs" style="font-style:italic;">¡Qué buen gusto!</div>
+                        <div class="modal-title hidden-xs" style="">Tu producto ya fue agregado a la bolsa de compras</div>
                         <div class="modal-title carri-2 hidden-md hidden-sm hidden-lg visible-xs hidden" style="">¡Tu producto ya fue agregado a la bolsa de compras!</div>
                     </div>
                     <div class="modal-body mlb-btn">
@@ -491,15 +491,15 @@
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
 
     <script type="text/x-template" id="shopping-cart-product">
-<tr class="ver">
+<tr>
     <td>
        <img src="{{! images[0][2] }}" alt="" class="img-cart-modal">
    </td>
     <td class="hidden" name="id-car">{{! id }}</td>
-    <td> <div class="vert-align name-car">{{! name }} </div> </td>
+    <td> <div class="vert-align name-car ellipsis multiline">{{! name }} </div> </td>
     <td class="vert-align talla-car">Talla:&nbsp{{! combination }}</td>
     <td class="vert-align color-car">Color:&nbsp{{!bullet_1}}</td>
-    <td class="can hidden-md hidden-lg hidden-sm visible-xs"><a href="#!" class="remove-one" product-id="{{! id }}"></a>
+    <td class="can"><a href="#!" class="remove-one" product-id="{{! id }}"></a>
         Cantidad:&nbsp{{! quantity }}
         <a href="#!" class="add-one" product-id="{{! id }}"></a>
     </td>
@@ -516,8 +516,8 @@
     
 </tr>
 </thead>
-<tr>
-    <td class="tot hidden-xs">Total:</td> 
+<tr class="ver">
+    <td class="tot hidden-xs">Total compra</td> 
     <td id="total" class="text-right money lib hidden-xs">{{! total|money }}</td>
 </tr>
 <tr>
@@ -533,7 +533,7 @@
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
     <div class="form-group text-center">
-         <button type="submit" class="btn bn btn-compra mo" style="background-color: #ddd;color: #E03DDD8;width: 31%;border-radius: 0px;height: 24px;float: left;width: 100%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1px;font-size: 11px;font-weight: 500;">IR A PAGAR
+         <button type="submit" class="btn bn btn-compra mo" style="    background-color: white;color: rgba(204, 108, 78, 1);border-radius: 0px;height: 41px;float: left;width: 94%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1.5px; font-size: 16px; font-weight: bold;border: 2px solid rgba(204, 108, 78, 1);font-family: 'Open Sans', sans-serif; margin-top: 17px;">IR A PAGAR
         </button>
 
          <button type="submit" class="btn bn btn-compra vir hidden-md hidden-sm hidden-lg visible-xs" style="">SEGUIR VITRINIANDO

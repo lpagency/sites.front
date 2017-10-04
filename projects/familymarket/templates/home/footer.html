@@ -1,6 +1,6 @@
 <div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-  <div class="container min" style="background-color:rgba(245, 248, 250, 0.59)">
-    <div class="col-md-2 col-sm-2 col-xs-12">
+  <div class="container min-2" style="">
+    <div class="col-md-2 col-sm-2 col-xs-12 y-1">
       <div class="text-left fot">
         <div class="clearfix"></div>
         <ul class="no-doti">
@@ -24,7 +24,7 @@
       </div>
     </div>
 
-        <div class="col-md-2 col-sm-2 col-xs-12">
+        <div class="col-md-2 col-sm-2 col-xs-12 y-2">
       <div class="text-left fot">
         <div class="clearfix"></div>
         <ul class="no-doti">
@@ -48,7 +48,7 @@
       </div>
     </div>
 
-    <div class="col-md-2 col-sm-2 col-xs-12 visible-lg visible-md visible-sm hidden-xs">
+    <div class="col-md-2 col-sm-2 col-xs-12 visible-lg visible-md visible-sm hidden-xs y-3">
       <div class="inform-comerc text-left">
         <div class="clearfix"></div>
         <ul class="no-dot">
@@ -156,7 +156,7 @@
 
   <!-- *****movil*** -->
   <div align="center">
-  <div class="col-md-3 col-sm-3 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs mi">
+  <div class="col-md-2 col-sm-2 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs mi">
       <div class="inform-comerc text-left">
         <div class="clearfix"></div>
         <ul class="no-dot">
@@ -266,35 +266,35 @@
 
 <!-- *******otras imagenes****** -->
 
-  <div class="col-md-3 col-sm-3 col-xs-12 visible-md visible-lg visible-sm hidden-xs">
+  <div class="col-md-2 col-sm-2 col-xs-12 visible-md visible-lg visible-sm hidden-xs y-4">
     <div class="inform-comerc-2 text-left">
       <div class="clearfix"></div>
-      <ul class="no-dot op">
+      <ul class="no-dot opi">
                 <div class="ul-2 {{editabletext}}" text-id="{{ site.name + '_footer_son_ko' }}"> {{ read_text(site.name +  '_footer_son_ko') }}
           </div>
-          <div class="col-md-2">
+          <div class="col-md-8">
             <div class="caja-fo-red">
              {% if is_admin %}
-             <div class="image-upload fo visible-movil">
+             <div class="image-upload fe visible-movil">
                <label for="img_footer_des_1">
-                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" >
                </label>
                <input type="file" class="editableimage" image-id="{{ site.name }}_footer_des_1" name="image" id="img_footer_des_1" >
              </div>
              {% end %}
              <a id="{{ site.name + '_footer_des_1' }}" href="{{ read_link(site.name + '_footer_des_1') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_1" src="{{ read_image(site.name + '_footer_des_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_1',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_1" src="{{ read_image(site.name + '_footer_des_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_1',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_1' }}" content="{{ read_link(site.name + '_footer_des_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
              {% end %}
            </div>
           </div>
-           <div class="col-md-2">
+           <div class="col-md-8">
             <div class="caja-fo-red">
              {% if is_admin %}
-             <div class="image-upload fo visible-movil">
+             <div class="image-upload fe visible-movil">
               <label for="img_footer_des_2">
                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
                </label>
@@ -303,17 +303,17 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_2' }}" href="{{ read_link(site.name + '_footer_des_2') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_2' }}" content="{{ read_link(site.name + '_footer_des_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
              {% end %}
            </div>
           </div>
-           <div class="col-md-2">
+           <div class="col-md-8">
             <div class="caja-fo-red">
              {% if is_admin %}
-             <div class="image-upload fo visible-movil">
+             <div class="image-upload fe visible-movil">
               <label for="img_footer_des_3">
                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
                </label>
@@ -322,51 +322,13 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_3' }}" href="{{ read_link(site.name + '_footer_des_3') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_3" src="{{ read_image(site.name + '_footer_des_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_3',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_3" src="{{ read_image(site.name + '_footer_des_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_3',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_3' }}" content="{{ read_link(site.name + '_footer_des_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
              {% end %}
            </div>
           </div>
-<!--            <div class="col-md-2">
-            <div class="caja-fo-red">
-             {% if is_admin %}
-             <div class="image-upload fo visible-movil">
-              <label for="img_footer_des_4">
-                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_footer_des_4" name="image" id="img_footer_des_4" >
-             </div>
-             {% end %}
-             <a id="{{ site.name + '_footer_des_4' }}" href="{{ read_link(site.name + '_footer_des_4') }}" target="_blank">
-
-               <img id="{{ site.name }}_footer_des_4" src="{{ read_image(site.name + '_footer_des_4', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_4_blue',200) }}'" class="img-foot-red" alt="item">
-             </a>
-             {% if is_admin %}
-             <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_4' }}" content="{{ read_link(site.name + '_footer_des_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-             {% end %}
-           </div>
-          </div> -->
-<!--            <div class="col-md-2">
-            <div class="caja-fo-red">
-             {% if is_admin %}
-             <div class="image-upload fo visible-movil">
-              <label for="img_footer_des_5">
-                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_footer_des_5" name="image" id="img_footer_des_5" >
-             </div>
-             {% end %}
-             <a id="{{ site.name + '_footer_des_5' }}" href="{{ read_link(site.name + '_footer_des_5') }}" target="_blank">
-
-               <img id="{{ site.name }}_footer_des_5" src="{{ read_image(site.name + '_footer_des_5', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_5_blue',200) }}'" class="img-foot-red" alt="item">
-             </a>
-             {% if is_admin %}
-             <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_5' }}" content="{{ read_link(site.name + '_footer_des_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-             {% end %}
-           </div>
-          </div> -->
       </ul>
 
     </div>
@@ -377,7 +339,7 @@
 <!-- *******otras imagenes MOOOOOOOVIL****** -->
 
   <div align="center">
-  <div class="col-md-3 col-sm-3 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs mi">
+  <div class="col-md-2 col-sm-2 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs mi">
     <div class="inform-comerc-2 text-left">
       <div class="clearfix"></div>
       <ul class="no-dot op">
@@ -395,7 +357,7 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_1' }}" href="{{ read_link(site.name + '_footer_des_1') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_1" src="{{ read_image(site.name + '_footer_des_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_1',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_1" src="{{ read_image(site.name + '_footer_des_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_1',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_1' }}" content="{{ read_link(site.name + '_footer_des_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -414,7 +376,7 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_2' }}" href="{{ read_link(site.name + '_footer_des_2') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_2' }}" content="{{ read_link(site.name + '_footer_des_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -433,51 +395,13 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_3' }}" href="{{ read_link(site.name + '_footer_des_3') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_3" src="{{ read_image(site.name + '_footer_des_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_3',200) }}'" class="img-foot-red" alt="item">
+               <img id="{{ site.name }}_footer_des_3" src="{{ read_image(site.name + '_footer_des_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_3',200) }}'" class="img-foot-red-pa" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_3' }}" content="{{ read_link(site.name + '_footer_des_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
              {% end %}
            </div>
           </div>
-<!--            <div class="col-md-2">
-            <div class="caja-fo-red">
-             {% if is_admin %}
-             <div class="image-upload fo visible-movil">
-              <label for="img_footer_des_4">
-                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_footer_des_4" name="image" id="img_footer_des_4" >
-             </div>
-             {% end %}
-             <a id="{{ site.name + '_footer_des_4' }}" href="{{ read_link(site.name + '_footer_des_4') }}" target="_blank">
-
-               <img id="{{ site.name }}_footer_des_4" src="{{ read_image(site.name + '_footer_des_4', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_4_blue',200) }}'" class="img-foot-red" alt="item">
-             </a>
-             {% if is_admin %}
-             <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_4' }}" content="{{ read_link(site.name + '_footer_des_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-             {% end %}
-           </div>
-          </div> -->
-<!--            <div class="col-md-2">
-            <div class="caja-fo-red">
-             {% if is_admin %}
-             <div class="image-upload fo visible-movil">
-              <label for="img_footer_des_5">
-                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-               </label>
-               <input type="file" class="editableimage" image-id="{{ site.name }}_footer_des_5" name="image" id="img_footer_des_5" >
-             </div>
-             {% end %}
-             <a id="{{ site.name + '_footer_des_5' }}" href="{{ read_link(site.name + '_footer_des_5') }}" target="_blank">
-
-               <img id="{{ site.name }}_footer_des_5" src="{{ read_image(site.name + '_footer_des_5', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_5_blue',200) }}'" class="img-foot-red" alt="item">
-             </a>
-             {% if is_admin %}
-             <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_5' }}" content="{{ read_link(site.name + '_footer_des_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-             {% end %}
-           </div>
-          </div> -->
       </ul>
 
     </div>
@@ -487,7 +411,7 @@
 
 
 
-  <div class="col-md-3 col-sm-2 col-xs-12">
+  <div class="col-md-2 col-sm-2 col-xs-12 y-5">
     <div class=" text-left">
       <div class="clearfix"></div>
       <ul class="d-o">
@@ -513,11 +437,11 @@
 
 <!-- ****imagenes*** -->
 
-<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="background-color:rgba(245, 248, 250, 0.59)">
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 alme" style="">
   <div class="col-md-12 col-sm-12 col-xs-12 f-min">
     <div align="center">
       <div class="col-md-6 col-sm-6 col-xs-12">
-      <div class="ul-22 {{editabletext}}" text-id="{{ site.name + '_footer_ex_1' }}"> {{ read_text(site.name +  '_footer_ex_1') }} </div>
+      <div class="susi {{editabletext}}" text-id="{{ site.name + '_footer_ex_1' }}"> {{ read_text(site.name +  '_footer_ex_1') }} </div>
        <div class="ul-22-0 {{editabletext}}" text-id="{{ site.name + '_footer_ex_11' }}"> {{ read_text(site.name +  '_footer_ex_11') }} </div>
       
       </div>
@@ -542,7 +466,7 @@
 
 
 <div class="container min">
-  <div class="col-md-12 col-sm-12 col-xs-12">
+<!--   <div class="col-md-12 col-sm-12 col-xs-12 alme">
     <div class="col-md-2 col-sm-2 col-xs-12">
       <div class="kop {{editabletext}}" text-id="{{ site.name + '_footer_ex_11_0' }}"> {{ read_text(site.name +  '_footer_ex_11_0') }} </div>
     </div>
@@ -551,19 +475,22 @@
       <hr class="new-f">
     </div>
     
-        <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="col-md-12 col-sm-12 col-xs-12 alme">
             <ol class="breadcrumb">
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_1' }}"> {{ read_text(site.name +  '_mon_1') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_2' }}"> {{ read_text(site.name +  '_mon_2') }}</li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_3' }}"> {{ read_text(site.name +  '_mon_3') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_4' }}"> {{ read_text(site.name +  '_mon_4') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_5' }}"> {{ read_text(site.name +  '_mon_5') }}</li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_6' }}"> {{ read_text(site.name +  '_mon_6') }}</li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_1' }}"> {{ read_text(site.name +  '_mon_1') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_2' }}"> {{ read_text(site.name +  '_mon_2') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_33' }}"> {{ read_text(site.name +  '_mon_33') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_4' }}"> {{ read_text(site.name +  '_mon_4') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_5' }}"> {{ read_text(site.name +  '_mon_5') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_6' }}"> {{ read_text(site.name +  '_mon_6') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_61' }}"> {{ read_text(site.name +  '_mon_61') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_62' }}"> {{ read_text(site.name +  '_mon_62') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_63' }}"> {{ read_text(site.name +  '_mon_63') }}</li>
           </ol>
         </div>
-  </div>
+  </div> -->
 
-  <div class="col-md-12 col-sm-12 col-xs-12">
+  <div class="col-md-12 col-sm-12 col-xs-12 alme">
     <div class="col-md-2 col-sm-2 col-xs-12">
       <div class="kop {{editabletext}}" text-id="{{ site.name + '_footer_ex_111' }}"> {{ read_text(site.name +  '_footer_ex_111') }} </div>
     </div>
@@ -572,22 +499,26 @@
       <hr class="new-f">
     </div>
 
-        <div class="col-md-12 col-sm-12 col-xs-12">
-            <ol class="breadcrumb">
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_7' }}"> {{ read_text(site.name +  '_mon_7') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_8' }}"> {{ read_text(site.name +  '_mon_8') }}</li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_3' }}"> {{ read_text(site.name +  '_mon_9') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_9' }}"> {{ read_text(site.name +  '_mon_4') }}</li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_10' }}"> {{ read_text(site.name +  '_mon_10') }}</li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_11' }}"> {{ read_text(site.name +  '_mon_11') }}</li>
-          </ol>
+        <div class="col-md-12 col-sm-12 col-xs-12 alme">
+          <div class="bre {{editabletext}}" text-id="{{ site.name + '_footer_ber' }}"> {{ read_text(site.name +  '_footer_ber') }} </div>
+      <!--       <ol class="breadcrumb">
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_7' }}"> {{ read_text(site.name +  '_mon_7') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_8' }}"> {{ read_text(site.name +  '_mon_8') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_3' }}"> {{ read_text(site.name +  '_mon_9') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_9' }}"> {{ read_text(site.name +  '_mon_4') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_10' }}"> {{ read_text(site.name +  '_mon_10') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_11' }}"> {{ read_text(site.name +  '_mon_11') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_111' }}"> {{ read_text(site.name +  '_mon_111') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_112' }}"> {{ read_text(site.name +  '_mon_112') }}</li> <li class="wer"> | </li>
+            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_113' }}"> {{ read_text(site.name +  '_mon_113') }}</li> 
+          </ol> -->
         </div>
 
   </div>
 
 
  
-    <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="col-md-12 col-sm-12 col-xs-12 alme">
     <div class="col-md-4 col-sm-4 col-xs-10">
       <div class="firma {{editabletext}}" text-id="{{ site.name + '_in_1' }}"> {{ read_text(site.name +  '_in_1') }} </div>
     </div>
@@ -600,19 +531,19 @@
       </div>
     </div>
 
-    <div class="col-md-12 col-sm-12 col-xs-12">
+   <!--  <div class="col-md-12 col-sm-12 col-xs-12 alme">
      <hr class="f-min-2">
     </div>
 
 
-    <div class="col-md-12 col-xs-12 col-sm-12">
+    <div class="col-md-12 col-xs-12 col-sm-12 alme">
        <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_1' }}"> {{ read_text(site.name +  '_ine_1') }} </div>
        <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_2' }}"> {{ read_text(site.name +  '_ine_2') }} </div>
        <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_3' }}"> {{ read_text(site.name +  '_ine_3') }} </div>
        <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_4' }}"> {{ read_text(site.name +  '_ine_4') }} </div>
        <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_5' }}"> {{ read_text(site.name +  '_ine_5') }} </div>
        <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_6' }}"> {{ read_text(site.name +  '_ine_6') }} </div>
-    </div>
+    </div> -->
 </div>
 
 </div>

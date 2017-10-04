@@ -76,8 +76,10 @@ $(document).ready(function()
         'tag': tag,
         'ignore_stock': false,
         'infinite_scroll': true,
-        // 'maxProducts': 100,
+        'maxProducts': 200,
         'checkout_url': checkout_url,
+        'column': 'position',
+        'order': 'asc',
         'operator' :'or',
         'onLoad': function(products) 
         {

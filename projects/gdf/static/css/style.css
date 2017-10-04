@@ -259,15 +259,16 @@ img.desaturada {
 
 .paginacion {
     margin: 20px 0;
-    margin: 4px 0;
-    letter-spacing: 2px;
-    font-weight: 100;
-    /*font-family: 'Open Sans Condensed', sans-serif;*/
-    font-size: 0.8rem;
+    margin: -2px 0px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    font-size: 0.6rem;
     top: -28px;
-    margin-bottom: -2%;
+    margin-bottom: auto;
     width: 93%;
     z-index: 100;
+    text-transform: uppercase;
+    height: 100%;
 }
  
 .paginacion ul {
@@ -370,8 +371,13 @@ a.mod:hover{
 }
 
 /************/
-.inline-menu{
+.inline-menu {
     display: inline-block;
+    color: #6a6263;
+    float: left;
+    font-style: italic;
+    text-align: left;
+    margin-left: 12px;
 }
 .onclick-menu {
     position: relative;
@@ -484,7 +490,7 @@ a.mod:hover{
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 0px;
+    margin-left: 7px;
 }
 
 .size-item-3:hover {
@@ -498,7 +504,7 @@ a.mod:hover{
     margin-bottom: 11px;
     width: 31px;
     height: 30px;
-    margin-left:0px;
+    margin-left:7px;
 }
 
 .hover {
@@ -512,7 +518,7 @@ a.mod:hover{
     margin-bottom: 11px;
     width: 31px;
     height: 30px;
-    margin-left:0px;
+    margin-left:7px;
 }
 
 .hover2 {
@@ -527,7 +533,7 @@ a.mod:hover{
     margin-bottom: 11px;
     width: 31px;
     height: 30px;
-    margin-left:0px;
+    margin-left:7px;
 }
 
 .num-tal-2 {
@@ -762,6 +768,7 @@ div.upload input, div.image-upload input {
     line-height: 35px;
     color: rgb(91,81,83);
     letter-spacing: 1.3px;
+    font-style: initial;
 }
 
 .description{
@@ -1012,8 +1019,9 @@ div.upload input, div.image-upload input {
 }
 
 
-.h_detail_prod{
+.h_detail_prod {
     height: 353px;
+    left: -13px;
 }
 
 .cuadro_product{
@@ -1302,7 +1310,7 @@ div.upload input, div.image-upload input {
     text-align: center;
     /* width: 100%; */
     position: relative;
-    margin-left: 29px;
+    margin-left: 18px;
     top: 13px;
     font-weight: 700;
     font-family: 'Open Sans', sans-serif!important;
@@ -1311,13 +1319,16 @@ div.upload input, div.image-upload input {
     -moz-osx-font-smoothing: grayscale;
 }
 
-.box-talla-2{
+.box-talla-2 {
     display: -webkit-box;
     margin: 0 auto;
     text-align: center;
     width: 100%;
     position: relative;
     margin-left: 0px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+
 }
 
 /******modal*****/
@@ -2045,35 +2056,35 @@ transition-delay:.2s;
 
 .centrado {
     width: 53%;
-    margin-left: 65px;
+    margin-left: 52px;
     margin-bottom: -4px;
     margin-top: 10px;
 }
 
 .size-item-1.active{
     padding: 5px 7px;
-    margin-bottom: 11px;
+    margin-bottom: 0px;
     width: 31px;
     height: 30px;
     cursor: pointer;
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 0px;
+    margin-left: 6px;
     border-radius: 48px!important;
     border: 1px solid rgba(204, 108, 78, 1);
 }
 
 .size-item-1 {
     padding: 5px 7px;
-    margin-bottom: 11px;
+    margin-bottom: 0px;
     width: 31px;
     height: 30px;
     cursor: pointer;
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 0px;
+    margin-left: 6px;
 }
 
 .size-item-1:hover {
@@ -2084,56 +2095,65 @@ transition-delay:.2s;
     border-radius: 48px!important;
     border: 1px solid rgba(204, 108, 78, 1);
     padding: 5px 7px;
-    margin-bottom: 11px;
+    margin-bottom: 0px;
     width: 31px;
     height: 30px;
-    margin-left:0px;
+    margin-left:06px;
 }
 
 .num-tal-1 {
     color: rgb(91, 81, 83);
-    left: 0px;
+    left: -1px;
     position: relative;
     float: left;
     /* padding: 5px 8px; */
-    margin-bottom: 11px;
+    margin-bottom: 0px;
     width: 31px;
     height: 30px;
     margin-left: -7px;
+    top: -1px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.color-detalle{
+.color-detalle {
     float: right;
     clear: both;
     width: 100%;
     min-height: 23px;
-    font-size: 14px;
+    font-size: 11px;
     color: rgb(91, 81, 83);
     text-align: center;
-    margin-top: 8%;
+    margin-top: 5%;
+    font-family: 'Open Sans', sans-serif;
 }
 
-.stock-detalle{
+.stock-detalle {
     float: right;
     clear: both;
     width: 100%;
     min-height: 23px;
-    font-size: 12px;
+    font-size: 11px;
     color: rgb(91, 81, 83);
     text-align: center;
-    margin-top: 1%;
+    margin-top: -3%;
     text-decoration: underline;
     font-style: italic;
+    font-family: 'Open Sans', sans-serif;
 }
 
 
-.talla-detalle{
-    font-size: 1em;
+.talla-detalle {
+    font-size: 12px;
     color: rgb(91, 81, 83);
     text-align: center;
     font-weight: 500;
     font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 10px;
+    position: relative;
 }
+
 
 hr.detalle {
     margin-top: 20px;
@@ -2170,8 +2190,9 @@ hr.detalle {
     left: 0px;
 }
 
-a.talla-detalle-modal{
+a.talla-detalle-modal {
     text-decoration: underline !important;
+    color: rgba(204, 108, 78, 1) !important;
 }
 
 .img-modal-detalle {
@@ -2309,13 +2330,14 @@ hr.derecha{
     margin-top: 93px;
     left: 38%;
     width: auto;
+    margin-left: 13px;
 }
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
     padding: 0px;
     line-height: 1.42857143;
     vertical-align: top;
-    border-top: 1px solid #ddd;
+    border-top: 1px solid transparent;
     width: 100%;
 }
 
@@ -2324,42 +2346,44 @@ hr.derecha{
     top: 0;
     left: 0px;
     z-index: 68;
-    width: 65px;
-    height: 65px;
-    margin-bottom: 16px;
+    width: 106px;
+    height: 98px;
+    margin-bottom: 14px;
     margin-top: 5px;
 }
 
 td.color-car {
-    top: 44px;
+    top: 47px;
     position: relative;
-    left: 25px;
-    text-align: right;
-    font-size: 10px;
-    color: #5b5153;
+    left: -181px;
+    text-align: left;
+    font-size: 12px;
 }
 
 td.talla-car {
-    top: 29px;
+    top: 32px;
     position: relative;
-    left: 54px;
-    text-align: right;
-    font-size: 10px;
+    left: -137px;
+    text-align: left;
+    font-size: 12px;
 }
 
 .name-car {
-    width: 74px;
-    position: relative;
-    left: 93px;
+    width: 110px;
+    position: inherit;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     top: 9px;
     font-weight: 700;
     /* -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
-    font-size: 11px;
-    text-align: right;
+    font-size: 12px;
+    text-align: left;
     text-transform: uppercase;
+    color: rgba(204, 108, 78, 1);
+    margin-left: 32px;
+    margin-right: 27px;
+    line-height: 14px;
 }
 
 td.cantidad-car{
@@ -2370,21 +2394,33 @@ td.cantidad-car{
     text-align: right;
 }
 
-td.money.uno{
+td.money.uno {
     position: relative;
-    top: 62px;
-    left: -14px;
+    top: 81px;
+    left: -280px;
     color: rgba(204, 108, 78, 1);
     text-align: right;
-    font-size: 10px;
+    font-size: 12px;
     margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+
+td.can {
+    position: relative;
+    left: -217px;
+    text-align: left;
+    font-size: 12px;
+    top: 62px;
 }
 
 a.two {
-    font-size: 14px;
+    font-size: 12px;
     position: relative;
-    top: 6px;
-    left: -2px;
+    top: -6px;
+    left: -214px;
 }
 
 .fa-trash{
@@ -2406,17 +2442,21 @@ tr.ver{
 
 td.money.lib {
     position: relative;
-    left: 0%;
-    top: 6px;
+    right: 19%;
+    top: 32px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
 }
+
 
 td.tot {
     position: relative;
-    left: 0%;
-    top: 6px;
-
+    left: 5%;
+    top: 31px;
 }
-
 
 .container-g{
     width: 1240px;
@@ -2431,9 +2471,11 @@ td.tot {
     margin-top: 200px;
 }
 
-.distancia-3{
-    margin-top: 200px;
+.distancia-3 {
+    margin-top: 159px;
 }
+
+
 .rese{
     font-size: 13px;
     margin-top: 12px;
@@ -2749,11 +2791,11 @@ img.little-2 {
     float: right;
     width: 100%;
     min-height: 23px;
-    font-size: 1.3em;
+    font-size: 1.5em;
     font-weight: bold;
     color: rgb(91, 81, 83);
     text-align: center;
-    margin-top: 7px;
+    margin-top: 17px;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin-bottom: 0px;
@@ -2980,22 +3022,28 @@ th.mayoristas{
     margin-bottom: -12px;
 }
 
-.filtro-color{
-   width: 100px;
+.filtro-color {
+    width: 100px;
     font-size: 9px;
+    font-weight: 700;
+    color: rgb(91, 81, 83);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .filtro-tipos {
     width: 100px;
     font-size: 9px;
+    font-weight: 700;
+    color: rgb(91, 81, 83);
+    font-family: 'Open Sans', sans-serif;
 }
 
-.don{
-    padding-left: 9px
+.don {
+    padding-left: 5px;
 }
 
-.don-2{
-  padding-left: 7px;
+.don-2 {
+    padding-left: 2px;
 }
 
 .yan-1{
@@ -3012,6 +3060,31 @@ th.mayoristas{
     position: relative;
     right:47px;
 }
+
+input.categ-tipo[type=radio], input.categ-tipo[type=checkbox] {
+    margin: 4px 4px 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+input.categ-color[type=radio], input.categ-color[type=checkbox] {
+    margin: 4px 4px 0;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+
+
+button.close {
+    -webkit-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: 0 0;
+    border: 0;
+    position: relative;
+    left: -10px;
+    bottom: 2px;
+}
+
 
 /*------------------------------------------Responsive--------------------------------------------*/
 
@@ -3090,6 +3163,139 @@ th.mayoristas{
 }
 .btn-primary.tipo{
     font-size: 0.7rem;
+}
+
+.col-md-1.on {
+    width: 9.333333%;
+}
+
+
+.centrado {
+    width: 60%;
+    margin-left: 52px;
+    margin-bottom: -4px;
+    margin-top: 10px;
+}
+
+
+.btn-compra.mo{
+  width: 99% !important;
+}
+
+.modal-content.car {
+    border-radius: 0px;
+    border: 1px solid #d9d9d9;
+    box-shadow: 0 0px 0px rgba(0,0,0,.5);
+    width: 32%;
+    /* overflow-x: hidden; */
+}
+
+.img-cart-modal {
+    position: relative;
+    top: 0;
+    left: 0px;
+    z-index: 68;
+    width: 106px;
+    height: 98px;
+    margin-bottom: 13px;
+    margin-top: 5px;
+}
+
+.name-car {
+    width: 110px;
+    position: inherit;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 9px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 12px;
+    text-align: left;
+    text-transform: uppercase;
+    color: rgba(204, 108, 78, 1);
+    margin-left: 17px;
+    margin-right: 27px;
+    line-height: 14px;
+}
+
+.box-talla-2 {
+    display: -webkit-box;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-left: -9px;
+    margin-top: 11px;
+    margin-bottom: 20px;
+}
+
+.price_detail{
+    float: right;
+    clear: both;
+    width: 100%;
+    min-height: 23px;
+    font-size: 1.1em;
+    font-weight: 500;
+    line-height: 2.08;
+    color: rgb(204, 108, 78);
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    padding-bottom: 7px;
+}
+
+td.money.uno {
+    position: relative;
+    top: 81px;
+    left: -279px;
+    color: rgba(204, 108, 78, 1);
+    text-align: right;
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    text-align: left;
+    letter-spacing: 0.4px;
+}
+
+td.talla-car {
+    top: 32px;
+    position: relative;
+    left: -137px;
+    text-align: left;
+    font-size: 12px;
+}
+td.color-car {
+    top: 47px;
+    position: relative;
+    left: -182px;
+    text-align: left;
+    font-size: 12px;
+}
+
+td.can {
+    position: relative;
+    left: -217px;
+    text-align: left;
+    font-size: 12px;
+    top: 62px;
+}
+
+td.money.lib {
+    position: relative;
+    right: 18%;
+    top: 32px;
+    font-size: 13px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+}
+td.tot {
+    position: relative;
+    left: 4%;
+    top: 31px;
 }
 
 }
@@ -3862,7 +4068,7 @@ a.nombre-tag{
     text-align: center;
     width: 100%;
     position: relative;
-    margin-left: 236px;
+    margin-left: 193px;
 }
 
 .btn-default-ord {
@@ -4030,14 +4236,15 @@ hr.detalle {
 .ordena-nombre {
     float: right;
     position: relative;
-    left: -5px;
-    margin-top: -117px;
+    left: 37%;
+    margin-top: -99px;
     color: gray;
     text-transform: lowercase;
     font-size: 13px;
-    width: 21%;
-
+    width: 85%;
+    padding-top: 3px;
 }
+
 
 .modal-dialog.carrito {
     margin-top: 93px;
@@ -4318,9 +4525,9 @@ tr.ver {
 }
 
 .name-car {
-    width: 69px;
+    width: 156px;
     position: relative;
-    left: 8px;
+    left: 61%;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     top: 24px;
@@ -4329,6 +4536,7 @@ tr.ver {
     -moz-osx-font-smoothing: grayscale;
     font-size: 11px;
     text-align: left;
+    /* height: auto; */
 }
 
 .can{
@@ -4371,7 +4579,7 @@ tr.ver {
     float: left;
     left: 0px;
     position: relative;
-    margin-left: 0px;
+    margin-left: 8px;
     font-size: 20px;
 }
 
@@ -4386,12 +4594,12 @@ tr.ver {
     margin-bottom: 11px;
     width: 36px;
     height: 34px;
-    margin-left: 0px;
+    margin-left: 8px;
     font-size: 20px;
 }
 
 .size-item-1.active{
-    padding: 0px 0px;
+    padding: 5px 7px;
     margin-bottom: 11px;
     width: 36px;
     height: 34px;
@@ -4406,15 +4614,16 @@ tr.ver {
 
 .num-tal-2 {
     color: #5B5155;
-    left: 0px;
+    left: -1px;
     position: relative;
     float: left;
-/*    padding: 0px 0px; */
+    /* padding: 0px 0px; */
     margin-bottom: 11px;
     width: 36px;
     height: 34px;
     margin-left: 0px;
     font-weight: 600;
+    top: 1px;
     letter-spacing: 1px;
     font-size: 20px;
 }
@@ -4434,6 +4643,18 @@ tr.ver {
     font-size: 20px;
     top: 0px;
 
+}
+
+.size-item-1 {
+    padding: 5px 7px;
+    margin-bottom: 11px;
+    width: 31px;
+    height: 30px;
+    cursor: pointer;
+    float: left;
+    left: 0px;
+    position: relative;
+    margin-left: 8px;
 }
 
 }
@@ -5410,7 +5631,7 @@ img.little-2 {
     text-align: center;
     width: 100%;
     position: relative;
-    margin-left: 4px;
+    margin-left: -16px;
 }
 
 .box-4 {
@@ -5419,11 +5640,12 @@ img.little-2 {
 }
 
 .centrado {
-    width: 59%;
-    margin-left: 121px;
+    width: 72%;
+    margin-left: 107px;
     margin-bottom: -4px;
     margin-top: 3px;
 }
+
 
 img.little-2 {
     width: 100%;
@@ -5679,15 +5901,67 @@ a.test {
     padding-right: 15px;
     padding-left: 15px;
     position: relative;
-    top: 70px;
+    top: 20px;
     text-transform: capitalize;
     font-family: 'Open Sans', sans-serif!important;
-    color: #979a9a;;
+    color: #979a9a;
 }
 
 .bi-1 {
     top: 15px !important;
     left: 7% !important;
+}
+
+.space10 {
+    margin-top: 12px !important;
+}
+
+.hovereffect .overlay {
+    width: 100%;
+    height: 98%;
+    position: absolute;
+    /* overflow: hidden; */
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.53);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    margin-top: 2px;
+}
+
+a.two {
+    left: -32px;
+    top: 21px;
+    color: rgba(128, 128, 128, 0.47) !important;
+}
+.num-tal-1 {
+    color: rgb(91, 81, 83);
+    left: 1px;
+    position: relative;
+    float: left;
+    /* padding: 5px 8px; */
+    margin-bottom: 0px;
+    width: 31px;
+    height: 30px;
+    margin-left: -7px;
+    top: 0px;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.stock-detalle {
+    float: right;
+    clear: both;
+    width: 100%;
+    min-height: 27px;
+    font-size: 12px;
+    color: rgb(91, 81, 83);
+    text-align: center;
+    margin-top: 1%;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
 }
 
 }
@@ -5743,10 +6017,22 @@ a.test {
 }
 
 .centrado {
-    width: 59%;
-    margin-left: 112px;
+    width: 76%;
+    margin-left: 87px;
     margin-bottom: -4px;
     margin-top: 3px;
+}
+
+.num-tal-1 {
+    color: rgb(91, 81, 83);
+    left: 2px;
+    position: relative;
+    float: left;
+    /* padding: 5px 8px; */
+    margin-bottom: 11px;
+    width: 31px;
+    height: 30px;
+    margin-left: -7px;
 }
 
 .lol{
@@ -5772,6 +6058,31 @@ a.test {
     border-top: 0px solid transparent;
     margin-top: -8px;
     left: 9%;
+}
+
+.box-4 {
+    width: 100%;
+    height: 180px;
+}
+
+.hovereffect .overlay {
+    width: 99%;
+    height: 98%;
+    position: absolute;
+    /* overflow: hidden; */
+    top: 0px;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.53);
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+    margin-top: 2px;
+}
+
+a.two {
+    left: -44px;
+    top: 21px;
+    color: rgba(128, 128, 128, 0.47) !important;
 }
 
 }
@@ -5826,12 +6137,11 @@ a.test {
 }
 
 .centrado {
-    width: 64%;
-    margin-left: 112px;
+    width: 82%;
+    margin-left: 81px;
     margin-bottom: -4px;
     margin-top: 3px;
 }
-
 img.little-2 {
     width: 100%;
     height: 338px !important;
@@ -5864,9 +6174,41 @@ img.little-2 {
     display: block;
     margin: 0 auto;
     text-align: center;
-    width: 104%;
+    width: 106%;
     position: relative;
-    margin-left: -11px;
+    margin-left: -36px;
+}
+
+.ordena-nombre {
+    float: right;
+    position: relative;
+    left: 37%;
+    margin-top: -94px;
+    color: gray;
+    text-transform: lowercase;
+    font-size: 12px;
+    width: 86%;
+    padding-top: 4px;
+}
+
+.box-4 {
+    width: 100%;
+    height: 175px;
+}
+
+.name-car {
+    width: 156px;
+    position: relative;
+    left: 61%;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 24px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 10px;
+    text-align: left;
+    /* height: auto; */
 }
 
 }
@@ -5900,9 +6242,9 @@ img.little-2 {
     display: block;
     margin: 0 auto;
     text-align: center;
-    width: 109%;
+    width: 113%;
     position: relative;
-    margin-left: -18px;
+    margin-left: -36px;
 }
 
 .dropdown-menu.ordenar {
@@ -5930,8 +6272,8 @@ img.little-2 {
 }
 
 .centrado {
-    width: 64%;
-    margin-left: 102px;
+    width: 85%;
+    margin-left: 70px;
     margin-bottom: -4px;
     margin-top: 3px;
 }
@@ -5956,6 +6298,44 @@ img.little-2 {
     font-weight: 300;
     font-family: 'Open Sans', sans-serif!important;
     position: absolute;
+}
+
+.ordena-nombre {
+    float: right;
+    position: relative;
+    left: 35%;
+    margin-top: -93px;
+    color: gray;
+    text-transform: lowercase;
+    font-size: 11px;
+    width: 82%;
+    padding-top: 4px;
+}
+
+.box-4 {
+    width: 100%;
+    height: 169px;
+}
+
+a.two {
+    left: -71px;
+    top: 21px;
+    color: rgba(128, 128, 128, 0.47) !important;
+}
+
+.name-car {
+    width: 156px;
+    position: relative;
+    left: 61%;
+    font-family: 'Open Sans', sans-serif;
+    letter-spacing: 1px;
+    top: 28px;
+    font-weight: 700;
+    /* -webkit-font-smoothing: antialiased; */
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 9px;
+    text-align: left;
+    /* height: auto; */
 }
 
 }
@@ -6015,9 +6395,9 @@ img.little-2 {
     display: block;
     margin: 0 auto;
     text-align: center;
-    width: 126%;
+    width: 133%;
     position: relative;
-    margin-left: -31px;
+    margin-left: -51px;
 }
 
 .dropdown-menu.ordenar {
@@ -6043,15 +6423,27 @@ img.little-2 {
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
     overflow-x: hidden;
 }
+
 .box-4 {
     width: 100%;
-    height: 140px;
+    height: 145px;
 }
+
 .centrado {
-    width: 74%;
-    margin-left: 81px;
+    width: 100%;
+    margin-left: 0px;
     margin-bottom: -4px;
     margin-top: 3px;
+}
+
+.box-talla-2 {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    margin-left: 0px;
+    margin-top: 0px;
 }
 
 img.little-2 {
@@ -6070,47 +6462,49 @@ img.little-2 {
 }
 
 a.two {
-    left: -37px;
-    top: 15px;
+    left: -107px;
+    top: 20px;
 }
 
 .name-car {
-    width: 69px;
+    width: 156px;
     position: relative;
-    left: 24px;
+    left: 28%;
     font-family: 'Open Sans', sans-serif;
     letter-spacing: 1px;
     top: 24px;
     font-weight: 700;
     /* -webkit-font-smoothing: antialiased; */
     -moz-osx-font-smoothing: grayscale;
-    font-size: 11px;
+    font-size: 10px;
     text-align: left;
 }
 
 td.talla-car {
-    left: -46px;
+    left: -113px;
     float: left;
     text-align: left;
     top: 44px;
 }
 
 td.color-car {
-    left: -46px;
+    left: -112px;
     float: left;
     text-align: left;
     top: 45px;
 }
+
+
 .can {
     position: relative;
     top: 76px;
     text-align: left;
-    right: 84px;
+    right: 149px;
     font-size: 11px;
 }
 
 td.money.uno {
-    left: -141px;
+    left: -204px;
     text-align: left;
     top: 104px;
     font-size: 13px;
@@ -6120,6 +6514,19 @@ td.money.uno {
     top: 14px !important;
     left: 11% !important;
 }
+
+.ordena-nombre {
+    float: right;
+    position: relative;
+    left: 36%;
+    margin-top: -90px;
+    color: gray;
+    text-transform: lowercase;
+    font-size: 9px;
+    width: 85%;
+    padding-top: 2px;
+}
+
 
 }
 

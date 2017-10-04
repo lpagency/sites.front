@@ -303,7 +303,7 @@
              {% end %}
              <a id="{{ site.name + '_footer_des_2' }}" href="{{ read_link(site.name + '_footer_des_2') }}" target="_blank">
 
-               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red-pa" alt="item">
+               <img id="{{ site.name }}_footer_des_2" src="{{ read_image(site.name + '_footer_des_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_des_2',200) }}'" class="img-foot-red-pa espe" alt="item">
              </a>
              {% if is_admin %}
              <img class="change-image editablelink fo" link-id="{{ site.name + '_footer_des_2' }}" content="{{ read_link(site.name + '_footer_des_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -345,7 +345,7 @@
       <ul class="no-dot op">
                 <div class="ul-2 {{editabletext}}" text-id="{{ site.name + '_footer_son_ko' }}"> {{ read_text(site.name +  '_footer_son_ko') }}
           </div>
-          <div class="col-md-2 col-xs-2">
+          <div class="col-md-2 col-xs-12">
             <div class="caja-fo-red">
              {% if is_admin %}
              <div class="image-upload fo visible-movil">
@@ -364,7 +364,7 @@
              {% end %}
            </div>
           </div>
-           <div class="col-md-2 col-xs-2">
+           <div class="col-md-2 col-xs-12">
             <div class="caja-fo-red">
              {% if is_admin %}
              <div class="image-upload fo visible-movil">
@@ -383,7 +383,7 @@
              {% end %}
            </div>
           </div>
-           <div class="col-md-2 col-xs-2">
+           <div class="col-md-2 col-xs-12">
             <div class="caja-fo-red">
              {% if is_admin %}
              <div class="image-upload fo visible-movil">
@@ -434,6 +434,9 @@
     </div>
   </div>
 
+<div class="col-xs-12 hidden-md hidden-sm hidden-lg visible-xs">
+  <hr>
+</div>
 
 <!-- ****imagenes*** -->
 
@@ -501,17 +504,6 @@
 
         <div class="col-md-12 col-sm-12 col-xs-12 alme">
           <div class="bre {{editabletext}}" text-id="{{ site.name + '_footer_ber' }}"> {{ read_text(site.name +  '_footer_ber') }} </div>
-      <!--       <ol class="breadcrumb">
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_7' }}"> {{ read_text(site.name +  '_mon_7') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_8' }}"> {{ read_text(site.name +  '_mon_8') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_3' }}"> {{ read_text(site.name +  '_mon_9') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_9' }}"> {{ read_text(site.name +  '_mon_4') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item {{editabletext}}" text-id="{{ site.name + '_mon_10' }}"> {{ read_text(site.name +  '_mon_10') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_11' }}"> {{ read_text(site.name +  '_mon_11') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_111' }}"> {{ read_text(site.name +  '_mon_111') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_112' }}"> {{ read_text(site.name +  '_mon_112') }}</li> <li class="wer"> | </li>
-            <li class="breadcrumb-item  {{editabletext}}" text-id="{{ site.name + '_mon_113' }}"> {{ read_text(site.name +  '_mon_113') }}</li> 
-          </ol> -->
         </div>
 
   </div>
@@ -519,31 +511,18 @@
 
  
     <div class="col-md-12 col-sm-12 col-xs-12 alme">
-    <div class="col-md-4 col-sm-4 col-xs-10">
+    <div class="col-md-4 col-sm-4 col-xs-10 dori">
       <div class="firma {{editabletext}}" text-id="{{ site.name + '_in_1' }}"> {{ read_text(site.name +  '_in_1') }} </div>
     </div>
 
-    <div class="col-md-4 col-sm-4 col-xs-10">
+    <div class="col-md-4 col-sm-4 col-xs-10 dori">
       <div class="firma-2 {{editabletext}}" text-id="{{ site.name + '_in_2' }}"> {{ read_text(site.name +  '_in_2') }}</div>
     </div>
-    <div class="col-md-4 col-sm-4 col-xs-12">
+    <div class="col-md-4 col-sm-4 col-xs-12 dori">
         <div class="firma-3 {{editabletext}}" text-id="{{ site.name + '_in_3' }}"> {{ read_text(site.name +  '_in_3') }}</div>
       </div>
     </div>
 
-   <!--  <div class="col-md-12 col-sm-12 col-xs-12 alme">
-     <hr class="f-min-2">
-    </div>
-
-
-    <div class="col-md-12 col-xs-12 col-sm-12 alme">
-       <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_1' }}"> {{ read_text(site.name +  '_ine_1') }} </div>
-       <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_2' }}"> {{ read_text(site.name +  '_ine_2') }} </div>
-       <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_3' }}"> {{ read_text(site.name +  '_ine_3') }} </div>
-       <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_4' }}"> {{ read_text(site.name +  '_ine_4') }} </div>
-       <div class="vop {{editabletext}}" text-id="{{ site.name + '_ine_5' }}"> {{ read_text(site.name +  '_ine_5') }} </div>
-       <div class="vop-2 {{editabletext}}" text-id="{{ site.name + '_ine_6' }}"> {{ read_text(site.name +  '_ine_6') }} </div>
-    </div> -->
 </div>
 
 </div>

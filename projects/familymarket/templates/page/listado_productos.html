@@ -26,10 +26,29 @@
     <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+<!-- 
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+
+        $(".mobile2").css("display", "none");
+
+        $(document).on("click", ".bars", function()
+        {
+
+          $(".mobile2").toggle("slow");
+
+        });
+      });
+    </script> -->
 
     <script type="text/javascript">
         $(document).ready(function()
         {
+            // EXCLUSIVO PARA PLACARE
+            $("title").html("Family Market - Listado de productos");
+            $("meta[name=description]").attr("content", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.");
+       
 
             $(document).on("click", ".background-color-producto", function()
             {
@@ -71,9 +90,9 @@
             {
               $(".tag-header").html("Oferta");
             }
+
         });
     </script>
-
     <script type="text/javascript">
         $("#testButton").live("touchstart", function()
         {
@@ -82,6 +101,14 @@
             $(this).removeClass("active");
         });
     </script>
+    <script>
+      $("#menu-toggle").click(function(e) {
+          e.preventDefault();
+          $("#wrapper").toggleClass("toggled");
+      });
+    </script>
+
+
 {% end %}
 
 
@@ -109,161 +136,244 @@
 <section>
    <div class="container min dos">
     <div class="col-md-3 col-sm-3 col-xs-12">
- <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
-          <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 0px;margin-bottom: 50px;border-right: 1px solid rgba(128, 128, 128, 0.4);width: 92%;left: 8%;">
-          <div class="text-fil"> TIPO DE ZAPATO </div>
+      <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
+        <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="margin-bottom: 50px;border-right: 1px solid #E9E9ED; width: 92%;left: 8%;  margin-top: 13px;">
+          <div class="text-fil-2"> MARCAS </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-ballerinas" name="vehicle1" tag="ballerinas" value="Bike" onclick="check('ballerinas')">
-                <div class="fil h-ballerinas" onclick="check('ballerinas')">Ballerinas</div> 
-                <i class="fa fa-check-square ch-ballerinas hidden" aria-hidden="true" onclick="uncheck('ballerinas')"></i>
+                <input type="checkbox" class="categ c-categoria3_ballerinas" name="vehicle1" tag="categoria3_ballerinas" value="Bike" value2="Ballerinas" onclick="check('categoria3_ballerinas','ballerinas')">
+                <div class="fil h-categoria3_ballerinas" onclick="check('categoria3_ballerinas','ballerinas')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_ballerinas hidden" aria-hidden="true" onclick="uncheck('categoria3_ballerinas','ballerinas')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-botines" name="vehicle2" tag="botines" value="Car" onclick="check('botines')"> 
-                <div class="fil h-botines" onclick="check('botines')">Botines</div> 
-                <i class="fa fa-check-square ch-botines hidden" aria-hidden="true" onclick="uncheck('botines')"></i>
+                <input type="checkbox" class="categ c-categoria3_botines" name="vehicle2" tag="categoria3_botines" value="Car" value2="Botines" onclick="check('categoria3_botines','Botines')"> 
+                <div class="fil h-categoria3_botines" onclick="check('categoria3_botines','Botines')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_botines hidden" aria-hidden="true" onclick="uncheck('categoria3_botines','Botines')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-mocasines" name="vehicle3" tag="mocasines" value="Boat" onclick="check('mocasines')"> 
-                <div class="fil h-mocasines" onclick="check('mocasines')">Mocasines</div> 
-                <i class="fa fa-check-square ch-mocasines hidden" aria-hidden="true" onclick="uncheck('mocasines')"></i>
+                <input type="checkbox" class="categ c-categoria3_mocasines" name="vehicle3" tag="categoria3_mocasines" value="Boat" value2="Mocasines" onclick="check('categoria3_mocasines','mocasines')"> 
+                <div class="fil h-categoria3_mocasines" onclick="check('categoria3_mocasines','mocasines')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_mocasines hidden" aria-hidden="true" onclick="uncheck('categoria3_mocasines','mocasines')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-plataforma" name="vehicle3" tag="plataforma" value="Boat" onclick="check('plataforma')"> 
-                <div class="fil h-plataforma" onclick="check('plataforma')">Plataformas</div> 
-                <i class="fa fa-check-square ch-plataforma hidden" aria-hidden="true" onclick="uncheck('plataforma')"></i>
+                <input type="checkbox" class="categ c-categoria3_plataformas" name="vehicle3" tag="categoria3_plataformas" value="Boat" value2="Plataformas" onclick="check('categoria3_plataformas','plataforma')"> 
+                <div class="fil h-categoria3_plataformas" onclick="check('categoria3_plataformas','plataforma')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_plataformas hidden" aria-hidden="true" onclick="uncheck('categoria3_plataformas','plataforma')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-playeras" name="vehicle3" tag="playeras" value="Boat" onclick="check('playeras')"> 
-                <div class="fil h-playeras" onclick="check('playeras')">Playeras</div> 
-                <i class="fa fa-check-square ch-playeras hidden" aria-hidden="true" onclick="uncheck('playeras')"></i>
+                <input type="checkbox" class="categ c-categoria3_playeras" name="vehicle3" tag="categoria3_playeras" value="Boat" value2="Playeras" onclick="check('categoria3_playeras','playeras')"> 
+                <div class="fil h-categoria3_playeras" onclick="check('categoria3_playeras','playeras')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_playeras hidden" aria-hidden="true" onclick="uncheck('categoria3_playeras','playeras')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-sandalias" name="vehicle3" tag="sandalias" value="Boat" onclick="check('sandalias')"> 
-                <div class="fil h-sandalias" onclick="check('sandalias')">Sandalias</div> 
-                <i class="fa fa-check-square ch-sandalias hidden" aria-hidden="true" onclick="uncheck('sandalias')"></i>
+                <input type="checkbox" class="categ c-categoria3_sandalias" name="vehicle3" tag="categoria3_sandalias" value="Boat" value2="Sandalias" onclick="check('categoria3_sandalias','sandalias')"> 
+                <div class="fil h-categoria3_sandalias" onclick="check('categoria3_sandalias','sandalias')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_sandalias hidden" aria-hidden="true" onclick="uncheck('categoria3_sandalias','sandalias')"></i>
               </div>
               <div class="filtro-filtros">
-                <input type="checkbox" class="categ c-zapatos" name="vehicle3" tag="zapatos" value="Boat" onclick="check('zapatos')"> 
-                <div class="fil h-zapatos" onclick="check('zapatos')">Zapatos</div> 
-                <i class="fa fa-check-square ch-zapatos hidden" aria-hidden="true" onclick="uncheck('zapatos')"></i>
+                <input type="checkbox" class="categ c-categoria3_zapatos" name="vehicle3" tag="categoria3_zapatos" value="Boat" value2="Zapatos" onclick="check('categoria3_zapatos','zapatos')"> 
+                <div class="fil h-categoria3_zapatos" onclick="check('categoria3_zapatos','zapatos')">X</div> 
+                <i class="fa fa-check-square ch-categoria3_zapatos hidden" aria-hidden="true" onclick="uncheck('categoria3_zapatos','zapatos')"></i>
               </div>
           </form>
+
           <div class="clearfix"></div>
 
-           <div class="text-fil"> OCASIÓN  </div>
-          <form action="/action_page.php" class="chek">
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-casuales" name="vehicle1" tag="casuales" value="Bike" onclick="check('casuales')"> 
-                <div class="fil h-casuales" onclick="check('casuales')">Casuales</div> 
-                <i class="fa fa-check-square ch-casuales hidden" aria-hidden="true" onclick="uncheck('casuales')"></i>
-              </div>
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-confort" name="vehicle2" tag="confort" value="Car" onclick="check('confort')"> 
-                <div class="fil h-confort" onclick="check('confort')">Confort </div>
-                <i class="fa fa-check-square ch-confort hidden" aria-hidden="true" onclick="uncheck('confort')"></i>
-              </div>
-              <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-fiesta" name="vehicle3" tag="fiesta" value="Boat" onclick="check('fiesta')"> 
-                <div class="fil h-fiesta" onclick="check('fiesta')">Fiesta</div> 
-                <i class="fa fa-check-square ch-fiesta hidden" aria-hidden="true" onclick="uncheck('fiesta')"></i>
-              </div>
-               <div class="filtro-categorias">
-                <input type="checkbox" class="categ c-vestir" name="vehicle3" tag="vestir" value="Boat" onclick="check('vestir')"> 
-                <div class="fil h-vestir" onclick="check('vestir')">Vestir</div> 
-                <i class="fa fa-check-square ch-vestir hidden" aria-hidden="true" onclick="uncheck('vestir')"></i>
-              </div>
-          </form>
-          <div class="clearfix"></div>
-
-          <div class="text-fil"> COLOR <i class="fa fa-plus botonMasColor" aria-hidden="true"></i> </div>
+          <div class="text-fil"> OPCIONES DE CONSUMO </div>
             <div>
             <form action="/action_page.php" class="chek">
             <div class="filtro-color">
-              <input type="checkbox" class="categ c-azul" tag="azul" style="cursor: pointer;" onclick="check('azul')">
-              <div class="fil h-azul" onclick="check('azul')">Azul</div>
-              <i class="fa fa-check-square ch-azul hidden" aria-hidden="true" onclick="uncheck('azul')"></i>
+              <input type="checkbox" class="categ c-Color_Azul" tag="Color_Azul" value2="Azul" style="cursor: pointer;" onclick="check('Color_Azul','Azul')">
+              <div class="fil h-Color_Azul" onclick="check('Color_Azul','Azul')">X</div>
+              <i class="fa fa-check-square ch-Color_Azul hidden" aria-hidden="true" onclick="uncheck('Color_Azul','azul')"></i>
             </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-beige" tag="beige" style="cursor: pointer;" onclick="check('beige')">
-               <div class="fil h-beige" onclick="check('beige')">Beige</div>
-               <i class="fa fa-check-square ch-beige hidden" aria-hidden="true" onclick="uncheck('beige')"></i>
+               <input type="checkbox" class="categ c-Color-Beige" tag="Color-Beige" value2="Beige" style="cursor: pointer;" onclick="check('Color-Beige','Beige')">
+               <div class="fil h-Color-Beige" onclick="check('Color-Beige','Beige')">X</div>
+               <i class="fa fa-check-square ch-Color-Beige hidden" aria-hidden="true" onclick="uncheck('Color-Beige','Beige')"></i>
             </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-blanco" tag="blanco" style="cursor: pointer;" onclick="check('blanco')">
-               <div class="fil h-blanco" onclick="check('blanco')">Blanco</div>
-               <i class="fa fa-check-square ch-blanco hidden" aria-hidden="true" onclick="uncheck('blanco')"></i>
+               <input type="checkbox" class="categ c-Color-Blanco" tag="Color-Blanco" value2="Blanco" style="cursor: pointer;" onclick="check('Color-Blanco','Blanco')">
+               <div class="fil h-Color-Blanco" onclick="check('Color-Blanco','Blanco')">X</div>
+               <i class="fa fa-check-square ch-Color-Blanco hidden" aria-hidden="true" onclick="uncheck(' Blanco','Color-Blanco')"></i>
             </div>
              <div class="filtro-color">
-               <input type="checkbox" class="categ c-burdeo" tag="burdeo" style="cursor: pointer;" onclick="check('burdeo')">
-               <div class="fil h-burdeo" onclick="check('burdeo')">Burdeo</div>
-               <i class="fa fa-check-square ch-burdeo hidden" aria-hidden="true" onclick="uncheck('burdeo')"></i>
+               <input type="checkbox" class="categ c-Color-Burdeo" tag="Color-Burdeo" value2="Burdeo" style="cursor: pointer;" onclick="check('Color-Burdeo','Burdeo')">
+               <div class="fil h-Color-Burdeo" onclick="check('Color-Burdeo','Burdeo')">X</div>
+               <i class="fa fa-check-square ch-Color-Burdeo hidden" aria-hidden="true" onclick="uncheck('Color-Burdeo','Burdeo')"></i>
             </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-cafe" tag="cafe" style="cursor: pointer;" onclick="check('cafe')">
-               <div class="fil h-cafe" onclick="check('cafe')">Cafe</div>
-               <i class="fa fa-check-square ch-cafe hidden" aria-hidden="true" onclick="uncheck('cafe')"></i>
+               <input type="checkbox" class="categ c-Color-Cafe" value2="Café" tag="Color-Cafe" style="cursor: pointer;" onclick="check('Color-Cafe','Café')">
+               <div class="fil h-Color-Cafe" onclick="check('Color-Cafe', 'Café')">X</div>
+               <i class="fa fa-check-square ch-Color-Cafe hidden" aria-hidden="true" onclick="uncheck('Color-Cafe','Café')"></i>
             </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-dorado" tag="dorado" style="cursor: pointer;" onclick="check('dorado')">
-               <div class="fil h-dorado" onclick="check('dorado')">Dorado</div>
-               <i class="fa fa-check-square ch-dorado hidden" aria-hidden="true" onclick="uncheck('dorado')"></i>
+               <input type="checkbox" class="categ c-Color-Dorado" tag="Color-Dorado" value2="Dorado" style="cursor: pointer;" onclick="check('Color-Dorado', 'Dorado')">
+               <div class="fil h-Color-Dorado" onclick="check('Color-Dorado','Dorado')">X</div>
+               <i class="fa fa-check-square ch-Color-Dorado hidden" aria-hidden="true" onclick="uncheck('Color-Dorado','Dorado')"></i>
              </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-gris" tag="gris" style="cursor: pointer;" onclick="check('gris')">
-               <div class="fil h-gris" onclick="check('gris')">Gris</div>
-               <i class="fa fa-check-square ch-gris hidden" aria-hidden="true" onclick="uncheck('gris')"></i>
+               <input type="checkbox" class="categ c-Color-Gris" tag="Color-Gris" value2="Gris" style="cursor: pointer;" onclick="check('Color-Gris', 'Gris')">
+               <div class="fil h-Color-Gris" onclick="check('Color-Gris', 'Gris')">X</div>
+               <i class="fa fa-check-square ch-Color-Gris hidden" aria-hidden="true" onclick="uncheck('Color-Gris','Gris')"></i>
             </div>
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-metalico" tag="metalico" style="cursor: pointer;" onclick="check('metalico')">
-               <div class="fil h-metalico" onclick="check('metalico')">Metalico</div>
-               <i class="fa fa-check-square ch-metalico hidden" aria-hidden="true" onclick="uncheck('metalico')"></i>
+               <input type="checkbox" class="categ c-Color-Metalico" tag="Color-Metalico" value2="Metálico" style="cursor: pointer;" onclick="check('Color-Metalico','Metalico')">
+               <div class="fil h-Color-Metalico" onclick="check('Color-Metalico','Metalico')">X</div>
+               <i class="fa fa-check-square ch-Color-Metalico hidden" aria-hidden="true" onclick="uncheck('Color-Metalico','Metalico')"></i>
             </div>
 
             <div class="filtro-color">
-               <input type="checkbox" class="categ c-negro" tag="negro" style="cursor: pointer;" onclick="check('negro')">
-               <div class="fil h-negro" onclick="check('negro')">Negro</div>
-               <i class="fa fa-check-square ch-negro hidden" aria-hidden="true" onclick="uncheck('negro')"></i>
+               <input type="checkbox" class="categ c-Color-Negro" tag="Color-Negro" value2="Negro" style="cursor: pointer;" onclick="check('Color-Negro','Negro')">
+               <div class="fil h-Color-Negro" onclick="check('Color-Negro','Negro')">X</div>
+               <i class="fa fa-check-square ch-Color-Negro hidden" aria-hidden="true" onclick="uncheck('Color-Negro','Negro')"></i>
             </div>
 
               <div class="filtro-color">
-               <input type="checkbox" class="categ c-rojo" tag="rojo" style="cursor: pointer;" onclick="check('rojo')">
-               <div class="fil h-rojo" onclick="check('rojo')">Rojo</div>
-               <i class="fa fa-check-square ch-rojo hidden" aria-hidden="true" onclick="uncheck('rojo')"></i>
+               <input type="checkbox" class="categ c-Color-Rojo" tag="Color-Rojo" value2="Rojo" style="cursor: pointer;" onclick="check('Color-Rojo','Rojo')">
+               <div class="fil h-Color-Rojo" onclick="check('Color-Rojo','Rojo')">X</div>
+               <i class="fa fa-check-square ch-Color-Rojo hidden" aria-hidden="true" onclick="uncheck('Color-Rojo','Rojo')"></i>
             </div>
             </form>
 
-            </div>
-
           <div class="clearfix"></div>
-         <div class="text-fil"> MATERIAL </div>
+         <div class="text-fil"> CATEGORIA 1 </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-talla">
-                <input type="checkbox" class="categ c-cuero" name="vehicle1" tag="cuero" value="Bike" onclick="check('cuero','cuero')">
-                <div class="fil h-cuero" onclick="check('cuero')"> Cuero </div>
-                <i class="fa fa-check-square ch-cuero hidden" aria-hidden="true" onclick="uncheck('cuero','cuero')"></i>
+                <input type="checkbox" class="categ c-Mat_capellada_Cuero" name="vehicle1" tag="Mat_capellada_Cuero" value2="Cuero" value="Bike" onclick="check('Mat_capellada_Cuero','cuero')">
+                <div class="fil h-Mat_capellada_Cuero" onclick="check('Mat_capellada_Cuero','Cuero')"> X </div>
+                <i class="fa fa-check-square ch-Mat_capellada_Cuero hidden" aria-hidden="true" onclick="uncheck('Mat_capellada_Cuero','cuero')"></i>
               </div>
               <div class="filtro-talla">
-                <input type="checkbox" class="categ c-eco" name="vehicle2" tag="eco" value="Cara" onclick="check('eco','eco')">
-                <div class="fil h-eco" onclick="check('eco')"> Eco cuero </div> 
-                <i class="fa fa-check-square ch-eco hidden" aria-hidden="true" onclick="uncheck('eco','eco')"></i>
+                <input type="checkbox" class="categ c-mat_capellada_eco_cuero" name="vehicle2" tag="mat_capellada_eco_cuero" value2="Eco Cuero" value="Cara" onclick="check('mat_capellada_eco_cuero','eco')">
+                <div class="fil h-mat_capellada_eco_cuero" onclick="check('mat_capellada_eco_cuero','eco')"> X </div> 
+                <i class="fa fa-check-square ch-mat_capellada_eco_cuero hidden" aria-hidden="true" onclick="uncheck('mat_capellada_eco_cuero','eco')"></i>
               </div>
           </form>
+
           <div class="clearfix"></div>
 
-          <div class="text-fil"> MARCA </div>
+          <div class="text-fil"> CATEGORIA 2 </div>
           <form action="/action_page.php" class="chek">
+            <div class="filtro-marca">
+                <input type="checkbox" class="categ c-belle" name="vehicle2" tag="belle" value="Car" onclick="check('belle')">
+                <div class="fil h-belle" onclick="check('belle')">X</div>
+               <i class="fa fa-check-square ch-belle hidden" aria-hidden="true" onclick="uncheck('belle')"></i>
+               </div>
+               <div class="filtro-marca">
+                <input type="checkbox" class="categ c-caffeine" name="vehicle2" tag="caffeine" value="Car" onclick="check('caffeine')">
+                <div class="fil h-caffeine" onclick="check('caffeine')">X</div>
+               <i class="fa fa-check-square ch-caffeine hidden" aria-hidden="true" onclick="uncheck('caffeine')"></i>
+               </div>
+               <div class="filtro-marca">
+                <input type="checkbox" class="categ c-cocomate" name="vehicle2" tag="cocomate" value="Car" onclick="check('cocomate')">
+                <div class="fil h-cocomate" onclick="check('cocomate')">X</div>
+               <i class="fa fa-check-square ch-cocomate hidden" aria-hidden="true" onclick="uncheck('cocomate')"></i>
+               </div>
               <div class="filtro-marca">
                 <input type="checkbox" class="categ c-degas" name="vehicle1" tag="degas" value="Bike" onclick="check('degas')"> 
-                <div class="fil h-degas" onclick="check('degas')">Degas </div>
+                <div class="fil h-degas" onclick="check('degas')">X</div>
                 <i class="fa fa-check-square ch-degas hidden" aria-hidden="true" onclick="uncheck('degas')"></i>
               </div>
               <div class="filtro-marca">
                 <input type="checkbox" class="categ c-manzini" name="vehicle2" tag="manzini" value="Car" onclick="check('manzini')">
-                <div class="fil h-manzini" onclick="check('manzini')">Eda Manzini</div>
+                <div class="fil h-manzini" onclick="check('manzini')">X</div>
                <i class="fa fa-check-square ch-manzini hidden" aria-hidden="true" onclick="uncheck('manzini')"></i>
                </div>
+               <div class="filtro-marca">
+                <input type="checkbox" class="categ c-lola_canales" name="vehicle2" tag="lola_canales" value="Car" onclick="check('lola_canales', 'lola canales')">
+                <div class="fil h-lola_canales" onclick="check('lola_canales', 'lola canales')">X</div>
+               <i class="fa fa-check-square ch-lola_canales hidden" aria-hidden="true" onclick="uncheck('lola_canales', 'lola canales')"></i>
+               </div>
+               <div class="filtro-marca">
+                <input type="checkbox" class="categ c-pasoli" name="vehicle2" tag="pasoli" value="Car" onclick="check('pasoli')">
+                <div class="fil h-pasoli" onclick="check('pasoli')">X</div>
+               <i class="fa fa-check-square ch-pasoli hidden" aria-hidden="true" onclick="uncheck('pasoli')"></i>
+               </div>
+               <div class="filtro-marca">
+                <input type="checkbox" class="categ c-tarragona" name="vehicle2" tag="tarragona" value="Car" onclick="check('tarragona')">
+                <div class="fil h-tarragona" onclick="check('tarragona')">X</div>
+               <i class="fa fa-check-square ch-tarragona hidden" aria-hidden="true" onclick="uncheck('tarragona')"></i>
+               </div>
           </form>
+
+          <div class="clearfix"></div>
+
+           <div class="text-fil"> CATEGORIA 3</div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-Categoria4_casuales" name="vehicle1" tag="Categoria4_casuales" value2="Casuales" value="Bike" onclick="check('Categoria4_casuales', 'casuales')"> 
+                <div class="fil h-Categoria4_casuales" onclick="check('Categoria4_casuales','casuales')">X</div> 
+                <i class="fa fa-check-square ch-Categoria4_casuales hidden" aria-hidden="true" onclick="uncheck('Categoria4_casuales','casuales')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-Categoria4_Confort" name="vehicle2" value2="Confort" tag="Categoria4_Confort" value="Car" onclick="check('Categoria4_Confort','Confort')"> 
+                <div class="fil h-Categoria4_Confort" onclick="check('Categoria4_Confort','Confort')">X </div>
+                <i class="fa fa-check-square ch-Categoria4_Confort hidden" aria-hidden="true" onclick="uncheck('Categoria4_Confort', 'Confort')"></i>
+              </div>
+              <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-Categoria4_Fiesta" value2="Fiesta" name="vehicle3" tag="Categoria4_Fiesta" value="Boat" onclick="check('Categoria4_Fiesta', 'Fiesta')"> 
+                <div class="fil h-Categoria4_Fiesta" onclick="check('Categoria4_Fiesta','Fiesta')">X</div> 
+                <i class="fa fa-check-square ch-Catwgoria4_Fiesta hidden" aria-hidden="true" onclick="uncheck('Catwgoria4_Fiesta','Fiesta')"></i>
+              </div>
+               <div class="filtro-categorias">
+                <input type="checkbox" class="categ c-Categoria4_Vestir" value2="Vestir" name="vehicle3" tag="Categoria4_Vestir" value="Boat" onclick="check('Categoria4_Vestir', 'Vestir')"> 
+                <div class="fil h-Categoria4_Vestir" onclick="check('Categoria4_Vestir','Vestir')">X</div> 
+                <i class="fa fa-check-square ch-Categoria4_Vestir hidden" aria-hidden="true" onclick="uncheck('Categoria4_Vestir', 'Vestir')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> CATEGORIA 4 </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-Cierre_Abierto" name="vehicle1" value2="Abierto" tag="Cierre_Abierto" value="Bike" onclick="check('Cierre_Abierto','abierto')">
+                <div class="fil h-Cierre_Abierto" onclick="check('Cierre_Abierto','abierto')"> X </div>
+                <i class="fa fa-check-square ch-Cierre_Abierto hidden" aria-hidden="true" onclick="uncheck('Cierre_Abierto','abierto')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-Cierre-Cerrado" name="vehicle2" value2="Cerrado" tag="Cierre_Cerrado" value="Cara" onclick="check('Cierre_Cerrado','cerrado')">
+                <div class="fil h-Cierre_Cerrado" onclick="check('Cierre_Cerrado','cerrado')"> X </div> 
+                <i class="fa fa-check-square ch-Cierre_Cerrado hidden" aria-hidden="true" onclick="uncheck('Cierre_Cerrado','cerrado')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> CATEGORIA 5 </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-mat_suela_goma_eva" name="vehicle1" value2="Eva" tag="mat_suela_goma_eva" value="Bike" onclick="check('mat_suela_goma_eva','eva')">
+                <div class="fil h-mat_suela_goma_eva" onclick="check('mat_suela_goma_eva','eva')"> X </div>
+                <i class="fa fa-check-square ch-mat_suela_goma_eva hidden" aria-hidden="true" onclick="uncheck('mat_suela_goma_eva','eva')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-Mat_suela_Kratón" name="vehicle2" value2="Kratón" tag="Mat_suela_Kratón" value="Cara" onclick="check('Mat_suela_Kratón','kraton')">
+                <div class="fil h-Mat_suela_Kratón" onclick="check('Mat_suela_Kratón','Kratón')"> X </div> 
+                <i class="fa fa-check-square ch-Mat_suela_Kratón hidden" aria-hidden="true" onclick="uncheck('Mat_suela_Kratón','kraton')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-Mat_suela_Poliuretano" value2="Poliuretano" name="vehicle2" tag="Mat_suela_Poliuretano" value="Cara" onclick="check('Mat_suela_Poliuretano','poliuretano')">
+                <div class="fil h-Mat_suela_Poliuretano" onclick="check('Mat_suela_Poliuretano','poliuretano')"> X </div> 
+                <i class="fa fa-check-square ch-Mat_suela_Poliuretano hidden" aria-hidden="true" onclick="uncheck('Mat_suela_Poliuretano','poliuretano')"></i>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> CATEGORIA 6 </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-Mat_forro_Cuero" name="vehicle1" tag="Mat_forro_Cuero" value2="Cuero" value="Bike" onclick="check('Mat_forro_Cuero','cuero')">
+                <div class="fil h-Mat_forro_Cuero" onclick="check('Mat_forro_Cuero','Cuero')">X </div>
+                <i class="fa fa-check-square ch-Mat_forro_Cuero hidden" aria-hidden="true" onclick="uncheck('Mat_forro_Cuero','cuero')"></i>
+              </div>
+              <div class="filtro-talla">
+                <input type="checkbox" class="categ c-mat_forro_eco_cuero" name="vehicle2" tag="mat_forro_eco_cuero" value2="Eco Cuero" value="Cara" onclick="check('mat_forro_eco_cuero','eco')">
+                <div class="fil h-mat_forro_eco_cuero" onclick="check('mat_forro_eco_cuero','eco')">X </div> 
+                <i class="fa fa-check-square ch-mat_forro_eco_cuero hidden" aria-hidden="true" onclick="uncheck('mat_forro_eco_cuero','eco')"></i>
+              </div>
+          </form>
+
+            </div>
         </div>
 
   </section>
@@ -294,13 +404,7 @@
           <div class="limpiar">LIMPIAR TODO </div>
           </div>
           <div class="col-md-12 col-sm-12 col-xs-12 kinti">
-              <a href="#!" class="variables1" tag="variable_1">Talla </a>
-              <a class=""> &nbsp </a>
-              <a href="#!" class="variables2" tag="variable_2">Plataforma </a>
-               <a class=""> &nbsp </a>
-              <a href="#!" class="variables3" tag="variable_3">Forma Taco</a>
-              <a class=""> &nbsp </a>
-              <a href="#!" class="variables4" tag="variable_4">Tamaño Taco</a>
+              <a href="#!" class="variables1" tag="variable_1">Ocasiones de consumo </a>
           </div>
           <form action="/action_page.php" class="chek">
            <div class="col-md-3 col-sm-3 col-xs-12 vari">
@@ -343,263 +447,263 @@
 
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform03" type="checkbox" name="checkbox" tag="platform03" value="0.3" onclick="check('plataform03','0.3')">0.3cms
+                <input class="hidden categ check c-variable_2 c-plataform_03" type="checkbox" name="checkbox" tag="platform03" value="0.3" onclick="check('plataform_03','0.3')">0.3cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform03 other hidden" aria-hidden="true" onclick="uncheck('plataform03','0.3')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_03 other hidden" aria-hidden="true" onclick="uncheck('plataform_03','0.3')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform05" type="checkbox" name="checkbox" tag="platform05" value="0.5" onclick="check('plataform05','0.5')">0.5cms
+                <input class="hidden categ check c-variable_2 c-plataform_05" type="checkbox" name="checkbox" tag="platform05" value="0.5" onclick="check('plataform_05','0.5')">0.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform05 other hidden" aria-hidden="true" onclick="uncheck('plataform05','0.5')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_05 other hidden" aria-hidden="true" onclick="uncheck('plataform_05','0.5')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform07" type="checkbox" name="checkbox" tag="platform07" value="0.7" onclick="check('plataform07','0.7')">0.7cms
+                <input class="hidden categ check c-variable_2 c-plataform_07" type="checkbox" name="checkbox" tag="platform07" value="0.7" onclick="check('plataform_07','0.7')">0.7cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform07 other hidden" aria-hidden="true" onclick="uncheck('plataform07','0.7')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_07 other hidden" aria-hidden="true" onclick="uncheck('plataform_07','0.7')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform1" type="checkbox" name="checkbox" tag="platform1" value="1" onclick="check('plataform1','1')">1cms
+                <input class="hidden categ check c-variable_2 c-plataform_1" type="checkbox" name="checkbox" tag="platform1" value="1" onclick="check('plataform_1','1')">1cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform1 other hidden" aria-hidden="true" onclick="uncheck('plataform1','1')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_1 other hidden" aria-hidden="true" onclick="uncheck('plataform_1','1')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform12" type="checkbox" name="checkbox" tag="platform12" value="1.2" onclick="check('plataform12','1.2')">1.2cms
+                <input class="hidden categ check c-variable_2 c-plataform_12" type="checkbox" name="checkbox" tag="platform12" value="1.2" onclick="check('plataform_12','1.2')">1.2cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform12 other hidden" aria-hidden="true" onclick="uncheck('plataform12','1.2')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_12 other hidden" aria-hidden="true" onclick="uncheck('plataform_12','1.2')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform15" type="checkbox" name="checkbox" tag="platform15" value="1.5" onclick="check('plataform15','1.5')">1.5cms
+                <input class="hidden categ check c-variable_2 c-plataform_15" type="checkbox" name="checkbox" tag="platform15" value="1.5" onclick="check('plataform_15','1.5')">1.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform15 other hidden" aria-hidden="true" onclick="uncheck('plataform15','1.5')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_15 other hidden" aria-hidden="true" onclick="uncheck('plataform_15','1.5')"></i>
             </div>
              <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform2" type="checkbox" name="checkbox" tag="platform2" value="2" onclick="check('plataform2','2')">2cms
+                <input class="hidden categ check c-variable_2 c-plataform_2" type="checkbox" name="checkbox" tag="platform2" value="2" onclick="check('plataform_2','2')">2cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform2 other hidden" aria-hidden="true" onclick="uncheck('plataform2','2')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_2 other hidden" aria-hidden="true" onclick="uncheck('plataform_2','2')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform25" type="checkbox" name="checkbox" tag="platform25" value="2.5" onclick="check('plataform25','2.5')">2.5cms
+                <input class="hidden categ check c-variable_2 c-plataform_25" type="checkbox" name="checkbox" tag="platform25" value="2.5" onclick="check('plataform_25','2.5')">2.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform25 other hidden" aria-hidden="true" onclick="uncheck('plataform2.5','2.5')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_25 other hidden" aria-hidden="true" onclick="uncheck('plataform_2.5','2.5')"></i>
             </div>
              <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform3" type="checkbox" name="checkbox" tag="platform3" value="3" onclick="check('plataform3','3')">3cms
+                <input class="hidden categ check c-variable_2 c-plataform_3" type="checkbox" name="checkbox" tag="platform3" value="3" onclick="check('plataform_3','3')">3cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform3 other hidden" aria-hidden="true" onclick="uncheck('plataform3','3')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_3 other hidden" aria-hidden="true" onclick="uncheck('plataform_3','3')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform35" type="checkbox" name="checkbox" tag="platform35" value="3.5" onclick="check('plataform35','3.5')">3.5cms
+                <input class="hidden categ check c-variable_2 c-plataform_35" type="checkbox" name="checkbox" tag="platform35" value="3.5" onclick="check('plataform_35','3.5')">3.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform35 other hidden" aria-hidden="true" onclick="uncheck('plataform35','3.5')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_35 other hidden" aria-hidden="true" onclick="uncheck('plataform_35','3.5')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform4" type="checkbox" name="checkbox" tag="platform4" value="4" onclick="check('plataform4','4')">4cms
+                <input class="hidden categ check c-variable_2 c-plataform_4" type="checkbox" name="checkbox" tag="platform4" value="4" onclick="check('plataform_4','4')">4cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform4 other hidden" aria-hidden="true" onclick="uncheck('plataform4','4')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_4 other hidden" aria-hidden="true" onclick="uncheck('plataform_4','4')"></i>
             </div>
             <div class="filtro-talla c-variable_2">
               <label class="hidden c-variable_2">
-                <input class="hidden categ check c-variable_2 c-plataform45" type="checkbox" name="checkbox" tag="platform4.5" value="4.5" onclick="check('plataform45','4.5')">4.5cms
+                <input class="hidden categ check c-variable_2 c-plataform_45" type="checkbox" name="checkbox" tag="platform4.5" value="4.5" onclick="check('plataform_45','4.5')">4.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_dos ch-plataform45 other hidden" aria-hidden="true" onclick="uncheck('plataform45','4.5')"></i>
+              <i class="fa fa-check-square c-variable_dos ch-plataform_45 other hidden" aria-hidden="true" onclick="uncheck('plataform_45','4.5')"></i>
             </div>
 
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-alto" type="checkbox" name="checkbox" tag="alto" value="alto" onclick="check('alto','alto')">Alto
+                <input class="hidden categ check c-variable_3 c-forma_taco_alto" value2="alto" type="checkbox" name="checkbox" tag="forma_taco_alto" value="forma_taco_alto" onclick="check('forma_taco_alto','alto')">Alto
               </label> 
-              <i class="fa fa-check-square c-variable_tres ch-alto other hidden" aria-hidden="true" onclick="uncheck('alto','alto')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_alto other hidden" aria-hidden="true" onclick="uncheck('forma_taco_alto','alto')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-bajo" type="checkbox" name="checkbox" tag="bajo" value="bajo" onclick="check('bajo','bajo')">Bajo
+                <input class="hidden categ check c-variable_3 c-forma_taco_bajo" value2="bajo" type="checkbox" name="checkbox" tag="forma_taco_bajo" value="forma_taco_bajo" onclick="check('forma_taco_bajo','bajo')">Bajo
               </label> 
-              <i class="fa fa-check-square c-variable_tres other ch-bajo hidden" aria-hidden="true" onclick="uncheck('bajo','bajo')"></i>
+              <i class="fa fa-check-square c-variable_tres other ch-forma_taco_bajo hidden" aria-hidden="true" onclick="uncheck('forma_taco_bajo','bajo')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-chino" type="checkbox" name="checkbox" tag="chino" value="chino" onclick="check('chino','chino')">Chino
+                <input class="hidden categ check c-variable_3 c-forma_taco_chino" value2="Chino" type="checkbox" name="checkbox" tag="forma_taco_chino" value="forma_taco_chino" onclick="check('forma_taco_chino','chino')">Chino
               </label>
-              <i class="fa fa-check-square c-variable_tres ch-chino other hidden" aria-hidden="true" onclick="uncheck('chino','chino')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_chino other hidden" aria-hidden="true" onclick="uncheck('forma_taco_chino','chino')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-medio" type="checkbox" name="checkbox" tag="medio" value="medio" onclick="check('medio','medio')">Medio
+                <input class="hidden categ check c-variable_3 c-forma_taco_medio" value2="medio" type="checkbox" name="checkbox" tag="forma_taco_medio" value="forma_taco_medio" onclick="check('forma_taco_medio','medio')">Medio
               </label>
-              <i class="fa fa-check-square c-variable_tres ch-medio other hidden" aria-hidden="true" onclick="uncheck('medio','medio')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_medio other hidden" aria-hidden="true" onclick="uncheck('forma_taco_medio','medio')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-plano" type="checkbox" name="checkbox" tag="plano" value="plano" onclick="check('plano','plano')">Plano
+                <input class="hidden categ check c-variable_3 c-forma_taco_plano" value2="plano" type="checkbox" name="checkbox" tag="forma_taco_plano" value="forma_taco_plano" onclick="check('forma_taco_plano','plano')">Plano
               </label>
-              <i class="fa fa-check-square c-variable_tres ch-plano other hidden" aria-hidden="true" onclick="uncheck('plano','plano')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_plano other hidden" aria-hidden="true" onclick="uncheck('forma_taco_plano','plano')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-tacon" type="checkbox" name="checkbox" tag="tacon" value="tacon" onclick="check('tacon','tacon')">Tacón
+                <input class="hidden categ check c-variable_3 c-forma_taco_tacon" value2="tacon" type="checkbox" name="checkbox" tag="forma_taco_tacon" value="forma_taco_tacon" onclick="check('forma_taco_tacon','tacon')">Tacón
               </label>
-              <i class="fa fa-check-square c-variable_tres ch-tacon other hidden" aria-hidden="true" onclick="uncheck('tacon','tacon')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_tacon other hidden" aria-hidden="true" onclick="uncheck('forma_taco_tacon','tacon')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-terraplen" type="checkbox" name="checkbox" tag="terraplen" value="terraplen" onclick="check('terraplen','terraplen')">Terraplén
+                <input class="hidden categ check c-variable_3 c-forma_taco_terraplen" type="checkbox" name="checkbox" tag="forma_taco_terraplen" value="forma_taco_terraplen" value2="terraplen" onclick="check('forma_taco_terraplen','terraplen')">Terraplén
               </label>
-              <i class="fa fa-check-square c-variable_tres ch-terraplen other hidden" aria-hidden="true" onclick="uncheck('terraplen','terraplen')"></i>
+              <i class="fa fa-check-square c-variable_tres ch-forma_taco_terraplen other hidden" aria-hidden="true" onclick="uncheck('forma_taco_terraplen','terraplen')"></i>
             </div>
 
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco15" type="checkbox" tag="taco15" value="1.5" onclick="check('taco15','1.5')">1.5cms
+                <input class="hidden categ check c-variable_4 c-taco_15" type="checkbox" tag="taco_15" value="1.5" onclick="check('taco_15','1.5')">1.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco15 other hidden" aria-hidden="true" onclick="uncheck('taco15','1.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_15 other hidden" aria-hidden="true" onclick="uncheck('taco_15','1.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco2" type="checkbox" tag="taco2" value="2" onclick="check('taco2','2')">2cms
+                <input class="hidden categ check c-variable_4 c-taco_2" type="checkbox" tag="taco_2" value="2" onclick="check('taco_2','2')">2cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco2 other hidden" aria-hidden="true" onclick="uncheck('taco2','2')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_2 other hidden" aria-hidden="true" onclick="uncheck('taco_2','2')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco25" type="checkbox" tag="taco25" value="2.5" onclick="check('taco25','2.5')">2.5cms
+                <input class="hidden categ check c-variable_4 c-taco_25" type="checkbox" tag="taco_25" value="2.5" onclick="check('taco_25','2.5')">2.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco25 other hidden" aria-hidden="true" onclick="uncheck('taco25','2.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_25 other hidden" aria-hidden="true" onclick="uncheck('taco_25','2.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco3" type="checkbox" tag="taco3" value="3" onclick="check('taco3','3')">3cms
+                <input class="hidden categ check c-variable_4 c-taco_3" type="checkbox" tag="taco_3" value="3" onclick="check('taco_3','3')">3cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco3 other hidden" aria-hidden="true" onclick="uncheck('taco3','3')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_3 other hidden" aria-hidden="true" onclick="uncheck('taco_3','3')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco35" type="checkbox" tag="taco35" value="3.5" onclick="check('taco35','3.5')">3.5cms
+                <input class="hidden categ check c-variable_4 c-taco_35" type="checkbox" tag="taco_35" value="3.5" onclick="check('taco_35','3.5')">3.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco35 other hidden" aria-hidden="true" onclick="uncheck('taco35','3.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_35 other hidden" aria-hidden="true" onclick="uncheck('taco_35','3.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco4" type="checkbox" tag="taco4" value="4" onclick="check('taco4','4')">4cms
+                <input class="hidden categ check c-variable_4 c-taco_4" type="checkbox" tag="taco_4" value="4" onclick="check('taco_4','4')">4cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco4 other hidden" aria-hidden="true" onclick="uncheck('taco4','4')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_4 other hidden" aria-hidden="true" onclick="uncheck('taco_4','4')"></i>
             </div>
              <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco45" type="checkbox" tag="taco45" value="4.5" onclick="check('taco45','4.5')">4.5cms
+                <input class="hidden categ check c-variable_4 c-taco_45" type="checkbox" tag="taco_45" value="4.5" onclick="check('taco_45','4.5')">4.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco45 other hidden" aria-hidden="true" onclick="uncheck('taco45','4.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_45 other hidden" aria-hidden="true" onclick="uncheck('taco_45','4.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco5" type="checkbox" tag="taco5" value="5" onclick="check('taco5','5')">5cms
+                <input class="hidden categ check c-variable_4 c-taco_5" type="checkbox" tag="taco_5" value="5" onclick="check('taco_5','5')">5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco5 other hidden" aria-hidden="true" onclick="uncheck('taco5','5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_5 other hidden" aria-hidden="true" onclick="uncheck('taco_5','5')"></i>
             </div>
              <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco55" type="checkbox" tag="taco55" value="5.5" onclick="check('taco55','5.5')">5.5cms
+                <input class="hidden categ check c-variable_4 c-taco_55" type="checkbox" tag="taco_55" value="5.5" onclick="check('taco_55','5.5')">5.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco55 other hidden" aria-hidden="true" onclick="uncheck('taco55','5.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_55 other hidden" aria-hidden="true" onclick="uncheck('taco_55','5.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco6" type="checkbox" tag="taco6" value="6" onclick="check('taco6','6')">6cms
+                <input class="hidden categ check c-variable_4 c-taco_6" type="checkbox" tag="taco_6" value="6" onclick="check('taco_6','6')">6cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco6 other hidden" aria-hidden="true" onclick="uncheck('taco6','6')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_6 other hidden" aria-hidden="true" onclick="uncheck('taco_6','6')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco65" type="checkbox" tag="taco65" value="6.5" onclick="check('taco65','6.5')">6.5cms
+                <input class="hidden categ check c-variable_4 c-taco_65" type="checkbox" tag="taco_65" value="6.5" onclick="check('taco_65','6.5')">6.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco65 other hidden" aria-hidden="true" onclick="uncheck('taco65','6.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_65 other hidden" aria-hidden="true" onclick="uncheck('taco_65','6.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco7" type="checkbox" tag="taco7" value="7" onclick="check('taco7','7')">7cms
+                <input class="hidden categ check c-variable_4 c-taco_7" type="checkbox" tag="taco_7" value="7" onclick="check('taco_7','7')">7cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco7 other hidden" aria-hidden="true" onclick="uncheck('taco7','7')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_7 other hidden" aria-hidden="true" onclick="uncheck('taco_7','7')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco75" type="checkbox" tag="taco75" value="7.5" onclick="check('taco75','7.5')">7.5cms
+                <input class="hidden categ check c-variable_4 c-taco_75" type="checkbox" tag="taco_75" value="7.5" onclick="check('taco_75','7.5')">7.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco75 other hidden" aria-hidden="true" onclick="uncheck('taco75','7.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_75 other hidden" aria-hidden="true" onclick="uncheck('taco_75','7.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco8" type="checkbox" tag="taco8" value="8" onclick="check('taco8','8')">8cms
+                <input class="hidden categ check c-variable_4 c-taco_8" type="checkbox" tag="taco_8" value="8" onclick="check('taco_8','8')">8cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco8 other hidden" aria-hidden="true" onclick="uncheck('taco8','8')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_8 other hidden" aria-hidden="true" onclick="uncheck('taco_8','8')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco85" type="checkbox" tag="taco8.5" value="8.5" onclick="check('taco85','8.5')">8.5cms
+                <input class="hidden categ check c-variable_4 c-taco_85" type="checkbox" tag="taco_8.5" value="8.5" onclick="check('taco_85','8.5')">8.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco85 other hidden" aria-hidden="true" onclick="uncheck('taco85','8.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_85 other hidden" aria-hidden="true" onclick="uncheck('taco_85','8.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco9" type="checkbox" tag="taco9" value="9" onclick="check('taco9','9')">9cms
+                <input class="hidden categ check c-variable_4 c-taco_9" type="checkbox" tag="taco_9" value="9" onclick="check('taco_9','9')">9cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco9 other hidden" aria-hidden="true" onclick="uncheck('taco9','9')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_9 other hidden" aria-hidden="true" onclick="uncheck('taco_9','9')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco9.5" type="checkbox" tag="taco95" value="9.5" onclick="check('taco9.5','9.5')">9.5cms
+                <input class="hidden categ check c-variable_4 c-taco_9.5" type="checkbox" tag="taco_95" value="9.5" onclick="check('taco_9.5','9.5')">9.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco9.5 other hidden" aria-hidden="true" onclick="uncheck('taco9.5','9.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_9.5 other hidden" aria-hidden="true" onclick="uncheck('taco_9.5','9.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco10" type="checkbox" tag="taco10" value="10" onclick="check('taco10','10')">10cms
+                <input class="hidden categ check c-variable_4 c-taco_10" type="checkbox" tag="taco_10" value="10" onclick="check('taco_10','10')">10cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco10 other hidden" aria-hidden="true" onclick="uncheck('taco10','10')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_10 other hidden" aria-hidden="true" onclick="uncheck('taco_10','10')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco105" type="checkbox" tag="taco105" value="10.5" onclick="check('taco105','10.5')">10.5cms
+                <input class="hidden categ check c-variable_4 c-taco_105" type="checkbox" tag="taco_105" value="10.5" onclick="check('taco_105','10.5')">10.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco105 other hidden" aria-hidden="true" onclick="uncheck('taco105','10.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_105 other hidden" aria-hidden="true" onclick="uncheck('taco_105','10.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco11" type="checkbox" tag="taco11" value="11" onclick="check('taco11','11')">11cms
+                <input class="hidden categ check c-variable_4 c-taco_11" type="checkbox" tag="taco_11" value="11" onclick="check('taco_11','11')">11cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco11 other hidden" aria-hidden="true" onclick="uncheck('taco11','11')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_11 other hidden" aria-hidden="true" onclick="uncheck('taco_11','11')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco115" type="checkbox" tag="taco115" value="11.5" onclick="check('taco115','11.5')">11.5cms
+                <input class="hidden categ check c-variable_4 c-taco_115" type="checkbox" tag="taco_115" value="11.5" onclick="check('taco_115','11.5')">11.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco115 other hidden" aria-hidden="true" onclick="uncheck('taco115','11.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_115 other hidden" aria-hidden="true" onclick="uncheck('taco_115','11.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco12" type="checkbox" tag="taco12" value="12" onclick="check('taco12','12')">12cms
+                <input class="hidden categ check c-variable_4 c-taco_12" type="checkbox" tag="taco_12" value="12" onclick="check('taco_12','12')">12cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco12 other hidden" aria-hidden="true" onclick="uncheck('taco12','12')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_12 other hidden" aria-hidden="true" onclick="uncheck('taco_12','12')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco125" type="checkbox" tag="taco125" value="12.5" onclick="check('taco125','12.5')">12.5cms
+                <input class="hidden categ check c-variable_4 c-taco_125" type="checkbox" tag="taco_125" value="12.5" onclick="check('taco_125','12.5')">12.5cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco125 other hidden" aria-hidden="true" onclick="uncheck('taco125','12.5')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_125 other hidden" aria-hidden="true" onclick="uncheck('taco_125','12.5')"></i>
             </div>
             <div class="filtro-talla c-variable_4">
               <label class="hidden c-variable_4">
-                <input class="hidden categ check c-variable_4 c-taco13" type="checkbox" tag="taco13" value="13" onclick="check('taco13','13')">13cms
+                <input class="hidden categ check c-variable_4 c-taco_13" type="checkbox" tag="taco_13" value="13" onclick="check('taco_13','13')">13cms
               </label> 
-              <i class="fa fa-check-square c-variable_cuatro ch-taco13 other hidden" aria-hidden="true" onclick="uncheck('taco13','13')"></i>
+              <i class="fa fa-check-square c-variable_cuatro ch-taco_13 other hidden" aria-hidden="true" onclick="uncheck('taco_13','13')"></i>
             </div>
 
           </div>
@@ -640,7 +744,7 @@
       </div>
       <div class="col-xs-12">
         <div align="center">
-           <button type="button" class="btn btn-default more-products" style="display: none">Cargar más productos</button>
+           <button type="button" class="btn btn-default more-products" style="display: none">CARGAR MÁS PRODUCTOS</button>
         </div>
       </div>
 </div>

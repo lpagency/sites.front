@@ -1,5 +1,3 @@
-
-
 html * {
 /*-webkit-font-smoothing: antialiased;*/
 /*-moz-osx-font-smoothing: grayscale;*/
@@ -7,8 +5,7 @@ html * {
 }
 
 html, body {
-/*font-family: 'Open Sans', sans-serif;*/
-font-family: 'Oxygen', sans-serif;
+font-family: 'Fira Sans', sans-serif;
 }
 
 a{
@@ -26,6 +23,12 @@ a:hover, a:focus {
 
 li{
 	list-style: none;
+}
+
+.guni{
+    padding: 0px;
+    width: 101%;
+    margin-left: -3px;
 }
 
 img.editablelink {
@@ -64,9 +67,9 @@ div.upload input, div.image-upload input {
 }
 
 .article-ho{
-	overflow: hidden;
+/*	overflow: hidden;*/
     padding: 0px 5px;
-    margin-bottom: 17px;
+    margin-bottom: 11px;
 }
 
 .fi{
@@ -288,6 +291,10 @@ div.upload input, div.image-upload input {
 .fri{
     border-bottom: 1px solid #ddd;
 }
+
+.drim{
+    overflow: hidden;
+}
 /*------------------------------------------Responsive---------------------------------*/
 
 @media (max-width: 991px){
@@ -346,7 +353,7 @@ div.upload input, div.image-upload input {
 
 @media (max-width: 767px){
     body{
-        background-color:rgba(213, 214, 217, 0.14);
+     /*   background-color:rgba(213, 214, 217, 0.14);*/
         overflow-x: hidden;
     }
 
@@ -354,4 +361,19 @@ div.upload input, div.image-upload input {
     width:100%;
     height: auto;
     }
+
+    .guni {
+    padding: 0px;
+    width: 102%;
+    margin-left: -5px;
+    }
+}
+
+@media (max-width: 414px){
+    .box-med {
+    width: 101%;
+    height: 300px;
+    object-fit: cover;
+}
+
 }

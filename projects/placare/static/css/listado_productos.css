@@ -1447,6 +1447,22 @@ hr.lon {
     width: 99%;
 }
 
+.texto-com{
+    float: left;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    color: #696b79;
+    font-weight: 300;
+    line-height: 19px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: 10px;
+    margin-bottom: 22px;
+    font-size: 13px;
+}
+
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
 
 @media (max-width: 1199px){
@@ -2051,7 +2067,7 @@ a.text {
     border-bottom: 1px solid #edebef;
     position: relative;
     left: -15px;
-    width: 100%;
+    width: 107%;
     top: 54px;
     margin-top: -45px;
     margin-bottom: 10px;
@@ -2460,6 +2476,7 @@ hr.listado {
         width: 100%;
         height: 300px;
         margin: 20px auto;
+        display: none;
     }
     .swiper-slide {
         text-align: center;
@@ -2498,7 +2515,7 @@ hr.listado {
 
     .fil {
     position: relative;
-    top: -17px;
+    top: -22px;
     right: -4.5%;
     margin-bottom: -14px;
     }
@@ -2506,13 +2523,13 @@ hr.listado {
     .fa-check-square {
     right: -3px;
     position: relative;
-    top: 1px;
+    top: -3px;
     font-size: 20px !important;
     color: #526CD0;
     width: 100%;
     float: left;
     margin-top: -24px;
-   }
+    }
 
    .filtro-categorias {
      height: 100%; 
@@ -2572,6 +2589,23 @@ hr.listado {
     left: 11px;
     position: relative;
     bottom: 32px;
+}
+
+.texto-com {
+    float: left;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    color: #696b79;
+    font-weight: 300;
+    line-height: 19px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: -16px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    margin-left: 13px;
 }
 
 }
@@ -2840,7 +2874,7 @@ a.text.detalle {
     text-align: left;
     left: 13px;
     color: #4A4949;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
     margin-bottom: -15px;
     float: left;
@@ -2853,7 +2887,7 @@ a.text.detalle {
     left: 15px;
     position: relative;
     bottom: 35px;
-    font-size: 12px;
+    font-size: 13px;
     text-align: left;
     width: 28%;
 }
@@ -3132,7 +3166,7 @@ a.talla {
     position: relative;
     width: 100%;
     border: 1px solid #E9E9ED;
-    height: 370px;
+    height: 387px;
     margin-bottom: 0px;
 }
 
@@ -3140,7 +3174,7 @@ a.talla {
     position: relative;
     width: 100%;
     border: 1px solid #E9E9ED;
-    height: 370px;
+    height: 387px;
     margin-bottom: 0px;
 }
 
@@ -3148,13 +3182,13 @@ a.talla {
     position: relative;
     width: 100%;
     border: 1px solid #E9E9ED;
-    height: 400px;
+    height: 387px;
     margin-bottom: 10px;
 }
 .conti-de {
     position: relative;
     width: 100%;
-    height: 400px;
+    height: 387px;
     margin-bottom: 10px;
     border: 1px solid white;
 }
@@ -3163,29 +3197,27 @@ a.text {
     background-color: transparent;
     font-size: 16px;
     padding: 7px 67px;
-    top: 166px;
+    top: 176px;
     position: relative;
     border: 1px solid transparent;
     border-top: 1px solid #E9E9ED;
 }
-
 .original-tachado {
     color: #4A4949;
     float: left;
     left: 19px;
     position: relative;
-    bottom: 32px;
-    font-size: 9px;
+    bottom: 36px;
+    font-size: 13px;
     text-decoration: line-through;
     text-align: center;
     width: 24%;
 }
-
 .descuento-lis {
-    font-size: 10px;
+    font-size: 13px;
     float: right;
     position: relative;
-    top: -19px;
+    top: -18px;
     color: #FF0F53;
     left: -34px;
     margin-bottom: 34px;
@@ -3400,7 +3432,7 @@ a.text {
     border-bottom: 1px solid #ebedef;
     position: relative;
     left: -10px;
-    width: 100%;
+    width: 105%;
     position: relative;
     top: 20px;
 }
@@ -3522,6 +3554,23 @@ a.text.detalle {
     margin-left: -5px;
 }
 
+.texto-com {
+    float: left;
+    text-align: left;
+    width: 90%;
+    position: relative;
+    color: #696b79;
+    font-weight: 300;
+    line-height: 19px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: -16px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    margin-left: 13px;
+}
+
 }
 
 @media (max-width: 400px){
@@ -3531,7 +3580,7 @@ a.text {
     /* color: gray; */
     font-size: 16px;
     padding: 7px 64px;
-    top: 166px;
+    top: 175px;
     position: relative;
     /* border: 1px solid gray; */
 }
@@ -3636,8 +3685,8 @@ a.text.detalle {
 a.text {
     background-color: transparent;
     font-size: 16px;
-    padding: 7px 60px;
-    top: 167px;
+    padding: 7px 57px;
+    top: 176px;
     position: relative;
 }
 
@@ -3656,20 +3705,20 @@ a.text.detalle {
     float: left;
     left: 22px;
     position: relative;
-    bottom: 32px;
-    font-size: 9px;
+    bottom: 36px;
+    font-size: 13px;
     text-decoration: line-through;
     text-align: center;
     width: 24%;
 }
 
 .descuento-lis {
-    font-size: 10px;
+    font-size: 13px;
     float: right;
     position: relative;
-    top: -21px;
+    top: -18px;
     color: #FF0F53;
-    left: -27px;
+    left: -17px;
     margin-bottom: 34px;
     text-align: left;
     width: 18%;
@@ -4038,18 +4087,18 @@ a.text {
     float: left;
     left: 33px;
     position: relative;
-    bottom: 32px;
-    font-size: 9px;
+    bottom: 36px;
+    font-size: 13px;
     text-decoration: line-through;
     text-align: center;
     width: 24%;
 }
 
 .descuento-lis {
-    font-size: 10px;
+    font-size: 13px;
     float: right;
     position: relative;
-    top: -20px;
+    top: -18px;
     color: #FF0F53;
     left: -5px;
     margin-bottom: 34px;
@@ -4206,7 +4255,7 @@ a.text.detalle {
     border-bottom: 1px solid #edebef;
     position: relative;
     left: -15px;
-    width: 100%;
+    width: 109%;
     top: 43px;
     margin-top: -5px;
     margin-bottom: 26px;

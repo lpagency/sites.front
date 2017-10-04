@@ -32,6 +32,12 @@
     $(document).ready(function()
         {
 
+      var breadcrumb = "";
+
+      var b = "Home";
+
+      var miga = [];
+
        var base_url = $.environmentVar(
     'https://apibodegas.loadingplay.com/',
     'https://apibodegas.loadingplay.com/',
@@ -52,6 +58,34 @@
             onLoad: function(product)
             {
 
+              for(i in product.tags)
+              {
+
+                if(product.tags[i].indexOf('cat') > -1)
+                {
+
+                  if(product.tags[i].indexOf('cat1') > -1)
+                  {
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[0] = breadcrumb;
+
+                  }
+
+                  if(product.tags[i].indexOf('cat2') > -1)
+                  {
+
+                    related(product.tags[i]);
+
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[1] = breadcrumb;
+                  }
+                }
+              }
+
+              $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]);
+
               for(x in product.tags){
                 if(product.tags[x] == "tienda"){
                   $(".comprar").removeClass("hidden");
@@ -62,8 +96,6 @@
                 }
               }
 
-                related(product.bullet_3);
-
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
                     {
@@ -71,19 +103,14 @@
                     });
                 }
 
-                console.log(localStorage.getItem("subcategoriaProd").toString());
-
-                var subCat = localStorage.getItem("subcategoriaProd").toString();
-
-
-                $(".buscaCat").html(subCat + " | " + product.name.toString());
-
             }
-        });
+
+        })
 
         // productos relacionados
         var related = function(tag)
         {
+
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
@@ -98,8 +125,9 @@
                           slidesToScroll: 1,
                           autoplay: true,
                           autoplaySpeed: 2000,
-                          prevArrow: false,
-                          nextArrow: false,
+                          arrows: true,
+                          nextArrow: '<i class="fa rel-arrows-r fa-chevron-circle-right"></i>',
+                          prevArrow: '<i class="fa rel-arrows-l fa-chevron-circle-left"></i>',
                           infinite: true
                         });
                      }
@@ -132,12 +160,18 @@
 <script type="text/javascript">
 
 $(document).ready(function() {
-   $("#myCarousel").swiperight(function() {
-      $(this).carousel('prev');
-    });
-   $("#myCarousel").swipeleft(function() {
-      $(this).carousel('next');
-   });
+
+  $(".carousel").on("swipe", function(){
+
+    var swipe = function(event, direction, distance, duration, fingerCount, fingerData) {
+
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+
+    },
+    allowPageScroll = "vertical";
+
+  })
 });
 
 </script>
@@ -165,6 +199,13 @@ $(document).ready(function() {
 <div class="container-fluid">
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
 
     <!-- Wrapper for slides -->
     <div class="carousel-inner" role="listbox">
@@ -202,7 +243,7 @@ $(document).ready(function() {
 
 <div class="container-fluid">
   <div class="col-md-10 col-sm-10 col-xs-12">
-    <div class="hidden-xs texto-header-pro-detalle buscaCat"> Home | Subcategorias </div>
+    <div class="hidden-xs texto-header-pro-detalle buscaCat"> Home | </div>
   </div>
 </div>
 
@@ -227,8 +268,6 @@ $(document).ready(function() {
            <div class="col-md-4 col-md-offset-1">
                <div align="center">
                    <div class="up-ex ellipsis multiline"> {{!bullet_1}} </div>
-                   <div class="up-ex-2 ellipsis multiline"> {{!bullet_2}} </div>
-                   <div class="up-ex-3 ellipsis multiline"> {{!bullet_3}} </div>
                </div> 
 
                <div class="col-md-6 col-sm-6 col-xs-4 spri">
@@ -312,7 +351,6 @@ $(document).ready(function() {
         </div>
     </div>
     <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
-
     </div>
     <div class="row product-related-2 visible-xs hidden-md hidden-lg hidden-sm">
     </div>
