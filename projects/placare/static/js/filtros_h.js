@@ -270,7 +270,7 @@ function uncheck(tag, value)
             }
         }
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
     }
@@ -300,7 +300,7 @@ function uncheck(tag, value)
         $(".h-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
         $(".c-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
     }
@@ -343,7 +343,7 @@ function check(tag, value)
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -379,7 +379,7 @@ function check(tag, value)
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -424,7 +424,7 @@ function checkNombre(tag, value)
 
         $(this).attr('onclick','uncheck();');
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -463,7 +463,7 @@ function checkNombre(tag, value)
         $(".h-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
         $(".c-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -607,7 +607,7 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    history.pushState('', 'Placare', 'listado_productos?tag='+config.tag);
+    history.pushState('', 'Placare', 'listado_productos_hombre?tag='+config.tag);
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -638,7 +638,7 @@ function borrar(nombre,value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -663,7 +663,7 @@ function borrar(nombre,value)
             };
         };
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
