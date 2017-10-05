@@ -18,6 +18,7 @@
         {
             overflow-x:hidden;
         }
+
     </style>
 {% end %}
 
@@ -40,9 +41,23 @@
 
         });
       });
+
     </script> -->
 
     <script type="text/javascript">
+
+$(window).load(function () {
+  // Una vez se cargue al completo la página desaparecerá el div "cargando"
+  $('#cargando').hide();
+});
+1
+2
+3
+4
+$(window).load(function () {
+  // Una vez se cargue al completo la página desaparecerá el div "cargando"
+  $('#cargando').hide();
+});
         $(document).ready(function()
         {
             // EXCLUSIVO PARA PLACARE
@@ -93,6 +108,7 @@
 
         });
     </script>
+
     <script type="text/javascript">
         $("#testButton").live("touchstart", function()
         {
@@ -700,14 +716,9 @@
 
 <div class="visible-xs hidden-md hidden-sm hidden-lg" style="height:450px;display:block;margin:auto auto 0 auto;"></div>
 <div class="col-md-8 col-sm-8 col-xs-12  pinki">
-    <div class="products"></div>
-      <div class="spinner">
-          <div class="rect1"></div>
-          <div class="rect2"></div>
-          <div class="rect3"></div>
-          <div class="rect4"></div>
-          <div class="rect5"></div>
-      </div>
+    <div class="products" style="min-height: 130px"></div>
+      <div id="cargando"></div>
+
       <div class="col-xs-12">
         <div align="center">
            <button type="button" class="btn btn-default more-products" style="display: none">CARGAR MÁS PRODUCTOS</button>

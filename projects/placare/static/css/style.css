@@ -295,6 +295,14 @@ div.upload input, div.image-upload input {
 .drim{
     overflow: hidden;
 }
+#cargando {
+    position:absolute;
+    top: 0;
+    width:100%;
+    height:107%;
+    object-fit: scale-down;
+    background:#fff url('../img/loadPortal.gif') no-repeat center;
+}
 /*------------------------------------------Responsive---------------------------------*/
 
 @media (max-width: 991px){
