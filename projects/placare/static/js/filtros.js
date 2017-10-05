@@ -298,6 +298,7 @@ function uncheck(tag, value)
         }
 
         $(".h-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
+        $(".c-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
 
         history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
@@ -460,6 +461,7 @@ function checkNombre(tag, value)
         window.config.tag = window.listaTag.toString();
 
         $(".h-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
+        $(".c-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
 
         history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
