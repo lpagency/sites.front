@@ -297,6 +297,8 @@ function uncheck(tag, value)
             }
         }
 
+        $(".h-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
+
         history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -385,6 +387,87 @@ function check(tag, value)
 
 //<---------------END FUNCION CHECK---------------->
 
+
+function checkNombre(tag, value)
+{
+
+    window.z = 0;
+
+    if(value == undefined)
+    {
+
+        var nombre = tag;
+        var block =
+                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+
+        var classNombre = "."+nombre;
+        var nombre2 = "+"+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        $(".ch-"+nombre).removeClass("hidden");
+        $(".filtrosRec").html($(".filtrosRec").html() + block);
+        $(".h-"+nombre).css("text-decoration", "none");
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        $(".texto-ruta").html(textoRuta + " / " +nombre);
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        window.listaTag.push(nombre2);
+        window.config.tag = window.listaTag.toString();
+
+        $(this).attr('onclick','uncheck();');
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+    }
+    else
+    {
+
+        var nombre = tag;
+        var va = value;
+        var block =
+                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+
+        var classNombre = "."+nombre;
+        var nombre2 = "+"+nombre;
+        var textoRuta = $(".texto-ruta").html();
+        $(".h-"+nombre).css("text-decoration", "underline");
+
+        lista = Utils.getUrlParameter('tag').split(',');
+
+        $(".ch-"+nombre).removeClass("hidden");
+        $(".filtrosRec").html($(".filtrosRec").html() + block);
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        $(".texto-ruta").html(textoRuta + " / " +va);
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        window.listaTag.push(nombre2);
+        window.config.tag = window.listaTag.toString();
+
+        $(".h-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+    }
+};
+
 //<--------FUNCION TOMA TAG DESDE LA URL----------->
 
 function TagURL(listaTag)
@@ -413,6 +496,8 @@ function TagURL(listaTag)
 
                 $(b).attr("checked", true);
                 $(".ch-"+nombre).removeClass("hidden");
+
+                // $(".h-"+a).attr('onclick','uncheck("'+a+'","'+nombre+'");');
 
                 if($(".ch-"+nombre).hasClass("c-variable_uno"))
                 {
@@ -480,6 +565,8 @@ function TagURL(listaTag)
                     var textoRuta = $(".texto-ruta").html();
                     var fa = "fa-" + nombre;
                     $(".h-"+nombre).css("text-decoration", "underline");
+
+                     $(".h-"+nombre).attr('onclick','uncheck("'+nombre+'","'+nombre2+'");');
 
                     $(b).attr("checked", true);
                     $(".ch-"+nombre).removeClass("hidden");
