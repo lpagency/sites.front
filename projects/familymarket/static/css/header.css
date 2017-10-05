@@ -22,6 +22,7 @@
  width: 980px;
 }
 
+
 .desktop-query>input.desktop-searchBar {
     display: inline-block;
     float: left;
@@ -100,9 +101,9 @@ li.icon{
 .nav>li>a {
     position: relative;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 10px;
     margin-top: 8px;
-    font-size: 15px;
+    font-size: 13px;
     float: left;
     left: 0px;
     top: 6px;
@@ -111,8 +112,12 @@ li.icon{
     font-weight: 500;
 }
 
-.navbar-nav.navbar-right.dos:last-child {
-    margin-right: 80px;
+.ofi{
+    left: 30px;
+}
+
+.navbar-nav.navbar-left.dos {
+    margin-left: 83px;
     margin-bottom: -6px;
     margin-top: -10px;
     bottom: 5px;
@@ -135,11 +140,11 @@ li.slogan a {
 }
 
 .text-slogan {
-    text-align: left;
-    float: left;
+    text-align: right;
+    float: right;
     position: relative;
-    left: 15%;
-    top: 8px;
+    left: -10%;
+    top: 9px;
     margin-bottom: -15px;
     font-size: 12px;
     height: 21px;
@@ -167,14 +172,15 @@ li.slogan a {
     background-color: transparent;
     border-color: transparent;
     float: inherit;
-    margin-top: 16px;
+    margin-top: 25px;
     border-radius: 0px;
     text-align: left;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: 500;
+    padding: 0px;
 }
 
 .btn-primary.header:hover {
@@ -182,22 +188,24 @@ li.slogan a {
     background-color: transparent;
     border-color: transparent;
     float: inherit;
-    margin-top: 16px;
+    margin-top: 25px;
     border-radius: 0px;
     text-align: left;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
-    font-size: 15px;  
+    font-size: 13px;  
     font-weight: 500;
+    padding: 0px;
 
 }
 
 .btn-primary.header:hover, .btn-primary.header:focus, .btn-primary.header:active, .btn-primary.header.active, .open>.dropdown-toggle.btn-primary.header {
-    color: #db8800;
+    color: #5F8266;
     background-color: transparent;
     border-color: transparent;
-    text-decoration: underline #db8800;
+    text-decoration: underline #5F8266;
+    padding: 0px;
 }
 
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
@@ -208,8 +216,8 @@ li.slogan a {
 
 .hed{
     position: absolute;
-    top: 119% !important;
-    left: 28% !important;
+    top: 135% !important;
+    left: 23% !important;
     z-index: 1000;
     display: none;
     float: right;
@@ -253,17 +261,19 @@ li.slogan a {
 }
 /*------------------------------------------Responsive--------------------------------*/
 @media (max-width: 1199px){
-    .text-slogan {
-    text-align: left;
-    float: left;
+.text-slogan {
+    text-align: right;
+    float: right;
     position: relative;
-    left: -4%;
+    left: 10%;
     top: 8px;
     margin-bottom: -15px;
     font-size: 12px;
     height: 21px;
     overflow: hidden;
 }
+
+
 .hed {
     position: absolute;
     top: 121% !important;
@@ -285,6 +295,14 @@ li.slogan a {
     border-radius: 0px;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
+}
+
+.navbar-nav.navbar-left.dos {
+    margin-left: -18px;
+    margin-bottom: -6px;
+    margin-top: -10px;
+    bottom: 5px;
+    position: relative;
 }
 
 }

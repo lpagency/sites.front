@@ -41,6 +41,7 @@ String.prototype.replaceAll = function(search, replacement) {
 
 $(document).ready(function() 
 {
+
     var params = getIncludeParameters();
     var tag = '';
 
@@ -60,8 +61,8 @@ $(document).ready(function()
     }
 
     var base_url = $.environmentVar(
-        'http://apibodegas.ondev.today/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://lpcheckout.ondev.today',
@@ -81,6 +82,7 @@ $(document).ready(function()
         'operator' :'and',
         'onLoad': function(products) 
         {
+
             $(".h_detail_prod").each(function()
             {
 

@@ -13,6 +13,8 @@
 {% end %}
 
 {% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
 <script type="text/javascript">
   $(document).ready(function()
   {
@@ -156,79 +158,179 @@
 
 <section>
    <div class="container">
-
     <div class="col-md-12 col-sm-12 col-xs-12">
        <hr>
     </div>
-
-      <div class="col-md-12 col-sm-12 col-xs-12">
-         <div class="primer text-center {{editabletext}}" text-id="{{ site.name + '_baj_1' }}"> {{ read_text(site.name +  '_baj_1') }} </div>
-      </div>
-
     <div class="col-md-12 col-sm-12 col-xs-12">
-       <hr>
+       <div class="text_main texto_index text-left {{editabletext}}" text-id="{{ site.name + 'text_side_banner_index' }}">{{ read_text(site.name +  'text_side_banner_index') }}</div>
     </div>
-
    </div>
 </section>
 
 
 
 <!-- ****Productos******* -->
-    <section class="h_submenu cubrecama hidden-xs">
-        <div class="container" style="padding-top: 1em;padding-bottom: 33px;">
-            <div align="center">
-             <div class="gre">
-               <div class="col-md-12 col-sm-12 col-xs-12">
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="plain" href="#">TIKA CHIPS</a> 
-                &nbsp  &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="toecap" href="#">TIKA STIXS</a>
-                &nbsp  &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="brogue" href="#">TORTIKA CHIPS</a> 
-                &nbsp  &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="semibrogue" href="">TIKA CRACKERS</a> 
-                &nbsp  &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="semibrogue" href="">TIKA VEGGIES</a>
-                &nbsp   &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="semibrogue" href="">TIKA POP</a> 
-                 &nbsp  &nbsp 
-                <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="semibrogue" href="">TIKA NATIVAS</a> 
-                &nbsp  &nbsp 
-                 <i class="fa fa-circle" aria-hidden="true"></i>
-                <a tag="semibrogue" href="">VER TODO</a>
-              </div>
-            </div>
-            </div>
-        </div>
-    </section>
-
 <section>
-       <div class="container">
-           <div align="center" class="to"> 
-              <div class="products">
-                  <div class="spinner">
-                    <div class="rect1"></div>
-                    <div class="rect2"></div>
-                    <div class="rect3"></div>
-                    <div class="rect4"></div>
-                    <div class="rect5"></div>
-                </div>
-              </div>
-            <div class="col-xs-12">
-              <div style="margin-top:0px;"></div>
-             <!--  <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button> -->
-            </div>
-          </div> 
+  <div class="container min">
+    <div aling="center" class="bili">
+    <div class="col-md-12 gre">
+      <div class="dropdown col-md-2 col-sm-12 col-xs-12 gre">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">LINEAS DE PRODUCTO
+        <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 16%;"></i></button>
+        <ul class="dropdown-menu hola">
+          <li><a class="subcateg" tag="oxford">Tika Chips</a></li>
+          <li><a class="subcateg" tag="derby">Tika</a></li>
+          <li><a class="subcateg" tag="monk">Tika Crackers</a></li>
+          <li><a class="subcateg" tag="boot">Tika Pop</a></li>
+          <li><a class="subcateg" tag="chukka_boot">Tika Nativas</a></li>
+          <li><a class="subcateg" tag="loafer">Tortika Chips</a></li>
+        </ul>
+      </div>
 
+      <div class="dropdown  col-md-2 col-sm-12 col-xs-12 gre">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OCASIONES DE CONSUMO
+       <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+        <ul class="dropdown-menu hola">
+          <li><a class="subcateg" tag="plain">Cumpleaños</a></li>
+          <li><a class="subcateg" tag="toe_cap">Fiestas</a></li>
+          <li><a class="subcateg" tag="brogue">Bautizos</a></li>
+          <li><a class="subcateg" tag="semi_brogue">Eventos</a></li>
+          <li><a class="subcateg" tag="semi_brogue">Matrimonios</a></li>
+        </ul>
+      </div>
+
+      <div class="dropdown  col-md-2 col-sm-12 col-xs-12 gre">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">FORMATO
+        <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 59%;"></i></button>
+        <ul class="dropdown-menu hola">
+          <li><a class="subcateg" tag="black">28gr</a></li>
+          <li><a class="subcateg" tag="dark_brown">55gr</a></li>
+          <li><a class="subcateg" tag="brown">140gr</a></li>
+          <li><a class="subcateg" tag="tan">180gr</a></li>
+          <li><a class="subcateg" tag="burgundy">212gr</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
     </div>
 </section>
+
+
+<section>
+  <div class="container">
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_1">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
+          </div>
+        {% end %}
+        <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1',) }}'" class="box-med" alt="item">
+      </div>
+      <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_1' }}">{{ read_text(site.name +  'text_side_box_1') }}</div>
+      {% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_1' }}" content="{{ read_link(site.name + '_box_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+    </div>
+
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho2">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_2">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_2" name="image" id="img_box_2" >
+          </div>
+
+        {% end %}
+        <img id="{{ site.name }}_box_2" src="{{ read_image(site.name + '_box_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_2',) }}'" class="box-med" alt="item">
+      </div>
+            <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_2' }}">{{ read_text(site.name +  'text_side_box_2') }}</div>
+      {% if is_admin %}
+<img class="change-image editablelink" link-id="{{ site.name + '_box_2' }}" content="{{ read_link(site.name + '_box_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+{% end %}
+    </div>
+
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_3">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_3" name="image" id="img_box_3" >
+          </div>
+        {% end %}
+        <img id="{{ site.name }}_box_3" src="{{ read_image(site.name + '_box_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_3',) }}'" class="box-med" alt="item">
+      </div>
+            <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_3' }}">{{ read_text(site.name +  'text_side_box_3') }}</div>
+      {% if is_admin %}
+<img class="change-image editablelink" link-id="{{ site.name + '_box_3' }}" content="{{ read_link(site.name + '_box_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+{% end %}
+    </div>
+
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho2">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_4">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_4" name="image" id="img_box_4" >
+          </div>
+        {% end %}
+        <img id="{{ site.name }}_box_4" src="{{ read_image(site.name + '_box_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_4',) }}'" class="box-med" alt="item">
+      </div>
+            <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_4' }}">{{ read_text(site.name +  'text_side_box_4') }}</div>
+      {% if is_admin %}
+<img class="change-image editablelink" link-id="{{ site.name + '_box_4' }}" content="{{ read_link(site.name + '_box_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+{% end %}
+    </div>
+
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_5">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_5" name="image" id="img_box_5" >
+          </div>
+        {% end %}
+        <img id="{{ site.name }}_box_5" src="{{ read_image(site.name + '_box_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_5',) }}'" class="box-med" alt="item">
+      </div>
+            <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_5' }}">{{ read_text(site.name +  'text_side_box_5') }}</div>
+      {% if is_admin %}
+<img class="change-image editablelink" link-id="{{ site.name + '_box_5' }}" content="{{ read_link(site.name + '_box_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+{% end %}
+    </div>
+
+    <div class="col-md-5 col-sm-5 col-xs-12 article-ho2">
+      <div style="position:relative;">
+        {% if is_admin %}
+          <div class="image-upload lapiz visible-movil">
+            <label for="img_box_6">
+              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_box_6" name="image" id="img_box_6" >
+          </div>
+        {% end %}
+        <img id="{{ site.name }}_box_6" src="{{ read_image(site.name + '_box_6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_6',) }}'" class="box-med" alt="item">
+      </div>
+    </div>
+          <div class="text_main text_banner text-left {{editabletext}}" text-id="{{ site.name + 'text_side_box_6' }}" style="top: 779px;left: -425px;width: 137%;">{{ read_text(site.name +  'text_side_box_6') }}</div>
+    {% if is_admin %}
+<img class="change-image editablelink" link-id="{{ site.name + '_box_6' }}" content="{{ read_link(site.name + '_box_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="position: relative;bottom: -770px;left: -460px;">
+{% end %}
+  </div>
+<div class="clearfix" style="padding-bottom: 50px"></div>
+
+</section>
+
 
 
 

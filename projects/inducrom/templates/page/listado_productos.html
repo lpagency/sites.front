@@ -119,7 +119,7 @@
 
         if($(this).hasClass("index")){
           $(".fa-caret-right").addClass('hidden');
-          $(this).parent().find("i").addClass('hidden');
+          $(this).parent().find("i").removeClass('hidden');
         }
 
         //MUESTRA LA CATEGORIA COMO TITULO
@@ -212,7 +212,7 @@ $(document).ready(function(){
 <section> 
   <div class="container">
   <div class="col-md-6 col-sm-6 col-xs-12">
-    <div class="texto-header-pro buscaCat"> Home /  </div>
+    <div class="texto-header-pro buscaCat"> Home |  </div>
   </div>
   <div class="hidden-xs hidden-sm visible-lg visible-md">
     <div class="texto-header-pro-2 tituloCategoria"></div>
@@ -224,7 +224,10 @@ $(document).ready(function(){
   <section class="h_submenu  visible-lg visible-md hidden-xs hidden-sm">
         <div align="center">
           <div class="container-fluid col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 100px;position: relative;top: 18px; padding-bottom: 22px;">
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="control_de_acceso" class="subcateg mbtm5 index" tag="control_de_acceso" role="button" sub="Control de acceso">Control de acceso</a>
+          </div>
               <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
               <a href="#" id="inteligente" class="subcateg partes mbtm5 scrollUp" tag="inteligente" role="button" sub=" Control de acceso | Inteligente">Control de acceso inteligente</a>
@@ -246,13 +249,19 @@ $(document).ready(function(){
               <a href="#" id="otros_acceso" class="subcateg partes mbtm5 scrollUp" tag="otros_acceso" role="button" sub=" Control de acceso | Otros para control de acceso">Otros para control de acceso</a>
               </div>
 
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="productos_ecologicos" class="subcateg mbtm5 index" tag="productos_ecologicos" role="button" sub="productos ecologicos">Productos ecologicos</a>
+            </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                <a href="#" id="basurero" class="subcateg partes mbtm5 scrollUp" tag="basurero_ecologico" role="button" sub=" Productos Ecologicos | Basureros">Basureros</a>
                </div>
 
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="mobiliario_urbano" class="subcateg mbtm5 index" tag="mobiliario_urbano" role="button" sub="Mobiliario urbano">Mobiliario urbano</a>
+            </div>
                 <div>
                 <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                 <a href="#" id="basureros" class="subcateg partes mbtm5 scrollUp" tag="basureros" role="button" sub=" Mobiliario urbano | Basureros">Basureros</a>
@@ -270,7 +279,10 @@ $(document).ready(function(){
                 <a href="#" id="refugio_bici" class="subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button" sub=" Moviliario urbano | Refugios para bicicletas">Refugios para bicicletas</a>
                 </div>
 
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="espacios_publicos" class="subcateg mbtm5 index" tag="espacios_publicos" role="button" sub="Espacios publicos">Espacios publicos</a>
+            </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                <a href="#" id="pape_ceni" class="subcateg partes mbtm5 scrollUp" tag="pape_ceni" role="button" sub=" Espacios publicos | Papeleros ceniceros">Papeleros ceniceros</a>
@@ -292,13 +304,19 @@ $(document).ready(function(){
                <a href="#" id="cenicero" class="subcateg partes mbtm5 scrollUp" tag="cenicero" role="button" sub=" Espacios publicos | Ceniceros">Ceniceros</a>
                </div>
 
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="productos_especiales" class="subcateg mbtm5 index" tag="productos_especiales" role="button" sub="productos especiales">Productos especiales</a>
+            </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                <a href="#" id="especiales" class="subcateg partes mbtm5 scrollUp" tag="especiales" role="button" sub=" Productos Especiales | Productos especiales">Productos Especiales</a>
                </div>
 
+            <div>
+            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
             <a href="#" id="productos_nuevos" class="subcateg mbtm5 index" tag="productos_nuevos" role="button" sub="productos nuevos">Productos nuevos</a>
+            </div>
                 <div>
                 <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                 <a href="#" id="pro_nuevos" class="subcateg partes mbtm5 scrollUp" tag="pro_nuevos" role="button" sub=" Productos nuevos | Productos nuevos">Productos nuevos</a>

@@ -130,6 +130,7 @@ header.grin {
     float: right;
     position: relative;
     bottom: 33px;
+    left: 16%;
 }
 
 .cor{
@@ -145,9 +146,7 @@ header.grin {
 .img-carrito-lateral {
     position: relative;
     width: 15px;
-    top: -23px;
-    float: right;
-    right: 42px;
+    left: 6%;
 }
 
 .btn-primary {
@@ -281,17 +280,28 @@ width: 12.666667%;
 }
 
 /*---------------------------------------RESPONSIVE------------------------------------------------*/
+
+@media (max-width: 1199px){
+    .img-carrito {
+        left: 100px;
+    }
+
+    .img-carrito-lateral{
+        left: 20%;
+    }
+}
+
 @media (max-width: 1191px){
     .nav>li>a {
-    position: relative;
-    display: block;
-    padding: 16px 16px;
-    color: rgba(84, 84, 84, 0.79);
-    font-weight: 500;
-    font-size: 13px;
-    font-weight: 400;
-    font-family: 'Oxygen', sans-serif;
-}
+        position: relative;
+        display: block;
+        padding: 16px 16px;
+        color: rgba(84, 84, 84, 0.79);
+        font-weight: 500;
+        font-size: 13px;
+        font-weight: 400;
+        font-family: 'Oxygen', sans-serif;
+    }
 
 }
 
@@ -698,10 +708,11 @@ width: 12.666667%;
 @media (max-width: 414px){
 .img-carrito-lateral {
     position: relative;
-    width: 17px;
-    top: -22px;
-    float: left;
-    left: 37%;
+    width: inherit;
+    top: inherit;
+    float: inherit;
+    left: 47%;
+    z-index: 1000;
 }
 
 }
@@ -709,10 +720,11 @@ width: 12.666667%;
 @media (max-width: 375px){
     .img-carrito-lateral {
     position: relative;
-    width: 17px;
-    top: -22px;
-    float: left;
-    left: 34%;
+    width: inherit;
+    top: inherit;
+    float: inherit;
+    left: 47%;
+    z-index: 1000;
 }
 
 }

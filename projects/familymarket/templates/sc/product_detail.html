@@ -76,7 +76,6 @@
             'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(2,2,2);
         var site_name = $.environmentVar('familymarket', 'familymarket', 'familymarket');
-        var variants_loaded = false;
 
         var options = {
             'app_public' : app_public,
@@ -84,42 +83,8 @@
             'checkout_url': checkout_url,
             'product_id' : {{ product_id }},
             'site_name': site_name,
-            'variants': {
-                'product_sku': '',
-                'container': '.variants-container',
-                'variant_template': '<div class="col-md-12 mover">{{! values }}</div>',
-                'value_template': '\
-                    <div \
-                        class="col-md-4 col-sm-4 col-xs-4 size-item \
-                            tallas variant-value" variant="{{! variant_name }}"\
-                        value="{{! value }}" >\
-                            <div class="num-tal">{{! value }}</div>\
-                    </div>',
-                'active_class': 'active'
-            }, onLoad: function(product)
+             onLoad: function(product)
             {
-                // check if variants were triggered
-                if (variants_loaded)
-                {
-                    return;
-                }
-                // add some settings
-                options.variants.product_sku = product.sku;
-
-                // load variants
-                $('.product-detail').ecommerce('load_variants', options);
-
-                $('.variants-container').on(
-                    'combination:selected', function(e, d)
-                    {
-                        $('.add-to-cart').attr('product-combination', d);
-                        $('.add-to-cart').removeAttr('disabled');
-                    });
-
-                variants_loaded = true;  // execute this onces
-                options.onLoad = $.noop;
-
-                // inicialización del codigo de las im
 
                 var res = [];
 
@@ -130,10 +95,6 @@
                         res.push(product.tags[i].name);
                     }
                 }
-
-                related(res.toString());
-                related_random("Poliuretano");
-                related2(res.toString());
 
                 var mainImage = $("#mainImage");
                 $(".img-container img").click(function(){
@@ -259,7 +220,7 @@
 <script type="text/template" id="product_detail">
     <section>
         <div style="position: relative;">
-            <img src="{{! images[1]['thumb_500'] }}" title="" alt="" class="fondo-detalle-producto">
+            <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-detalle-producto">
             <div class="container">
             </div>
         </div>
@@ -327,15 +288,8 @@
                                 <div class="linea-separacion-movil"> </div>
                             </div>
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion hidden-xs"> </div>
-                            </div>
-
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                 <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                 <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
+                                 <div class="nombre-talla">FORMATO</div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 cre">
                                   <div class="col-md-12 mover variants-container">
@@ -373,26 +327,8 @@
                                 product-sku="{{! sku }}"
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled >
+                                lp-cart-add>
                                 AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </button>
-
-                            <button
-                                type="button"
-                                class="btn add-to-cart btn-success car-2"
-                                id="open-cart"
-                                data-toggle="modal"
-                                data-target="#myModal"
-                                product-upp="{{! upp }}"
-                                product-name="{{! name }}"
-                                product-price="{{! main_price }}"
-                                product-sku="{{! sku }}"
-                                product-id="{{! id }}"
-                                product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled >
-                                COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                              </div>
 
@@ -410,8 +346,6 @@
                             {{! description }}</h3>
 
                             </div>
-                            </div>
-                             <div class="opciones-compra">Opciones de compra</div>
                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -432,26 +366,8 @@
                                 product-sku="{{! sku }}"
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled>
+                                lp-cart-add>
                                     AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </button>
-
-                            <button
-                                type="button"
-                                class="btn add-to-cart btn-success car-2"
-                                id="open-cart"
-                                data-toggle="modal"
-                                data-target="#myModal"
-                                product-upp="{{! upp }}"
-                                product-name="{{! name }}"
-                                product-price="{{! main_price }}"
-                                product-sku="{{! sku }}"
-                                product-id="{{! id }}"
-                                product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled >
-                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                             </div>
                              </div>
@@ -496,13 +412,11 @@
                         <div align="center">
                         <div id="mainDiv">
                            <div class="main-img-container main">
-                              <img id='mainImage' class="img_prod_detail" src="{{! images[1]['thumb_500'] }}"/>
+                              <img id='mainImage' class="img_prod_detail" src="{{! images[0]['thumb_500'] }}"/>
                            </div>
                         </div>
                         </div>
-                        <div align="center">
-                           <h1 class="name  sku-detalle" class="line">SKU Producto &nbsp:&nbsp {{! sku }}</h1>
-                        </div>
+
                     </div>
 
 
@@ -519,54 +433,11 @@
                             </div>
 
 
-                            <div class="col-md-12 col-sm-12 col-xs-12">
-                                <div class="linea-separacion hidden-xs"> </div>
-                            </div>
-
                             <div class="col-md-6 col-sm-6 col-xs-6">
-                                 <div class="nombre-talla">SELECCIONAR UNA TALLA</div>
-                            </div>
-                            <div class="col-md-6 col-sm-6 col-xs-6">
-                                 <a href="" class="talla" data-toggle="modal" data-target="#myModal-talla"> No sabes tu talla?</a>
+                                 <div class="nombre-talla">FORMATO</div>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12 variants-container">
                             </div>
-
-                            <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
-                            <button
-                                type="button"
-                                class="btn add-to-cart btn-success car"
-                                id="open-cart"
-                                data-toggle="modal"
-                                data-target="#myModal"
-                                product-upp="{{! upp }}"
-                                product-name="{{! name }}"
-                                product-price="{{! main_price }}"
-                                product-sku="{{! sku }}"
-                                product-id="{{! id }}"
-                                product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled>
-                                    AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </button>
-
-                            <button
-                                type="button"
-                                class="btn add-to-cart btn-success car-2"
-                                id="open-cart"
-                                data-toggle="modal"
-                                data-target="#myModal"
-                                product-upp="{{! upp }}"
-                                product-name="{{! name }}"
-                                product-price="{{! main_price }}"
-                                product-sku="{{! sku }}"
-                                product-id="{{! id }}"
-                                product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled>
-                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
-                            </button>
-                             </div>
 
                              <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-2"> </div>
@@ -579,7 +450,6 @@
                             {{! description }}</h3>
 <!--                        <h3 class="material ellipsis multiline visible-sm visible-md visible-lg hidden-xs">
                             </h3> -->
-                            <div class="standar visible-xs visible-md visible-lg visible-sm">Opciones de Compra </div>
                             <div class="container hidden-md hidden-sm hidden-lg visible-xs">
                                  <button type="button" class="btn btn-info" data-target="#demo">Detalle de producto <i class="fa fa-plus" aria-hidden="true"></i> </button>
                             <div id="demo" class="">
@@ -595,6 +465,26 @@
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="linea-separacion-3 hidden-xs"> </div>
                             </div>
+
+                            
+                            <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-sm visible-lg visible-md">
+                            <button
+                                type="button"
+                                class="btn add-to-cart btn-success car"
+                                id="open-cart"
+                                data-toggle="modal"
+                                data-target="#myModal"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                product-id="{{! id }}"
+                                product-img="{{! images[1]['thumb_500'] }}"
+                                lp-cart-add>
+                                    AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                            </button>
+
+                             </div>
 
                             <div class="col-md-12 col-sm-12 col-xs-12 visible-xs-xs hidden-sm hidden-lg hidden-md">
                             <div class="resis hidden-lg hidden-md hidden-sm visible-xs">
@@ -613,23 +503,6 @@
                                 lp-cart-add
                                 disabled>
                                     AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            </button>
-
-                            <button
-                                type="button"
-                                class="btn add-to-cart btn-success car-2"
-                                id="open-cart"
-                                data-toggle="modal"
-                                data-target="#myModal"
-                                product-upp="{{! upp }}"
-                                product-name="{{! name }}"
-                                product-price="{{! main_price }}"
-                                product-sku="{{! sku }}"
-                                product-id="{{! id }}"
-                                product-img="{{! images[1]['thumb_500'] }}"
-                                lp-cart-add
-                                disabled>
-                                    COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                             </div>
                              </div>

@@ -18,7 +18,7 @@ $(document).ready(function()
     var base_url = $.environmentVar(
         'http://apibodegas.ondev.today/',
         'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://lpcheckout.ondev.today',
         'http://lpcheckout.ondev.today',
@@ -29,17 +29,15 @@ $(document).ready(function()
     window.config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 9, 
+        'products_per_page' : 18,
         'tag': '',
         'ignore_stock': true,
         'infinite_scroll': true,
         // 'maxProducts': 100,
-        'checkout_url': checkout_url, 
+        'checkout_url': checkout_url,
         'operator' :'or',
-        'onLoad': function(products) 
+        'onLoad': function(products)
         {
-
-            console.log(products);
 
             $(".letrero-nuevo").each(function()
             {
@@ -128,9 +126,8 @@ $(document).ready(function()
         config.direction = "asc";
 
         $('.products').html("");
-        $(document).ecommerce("destroy");
-
-        $(document).ecommerce(config);
+        $('.products').ecommerce("destroy");
+        $('.products').ecommerce(config);
 
         return false;
 
@@ -143,9 +140,8 @@ $(document).ready(function()
         config.direction = "asc";
 
         $('.products').html("");
-        $(document).ecommerce("destroy");
-
-        $(document).ecommerce(config);
+        $('.products').ecommerce("destroy");
+        $('.products').ecommerce(config);
 
         return false;
 
@@ -163,9 +159,8 @@ $(document).ready(function()
         window.onload = TagURL(listaTag);
     }
     config.tag = listaTag.join(',');
+    // $('.products').ecommerce(config);
     $('.products').ecommerce(config);
-
-    $(document).ecommerce(config);
 
     $(".limpiar").click(function()
     {
@@ -321,7 +316,7 @@ function check(tag, value)
     {
 
         var nombre = tag;
-        var block = 
+        var block =
                 '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                 +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
 
@@ -355,7 +350,7 @@ function check(tag, value)
 
         var nombre = tag;
         var va = value;
-        var block = 
+        var block =
                 '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
@@ -478,7 +473,7 @@ function TagURL(listaTag)
                                 '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                                 +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
 
-                        $(".texto-ruta").html(textoRuta +" / "+ nombre); 
+                        $(".texto-ruta").html(textoRuta +" / "+ nombre);
                     }
 
                     var classNombre = "." + nombre;

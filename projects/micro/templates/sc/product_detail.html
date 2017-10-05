@@ -68,6 +68,31 @@
     });
 
 </script>
+
+<!--FUNCION UTILS!!!! WAYO DEL FUTURO-->
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var charsToSearch = ["1", "2", "3", "4", "5", "6","7","8","9","0"];
+
+        Utils.changeName = function(name)
+        {
+            if(charsToSearch.indexOf(name.charAt(0)) != -1)
+            {
+                name = name.replace(/[0-9]/g,"");
+
+                return name;
+            }
+            else
+            {
+                return name;
+            }
+        }
+
+    });
+</script>
+
 <!-- Facebook Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -119,7 +144,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
 
             
         <div class="col-md-3 col-sm-3 lad">
-            <h1 class="title-detail">{{! name }}</h1>
+            <h1 class="title-detail">{{! name|changeName }}</h1>
              <div class="price_detail">
                 <span class="price-p">{{! main_price|money }}</span>
                 <br>

@@ -5,6 +5,57 @@ div.image-upload.part1 {
     z-index: 100000;
 }
 
+.overlay-rel {
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 72%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.36);
+}
+
+.fufi:hover .overlay-rel {
+  opacity: 1;
+}
+
+.reli{
+    font-size: 20px;
+    margin-top: 67px;
+    margin-bottom: 46px;
+    font-weight: 300;
+    color: gray;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+
+.img-pro-rel {
+    width: 100%;
+    height: 268px;
+    object-fit: cover;
+    margin-bottom: 22px;
+    padding-left: 0px;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.product-price-3 {
+    position: relative;
+    top: -48px;
+    font-size: 15px;
+    color: gray;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
+}
+
 .titulo-prou {
     position: absolute;
     text-align: center;
@@ -26,7 +77,7 @@ div.image-upload.part1 {
     text-align: center;
     left: 0%;
     color: gray;
-    font-size: 24px;
+    font-size: 18px;
     font-weight: 300;
     margin-bottom: 35px;
     -webkit-font-smoothing: antialiased;
@@ -173,16 +224,16 @@ hr.len {
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 85%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.36);
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 76%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.36);
 }
 
 .fufi:hover .overlay {
@@ -252,6 +303,18 @@ hr.detalle {
     -ms-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+.product-price-2{
+    position: relative;
+    top: 6px;
+    font-size: 18px;
+    color: gray;
+    text-align: left;
+    height: 54px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 100;
 }
 
 /*----------------------------------------------------Responsive----------------------------------------------*/
