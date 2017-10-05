@@ -84,9 +84,11 @@
               $(".opw").html("TIPO DE GATO");
             }
 
-            if(hyper[0] == "nino")
+            if(hyper[0] == "marca")
             {
-              $(".tag-header").html("Niños");
+              $(".tag-header").html("MARCAS");
+              $(".gatos").removeClass("hidden");
+              $(".perros").removeClass("hidden");
             }
 
             if(hyper[0] == "oferta")
@@ -205,7 +207,7 @@
                 <i class="fa fa-check-square ch-tidy_cat hidden" aria-hidden="true" onclick="uncheck('tidy_cat','Tidy Cat')"></i>
               </div>
 
-              <div class="filtro-filtros">
+<!--               <div class="filtro-filtros">
                 <input type="checkbox" class="categ c-categoria3_sandalias" name="vehicle3" tag="categoria3_sandalias" value="Boat" value2="Sandalias" onclick="check('categoria3_sandalias','sandalias')"> 
                 <div class="fil h-categoria3_sandalias" onclick="check('categoria3_sandalias','sandalias')">X</div> 
                 <i class="fa fa-check-square ch-categoria3_sandalias hidden" aria-hidden="true" onclick="uncheck('categoria3_sandalias','sandalias')"></i>
@@ -214,7 +216,7 @@
                 <input type="checkbox" class="categ c-categoria3_zapatos" name="vehicle3" tag="categoria3_zapatos" value="Boat" value2="Zapatos" onclick="check('categoria3_zapatos','zapatos')"> 
                 <div class="fil h-categoria3_zapatos" onclick="check('categoria3_zapatos','zapatos')">X</div> 
                 <i class="fa fa-check-square ch-categoria3_zapatos hidden" aria-hidden="true" onclick="uncheck('categoria3_zapatos','zapatos')"></i>
-              </div>
+              </div> -->
           </form>
 
           <div class="clearfix"></div>
@@ -252,7 +254,7 @@
                <div class="fil h-adulto" onclick="check('adulto','Adulto')">Adulto</div>
                <i class="fa fa-check-square ch-adulto hidden" aria-hidden="true" onclick="uncheck('adulto','Adulto')"></i>
              </div>
-            <div class="filtro-color">
+<!--             <div class="filtro-color">
                <input type="checkbox" class="categ c-Color-Gris" tag="Color-Gris" value2="Gris" style="cursor: pointer;" onclick="check('Color-Gris', 'Gris')">
                <div class="fil h-Color-Gris" onclick="check('Color-Gris', 'Gris')">X</div>
                <i class="fa fa-check-square ch-Color-Gris hidden" aria-hidden="true" onclick="uncheck('Color-Gris','Gris')"></i>
@@ -273,7 +275,7 @@
                <input type="checkbox" class="categ c-Color-Rojo" tag="Color-Rojo" value2="Rojo" style="cursor: pointer;" onclick="check('Color-Rojo','Rojo')">
                <div class="fil h-Color-Rojo" onclick="check('Color-Rojo','Rojo')">X</div>
                <i class="fa fa-check-square ch-Color-Rojo hidden" aria-hidden="true" onclick="uncheck('Color-Rojo','Rojo')"></i>
-            </div>
+            </div> -->
             </form>
 
           <div class="clearfix"></div>
@@ -344,7 +346,7 @@
 
           <div class="text-fil"> CATEGORIA 2 </div>
           <form action="/action_page.php" class="chek">
-            <div class="filtro-marca">
+<!--             <div class="filtro-marca">
                 <input type="checkbox" class="categ c-belle" name="vehicle2" tag="belle" value="Car" onclick="check('belle')">
                 <div class="fil h-belle" onclick="check('belle')">X</div>
                <i class="fa fa-check-square ch-belle hidden" aria-hidden="true" onclick="uncheck('belle')"></i>
@@ -383,14 +385,14 @@
                 <input type="checkbox" class="categ c-tarragona" name="vehicle2" tag="tarragona" value="Car" onclick="check('tarragona')">
                 <div class="fil h-tarragona" onclick="check('tarragona')">X</div>
                <i class="fa fa-check-square ch-tarragona hidden" aria-hidden="true" onclick="uncheck('tarragona')"></i>
-               </div>
+               </div> -->
           </form>
 
           <div class="clearfix"></div>
 
            <div class="text-fil"> CATEGORIA 3</div>
           <form action="/action_page.php" class="chek">
-              <div class="filtro-categorias">
+<!--               <div class="filtro-categorias">
                 <input type="checkbox" class="categ c-Categoria4_casuales" name="vehicle1" tag="Categoria4_casuales" value2="Casuales" value="Bike" onclick="check('Categoria4_casuales', 'casuales')"> 
                 <div class="fil h-Categoria4_casuales" onclick="check('Categoria4_casuales','casuales')">X</div> 
                 <i class="fa fa-check-square ch-Categoria4_casuales hidden" aria-hidden="true" onclick="uncheck('Categoria4_casuales','casuales')"></i>
@@ -409,13 +411,13 @@
                 <input type="checkbox" class="categ c-Categoria4_Vestir" value2="Vestir" name="vehicle3" tag="Categoria4_Vestir" value="Boat" onclick="check('Categoria4_Vestir', 'Vestir')"> 
                 <div class="fil h-Categoria4_Vestir" onclick="check('Categoria4_Vestir','Vestir')">X</div> 
                 <i class="fa fa-check-square ch-Categoria4_Vestir hidden" aria-hidden="true" onclick="uncheck('Categoria4_Vestir', 'Vestir')"></i>
-              </div>
+              </div> -->
           </form>
 
           <div class="clearfix"></div>
          <div class="text-fil"> CATEGORIA 4 </div>
           <form action="/action_page.php" class="chek">
-              <div class="filtro-talla">
+<!--               <div class="filtro-talla">
                 <input type="checkbox" class="categ c-Cierre_Abierto" name="vehicle1" value2="Abierto" tag="Cierre_Abierto" value="Bike" onclick="check('Cierre_Abierto','abierto')">
                 <div class="fil h-Cierre_Abierto" onclick="check('Cierre_Abierto','abierto')"> X </div>
                 <i class="fa fa-check-square ch-Cierre_Abierto hidden" aria-hidden="true" onclick="uncheck('Cierre_Abierto','abierto')"></i>
@@ -424,13 +426,13 @@
                 <input type="checkbox" class="categ c-Cierre-Cerrado" name="vehicle2" value2="Cerrado" tag="Cierre_Cerrado" value="Cara" onclick="check('Cierre_Cerrado','cerrado')">
                 <div class="fil h-Cierre_Cerrado" onclick="check('Cierre_Cerrado','cerrado')"> X </div> 
                 <i class="fa fa-check-square ch-Cierre_Cerrado hidden" aria-hidden="true" onclick="uncheck('Cierre_Cerrado','cerrado')"></i>
-              </div>
+              </div> -->
           </form>
 
           <div class="clearfix"></div>
          <div class="text-fil"> CATEGORIA 5 </div>
           <form action="/action_page.php" class="chek">
-              <div class="filtro-talla">
+<!--               <div class="filtro-talla">
                 <input type="checkbox" class="categ c-mat_suela_goma_eva" name="vehicle1" value2="Eva" tag="mat_suela_goma_eva" value="Bike" onclick="check('mat_suela_goma_eva','eva')">
                 <div class="fil h-mat_suela_goma_eva" onclick="check('mat_suela_goma_eva','eva')"> X </div>
                 <i class="fa fa-check-square ch-mat_suela_goma_eva hidden" aria-hidden="true" onclick="uncheck('mat_suela_goma_eva','eva')"></i>
@@ -444,13 +446,13 @@
                 <input type="checkbox" class="categ c-Mat_suela_Poliuretano" value2="Poliuretano" name="vehicle2" tag="Mat_suela_Poliuretano" value="Cara" onclick="check('Mat_suela_Poliuretano','poliuretano')">
                 <div class="fil h-Mat_suela_Poliuretano" onclick="check('Mat_suela_Poliuretano','poliuretano')"> X </div> 
                 <i class="fa fa-check-square ch-Mat_suela_Poliuretano hidden" aria-hidden="true" onclick="uncheck('Mat_suela_Poliuretano','poliuretano')"></i>
-              </div>
+              </div> -->
           </form>
 
           <div class="clearfix"></div>
          <div class="text-fil"> CATEGORIA 6 </div>
           <form action="/action_page.php" class="chek">
-              <div class="filtro-talla">
+<!--               <div class="filtro-talla">
                 <input type="checkbox" class="categ c-Mat_forro_Cuero" name="vehicle1" tag="Mat_forro_Cuero" value2="Cuero" value="Bike" onclick="check('Mat_forro_Cuero','cuero')">
                 <div class="fil h-Mat_forro_Cuero" onclick="check('Mat_forro_Cuero','Cuero')">X </div>
                 <i class="fa fa-check-square ch-Mat_forro_Cuero hidden" aria-hidden="true" onclick="uncheck('Mat_forro_Cuero','cuero')"></i>
@@ -459,7 +461,7 @@
                 <input type="checkbox" class="categ c-mat_forro_eco_cuero" name="vehicle2" tag="mat_forro_eco_cuero" value2="Eco Cuero" value="Cara" onclick="check('mat_forro_eco_cuero','eco')">
                 <div class="fil h-mat_forro_eco_cuero" onclick="check('mat_forro_eco_cuero','eco')">X </div> 
                 <i class="fa fa-check-square ch-mat_forro_eco_cuero hidden" aria-hidden="true" onclick="uncheck('mat_forro_eco_cuero','eco')"></i>
-              </div>
+              </div> -->
           </form>
 
             </div>
