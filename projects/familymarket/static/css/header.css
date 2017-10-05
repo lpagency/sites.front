@@ -22,6 +22,7 @@
  width: 980px;
 }
 
+
 .desktop-query>input.desktop-searchBar {
     display: inline-block;
     float: left;
@@ -115,8 +116,8 @@ li.icon{
     left: 30px;
 }
 
-.navbar-nav.navbar-right.dos:last-child {
-    margin-right: 80px;
+.navbar-nav.navbar-left.dos {
+    margin-left: 83px;
     margin-bottom: -6px;
     margin-top: -10px;
     bottom: 5px;
@@ -139,11 +140,11 @@ li.slogan a {
 }
 
 .text-slogan {
-    text-align: left;
-    float: left;
+    text-align: right;
+    float: right;
     position: relative;
-    left: 15%;
-    top: 8px;
+    left: -10%;
+    top: 9px;
     margin-bottom: -15px;
     font-size: 12px;
     height: 21px;
@@ -200,10 +201,10 @@ li.slogan a {
 }
 
 .btn-primary.header:hover, .btn-primary.header:focus, .btn-primary.header:active, .btn-primary.header.active, .open>.dropdown-toggle.btn-primary.header {
-    color: #db8800;
+    color: #5F8266;
     background-color: transparent;
     border-color: transparent;
-    text-decoration: underline #db8800;
+    text-decoration: underline #5F8266;
     padding: 0px;
 }
 
@@ -260,17 +261,19 @@ li.slogan a {
 }
 /*------------------------------------------Responsive--------------------------------*/
 @media (max-width: 1199px){
-    .text-slogan {
-    text-align: left;
-    float: left;
+.text-slogan {
+    text-align: right;
+    float: right;
     position: relative;
-    left: -4%;
+    left: 10%;
     top: 8px;
     margin-bottom: -15px;
     font-size: 12px;
     height: 21px;
     overflow: hidden;
 }
+
+
 .hed {
     position: absolute;
     top: 121% !important;
@@ -292,6 +295,14 @@ li.slogan a {
     border-radius: 0px;
     -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
     box-shadow: 0 0px 0px rgba(0,0,0,.175);
+}
+
+.navbar-nav.navbar-left.dos {
+    margin-left: -18px;
+    margin-bottom: -6px;
+    margin-top: -10px;
+    bottom: 5px;
+    position: relative;
 }
 
 }
