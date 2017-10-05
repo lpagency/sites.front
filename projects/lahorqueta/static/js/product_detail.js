@@ -4,14 +4,14 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(14,43,14);
+    var app_public = $.environmentVar(62,62,62);
 
     // functions 
     // productos relacionados
