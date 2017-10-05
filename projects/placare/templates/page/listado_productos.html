@@ -26,26 +26,19 @@
     <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
-<!--
+
     <script type="text/javascript">
       $(document).ready(function()
       {
-
-        $(".mobile2").css("display", "none");
-
-        $(document).on("click", ".bars", function()
-        {
-
-          $(".mobile2").toggle("slow");
-
-        });
+        $(".more-products").hide();
       });
-    </script> -->
+    </script> 
 
     <script type="text/javascript">
             $(window).load(function () {
             // Una vez se cargue al completo la página desaparecerá el div "cargando"
             $('#cargando').hide();
+            $(".more-products").show();
           });
 
         $(document).ready(function()
