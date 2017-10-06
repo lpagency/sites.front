@@ -428,7 +428,7 @@
 
 <!-- *******************MODAL INGRESO CODIGO PRINCPAL******************* -->
 
-<div class="container min">
+<div class="container min btb-warning-remove-me">
   <button type="button" class="btn btn-info btn-lg co" data-toggle="modal" data-target="#myModal-codigo">CÓDIGO</button>
 
   <!-- Modal -->
@@ -446,9 +446,9 @@
           <div class="lan">!MUCHAS GRACIAS POR VISITARNOS! ESTAMOS LANZANDO NUESTRA NUEVA TIENDA ONLINE ZAPATOS DE HOMBRE Y MUJER.</div>
           <div class="lan-2">Si ya tienes tu código de autorización ingrésalo a continuación y ya estarás dentro! Sino lo tienes, síguenos en facebook o instagram para obtenerlo</div>
           <div class="lan-3">¡Te invitamos a descubrir tus próximos zapatos!</div>
-          <form action="/action_page.php">
+          <form id="welcome-form">
              <input type="text" name="fname" class="cup"><br>
-             <button type="button" class="btn btn-warning en">ENTRAR</button>
+             <button type="submit" class="btn btn-warning en">ENTRAR</button>
           </form>
         </div>
         </div>
@@ -624,10 +624,53 @@
         <script type="text/javascript">
           $(document).ready(function()
           {
-             $("#myModal-codigo").modal({backdrop: "static"});
-             $("#myModal-codigo").modal({keyboard: false});
-             $("#myModal-codigo").modal("show");           
+
+            function createCookie(name,value,days) {
+                var expires = "";
+                if (days) {
+                    var date = new Date();
+                    date.setTime(date.getTime() + (days*24*60*60*1000));
+                    expires = "; expires=" + date.toUTCString();
+                }
+                document.cookie = name + "=" + value + expires + "; path=/";
+            }
+
+            function readCookie(name) {
+                var nameEQ = name + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0;i < ca.length;i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1,c.length);
+                    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+                }
+                return null;
+            }
+
+            var placarecom = readCookie("placarecom");
+
+            console.log("aaaaaaa", placarecom);
+
+            if (placarecom !== "placarecom")
+            {
+              $("#myModal-codigo").modal({backdrop: "static"});
+              $("#myModal-codigo").modal({keyboard: false});
+              $("#myModal-codigo").modal("show");
+
+              $('#welcome-form').submit(function(e)
+              {
+                e.preventDefault();
+                if ($('[name=fname]').val().toLowerCase() === "placarecom")
+                {
+                  $("#myModal-codigo").modal("hide");
+                  $('.btn-warning-remove-me').css('display', 'none');
+
+                  createCookie("placarecom", "placarecom", 1000);
+                }
+                return false;
+              });
+            }
           });
+
         </script>
         <!-- AQUI ESTA EL SCRIPT PARA EL BLOQUEO -->
         <script>
@@ -674,17 +717,15 @@
         ga('send', 'pageview');
     </script>
 
-<script type="text/javascript">
-        $('ul.nav div.dropdown').hover(function() 
-        {
-            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
-        }, function() 
-        {
-            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
-        });
-</script>
-
-
+    <script type="text/javascript">
+    $('ul.nav div.dropdown').hover(function() 
+    {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() 
+    {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+    });
+    </script>
 
 
     </body>
