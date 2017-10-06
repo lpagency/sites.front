@@ -438,7 +438,7 @@
       <!-- Modal content-->
       <div class="modal-content co">
         <div class="modal-header co">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
+         <!-- <button type="button" class="close" data-dismiss="modal">&times;</button> -->
           <h4 class="modal-title co">LANZAMIENTO PLACARE.COM</h4>
         </div>
         <div class="modal-body">
@@ -620,6 +620,16 @@
 <!-- termino carrito de compra -->
 
         {% block javascript %}{% end %}
+        <!-- AQUI ESTA EL SCRIPT PARA EL BLOQUEO -->
+        <script type="text/javascript">
+          $(document).ready(function()
+          {
+             $("#myModal-codigo").modal({backdrop: "static"});
+             $("#myModal-codigo").modal({keyboard: false});
+             $("#myModal-codigo").modal("show");           
+          });
+        </script>
+        <!-- AQUI ESTA EL SCRIPT PARA EL BLOQUEO -->
         <script>
         window.fbAsyncInit = function() {
             FB.init({
