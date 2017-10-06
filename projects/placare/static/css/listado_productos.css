@@ -3086,14 +3086,15 @@ a.text {
     width: 100%;
     font-weight: 600;
 }
+
+
 a.talla {
     float: left;
-    /* width: 100%; */
     position: relative;
     top: 23px;
     color: #7177F7;
     font-size: 11px;
-    left: 27%;
+    left: 51%;
 }
 
 .img_prod_detail {
@@ -3461,7 +3462,7 @@ a.text {
 .mover {
     margin-top: 25px;
     position: relative;
-    left: -22px;
+    left: -19px;
     width: 107%;
 }
 
@@ -3541,7 +3542,7 @@ a.text.detalle {
     float: left;
     margin-top: 40px;
     margin-bottom: 30px;
-    right: 19px;
+    right: 28px;
     position: relative;
     width: 100%;
     text-align: left;
@@ -3563,7 +3564,24 @@ a.text.detalle {
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 20px;
     font-style: inherit;
-    margin-left: -5px;
+    margin-left: -15px;
+}
+
+.linea-separacion-2 {
+    border-bottom: 1px solid #ebedef;
+    position: relative;
+    left: -14px;
+    width: 105%;
+    position: relative;
+    top: 20px;
+}
+
+.opciones-compra {
+    color: #7177F7;
+    text-align: left;
+    left: 2px;
+    position: relative;
+    bottom: 32px;
 }
 
 .texto-com {
@@ -3580,12 +3598,41 @@ a.text.detalle {
     margin-top: -16px;
     margin-bottom: 22px;
     font-size: 13px;
-    margin-left: 13px;
+    margin-left: 3px;
+}
+
+.linea-solin {
+    border-bottom: 1px solid #edebef;
+    position: relative;
+    left: -15px;
+    width: 107%;
+    top: 54px;
+    margin-top: -32px;
+    margin-bottom: 41px;
+}
+
+.oferta-de {
+    text-align: left;
+    position: absolute;
+    top: 59px;
+    font-size: 17px;
+    color: #282c3f !important;
+    font-weight: 600;
+    left: 3%;
 }
 
 }
 
 @media (max-width: 400px){
+
+a.talla {
+    float: left;
+    position: relative;
+    top: 23px;
+    color: #7177F7;
+    font-size: 11px;
+    left: 48%;
+}
 
 a.text {
     background-color: transparent;
@@ -3675,6 +3722,30 @@ a.text.detalle {
     position: relative;
     right: 0px;
     font-size: 13px;
+}
+
+.texto-com {
+    float: left;
+    text-align: left;
+    width: 90%;
+    position: relative;
+    color: #696b79;
+    font-weight: 300;
+    line-height: 19px;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-top: -16px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    margin-left: 2px;
+}
+
+.mover {
+    margin-top: 25px;
+    position: relative;
+    left: -19px;
+    width: 112%;
 }
 
 }
@@ -3847,8 +3918,10 @@ a.talla {
     top: 23px;
     color: #7177F7;
     font-size: 11px;
-    left: 38%;
+    left: 42%;
 }
+
+
 .texto-header-pro-3 {
     height: 74px;
     margin-bottom: -35px;
@@ -3909,6 +3982,7 @@ a.talla {
     color: white;
     top: 6px;
 }
+
 
 }
 
@@ -4061,11 +4135,22 @@ a.text.detalle {
     right: 0px;
     font-size: 13px;
 }
+
 .mover {
     margin-top: 25px;
     position: relative;
     left: -17px;
     width: 107%;
+}
+
+a.talla {
+    float: left;
+    /* width: 100%; */
+    position: relative;
+    top: 23px;
+    color: #7177F7;
+    font-size: 11px;
+    left: 38%;
 }
 
 }
@@ -4346,5 +4431,25 @@ a.text.detalle {
     padding-right: 31px;
 }
 
+.nombre-talla {
+    float: left;
+    position: relative;
+    /* left: 0px; */
+    text-align: left;
+    margin-top: 26px;
+    font-size: 11px;
+    width: 100%;
+    font-weight: 600;
+}
+
+a.talla {
+    float: left;
+    /* width: 100%; */
+    position: relative;
+    top: 23px;
+    color: #7177F7;
+    font-size: 11px;
+    left: 29%;
+}
 
 }
