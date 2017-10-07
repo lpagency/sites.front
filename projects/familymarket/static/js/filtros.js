@@ -77,7 +77,9 @@ $(document).ready(function()
 
             $(".original-tachado").each(function()
             {
-                if($(this).attr("promotion-price") != 0)
+                console.log("eee", $(this).attr("promotion-price"));
+                if($(this).attr("promotion-price") !== 0 && 
+                    $(this).attr("promotion-price") !== 0.0)
                 {
                     $(this).removeClass("hidden");
                 }
