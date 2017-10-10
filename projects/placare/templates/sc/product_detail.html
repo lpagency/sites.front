@@ -110,10 +110,17 @@
                 $('.product-detail').ecommerce('load_variants', options);
 
                 $('.variants-container').on(
-                    'combination:selected', function(e, d)
+                    'combination:selected', function(e, d, in_stock)
                     {
-                        $('.add-to-cart').attr('product-combination', d);
-                        $('.add-to-cart').removeAttr('disabled');
+                        if (in_stock)
+                        {
+                            $('.add-to-cart').attr('product-combination', d);
+                            $('.add-to-cart').removeAttr('disabled');
+                        }
+                        else{
+                            $('.add-to-cart').removeAttr('product-combination');
+                            $('.add-to-cart').attr('disabled', true);
+                        }
                     });
 
                 variants_loaded = true;  // execute this onces
