@@ -32,7 +32,7 @@ $(document).ready(function()
         'products_per_page' : 18,
         'tag': '',
         'ignore_stock': true,
-        'infinite_scroll': true,
+        'infinite_scroll': false,
         // 'maxProducts': 100,
         'checkout_url': checkout_url,
         'operator' :'or',
