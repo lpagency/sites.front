@@ -10,7 +10,8 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/Swiper-3.4.2/dist/css/swiper.min.css">   
+<link rel="stylesheet" href="{{ site_base }}/static/css/ocul.css">
 <style type="text/css">
 
 
@@ -55,7 +56,7 @@
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(33,33,33);
+        var app_public = $.environmentVar(29,29,29);
         var site_name = $.environmentVar('placare', 'placare', 'placare');
         var variants_loaded = false;
 
@@ -262,13 +263,14 @@
                                 <div class="product-price original-de">{{! main_price|money }} </div>
                                 </div>
                                 <div class="col-md-2 col-sm-2 col-xs-12">
-                                <div class="product-price oferta-de"> {{! promotion_price|money }} </div>
+                                <div class="product-price oferta-de hidden"> {{! promotion_price|money }} </div>
                             </div>
                             </div>
                             <div class="item__addtocart">
                               <input type="text" value="1" name="quantity" class="prod">
-                              <button type="submit" class="btn btn--primary vpe add-to-cart" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">AGREGAR AL CARRO
-                              </button>
+
+                              <button type="button" class="btn add-to-cart btn btn--primary vpe" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-name="{{! name }}" product-price="{{! main_price }}" product-sku="{{! sku }}" product-id="{{! id }}" product-img="{{! images[1]['thumb_500'] }}" lp-cart-add>Comprar</button>
+
                             </div>
                             <div class="texto-de">Descripción</div>
                             <h3 class="descr_prod_detail ellipsis multiline">{{! description }}</h3>
@@ -326,9 +328,10 @@
 <section>
 <div class="container min">
         <div class="col-md-12 col-sm-12 col-xs-12">
-            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <h1 class="text-relac text-center"><strong class="editabletext"></strong></h1>
         </div>
-    <div class="product-related hidden-xs">
+    
+    <div class="product-related">
 
     </div>
 </div>
