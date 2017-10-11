@@ -245,7 +245,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -263,13 +262,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Categoria3_") != -1)
+            if(window.listaTag[i].indexOf("Categoria3_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -293,7 +292,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -309,13 +307,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Color_") != -1)
+            if(window.listaTag[i].indexOf("Color_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -339,7 +337,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -355,13 +352,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Mat_Capellada_") != -1)
+            if(window.listaTag[i].indexOf("Mat_Capellada_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -385,7 +382,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -401,13 +397,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Marca_") != -1)
+            if(window.listaTag[i].indexOf("Marca_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -431,7 +427,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -447,13 +442,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Categoria4_") != -1)
+            if(window.listaTag[i].indexOf("Categoria4_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
         window.config.tag = window.listaTag.toString();
 
         history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
@@ -476,7 +471,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -492,13 +486,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Cierre_") != -1)
+            if(window.listaTag[i].indexOf("Cierre_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -522,7 +516,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -538,13 +531,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Mat_Suela_") != -1)
+            if(window.listaTag[i].indexOf("Mat_Suela_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
@@ -568,7 +561,6 @@ $(document).ready(function()
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
         var textoRuta = $(".texto-ruta").html();
 
         $(".filtrosRec").html(block);
@@ -584,13 +576,13 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("+Mat_Forro_") != -1)
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
         }
 
-        window.listaTag.push(nombre2);
+        window.listaTag.push(nombre);
 
         window.config.tag = window.listaTag.toString();
 
