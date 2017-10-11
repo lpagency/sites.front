@@ -241,13 +241,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                '<li class="fil-ul" id="categoria"><ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#categoria').length > 0)
+        {
+            $("#categoria").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -257,8 +268,6 @@ $(document).ready(function()
         $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
-
-        var aux = 0;
 
         for(i in window.listaTag)
         {
@@ -288,13 +297,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="color"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></div>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#color').length > 0)
+        {
+            $("#color").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -333,13 +353,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="material"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#material').length > 0)
+        {
+            $("#material").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -378,13 +409,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="marca"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#marca').length > 0)
+        {
+            $("#marca").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -423,13 +465,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="ocasion"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#ocasion').length > 0)
+        {
+            $("#ocasion").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -467,13 +520,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="cierre"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#cierre').length > 0)
+        {
+            $("#cierre").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -512,13 +576,25 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="suela"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#suela').length > 0)
+        {
+            $("#suela").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
@@ -557,13 +633,24 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                '<li class="fil-ul" id="forro"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
 
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        $(".filtrosRec").html(block);
+        if($('#forro').length > 0)
+        {
+            $("#forro").html(a);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+        }
 
         if($(".limpiar").hasClass("hidden"))
         {
