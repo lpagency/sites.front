@@ -238,6 +238,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="categoria2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -254,10 +256,12 @@ $(document).ready(function()
         if($('#categoria').length > 0)
         {
             $("#categoria").html(a);
+            $("#categoria2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -265,7 +269,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -294,6 +297,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="color2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -310,10 +315,12 @@ $(document).ready(function()
         if($('#color').length > 0)
         {
             $("#color").html(a);
+            $("#color2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -321,7 +328,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -350,6 +356,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="material2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -366,10 +374,12 @@ $(document).ready(function()
         if($('#material').length > 0)
         {
             $("#material").html(a);
+            $("#material2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -377,7 +387,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -405,6 +414,7 @@ $(document).ready(function()
         var $box = $(this);
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
+        var element = '<div class="fil-ul" id="marca2">'+va+'</div>';
 
         window.z = 0;
 
@@ -422,10 +432,12 @@ $(document).ready(function()
         if($('#marca').length > 0)
         {
             $("#marca").html(a);
+            $("#marca2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -433,7 +445,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -462,6 +473,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="ocasion2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -478,10 +491,12 @@ $(document).ready(function()
         if($('#ocasion').length > 0)
         {
             $("#ocasion").html(a);
+            $("#ocasion2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -489,7 +504,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -517,6 +531,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="cierre2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -533,10 +549,13 @@ $(document).ready(function()
         if($('#cierre').length > 0)
         {
             $("#cierre").html(a);
+            $("#cierre2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -544,7 +563,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -573,6 +591,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="suela2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -590,10 +610,12 @@ $(document).ready(function()
         if($('#suela').length > 0)
         {
             $("#suela").html(a);
+            $("#suela2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -601,7 +623,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
@@ -630,6 +651,8 @@ $(document).ready(function()
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
 
+        var element = '<div class="fil-ul" id="forro2">'+va+'</div>';
+
         window.z = 0;
 
         var block =
@@ -646,10 +669,12 @@ $(document).ready(function()
         if($('#forro').length > 0)
         {
             $("#forro").html(a);
+            $("#forro2").html(va);
         }
         else
         {
             $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
         }
 
         if($(".limpiar").hasClass("hidden"))
@@ -657,7 +682,6 @@ $(document).ready(function()
             $(".limpiar").removeClass("hidden");
         }
 
-        $(".texto-ruta").html(textoRuta + " / " +va);
         var textoRuta = $(".texto-ruta").html();
         localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
 
