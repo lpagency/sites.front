@@ -953,10 +953,7 @@ function limpiar(config, hyper)
     window.z = 0;
 
     $(".filtrosRec").html("");
-    if ($(".categ").is( ":checked" ))
-    {
-        $(this).prop('checked', false);
-    }
+    $("input:radio").attr("checked", false);
 
     $(".limpiar").addClass("hidden");
     $(".texto-ruta").html("Home ");
