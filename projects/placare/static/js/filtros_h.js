@@ -704,6 +704,64 @@ $("input:radio[name=vehicle]").change(function()
 
     });
 
+        $("input:radio[name=checkbox]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="checkbox2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="checkbox"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#checkbox').length > 0)
+        {
+            $("#checkbox").html(a);
+            $("#checkbox2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
 
 });
 

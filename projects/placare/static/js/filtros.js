@@ -704,6 +704,242 @@ $(document).ready(function()
 
     });
 
+    $("input:radio[name=checkbox]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="checkbox2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="checkbox"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#checkbox').length > 0)
+        {
+            $("#checkbox").html(a);
+            $("#checkbox2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=checkbox2]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="checkbox22">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="checkbox2"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#checkbox2').length > 0)
+        {
+            $("#checkbox2").html(a);
+            $("#checkbox22").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=checkbox3]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="checkbox32">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="checkbox3"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#checkbox3').length > 0)
+        {
+            $("#checkbox3").html(a);
+            $("#checkbox32").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=checkbox4]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="checkbox42">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="checkbox4"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#checkbox4').length > 0)
+        {
+            $("#checkbox4").html(a);
+            $("#checkbox42").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
 
 });
 
@@ -713,235 +949,6 @@ $(document).ready(function()
 //<-------------------FUNCIONES-------------------->
 
 
-
-//<----------------FUNCION UNCHECK----------------->
-
-function uncheck(tag, value)
-{
-
-    window.z = 0;
-
-    if(value == undefined)
-    {
-        var nombre2 = "+"+tag;
-
-        $( "."+tag ).remove();
-        $(".ch-"+tag).addClass("hidden");
-        var textoRuta = $(".texto-ruta").html();
-        $(".h-"+tag).css("text-decoration", "none");
-
-        textoRuta = textoRuta.replace(" / "+tag, "");
-
-        $(".texto-ruta").html(textoRuta);
-
-        for(x in window.listaTag)
-        {
-            if(window.listaTag[x] == nombre2)
-            {
-                window.listaTag.splice(x,1);
-                window.config.tag =window.listaTag.toString();
-            }
-        }
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-    else
-    {
-        var va = value;
-        var nombre2 = "+"+tag;
-        $(".h-"+tag).css("text-decoration", "none");
-
-        $( "."+tag ).remove();
-        $(".ch-"+tag).addClass("hidden");
-        var textoRuta = $(".texto-ruta").html();
-
-        textoRuta = textoRuta.replace(" / "+va, "");
-
-        $(".texto-ruta").html(textoRuta);
-
-        for(x in window.listaTag)
-        {
-            if(window.listaTag[x] == nombre2)
-            {
-                window.listaTag.splice(x,1);
-                window.config.tag =window.listaTag.toString();
-            }
-        }
-
-        $(".h-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
-        $(".c-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-}
-
-//<--------------END FUNCION UNCHECK--------------->
-
-//<-----------------FUNCION CHECK------------------>
-
-function check(tag, value)
-{
-
-    window.z = 0;
-
-    if(value == undefined)
-    {
-
-        var nombre = tag;
-        var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
-
-        var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
-        var textoRuta = $(".texto-ruta").html();
-
-        $(".ch-"+nombre).removeClass("hidden");
-        $(".filtrosRec").html($(".filtrosRec").html() + block);
-        $(".h-"+nombre).css("text-decoration", "none");
-
-        if($(".limpiar").hasClass("hidden"))
-        {
-            $(".limpiar").removeClass("hidden");
-        }
-
-        $(".texto-ruta").html(textoRuta + " / " +nombre);
-        var textoRuta = $(".texto-ruta").html();
-        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
-
-        window.listaTag.push(nombre2);
-        window.config.tag = window.listaTag.toString();
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-    else
-    {
-
-        var nombre = tag;
-        var va = value;
-        var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
-
-        var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
-        var textoRuta = $(".texto-ruta").html();
-        $(".h-"+nombre).css("text-decoration", "underline");
-
-        lista = Utils.getUrlParameter('tag').split(',');
-
-        $(".ch-"+nombre).removeClass("hidden");
-        $(".filtrosRec").html($(".filtrosRec").html() + block);
-
-        if($(".limpiar").hasClass("hidden"))
-        {
-            $(".limpiar").removeClass("hidden");
-        }
-
-        $(".texto-ruta").html(textoRuta + " / " +va);
-        var textoRuta = $(".texto-ruta").html();
-        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
-
-        window.listaTag.push(nombre2);
-        window.config.tag = window.listaTag.toString();
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-};
-
-//<---------------END FUNCION CHECK---------------->
-
-
-function checkNombre(tag, value)
-{
-
-    window.z = 0;
-
-    if(value == undefined)
-    {
-
-        var nombre = tag;
-        var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
-
-        var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
-        var textoRuta = $(".texto-ruta").html();
-
-        $(".ch-"+nombre).removeClass("hidden");
-        $(".filtrosRec").html($(".filtrosRec").html() + block);
-        $(".h-"+nombre).css("text-decoration", "none");
-
-        if($(".limpiar").hasClass("hidden"))
-        {
-            $(".limpiar").removeClass("hidden");
-        }
-
-        $(".texto-ruta").html(textoRuta + " / " +nombre);
-        var textoRuta = $(".texto-ruta").html();
-        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
-
-        window.listaTag.push(nombre2);
-        window.config.tag = window.listaTag.toString();
-
-        $(this).attr('onclick','uncheck();');
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-    else
-    {
-
-        var nombre = tag;
-        var va = value;
-        var block =
-                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
-
-        var classNombre = "."+nombre;
-        var nombre2 = "+"+nombre;
-        var textoRuta = $(".texto-ruta").html();
-        $(".h-"+nombre).css("text-decoration", "underline");
-
-        lista = Utils.getUrlParameter('tag').split(',');
-
-        $(".ch-"+nombre).removeClass("hidden");
-        $(".filtrosRec").html($(".filtrosRec").html() + block);
-
-        if($(".limpiar").hasClass("hidden"))
-        {
-            $(".limpiar").removeClass("hidden");
-        }
-
-        $(".texto-ruta").html(textoRuta + " / " +va);
-        var textoRuta = $(".texto-ruta").html();
-        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
-
-        window.listaTag.push(nombre2);
-        window.config.tag = window.listaTag.toString();
-
-        $(".h-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
-        $(".c-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
-
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-};
 
 //<--------FUNCION TOMA TAG DESDE LA URL----------->
 
@@ -1119,14 +1126,13 @@ function borrar(nombre,value)
         $(".ch-"+nombre).addClass("hidden");
 
         var textoRuta = $(".texto-ruta").html();
-        var nombre2 = "+"+nombre;
 
         textoRuta = textoRuta.replace(" / "+value, "");
         $(".texto-ruta").html(textoRuta);
 
         for(x in window.listaTag)
         {
-            if(window.listaTag[x] == nombre2)
+            if(window.listaTag[x] == nombre)
             {
                 window.listaTag.splice(x,1);
                 window.config.tag =window.listaTag.toString();
