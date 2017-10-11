@@ -232,6 +232,479 @@ $(document).ready(function()
     });
 
 
+$("input:radio[name=vehicle]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="categoria2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="categoria"><ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#categoria').length > 0)
+        {
+            $("#categoria").html(a);
+            $("#categoria2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Categoria3_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=color]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="color2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="color"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></div>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#color').length > 0)
+        {
+            $("#color").html(a);
+            $("#color2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Color_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=material]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="material2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="material"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#material').length > 0)
+        {
+            $("#material").html(a);
+            $("#material2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Capellada_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=marca]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+        var element = '<div class="fil-ul" id="marca2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="marca"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#marca').length > 0)
+        {
+            $("#marca").html(a);
+            $("#marca2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Marca_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=ocasion]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="ocasion2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="ocasion"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#ocasion').length > 0)
+        {
+            $("#ocasion").html(a);
+            $("#ocasion2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Categoria4_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=cierre]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="cierre2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="cierre"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#cierre').length > 0)
+        {
+            $("#cierre").html(a);
+            $("#cierre2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Cierre_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=suela]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="suela2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="suela"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#suela').length > 0)
+        {
+            $("#suela").html(a);
+            $("#suela2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Suela_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+    $("input:radio[name=forro]").change(function()
+    {
+        var $box = $(this);
+        var nombre = $(this).attr("tag");
+        var va = $(this).attr("value2");
+
+        var element = '<div class="fil-ul" id="forro2">'+va+'</div>';
+
+        window.z = 0;
+
+        var block =
+                '<li class="fil-ul" id="forro"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
+
+        var a = 
+                '<ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></li>';
+
+        var classNombre = "."+nombre;
+        var textoRuta = $(".texto-ruta").html();
+
+        if($('#forro').length > 0)
+        {
+            $("#forro").html(a);
+            $("#forro2").html(va);
+        }
+        else
+        {
+            $(".filtrosRec").html($(".filtrosRec").html() + block);
+            $(".texto-ruta").html(textoRuta + " / " +element);
+        }
+
+        if($(".limpiar").hasClass("hidden"))
+        {
+            $(".limpiar").removeClass("hidden");
+        }
+
+        var textoRuta = $(".texto-ruta").html();
+        localStorage.setItem("subcategoriaProd", $(".texto-ruta").html());
+
+        for(i in window.listaTag)
+        {
+            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            {
+                window.listaTag.splice(i,1);
+            }
+        }
+
+        window.listaTag.push(nombre);
+
+        window.config.tag = window.listaTag.toString();
+
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(window.config);
+
+    });
+
+
 });
 
 
@@ -270,7 +743,7 @@ function uncheck(tag, value)
             }
         }
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
     }
@@ -300,7 +773,7 @@ function uncheck(tag, value)
         $(".h-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
         $(".c-"+tag).attr('onclick','checkNombre("'+tag+'","'+value+'");');
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
     }
@@ -343,7 +816,7 @@ function check(tag, value)
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -379,7 +852,7 @@ function check(tag, value)
         window.listaTag.push(nombre2);
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -424,7 +897,7 @@ function checkNombre(tag, value)
 
         $(this).attr('onclick','uncheck();');
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -463,7 +936,7 @@ function checkNombre(tag, value)
         $(".h-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
         $(".c-"+tag).attr('onclick','uncheck("'+tag+'","'+value+'");');
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -591,10 +1064,7 @@ function limpiar(config, hyper)
     window.z = 0;
 
     $(".filtrosRec").html("");
-    if ($(".categ").is( ":checked" ))
-    {
-        $(this).prop('checked', false);
-    }
+    $("input:radio").attr("checked", false);
 
     $(".limpiar").addClass("hidden");
     $(".texto-ruta").html("Home ");
@@ -607,7 +1077,7 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    history.pushState('', 'Placare', 'listado_productos_hombre?tag='+config.tag);
+    history.pushState('', 'Placare', 'listado_productos?tag='+config.tag);
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -638,7 +1108,7 @@ function borrar(nombre,value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -663,7 +1133,7 @@ function borrar(nombre,value)
             };
         };
 
-        history.pushState('', 'Placare', 'listado_productos_hombre?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
