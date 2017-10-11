@@ -139,8 +139,13 @@
                 <div class="fil h-Categoria3_Mocasines" onclick="checkNombre('Categoria3_Mocasines','Mocasines')">Mocasines</div>
               </div>
               <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Mules" name="vehicle" tag="Categoria3_Mules" value="Boat" value="Mules"> 
+                <div class="fil h-Categoria3_Mules" onclick="checkNombre('Categoria3_Mules','Mules')">Mules</div>
+              </div>
+              <div class="filtro-filtros">
                 <input type="radio" class="categ c-Categoria3_Plataformas" name="vehicle" tag="Categoria3_Plataformas" value="Boat" value2="Plataformas"> 
                 <div class="fil h-Categoria3_Plataformas" onclick="checkNombre('Categoria3_Plataformas','Plataforma')">Plataformas</div> 
+              </div>
               <div class="filtro-filtros">
                 <input type="radio" class="categ c-Categoria3_Playeras" name="vehicle" tag="Categoria3_Playeras" value="Boat" value2="Playeras"> 
                 <div class="fil h-Categoria3_Playeras" onclick="checkNombre('Categoria3_Playeras','Playeras')">Playeras</div>
@@ -220,16 +225,16 @@
           <div class="text-fil"> MARCA </div>
           <form action="/action_page.php" class="chek">
                <div class="filtro-marca">
-                <input type="radio" name="marca" class="categ c-Marca_Caffeine" tag="Marca_Caffeine" value="Car">
-                <div class="fil h-Marca_Caffeine" onclick="checkNombre('Marca_Caffeine','Caffeine')">Caffeine</div>
-               </div>
+                <input type="radio" name="marca" class="categ c-Marca_Degas" tag="Marca_Degas" value="Bike"> 
+                <div class="fil h-Marca_Degas" onclick="checkNombre('Marca_Degas','Degas')">Degas </div>
+              </div>
+              <div class="filtro-marca">
+                <input type="radio" name="marca" class="categ c-Marca_Eda_Manzini" tag="Marca_Eda_Manzini" value="Car">
+                <div class="fil h-Marca_Eda_Manzini" onclick="checkNombre('Marca_Eda_Manzini', 'Eda Manzini')">Eda Manzini</div>
+               </div> 
                <div class="filtro-marca">
-                <input type="radio" name="marca" class="categ c-Marca_Cocomate" tag="Marca_Cocomate" value="Car">
-                <div class="fil h-Marca_Cocomate" onclick="checkNombre('Marca_Cocomate','Cocomate')">Cocomate</div>
-               </div>
-               <div class="filtro-marca">
-                <input type="radio" name="marca" class="categ c-Marca_Tarragona" tag="Marca_Tarragona" value="Car">
-                <div class="fil h-Marca_Tarragona" onclick="checkNombre('Marca_Tarragona','Tarragona')">Tarragona</div>
+                <input type="radio" name="marca" class="categ c-Marca_Lola_Canales" tag="Marca_Lola_Canales" value="Car">
+                <div class="fil h-Lola_Canales" onclick="checkNombre('Marca_Lola_Canales','Lola Canales')">Lola Canales</div>
                </div>
           </form>
 
@@ -451,43 +456,43 @@
 
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Alto" value2="alto" type="checkbox" name="checkbox" tag="Forma_Taco_Alto" value="Forma_Taco_Alto" onclick="checkNombre('Forma_Taco_Alto','Alto')">Alto
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Alto" value="alto" type="checkbox" name="checkbox" tag="Forma_Taco_Alto" value="Forma_Taco_Alto" onclick="checkNombre('Forma_Taco_Alto','Alto')">Alto
               </label> 
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Alto other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Alto','Alto')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Bajo" value2="bajo" type="checkbox" name="checkbox" tag="Forma_Taco_Bajo" value="Forma_Taco_Bajo" onclick="checkNombre('Forma_Taco_Bajo','Bajo')">Bajo
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Bajo" value="bajo" type="checkbox" name="checkbox" tag="Forma_Taco_Bajo" value="Forma_Taco_Bajo" onclick="checkNombre('Forma_Taco_Bajo','Bajo')">Bajo
               </label> 
               <i class="fa fa-check-square c-variable_tres other ch-Forma_Taco_Bajo hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Bajo','Bajo')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Chino" value2="Chino" type="checkbox" name="checkbox" tag="Forma_Taco_Chino" value="Forma_Taco_Chino" onclick="checkNombre('Forma_Taco_Chino','Chino')">Chino
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Chino" value="Chino" type="checkbox" name="checkbox" tag="Forma_Taco_Chino" value="Forma_Taco_Chino" onclick="checkNombre('Forma_Taco_Chino','Chino')">Chino
               </label>
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Chino other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Chino','Chino')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Medio" value2="Medio" type="checkbox" name="checkbox" tag="Forma_Taco_Medio" value="Forma_Taco_Medio" onclick="checkNombre('Forma_Taco_Medio','Medio')">Medio
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Medio" value="Medio" type="checkbox" name="checkbox" tag="Forma_Taco_Medio" value="Forma_Taco_Medio" onclick="checkNombre('Forma_Taco_Medio','Medio')">Medio
               </label>
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Medio other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Medio','Medio')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Plano" value2="Plano" type="checkbox" name="checkbox" tag="Forma_Taco_Plano" value="Forma_Taco_Plano" onclick="checkNombre('Forma_Taco_Plano','Plano')">Plano
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Plano" value="Plano" type="checkbox" name="checkbox" tag="Forma_Taco_Plano" value="Forma_Taco_Plano" onclick="checkNombre('Forma_Taco_Plano','Plano')">Plano
               </label>
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Plano other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Plano','Plano')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Tacon" value2="Tacon" type="checkbox" name="checkbox" tag="Forma_Taco_Tacon" value="Forma_Taco_Tacon" onclick="checkNombre('Forma_Taco_Tacon','Tacon')">Tacón
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Tacon" value="Tacon" type="checkbox" name="checkbox" tag="Forma_Taco_Tacon" value="Forma_Taco_Tacon" onclick="checkNombre('Forma_Taco_Tacon','Tacon')">Tacón
               </label>
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Tacon other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Tacon','Tacon')"></i>
             </div>
             <div class="filtro-talla c-variable_3">
               <label class="hidden c-variable_3">
-                <input class="hidden categ check c-variable_3 c-Forma_Taco_Terraplen" type="checkbox" name="checkbox" tag="Forma_Taco_Terraplen" value="Forma_Taco_Terraplen" value2="Terraplen" onclick="checkNombre('Forma_Taco_Terraplen','Terraplen')">Terraplén
+                <input class="hidden categ check c-variable_3 c-Forma_Taco_Terraplen" type="checkbox" name="checkbox" tag="Forma_Taco_Terraplen" value="Forma_Taco_Terraplen" value="Terraplen" onclick="checkNombre('Forma_Taco_Terraplen','Terraplen')">Terraplén
               </label>
               <i class="fa fa-check-square c-variable_tres ch-Forma_Taco_Terraplen other hidden" aria-hidden="true" onclick="uncheck('Forma_Taco_Terraplen','Terraplen')"></i>
             </div>
