@@ -129,31 +129,35 @@
 </section>
 
 
-<section>
-  <div class="container min">
-   <div class="col-sm-6 col-md-6 col-xs-12">
-    <div class="video-cover box-shadow-wide">
-      <div class="background-image-holder">
-       <!--  <img alt="image" src="/static/img/startup-3.jpg"> -->
-      </div>
-      <div class="video-play-icon"></div>
-      <iframe allowfullscreen="allowfullscreen" src="https://www.youtube.com/embed/4QUVRm4UZA4?autoplay=1" class="vin"></iframe>
+<section style="">
+    <!-- *articulos* -->
+
+     <div class="container min">
+        <!--   <div class="row"> -->
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 1') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 2') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 3') }}
+        {{ getArticleList(limit=1, html="page/article_home.html", tag='home,posicion 4') }}
+        <!--  </div> -->
     </div>
-  </div>
+        
   
-  <div class="col-sm-6 col-md-6 col-xs-12">
-     <div class="frase-3 {{editabletext}}" text-id="{{ site.name + '_tex_6' }}"> {{ read_text(site.name +  '_tex_6') }}</div>
-     <div class="frase-4 {{editabletext}}" text-id="{{ site.name + '_tex_7' }}"> {{ read_text(site.name +  '_tex_7') }}</div>
-  </div>
-       
-  </div>
 </section>
 
+
+<section id="contenedor">
+    <div class="container min">
+        <div class="row spa article_list">
+           {{ getArticleList(tag='home,-posicion 1,-posicion 2,-posicion 3,-posicion 4') }}
+        </div>
+    </div>
+
+</section>
 
 
 <!-- *********CATEGORIAS******** -->
     <section class="h_submenu cubrecama hidden-xs">
-        <div class="container min" style="padding-top: 3em;padding-bottom: 33px;">
+        <div class="container min" style="padding-top: 7em;padding-bottom: 33px;">
             <div align="center">
              <div class="gre">
                <div class="col-md-12 col-sm-12 col-xs-12">
