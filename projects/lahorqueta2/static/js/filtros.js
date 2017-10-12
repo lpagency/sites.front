@@ -20,7 +20,7 @@
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(33,33,33);
+        var app_public = $.environmentVar(29,29,29);
 
             window.config = {
                     'app_public': app_public,
