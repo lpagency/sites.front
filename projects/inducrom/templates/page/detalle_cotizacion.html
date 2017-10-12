@@ -286,6 +286,40 @@ function getCookie1(cname) {
             <div class="texto-coti {{editabletext}}" text-id="{{ site.name + '_coti_1' }}"> {{ read_text(site.name +  '_coti_1') }}</div>
              </div>
             <!-- <div class="col-xs-12 col-sm-8 align-form-contact fondo-contact"> -->
+
+                  <div class="col-sm-6 col-xs-12 form-moulie visible-xs hidden-md hidden-lg hidden-sm">
+                                <div class="form-group">
+                                    <label class="control-label"></label>
+                                    <div class="controls">
+                                        <table style="width:100%;">
+                                          <tr class="mun">
+                                            <th style="text-align: left;">SKU</th>
+                                            <th style="text-align: left;left: 7%;position: relative;">Nombre</th> 
+                                            <th style="text-align: right">Cantidad</th>
+                                          </tr>
+                                        </table>
+                                        <table class="hola shopping-cart" style="width: 100%;">
+                                          
+                                        </table>
+                                        <textarea name="MultiLine" placeholder="Cotizacion" class="form-control input-lg requiredField cotizar hidden" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                    </div>
+                            </div>
+
+                            <div align="center">
+                                    <div class="form-group ">
+                                        <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block formulario" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar</button>
+                                    </div>
+                                <input type="hidden" name="submitted" id="submitted3" value="true">
+                               
+                            </form>
+                                <a class="demo" href="">
+                                    <button type="volver" class="btn btn-store btn-block volver" src="">Seguir cotizando 
+                                    </button>
+                                </a>
+
+                            </div>
+                     </div>
+
                         <div class="col-sm-6 col-md-6 col-xs-12 piki">
                          <form action='https://forms.zohopublic.com/sytes/form/Inducromformulariocotizacion/formperma/4d6FE15d100k_AhG5CKC1040C/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                             <div class="col-xs-12 col-sm-12">
@@ -349,7 +383,7 @@ function getCookie1(cname) {
                         </div>
 
                             <!-- </div> -->  
-                            <div class="col-sm-6 col-xs-12 form-moulie">
+                            <div class="col-sm-6 col-xs-12 form-moulie hidden-xs">
                                 <div class="form-group">
                                     <label class="control-label"></label>
                                     <div class="controls">
