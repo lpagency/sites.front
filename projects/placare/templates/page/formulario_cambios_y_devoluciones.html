@@ -191,7 +191,7 @@
 
   <div class="container min contact product text-left  fondo-contact" style="display: inherit;">
                 <div class="col-md-12 col-sm-12 col-xs-12">      
-                    <div class="col-xs-12 col-md-6 col-sm-12 coli">
+                    <div class="col-xs-12 col-md-12 col-sm-12 coli">
                         <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
                         </div>
                          <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
@@ -201,48 +201,82 @@
                         </div>
 
                     </div>  
-                    <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact">
+                    <div class="col-xs-12 col-md-12 col-sm-12 align-form-contact fondo-contact">
 
-                        <div>
+                    <div>
 
                         <form action='https://forms.zohopublic.com/sytes/form/placareformulariodevoluciones/formperma/j5jC45m42J05A09KA55MCH60a/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                             <div class="row clearfix">
                                 <div class="col-xs-12 col-sm-12">
+                                   <div class="form-group">
+                                    <label for="nationality" class="control-label"></label> 
+                                    <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
+                                        <select class="form-control nuevo" name="Dropdown" id="nationality"  placeholder="Please select your Nationality">
+                                            <option>Cambio o Devolución</option>
+                                            <option value="cambio">Cambio</option>
+                                            <option value="devolución">Devolución</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality" class="control-label"></label> 
+                                    <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
+                                        <select class="form-control nuevo" name="Dropdown" id="nationality"  placeholder="Please select your Nationality">
+                                            <option>Seleccionar motivo</option>
+                                            <option value="cambio">Queda grande/ chico </option>
+                                            <option value="devolución">No calza bien</option>
+                                            <option value="devolución">No gustó</option>
+                                            <option value="devolución">Color diferente a foto original</option>
+                                            <option value="devolución">Otro Motivo</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group"> <!-- ****Solo aparece si se selecciona otro motivo*** -->
+                                    <label for="exampleTextarea">Otro motivo</label>
+                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                                <div class="form-group"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                    <label for="exampleTextarea">URL o Enlace del producto a cambiar</label>
+                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+                                <div class="form-group"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                    <label for="exampleTextarea">Talla del producto a cambiar</label>
+                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                </div>
+
                                 <div class="form-group con">
-                                        <label class="control-label">Nombre</label>
+                                        <label class="control-label">Nombre y Apellido</label>
                                         <div class=" controls">
-                                            <input name="Name_First" placeholder="Tu nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                            <input name="Name_First" placeholder="Nombre y Apellido" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
                                         </div>
-                                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+                                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre y apellido</span>
                                     </div>
                                     <div class="form-group con">
-                                        <label class="control-label">Email</label>
+                                        <label class="control-label">Correo electronico</label>
                                         <div class=" controls">
-                                            <input name="Email" placeholder="Tu Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input name="Email" placeholder="Correo electronico" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
                                             <input type="hidden" name="subject" value="contactanos" />
                                         </div>
                                         <span id="helpBlock3" class="hidden help-block help-mail">Escribe un Email valido</span>
                                     </div>
-                                    <div class="form-group con">
-                                        <label class="control-label">Numero de pedido</label>
+                                    <div class="form-group con"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                        <label class="control-label">Numero de boleta</label>
                                         <div class=" controls">
-                                            <input name="SingleLine" placeholder="Tu numero de pedido" class="form-control input-lg requiredField" type="text" id="itPedido" data-error-invalid="Invalid email address" data-error-empty="Ingrese numero de pedido">
+                                            <input name="SingleLine" placeholder="Numero de boleta" class="form-control input-lg requiredField" type="text" id="itPedido" data-error-invalid="Invalid email address" data-error-empty="Ingrese numero de pedido">
                                         </div>
-                                        <span id="helpBlock3" class="hidden help-block help-pedido">Escribe el numero de pedido</span>
+                                        <span id="helpBlock3" class="hidden help-block help-pedido">Escribe numero de boleta</span>
+                                    </div>
+
+                                    <div class="form-group form-ran"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                       <label class="control-label tra">Adjuntar CV</label>
+                                       <input type="file" name="FileUpload" class="imgup-add-input" placeholder="Adjuntar CV"/>
                                     </div>
                                 </div>  
                             </div>
                             <div class="form-group con">
-                                        <label class="control-label">Productos</label>
-                                        <div class=" controls">
-                                            <textarea name="MultiLine" placeholder="Tus productos" class="form-control input-lg requiredField" type="text" id="itProductos" data-error-invalid="Invalid email address" data-error-empty="Ingrese productos"></textarea>
-                                        </div>
-                                        <span id="helpBlock3" class="hidden help-block help-productos">Escribe los productos a devolver</span>
-                                    </div>
-                            <div class="form-group con">
-                                <label class="control-label">Razones</label>
+                                <label class="control-label">Comentarios adicionales</label>
                                 <div class="controls">
-                                    <textarea name="MultiLine1" placeholder="Escribe tus razones de devolucion" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                    <textarea name="MultiLine1" placeholder="Comentarios adicionales" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
                                 </div>
                                 <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Mensaje</span>
                             </div>

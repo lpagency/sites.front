@@ -154,7 +154,7 @@ div.upload input, div.image-upload input {
 .fondo-form {
     width: 100%;
     object-fit: cover !important;
-    height: 375px;
+    height: 175px;
     filter: grayscale(0%) brightness(80%);
     -webkit-filter: grayscale(0%) brightness(80%);
     -moz-filter: grayscale(0%) brightness(80%);
@@ -209,25 +209,7 @@ div.upload input, div.image-upload input {
     transition: all 0.5s ease;
 }
 
-.form-control {
-    display: block;
-    width: 100%;
-    height: 34px;
-    padding: 6px 12px;
-    font-size: 17px;
-    line-height: 1.42857143;
-    color: #555;
-    background-color: #fff;
-    background-image: none;
-    border: 0px solid #ccc;
-    border-radius: 4px;
-    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-    box-shadow: inset 0 0px 0px rgba(0,0,0,.075);
-    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    border-bottom: 1px solid #ccc;
-}
+
 
 .coli {
     margin-top: 50px;
@@ -413,6 +395,18 @@ input.cup{
     webkit-box-shadow: none;
     box-shadow: none;
     border: none;
+}
+
+.fa-angle-down.for {
+    float: right;
+    font-size: 21px !important;
+    position: relative;
+    top: 28px;
+    right: 11px;
+}
+
+.form-group.form-ran{
+    margin-left: -96px;
 }
 /*------------------------------------------Responsive---------------------------------*/
 
