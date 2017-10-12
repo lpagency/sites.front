@@ -227,36 +227,36 @@
   <div class="container min contact product text-left  fondo-contact" style="display: inherit;">
                 <div class="col-md-12 col-sm-12 col-xs-12">      
                     <div class="col-xs-12 col-md-12 col-sm-12 coli">
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_formdev' }}"> {{ read_text(site.name +  '_h_formdev') }}
                         </div>
-                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
+                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_formdev_2' }}"> {{ read_text(site.name +  '_h_formdev_2') }}
                         </div>
 
-                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_3' }}"> {{ read_text(site.name +  '_h_contact_3') }}
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_formdev_3' }}"> {{ read_text(site.name +  '_h_formdev_3') }}
                         </div>
 
                     </div>  
-                    <div class="col-xs-12 col-md-12 col-sm-12 align-form-contact fondo-contact">
+                    <div class="col-xs-12 col-md-12 col-sm-12 align-form-contact fondo-contact" style="position: relative;left: 2%;">
 
                     <div>
 
                         <form action='https://forms.zohopublic.com/sytes/form/placareformulariodevoluciones/formperma/j5jC45m42J05A09KA55MCH60a/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
                             <div class="row clearfix">
                                 <div class="col-xs-12 col-sm-12">
-                                   <div class="form-group">
-                                    <label for="nationality" class="control-label"></label> 
+                                   <div class="form-group con">
+                                    <label for="nationality" class="control-label">Elija una opcion</label> 
                                     <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
-                                        <select class="form-control nuevo" name="Dropdown" id="cambio"  placeholder="Please select your Nationality">
+                                        <select class="form-control nuevo input-lg requiredField" name="Dropdown" id="cambio"  placeholder="Please select your Nationality" style="padding: 0 20px;">
                                             <option>Cambio o Devolución</option>
                                             <option value="Cambio">Cambio</option>
                                             <option value="Devolución">Devolución</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <label for="nationality" class="control-label"></label> 
+                                <div class="form-group con">
+                                    <label for="nationality" class="control-label">¿Cuál es el motivo de la devolución?</label> 
                                     <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
-                                        <select class="form-control nuevo" name="Dropdown1" id="motivos"  placeholder="Please select your Nationality">
+                                        <select class="form-control nuevo input-lg requiredField" name="Dropdown1" id="motivos"  placeholder="Please select your Nationality" style="padding: 0 20px;">
                                             <option>Seleccionar motivo</option>
                                             <option value="Queda grande / chico">Queda grande/ chico </option>
                                             <option value="No calza bien">No calza bien</option>
@@ -303,8 +303,8 @@
                                     </div>
 
                                     <div class="form-group form-ran"> <!-- ****Solo aparece si se selecciona cambio*** -->
-                                       <label class="control-label tra">Adjuntar CV</label>
-                                       <input type="file" name="FileUpload" class="imgup-add-input" placeholder="Adjuntar CV"/>
+                                       <label class="control-label tra">Adjuntar Boleta</label>
+                                       <input type="file" name="FileUpload" class="imgup-add-input" placeholder="Adjuntar Boleta"/>
                                     </div>
                                 </div>  
                             </div>

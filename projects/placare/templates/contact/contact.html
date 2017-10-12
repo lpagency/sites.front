@@ -15,6 +15,7 @@
         //Expresión para validar edad de 18 a 60 años
         var expr2 = /^1[8-9]|[2-5]\d|60$/;
         $(document).ready(function(){
+            
             //función click
             $("#bEnviar").click(function(){
 
@@ -168,7 +169,7 @@
 
   <div class="container min contact product text-left  fondo-contact" style="display: inherit;">
                 <div class="col-md-12 col-sm-12 col-xs-12">      
-                    <div class="col-xs-12 col-md-6 col-sm-12 coli">
+                    <div class="col-xs-12 col-md-12 col-sm-12 coli">
                         <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact_real' }}"> {{ read_text(site.name +  '_h_contact_real') }}
                         </div>
                          <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
@@ -178,7 +179,7 @@
                         </div>
 
                     </div>  
-                    <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact">
+                    <div class="col-xs-12 col-md-6 col-sm-12 align-form-contact fondo-contact" style="position: relative;left: 2%;">
 
                         <div>
                         <form action='https://forms.zohopublic.com/sytes/form/Placareformulariodecontacto/formperma/H_mC4MAE5e4DkE0HF816JB85B/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
@@ -199,10 +200,10 @@
                                         </div>
                                         <span id="helpBlock3" class="hidden help-block help-mail">Escribe un Email valido</span>
                                     </div>
-                                       <div class="form-group">
-                                    <label for="nationality" class="control-label"></label> 
-                                    <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
-                                        <select class="form-control nuevo" name="Dropdown" id="nationality"  placeholder="Please select your Nationality">
+                                    <div class="form-group con">
+                                        <label for="nationality" class="control-label">Elija su consulta</label> 
+                                        <div id="consulta" class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
+                                        <select class="form-control nuevo input-lg requiredField" name="Dropdown" id="nationality"  placeholder="Please select your Nationality" style="padding: 0 20px;">
                                             <option>Tipo de consulta</option>
                                             <option value="Consulta por Producto">Consulta por Producto </option>
                                             <option value="Problema con Pago">Problema con Pago</option>
