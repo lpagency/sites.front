@@ -23,7 +23,7 @@
     font-size: 15px;
     position: relative;
     left: 0px;
-    width: 68%;
+    width: 70%;
     height: auto;
     margin-bottom: 25px;
     color: gray;
@@ -90,6 +90,14 @@ a.lok {
 
 
 /*----------------------------------------Responsive---------------------*/
+@media (max-width: 991px){
+    .col-md-12:nth-child(even)>.lef {
+    margin-top: 14px;
+    width: 100%;
+    left: 0px;
+}
+
+}
 
 @media (max-width: 768px){
     .p-art{
@@ -112,6 +120,7 @@ a.lok {
     padding-left:0px;
     padding-right:0px;
 }
+
 
 }
 

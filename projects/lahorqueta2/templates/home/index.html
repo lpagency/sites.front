@@ -77,8 +77,8 @@
 <!-- *contenido* -->
 
 <section>
-  <div class="container-fluid">
-    <div class="img-mobile parallax" style="background:url('{{ read_image(site.name + '_home',500) }}'); min-height: 530px;  background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover; margin-top: -20px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+  <div class="">
+    <div class="img-mobile parallax" style="background:url('{{ read_image(site.name + '_home',500) }}'); min-height: 530px;  background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: cover; margin-top: -20px; filter: grayscale(0%) brightness(75%);-webkit-filter: grayscale(0%) brightness(75%);-moz-filter: grayscale(0%) brightness(75%);-ms-filter: grayscale(0%) brightness(75%);-o-filter: grayscale(0%) brightness(75%);" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
         <div class="image-upload par1 visible-movil">
             <label for="img_home">
@@ -88,11 +88,11 @@
         </div>
         {% end %}
         <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.src='{{ read_image(site.name + '_home',500) }}'" class="img-principal hidden" alt="item">
-
+    </div>
+        
         <div class="col-md-12 col-sm-12 col-xs-12">
            <div class="texto-banner {{editabletext}}" text-id="{{ site.name + '_tex' }}"> {{ read_text(site.name +  '_tex') }}</div>
            <div class="texto-peque {{editabletext}}" text-id="{{ site.name + '_tex_2' }}"> {{ read_text(site.name +  '_tex_2') }}</div>
-
 
         <div class="col-md-6 col-sm-6 col-xs-12">
           <button type="button" class="btn btn-default home">CONOCE NUESTROS PRODUCTOS</button>
@@ -111,7 +111,6 @@
         </div>
 
         </div>
-    </div>
     </div>
 </section>
 
