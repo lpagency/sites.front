@@ -148,6 +148,41 @@
     });
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $("#cambio").on("blur", function()
+        {
+            if($("#cambio").val() == "Cambio")
+            {
+                if($(".selec-cambio").hasClass("hidden"))
+                {
+                    $(".selec-cambio").removeClass("hidden");
+                }
+            }
+            else
+            {
+                $(".selec-cambio").addClass("hidden");
+            }
+        });
+
+        $("#motivos").on("blur", function()
+        {
+            if($("#motivos").val() == "Otro motivo")
+            {
+                if($(".selec-motivo").hasClass("hidden"))
+                {
+                    $(".selec-motivo").removeClass("hidden");
+                }
+            }
+            else
+            {
+                $(".selec-motivo").addClass("hidden");
+            }
+        });
+    });
+</script>
+
 {% end %}
 
 
@@ -211,37 +246,37 @@
                                    <div class="form-group">
                                     <label for="nationality" class="control-label"></label> 
                                     <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
-                                        <select class="form-control nuevo" name="Dropdown" id="nationality"  placeholder="Please select your Nationality">
+                                        <select class="form-control nuevo" name="Dropdown" id="cambio"  placeholder="Please select your Nationality">
                                             <option>Cambio o Devolución</option>
-                                            <option value="cambio">Cambio</option>
-                                            <option value="devolución">Devolución</option>
+                                            <option value="Cambio">Cambio</option>
+                                            <option value="Devolución">Devolución</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="nationality" class="control-label"></label> 
                                     <div class="controls"> <i class="fa fa-angle-down for" aria-hidden="true"></i>
-                                        <select class="form-control nuevo" name="Dropdown" id="nationality"  placeholder="Please select your Nationality">
+                                        <select class="form-control nuevo" name="Dropdown1" id="motivos"  placeholder="Please select your Nationality">
                                             <option>Seleccionar motivo</option>
-                                            <option value="cambio">Queda grande/ chico </option>
-                                            <option value="devolución">No calza bien</option>
-                                            <option value="devolución">No gustó</option>
-                                            <option value="devolución">Color diferente a foto original</option>
-                                            <option value="devolución">Otro Motivo</option>
+                                            <option value="Queda grande / chico">Queda grande/ chico </option>
+                                            <option value="No calza bien">No calza bien</option>
+                                            <option value="No gustÃģ">No gustó</option>
+                                            <option value="Color diferente a foto original">Color diferente a foto original</option>
+                                            <option value="Otro motivo">Otro Motivo</option>
                                         </select>
                                     </div>
                                 </div>
-                                <div class="form-group"> <!-- ****Solo aparece si se selecciona otro motivo*** -->
+                                <div class="selec-motivo form-group hidden"> <!-- ****Solo aparece si se selecciona otro motivo*** -->
                                     <label for="exampleTextarea">Otro motivo</label>
-                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                    <textarea name="SingleLine1" class="form-control" id="exampleTextarea" rows="3"></textarea>
                                 </div>
-                                <div class="form-group"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                <div class="selec-cambio form-group hidden"> <!-- ****Solo aparece si se selecciona cambio*** -->
                                     <label for="exampleTextarea">URL o Enlace del producto a cambiar</label>
-                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                    <textarea name="SingleLine2" class="form-control" id="exampleTextarea" rows="3"></textarea>
                                 </div>
-                                <div class="form-group"> <!-- ****Solo aparece si se selecciona cambio*** -->
+                                <div class="selec-cambio form-group hidden"> <!-- ****Solo aparece si se selecciona cambio*** -->
                                     <label for="exampleTextarea">Talla del producto a cambiar</label>
-                                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                                    <textarea name="SingleLine3" class="form-control" id="exampleTextarea" rows="3"></textarea>
                                 </div>
 
                                 <div class="form-group con">
