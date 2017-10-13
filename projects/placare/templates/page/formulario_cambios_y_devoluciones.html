@@ -166,7 +166,7 @@
             }
         });
 
-        $("#motivos").on("blur", function()
+        $("#motivos").on("change", function()
         {
             if($("#motivos").val() == "Otro motivo")
             {
@@ -262,7 +262,7 @@
                                             <option value="No calza bien">No calza bien</option>
                                             <option value="No gustÃģ">No gustó</option>
                                             <option value="Color diferente a foto original">Color diferente a foto original</option>
-                                            <option value="Otro motivo">Otro Motivo</option>
+                                            <option class="otro_motivo" value="Otro motivo">Otro Motivo</option>
                                         </select>
                                     </div>
                                 </div>
