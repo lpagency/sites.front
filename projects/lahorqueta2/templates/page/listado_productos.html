@@ -24,52 +24,50 @@
     <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
 
-    <script type="text/javascript">
-        $(document).ready(function()
-        {
+<script type="text/javascript">
+    $(document).ready(function()
+    {
 
-            $(document).on("click", ".background-color-producto", function()
-            {
-                $(this).css("border", "black solid 2px");
-            });
+      $("#OpenAlert").click();
 
-            $(document).on("click", ".categ", function(ev)
-            {
+          var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+         var checkout_url = $.environmentVar(
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'https://pay.loadingplay.com');
+         var app_public = $.environmentVar(64,64,64);
+  
 
-                $(".subcateg").removeClass('active');
-                $(this).addClass('active');
-            });
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 16,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : false,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
 
-            var hyper2 = Utils.getUrlParameter('search_query');
+        $('.product-list').ecommerce('product_box', config);
 
-            if(hyper2 != undefined)
-            {
-              $(".tag-header").html("Resultados");
-            }
-
-            var hyper = Utils.getUrlParameter('tag').split(',');
-
-            if(hyper[0] == "mujer")
-            {
-              $(".tag-header").html("Mujeres");
-            }
-
-            if(hyper[0] == "hombre")
-            {
-              $(".tag-header").html("Hombres");
-            }
-
-            if(hyper[0] == "nino")
-            {
-              $(".tag-header").html("Niños");
-            }
-
-            if(hyper[0] == "oferta")
-            {
-              $(".tag-header").html("Oferta");
-            }
-        });
-    </script>
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
+</script>
 
     <script type="text/javascript">
         $("#testButton").live("touchstart", function()
@@ -140,7 +138,7 @@
 <section>
   <div class="container min">
 <div class="col-md-12 col-sm-12 col-xs-12">
-    <div class="product"></div>
+    <div class="product-list"></div>
       <div class="spinner">
           <div class="rect1"></div>
           <div class="rect2"></div>
