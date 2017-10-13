@@ -48,17 +48,16 @@
             // $(this).css("background-color", "rgb(91, 81, 83)");
             // $(this).parent(".num-tal").css("color", "white");
 
-        var base_url = $.environmentVar(
+           var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
-        var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
+         var checkout_url = $.environmentVar(
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'https://pay.loadingplay.com');
          var app_public = $.environmentVar(64,64,64);
-
-        var site_name = $.environmentVar('family', 'family', 'family');
+         var site_name = $.environmentVar('lahorqueta', 'lahorqueta', 'lahorqueta');
         var variants_loaded = false;
 
         var options = {
