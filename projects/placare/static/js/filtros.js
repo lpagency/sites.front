@@ -746,7 +746,7 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            if(window.listaTag[i].indexOf("Talla_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
@@ -805,7 +805,7 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            if(window.listaTag[i].indexOf("Platform_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
@@ -864,7 +864,7 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            if(window.listaTag[i].indexOf("Forma_Taco_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
@@ -923,7 +923,7 @@ $(document).ready(function()
 
         for(i in window.listaTag)
         {
-            if(window.listaTag[i].indexOf("Mat_Forro_") != -1)
+            if(window.listaTag[i].indexOf("Taco_") != -1)
             {
                 window.listaTag.splice(i,1);
             }
