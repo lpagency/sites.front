@@ -14,4 +14,4 @@
         'http://lpcheckout.ondev.today',
         'https://pay.loadingplay.com');
     var app_public = $.environmentVar(64,64,64);
-    var site_name = $.environmentVar('lahorqueta', 'lahorqueta', 'lahorqueta');
+    var site_name = $.environmentVar('lahorqueta2', 'lahorqueta2', 'lahorqueta2');
