@@ -86,7 +86,7 @@
                                             <tr>
                                             <th>Nombre</th>
                                             <th>Precio</th>
-                                            <th class="text-center">Cant</th>
+                                            <th class="">Cant</th>
                                             <th class="text-right"></th>
                                         </tr>
                                     </thead>
@@ -186,48 +186,52 @@
         </script>
 
 <script type="text/x-template" id="shopping-cart-product">
-<tr>
-    <td class="vert-align text-left">{{! name }}</td>
-    <td class="vert-align money">{{! price }}</td>
-    <td class="text-center vert-align">
-        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
-        {{! quantity }}
-        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
-    </td>
-    <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
-</tr>
+    <tr>
+        <td class="vert-align text-left">{{! name }}</td>
+
+        <td class="text-center2 vert-align">{{! price|money }}</td>
+        <td class="vert-align fri" style="border-bottom: 1px solid #ddd;">
+            <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
+            {{! quantity }}
+            <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" >+</a>
+        </td>
+        <td class="remove-from-cart text-center fri" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
+        <td class="vert-align fri">
+            <a class="borrarproducto" cart-id="">
+                <i class="icon-close"></i>
+            </a>
+        </td>
+    </tr>
 </script>
+
 <script type="text/x-template" id="shopping-cart-total" >
-<tr>
-    
-</tr>
-</thead>
-<tr>
-    <td>Total:</td> 
-    <td id="total" class="text-right money lib">{{! total }}</td>
-    <td></td>
-</tr>
+    <tr>
+    </tr>
+    <tr>
+        <td>Total:</td>
+        <td id="total" colspan="3" class="text-left total-modal lib">{{! total|money }}</td>
+        <td></td>
+    </tr>
 </script>
+
 <script type="text/x-template" id="shopping-cart-units-total" >
     <span> {{! units_total }}</span>
 </script>
+
 <script type="text/x-template" id="shopping-cart-checkout-form" >
-<form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
-    <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
-    <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
-    <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
-    <div class="form-group text-center">
-         <button type="submit" class="btn bn" style="
-            background-color: rgba(0, 0, 0, 0.24); color: white; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;">PAGAR
-        </button>
-    
-    </div>
-</form>
-   <div class=""> 
-             <a class="modal-close volver" data-dismiss="modal" aria-hidden="true">VOLVER</a>
-               
-           </a>        
+    <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+        <input name="site_id" class="form-control required" type="hidden" value="53">
+        <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+        <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+        <div class="form-group text-center">
+             <button type="submit" class="btn bn" style="background-color:rgba(0, 0, 0, 0.24);color: white;width: 31%;border-radius: 0px;height: 51px;font-weight: 100;float: right;">
+                PAGAR
+            </button>
         </div>
+        <div class="">
+            <a class="modal-close volver" data-dismiss="modal" aria-hidden="true">VOLVER</a>
+        </div>
+    </form>
 </script>
 
 
