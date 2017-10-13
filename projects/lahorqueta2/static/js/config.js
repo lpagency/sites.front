@@ -1,3 +1,4 @@
+
 /* global $ */
 /* global Utils */
 /* global unescape */
@@ -5,13 +6,12 @@
 /* export config */
 'use strict';
 
-
-        var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/');
-        var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(64,64,64);
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com');
+    var app_public = $.environmentVar(64,64,64);

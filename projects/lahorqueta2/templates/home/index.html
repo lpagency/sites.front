@@ -26,21 +26,22 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/');
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(64,64,64);
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com');
+         var app_public = $.environmentVar(64,64,64);
+
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
             'maxProducts' : 16,
             'templateOrigin' : '#product_template',
             'tag' : '',
-            'ignore_stock' : true,
+            'ignore_stock' : false,
             'onLoad':function(){
                // $('.ellipsis').ellipsis();
                // $(".ellipsis").dotdotdot();
