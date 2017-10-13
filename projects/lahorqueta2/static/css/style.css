@@ -7,6 +7,7 @@ html * {
 html, body {
 /*font-family: 'Open Sans', sans-serif;*/
   font-family: 'Lora', 'Helvetica', 'Arial', sans-serif;
+  background-color: #F8F8F8;
 }
 
 a{
@@ -141,7 +142,7 @@ div.upload input, div.image-upload input {
     font-weight: 500;
 }
 
-.frase-2{
+.frase-2 {
     text-align: center;
     font-size: 19px;
     color: gray;
@@ -149,7 +150,7 @@ div.upload input, div.image-upload input {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     margin-bottom: 135px;
-    width: 80%;
+    width: 50%;
 }
 
 .vin {
@@ -373,30 +374,42 @@ div.upload input, div.image-upload input {
     color: white;
 }
 
+.img-mobile{
+      background-attachment: initial !important;
+}
+
 }
 
 
 @media (max-width: 600px){
-	.btn-default.home {
-    color: #333;
-    background-color: #fff;
+.btn-default.home {
+    color: white;
+    background-color: transparent;
     border-color: #ccc;
     position: relative;
-    top: 200px;
+    bottom: 200px;
     text-align: center;
     border-radius: 31px;
     height: 67px;
-    width: 60%;
-    margin-left: 109px;
+    width: 67%;
+    margin-left: 94px;
+    font-size: 11px;
 }
 
-.play {
-    width: 8%;
+.btn-default.home:hover {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
     position: relative;
-    top: 220px;
-    left: 0%;
-    margin-bottom: -3px;
+    bottom: 200px;
+    text-align: center;
+    border-radius: 31px;
+    height: 67px;
+    width: 67%;
+    margin-left: 94px;
+    font-size: 11px;
 }
+
 
 .text-play {
     position: relative;
@@ -405,6 +418,140 @@ div.upload input, div.image-upload input {
     top: 228px;
     text-align: left;
     color: white;
+}
+
+.texto-banner {
+    color: white;
+    font-size: 41px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 300px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    font-weight: 500;
+    margin-bottom: -25px;
+    margin-top: -136px;
+}
+
+
+}
+
+@media (max-width: 414px){
+    .btn-default.home {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 61%;
+    margin-left: 64px;
+    font-size: 11px;
+}
+
+.btn-default.home:hover {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 61%;
+    margin-left: 64px;
+    font-size: 11px;
+}
+
+.frase-2 {
+    text-align: center;
+    font-size: 19px;
+    color: gray;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 135px;
+    width: 100%;
+}
+
+.texto-peque {
+    color: white;
+    font-size: 23px;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    bottom: 270px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 200;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+}
+
+@media (max-width: 375px){
+    .btn-default.home {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 68%;
+    margin-left: 64px;
+    font-size: 11px;
+}
+
+.btn-default.home:hover {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 68%;
+    margin-left: 64px;
+    font-size: 11px;
+}
+
+}
+
+@media (max-width: 320px){
+    .btn-default.home {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 82%;
+    margin-left: 23px;
+    font-size: 11px;
+}
+
+.btn-default.home:hover {
+    color: white;
+    background-color: transparent;
+    border-color: #ccc;
+    position: relative;
+    bottom: 224px;
+    text-align: center;
+    border-radius: 31px;
+    height: 51px;
+    width: 82%;
+    margin-left: 23px;
+    font-size: 11px;
 }
 
 }

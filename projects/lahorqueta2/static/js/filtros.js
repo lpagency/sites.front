@@ -20,14 +20,14 @@
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today');
-        var app_public = $.environmentVar(29,29,29);
+        var app_public = $.environmentVar(64,64,64);
 
             window.config = {
                     'app_public': app_public,
                     'base_url': base_url,
                     'products_per_page' : 9, 
                     'tag': '',
-                    'ignore_stock': false,
+                    'ignore_stock': true,
                     'infinite_scroll': true,
                     // 'maxProducts': 100,
                     'checkout_url': checkout_url, 
