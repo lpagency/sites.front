@@ -91,49 +91,6 @@ div.upload input, div.image-upload input {
 }
 
 
-.btn-default.home {
-    color: white;
-    background-color:transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 60%;
-    margin-left: 319px;
-}
-
-.btn-default.home:hover{
-    color: white;
-    background-color:transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 60%;
-    margin-left: 319px;
-}
-
-.play {
-    width: 13%;
-    position: relative;
-    bottom: 205px;
-    left: 19%;
-}
-
-.text-play {
-    position: relative;
-    left: 33%;
-    width: 54%;
-    bottom: 258px;
-    text-align: left;
-    color: white;
-}
-
-
 .frase-1{
     text-align: center;
     font-size: 31px;
@@ -194,6 +151,47 @@ div.upload input, div.image-upload input {
     width: 1200px;
 }
 
+.boton-pro {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 31%;
+    border-radius: 32px;
+    left: 36%;
+}
+
+.boton-pro:hover {
+    background-color: white;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 31%;
+    border-radius: 32px;
+    left: 36%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.texto-play{
+    font-size: 15px;
+    color: white;
+    padding-top: 20px;
+}
+
+.texto-play:hover{
+    font-size: 15px;
+    color: black;
+    padding-top: 20px;
+}
+
 /*---------------------------------------RESPONSIVE---------------------*/
 @media (max-width: 1199px){
     .masonry-contained{
@@ -208,47 +206,6 @@ div.upload input, div.image-upload input {
 }
 
 @media (max-width: 991px){
-.btn-default.home {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 60%;
-    margin-left: 215px;
-}
-
-.btn-default.home:hover {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 60%;
-    margin-left:215px;
-}
-
-.play {
-    width: 13%;
-    position: relative;
-    bottom: 198px;
-    left: 8%;
-}
-
-.text-play {
-    position: relative;
-    left: 24%;
-    width: 54%;
-    bottom: 239px;
-    text-align: left;
-    color: white;
-}
 
 }
 
@@ -267,50 +224,6 @@ div.upload input, div.image-upload input {
     font-weight: 500;
     margin-bottom: -24px;
     margin-top: -81px;
-}
-
-.btn-default.home {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 67%;
-    margin-left: 119px;
-    font-size: 11px;
-}
-
-.btn-default.home:hover {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 67%;
-    margin-left: 119px;
-    font-size: 11px;
-}
-
-.play {
-    width: 13%;
-    position: relative;
-    bottom: 190px;
-    left: 0%;
-}
-
-.text-play {
-    position: relative;
-    left: 16%;
-    width: 54%;
-    bottom: 223px;
-    text-align: left;
-    color: white;
 }
 
 }
@@ -358,67 +271,37 @@ div.upload input, div.image-upload input {
     margin-top: -136px;
 }
 
-.play {
-    width: 8%;
-    position: relative;
-    bottom: 190px;
-    left: 0%;
-}
-
-.text-play {
-    position: relative;
-    left: 19%;
-    width: 54%;
-    bottom: 173px;
-    text-align: left;
-    color: white;
-}
-
 .img-mobile{
       background-attachment: initial !important;
+}
+.boton-pro {
+    background-color: transparent;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 60%;
+    border-radius: 32px;
+    left: 20%;
+}
+
+.boton-pro:hover {
+    background-color: white;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 60%;
+    border-radius: 32px;
+    left: 20%;
 }
 
 }
 
 
 @media (max-width: 600px){
-.btn-default.home {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 67%;
-    margin-left: 94px;
-    font-size: 11px;
-}
-
-.btn-default.home:hover {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 200px;
-    text-align: center;
-    border-radius: 31px;
-    height: 67px;
-    width: 67%;
-    margin-left: 94px;
-    font-size: 11px;
-}
-
-
-.text-play {
-    position: relative;
-    left: 17%;
-    width: 54%;
-    top: 228px;
-    text-align: left;
-    color: white;
-}
 
 .texto-banner {
     color: white;
@@ -439,33 +322,6 @@ div.upload input, div.image-upload input {
 }
 
 @media (max-width: 414px){
-    .btn-default.home {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 61%;
-    margin-left: 64px;
-    font-size: 11px;
-}
-
-.btn-default.home:hover {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 61%;
-    margin-left: 64px;
-    font-size: 11px;
-}
 
 .frase-2 {
     text-align: center;
@@ -492,66 +348,40 @@ div.upload input, div.image-upload input {
     -moz-osx-font-smoothing: grayscale;
 }
 
-}
-
-@media (max-width: 375px){
-    .btn-default.home {
+.texto-play {
+    font-size: 13px;
     color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 68%;
-    margin-left: 64px;
-    font-size: 11px;
+    padding-top: 20px;
 }
 
-.btn-default.home:hover {
-    color: white;
+.boton-pro {
     background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 68%;
-    margin-left: 64px;
-    font-size: 11px;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 100%;
+    border-radius: 32px;
+    left: 0%;
+}
+
+.boton-pro:hover {
+    background-color:white;
+    border: 1px solid white;
+    height: 66px;
+    overflow: hidden;
+    bottom: 143px;
+    position: absolute;
+    width: 100%;
+    border-radius: 32px;
+    left: 0%;
 }
 
 }
+
 
 @media (max-width: 320px){
-    .btn-default.home {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 82%;
-    margin-left: 23px;
-    font-size: 11px;
-}
 
-.btn-default.home:hover {
-    color: white;
-    background-color: transparent;
-    border-color: #ccc;
-    position: relative;
-    bottom: 224px;
-    text-align: center;
-    border-radius: 31px;
-    height: 51px;
-    width: 82%;
-    margin-left: 23px;
-    font-size: 11px;
-}
 
 }

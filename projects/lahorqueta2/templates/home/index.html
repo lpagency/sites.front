@@ -95,24 +95,23 @@
         <div class="col-md-12 col-sm-12 col-xs-12">
            <div class="texto-banner {{editabletext}}" text-id="{{ site.name + '_tex' }}"> {{ read_text(site.name +  '_tex') }}</div>
            <div class="texto-peque {{editabletext}}" text-id="{{ site.name + '_tex_2' }}"> {{ read_text(site.name +  '_tex_2') }}</div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12">
-          <button type="button" class="btn btn-default home">CONOCE NUESTROS PRODUCTOS</button>
         </div>
 
-        <div class="col-md-6 col-sm-6 col-xs-12 hidden-xs">
-          <img class="play" src="https://84static.loadingplay.com/static/images/5247e9f2de7658839e626696ec99fd19_play.gif">
-          <div class="text-play {{editabletext}}" text-id="{{ site.name + '_tex_3' }}"> {{ read_text(site.name +  '_tex_3') }}</div>
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-12 visible-xs hidden-md hidden-lg hidden-sm">
+        <div class="col-md-12 col-sm-12 col-xs-12">
           <div align="center">
-          <img class="play" src="https://84static.loadingplay.com/static/images/5247e9f2de7658839e626696ec99fd19_play.gif">
-          <div class="text-play {{editabletext}}" text-id="{{ site.name + '_tex_3' }}"> {{ read_text(site.name +  '_tex_3') }}</div>
-        </div>
-        </div>
-
-        </div>
+            <div style="position:relative;">
+              <div class="boton-pro">
+                <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_butt') }}">
+                 <div class="texto-play {{editabletext}}" text-id="{{ site.name + '_pay' }}"> {{ read_text(site.name +  '_pay') }}</div> 
+                 </a>             
+                   {% if is_admin %}
+                   <img class="change-image editablelink marc" link-id="{{ site.name + '_butt' }}" content="{{ read_link(site.name + '_butt') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                   {% end %}
+               </div>
+           </div>
+         </div>
+       </div>
+       
     </div>
 </section>
 
