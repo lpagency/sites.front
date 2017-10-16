@@ -557,6 +557,10 @@ hr.len
 }
 /* ESTE CODIGO DE 480 ESTA OK*/
 @media (max-width: 480px){
+    .col-md-12:nth-child(even)>.zig 
+    {
+        margin-top: 5%;
+    }
  .box-4 .mask 
     {
         background: rgba(0,0,0,0.3);
@@ -602,6 +606,7 @@ hr.len
     {
         font-size: 2rem !important;
         margin-bottom: 15%;
+        width: 75%;
     }
     .mobile-det
     {
@@ -639,6 +644,10 @@ hr.len
     .fondo-service {
         width: 100%;
         right: 0;
+    }
+    .detail-arts>.tree-outline>li>div{
+        margin-left: -12%;
+        width: 75%;
     }
 }
 /* ESTE CODIGO DE 320 ESTA OK*/
