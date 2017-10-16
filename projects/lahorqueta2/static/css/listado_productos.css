@@ -1,6 +1,8 @@
-.original-de{
+.original-de {
     position: relative;
-    left: 10px;
+    left: 7px;
+    margin-top: 22px;
+    margin-bottom: -29px;
 }
 
 .shop-item-1 {
@@ -96,8 +98,6 @@
 }
 
 .carousel-control.right {
-    right: 0;
-    left: auto;
     background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
     background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
     background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
@@ -107,8 +107,6 @@
 }
 
 .carousel-control.left {
-    right: 0;
-    left: auto;
     background-image: -webkit-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
     background-image: -o-linear-gradient(left,rgba(0,0,0,.0001) 0,rgba(0,0,0,.5) 100%);
     background-image: -webkit-gradient(linear,left top,right top,from(rgba(0,0,0,.0001)),to(rgba(0,0,0,.5)));
@@ -119,7 +117,7 @@
 
 .fa-angle-right {
     position: relative;
-    top: 183px;
+    top: 119px;
     display: inline-block;
     font-style: normal;
     font-weight: 400;
@@ -128,6 +126,21 @@
     -moz-osx-font-smoothing: grayscale;
     font-size: 57px !important;
 }
+
+.fa-angle-left {
+    position: relative;
+    top: 119px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 57px !important;
+    right: 87px;
+}
+
+
 
 .fer{
     margin-top: 110px;
@@ -198,20 +211,30 @@
     right: 23px;
 }
 
-.texto-de{
+.texto-de {
     text-align: left;
     float: left;
     width: 100%;
-    margin-top: 46px;
-    left: 4%;
+    margin-top: 5px;
+    left: 5%;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
-.descr_prod_detail{
+.texto-de-in {
+    text-align: left;
+    float: left;
+    width: 100%;
+    margin-top: 39px;
+    left: 24px;
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.descr_prod_detail {
     width: 100%;
     position: relative;
-    left: 4%;
+    left: 5%;
     text-align: left;
     font-size: 14px;
     color: gray;
@@ -234,4 +257,54 @@
     width: 30px;
     float: left;
     padding-left: 6px;
+}
+
+
+
+
+/*-------------------------------------------Responsive------------------------------*/
+@media (max-width: 767px){
+    .original-de {
+    position: relative;
+    left: 16px;
+    margin-top: 22px;
+    margin-bottom: -29px;
+    float: left;
+    text-align: left;
+}
+
+.little-2 {
+    width: 100%;
+    height: 400px !important;
+    object-fit: contain;
+}
+
+.name-detail {
+    font-size: 24px;
+    text-align: left;
+    position: relative;
+    font-family: 'Montserrat', 'Helvetica', 'Arial', sans-serif;
+    left: 3%;
+    margin-top: 32px;
+}
+
+.carousel {
+    position: relative;
+    margin-top: -74px;
+}
+
+.fa-angle-left {
+    position: relative;
+    top: 119px;
+    display: inline-block;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 57px !important;
+    right: 0px;
+}
+
+
 }
