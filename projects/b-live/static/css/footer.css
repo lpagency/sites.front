@@ -152,46 +152,42 @@ a.a-footer{
 }
 /*----------------------------------------------Responsive-----------------------------------*/
 @media (max-width: 1271px){
-.no-dot {
-    position: relative;
-    left: -27px;
-    width: 103%;
-}
-
-.no-doti {
-    position: relative;
-    left: -36px;
-    width: 144%;
-}
-
-
+    .no-dot {
+        position: relative;
+        left: -27px;
+        width: 103%;
+    }
+    .no-doti {
+        position: relative;
+        left: -36px;
+        width: 144%;
+    }
 }
 
 
 @media (max-width: 1147px){
-.inform-comerc {
-    width: 100%;
-    position: relative;
-    left: 56px;
-}
-
+    .inform-comerc {
+        width: 100%;
+        position: relative;
+        left: 56px;
+    }
 }
 
 @media (max-width: 1110px){
-    .no-doti {
-    position: relative;
-    left: -36px;
-    width: 132%;
-}
+        .no-doti {
+        position: relative;
+        left: -36px;
+        width: 132%;
+    }
 
 }
 
 @media (max-width: 1060px){
     .no-doti {
-    position: relative;
-    left: -36px;
-    width: 135%;
-}
+        position: relative;
+        left: -36px;
+        width: 135%;
+    }
 
 }
 
@@ -226,160 +222,79 @@ a.a-footer{
 
 
 @media (max-width: 886px){
-  .d-o {
-    margin-left: 13px;
-}
-
-
-   .inform-comerc {
-    width: 100%;
-    position: relative;
-    left: 62px;
-    z-index: 2000000;
-}
+    .d-o {
+        margin-left: 13px;
+    }
+    .inform-comerc {
+        width: 100%;
+        position: relative;
+        left: 62px;
+        z-index: 2000000;
+    }
 
 }
 
 @media (max-width: 768px){
-    .no-doti {
+    .caja_footer
+    {
+        max-width: 100%;
+        padding:0px;
+        height: 35px;
+    }
+    .ul-2 {
+        text-align: left;
+    }
+    .caja-logo-footer 
+    {
     position: relative;
-    left: -36px;
-    width: 138%;
-}
-
-}
-
-@media (max-width: 767px){
-.inform-comerc {
-    width: 100%;
-    position: relative;
-    left: 0px;
-    z-index: 2000000;
-    text-align: center;
-}
-
-.inform-comerc-2 {
-    margin-left: 0px;
-    width: 100%;
-    height: 100px;
-}
-
-.d-o {
-    margin-right: 0px;
-    position: relative;
-    margin-left: 0px;
-    width: 100%;
-    top: 127px;
-    /* left: 338px; */
-}
-
-.no-dot {
-    margin-bottom: 40px;
-    width: 100%;
-    left: 0px;
-    height: 181%;
-}
-
-.no-doti {
-    position: relative;
-    left: 0px;
-    width: 95%;
-    text-align: center;
-}
-
-.ul-1{
-    text-align: center;
-    width: 100%;
-}
-
-.ul-2{
-    width: 100%;
-    text-align: center;
-}
-
-.pas-2 {
-    text-align: center;
-    margin-left: -3px;
-    width: 100%;
-    color: gray;
-    font-size: 15px;
-}
-
-.pas-3 {
-    margin-left: 0px;
-    width: 100%;
-    text-align: center;
-    font-size: 15px;
-    color: gray;
-}
-
-.pas-4 {
-    color: gray;
-    font-size: 15px;
-    text-align: center;
-    width: 100%;
-}
-.caja-logo-footer {
-    height: 100%;
-    width: 155px;
-    margin: 9% auto;
-}
-.caja_footer{
-    max-width: 100%;
-}
-.caja_datos {
-    position: relative;
-    max-width: 70%;
-    float: right;
-    right: 57px;
+    left: 2%;
     margin-bottom: 10%;
+    }
+    .caja_datos 
+    {
+        float: left;
+        left: 8%;
+    }
+
+    .no-dot 
+    {
+        position: relative;
+        left: -27px;
+        width: 95%;
+        text-align: left;
+    }
+    .pas-3 
+    {
+        margin-left: 0px;
+        text-align: left;
+    }
+    .pas-4 
+    {
+    text-align: left;
+    }
 }
 
-}
 
+@media (max-width: 420px){
+    .caja_datos {
+    float: left;
+    left: 15%;
+    }
+    .inform-comerc {
+        left: 15%;
+    }
 
-@media (max-width: 375px){
-    .no-doti {
-    position: relative;
-    left: 0px;
-    width: 95%;
-    text-align: center;
-}
-.caja-logo-footer {
-    height: 100%;
-    width: 155px;
-    margin: 9% auto;
-}
-.caja_footer{
-    max-width: 100%;
-}
-.caja_datos {
-    position: relative;
-    max-width: 70%;
-    float: right;
-    right: 57px;
-    margin-bottom: 10%;
-}
 }
 
 @media (max-width: 320px){
-    .no-doti {
-    height: 246px;
-
-}
-.caja-logo-footer {
-    height: 100%;
-    width: 155px;
-    margin: 9% auto;
-}
-.caja_footer{
-    max-width: 100%;
-}
-.caja_datos {
-    position: relative;
-    max-width: 70%;
-    float: right;
-    right: 57px;
-    margin-bottom: 10%;
-}
+    .caja_datos {
+        float: left;
+        left: 12%;
+    }
+    .inform-comerc {
+    left: 12%;
+    }
+    .caja-logo-footer {
+        left: -3%;
+        }
 }

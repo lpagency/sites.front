@@ -374,328 +374,287 @@ img.change-image {
     height: 40px !important;
     object-fit: cover !important;
 }
-/*----------------------------------------Responsive---------------------------*/
+    .hidden-responsivo{
+        border: none;
+    }
 
-@media (max-width: 1200px){
-    
-}
-
-@media (max-width: 991px){
-    
-
-}
-
-@media (max-width: 859px){
-    
-
-}
-
-@media (max-width: 800px){
-    
-
-}
 /*----------------------------------------------Responsive-----------------------------------*/
-@media (max-width: 1271px){
+
+@media (max-width: 1025px){
+
 
 }
-
-
-@media (max-width: 1147px){
-
-}
-
-@media (max-width: 1110px){
-
-}
-
-@media (max-width: 1060px){
-
-}
-
-
-@media (max-width: 1038px){
-
-}
-
-
-@media (max-width: 1000px){
-
-}
-
 @media (max-width: 991px){
 
-h1, .h1 {
-    font-size: 3rem !important;;
-}
-}
-
-
-@media (max-width: 886px){
+    h1, .h1 {
+        font-size: 3rem !important;;
+    }
 
 }
-
 @media (max-width: 768px){
+
     
-h1, .h1 {
-    font-size: 3rem !important;;
-}
+    h1, .h1 {
+        font-size: 3rem !important;;
+    }
     .titulo {
-   font-size: 3rem !important;
-}
-.bajada {
-    font-size: 2rem;
-    margin-top: 20px !important;
-    margin-bottom: 10% !important;
+       font-size: 3rem !important;
+    }
+
+    .bajada {
+        font-size: 2rem;
+        margin-top: 20px !important;
+        margin-bottom: 10% !important;
     }
     .list-art-home {
-    margin: 10% 0 !important;
+        margin: 10% 0 !important;
     }
-.texto-team2 {
-    font-size: 2rem;
-}
-.texto-team {
-    font-size: 2rem !important;
+    .texto-team2 {
+         top: 120px;
+        font-size: 2rem;
     }
-.nombre-servicios-home {
+    .texto-team {
+        font-size: 2rem !important;
+    }
+    .nombre-servicios-home {
     /* display: inherit; */
-    font-size: 1.5rem !important;
-    color: white;
-    font-weight: 700;
-}
-.productos-servicios-home {
-    display: inline-block;
-    height: 50px;
-}
-.list-service {
-    top: 60px;
-}
-.tittle-service-home {
-    font-size: 3rem;
-}
+        font-size: 1.5rem !important;
+        color: white;
+        font-weight: 700;
+    }
+    .list-service {
+        top: 60px;
+    }
+    .tittle-service-home {
+        font-size: 3rem;
+    }
+    .col-md-12:nth-child(even)>.zig{
+        margin-bottom: 0 !important;
+    }
+    .banner-home-3 
+    {
+        right: 34px !important;
+    }
+    .texto-one 
+    {
+        margin: 25% 0;
+    }
+    .service-banner-home 
+    {
+        position: absolute;
+        width: 92%;
+        top: 3%;
+        color: #fff;
+    }
+    .productos-servicios-home 
+    {
+        display: inline-grid;
+        height: 57px;
+    }
+    .col-md-12:nth-child(even)>.lef>.tres 
+    {
+        right: 50px !important;
+        text-align: left !important;
+    }
+    .col-md-12:nth-child(even)>.lef 
+    {
+        text-align: left !important;
+    }
 }
 
-@media (max-width: 767px){
-
-h1, .h1 {
-    font-size: 3rem !important;;
-}
+@media (max-width: 480px){
+    .bajada {
+        margin-bottom: 30% !important;
+    }
+        
+    h1, .h1 {
+        font-size: 2rem !important;;
+    }
     .titulo {
-   font-size: 3rem !important;
-}
-.col-md-12:nth-child(even)>.zig{
-    margin-bottom: 0 !important;
-}
-.bajada {
-    font-size: 2rem;
-    margin-top: 20px !important;
-    margin-bottom: 10% !important;
+       font-size: 2rem !important;
     }
-  
-.list-art-home {
-    margin: 10% 0 !important;
+    .titlenotice {
+        font-size: 1rem;
+        bottom: 115px;
     }
-  .texto-team2 {
-    font-size: 2rem;
-}
-.texto-team {
-    font-size: 2rem !important;
+    .titlecontact2 {
+        font-size: 1rem;
+        top: 50px;
+        right: 30px;
     }
-.nombre-servicios-home {
-    /* display: inherit; */
-    font-size: 1.5rem !important;
-    color: white;
-    font-weight: 700;
+    .subtitle-contact{
+        font-size: 2rem;
+        top: 45px;
+        position: relative;
+        right: 30px;
+    }
 }
-.productos-servicios-home {
-    display: inline-block;
-    height: 50px;
-}
-.service-banner-home {
-    position: absolute;
-    width: 92%;
-    top: 3%;
-    color: #fff;
-}
-.productos-servicios-home {
-    display: inline-grid;
-    height: 57px;
-}
-.col-md-12:nth-child(even)>.lef>.tres {
-    right: 50px !important;
-    text-align: left !important;
-}
-.col-md-12:nth-child(even)>.lef {
-    text-align: left !important;
-}
-.banner-home-3 {
-    right: 34px !important;
-}
-.texto-team2 {
-    top: 120px;
-}
-.texto-team {
-    top: 16px;
-}
-.texto-one {
-    margin: 25% 0;
-}
-.list-service {
-    top: 60px;
-}
-.tittle-service-home {
-    font-size: 3rem;
-}
-}
-
 
 @media (max-width: 375px){
 
-h1, .h1 {
-    font-size: 3rem !important;;
-}
-    .titulo {
-   font-size: 3rem !important;
-}
-.col-md-12:nth-child(even)>.zig{
-    margin-bottom: 0;
-}
-.bajada {
-    font-size: 2rem;
-    margin-top: 20px !important;
-    margin-bottom: 10% !important;
+    .titulo
+     {
+       font-size: 2rem !important;
     }
-    .list-art-home {
-    margin: 10% 0 !important;
+    .col-md-12:nth-child(even)>.zig
+    {
+        margin-bottom: 0;
     }
-    .texto-team2 {
-    font-size: 2rem;
-}
-.texto-team {
-    font-size: 2rem !important;
+    .list-art-home 
+    {
+        margin: 10% 0 !important;
     }
-.nombre-servicios-home {
-    /* display: inherit; */
-    font-size: 1.5rem !important;
-    color: white;
-    font-weight: 700;
-}
-.productos-servicios-home {
-    display: inline-block;
-    height: 50px;
-}
-.service-banner-home {
-    position: absolute;
-    width: 92%;
-    top: 3%;
-    color: #fff;
-}
-.productos-servicios-home {
-    display: inline-grid;
-    height: 57px;
-}
-.col-md-12:nth-child(even)>.lef>.tres {
-    right: 50px !important;
-    text-align: left !important;
-}
-.col-md-12:nth-child(even)>.lef {
-    text-align: left !important;
-}
-.banner-home-3 {
-    right: 34px !important;
-}
-.texto-team2 {
-    top: 120px;
-}
-.texto-team {
-    top: 16px;
-}
-.texto-one {
-    margin: 25% 0;
-}
-.list-service {
-    top: 60px;
-}
-.tittle-service-home {
-    font-size: 3rem;
-}
+    .texto-team2 
+    {
+        font-size: 2rem;
+    }
+    .texto-team 
+    {
+        font-size: 2rem !important;
+    }
+    .nombre-servicios-home 
+    {
+        /* display: inherit; */
+        font-size: 1.5rem !important;
+        color: white;
+        font-weight: 700;
+    }
+    .productos-servicios-home 
+    {
+        display: inline-block;
+        height: 50px;
+    }
+    .service-banner-home 
+    {
+        position: absolute;
+        width: 92%;
+        top: 3%;
+        color: #fff;
+    }
+    .productos-servicios-home 
+    {
+        display: inline-grid;
+        height: 57px;
+    }
+    .col-md-12:nth-child(even)>.lef>.tres 
+    {
+        right: 50px !important;
+        text-align: left !important;
+    }
+    .col-md-12:nth-child(even)>.lef 
+    {
+        text-align: left !important;
+    }
+    .banner-home-3 
+    {
+        right: 34px !important;
+    }
+    .texto-team2 
+    {
+        top: 120px;
+    }
+    .texto-team 
+    {
+        top: 16px;
+    }
+    .texto-one {
+        margin: 25% 0;
+    }
+    .list-service 
+    {
+        top: 60px;
+    }
+    .tittle-service-home 
+    {
+        font-size: 3rem;
+    }
 }
 
 @media (max-width: 320px){
-    .titulo {
-   font-size: 3rem !important;
-}
-h1, .h1 {
-    font-size: 3rem !important;;
-}
-.bajada {
-    font-size: 2rem;
-    margin-top: 20px !important;
-    margin-bottom: 10% !important;
+    .bajada {
+        margin-bottom: 35% !important;
     }
-   .list-art-home {
-    margin: 10% 0 !important;
+    .titulo 
+    {
+        font-size: 3rem !important;
+    }
+
+   .list-art-home 
+   {
+
+        margin: 10% 0 !important;
+    }
+    .texto-team2 
+    {
+        font-size: 2rem;
+    }
+    .col-md-12:nth-child(even)>.zig
+    {
+        margin-bottom: 0 !important;
+    }
+    .texto-team {
+        font-size: 2rem !important;
+    }
+    .nombre-servicios-home 
+    {
+        /* display: inherit; */
+        font-size: 1.5rem !important;
+        color: white;
+        font-weight: 700;
+    }
+    .productos-servicios-home 
+    {
+        display: inline-block;
+        height: 50px;
+    }
+    .service-banner-home 
+    {
+        position: absolute;
+        width: 92%;
+        top: 3%;
+        color: #fff;
+    }
+    .productos-servicios-home 
+    {
+        display: inline-grid;
+        height: 57px;
+    }
+    .col-md-12:nth-child(even)>.lef>.tres 
+    {
+        right: 50px !important;
+        text-align: left !important;
+    }
+    .col-md-12:nth-child(even)>.lef 
+    {
+        text-align: justify !important;
+    }
+    .banner-home-3 
+    {
+        right: 22px !important;
+    }
+    .texto-team2 
+    {
+        top: 120px;
+    }
+    .texto-team 
+    {
+        top: 16px;
+    }
+    .texto-one 
+    {
+        margin: 25% 0;
+    }
+    .list-service 
+    {
+        top: 60px;
+    }
+    .tittle-service-home 
+    {
+        font-size: 3rem;
     }
     .texto-team2 {
-    font-size: 2rem;
-}
-.col-md-12:nth-child(even)>.zig{
-    margin-bottom: 0 !important;
-}
-.texto-team {
-    font-size: 2rem !important;
-    }
-.nombre-servicios-home {
-    /* display: inherit; */
-    font-size: 1.5rem !important;
-    color: white;
-    font-weight: 700;
-}
-.productos-servicios-home {
-    display: inline-block;
-    height: 50px;
-}
-.service-banner-home {
-    position: absolute;
-    width: 92%;
-    top: 3%;
-    color: #fff;
-}
-.productos-servicios-home {
-    display: inline-grid;
-    height: 57px;
-}
-.col-md-12:nth-child(even)>.lef>.tres {
-    right: 50px !important;
-    text-align: left !important;
-}
-.col-md-12:nth-child(even)>.lef {
-    text-align: left !important;
-}
-.banner-home-3 {
-    right: 34px !important;
-}
-.texto-team2 {
-    top: 120px;
-}
-.texto-team {
-    top: 16px;
-}
-.texto-one {
-    margin: 25% 0;
-}
-.list-service {
-    top: 60px;
-}
-.tittle-service-home {
-    font-size: 3rem;
-}
-}
-@media all and (max-width: 992px){
-    
+        font-size: 1.5rem !important;
+    }        
 }
 
-
-@media all and (max-width: 700px){
-
-}
 
