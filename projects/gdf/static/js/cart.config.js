@@ -61,7 +61,7 @@ $(document).ready(function()
 
         var base_url = $.environmentVar(
             'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.tpday/',
+            'https://apibodegas.loadingplay.com/',
             'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
