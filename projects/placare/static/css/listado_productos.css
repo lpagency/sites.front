@@ -2346,11 +2346,11 @@ a.text {
         font-size: 13px;
     }
 
-    .fixx{
-        width: 100%;
-        position: fixed;
-        bottom: 0px;
-        z-index: 100;
+    .fixx {
+    width: 100%;
+    position: fixed;
+    top: 55px;
+    z-index: 100;
     }
 
     .btn-primary {
@@ -2402,12 +2402,12 @@ a.text {
 
     .muu{
       margin-top: -31px;
-  }
+     }
 
-  .mii {
+    .mii {
     margin-bottom: -24px;
-    margin-top: 20px;
-}
+    margin-top: 53px;
+    }
 
 .mtl {
     padding-top: 29px !important;  
@@ -2471,7 +2471,7 @@ hr.listado {
     margin-top: -82px;
     margin-bottom: 20px;
     border: 0;
-    border-top: 1px solid #ebedef;
+    border-top: 1px solid transparent;
     width: 99%;
 }
 
@@ -2509,7 +2509,7 @@ hr.listado {
 
 
 .pinki {
-    margin-top: -277px;
+    margin-top: -369px;
 }
 
 .kinti{
@@ -2843,19 +2843,19 @@ hr.lon {
     }
 
     .up-ex {
-        float: left;
-        text-align: left;
-        width: 100%;
-        position: relative;
-        top: 0px;
-        margin-bottom: 42px;
-        font-size: 13px;
-        font-weight: 500;
-        text-rendering: optimizeLegibility;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        left: 15px;
-        color: #282c3f;
+    float: left;
+    text-align: left;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    margin-bottom: 42px;
+    font-size: 13px;
+    font-weight: 500;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    left: 13px;
+    color: #282c3f;
     }
 
     .original {
@@ -3217,6 +3217,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .product-box.two {
@@ -3529,6 +3530,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .img-container{
@@ -3652,6 +3654,7 @@ hr.lon {
         top: 10px;
         position: relative;
         /* border: 1px solid gray; */
+        display: none;
     }
 
     .btn-success.car-2 {
@@ -3690,6 +3693,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .image {
@@ -3758,6 +3762,19 @@ hr.lon {
     width: 112%;
     }
 
+    .original {
+    color: #282c3f;
+    float: left;
+    left: 14px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    text-align: left;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    }
+
 }
 
 @media (max-width: 375px){
@@ -3776,17 +3793,17 @@ hr.lon {
     }
 
     .inf {
-        position: relative;
-        bottom: 36px;
-        width: 100%;
-        text-align: left;
-        left: 15px;
-        color: #4A4949;
-        font-size: 13px;
-        font-weight: 300;
-        margin-bottom: -15px;
-        float: left;
-        height: 37px;
+    position: relative;
+    bottom: 36px;
+    width: 100%;
+    text-align: left;
+    left: 13px;
+    color: #4A4949;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: -15px;
+    float: left;
+    height: 37px;
     }
 
     a.text {
@@ -3795,6 +3812,7 @@ hr.lon {
         padding: 7px 56px;
         top: 11px;
         position: relative;
+        display: none;
     }
 
     a.text.detalle {
@@ -3805,6 +3823,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .original-tachado {
@@ -3991,6 +4010,27 @@ hr.lon {
         top: 6px;
     }
 
+    .fil {
+    position: relative;
+    top: -27px;
+    right: -12.5%;
+    margin-bottom: -14px;
+    font-size: 15px;
+   }
+
+   .original {
+    color: #282c3f;
+    float: left;
+    left: 13px;
+    position: relative;
+    margin-bottom: 20px;
+    margin-top: -20px;
+    text-align: left;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+    }
+
 
 }
 
@@ -4000,6 +4040,7 @@ hr.lon {
         font-size: 16px;
         padding: 7px 53px;
         position: relative;
+        display: none;
     }
 
     .descuento-lis {
@@ -4066,6 +4107,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
 
@@ -4220,20 +4262,21 @@ hr.lon {
         padding: 7px 47px;
         top: -9px;
         position: relative;
+        display: none;
     }
 
-    .inf {
-        position: relative;
-        bottom: 36px;
-        width: 100%;
-        text-align: left;
-        left: 15px;
-        color: #4A4949;
-        font-size: 13px;
-        font-weight: 300;
-        margin-bottom: -15px;
-        float: left;
-        height: 37px;
+   .inf {
+    position: relative;
+    bottom: 36px;
+    width: 100%;
+    text-align: left;
+    left: 13px;
+    color: #4A4949;
+    font-size: 13px;
+    font-weight: 300;
+    margin-bottom: -15px;
+    float: left;
+    height: 37px;
     }
 
     .original-tachado {
@@ -4348,7 +4391,6 @@ hr.lon {
         left: 25%;
     }
 
-
     a.text.detalle {
         background-color: transparent;
         font-size: 14px;
@@ -4357,6 +4399,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .conti-de:hover {
@@ -4475,6 +4518,14 @@ hr.lon {
         right: 15px;
         position: relative;
     }
+
+    .fil {
+    position: relative;
+    top: -27px;
+    right: -15.5%;
+    margin-bottom: -14px;
+    font-size: 15px;
+   }
 
 
 }

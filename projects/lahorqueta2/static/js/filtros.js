@@ -30,7 +30,7 @@
                     'products_per_page' : 9, 
                     'tag': '',
                     'ignore_stock': false,
-                    'infinite_scroll': true,
+                    'infinite_scroll': false,
                     // 'maxProducts': 100,
                     'checkout_url': checkout_url, 
                     'operator' :'or',
