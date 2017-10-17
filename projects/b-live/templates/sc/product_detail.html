@@ -77,22 +77,25 @@
 <script type="text/template" id="product_detail">
   <section>
       <div style="position: relative;">
-         <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-service" id="img_detail">
+         <div>
+            <img src="{{! images[0]['thumb_500'] }}" title="" alt="" class="fondo-service" id="img_detail">
+            <div align="center">
+              <div class="col-md-12" style="position: relative; bottom: 60px;">
+                <p class="titleservice2">BLIVE | Servicios </p>
+                <h1 class="name ellipsis multiline titleservice" href="#">{{! name }}</h1>
+              </div>
+              <h3 class="bajadaservice ellipsis multiline">{{! bullet_2 }}</h3>
+              <h3 class="descriptservice ellipsis multiline">{{! description }}</h3>
+            </div>
+         </div>
         <div align="center">
           <div class="lateral l-movil" style="position: relative; margin-top: -403px; float:left; left:40px;">
             
          </div>
        </div>
-        </div>
+      </div>
       <div class="container">
-          <div align="center">
-            <div class="col-md-12" style="position: relative; bottom: 60px;">
-              <p class="titleservice2">BLIVE | Servicios </p>
-              <h1 class="name ellipsis multiline titleservice" href="#">{{! name }}</h1>
-            </div>
-            <h3 class="bajadaservice ellipsis multiline">{{! bullet_2 }}</h3>
-            <h3 class="descriptservice ellipsis multiline">{{! description }}</h3>
-          </div>
+
           <hr>
           <div class="btn-to-contact col-md-12" align="center">
             <input class="btn-contactanos" type="button" onclick="location.href='{{site_base}}/contact' " value="Contáctanos" name="boton" /> 
