@@ -6,22 +6,25 @@
     position: relative;
     margin: 4% 0;
 }
-.titulo
+.titulo_casos_exito
 {
     position: relative;
-    width: 96%;
-    text-align: center;
-    top: 0px;
-    /*margin-bottom: 11px;*/
-    color: #888585;
-    font-weight: 300;
+    z-index: 222;
+    font-family: 'Open Sans', sans-serif;
     font-size: 4rem;
-    /* font-family: Thaoma,Verdana,sans-serif; */
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    overflow: hidden;
-    height: 100%;
+    font-weight: 100;
+    color:#fff;
+}
+.til-ban-qs-3 {
+    position: absolute;
+    top: -137px;
+    left: 35px;
+    text-align: left;
+    width: 70%;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 600;
+    min-height: 50px;
 }
 
 .bajada {
@@ -614,6 +617,11 @@ hr.len
     .detail-arts>span>p{
         width: 75%;
     }
+        .til-ban-qs-3 {
+        position: absolute;
+        top: -115px;
+    }
+
 }
 /* ESTE ESTA OK!*/
 @media (max-width: 320px){
