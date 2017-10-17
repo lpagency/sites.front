@@ -1021,7 +1021,7 @@ a.variables:active{
     color: #526cd0;
     font-weight: 600;
     font-size: 13px;
-    top: 45px;
+    top:0px;
     position: relative;
     border-color: #526cd0;
 }
@@ -1470,6 +1470,24 @@ hr.lon {
     margin-top: 10px;
     margin-bottom: 22px;
     font-size: 13px;
+}
+
+.condition-render-boundary-top {
+    position: static;
+}
+.condition-render-verticalFilters {
+    padding: 0 15px 10px 0;
+    box-sizing: border-box;
+    transition: margin .2s cubic-bezier(.25,.46,.45,.94);
+    margin-top: 0;
+}
+
+.condition-render-fixed-bottom, .condition-render-fixed-top {
+    max-width: 215px;
+    z-index: 4;
+    position: fixed;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
@@ -2264,6 +2282,7 @@ a.text {
         top: -14px;
         position: relative;
         border: 1px solid #E9E9ED;
+        display: none;
     }
 
     a.text.detalle {
@@ -2274,6 +2293,7 @@ a.text {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
     .image {
@@ -2629,6 +2649,18 @@ hr.lon {
     margin-left: 13px;
 }
 
+.more-products {
+    margin: auto;
+    width: 320px;
+    border-radius: 1px;
+    color: #526cd0;
+    font-weight: 600;
+    font-size: 13px;
+    top: 0px;
+    position: relative;
+    border-color: #526cd0;
+}
+
 }
 
 
@@ -2640,6 +2672,7 @@ hr.lon {
         top: 230px;
         position: relative;
         border: 1px solid #E9E9ED;
+        display: none;
     }
 
     a.text.detalle {
@@ -2650,6 +2683,7 @@ hr.lon {
         position: relative;
         border: 1px solid transparent;
         border-top: 1px solid #E9E9ED;
+        display: none;
     }
 
 
@@ -3181,7 +3215,7 @@ hr.lon {
     .conti {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 387px;
         margin-bottom: 0px;
     }
@@ -3189,7 +3223,7 @@ hr.lon {
     .conti:hover {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 387px;
         margin-bottom: 0px;
     }
@@ -3197,7 +3231,7 @@ hr.lon {
     .conti-de:hover {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 387px;
         margin-bottom: 0px;
     }
@@ -3206,7 +3240,7 @@ hr.lon {
         width: 100%;
         height: 387px;
         margin-bottom: 0px;
-        border: 1px solid  #E9E9ED;
+        border: 1px solid transparent;
     }
 
     a.text {
@@ -3336,18 +3370,18 @@ hr.lon {
     }
 
     .texto-header-pro-3 {
-        height: 74px;
-        margin-bottom: -35px;
-        position: relative;
-        left: 8%;
-        top: -20px;
-        font-size: 15px;
-        color: gray;
-        width: 100%;
-        font-weight: 300;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
+    height: 74px;
+    margin-bottom: -35px;
+    position: relative;
+    left: 9%;
+    top: -23px;
+    font-size: 15px;
+    color: gray;
+    width: 100%;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
     }
 
     .original-de {
@@ -3949,19 +3983,19 @@ hr.lon {
     }
 
 
-    .texto-header-pro-3 {
-        height: 74px;
-        margin-bottom: -35px;
-        position: relative;
-        left: 9%;
-        top: -20px;
-        font-size: 15px;
-        color: gray;
-        width: 100%;
-        font-weight: 300;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
+  .texto-header-pro-3 {
+    height: 74px;
+    margin-bottom: -35px;
+    position: relative;
+    left: 9%;
+    top: -23px;
+    font-size: 15px;
+    color: gray;
+    width: 100%;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
     }
 
 
@@ -4219,7 +4253,7 @@ hr.lon {
     .conti {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 349px;
         margin-bottom: 0px;
     }
@@ -4227,7 +4261,7 @@ hr.lon {
     .conti:hover {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 349px;
         margin-bottom: 0px;
     }
@@ -4405,7 +4439,7 @@ hr.lon {
     .conti-de:hover {
         position: relative;
         width: 100%;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
         height: 340px;
         margin-bottom: 10px;
     }
@@ -4415,7 +4449,7 @@ hr.lon {
         width: 100%;
         height: 340px;
         margin-bottom: 10px;
-        border: 1px solid #E9E9ED;
+        border: 1px solid transparent;
     }
 
     .texto-header-pro-3 {
