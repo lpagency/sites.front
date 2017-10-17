@@ -1472,6 +1472,24 @@ hr.lon {
     font-size: 13px;
 }
 
+.condition-render-boundary-top {
+    position: static;
+}
+.condition-render-verticalFilters {
+    padding: 0 15px 10px 0;
+    box-sizing: border-box;
+    transition: margin .2s cubic-bezier(.25,.46,.45,.94);
+    margin-top: 0;
+}
+
+.condition-render-fixed-bottom, .condition-render-fixed-top {
+    max-width: 215px;
+    z-index: 4;
+    position: fixed;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
 
 @media (max-width: 1199px){
