@@ -31,7 +31,7 @@ $(document).ready(function()
         'base_url': base_url,
         'products_per_page' : 18,
         'tag': '',
-        'ignore_stock': false,
+        'ignore_stock': true,
         'infinite_scroll': false,
         // 'maxProducts': 100,
         'checkout_url': checkout_url,
