@@ -29,7 +29,7 @@ $(document).ready(function()
     window.config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 18,
+        'products_per_page' : 12,
         'tag': '',
         'ignore_stock': true,
         'infinite_scroll': false,
