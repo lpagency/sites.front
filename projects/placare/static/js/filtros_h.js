@@ -39,6 +39,15 @@ $(document).ready(function()
         'onLoad': function(products)
         {
 
+            if(products.length == 0)
+            {
+                $(".link-recargar").removeClass("hidden");
+            }
+            else
+            {
+                $(".link-recargar").addClass("hidden");
+            }
+
             $(".letrero-nuevo").each(function()
             {
                 var tags = $(this).attr("nuevo");
