@@ -255,7 +255,7 @@
     display: inline-block;
 }
 .titleservice{
-    position: absolute;
+    
     color: white;
     font-size: 3.2rem;
     text-align: left;
@@ -268,14 +268,17 @@
     bottom:0;
 }
 .titleservice2{
-    position: absolute;
+    width: 100%;
     color: white;
     font-size: 1.8rem;
     height: 20px;
     text-align: left;
     font-family: 'Open Sans', sans-serif;
-    left: -14px;
-    bottom:0;
+    left: 65px;
+    bottom:3%;
+}
+.pos-left{
+    left:5%;
 }
 .bajadaservice{
     position: relative;
@@ -579,6 +582,9 @@ hr.len
         position: absolute;
         top: 0px;
     }
+    .pos-left{
+        left: 1%;
+    }
     .tittle-service-home-art 
     {
         position: relative;
@@ -655,10 +661,7 @@ hr.len
         width: 100%;
         right: 0;
     }
-    .titleservice{
-        top: -10px;
-        width: 95%;
-    }
+
     .titleservice2{
         bottom: 40px;
     }
