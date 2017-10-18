@@ -13,7 +13,34 @@
 <script  type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script  type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-smoove/0.2.6/jquery.smoove.min.js"></script>
 
-
+    <script>
+$(document).ready(function() {
+        function isScrolledTo(elem) {
+            var docViewTop = $(window).scrollTop(); //num of pixels hidden above current screen
+            var docViewBottom = docViewTop + $(window).height();
+ 
+            var elemTop = $(elem).offset().top; //num of pixels above the elem
+            var elemBottom = elemTop + $(elem).height();
+ 
+            return ((elemTop <= docViewTop));
+        }
+ 
+        var catcher = $('#catcher');
+        var sticky = $('#sticky');
+    
+        $(window).scroll(function() {
+            if(isScrolledTo(sticky)) {
+                sticky.css('position','fixed');
+                sticky.css('top','0px');
+            } 
+      var stopHeight = catcher.offset().top + catcher.height();
+      if ( stopHeight > sticky.offset().top) {
+                sticky.css('position','absolute');
+                sticky.css('top',stopHeight);
+            }
+        });
+    });
+</script>
 {% end %}
 
 
@@ -28,104 +55,224 @@
 
 <!-- *contenido* -->
 <body id="lapimport">
-   <section>
-    <div class="mobile" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:300px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
-        {% if is_admin %}
-        <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_productos">
-                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_productos" name="image" id="img_productos" >
+
+
+
+
+<section>
+	<div class="container min">
+<div id="sidebar">
+<!-- <div id="catcher">
+This is the "catcher" <code>div</code>
+</div> -->
+<div id="sticky">
+   <div class="col-md-3 col-sm-3 col-xs-12">
+      <section class="h_submenu hidden-xs visible-md visible-sm visible-lg">
+        <div class="col-md-12 col-sm-12 col-xs-12 mtl text-center" style="margin-bottom: 50px;border-right: 1px solid #E9E9ED; width: 92%;left: 13%;  margin-top: 13px;">
+          <div class="text-fil-2"> TIPO DE CALZADO </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Ballerinas" name="vehicle" tag="Categoria3_Ballerinas" value="Bike" value2="Ballerinas">
+                <div class="fil h-Categoria3_Ballerinas" onclick="checkNombre('Categoria3_Ballerinas','Ballerinas')">Ballerinas</div>
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Botines" name="vehicle" tag="Categoria3_Botines" value="Car" value2="Botines"> 
+                <div class="fil h-Categoria3_Botines" onclick="checkNombre('Categoria3_Botines','Botines')">Botines</div> 
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Mocasines" name="vehicle" tag="Categoria3_Mocasines" value="Boat" value2="Mocasines"> 
+                <div class="fil h-Categoria3_Mocasines" onclick="checkNombre('Categoria3_Mocasines','Mocasines')">Mocasines</div>
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Mules" name="vehicle" tag="Categoria3_Mules" value="Boat" value="Mules" value2="Mules"> 
+                <div class="fil h-Categoria3_Mules" onclick="checkNombre('Categoria3_Mules','Mules')">Mules</div>
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Plataformas" name="vehicle" tag="Categoria3_Plataformas" value="Boat" value2="Plataformas"> 
+                <div class="fil h-Categoria3_Plataformas" onclick="checkNombre('Categoria3_Plataformas','Plataforma')">Plataformas</div> 
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Playeras" name="vehicle" tag="Categoria3_Playeras" value="Boat" value2="Playeras"> 
+                <div class="fil h-Categoria3_Playeras" onclick="checkNombre('Categoria3_Playeras','Playeras')">Playeras</div>
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Sandalias" name="vehicle" tag="Categoria3_Sandalias" value="Boat" value2="Sandalias"> 
+                <div class="fil h-Categoria3_Sandalias" onclick="checkNombre('Categoria3_Sandalias','Sandalias')">Sandalias</div> 
+              </div>
+              <div class="filtro-filtros">
+                <input type="radio" class="categ c-Categoria3_Zapatos" name="vehicle" tag="Categoria3_Zapatos" value="Boat" value2="Zapatos"> 
+                <div class="fil h-Categoria3_Zapatos" onclick="checkNombre('Categoria3_Zapatos','Zapatos')">Zapatos</div>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+
+          <div class="text-fil"> COLOR PRINCIPAL  </div>
+            <div>
+            <form action="/action_page.php" class="chek">
+            <div class="filtro-color">
+              <input type="radio" name="color" class="categ c-Color_Azul" tag="Color_Azul" value2="Azul">
+              <div class="fil h-Color_Azul" onclick="checkNombre('Color_Azul','Azul')">Azul</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Beige" tag="Color_Beige" value2="Beige">
+               <div class="fil h-Color_Beige" onclick="checkNombre('Color_Beige','Beige')">Beige</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Blanco" tag="Color_Blanco" value2="Blanco">
+               <div class="fil h-Color_Blanco" onclick="checkNombre('Color_Blanco','Blanco')">Blanco</div>
+            </div>
+             <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Burdeo" tag="Color_Burdeo" value2="Burdeo">
+               <div class="fil h-Color_Burdeo" onclick="checkNombre('Color_Burdeo','Burdeo')">Burdeo</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Cafe" value2="Café" tag="Color_Cafe">
+               <div class="fil h-Color_Cafe" onclick="checkNombre('Color_Cafe', 'Café')">Cafe</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Dorado" tag="Color_Dorado" value2="Dorado">
+               <div class="fil h-Color_Dorado" onclick="checkNombre('Color_Dorado','Dorado')">Dorado</div>
+             </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Gris" tag="Color_Gris" value2="Gris">
+               <div class="fil h-Color_Gris" onclick="checkNombre('Color_Gris', 'Gris')">Gris</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Metalico" tag="Color_Metalico" value2="Metálico">
+               <div class="fil h-Color_Metalico" onclick="checkNombre('Color_Metalico','Metalico')">Metalico</div>
+            </div>
+            <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Negro" tag="Color_Negro" value2="Negro">
+               <div class="fil h-Color_Negro" onclick="checkNombre('Color_Negro','Negro')">Negro</div>
+            </div>
+              <div class="filtro-color">
+               <input type="radio" name="color" class="categ c-Color_Rojo" tag="Color_Rojo" value2="Rojo">
+               <div class="fil h-Color_Rojo" onclick="checkNombre('Color_Rojo','Rojo')">Rojo</div>
+            </div>
+            </form>
+
+          <div class="clearfix"></div>
+         <div class="text-fil"> MATERIAL DEL ZAPATO </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="radio" name="material" class="categ c-Mat_Capellada_Cuero" tag="Mat_Capellada_Cuero" value2="Cuero" value="Bike">
+                <div class="fil h-Mat_Capellada_Cuero" onclick="checkNombre('Mat_Capellada_Cuero','Cuero')"> Cuero </div>
+              </div>
+              <div class="filtro-talla">
+                <input type="radio" name="material" class="categ c-Mat_Capellada_Eco_Cuero" tag="Mat_Capellada_Eco_Cuero" value2="Eco Cuero" value="Cara">
+                <div class="fil h-Mat_Capellada_Eco_Cuero" onclick="checkNombre('Mat_Capellada_Eco_Cuero','Eco')"> Eco Cuero </div>
+              </div>
+          </form>
+
+          <div class="clearfix"></div>
+
+          <div class="text-fil"> MARCA </div>
+          <form action="/action_page.php" class="chek">
+               <div class="filtro-marca">
+                <input type="radio" name="marca" class="categ c-Marca_Degas" tag="Marca_Degas" value2="Degas"> 
+                <div class="fil h-Marca_Degas" onclick="checkNombre('Marca_Degas','Degas')">Degas </div>
+              </div>
+              <div class="filtro-marca">
+                <input type="radio" name="marca" class="categ c-Marca_Eda_Manzini" tag="Marca_Eda_Manzini" value2="Eda Manzini">
+                <div class="fil h-Marca_Eda_Manzini" onclick="checkNombre('Marca_Eda_Manzini', 'Eda Manzini')">Eda Manzini</div>
+               </div> 
+               <div class="filtro-marca">
+                <input type="radio" name="marca" class="categ c-Marca_Lola_Canales" tag="Marca_Lola_Canales" value2="Lola Canales">
+                <div class="fil h-Lola_Canales" onclick="checkNombre('Marca_Lola_Canales','Lola Canales')">Lola Canales</div>
+               </div>
+          </form>
+
+          <div class="clearfix"></div>
+
+   <!--         <div class="text-fil"> OCASIÓN</div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-categorias">
+                <input type="radio" name="ocasion" class="categ c-Categoria4_Casuales" tag="Categoria4_Casuales" value2="Casuales" value="Bike"> 
+                <div class="fil h-Categoria4_Casuales" onclick="checkNombre('Categoria4_Casuales','Casuales')">Casuales</div>
+              </div>
+              <div class="filtro-categorias">
+                <input type="radio" name="ocasion" class="categ c-Categoria4_Confort" value2="Confort" tag="Categoria4_Confort" value="Car">
+                <div class="fil h-Categoria4_Confort" onclick="checkNombre('Categoria4_Confort','Confort')">Confort </div>
+              </div>
+              <div class="filtro-categorias">
+                <input type="radio" name="ocasion" class="categ c-Categoria4_Fiesta" value2="Fiesta" tag="Categoria4_Fiesta" value="Boat"> 
+                <div class="fil h-Categoria4_Fiesta" onclick="checkNombre('Categoria4_Fiesta','Fiesta')">Fiesta</div>
+              </div>
+               <div class="filtro-categorias">
+                <input type="radio" name="ocasion" class="categ c-Categoria4_Vestir" value2="Vestir" tag="Categoria4_Vestir" value="Boat">
+                <div class="fil h-Categoria4_Vestir" onclick="checkNombre('Categoria4_Vestir','Vestir')">Vestir</div>
+              </div>
+          </form> -->
+
+          <div class="clearfix"></div>
+<!--          <div class="text-fil"> TIPO DE CIERRE </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="radio" name="cierre" class="categ c-Cierre_Abierto" value2="Abierto" tag="Cierre_Abierto" value="Bike">
+                <div class="fil h-Cierre_Abierto" onclick="checkNombre('Cierre_Abierto','Abierto')"> Abierto </div>
+              </div>
+              <div class="filtro-talla">
+                <input type="radio" name="cierre" class="categ c-Cierre_Cerrado" value2="Cerrado" tag="Cierre_Cerrado" value="Cara">
+                <div class="fil h-Cierre_Cerrado" onclick="checkNombre('Cierre_Cerrado','Cerrado')"> Cerrado </div> 
+              </div>
+          </form> -->
+
+          <div class="clearfix"></div>
+<!--          <div class="text-fil"> MATERIAL SUELA </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="radio" name="suela" class="categ c-Mat_Suela_Goma_Eva" value2="Eva" tag="Mat_Suela_Goma_Eva" value="Bike">
+                <div class="fil h-Mat_Suela_Goma_Eva" onclick="checkNombre('Mat_Suela_Goma_Eva','Goma_Eva')"> Eva </div>
+              </div>
+              <div class="filtro-talla">
+                <input type="radio" name="suela" class="categ c-Mat_Suela_Kratón" value2="Kratón" tag="Mat_Suela_Kratón" value="Cara">
+                <div class="fil h-Mat_Suela_Kratón" onclick="checkNombre('Mat_Suela_Kratón','Kratón')"> Kratón </div>
+              </div>
+              <div class="filtro-talla">
+                <input type="radio" name="suela" class="categ c-Mat_Suela_Poliuretano" value2="Poliuretano" tag="Mat_Suela_Poliuretano" value="Cara">
+                <div class="fil h-Mat_Suela_Poliuretano" onclick="checkNombre('Mat_Suela_Poliuretano','Poliuretano')"> Poliuretano </div>
+              </div>
+          </form> -->
+
+          <div class="clearfix"></div>
+<!--          <div class="text-fil"> MATERIAL FORRO </div>
+          <form action="/action_page.php" class="chek">
+              <div class="filtro-talla">
+                <input type="radio" name="forro" class="categ c-Mat_Forro_Cuero" tag="Mat_Forro_Cuero" value2="Cuero" value="Bike">
+                <div class="fil h-Mat_Forro_Cuero" onclick="checkNombre('Mat_Forro_Cuero','Forro Cuero')"> Cuero </div>
+              </div>
+              <div class="filtro-talla">
+                <input type="radio" name="forro" class="categ c-Mat_Forro_Eco_Cuero" tag="Mat_Forro_Eco_Cuero" value2="Eco Cuero" value="Cara">
+                <div class="fil h-Mat_Forro_Eco_Cuero" onclick="checkNombre('Mat_Forro_Eco_Cuero','Forro Eco Cuero')"> Eco Cuero </div>
+              </div>
+          </form> -->
+
+            </div>
         </div>
-        {% end %}
-        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
-    </div>
-</section>
 
-
-
-
- <section>
-  <div id="guide-template">
-  <div id="intro-container">
-    <h1>This opening title</h1>
-    <h2>Presents on scroll-fix-content with affix sidebar</h2>
-    <p>Build a simple on scroll then fix to top nav bar with a affix scroll mock on the side.</p>
-  </div>
-  <div id="nav-bar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <a href="#" class="menu-burger">☰</a>
-          <div class="social-container">
-            <iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.facebook.com%2Famishdirectfurniture&amp;width&amp;layout=standard&amp;action=like&amp;show_faces=false&amp;share=false&amp;height=35&amp;appId=261855564005026" scrolling="no" frameborder="0" style="border:none; overflow:hidden; height:35px;" allowTransparency="true"></iframe>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div id="main" class="container">
-    <div class="row">
-      <div id="sidebar" class="col-md-3 col-lg-3">
-        <ul id="affix">
-          <li class="current"><a href="#intro">Introduction</a></li>
-          <li><a href="#structure">Structure</a></li>
-          <li><a href="#styling">Styling</a></li>
-          <li><a href="#code">Code</a></li>
-        </ul>
-      </div>
-      <div id="content" class="col-md-9 col-lg-9">
-        <h3 id="intro">Introduction</h3>
-        <p>Hi everyone, I'm Dave! I came up with a nice little guide on how to create a scroll-fix-content bar with a scrollable sidebar guide (mock). What I used was a leftover JQuery snippet I had from an old project and some CSS3 styling to make it look pretty. Do note, I've only tested how this looks with the 3 sections above the viewport. This isn't fully responsive yet.<br />
-        P.S. Please support my dad's business, Amish Direct Furniture, by liking our facebook page. Thanks :)</p>
-        <hr />
-        <h3 id="structure">Structure</h3>
-        <p>The structure of how this is set up is actually pretty simple. I used good ol' CSS3 to make most of this look possible. To slim down the code some more, I'll probably rewrite this using SCSS. Below is a tree of how the document structure is set up.</p>
-        <pre>
-          - #guide-template
-            -- #intro-container
-            -- #nav-bar
-            -- #main
-        </pre>
-        <p>Basically, we use the <span class="label label-warning">#guide-template</span> as our wrap. This can also be applied to the body tag. We just need something to wrap it all together.</p>
-        <hr />
-        <h3 id="styling">Styling</h3>
-        <p>Most of this is possible by using the CSS3 View Height (vh) unit for our heights. By making certain divs the view ports height, it helps make the scroll-to-fix bar stick more smoothly. This also goes for the sidebar as well. Since we want the intro to always fit the screen, we set the <span class="label label-warning">#intro-container</span> div's heigh to:</p>
-        <code>height: 100vh;</code>
-        <p>Note though, this isn't <a href="http://caniuse.com/#feat=viewport-units">cross compatible</a> with everything even though it is mostly supported.</p>
-        <hr />
-        <h3 id="code">Code</h3>
-        <p>The code used is pretty simple. Derived from this <a href="https://css-tricks.com/scroll-fix-content/">article</a> by Chris Coyier, the JQuery used is to apply and unapply the class <span class="label label-warning">fixed</span> from our wrapper div, or in this case <span class="label label-warning">#guide-template</span>. What makes this one different and slightly more smoother is the fact we're not using <a href="https://css-tricks.com/magic-numbers-in-css/">magic numbers</a>, or pre-defined numbers. I'll give both examples of the one Chris provided and the one I'm using. Here is Chris's:</p>
-        <pre>
-          var wrap = $("#wrap");
-
-          wrap.on("scroll", function(e) {
-
-            if (this.scrollTop > 147) {
-              wrap.addClass("fix-search");
-            } else {
-              wrap.removeClass("fix-search");
-            }
-
-          });
-        </pre>
-        <p>And here is mine:</p>
-        <pre>
-          var header = $("#guide-template");
-            $(window).scroll(function() {    
-              var scroll = $(window).scrollTop();
-                 if (scroll >= window.innerHeight) {
-                    header.addClass("fixed");
-                  } else {
-                    header.removeClass("fixed");
-                  }
-          });
-        </pre>
-        <p>The main, and big, difference between the two is the first one uses a defined number. This is an issue since not all devices are the same height. In the second one, I decided to use the <code>window.innerHeight</code> to define when to add and remove my class. The reason is because combining that with our <code>height: 100vh;</code> means on any desktop machine, it will always stick right after our intro div. I haven't tested this to see if it is responsive but I'm sure with some tweaking, it more than likely can be responsive.</p>
-        
-      </div>
-    </div>
-  </div>
+  </section>
+</div>
+</div>
+</div>
+<div id="content">
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+Content <br /><br /><br /><br /><br /><br /><br /><br />
+</div>
 </div>
 </section>
 
