@@ -23,8 +23,8 @@ $(document).ready(function()
         'http://lpcheckout.ondev.today',
         'http://lpcheckout.ondev.today',
         'https://betapay.loadingplay.com');
-    var app_public = $.environmentVar(53,53,53);
-    var site_name = $.environmentVar('placare', 'placare', 'placare');
+    var app_public = $.environmentVar(53,50,53);
+    var site_name = $.environmentVar('placare', 'testgdf', 'placare');
 
     window.config = {
         'app_public': app_public,
