@@ -2677,11 +2677,11 @@ hr.lon {
     }
 
 
-    .text-relac {
-        font-size: 14px;
-        margin-bottom: 30px;
-        text-align: left;
-        left: -14px;
+   .text-relac {
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: left;
+    left: 0px;
     }
 
     .descuento-lis {
@@ -3230,13 +3230,18 @@ hr.lon {
         border: 1px solid transparent;
         height: 387px;
         margin-bottom: 0px;
+        border-bottom: 1px solid #ebedef;
+        border-right: 1px solid #ebedef;
     }
+
     .conti-de {
-        position: relative;
-        width: 100%;
-        height: 387px;
-        margin-bottom: 0px;
-        border: 1px solid transparent;
+    position: relative;
+    width: 100%;
+    height: 387px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ebedef;
+    border-right: 1px solid #ebedef;
     }
 
     a.text {
@@ -3675,6 +3680,11 @@ hr.lon {
       margin-left: 8px;
       font-size: 12px;
     }
+
+    .container.min.dip {
+    padding-left: 0px;
+    padding-right: 0px;
+    }  
 
 
 }
