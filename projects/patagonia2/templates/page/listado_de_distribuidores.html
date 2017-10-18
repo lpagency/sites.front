@@ -81,7 +81,580 @@ else if ( isDevelopment() )
     </div>
 </section>
 
+
+
 <section>
+  <div class="container"> 
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div align="center">
+        <div class="kazi">
+        <div class="col-md-6 col-sm-6 col-sm-12 bin-2">
+          <h1 class=" text_marc text-center {{editabletext}}" text-id="{{ site.name + '_marc' }}"> {{ read_text(site.name +  '_marc') }}
+            </h1>
+            <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1" name="image" id="img_marc1" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1' }}" href="{{ read_link(site.name + '_img_marc1') }}">
+                <img id="{{ site.name }}_img_marc1" src="{{ read_image(site.name + '_img_marc1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1' }}" content="{{ read_link(site.name + '_img_marc1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc2">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc2" name="image" id="img_marc2" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc2' }}" href="{{ read_link(site.name + '_img_marc2') }}">
+                <img id="{{ site.name }}_img_marc2" src="{{ read_image(site.name + '_img_marc2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc2',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc2' }}" content="{{ read_link(site.name + '_img_marc2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc3">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc3" name="image" id="img_marc3" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc3' }}" href="{{ read_link(site.name + '_img_marc3') }}">
+                <img id="{{ site.name }}_img_marc3" src="{{ read_image(site.name + '_img_marc3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc3',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc3' }}" content="{{ read_link(site.name + '_img_marc3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc4">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc4" name="image" id="img_marc4" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc4' }}" href="{{ read_link(site.name + '_img_marc4') }}">
+                <img id="{{ site.name }}_img_marc4" src="{{ read_image(site.name + '_img_marc4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc4',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc4' }}" content="{{ read_link(site.name + '_img_marc4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc5">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc5" name="image" id="img_marc5" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc5' }}" href="{{ read_link(site.name + '_img_marc5') }}">
+                <img id="{{ site.name }}_img_marc5" src="{{ read_image(site.name + '_img_marc5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc5',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc5' }}" content="{{ read_link(site.name + '_img_marc5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc6">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc6" name="image" id="img_marc6" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc6' }}" href="{{ read_link(site.name + '_img_marc6') }}">
+                <img id="{{ site.name }}_img_marc6" src="{{ read_image(site.name + '_img_marc6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc6',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc6' }}" content="{{ read_link(site.name + '_img_marc6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc7">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc7" name="image" id="img_marc7" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc7' }}" href="{{ read_link(site.name + '_img_marc7') }}">
+                <img id="{{ site.name }}_img_marc7" src="{{ read_image(site.name + '_img_marc7', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc7',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc7' }}" content="{{ read_link(site.name + '_img_marc7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-sm-12 bin">
+          <h1 class=" text_marc text-center {{editabletext}}" text-id="{{ site.name + '_marc_2' }}"> {{ read_text(site.name +  '_marc_2') }}
+            </h1>
+            <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc8">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc8" name="image" id="img_marc8" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc8' }}" href="{{ read_link(site.name + '_img_marc8') }}">
+                <img id="{{ site.name }}_img_marc8" src="{{ read_image(site.name + '_img_marc8', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc8',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc8' }}" content="{{ read_link(site.name + '_img_marc8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc9">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc9" name="image" id="img_marc9" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc9' }}" href="{{ read_link(site.name + '_img_marc9') }}">
+                <img id="{{ site.name }}_img_marc9" src="{{ read_image(site.name + '_img_marc9', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc9',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc9' }}" content="{{ read_link(site.name + '_img_marc9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc10">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc10" name="image" id="img_marc10" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc10' }}" href="{{ read_link(site.name + '_img_marc10') }}">
+                <img id="{{ site.name }}_img_marc10" src="{{ read_image(site.name + '_img_marc10', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc10',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc10' }}" content="{{ read_link(site.name + '_img_marc10') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+              <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc11">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc11" name="image" id="img_marc11" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc11' }}" href="{{ read_link(site.name + '_img_marc11') }}">
+                <img id="{{ site.name }}_img_marc11" src="{{ read_image(site.name + '_img_marc11', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc11',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc11' }}" content="{{ read_link(site.name + '_img_marc11') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+                  <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc12">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc12" name="image" id="img_marc12" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc12' }}" href="{{ read_link(site.name + '_img_marc12') }}">
+                <img id="{{ site.name }}_img_marc12" src="{{ read_image(site.name + '_img_marc12', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc12',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc12' }}" content="{{ read_link(site.name + '_img_marc12') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+
+            <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc13">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc13" name="image" id="img_marc13" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc13' }}" href="{{ read_link(site.name + '_img_marc13') }}">
+                <img id="{{ site.name }}_img_marc13" src="{{ read_image(site.name + '_img_marc13', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc13',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc13' }}" content="{{ read_link(site.name + '_img_marc13') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+              <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc14">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc14" name="image" id="img_marc14" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc14' }}" href="{{ read_link(site.name + '_img_marc14') }}">
+                <img id="{{ site.name }}_img_marc14" src="{{ read_image(site.name + '_img_marc14', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc14',500) }}'" class="img-responsive img_marc" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc14' }}" content="{{ read_link(site.name + '_img_marc14') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<div style="margin-bottom:60px;"></div>
+
+
+<section style="height: 30px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box">
+            <h1 class=" text_distrib2 text-center {{editabletext}}" text-id="{{ site.name + '_text_distribmarc' }}"> {{ read_text(site.name +  '_text_distribmarc') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div style="margin-bottom:60px;"></div>
+
+<section>
+  <div class="container">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_1">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_1" name="image" id="img_marc1_link_1" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_1' }}" href="{{ read_link(site.name + '_img_marc1_link_1') }}">
+                <img id="{{ site.name }}_img_marc1_link_1" src="{{ read_image(site.name + '_img_marc1_link_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_1',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_1' }}" content="{{ read_link(site.name + '_img_marc1_link_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_0' }}"> {{ read_text(site.name +  '_text_0') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_2">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_2" name="image" id="img_marc1_link_2" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_2' }}" href="{{ read_link(site.name + '_img_marc1_link_2') }}">
+                <img id="{{ site.name }}_img_marc1_link_2" src="{{ read_image(site.name + '_img_marc1_link_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_2',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_2' }}" content="{{ read_link(site.name + '_img_marc1_link_2') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_2' }}"> {{ read_text(site.name +  '_text_2') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_3">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_3" name="image" id="img_marc1_link_3" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_3' }}" href="{{ read_link(site.name + '_img_marc1_link_3') }}">
+                <img id="{{ site.name }}_img_marc1_link_3" src="{{ read_image(site.name + '_img_marc1_link_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_3',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_3' }}" content="{{ read_link(site.name + '_img_marc1_link_3') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_3' }}"> {{ read_text(site.name +  '_text_3') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_4">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_4" name="image" id="img_marc1_link_4" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_4' }}" href="{{ read_link(site.name + '_img_marc1_link_4') }}">
+                <img id="{{ site.name }}_img_marc1_link_4" src="{{ read_image(site.name + '_img_marc1_link_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_4',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_4' }}" content="{{ read_link(site.name + '_img_marc1_link_4') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_4' }}"> {{ read_text(site.name +  '_text_4') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_5">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_5" name="image" id="img_marc1_link_5" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_5' }}" href="{{ read_link(site.name + '_img_marc1_link_5') }}">
+                <img id="{{ site.name }}_img_marc1_link_5" src="{{ read_image(site.name + '_img_marc1_link_5', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_5',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_5' }}" content="{{ read_link(site.name + '_img_marc1_link_5') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_5' }}"> {{ read_text(site.name +  '_text_5') }} </div>
+    </div>
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_6">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_6" name="image" id="img_marc1_link_6" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_6' }}" href="{{ read_link(site.name + '_img_marc1_link_6') }}">
+                <img id="{{ site.name }}_img_marc1_link_6" src="{{ read_image(site.name + '_img_marc1_link_6', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_6',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_6' }}" content="{{ read_link(site.name + '_img_marc1_link_6') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_6' }}"> {{ read_text(site.name +  '_text_6') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_7">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_7" name="image" id="img_marc1_link_7" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_7' }}" href="{{ read_link(site.name + '_img_marc1_link_7') }}">
+                <img id="{{ site.name }}_img_marc1_link_7" src="{{ read_image(site.name + '_img_marc1_link_7', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_7',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_7' }}" content="{{ read_link(site.name + '_img_marc1_link_7') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_7' }}"> {{ read_text(site.name +  '_text_7') }} </div>
+    </div>
+  </div>
+</section>
+
+<section style="height: 30px;">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="box">
+            <h1 class=" text_distrib2 text-center {{editabletext}}" text-id="{{ site.name + '_text_distribmarc_2' }}"> {{ read_text(site.name +  '_text_distribmarc_2') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div style="margin-bottom:60px;"></div>
+
+<section>
+  <div class="container">
+    <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_8">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_8" name="image" id="img_marc1_link_8" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_8' }}" href="{{ read_link(site.name + '_img_marc1_link_8') }}">
+                <img id="{{ site.name }}_img_marc1_link_8" src="{{ read_image(site.name + '_img_marc1_link_8', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_8',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_8' }}" content="{{ read_link(site.name + '_img_marc1_link_8') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_8' }}"> {{ read_text(site.name +  '_text_8') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_9">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_9" name="image" id="img_marc1_link_9" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_9' }}" href="{{ read_link(site.name + '_img_marc1_link_9') }}">
+                <img id="{{ site.name }}_img_marc1_link_9" src="{{ read_image(site.name + '_img_marc1_link_9', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_9',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_9' }}" content="{{ read_link(site.name + '_img_marc1_link_9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_9' }}"> {{ read_text(site.name +  '_text_9') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_10">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_10" name="image" id="img_marc1_link_10" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_10' }}" href="{{ read_link(site.name + '_img_marc1_link_10') }}">
+                <img id="{{ site.name }}_img_marc1_link_10" src="{{ read_image(site.name + '_img_marc1_link_10', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_10',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_10' }}" content="{{ read_link(site.name + '_img_marc1_link_10') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_10' }}"> {{ read_text(site.name +  '_text_10') }} </div>
+    </div>
+
+      <div class="col-md-6 col-sm-6 col-xs-12">
+        <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                <label for="img_marc1_link_11">
+                  <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_marc1_link_11" name="image" id="img_marc1_link_11" >
+              </div>
+              {% end %}
+              <a id="{{ site.name + '_img_marc1_link_11' }}" href="{{ read_link(site.name + '_img_marc1_link_11') }}">
+                <img id="{{ site.name }}_img_marc1_link_11" src="{{ read_image(site.name + '_img_marc1_link_11', 1) }}" onload="this.src='{{ read_image(site.name + '_img_marc1_link_11',500) }}'" class="img-responsive img_marc_other" alt="item">
+              </a>
+
+              <!--editable link-->
+              {% if is_admin %}
+              <img class="change-image editablelink" link-id="{{ site.name + '_img_marc1_link_11' }}" content="{{ read_link(site.name + '_img_marc1_link_11') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+              {% end %}
+            </div>
+
+            <div class="texto_lin {{editabletext}}" text-id="{{ site.name + '_text_11' }}"> {{ read_text(site.name +  '_text_11') }} </div>
+    </div>
+  </div>
+</section>
+
+<!-- <section>
 <div class="space100">
     <div class="col-sm-1">
     </div>
@@ -97,7 +670,7 @@ else if ( isDevelopment() )
                 </tr>
             </thead>
             <tbody>
-            <!-- PRIMERA -->
+            
             <tr>
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr1_1' }}"> {{ read_text(site.name +  '_distr1_1') }}</td>
 
@@ -121,7 +694,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- SEGUNDA -->
+     
             <tr>
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr2_1' }}"> {{ read_text(site.name +  '_distr2_1') }}</td>
 
@@ -146,7 +719,7 @@ else if ( isDevelopment() )
                 </td>
 
             </tr>
-            <!-- TERCERDA -->
+           
             <tr>
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr3_1' }}"> {{ read_text(site.name +  '_distr3_1') }}</td>
 
@@ -171,7 +744,7 @@ else if ( isDevelopment() )
                 </td>
 
             </tr>
-            <!-- CUARTA -->
+           
             <tr>
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr4_1' }}"> {{ read_text(site.name +  '_distr4_1') }}</td>
 
@@ -196,7 +769,7 @@ else if ( isDevelopment() )
                 </td>
 
             </tr>
-            <!-- QUINTO -->
+     
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr5_1' }}"> {{ read_text(site.name +  '_distr5_1') }}</td>
 
@@ -220,7 +793,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- SEXTO -->
+     
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr6_1' }}"> {{ read_text(site.name +  '_distr6_1') }}</td>
 
@@ -244,7 +817,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- SEPTIMO -->
+         
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr7_1' }}"> {{ read_text(site.name +  '_distr7_1') }}</td>
 
@@ -268,7 +841,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- OCTAVO -->
+           
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr8_1' }}"> {{ read_text(site.name +  '_distr8_1') }}</td>
 
@@ -292,7 +865,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- NOVENO -->
+           
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr9_1' }}"> {{ read_text(site.name +  '_distr9_1') }}</td>
 
@@ -316,7 +889,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- DECIMO -->
+        
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr10_1' }}"> {{ read_text(site.name +  '_distr10_1') }}</td>
 
@@ -340,7 +913,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!-- NOVENO -->
+           
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr11_1' }}"> {{ read_text(site.name +  '_distr11_1') }}</td>
 
@@ -364,7 +937,7 @@ else if ( isDevelopment() )
                     </div>
                 </td>
             </tr>
-            <!--UN DECIMO -->
+         
             <tr style="">
                 <td class="tex-dist1 {{editabletext}}" text-id="{{ site.name + '_distr12_1' }}"> {{ read_text(site.name +  '_distr12_1') }}</td>
 
@@ -392,7 +965,7 @@ else if ( isDevelopment() )
         </table>
     </div>
 </div>
-</section>
+</section> -->
 <div class="space50"></div>
 
 {% include '../home/footer.html' %}
