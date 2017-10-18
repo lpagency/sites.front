@@ -2677,11 +2677,11 @@ hr.lon {
     }
 
 
-    .text-relac {
-        font-size: 14px;
-        margin-bottom: 30px;
-        text-align: left;
-        left: -14px;
+   .text-relac {
+    font-size: 14px;
+    margin-bottom: 30px;
+    text-align: left;
+    left: 0px;
     }
 
     .descuento-lis {
@@ -3230,13 +3230,18 @@ hr.lon {
         border: 1px solid transparent;
         height: 387px;
         margin-bottom: 0px;
+        border-bottom: 1px solid #ebedef;
+        border-right: 1px solid #ebedef;
     }
+
     .conti-de {
-        position: relative;
-        width: 100%;
-        height: 387px;
-        margin-bottom: 0px;
-        border: 1px solid transparent;
+    position: relative;
+    width: 100%;
+    height: 387px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-bottom: 1px solid #ebedef;
+    border-right: 1px solid #ebedef;
     }
 
     a.text {
@@ -3380,15 +3385,15 @@ hr.lon {
     text-align: center;
     }
 
-    .original-de {
-        text-align: left;
-        position: absolute;
-        top: 38px;
-        font-size: 12px;
-        color: rgba(0, 0, 0, 0.62);
-        font-weight: 500;
-        text-decoration: line-through;
-        left: 13px;
+   .original-de {
+    text-align: left;
+    position: relative;
+    top: -39px;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.62);
+    font-weight: 500;
+    text-decoration: line-through;
+    left: -3px;
     }
 
     .up-ex-detalle {
@@ -3643,24 +3648,24 @@ hr.lon {
         margin-left: 3px;
     }
 
-    .linea-solin {
-        border-bottom: 1px solid #edebef;
-        position: relative;
-        left: -15px;
-        width: 107%;
-        top: 54px;
-        margin-top: -32px;
-        margin-bottom: 41px;
-    }
-
+   .linea-solin {
+    border-bottom: 1px solid #edebef;
+    position: relative;
+    left: -15px;
+    width: 107%;
+    top: 54px;
+    margin-top: -61px;
+    margin-bottom: 41px;
+    }  
+    
     .oferta-de {
-        text-align: left;
-        position: absolute;
-        top: 59px;
-        font-size: 17px;
-        color: #282c3f !important;
-        font-weight: 600;
-        left: 3%;
+    text-align: left;
+    position: relative;
+    top: -35px;
+    font-size: 17px;
+    color: #282c3f !important;
+    font-weight: 600;
+    left: -1%;
     }
 
     .link-recargar {
@@ -3675,6 +3680,11 @@ hr.lon {
       margin-left: 8px;
       font-size: 12px;
     }
+
+    .container.min.dip {
+    padding-left: 0px;
+    padding-right: 0px;
+    }  
 
 
 }
@@ -4358,7 +4368,7 @@ hr.lon {
         margin-top: 1px;
     }
 
-    .original-de {
+    /*.original-de {
         text-align: left;
         position: absolute;
         top: 37px;
@@ -4376,7 +4386,7 @@ hr.lon {
         color: #FF0F53;
         font-weight: 500;
         left: 4%;
-    }
+    }*/
 
     .size-item {
         padding: 13px 0px;
