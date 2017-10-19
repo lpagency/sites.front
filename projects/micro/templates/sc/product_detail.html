@@ -156,7 +156,19 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
                     <!-- <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button> -->
                     <!-- <button type="button" class="btn btn-default btn-nutr {{! bullet_1 |hide_if_empty}}" data-toggle="modal" data-target="#myModal_detail">Información</button> -->
 
-                    <button type="button" value="Comprar" product-sku="{{! sku }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" product-combination="" data-target="#myModal" >Comprar</button>
+                    <button type="button" 
+                        value="Comprar" 
+                        product-sku="{{! sku }}" 
+                        product-id="{{! id }}" 
+                        product-name="{{! name }}" 
+                        product-price="{{! main_price }}" 
+                        product-upp="{{! upp }}" 
+                        product-img="{{! images[0]['thumb_200'] }}" 
+                        class="btn add-to-cart btn-success car" 
+                        data-toggle="modal" 
+                        product-combination="" 
+                        lp-cart-add
+                        data-target="#myModal" >Comprar</button>
                 </div>
 
             </div>
