@@ -32,7 +32,7 @@
             {% end %}
             <a id="{{ site.name + '_logo' }}" href="#">
               <div class="base-logo">
-                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
+                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
                 </div>
             </a>
         </div>
@@ -134,7 +134,7 @@
                                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo">
                            </div>
                            {% end %}
-                           <img id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',) }}'" class="img-responsive logo" alt="item">
+                           <img id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',) }}'" class="img-responsive logo" alt="item">
                        </div>
                </div>
                      </a>

@@ -41,7 +41,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_us" name="image" id="img_us" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_us" src="{{ read_image(site.name + '_us', 1) }}" onload="this.src='{{ read_image(site.name + '_us',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_us" src="{{ read_image(site.name + '_us', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_us',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container">
@@ -77,7 +77,7 @@
             </div>
             {% end %}
             <a id="{{ site.name + '_quienes_somos_2' }}" href="{{ read_link(site.name + '_quienes_somos_2') }}">
-              <img id="{{ site.name }}quienes_somos_2" src="{{ read_image(site.name + 'quienes_somos_2', 1) }}" onload="this.src='{{ read_image(site.name + 'quienes_somos_2',) }}'" alt="item" class="image-somos"> 
+              <img id="{{ site.name }}quienes_somos_2" src="{{ read_image(site.name + 'quienes_somos_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'quienes_somos_2',) }}'" alt="item" class="image-somos"> 
             </a>
 
            {% if is_admin %}
@@ -117,7 +117,7 @@
             </div>
             {% end %}
             <a id="{{ site.name + '_per_1' }}" href="{{ read_link(site.name + '_per_1') }}">
-              <img id="{{ site.name }}per_1" src="{{ read_image(site.name + 'per_1', 1) }}" onload="this.src='{{ read_image(site.name + 'per_1',) }}'" alt="item" class="image-somos-cir"> 
+              <img id="{{ site.name }}per_1" src="{{ read_image(site.name + 'per_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'per_1',) }}'" alt="item" class="image-somos-cir"> 
             </a>
 
            {% if is_admin %}
@@ -142,7 +142,7 @@
             </div>
             {% end %}
             <a id="{{ site.name + '_per_2' }}" href="{{ read_link(site.name + '_per_2') }}">
-              <img id="{{ site.name }}per_2" src="{{ read_image(site.name + 'per_2', 1) }}" onload="this.src='{{ read_image(site.name + 'per_2',) }}'" alt="item" class="image-somos-cir"> 
+              <img id="{{ site.name }}per_2" src="{{ read_image(site.name + 'per_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'per_2',) }}'" alt="item" class="image-somos-cir"> 
             </a>
 
            {% if is_admin %}
