@@ -4,6 +4,7 @@ html, body {
     margin: 0px;
     padding: 0px;
    font-family: 'Open Sans', sans-serif;
+   overflow-x: hidden;
 }
 
 .linea {
@@ -139,7 +140,7 @@ div.upload input, div.image-upload input {
 }
 
 .container {
-    padding-right: 12px;
+    padding-right: 4px;
     padding-left: 0px;
     margin-right: auto;
     margin-left: auto;
@@ -178,7 +179,11 @@ div.upload input, div.image-upload input {
 }
 
 .fa-caret-down.home{
-  
+    position: relative;
+    float: right;
+    top: 0px;
+    font-size: 20px;
+    color: white;
 }
 
 /*------------------------------------Responsive-------------------------------------------------------*/
@@ -194,6 +199,22 @@ div.upload input, div.image-upload input {
 
     .article-ho {
         margin-left: 7.7%;
+    }
+    .container {
+    padding-right: 2px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    }
+    .btn-primary {
+    color: rgba(74, 64, 64, 0.62);
+    background-color: rgba(128, 128, 128, 0.63);
+    border-color: rgba(128, 128, 128, 0.32);
+    width: 137%;
+    border-radius: 0px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
     }
 }
 
