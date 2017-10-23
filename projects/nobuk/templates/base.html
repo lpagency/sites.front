@@ -91,7 +91,7 @@
             </div>
             {% end %}
             <a id="{{ site.name + '_logo_movil' }}" href="#">
-                <img class="logo" id="{{ site.name }}_img_logo_movil" src="{{ read_image(site.name + '_img_logo_movil', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo_movil',500) }}'" alt="item">
+                <img class="logo" id="{{ site.name }}_img_logo_movil" src="{{ read_image(site.name + '_img_logo_movil', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo_movil',500) }}'" alt="item">
             </a>
         </div>
         </div>

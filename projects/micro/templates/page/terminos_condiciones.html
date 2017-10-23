@@ -52,7 +52,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
         </div>
         {% end %}
         <div>
-            <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_term_cond', 1) }}" onload="this.src='{{ read_image(site.name + '_term_cond',500) }}'" class="img_banner_term desaturada" alt="item">
+            <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_term_cond', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_term_cond',500) }}'" class="img_banner_term desaturada" alt="item">
         </div>
 </section>
 

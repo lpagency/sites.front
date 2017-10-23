@@ -109,7 +109,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact-loading" name="image" id="img_banner_contact-loading" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form" alt="item">
+        <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form" alt="item">
     </div>
 </div>
         <div class="container min">

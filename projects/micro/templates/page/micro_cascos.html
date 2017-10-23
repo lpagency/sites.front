@@ -125,7 +125,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
             <input type="file" class="editableimage" image-id="{{ site.name }}_cascos" name="image" id="img_cascos" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_cascos" src="{{ read_image(site.name + '_cascos', 1) }}" onload="this.src='{{ read_image(site.name + '_cascos',500) }}'" class=" img_banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_cascos" src="{{ read_image(site.name + '_cascos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cascos',500) }}'" class=" img_banner_list desaturada" alt="item">
         <div class="" align="center">
             <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_cascos' }}"> 
             {{ read_text(site.name +  '_text_cascos') }}

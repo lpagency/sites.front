@@ -29,7 +29,7 @@
                 </div>
                 {% end %}
                 {% if read_image(site.name + '_banner_header1', 1) != "" %}
-                <img id="{{ site.name }}_banner_header" src="{{ read_image(site.name + '_banner_header', 1) }} " onload="this.src='{{ read_image(site.name + '_banner_header',500) }}'" class="show-hide" alt="" style="width:100%;">
+                <img id="{{ site.name }}_banner_header" src="{{ read_image(site.name + '_banner_header', 1) }} " onload="this.onload='';this.src='{{ read_image(site.name + '_banner_header',500) }}'" class="show-hide" alt="" style="width:100%;">
                 {% end %}
         </div>
 
@@ -44,7 +44,7 @@
                 </div>
                 {% end %}
                 {% if read_image(site.name + '_banner_header1', 1) != "" %}
-                <img id="{{ site.name }}_banner_header2" src="{{ read_image(site.name + '_banner_header2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_header2',500) }}'" class="hide-show" alt="" style="width:100%;object-fit: cover;">
+                <img id="{{ site.name }}_banner_header2" src="{{ read_image(site.name + '_banner_header2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_header2',500) }}'" class="hide-show" alt="" style="width:100%;object-fit: cover;">
                 {% end %}
         </div>
 

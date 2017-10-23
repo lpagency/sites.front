@@ -63,7 +63,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
             <input type="file" class="editableimage" image-id="{{ site.name }}_comunidad" name="image" id="img_comunidad" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_comunidad" src="{{ read_image(site.name + '_comunidad', 1) }}" onload="this.src='{{ read_image(site.name + '_comunidad',500) }}'" class="banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_comunidad" src="{{ read_image(site.name + '_comunidad', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_comunidad',500) }}'" class="banner_list desaturada" alt="item">
         <div class="" align="center">
             <h1 class="text_listart text-center {{editabletext}}" text-id="{{ site.name + '_text_comunidad' }}"> 
             {{ read_text(site.name +  '_text_comunidad') }}

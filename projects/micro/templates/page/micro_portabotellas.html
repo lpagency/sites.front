@@ -125,7 +125,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
             <input type="file" class="editableimage" image-id="{{ site.name }}_micro_portabotellas" name="image" id="img_micro_portabotellas" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_micro_portabotellas" src="{{ read_image(site.name + '_micro_portabotellas', 1) }}" onload="this.src='{{ read_image(site.name + '_micro_portabotellas',500) }}'" class=" img_banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_micro_portabotellas" src="{{ read_image(site.name + '_micro_portabotellas', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_micro_portabotellas',500) }}'" class=" img_banner_list desaturada" alt="item">
         <div class="" align="center">
             <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_micro_portabotellas' }}"> 
             {{ read_text(site.name +  '_text_micro_portabotellas') }}
