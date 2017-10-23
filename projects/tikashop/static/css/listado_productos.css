@@ -4,9 +4,10 @@
 }
 
 .image {
-  display: block;
-  width: 100%;
-  height: auto;
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: contain;
 }
 
 .overlay {
@@ -15,8 +16,8 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 70%;
-    width: 94%;
+    height: 64%;
+    width: 95%;
     opacity: 0;
     transition: .5s ease;
     background-color: rgba(0, 0, 0, 0.5);
@@ -31,12 +32,12 @@
     background-color: white;
 /*    padding: 12px 15px 12px 15px;*/
     border-radius: 58px;
-    right: 25px;
+    right: 10px;
     position: relative;
     width: 45px;
     height: 44px;
-    padding-top: 8px;
-    margin-top: 136px;
+    padding-top: 9px;
+    margin-top: 105px;
 }
 
 .text2 {
@@ -129,7 +130,7 @@
 
 .fa-shopping-cart.pro {
     position: relative;
-    left: 0px;
+    left: 10px;
     font-size: 26px !important;
     top: 2px;
     color: #B40404;
