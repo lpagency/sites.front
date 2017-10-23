@@ -63,9 +63,9 @@ $(document).ready(function()
         'http://apibodegas.ondev.today/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://lpcheckout.ondev.today',
-        'http://lpcheckout.ondev.today',
-        'http://lpcheckout.ondev.today');
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com',
+        'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(48,48,48);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
 
