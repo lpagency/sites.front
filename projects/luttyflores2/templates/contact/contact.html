@@ -7,7 +7,9 @@
 
 
 {% block javascript %}
-
+<script async defer 
+ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6EMDzcxYGCZ_8r-PUoUAFP06IA87KhGI&callback=initMap"
+ type="text/javascript"></script>
 <script type="text/javascript">
 
     //Expresión para validar un correo electrónico
@@ -76,45 +78,47 @@
             });//click
         });//ready
 </script>
-
+<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
 <script type="text/javascript">
     $(document).ready(function()
     {
 
       $("#OpenAlert").click();
-    
-        var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
-        var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'https://betapay.loadingplay.com');
-        var app_public = $.environmentVar(48,48,48);
-        var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
-
+      // base_url 'http://localhost:8520/'
+      // checkout_url 'http://localhost:8522/'
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com',
+        'http:s//pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(48,48,48);
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
-            'maxProducts' : 10,
+            'checkout_url': checkout_url,
+            'products_per_page' : 10,
             'templateOrigin' : '#product_template',
             'tag' : '',
-            'ignore_stock' : true,
+            'ignore_stock' : false,
+            'infinite_scroll': false,
             'onLoad':function(){
-               // $('.ellipsis').ellipsis();
-               // $(".ellipsis").dotdotdot();
+               $(".ellipsis").dotdotdot();
              }
         };
-         $(document).ecommerce({
-       'app_public' :  app_public,
-       'animation' : 'simple',
-       'base_url' : base_url,
-       'checkout_url' :  checkout_url,
-       'products_per_page' : 9
-     });
+        $('.products').ecommerce(config);
 
-        $('.product-list').ecommerce('product_box', config);
+        //  $(document).ecommerce({
+        //     'app_public' : app_public,
+        //     'animation' : 'simple',
+        //     'base_url' : base_url,
+        //     'checkout_url' : checkout_url,
+        //     'products_per_page' : 9
+        // });
+
+        
 
         // destacado categoria 2
         // config.tag = 'destacado_categoria2';
@@ -142,86 +146,179 @@
     {% set editabletext = '' %}
 {% end %}
 
-
-
+<div style="margin-top:-30px;"></div>
 <div class="container min">
-    <div class="" style="position: relative;">
-        {% if is_admin %}
-        <div class="image-upload pin con visible-movil">
-            <label for="img_banner_contact-loading">
-                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact-loading" name="image" id="img_banner_contact-loading" >
-        </div>
-        {% end %}
-        <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form" alt="item">
-    </div>
-</div>
+
+<div class="img-mobilee" style="position: relative;">
         <div class="container min">
-            <div class="row">
-                <div class="col-sm-12">
-                    <h3 style="color: #919190;border-bottom: 1px solid #9c8900; padding-bottom: 16px;
-    width: 98%; font-weight: 100;-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; margin-top: 60px; font-size: 20px;" class="col-md-12 col-xs-12 text-center {{editabletext}}" text-id="{{ site.name + '_contact1' }}"> {{ read_text(site.name +  '_contact1') }}
-                    </h3>
-                </div>
-           </div>
-        </div>
-
-
-
- <div class="container min contact product" style="display: inherit;">
-    <div class="row">       
-        <div class="container min" style="margin-bottom: 100px;">                  
-            <div class="col-xs-12 col-sm-6 col-md-6 align-form-contact fondo-contact">
-                <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate="novalidate" id="newsletter" autocomplete="off">
-                    <div class="row clearfix">
-                        <div class="col-xs-12 col-sm-12">
-                            <div class="form-group">
-                                <label class="control-label"></label>
-                                <div class=" controls">
-                                    <input name="name" placeholder="Nombre y apellido" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
-                                </div>
-                                <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
-                            </div>
-
-                            <div class="form-group">
-                                <label class="control-label"></label>
-                                <div class=" controls">
-                                    <input name="email" placeholder="Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
-                                    <input type="hidden" name="subject" value="contactanos" />
-                                </div>
-                                <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
-                            </div>
-                            <div class="form-group">
-                                <label class="control-label"></label>
-                                <div class=" controls">
-                                  <input name="number" placeholder="Teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
-                              </div>
-                              <span id="helpBlock2" class="hidden help-block help-fono">Escribe tu teléfono</span>
-                          </div>
-                      </div>  
-                  </div>  
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12">
-              <div class="form-group" style=" margin-top: 30px;">
-                <label class="control-label"></label>
-                <div class="controls">
-                    <textarea name="message" placeholder="Comentario" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="font-size: 1.4rem!important;color: #EE73AD!important;font-weight: 100!important; -webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;"></textarea>
-                </div>
-                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Comentario</span>
+           <div class="col-md-12">
+               <h3 class="description distrib contact {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-weight: 200;margin-top: 150px;"> {{ read_text(site.name +  '_ti_con') }}</h3>
+               <hr class="page-contact">
             </div>
-            <p>
-                <div class="form-group ">
-                    <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block contact " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar 
-                    </button>
-                </div>
-            </p>
-            <input type="hidden" name="submitted" id="submitted3" value="true">
         </div>
-        </form> 
-    </div>       
 </div>
-</section>
 </div>
+
+    <!-- fin editar imagen -->
+            
+            <div class="container min contact product text-left  fondo-contact" style="display: inherit;">
+                <div class="col-md-12 col-sm-12 col-xs-12" style="padding:0px;">
+                <div class="row">       
+
+                <div class="container min">
+
+                    <div class="col-xs-12 col-md-4 col-sm-12">
+                        <div class="titulo-negrita {{editabletext}}" text-id="{{ site.name + '_h_contact' }}"> {{ read_text(site.name +  '_h_contact') }}
+                        </div>
+                         <div class="titulo-claro {{editabletext}}" text-id="{{ site.name + '_h_contact_2' }}"> {{ read_text(site.name +  '_h_contact_2') }}
+                        </div>
+                    </div>  
+                    <div class="col-xs-12 col-md-8 col-sm-12 align-form-contact fondo-contact">
+
+                        <div>
+                        <form action='https://forms.zohopublic.com/sytes/form/loakeformulariocontacto/formperma/k_dMM9814HghfK1_a380jbDgK/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+                            <div class="row clearfix">
+                                <div class="col-xs-12 col-sm-12">
+                                <div class="form-group">
+                                        <label class="control-label">Nombre</label>
+                                        <div class=" controls">
+                                            <input name="Name_First" placeholder="Tu nombre" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                        </div>
+                                        <span id="helpBlock2" class="hidden help-block help-nombre">Tu nombre</span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label">Email</label>
+                                        <div class=" controls">
+                                            <input name="Email" placeholder="Tu Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                            <input type="hidden" name="subject" value="contactanos" />
+                                        </div>
+                                        <span id="helpBlock3" class="hidden help-block help-mail">Email</span>
+                                    </div>
+                                </div>  
+                            </div>  
+                            <div class="form-group">
+                                <label class="control-label">Mensaje</label>
+                                <div class="controls">
+                                    <textarea name="MultiLine" placeholder="Escribe tu mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                                </div>
+                                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Mensaje</span>
+                            </div>
+                            <p><button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block contact" data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar mensaje </button></p>
+                            <input type="hidden" name="submitted" id="submitted3" value="true">
+                        </form> 
+                        </div>
+                     </div>
+                    </div>      
+                </div>  
+            </div>
+    </div>
+
+    <div style="margin-bottom:20px;"></div>
+
+
+    <div class="container min">
+        <div class="col-md-12 col-sm-12 col-xs-12">
+             <hr class="tienda">
+        </div>
+
+        <!-- *****primera tienda****** -->
+       <div class="col-md-6 col-sm-6 col-xs-12"> 
+         <div class="texto-tienda {{editabletext}}" text-id="{{ site.name + '_tienda_1' }}"> {{ read_text(site.name +  '_tienda_1') }}</div>
+           <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                 <label for="img_tienda_1">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_tienda_1" name="image" id="img_tienda_1" >
+           </div>
+           {% end %}
+
+           <a id="{{ site.name + '_tienda_1' }}" href="{{ read_link(site.name + '_tienda_1') }}">
+              <img id="{{ site.name }}_tienda_1" src="{{ read_image(site.name + '_tienda_1', 1) }}" onload="this.src='{{ read_image(site.name + '_tienda_1',) }}'" class="box-tienda" alt="item">
+         </a>
+     </div>
+     {% if is_admin %}
+     <img class="change-image editablelink" link-id="{{ site.name + '_tienda_1' }}" content="{{ read_link(site.name + '_tienda_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+     {% end %}
+
+ </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12"> 
+
+ 
+    </div>
+
+
+
+<!-- *****Segunda tienda******* -->
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+             <hr class="tienda">
+        </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12"> 
+          <div class="texto-tienda {{editabletext}}" text-id="{{ site.name + '_tienda_2' }}"> {{ read_text(site.name +  '_tienda_2') }}</div>
+           <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                 <label for="img_tienda_2">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_tienda_2" name="image" id="img_tienda_2" >
+           </div>
+           {% end %}
+
+           <a id="{{ site.name + '_tienda_2' }}" href="{{ read_link(site.name + '_tienda_2') }}">
+              <img id="{{ site.name }}_tienda_2" src="{{ read_image(site.name + '_tienda_2', 1) }}" onload="this.src='{{ read_image(site.name + '_tienda_2',) }}'" class="box-tienda" alt="item">
+         </a>
+     </div>
+     {% if is_admin %}
+     <img class="change-image editablelink" link-id="{{ site.name + '_tienda_2' }}" content="{{ read_link(site.name + '_tienda_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+     {% end %}
+     </div>
+    
+    <div class="col-md-6 col-sm-6 col-xs-12"> 
+  
+    </div>
+
+
+<!-- ***Tercera*** -->
+
+     <div class="col-md-12 col-sm-12 col-xs-12">
+             <hr class="tienda">
+        </div>
+
+    <div class="col-md-6 col-sm-6 col-xs-12"> 
+          <div class="texto-tienda {{editabletext}}" text-id="{{ site.name + '_tienda_334' }}"> {{ read_text(site.name +  '_tienda_334') }}</div>
+           <div style="position:relative;">
+              {% if is_admin %}
+              <div class="image-upload lapiz visible-movil">
+                 <label for="img_tienda_3">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+               <input type="file" class="editableimage" image-id="{{ site.name }}_tienda_3" name="image" id="img_tienda_3">
+           </div>
+           {% end %}
+
+           <a id="{{ site.name + '_tienda_3' }}" href="{{ read_link(site.name + '_tienda_3') }}">
+              <img id="{{ site.name }}_tienda_3" src="{{ read_image(site.name + '_tienda_3', 1) }}" onload="this.src='{{ read_image(site.name + '_tienda_3',) }}'" class="box-tienda" alt="item">
+         </a>
+     </div>
+     {% if is_admin %}
+     <img class="change-image editablelink" link-id="{{ site.name + '_tienda_3' }}" content="{{ read_link(site.name + '_tienda_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+     {% end %}
+     </div>
+    
+    <div class="col-md-6 col-sm-6 col-xs-12"> 
+   
+    </div>
+
+
+</div>
+
+    <div style="margin-bottom:50px;"></div>
+
+
 {% include '../home/footer.html' %}     
 {% end %}
