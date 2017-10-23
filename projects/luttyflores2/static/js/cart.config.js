@@ -59,9 +59,9 @@ $(document).ready(function()
         $("#todos").addClass("active");
     }
     var base_url = $.environmentVar(
-        'http://apibodegas.ondev.today/',
-        'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+          'https://apibodegas.loadingplay.com/',
+          'https://apibodegas.loadingplay.com/',
+          'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com',
