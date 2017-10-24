@@ -38,10 +38,10 @@ li{
 .volver {
     float: left !important;
     background: rgba(0, 0, 0, 0.24) !important;
-    font-size: 15px !important;
+    /* font-size: 15px !important; */
     padding: 15px 11px !important;
     color: white !important;
-    font-weight: 600 !important;
+    font-weight: 100;
     height: 51px;
     width: 31%;
     cursor: pointer;
@@ -627,6 +627,15 @@ hr.page-contact {
 
 .col-md-6 {
     margin-bottom: 26px;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
+.remove-from-cart.fri {
+    padding-left: 27px;
 }
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
