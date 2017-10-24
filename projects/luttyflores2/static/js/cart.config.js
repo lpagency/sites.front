@@ -64,7 +64,7 @@ $(document).ready(function()
           'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://checkout.loadingplay.com',
-        'https://betapay.loadingplay.com',
+        'http://lpcheckout.ondev.today',
         'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(48,48,48);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
