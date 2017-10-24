@@ -186,6 +186,12 @@ div.upload input, div.image-upload input {
     color: white;
 }
 
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: gray;
+    border-color: gray;
+}
+
 /*------------------------------------Responsive-------------------------------------------------------*/
 
 @media (max-width: 1199px){
@@ -224,6 +230,13 @@ div.upload input, div.image-upload input {
     padding-left: 15px;
     margin-left: auto;
     width: 100%;
+}
+
+.gre {
+    padding: 0px 0px;
+    margin-bottom: 1%;
+    margin-left: 0%;
+    width: 85%;
 }
 
 }
