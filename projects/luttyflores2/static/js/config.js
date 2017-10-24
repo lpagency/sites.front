@@ -11,8 +11,7 @@
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://pay.loadingplay.com',
-        'http:s//pay.loadingplay.com',
+        'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
-        'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(48,48,48);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
