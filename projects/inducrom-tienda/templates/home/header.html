@@ -1,0 +1,147 @@
+<header class="grin">
+    <div class="menu">
+        <div class="navbar mbtm0" role="navigation">
+            <div class="container">   
+                <div class="row">
+                    <div class="">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#" >
+                             <div style="position:relative">
+                                 <div class="col-md-8">
+                                     <div class="caja-logo">
+                                         {% if is_admin %}
+                                         <div class="image-upload lapiz visible-movil">
+                                            <label for="img_header_logo">
+                                               <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                           </label>
+                                           <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                                       </div>
+                                       {% end %}
+                                       <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                                   </div>
+                               </div>
+
+                           </div>
+                       </a>
+                   </div>
+                        <div class="navbar-collapse collapse">
+                    
+                            <ul class="nav navbar-nav navbar-right  hidden-sm hidden-xs">
+                                <!-- <li>
+                                    <a class="tag" href="" style="left: 19px;">INDUCROM</a>
+                                </li> -->
+                                 <div class="dropdown col-md-2 misi">
+                                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" onclick="window.location.href='http://inducrom.lpe.cl/lineas_de_negocios'">INDUCROM
+                                    </button>
+                                    <ul class="dropdown-menu" style="display: none">
+                                    <li><a class="" style="color:rgba(84, 84, 84, 0.79);" href="http://inducrom.lpe.cl/article/detail/mision_y_vision/2000">MISION Y VISION</a></li>
+                                      <li><a class="" style="color:rgba(84, 84, 84, 0.79);" href="http://inducrom.lpe.cl/article/detail/nosotros/1999">NOSOTROS</a></li>
+                                    </ul>
+                                  </div>
+
+                                 <div class="dropdown col-md-2">
+                                  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" onclick="window.location.href='http://inducrom.lpe.cl/lineas_de_negocios'">PRODUCTOS
+                                    </button>
+                                    <ul class="dropdown-menu" style="display: none">
+                                      <li><a class="azul" href="http://inducrom.lpe.cl/listado_productos?tag=control_de_acceso">CONTROL DE ACCESO</a></li>
+                                      <li><a class="verde" href="http://inducrom.lpe.cl/listado_productos?tag=productos_ecologicos">PRODUCTOS ECOLÓGICOS</a></li>
+                                      <li><a class="amarillo" href="http://inducrom.lpe.cl/listado_productos?tag=mobiliario_urbano">MOBILIARIO URBANO</a></li>
+                                      <li><a class="naranjo" href="http://inducrom.lpe.cl/listado_productos?tag=espacios_publicos">ESPACIOS PÚBLICOS</a></li>
+                                      <li><a class="rojo" href="http://inducrom.lpe.cl/listado_productos?tag=productos_especiales">PRODUCTOS ESPECIALES</a></li>
+                                      <li><a class="gris" href="http://inducrom.lpe.cl/listado_productos?tag=productos_nuevos">PRODUCTOS NUEVOS</a></li>
+                                    </ul>
+                                  </div>
+                                <li>
+                                    <a href="http://inducrom.lpe.cl/clientes">CLIENTES</a>
+                                </li>
+                               
+                                <li>
+                                    <a class="tag" href="http://inducrom.lpe.cl/listado_articulos">NOTICIAS</a>
+                                </li>
+                                 <li>
+                                    <a class="tag" href="http://inducrom.lpe.cl/catalogos">CATÁLOGOS</a>
+                                </li> 
+                                <li>
+                                    <a class="tag" href="http://inducrom.lpe.cl/detalle_cotizacion">COTIZACIÓN</a>
+                                </li> 
+                                <li>
+                                    <a class="tag" href="http://inducrom.lpe.cl/contact">CONTACTO</a>
+                                </li>
+                                <li>
+                                    <a class="tag" href="#">TIENDA</a>
+                                     <img class="img-carrito" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png" />
+                                </li> 
+
+                            </ul>
+                       </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!-- ***********MENU MOVIL************** -->
+<div class="">
+   <div id="wrapper">
+        <!-- Sidebar -->
+        <div id="sidebar-wrapper" style="margin-top: -35px;">
+            <ul class="sidebar-nav">
+                <li>
+                    <a href="!#" class="dropdown-toggle" data-toggle="dropdown">INDUCROM</a>
+                    <ul class="dropdown-menu" style="position: relative; box-shadow: none">
+                      <li><a href="http://inducrom.lpe.cl/article/detail/mision_y_vision/2000">MISION Y VISION</a></li>
+                      <li><a href="http://inducrom.lpe.cl/article/detail/nosotros/1999">NOSOTROS</a></li>
+                    </ul>
+                </li>
+                 <li>
+                    <a href="http://inducrom.lpe.cl/lineas_de_negocios">PRODUCTOS</a>
+                </li>
+                <li>
+                    <a href="http://inducrom.lpe.cl/clientes">CLIENTES</a>
+                </li>
+                <li>
+                    <a href="http://inducrom.lpe.cl/listado_articulos">NOTICIAS</a>
+                </li>
+                <li>
+                    <a href="http://inducrom.lpe.cl/catalogos">CATÁLOGOS</a>
+                </li>
+                <li>
+                    <a href="http://inducrom.lpe.cl/detalle_cotizacion">COTIZACIÓN</a>
+                </li>
+                <li>
+                    <a href="http://inducrom.lpe.cl/contact">CONTACTO</a>
+                </li>
+                <li>
+                    <a href="#" class="">TIENDA</a>
+                </li>
+                <li>
+                  <img class="img-carrito-lateral" id="open-cart" data-toggle="modal" data-target="#myModal" src="https://84static.loadingplay.com/static/images/134655135706734ab620de1486c454e3_carrito.png">
+                </li>
+<!--                 <li> <a href="">CARRO DE COMPRA </a></li> -->
+                
+
+            </ul>
+        </div>
+        <!-- /#sidebar-wrapper -->
+
+        <!-- Page Content -->
+            <div id="page-content-wrapper">
+                    <a href="" class="btn btn-default uni" id="menu-toggle">
+                     <i class="fa fa-bars" aria-hidden="true"></i>
+                   </a>
+            </div>
+    </div>
+  </div>
+
+<!-- ****************FIN MENU MOVIL***************** -->
+
+</header>
+
+
