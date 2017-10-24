@@ -568,6 +568,9 @@ div.upload input, div.image-upload input {
     bottom: 87px;
     left: 3%;
     height: 150px;
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    font-size: 15px;
 }
 
 .box-tienda {
@@ -582,10 +585,46 @@ hr.tienda {
     margin-top: 20px;
     margin-bottom: 137px;
     border: 0;
-    border-top: 1px solid gray;
-    left: 1%;
+    border-top: 1px solid #eee;
+    right: 6px;
     position: relative;
 }
+
+.distrib-contact {
+    text-align: left;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    margin-top: 23px;
+    position: relative;
+    right: 19px;
+    color: rgba(128, 128, 128, 0.62);
+}
+
+.titulo-negrita{
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    margin-top: 32px;
+    position: relative;
+    right: 4px;
+}
+.titulo-claro{
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    position: relative;
+    right: 4px;
+}
+
+hr.page-contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    right: 18px;
+    position: relative;
+}
+
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width:1199px){

@@ -146,13 +146,30 @@
     {% set editabletext = '' %}
 {% end %}
 
-<div style="margin-top:-30px;"></div>
+
+
+<div class="container min">
+<section>
+    <div class="mobile" style="background:url('{{ read_image(site.name + '_con',500) }}'); height:400px; background-size:cover; margin-top: 0px;  filter: grayscale(0%) brightness(65%); -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%); -ms-filter: grayscale(0%) brightness(65%);-o-filter: grayscale(0%) brightness(65%); background-position:center;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_con">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_con" name="image" id="img_con" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_con" src="{{ read_image(site.name + '_con', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_con',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+</section>
+</div>
+
 <div class="container min">
 
 <div class="img-mobilee" style="position: relative;">
         <div class="container min">
            <div class="col-md-12">
-               <h3 class="description distrib contact {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-weight: 200;margin-top: 150px;"> {{ read_text(site.name +  '_ti_con') }}</h3>
+               <h3 class="distrib-contact {{editabletext}}" text-id="{{ site.name + '_ti_con' }}"> {{ read_text(site.name +  '_ti_con') }}</h3>
                <hr class="page-contact">
             </div>
         </div>
