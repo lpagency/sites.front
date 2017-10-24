@@ -73,7 +73,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_home" name="image" id="img_home">
         </div>
         {% end %}
-        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.src='{{ read_image(site.name + '_home',500) }}'" class="img-principal hidden" alt="item">
+        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home',500) }}'" class="img-principal hidden" alt="item">
     </div>
 </section>
 </div>
@@ -100,7 +100,7 @@
            {% end %}
 
            <a id="{{ site.name + '_home_2' }}" href="{{ read_link(site.name + '_home_2') }}">
-              <img id="{{ site.name }}_home_2" src="{{ read_image(site.name + '_home_2', 1) }}" onload="this.src='{{ read_image(site.name + '_home_2',) }}'" class="box-home" alt="item">
+              <img id="{{ site.name }}_home_2" src="{{ read_image(site.name + '_home_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_2',) }}'" class="box-home" alt="item">
          </a>
      </div>
      {% if is_admin %}
@@ -122,7 +122,7 @@
            {% end %}
 
            <a id="{{ site.name + '_home_3' }}" href="{{ read_link(site.name + '_home_3') }}">
-              <img id="{{ site.name }}_home_3" src="{{ read_image(site.name + '_home_3', 1) }}" onload="this.src='{{ read_image(site.name + '_home_3',) }}'" class="box-home" alt="item">
+              <img id="{{ site.name }}_home_3" src="{{ read_image(site.name + '_home_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_3',) }}'" class="box-home" alt="item">
          </a>
      </div>
      {% if is_admin %}
