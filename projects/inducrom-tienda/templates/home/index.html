@@ -79,7 +79,6 @@
 
 
 
-
       var catProd = $(".buscaCat").html(" Home | " + log);
 
       $(".buscaCat").css("text-transform", "capitalize");
@@ -190,20 +189,20 @@ $(document).ready(function(){
 <body id="lapimport">
   
    <section>
-    <div class="mobile img-mobile" style="background:url('{{ read_image(site.name + '_productos_in',500) }}'); height:499px; background-size:cover; margin-top: -101px;background-position:center; margin-bottom: 0px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+    <div class="mobile img-mobile" style="background:url('{{ read_image(site.name + '_productos_tienda',500) }}'); height:499px; background-size:cover; margin-top: -101px;background-position:center; margin-bottom: 0px;" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
         <div class="image-upload part1 lapiz visible-movil">
-            <label for="img_productos_in">
+            <label for="img_productos_tienda">
                 <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
             </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_in" name="image" id="img_productos_in" >
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_tienda" name="image" id="img_productos_tienda">
         </div>
         {% end %}
-        <img id="{{ site.name }}_productos_in" src="{{ read_image(site.name + '_productos_in', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_in',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_productos_tienda" src="{{ read_image(site.name + '_productos_tienda', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_tienda',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
      <div class="col-md-12">
             <div class="box-text-gal">
-                <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_producc' }}"> {{ read_text(site.name +  '_producc') }}</h1>
+                <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_producc_tienda' }}"> {{ read_text(site.name +  '_producc_tienda') }}</h1>
             </div>
       </div>
 </section>
@@ -213,7 +212,7 @@ $(document).ready(function(){
 <section> 
   <div class="container">
   <div class="col-md-6 col-sm-6 col-xs-12">
-    <div class="texto-header-pro buscaCat"> Home |  </div>
+    <div class="texto-header-pro buscaCat"> Home | </div>
   </div>
   <div class="hidden-xs hidden-sm visible-lg visible-md">
     <div class="texto-header-pro-2 tituloCategoria"></div>
@@ -231,33 +230,8 @@ $(document).ready(function(){
           </div>
               <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="inteligente" class="azul subcateg partes mbtm5 scrollUp" tag="inteligente" role="button" sub=" Control de acceso | Inteligente">Control de acceso inteligente</a>
-              </div>
-              <div>
-              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="mecanico" class="azul subcateg partes mbtm5 scrollUp" tag="mecanico" role="button" sub=" Control de acceso | Mecanico">Control de acceso mecanico</a>
-              </div>
-              <div>
-              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
               <a href="#" id="filas" class="azul subcateg partes mbtm5 scrollUp" tag="filas" role="button" sub=" Control de acceso | Separador de filas">Separador de filas</a>
               </div>
-              <div>
-              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="letreros" class="azul subcateg partes mbtm5 scrollUp" tag="letreros" role="button" sub=" Control de acceso | Portaletreros">Portaletreros</a>
-              </div>
-              <div>
-              <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="otros_acceso" class="azul subcateg partes mbtm5 scrollUp" tag="otros_acceso" role="button" sub=" Control de acceso | Otros para control de acceso">Otros para control de acceso</a>
-              </div>
-
-            <div>
-            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_ecologicos" class="mgt-10 verde subcateg mbtm5 index" tag="productos_ecologicos" role="button" sub="productos ecologicos">Productos ecologicos</a>
-            </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="basurero" class="verde subcateg partes mbtm5 scrollUp" tag="basurero_ecologico" role="button" sub=" Productos Ecologicos | Basureros">Basureros</a>
-               </div>
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
@@ -265,65 +239,9 @@ $(document).ready(function(){
             </div>
                 <div>
                 <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-                <a href="#" id="basureros" class="amarillo subcateg partes mbtm5 scrollUp" tag="basureros" role="button" sub=" Mobiliario urbano | Basureros">Basureros</a>
+                <a href="#" id="todos" class="amarillo subcateg partes mbtm5 scrollUp" tag="" role="button" sub=" Mobiliario urbano | Basureros">Todos</a>
                 </div>
-                <div>
-                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-                <a href="#" id="banqueta" class="amarillo subcateg partes mbtm5 scrollUp" tag="banqueta" role="button" sub=" Moviliario urbano | Banquetas/Escaños">Banquetas/Escaños</a>
-                </div>
-                <div>
-                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-                <a href="#" id="bicicleteros" class="amarillo subcateg partes mbtm5 scrollUp" tag="bicicleteros" role="button" sub=" Moviliario urbano | Bicicleteros">Bicicleteros</a>
-                </div>
-                <div>
-                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-                <a href="#" id="refugio_bici" class="amarillo subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button" sub=" Moviliario urbano | Refugios para bicicletas">Refugios para bicicletas</a>
-                </div>
-
-            <div>
-            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="espacios_publicos" class="mgt-10 naranjo subcateg mbtm5 index" tag="espacios_publicos" role="button" sub="Espacios publicos">Espacios publicos</a>
-            </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="pape_ceni" class="naranjo subcateg partes mbtm5 scrollUp" tag="pape_ceni" role="button" sub=" Espacios publicos | Papeleros ceniceros">Papeleros ceniceros</a>
-               </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="pape_ofi" class="naranjo subcateg partes mbtm5 scrollUp" tag="pape_ofi" role="button" sub=" Espacios publicos | Papeleros oficina">Papeleros oficina</a>
-               </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="pape_pendu" class="naranjo subcateg partes mbtm5 scrollUp" tag="pape_pendu" role="button" sub=" Espacios publicos | Papeleros tapa pendulo">Papeleros tapa pendulo</a>
-               </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="pape_pedal" class="naranjo subcateg partes mbtm5 scrollUp" tag="pape_pedal" role="button" sub=" Espacios publicos | Papeleros tapa pedal">Papeleros tapa pedal</a>
-               </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="cenicero" class="naranjo subcateg partes mbtm5 scrollUp" tag="cenicero" role="button" sub=" Espacios publicos | Ceniceros">Ceniceros</a>
-               </div>
-
-            <div>
-            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_especiales" class="mgt-10 rojo subcateg mbtm5 index" tag="productos_especiales" role="button" sub="productos especiales">Productos especiales</a>
-            </div>
-               <div>
-               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-               <a href="#" id="especiales" class="subcateg partes rojo mbtm5 scrollUp" tag="especiales" role="button" sub=" Productos Especiales | Productos especiales">Productos Especiales</a>
-               </div>
-
-            <div>
-            <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_nuevos" class="mgt-10 gris subcateg mbtm5 index" tag="productos_nuevos" role="button" sub="productos nuevos">Productos nuevos</a>
-            </div>
-                <div>
-                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-                <a href="#" id="pro_nuevos" class="subcateg gris partes mbtm5 scrollUp" tag="pro_nuevos" role="button" sub=" Productos nuevos | Productos nuevos">Productos nuevos</a>
-                </div>
-            <a href="#" id="todos" class="mgt-10 subcateg mbtm5 index scrollUp" tag="" role="button" sub="Todos los productos">Todos los productos</a>
-            <!--<button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar listado" id="open-cart" onclick="window.location.href='{{ site_base }}/detalle_cotizacion'">COTIZAR</button>-->
+ 
           </div>
           </div>
   </section>
