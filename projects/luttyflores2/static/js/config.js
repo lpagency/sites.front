@@ -4,14 +4,15 @@
 /* global document */
 /* export config */
 'use strict';
-
+    
     var base_url = $.environmentVar(
-          'https://apibodegas.loadingplay.com/',
-          'https://apibodegas.loadingplay.com/',
-          'https://apibodegas.loadingplay.com/');
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'http:s//pay.loadingplay.com',
+        'https://pay.loadingplay.com');
         'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(48,48,48);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
