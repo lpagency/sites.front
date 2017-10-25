@@ -36,7 +36,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_art" name="image" id="img_banner_list_art" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_list_art" src="{{ read_image(site.name + '_banner_list_art', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_art',500) }}'" class="banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_banner_list_art" src="{{ read_image(site.name + '_banner_list_art', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_list_art',500) }}'" class="banner_list desaturada" alt="item">
     </div>
 </section>
 
@@ -82,7 +82,7 @@
         </div>
         {% end %}
         <div style="width: 100%">
-            <img class="img_banner2 img-responsive decolor" id="{{ site.name }}_img_list_art2" src="{{ read_image(site.name + '_img_list_art2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_list_art2',500) }}'" alt="item" style=" ">
+            <img class="img_banner2 img-responsive decolor" id="{{ site.name }}_img_list_art2" src="{{ read_image(site.name + '_img_list_art2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_list_art2',500) }}'" alt="item" style=" ">
 
             <div class="parent4">    
                 <h1 class="col-lg-12 col-md-12 col-xs-12 text-center text-sb1 {{editabletext}}" text-id="{{ site.name + '_list_art3' }}"> {{ read_text(site.name +  '_list_art3') }}
