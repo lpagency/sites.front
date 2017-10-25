@@ -58,7 +58,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_rusia" name="image" id="img_rusia" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_rusia" src="{{ read_image(site.name + '_rusia', 1) }}" onload="this.src='{{ read_image(site.name + '_rusia',500) }}'" class=" img_recetas decolor" alt="item">
+        <img id="{{ site.name }}_rusia" src="{{ read_image(site.name + '_rusia', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rusia',500) }}'" class=" img_recetas decolor" alt="item">
         <div class="box" >
             <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_rusia' }}"> {{ read_text(site.name +  '_text_rusia') }}
             </h1>
@@ -87,7 +87,7 @@
                         </div>
                         {% end %}
                          <a id="{{ site.name + '_rusia1' }}" href="{{ read_link(site.name + '_rusia1') }}">
-                        <img id="{{ site.name }}_rusia1" src="{{ read_image(site.name + '_rusia1', 1) }}" onload="this.src='{{ read_image(site.name + '_rusia1',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rusia1" src="{{ read_image(site.name + '_rusia1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rusia1',500) }}'" class="img-responsive img_article" alt="item">
                         </a>
   
                        <!--editable link-->
@@ -113,7 +113,7 @@
                         </div>
                         {% end %}
                     <a id="{{ site.name + '_rusia2' }}" href="{{ read_link(site.name + '_rusia2') }}">
-                        <img id="{{ site.name }}_rusia2" src="{{ read_image(site.name + '_rusia2', 1) }}" onload="this.src='{{ read_image(site.name + '_rusia2',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rusia2" src="{{ read_image(site.name + '_rusia2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rusia2',500) }}'" class="img-responsive img_article" alt="item">
                     </a>
 
                         <!--editable link-->

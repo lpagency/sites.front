@@ -58,7 +58,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_rrss_2" name="image" id="img_rrss_2" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_rrss_2" src="{{ read_image(site.name + '_rrss_2', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss_2',500) }}'" class=" img_recetas decolor" alt="item">
+        <img id="{{ site.name }}_rrss_2" src="{{ read_image(site.name + '_rrss_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss_2',500) }}'" class=" img_recetas decolor" alt="item">
         <div class="box" >
             <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_rrss_2' }}"> {{ read_text(site.name +  '_text_rrss_2') }}
             </h1>
@@ -87,7 +87,7 @@
                         </div>
                         {% end %}
                          <a id="{{ site.name + '_rrss1_china' }}" href="{{ read_link(site.name + '_rrss1_china') }}">
-                        <img id="{{ site.name }}_rrss1_china" src="{{ read_image(site.name + '_rrss1_china', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss1_china',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rrss1_china" src="{{ read_image(site.name + '_rrss1_china', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss1_china',500) }}'" class="img-responsive img_article" alt="item">
                         </a>
   
                        <!--editable link-->
@@ -113,7 +113,7 @@
                         </div>
                         {% end %}
                     <a id="{{ site.name + '_rrss2_china' }}" href="{{ read_link(site.name + '_rrss2_china') }}">
-                        <img id="{{ site.name }}_rrss2_china" src="{{ read_image(site.name + '_rrss2_china', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss2_china',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rrss2_china" src="{{ read_image(site.name + '_rrss2_china', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss2_china',500) }}'" class="img-responsive img_article" alt="item">
                     </a>
 
                         <!--editable link-->

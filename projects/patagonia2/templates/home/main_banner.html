@@ -9,7 +9,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner1" name="image" id="img_banner1" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_banner1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner1',500) }}'" class=" img_banner" alt="item">
+        <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_banner1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner1',500) }}'" class=" img_banner" alt="item">
     </div>
 
     <div class="box">
@@ -45,7 +45,7 @@
                <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_1" name="image" id="img_slider_1" >
            </div>
            {% end %}
-            <img id="{{ site.name }}_img_slider_1" src="{{ read_image(site.name + '_img_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_1',500) }}'" class="decolor3 img_banner" alt="item">
+            <img id="{{ site.name }}_img_slider_1" src="{{ read_image(site.name + '_img_slider_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_1',500) }}'" class="decolor3 img_banner" alt="item">
             <div class="box">
                 <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_banner' }}"> 
                     {{ read_text(site.name +  '_text_banner') }}
@@ -62,7 +62,7 @@
                <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_2" name="image" id="img_slider_2" >
            </div>
            {% end %}
-            <img id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" class="decolor3 img_banner" alt="item">
+            <img id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" class="decolor3 img_banner" alt="item">
             <div class="box">
                 <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_banner_2' }}"> 
                 {{ read_text(site.name +  '_text_banner_2') }}
@@ -79,7 +79,7 @@
                <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_3" name="image" id="img_slider_3" >
            </div>
            {% end %}
-            <img id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" class="decolor3 img_banner" alt="item">
+            <img id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" class="decolor3 img_banner" alt="item">
             <div class="box">
                 <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_banner_3' }}"> 
                 {{ read_text(site.name +  '_text_banner_3') }}
