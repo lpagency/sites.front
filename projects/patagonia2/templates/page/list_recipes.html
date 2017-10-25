@@ -58,7 +58,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_recipe" name="image" id="img_recipe" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_recipe" src="{{ read_image(site.name + '_recipe', 1) }}" onload="this.src='{{ read_image(site.name + '_recipe',500) }}'" class="decolor img_recetas" alt="item">
+        <img id="{{ site.name }}_recipe" src="{{ read_image(site.name + '_recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_recipe',500) }}'" class="decolor img_recetas" alt="item">
         <div class="box" >
             <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_recipe' }}"> {{ read_text(site.name +  '_text_recipe') }}
             </h1>

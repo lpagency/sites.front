@@ -18,6 +18,10 @@ div.upload input, div.image-upload input {
     height: 100%;
     overflow: hidden;
 }
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
 
 .producto-detalle-cotizacion{
     display: none;
@@ -437,6 +441,16 @@ img.lugar {
     padding: 0px 0px;
     margin-bottom: 0px;
     }
+
+    .col-xs-push-6 {
+    left: 0%;
+    }
+
+    .col-xs-pull-6 {
+    right: 0%;
+    margin-top: 45px;
+    }
+
 
 }
 
