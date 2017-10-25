@@ -8,8 +8,11 @@
 {% include '../home/header.html' %}
 {% end %}
 
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
 
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
@@ -49,13 +52,13 @@
                // $(".ellipsis").dotdotdot();
              }
         };
-         $(document).ecommerce({
-       'app_public' :  app_public,
-       'animation' : 'simple',
-       'base_url' : base_url,
-       'checkout_url' :  checkout_url,
-       'products_per_page' : 9
-     });
+           $(document).ecommerce({
+         'app_public' :  app_public,
+         'animation' : 'simple',
+         'base_url' : base_url,
+         'checkout_url' :  checkout_url,
+         'products_per_page' : 9
+       });
 
         $('.product-list').ecommerce('product_box', config);
 
@@ -189,8 +192,7 @@
                 </div>
               </div>
             <div class="col-xs-12">
-              <div style="margin-top:45px;"></div>
-              <div class="col-xs-12 fondo_nuest_prod">
+              <div class="col-xs-12">
                 <div style="margin-top:45px;"></div>
                   <button type="button" class="btn btn-default more-products" style="font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button>
               </div>

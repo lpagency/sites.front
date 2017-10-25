@@ -32,154 +32,51 @@
         });
     </script>
     
+
 <script type="text/javascript">
 
     $(document).ready(function()
     {
-
-        $(document).on("click", ".main-1", function()
-        {
-            $(".img_prod_little").css("border", "none");
-            $(this).children().css("border","solid 1px orange");
-
-        });
-
-
-            // $(document).on('click', '.tallas', function()
-            // {
-            //     $('.size-item').removeClass('active');
-            //     $('.size-item').children().css("color", "rgb(91, 81, 83)");
-            //     $('.size-item').css("background-color", "white");
-            //     $(this).addClass('active');
-            //     $(this).children().css("color", "white");
-            //     $(this).css("background-color", "rgb(91, 81, 83)");
-            // });
-
-            // $(this).css("background-color", "rgb(91, 81, 83)");
-            // $(this).parent(".num-tal").css("color", "white");
-
         var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
-         var checkout_url = $.environmentVar(
-        'http://lpcheckout.ondev.today',
-        'http://lpcheckout.ondev.today',
-        'https://pay.loadingplay.com');
-         var app_public = $.environmentVar(64,64,64);
-         var site_name = $.environmentVar('lahorqueta2', 'lahorqueta2', 'lahorqueta2');
-        var variants_loaded = false;
+      var checkout_url = $.environmentVar(
+          'https://pay.loadingplay.com',
+          'https://pay.loadingplay.com',
+          'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(64,64,64);
+        var site_name = $.environmentVar('lahorqueta2', 'lahorqueta2', 'lahorqueta2');
 
-        var options = {
+
+        $(document).ecommerce('product_detail', {
             'app_public' : app_public,
             'base_url' : base_url,
             'checkout_url': checkout_url,
             'product_id' : {{ product_id }},
-            'site_name': site_name,
-            'variants': {
-                'product_sku': '',
-                'container': '.variants-container',
-                'variant_template': '<div class="col-md-12 mover">{{! values }}</div>',
-                'value_template': '\
-                    <div \
-                        class="col-md-4 col-sm-4 col-xs-4 size-item \
-                            tallas variant-value" variant="{{! variant_name }}"\
-                        value="{{! value }}" >\
-                            <div class="num-tal">{{! value }}</div>\
-                    </div>',
-                'active_class': 'active'
-            }, onLoad: function(product)
-            {
-                // check if variants were triggered
-                if (variants_loaded)
-                {
-                    return;
-                }
-                // add some settings
-                options.variants.product_sku = product.sku;
-
-                // load variants
-                $('.product-detail').ecommerce('load_variants', options);
-
-                $('.variants-container').on(
-                    'combination:selected', function(e, d)
-                    {
-                        $('.add-to-cart').attr('product-combination', d);
-                        $('.add-to-cart').removeAttr('disabled');
-                    });
-
-                variants_loaded = true;  // execute this onces
-                options.onLoad = $.noop;
-
-                // inicialización del codigo de las imagenes
-
+            'container' : '.product-detail',
+            onLoad: function(product){
                 related(product.bullet_3);
-                related2(product.bullet_3);
 
                 if (product.bullet_1 != "" ){
-                    // $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                    // {
-                    //     $("#article-reladed").html(data);
-                    // });
-                }
-
-                var mainImage = $("#mainImage");
-                    $(".img-container img").hover(function(){
-                     var src = $(this).attr("src");
-                     $("#mainImage").attr("src",src);
-                 });
-
-                mainImage.on("click",function(){
-                    $(this).css("transform","scale(1.1)");
-                });
-
-
-                var main = $(".descuento-detalle").attr("main-price");
-                var promotion = $(".descuento-detalle").attr("promotion-price");
-
-
-                var promo = Utils.money(promotion);
-                var original = Utils.money(main);
-
-                if(promotion != 0){
-                  var resta = Math.trunc((main - promotion)*100/main);
-                  $(".descuento-detalle").removeClass("hidden");
-                  $(".descuento-detalle").html("("+resta+"%)");
-
-                  $(".precio-oferta").html(promo);
-                }else{
-                    $(".precio-oferta").html(original);
-                    $(".descuento-detalle").addClass("hidden");
-                    $(".product-price-2").addClass("hidden");
-                    $(".oferta-de").css("color","#696e79");
-                }
-
-                var swiper = new Swiper('.swiper-container', {
-                    pagination: '.swiper-pagination',
-                    paginationClickable: true,
-                    nextButton: '.swiper-button-next',
-                    prevButton: '.swiper-button-prev',
-                    spaceBetween: 30,
-                });
-
-                $(".carousel").on("touchstart", function(event){
-                    var xClick = event.originalEvent.touches[0].pageX;
-                    $(this).one("touchmove", function(event){
-                        var xMove = event.originalEvent.touches[0].pageX;
-                        if( Math.floor(xClick - xMove) > 5 ){
-                            $(".carousel").carousel('next');
-                        }
-                        else if( Math.floor(xClick - xMove) < -5 ){
-                            $(".carousel").carousel('prev');
-                        }
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
                     });
-                    $(".carousel").on("touchend", function(){
-                        $(this).off("touchmove");
-                    });
-                });
+                }
+                            var mainImage = $("#mainImage");
+            $(".img-container img").hover(function(){
+             var src = $(this).attr("src");
+             $("#mainImage").attr("src",src);
+           });
+
+            mainImage.on("click",function(){
+              $(this).css("transform","scale(1.1)");
+            });
+
             }
-        };
-        $('.product-detail').ecommerce('product_detail', options);
+
+        });
 
         // productos relacionados
         var related = function(tag)
@@ -191,32 +88,14 @@
                 'templateOrigin' : '#product_template_home',
                 'tag' : '',
                 'ignore_stock' : true,
-                'onLoad':function(){
-                    // $('.ellipsis').ellipsis();
-                    // $(".ellipsis").dotdotdot();
-                 }
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
             };
             $('.product-related').ecommerce('product_box', config);
         };
-
-        var related2 = function(tag)
-        {
-            var config = {
-                'app_public' : app_public,
-                'base_url' : base_url,
-                'maxProducts' : 8,
-                'templateOrigin' : '#product_template_home2',
-                'tag' : '',
-                'ignore_stock' : true,
-                'onLoad':function(){
-                    // $('.ellipsis').ellipsis();
-                    // $(".ellipsis").dotdotdot();
-
-                 }
-            };
-            $('.product-related2').ecommerce('product_box', config);
-        };
-
     });
 
 </script>

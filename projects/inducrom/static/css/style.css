@@ -23,6 +23,12 @@ div.upload input, div.image-upload input {
     display: none;
 }
 
+.logo-tienda{
+    position: relative;
+    left: 34%;
+    top: -16px;
+}
+
 div.image-upload {
     z-index: 1030 !important;
 }
@@ -462,6 +468,13 @@ img.lugar {
 }
 
 @media (max-width: 414px){
+
+    .logo-tienda-movil{
+        position: relative;
+        left: -46%;
+        top: -15px;
+    }
+
     .img-edit {
     height: 371px;
     object-fit: contain;
