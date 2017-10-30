@@ -4,14 +4,15 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
-        'https://checkout.loadingplay.com');
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
     var app_public = $.environmentVar(67,67,67);
+    var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
 
     // functions 
     // productos relacionados

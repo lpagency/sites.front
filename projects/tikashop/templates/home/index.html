@@ -16,36 +16,48 @@
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
 <script type="text/javascript">
-  $(document).ready(function()
-  {
-    $("#OpenAlert").click();
+    $(document).ready(function()
+    {
+
+      $("#OpenAlert").click();
+
     var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://pay.loadingplay.com',
-        'http:s//pay.loadingplay.com',
+        'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
     var app_public = $.environmentVar(67,67,67);
-    var config = {
-        'app_public' : app_public,
-        'base_url' : base_url,
-        'checkout_url': checkout_url,
-        'products_per_page' : 10,
-        'templateOrigin' : '#product_template_home',
-        'tag' : '',
-        'ignore_stock' : false,
-        'infinite_scroll': false,
-        'onLoad':function(products)
-        {
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 16,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
 
-          $(".ellipsis").dotdotdot();
-        }
-    };
-    $('.products').ecommerce(config);
-  });
+        $('.product-list').ecommerce('product_box', config);
+
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
+    });
 </script>
+
 
 {% end %}
 
@@ -413,6 +425,7 @@
        
    </div>
 </section>
+
 
 <div style="margin-bottom:30px;"></div>
 
