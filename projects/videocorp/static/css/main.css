@@ -568,6 +568,14 @@ button:focus {
   pointer-events: none;
 }
 
+.banner-main-bg-2 {
+  width: 1140px;
+  max-width: 1140px;
+  height: 253px;
+  max-height: 253px;
+  pointer-events: none;
+}
+
 .banner-titulo {
   font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
   font-weight: 300;
@@ -648,7 +656,7 @@ button:focus {
   }
 }
 
-.galeria-grupo + .galeria-grupo {
+/*.galeria-grupo + .galeria-grupo {
   margin-top: 1.25rem;
 }
 
@@ -656,7 +664,7 @@ button:focus {
   .galeria-grupo + .galeria-grupo {
     margin-top: 0.9375rem;
   }
-}
+}*/
 
 @media screen and (min-width: 768px) {
   .galeria-grupo {
@@ -672,12 +680,13 @@ button:focus {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    margin-bottom: 1.8rem;
   }
 }
 
 @media screen and (min-width: 768px) {
   .galeria-grupo-tres .galeria-item {
-    width: 33.33%;
+    width: 100%;
   }
 }
 

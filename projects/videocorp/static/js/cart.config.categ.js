@@ -69,46 +69,18 @@ $(document).ready(function()
         'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(29,29,29);
 
-    var config = {
+    window.config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 15, 
+        'products_per_page' : 5, 
         'tag': tag,
         'ignore_stock': false,
-        'infinite_scroll': false,
+        'infinite_scroll': true,
         'checkout_url': checkout_url, 
         'operator' :'or',
         'templateOrigin': '#product_template',
         'onLoad': function(products) 
         {
-            $(".products").slick({
-            mobileFirst: true,
-            slidesToScroll: 1,
-            slidesToShow: 1,
-            dots: false,
-            prevArrow: "<img src='https://7static.loadingplay.com/static/images/5daa261ecc2951e2b42363b3c9051ffc_listaflecha.png' class='lista-slider-flecha lista-slider-flecha-prev'>",
-            nextArrow: "<img src='https://7static.loadingplay.com/static/images/5daa261ecc2951e2b42363b3c9051ffc_listaflecha.png' class='lista-slider-flecha lista-slider-flecha-next'>",
-            responsive: [
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 4
-                    }
-                },
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 5
-                    }
-                }
-            ]
-        });
 
         }
     };
@@ -123,6 +95,36 @@ $(document).ready(function()
         $(document).ecommerce('destroy');
         $(document).ecommerce(config);
 
-            // alert($(this).attr("tag"));
+    });
+
+    $(document).ready(function()
+    {
+        window.config.tag = "audio_profesional";
+        $(document).ecommerce('destroy');
+        $(".products-pro").ecommerce(config);
+    });
+
+    $(document).ready(function()
+    {
+        window.config.tag = "educacion";
+        $(".products-ed").html("");
+        $(document).ecommerce('destroy');
+        $(".products-ed").ecommerce(config);
+    });
+
+    $(document).ready(function()
+    {
+        window.config.tag = "audiovisual";
+        $(".products-audio").html("");
+        $(document).ecommerce('destroy');
+        $(".products-audio").ecommerce(config);
+    });
+
+    $(document).ready(function()
+    {
+        window.config.tag = "accesorios";
+        $(".products-ac").html("");
+        $(document).ecommerce('destroy');
+        $(".products-ac").ecommerce(config);
     });
 });
