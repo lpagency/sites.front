@@ -72,10 +72,10 @@ $(document).ready(function()
     var config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 9, 
+        'products_per_page' : 15, 
         'tag': tag,
         'ignore_stock': false,
-        'infinite_scroll': true,
+        'infinite_scroll': false,
         'checkout_url': checkout_url, 
         'operator' :'or',
         'templateOrigin': '#product_template',
