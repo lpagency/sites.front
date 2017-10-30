@@ -14,7 +14,6 @@
 {% end %}
 
 {% block scripts %}
-<script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
 <script>
   jQuery(document).ready(function(){
     jQuery('.menulist').toggle();
@@ -27,32 +26,32 @@
 {% end %}
 
 {% block css%}
-<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
-<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
 
 {% block body %}
-<div class="container">
-<div class="clearfix" style="height: 40px"></div>
-  <div class="row">
-    <div class="col-md-12 col-lg-12 ">
-      <div class="col-md-offset-2">
-        <div class="banner-below-text text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_banner_articulos' }}">{{ read_text(site.name +  'text_banner_articulos') }}</div>
-      </div>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-md-12 space">
-      <div class="col-md-2 col-lg-2">
-      </div>
-      <div class="col-md-10 col-lg-10 right">
-        {{ getArticleList() }}
-      </div>
-    </div>
-  </div>
-  <!-- <div class="row">
-    {{ getArticleList(tag="articulo") }}
-  </div> -->
-</div>
+    <section class="container articulos">
+        <div class="row">
+          <div class=" articulos-titulo {{editabletext}}" text-id="{{ site.name + 'text_main_article' }}">{{ read_text(site.name +  'text_main_article') }}</div>
+            <div class="col-xs-12">
+                <div class="hidden"></div>
+                {{ getArticleList(tag='marcas') }}
+                {{ getArticleList(tag='marcas2') }}
+                {{ getArticleList(tag='marcas3') }}
+                {{ getArticleList(tag='marcas4') }}
+                {{ getArticleList(tag='marcas5') }}
+                {{ getArticleList(tag='marcas6') }}
+                {{ getArticleList(tag='marcas7') }}
+                {{ getArticleList(tag='marcas8') }}
+                {{ getArticleList(tag='marcas9') }}
+                {{ getArticleList(tag='marcas10') }}
+                {{ getArticleList(tag='marcas11') }}
+            </div>
+        </div>
+    </section>
 {% include ../home/footer.html %}
 {% end %}

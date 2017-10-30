@@ -17,37 +17,21 @@
 {% end %}
 
 {% block css%}
-<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
 
 {% block body %}
-<div class="container">
-<div class="clearfix" style="height: 40px"></div>
-<div class="row">
-        <div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
-          <div class="col-md-offset-2">
-            <div class="banner-below-text">
-            {{ article["caption"] }}
-            </div>
-          </div>
-        </div>
-      </div>
-
+<section class="container articulo">
   <div class="row">
-    <div class="col-md-12 margin">
-      <div class="col-md-offset-2 col-lg-offset-2">
-        <div class="col-md-12 col-lg-12 detail-text article-content" class="right">
-          {{ article["description"] }}
-        </div>
-      </div>
+    <div class="col-xs-12">
+      <h3 class="articulo-titulo">{{ article["title"] }}</h3>
+      <p class="articulo-parrafo">{{ article["caption"] }}</p>
+      <img src="{{ article["thumb_500"] }}" data-original="{{ article["url"] }}" class="articulo-img">
+      <p class="articulo-parrafo">{{ article["description"] }}</p>
     </div>
   </div>
-  <div class="row">
-    <img class="fondo-articulo" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
-  </div>
-
-  <div class="" style="margin-bottom:40px;"></div>
-
-</div>
+</section>
 {% include ../home/footer.html %}
 {% end %}
