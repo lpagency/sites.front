@@ -12,7 +12,7 @@ $(document).ready(function()
         'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
     var app_public = $.environmentVar(67,67,67);
-    var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
+    var site_name = $.environmentVar('tikashop', 'tikashop', 'tikashop');
 
     // functions 
     // productos relacionados
