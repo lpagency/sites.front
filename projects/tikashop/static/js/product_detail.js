@@ -11,7 +11,7 @@ $(document).ready(function()
         'http://localhost:8522/',
         'http://lpcheckout.ondev.today/',
         'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(50,54,54);
+    var app_public = $.environmentVar(67,67,67);
 
     // functions 
     // productos relacionados
