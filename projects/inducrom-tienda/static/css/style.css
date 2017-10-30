@@ -4,6 +4,11 @@ body , html{
     overflow-x: hidden;
 }
 
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
 div.upload input, div.image-upload input {
     position: absolute;
     left: auto;
