@@ -10,17 +10,25 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
+<link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
 
-{% block scripts %}
+{% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/app.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 
     $(document).ready(function()
     {
 
-        var base_url = $.environmentVar(
+       var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
@@ -28,11 +36,10 @@
         'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com',
         'https://checkout.loadingplay.com');
-         var app_public = $.environmentVar(50,50,50);
+         var app_public = $.environmentVar(29,29,29);
         
 
-        $(document).ecommerce('product_detail', 
-        {
+        $(document).ecommerce('product_detail', {
             'app_public' : app_public,
             'base_url' : base_url,
             'checkout_url': checkout_url,
@@ -40,21 +47,65 @@
             'container' : '.product-detail',
             onLoad: function(product)
             {
-
+                related(product.tags[0]);
             }
-        });
 
+        })
+
+        // productos relacionados
+        var related = function(tag)
+        {
+
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 10,
+                'templateOrigin' : '#product_template',
+                'tag' : tag,
+                'ignore_stock' : true,
+                    'onLoad':function(){
+
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+
+        };
     });
+
 
 </script>
 
 <script type="text/template" id="product_detail">
-  <img class="{{! images[0]['thumb_500']}}" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}">
-  <div class="inf ellipsis multiline">{{! name }}</div>
-  <div> {{!brand}} </div>
-  <div> {{!main_price|money}} </div>
-  <div> {{!description}} </div>
-  <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar" id="open-cart" data-toggle="modal" data-target="#myModal">COMPRAR</button>
+
+<section class="container producto">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="producto-main">
+                    <div class="producto-preview">
+                        <div class="producto-preview-lista">
+                            <img src="{{! images[0][2]|hide_if_empty}}" class="producto-preview-item">
+                            <img src="{{! images[1][2]|hide_if_empty}}" class="producto-preview-item">
+                            <img src="{{! images[2][2]|hide_if_empty}}" class="producto-preview-item">
+                            <img src="{{! images[3][2]|hide_if_empty}}" class="producto-preview-item">
+                        </div>
+                        <img src="{{! images[0]['thumb_500']}}" alt="Producto" class="producto-preview-img">
+                    </div>
+                    <div class="producto-intro">
+                        <h2 class="producto-titulo">{{! name }}</h2>
+                        <h4 class="producto-subtitulo">{{! brand }}</h4>
+                        <h3 class="producto-precio">{{!main_price|money}}</h3>
+                        <p class="producto-parrafo">{{! description }}</p>
+                        <a href="#" class="producto-parrafo producto-parrafo-link producto-ficha">Descargar ficha técnica</a>
+                    </div>
+                </div>
+                <div class="producto-descripcion">
+                    <p class="producto-parrafo">{{! description }}</p>
+                    <p class="producto-parrafo">{{! description }}</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </script>
 
 
@@ -65,13 +116,26 @@
 
 {% block body %}
 
+
+
 <div class="product-detail"></div>
 
 
+    <section class="container lista">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="lista-grupo-wrapper">
+                    <div class="lista-grupo-header">
+                        <h4 class="lista-grupo-titulo">Productos de la misma categoría</h4>
+                        <a href="#" class="lista-grupo-link">Ver todos</a>
+                    </div>
+                    <div class="lista-grupo lista-grupo-borde product-related">
 
-
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 {% include '../home/footer.html' %}
 {% end %}

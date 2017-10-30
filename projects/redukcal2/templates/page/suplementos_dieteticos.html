@@ -99,7 +99,7 @@ $("#menu-toggle").click(function(e) {
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_die" name="image" id="img_banner_die">
             </div>
             {% end %}
-            <img id="{{ site.name }}_banner_die" src="{{ read_image(site.name + '_banner_die', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_die',500) }}'" class="banner_productos hidden" alt="item">
+            <img id="{{ site.name }}_banner_die" src="{{ read_image(site.name + '_banner_die', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_die',500) }}'" class="banner_productos hidden" alt="item">
         </div>
         <div class="container">
             <div class="col-md-12">
