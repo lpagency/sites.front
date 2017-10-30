@@ -88,13 +88,11 @@
 
 
 {% block css %}
-<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
-<style type="text/css">
-    .controls input, .controls textarea
-    {
-        padding: 10px 16px;
-    }
-</style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
 
 
@@ -104,43 +102,41 @@
 {% else %}
     {% set editabletext = '' %}
 {% end %}
-
-<form action='https://forms.zohopublic.com/sytes/form/videocorpformulariocontacto/formperma/j4D510G2dJf9F5J0K5B00E55G/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
-    <div class="col-xs-12 col-sm-6">
-        <div class="form-group">
-            <label class="control-label"></label>
-            <div class=" controls">
-                <input name="Name_First" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+<section class="container galeria">
+    <form action='https://forms.zohopublic.com/sytes/form/videocorpformulariocontacto/formperma/j4D510G2dJf9F5J0K5B00E55G/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                    <input name="Name_First" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                </div>
+                <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
             </div>
-            <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                    <input name="Email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                </div>
+                <span id="helpBlock3" class="hidden help-block help-mail">escribe tu email</span>
+            </div>
+        </div>  
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <textarea name="MultiLine" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-comentario">escribe tu comentario</span>
+            </div>
         </div>
 
-        <div class="form-group">
-            <label class="control-label"></label>
-            <div class=" controls">
-                <input name="Email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
-            </div>
-            <span id="helpBlock3" class="hidden help-block help-mail">escribe tu email</span>
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar </button>
+            <input type="hidden" name="submitted" id="submitted3" value="true">
         </div>
-    </div>  
-
-    <div class="col-sm-6">
-        <div class="form-group">
-            <label class="control-label"></label>
-            <div class="controls">
-                <textarea name="MultiLine" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height:234px;"></textarea>
-            </div>
-            <span id="helpBlock4" class="hidden help-block help-comentario">escribe tu comentario</span>
-        </div>
-    </div>
-
-    <div class="col-md-12 col-sm-12 col-xs-12">
-        <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar </button>
-        <input type="hidden" name="submitted" id="submitted3" value="true">
-    </div>
-</form> 
-			
-
-	</div>
-{% include '../home/footer.html' %}		
+    </form>
+</section>
+{% include '../home/footer.html' %}
 {% end %}
