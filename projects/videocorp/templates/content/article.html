@@ -1,9 +1,8 @@
-<div class="col-md-6 col-xs-12 tamano">
-    <a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}">
-    <img class="img-responsive img-list image-div2" src="{{ article["thumb_500"] }}" />
-    </a>
-    <h4 class="text-left til-list" ><strong>{{ article["title"] }}</strong></h4>
-    <p class="text-left til-list2 ellipsis multiline" > {{ article["description"] }}<a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}">
-    </a></p>
-</div>
+<a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}" class="articulos-item">
+    <img src="{{ article["thumb_500"] }}" alt="Imagen del artículo" class="articulos-item-img">
+    <div class="articulos-item-copy">
+        <h2 class="articulos-item-titulo">{{ article["title"] }}</h2>
+        <p class="articulos-item-text">{{ article["description"] }}</p>
+    </div>
+</a>
 
