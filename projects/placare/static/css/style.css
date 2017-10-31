@@ -4,7 +4,6 @@ html * {
 
 }
 
-
 html, body {
 font-family: 'Fira Sans', sans-serif;
 }
@@ -486,6 +485,8 @@ input.cup{
 
 }
 
+
+
 @media (max-width: 767px){
     body{
      /*   background-color:rgba(213, 214, 217, 0.14);*/
@@ -548,6 +549,18 @@ input.cup{
     top: -1px;
     }
 
+}
+
+@media only screen and (min-device-width: 480px) and (max-device-width: 1024px) and (orientation:portrait) {
+  body {
+    -webkit-transform: rotate(90deg);
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 }
 
 
