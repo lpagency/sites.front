@@ -156,4 +156,40 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
     left: 0%;
 }
 
+.w3-dropdown-click, .w3-dropdown-hover {
+    position: relative;
+    display: block;
+    cursor: pointer;
+    float: inherit;
+    margin-top: 1px;
+}
+.w3-dropdown-content {
+    cursor: auto;
+    color: #000;
+    background-color: #fff;
+    display: none;
+    position: absolute;
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+    top: 47px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 14px 17px;
+    font-weight: 300;
+    font-size: 14px;
+}
+
+.fa-shopping-cart {
+    position: relative;
+    left: 18px;
+    font-size: 35px !important;
+    top: 7px;
+    color: white;
+}
+
+
 }
