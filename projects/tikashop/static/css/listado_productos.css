@@ -268,34 +268,35 @@ hr.pap-2{
     line-height: 24px;
     margin-top: 6px;
 }
-
 .overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 54%;
-    width: 95%;
+    height: 65%;
+    width: 96%;
     opacity: 0;
     transition: .5s ease;
     background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 14px;
 }
 
 }
 
-@media (max-width: 414){
-    .overlay {
+@media (max-width: 414px){
+.overlay {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    height: 45%;
-    width: 95%;
+    height: 65%;
+    width: 92%;
     opacity: 0;
     transition: .5s ease;
     background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 14px;
 }
 
 }
