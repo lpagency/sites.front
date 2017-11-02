@@ -13,7 +13,14 @@ Responsive navbar-brand image CSS
     cursor: pointer;
     float: right;
 }
-
+.nav>li>a {
+    font-size: 20px;
+    
+    position: relative;
+    height: 70px;
+    top: -11px;
+    padding-top: 25px;
+}
 .navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
 color: gray;
 background-color: transparent;
@@ -23,7 +30,12 @@ outline: 5px auto -webkit-focus-ring-color;
 outline-offset: -2px;
 
 }
+.base-logo{
 
+    position: relative;
+    bottom: 51px;
+    right: 69px;
+}
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -53,14 +65,25 @@ outline-offset: -2px;
 
 .navbar-left {
     float: left!important;
-    right: 31px;
+    top: 11px;
     position: relative;
+}
+.navbar-right{
+    position: relative;
+    top: 11px;
+}
+.menu-cerro-castillo{
+    top: 80px;
+    position: relative;
+    background-color: #575556;
+    color: white !important;
+    
 }
 
 .menu-safari{
     z-index: 1000;
     position: relative;
-    height: 50%;
+    
 }
 
 .navbar {
@@ -68,31 +91,17 @@ outline-offset: -2px;
 }
 
 .text-header{
-    color: rgba(130, 82, 19, 0.63);
+    color: White;
     font-weight: 400;
 }
 
-.base-logo{
-    width: 315px;
-    height: 130px;
-    background: white;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 60% 60%;
-    position: relative;
-    z-index: 200;
-    left: 15%;
-}
-
 .logo {
-    width: 167px;
+    width: 200px;
     position: absolute;
     display: block;
     margin: 0 auto;
     z-index: 1;
-    margin-left: 82px;
     object-fit: scale-down;
-    margin-top: 57px;
 }
 
 .navbar-brand {
@@ -106,34 +115,64 @@ outline-offset: -2px;
 
 .nav .open>a, .nav .open>a:hover, .nav .open>a:focus {
   text-decoration: none;
-  background-color: #9c8900;
+  background-color: rgba(255, 255, 255, 0.3);
   color: white;
+  -webkit-transition:background 1s ease-out;
+  -moz-transition:background 1s ease-out;
+  -o-transition:background 1s ease-out;
+  -ms-transition:background 1s ease-out;
+  transition:background 1s ease-out;
 }
 
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     color:white ;
     text-decoration: none;
-    background-color: #9c8900 !important;
+    background-color: rgba(255, 255, 255, 0.3) !important;
+-webkit-transition:background 1s ease-out;
+-moz-transition:background 1s ease-out;
+-o-transition:background 1s ease-out;
+-ms-transition:background 1s ease-out;
+transition:background 1s ease-out;
 }
 
 .nav>li>a:hover, .nav>li>a:focus {
     text-decoration: none;
-    background-color: #9c8900!important;
+    background-color: rgba(255, 255, 255, 0.3)!important;
     color: white!important;
+    -webkit-transition:background 1s ease-out;
+    -moz-transition:background 1s ease-out;
+    -o-transition:background 1s ease-out;
+    -ms-transition:background 1s ease-out;
+    transition:background 1s ease-out;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover {
     color: white;
-    background-color: #9c8900;
+    background-color: rgba(255, 255, 255, 0.3);
+-webkit-transition:background 1s ease-out;
+-moz-transition:background 1s ease-out;
+-o-transition:background 1s ease-out;
+-ms-transition:background 1s ease-out;
+transition:background 1s ease-out;
 }
 
 .movil-h{
-    color:rgba(130, 82, 19, 0.63)!important;
+    color:white!important;
+-webkit-transition:background 1s ease-out;
+-moz-transition:background 1s ease-out;
+-o-transition:background 1s ease-out;
+-ms-transition:background 1s ease-out;
+transition:background 1s ease-out;
 }
 .movil-h:hover{
-    background-color: #9c8900!important;
+    background-color: rgba(255, 255, 255, 0.3)!important;
     color: white!important;
+-webkit-transition:background 1s ease-out;
+-moz-transition:background 1s ease-out;
+-o-transition:background 1s ease-out;
+-ms-transition:background 1s ease-out;
+transition:background 1s ease-out;
 }
 /* EXAMPLE 9 - Center with Flexbox and Text*/
 .brand-centered {
@@ -187,17 +226,7 @@ outline-offset: -2px;
 
 
 @media (max-width: 767px){
-    .base-logo {
-    width: 282px;
-    height: 53px;
-    background: white;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 60% 60%;
-    position: relative;
-    z-index: 200;
-    left: 15%;
-}
+
 
 .logo {
     width: 132px;
@@ -235,17 +264,6 @@ outline-offset: -2px;
 }
 
 @media (max-width: 414px){
-  .base-logo {
-    width: 248px;
-    height: 53px;
-    background: white;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 60% 60%;
-    position: relative;
-    z-index: 200;
-    left: 5%;
-}
 
 .logo {
     width: 132px;
@@ -270,16 +288,5 @@ outline-offset: -2px;
 }
 
 @media (max-width: 400px){
-  .base-logo {
-    width: 224px;
-    height: 53px;
-    background: white;
-    -moz-border-radius: 100px / 50px;
-    -webkit-border-radius: 100px / 50px;
-    border-radius: 60% 60%;
-    position: relative;
-    z-index: 200;
-    left: 5%;
-}
 
 }
