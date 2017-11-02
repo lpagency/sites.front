@@ -15,7 +15,7 @@ Responsive navbar-brand image CSS
 }
 .nav>li>a {
     font-size: 20px;
-    
+
     position: relative;
     height: 70px;
     top: -11px;
@@ -30,11 +30,12 @@ outline: 5px auto -webkit-focus-ring-color;
 outline-offset: -2px;
 
 }
-.base-logo{
-
+.base-logo {
     position: relative;
-    bottom: 51px;
-    right: 69px;
+    background-color: white !important;
+    width: 200px;
+    height: 200px;
+    left: 22px;
 }
 .dropdown-menu {
     position: absolute;
@@ -102,6 +103,7 @@ outline-offset: -2px;
     margin: 0 auto;
     z-index: 1;
     object-fit: scale-down;
+    top: 50px;
 }
 
 .navbar-brand {
