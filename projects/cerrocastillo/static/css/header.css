@@ -268,16 +268,22 @@ transition:background 1s ease-out;
 @media (max-width: 414px){
 
 .logo {
-    width: 132px;
+    width: 80px;
     position: absolute;
     display: block;
     margin: 0 auto;
     z-index: 1;
-    margin-left: 69px;
     object-fit: scale-down;
-    margin-top: 7px;
+    top: 6px;
+    left: 6px;
 }
-
+.base-logo{
+    position: relative;
+    background-color: white !important;
+    width: 200px;
+    height: 57px;
+    left: 0;
+}
 .img-bolsa {
     width: 7%;
     position: relative;
