@@ -1,0 +1,21 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/redirect.js"></script>
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+	{% set editabletext = 'editabletext' %}
+{% else %}
+	{% set editabletext = '' %}
+{% end %}
+
+	<h5>Espere por favor...</h5>
+
+{% end %}
