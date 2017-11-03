@@ -560,15 +560,14 @@ div.upload input, div.image-upload input {
 
 @media (max-width: 420px){
     .text-intro-prov {
-        margin-bottom: 45px;
-        font-size: 30px;
-        color: #555;
-        top: 15px;
-        position: relative;
-        font-weight: 300;
-        margin-top: 20px;
-        width: 80%;
+        width: 85%;
+        overflow-wrap: break-word;
     }
+   .text-intro-prov>p {
+        width: 85%;
+        overflow-wrap: break-word;
+    }
+    
 }
 
 @media (max-width: 414px){
