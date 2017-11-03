@@ -28,59 +28,122 @@
                     <li>
                         <a href="{{ site_base }}">HOME</a>
                     </li>
-                    <li class="dropdown">
-                      <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA CHIPS <b class="caret"></b></a>
+                  <!--   <li class="dropdown">
+                      <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle">TIKA CHIPS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Patagonia</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=tika_stixs">Furiosas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=furiosas">Furiosas</a></li>
                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=tika_tortikas">Chiloé</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=tika_crackers">Zapallo</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=tika_veggies">Merkén</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=zapallo">Zapallo</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=merken">Merkén</a></li>
                         </ul>
-                      </li>
-                      <li class="dropdown">
+                      </li> -->
+                      <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=chips'">TIKA CHIPS <b class="caret"></b></button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Patagonia</a></li>
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=furiosas">Furiosas</a></li>
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=tika_tortikas">Chiloé</a></li>
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=zapallo">Zapallo</a></li>
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=merken">Merkén</a></li>
+                          </li>
+                        </div>
+                      </div>
+                 <!--      <li class="dropdown">
                         <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA STIXS <b class="caret"></b></a>
                           <ul class="dropdown-menu">
-                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Palafito</a></li>
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=palafito">Palafito</a></li>
                           </ul>
-                      </li>
-                      <li class="dropdown">
+                      </li> -->
+                      <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=stixs'">TIKA STIXS <b class="caret"></b></button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                            <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=palafito">Palafito</a></li>
+                          </li>
+                        </div>
+                      </div>
+                    <!--   <li class="dropdown">
                         <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA CRACKERS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Chia & Romero</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_stixs">Raspberry & Pimienta</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Curcuma & Sesamo</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=chia">Chia & Romero </a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=raspberry">Raspberry & Pimienta</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=curcuma">Curcuma & Sesamo</a></li>
                         </ul>
-                      </li>
-                      <li class="dropdown">
+                      </li> -->
+                      <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=crackers'">TIKA CRACKERS <b class="caret"></b></button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=chia">Chia & Romero </a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=raspberry">Raspberry & Pimienta</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=curcuma">Curcuma & Sesamo</a></li>
+                          </li>
+                        </div>
+                      </div>
+                  <!--     <li class="dropdown">
                         <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA POP <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Caramelo & Sal de Mar</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_stixs">Oliva & Sal de Mar</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Coco, Caramelo & Vainilla</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Coco, Caramelo & Chocolate</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=caramelo">Caramelo & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=oliva">Oliva & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=vainilla"> Vainilla</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=chocolate">Chocolate</a></li>
                         </ul>
-                      </li>
-                      <li class="dropdown">
+                      </li> -->
+                      <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=pop'">TIKA POP <b class="caret"></b></button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=caramelo">Caramelo & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=oliva">Oliva & Sal de Mar</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=vainilla"> Vainilla</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=chocolate">Chocolate</a></li>
+                          </li>
+                        </div>
+                      </div>
+                  <!--     <li class="dropdown">
                         <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TIKA NATIVAS <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Andinas</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_stixs">Pepper</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Pesto</a></li>
-                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Patriota</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=andinas">Andinas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=pepper">Pepper</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=pesto">Pesto</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patriota">Patriota</a></li>
                         </ul>
-                      </li>
-                      <li class="dropdown">
+                      </li> -->
+                     <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=nativas'">TIKA NATIVAS <b class="caret"></b> </button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=andinas">Andinas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=pepper">Pepper</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=pesto">Pesto</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patriota">Patriota</a></li>
+                          </li>
+                        </div>
+                      </div>
+<!-- 
+                    <li class="dropdown">
                         <a href="{{ site_base }}/listado_productos" class="colorr" data-toggle="dropdown" class="dropdown-toggle"  >TORTIKA<b class="caret"></b></a>
                         <ul class="dropdown-menu">
                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Semillas</a></li>
                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_stixs">Hierbitas</a></li>
                           <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Trio</a></li>
                         </ul>
-                      </li>
-<!--                     <li>
-                        <a href="{{ site_base}}/contact"><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
-                    </li> -->
+                      </li> -->
+
+                      <div class="w3-dropdown-hover">
+                        <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=tortika'">TORTIKA <b class="caret"></b> </button>
+                        <div class="w3-dropdown-content w3-border">
+                          <li class="dropdown-submenu">
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos?tag=patagonia">Semillas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_stixs">Hierbitas</a></li>
+                          <li class="color"><a class="color" href="{{ site_base }}/listado_productos#tika_tortikas">Trio</a></li>
+                          </li>
+                        </div>
+                      </div>
+
+                  
                     <li id="open-cart" data-toggle="modal" data-target="#myModal"> 
                       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                       <span class="units-total">0</span> 

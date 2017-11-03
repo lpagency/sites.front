@@ -9,8 +9,6 @@
 {% end %}
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
-
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
       $(this).addClass("active");
@@ -84,6 +82,8 @@
 {% end %}
 
 
+
+<body>
 <!-- *contenido* -->
 
 <!-- **section banner principal**** -->
@@ -355,6 +355,7 @@
 </section>
 
 <div style="margin-bottom:50px;"></div>
+</body>
 
 {% include '../home/footer.html' %}
 {% end %}
