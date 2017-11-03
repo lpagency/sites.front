@@ -519,6 +519,13 @@ button:focus {
   .lineas-nav-titulo {
     font-size: 0.875rem;
     line-height: 1.6875rem;
+    max-width: 128px;
+    overflow: hidden;
+  }
+
+  .lineas-menu-link{
+    max-width: 128px;
+    overflow: hidden;
   }
 }
 
@@ -1776,6 +1783,13 @@ button:focus {
     font-size: 1.5rem;
     margin: 1.5625rem 0;
   }
+}
+
+@media only screen and (max-width: 420px){
+  .galeria-grupo {
+    margin-bottom: 11%;
+  }
+ 
 }
 
 /*   ***   /[producto]***   */
