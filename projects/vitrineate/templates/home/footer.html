@@ -1,0 +1,73 @@
+  <div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mar">
+    <div class="container-fluid">
+         <div align="center">
+             <hr>
+         </div>
+   </div>
+
+<div class="container min">
+  <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="inform-comerc text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot">
+                            <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_foot_0' }}"> {{ read_text(site.name +  '_foot_0') }}
+                            </li>
+                            <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_1' }}"> {{ read_text(site.name +  '_foot_1') }}
+                            </div>
+                            <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_2' }}"> {{ read_text(site.name +  '_foot_2') }}
+                            </div>                      
+                    </ul>
+            </div>
+              </div>
+            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="inform text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot ">
+                            <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_foot_10' }}"> {{ read_text(site.name +  '_foot_10') }}
+                            </li>
+                            <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_11' }}"> {{ read_text(site.name +  '_foot_11') }}
+                            </div>
+                            <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_12' }}"> {{ read_text(site.name +  '_foot_12') }}
+                            </div>
+                    </ul>
+            </div>
+            </div>
+
+
+             <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="inform-2 text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot">
+                        <li class="ul-1 {{editabletext}}" text-id="{{ site.name + '_foot_20' }}"> {{ read_text(site.name +  '_foot_20') }}
+                        </li>
+                         <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_21' }}"> {{ read_text(site.name +  '_foot_21') }}
+                        </div>
+                         <div class="gun {{editabletext}}" text-id="{{ site.name + '_foot_22' }}"> {{ read_text(site.name +  '_foot_22') }}
+                        </div>
+                    </ul>
+            </div>
+            </div>
+  
+            <div class="col-md-3 col-sm-3 col-xs-12">
+            <div class="inform-comerc text-left">
+                <div class="clearfix"></div>
+                    <ul class="no-dot d-o">
+                         <li class="ul-2 {{editabletext}}" text-id="{{ site.name + '_foot_2323' }}"> {{ read_text(site.name +  '_foot_2323') }}
+                        </li>
+                          <div class="de {{editabletext}}" text-id="{{ site.name + '_footer_31' }}"> {{ read_text(site.name +  '_footer_31') }}
+                        </div>
+                         <div class="de  {{editabletext}}" text-id="{{ site.name + '_footer_lodin' }}"> {{ read_text(site.name +  '_footer_lodin') }}
+                        </div>
+                        <li>
+                           {% if user is None %}
+                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+                              {% else %}
+                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
+                                Logout</a>
+                           {% end %}
+                        </li> 
+                    </ul>
+            </div>
+        </div>
+      </div>
+  </div>
