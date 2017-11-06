@@ -159,13 +159,14 @@
                 var promo = Utils.money(promotion);
                 var original = Utils.money(main);
 
-                if(promotion != 0){
+                if(promotion > 0){
                   var resta = Math.trunc((main - promotion)*100/main);
                   $(".descuento-detalle").removeClass("hidden");
                   $(".descuento-detalle").html("("+resta+"% OFF)");
                   $('.show-on-promotion').removeClass('show-on-promotion');
-
                   $(".precio-oferta").html(promo);
+                  $(".car").attr("product-price", promotion);
+                  $(".car-2").attr("product-price", promotion);
                 }else{
                     $(".precio-oferta").html(original);
                     $(".descuento-detalle").addClass("hidden");
@@ -341,7 +342,7 @@
                             <div class="up-ex-detalle ellipsis multiline"> {{! brand }}</div>
                             <div class="product-price original-de show-on-promotion" promotion_price="{{! promotion_price }}" > {{! main_price|money }} </div>
                             <div class="descuento-detalle" main-price="{{! main_price }}" promotion-price="{{! promotion_price }}"></div>
-                            <div class="product-price oferta-de hide-on-promotion" promotion-price="{{! promotion_price }}"> {{! main_price|money }} </div>
+                            <div class="product-price oferta-de hide-on-promotion" promotion-price="{{! promotion_price }}"> {{! promotion_price|money }} </div>
                             <div class="product-price oferta-de show-on-promotion" promotion-price="{{! promotion_price }}" > {{! promotion_price|money }} </div>
                              <div class="col-md-12 col-sm-12 col-xs-12 hidden-lg hidden-md hidden-sm visible-xs">
                                 <div class="linea-solin"> </div>

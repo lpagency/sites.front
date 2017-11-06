@@ -113,6 +113,26 @@
 }
 
 
+@media (max-width: 1024px){
+    .sidebar-nav li a {
+    display: block;
+    text-decoration: none;
+    color: rgba(84, 84, 84, 0.79);
+    font-weight: 500;
+    font-size: 13px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    padding-left: 6px;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+    width: 187px;
+    margin-top: -55px !important;
+}
+
+}
+
 @media (max-width: 991px){
     #sidebar-wrapper{
    margin-top: -18px !important;

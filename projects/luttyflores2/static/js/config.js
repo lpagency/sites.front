@@ -6,12 +6,12 @@
 'use strict';
     
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'http://apibodegas.ondev.today/',
+        'http://apibodegas.ondev.today/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(48,48,48);
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'https://betapay.loadingplay.com');
+    var app_public = $.environmentVar(65,65,61);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
