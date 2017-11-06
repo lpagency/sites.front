@@ -1032,7 +1032,7 @@ function TagURL(listaTag)
                         +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
                 var classNombre = "." + nombre;
-                var textoRuta = $(".texto-ruta").html();
+                var textoRuta = "Home";
                 var fa = "fa-" + nombre;
                 $(".h-"+nombre).css("text-decoration", "underline");
 
@@ -1122,6 +1122,8 @@ function TagURL(listaTag)
 };
 
 //<------END FUNCION TOMA TAG DESDE LA URL--------->
+
+
 
 //<---------------FUNCION LIMPIAR------------------>
 

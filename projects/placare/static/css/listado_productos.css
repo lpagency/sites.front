@@ -715,6 +715,11 @@ a.talla {
     background-color: #000;
 }
 
+.variant-value.btn-disabled
+{
+    background: transparent;
+}
+
 .variant-value.active>div{
     color: white;
 }
@@ -827,6 +832,14 @@ a.talla {
 
 hr.listado {
     margin-top: -20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #E9E9ED;
+    width: 99%;
+}
+
+hr.listado_hombres {
+    margin-top: 15px;
     margin-bottom: 20px;
     border: 0;
     border-top: 1px solid #E9E9ED;
@@ -1480,7 +1493,6 @@ hr.lon {
     margin-bottom: 22px;
     font-size: 13px;
 }
-
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
 
@@ -4596,3 +4608,20 @@ hr.lon {
 
 
 }
+
+.btn-disabled:hover{
+    background-color: transparent;
+}
+
+.btn-disabled
+{
+    border-color: #ccc;
+}
+
+.btn-disabled, .btn-disabled>div,
+.btn-disabled>div:hover, .btn-disabled:hover,
+.variant-value.btn-disabled.active
+{
+    color: #ccc!important;
+}
+
