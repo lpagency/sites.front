@@ -67,7 +67,7 @@ $(document).ready(function()
         'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
 
-    var app_public = $.environmentVar(48,48,48);
+    var app_public = $.environmentVar(29,29,29);
     var site_name = $.environmentVar('vitrineate', 'vitrineate', 'vitrineate');
 
     var config = {
