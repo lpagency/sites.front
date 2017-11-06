@@ -1297,6 +1297,14 @@ function TagURL(listaTag)
                 $(".filtrosRec").html($(".filtrosRec").html() + block);
                 $(".limpiar").removeClass("hidden");
                 $(".vari").css("margin-bottom", "5%");
+
+                if(window.split != "hombres")
+                {
+                    if(ex == "categoria3")
+                    {
+                        window.bloque = block;
+                    }
+                }
             }
             else
             {
@@ -1311,6 +1319,14 @@ function TagURL(listaTag)
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
                         $(".texto-ruta").html(textoRuta +" / "+ nombre2);
+
+                        if(window.split != "hombres")
+                        {
+                            if(ex == "categoria3")
+                            {
+                                window.bloque = block;
+                            }
+                        }
                     }
                     else
                     {
@@ -1320,6 +1336,14 @@ function TagURL(listaTag)
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
                         $(".texto-ruta").html(textoRuta +" / "+ nombre);
+
+                        if(window.split != "hombres")
+                        {
+                            if(ex == "categoria3")
+                            {
+                                window.bloque = block;
+                            }
+                        }
                     }
 
                     var classNombre = "." + nombre;
@@ -1349,21 +1373,26 @@ function limpiar(config, hyper)
 
     window.z = 0;
 
-    $(".filtrosRec").html("");
-    $("input:radio").attr("checked", false);
-
     $(".limpiar").addClass("hidden");
     $(".texto-ruta").html("Home ");
     $(".fa-check-square").addClass("hidden");
 
-    config.tag =hyper[0] +","+ hyper[1];
-
-    listaTag = [];
-
-    listaTag.push(config.tag);
-    $('.products').ecommerce('destroy');
-    $('.products').ecommerce(config);
-    history.pushState('', 'Placare', window.split);
+    if(window.split == "hombres")
+    {
+        $(".filtrosRec").html("");
+        $("input:radio").attr("checked", false);
+        history.pushState('', 'Placare', window.split);
+        config.tag = "Categoria2_Calzado_Hombre, Categoria2_Calzado_Mujer";
+    }
+    else
+    {
+        $(".filtrosRec").html(window.bloque);
+        $("input:radio").attr("checked", false);
+        $("input:radio[name=vehicle]").attr("checked", true);
+        history.pushState('', 'Placare', window.split + '-hombre');
+        listaTag.splice(-1,1);
+        config.tag = listaTag.toString();
+    }
 };
 
 //<-------------END FUNCION LIMPIAR---------------->

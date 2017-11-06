@@ -1380,6 +1380,14 @@ function TagURL(listaTag)
                 $(".filtrosRec").html($(".filtrosRec").html() + block);
                 $(".limpiar").removeClass("hidden");
                 $(".vari").css("margin-bottom", "5%");
+
+                if(window.split != "mujeres")
+                {
+                    if(ex == "categoria3")
+                    {
+                        window.bloque = block;
+                    }
+                }
             }
             else
             {
@@ -1393,6 +1401,14 @@ function TagURL(listaTag)
                                 '<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
+                        if(window.split != "mujeres")
+                        {
+                            if(ex == "categoria3")
+                            {
+                                window.bloque = block;
+                            }
+                        }
+
                         $(".texto-ruta").html(textoRuta +" / "+ nombre2);
                     }
                     else
@@ -1403,6 +1419,14 @@ function TagURL(listaTag)
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
                         $(".texto-ruta").html(textoRuta +" / "+ nombre);
+
+                        if(window.split != "mujeres")
+                        {
+                            if(ex == "categoria3")
+                            {
+                                window.bloque = block;
+                            }
+                        }
                     }
 
                     var classNombre = "." + nombre;
@@ -1432,22 +1456,29 @@ function limpiar(config, hyper)
 
     window.z = 0;
 
-    $(".filtrosRec").html("");
-    $("input:radio").attr("checked", false);
-
     $(".limpiar").addClass("hidden");
     $(".texto-ruta").html("Home ");
     $(".fa-check-square").addClass("hidden");
 
-    config.tag =hyper[0] +","+ hyper[1];
+    if(window.split == "mujeres")
+    {
+        $(".filtrosRec").html("");
+        $("input:radio").attr("checked", false);
+        history.pushState('', 'Placare', window.split);
+        config.tag = "Categoria2_Calzado_Mujer, -Categoria2_Calzado_Hombre";
+    }
+    else
+    {
+        $(".filtrosRec").html(window.bloque);
+        $("input:radio").attr("checked", false);
+        $("input:radio[name=vehicle]").attr("checked", true);
+        history.pushState('', 'Placare', window.split + '-mujer');
+        listaTag.splice(-1,1);
+        config.tag = listaTag.toString();
+    }
 
-    listaTag = [];
-
-    listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-
-    history.pushState('', 'Placare', window.split);
 
 };
 
