@@ -1292,7 +1292,7 @@ function TagURL(listaTag)
                     $(".vari").css("height", "169px");
                 }
 
-                $(".texto-ruta").html(textoRuta +" / "+ va);
+                $(".texto-ruta").html("Home / "+ va);
 
                 $(".filtrosRec").html($(".filtrosRec").html() + block);
                 $(".limpiar").removeClass("hidden");
@@ -1318,7 +1318,7 @@ function TagURL(listaTag)
                                 '<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
-                        $(".texto-ruta").html(textoRuta +" / "+ nombre2);
+                        $(".texto-ruta").html("Home / "+ nombre2);
 
                         if(window.split != "hombres")
                         {
@@ -1335,7 +1335,7 @@ function TagURL(listaTag)
                                 '<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                                 +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
-                        $(".texto-ruta").html(textoRuta +" / "+ nombre);
+                        $(".texto-ruta").html("Home / "+ nombre);
 
                         if(window.split != "hombres")
                         {
