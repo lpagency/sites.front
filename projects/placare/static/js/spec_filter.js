@@ -305,7 +305,7 @@ $(document).ready(function()
         var url = ["Categoria2_Calzado_Mujer","-Categoria2_Calzado_Hombre"];
         switch (split) {
             case "sandalias":
-                url.add("Categoria3_Sandalias");
+                url.push("Categoria3_Sandalias");
                 window.onLoad = TagURL(url);
                 config.tag = url.toString();
                 listaTag = url;
@@ -554,7 +554,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -620,7 +627,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -685,7 +699,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -750,7 +771,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -817,7 +845,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -884,7 +919,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -950,7 +992,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -1016,7 +1065,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -1082,7 +1138,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -1148,7 +1211,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -1376,14 +1446,9 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    if(window.split == "mujeres")
-    {
-        history.pushState('', 'Placare', window.split);
-    }
-    else
-    {
-        history.pushState('', 'Placare', window.split);
-    }
+
+    history.pushState('', 'Placare', window.split);
+
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -1416,7 +1481,7 @@ function borrar(nombre,value)
         };
         if(window.split == "mujeres")
         {
-            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
+            history.pushState('', 'Placare', window.split);
         }
         else
         {
@@ -1447,7 +1512,7 @@ function borrar(nombre,value)
 
         if(window.split == "mujeres")
         {
-            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
+            history.pushState('', 'Placare', window.split);
         }
         else
         {
