@@ -97,7 +97,7 @@
           <input type="file" class="editableimage" image-id="{{ site.name }}_8080_4" name="image" id="img_8080_4" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_8080_4" src="{{ read_image(site.name + '_8080_4', 1) }}" onload="this.src='{{ read_image(site.name + '_8080_4',500) }}'" class="img-plan" alt="item" />
+        <img id="{{ site.name }}_8080_4" src="{{ read_image(site.name + '_8080_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_8080_4',500) }}'" class="img-plan" alt="item" />
        <!--  <img class="img-plan" src="https://84static.loadingplay.com/static/images/0c3e586ccd2d51fcf5bcc0db3e0180cd_naranja-rueda-de-colores.png"> -->
         <hr class="sun">
       </div>

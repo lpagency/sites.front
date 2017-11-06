@@ -25,6 +25,11 @@ li{
 	list-style: none;
 }
 
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
 .guni{
     padding: 0px;
     width: 101%;
@@ -98,7 +103,7 @@ div.upload input, div.image-upload input {
 .total-modal {
     font-weight: 600;
     text-align: right;
-    padding-right: 11px !important;
+    padding-right: 13px !important;
 }
 
 .box-med{
@@ -422,7 +427,9 @@ input.cup{
     margin-top: 40px;
     object-fit: contain;
 }
-/*------------------------------------------Responsive---------------------------------*/
+
+
+/*-----------------------------------------------------Responsive---------------------------------------*/
 
 @media (max-width: 991px){
 	.article-ho-2 {
@@ -478,6 +485,8 @@ input.cup{
 
 }
 
+
+
 @media (max-width: 767px){
     body{
      /*   background-color:rgba(213, 214, 217, 0.14);*/
@@ -499,9 +508,10 @@ input.cup{
     position: relative;
     padding: 15px;
     font-weight: 300;
-    padding-right: 43px;
-    padding-left: 9px;
-   }
+    padding-right: 0px;
+    padding-left: 0px;
+    
+    }
    /* BOTON DE EMERGENCIA CORREGIR !!! */
    .limpiar_modal{
 
@@ -530,14 +540,18 @@ input.cup{
     bottom: 13px;
     margin-left:-10%;
     }
-    input[type=radio]{
-        height: 20px;
+
+    input[type=radio] {
+    height: 20px;
     width: 70px;
     position: relative;
-    left: -20px;
+    left: -31px;
     top: -1px;
     }
+
 }
+
+
 
 @media (max-width: 414px){
 .box-med {
@@ -603,4 +617,14 @@ input.cup{
     margin-bottom: -64px !important;
 }
 
+.table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+    font-size: 11px;
 }
+
+}
+
+

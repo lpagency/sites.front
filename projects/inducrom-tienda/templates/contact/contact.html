@@ -1,0 +1,164 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+
+<div style="margin-top:55px;"></div>
+
+<section> 
+  <div class="container">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="texto-header-arti"> Home | Contacto </div>
+  </div>
+  </div>
+</section>
+
+
+    <!-- fin editar imagen -->
+	 <div class="container" >
+       <div class="row">
+       		<div class="col-sm-12 col-sm-12 col-xs-12">
+	            <!-- <h3 class="description distrib" style="text-align:center;"> Sé un distribuidor </h3> -->
+                {% if is_admin %}
+                <div class="description-contact" style="text-align:center;"><span class="editabletext" text-id="{{ site.name + '_texto-contact1' }}" >{{ read_text(site.name + '_texto-contact1') }}</span></div>
+                {% else %}
+                <h3 class="description distrib contact" style="text-align:center;"> {{ read_text(site.name + '_texto-contact1') }} </h3>
+                {% end %}
+       		</div>
+       </div>
+    </div>
+
+
+
+
+<!-- ******Mapa******** -->
+
+<section>
+ <div class="container">
+  <div class="col-md-12 col-sm-12 col-xs-12"> 
+      <div align="center">
+        <img class="lugar" src="https://84static.loadingplay.com/static/images/0a0c162484bddc6fdb928cc9086d96e9_icono_.png">
+        <div class="tell">Lira #2310, San joaquin - Santiago - Chile</div>
+                      <div id="mapa-contact" class="" style="height:125px;">
+                      <!-- fin editar imagen -->
+                      <div class="on-map absolute top-map">
+                        <div class="container-fluid-new absolute">
+                            <div class="row-fluid-new">
+                            <a href="https://www.google.com/maps/place/Lira+2310,+San+Joaqu%C3%ADn,+Regi%C3%B3n+Metropolitana,+Chile/@-33.473776,-70.631804,15z/data=!4m5!3m4!1s0x9662c55aeb40c07d:0xb62fc0005583bb9d!8m2!3d-33.4737764!4d-70.6318044?hl=es-ES" >
+                              <img src="https://7static.loadingplay.com/static/images/6cd8fa6289660277dabd2f40dc300e29_MAPAPagina.png" style=" width: 100%;">
+                            </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ver-mapa" data-toggle="modal" data-target="#myModal-mapa">Ver mapa</div>
+
+            </div>
+  </div>
+
+  <div class="col-md-12 col-sm-12 col-xs-12"> 
+   <div class="tell {{editabletext}}" text-id="{{ site.name + '_llam' }}"> {{ read_text(site.name +  '_llam') }}</div>
+  </div>
+ </div>
+   
+</section>
+
+
+{% include '../home/footer.html' %}		
+{% end %}

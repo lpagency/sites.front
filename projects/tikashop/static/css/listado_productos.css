@@ -1,68 +1,44 @@
-.container-0 {
-
-    overflow: hidden;
-    height: 569px;
-
-}
-
-.container-0:hover {
-
+.container.pro {
+  position: relative;
+  width: 80%;
 }
 
 .image {
     display: block;
-    width: 70%;
-    height: 274px;
-    margin-bottom: 10px;
-    margin-top: 12px;
-    object-fit: contain;
-    border: 1px solid #0a8452;
-    margin-top: 17px;
-}
-
-
-.image:hover{
-    border: 1px solid #B40404;
-    margin-top: 17px;
-    -webkit-transition: all 0.5s ease;
-    -moz-transition: all 0.5s ease;
-    -ms-transition: all 0.5s ease;
-    -o-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
 }
 
 .overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 90%;
-  width: 100%;
-  opacity: 0;
-  transition: .5s ease;
-  background-color: rgba(0, 0, 0, 0.43);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height:65%;
+    width: 96%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 7px;
 }
 
-.container-0:hover .overlay {
+.container.pro:hover .overlay {
   opacity: 1;
 }
 
+
 .text {
-    color: white;
-    font-size: 18px;
+    background-color: white;
+/*    padding: 12px 15px 12px 15px;*/
+    border-radius: 58px;
+    right: 10px;
     position: relative;
-    top: 3%;
-    left: -2%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    background-color:#0a8452;
-    width: 45%;
-    padding: 5px;
-    cursor: pointer;
-    font-weight: 300;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    width: 45px;
+    height: 44px;
+    padding-top: 9px;
+    margin-top: 105px;
 }
 
 .text2 {
@@ -85,39 +61,70 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-.inf{
+.inf {
     position: relative;
     margin-bottom: 6px;
-    font-size: 20px;
+    font-size: 14px;
     bottom: -4px;
     margin-left: -5px;
-    font-weight: 300;
+    font-weight: 700;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: gray;
+    text-transform: uppercase;
+    height: 45px;
 }
 
-.inf2{
-    margin-bottom: 2%;
+.inf2 {
+    margin-bottom: 0%;
     position: relative;
     font-size: 20px;
-    bottom: 4px;
+    bottom: 38px;
     margin-left: -5px;
-    font-weight: 300;
+    font-weight: 700;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #B40404;
+    width: 100%;
 }
 
 .inf3 {
-    margin-bottom: 4%;
+    margin-bottom: 0%;
     position: relative;
-    font-size: 13px;
-    bottom: 0px;
-    height: 6%;
+    font-size: 11px;
+    bottom: 15px;
+    height: 33px;
     max-height: 60px;
-    margin-left: -5px;
-    font-weight: 300;
+    margin-left: 0px;
+    font-weight: 600;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: gray;
+    width: 44%;
+    float: left;
+    text-align: left;
+}
+
+.inf4 {
+    margin-bottom: 0%;
+    position: relative;
+    font-size: 11px;
+    bottom: 46px;
+    height: 33px;
+    max-height: 60px;
+    margin-left: 0px;
+    font-weight: 600;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: gray;
+    width: 42%;
+    float: right;
+}
+
+.separa{
+    width: 10%;
+    position: relative;
+    bottom: 16px;
 }
 
 .art-hi{
@@ -142,4 +149,190 @@
     background-color: #B40404;
     border-color: #B40404;
     border-radius: 0px;
+}
+
+.fa-plus-circle{
+    color: #B40404;
+    font-size: 26px !important;
+}
+
+.fa-shopping-cart.pro {
+    position: relative;
+    left: 10px;
+    font-size: 26px !important;
+    top: 2px;
+    color: #B40404;
+    background-color: white;
+    /* padding: 8px 10px 10px 12px; */
+    border-radius: 58px;
+    width: 45px;
+    height: 44px;
+    padding-top: 8px;
+}
+
+
+.kina{
+    position: absolute;
+    bottom: 135px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-weight: 600;
+    line-height: 30px;
+}
+
+.kin{
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    font-weight: 600;
+    width: 50%;
+    line-height: 23px;
+    margin-top: 6px;
+    margin-bottom: -33px;
+}
+
+
+hr.pap{
+    width: 30%;
+    float: left;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    left: 18%;
+    position: relative;
+}
+
+hr.pap-2{
+    width: 30%;
+    float: right;
+    margin-top: 14px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    right: 18%;
+    position: relative;
+}
+
+
+
+/*--------------------------------------------------RESPONSIVE-----------------------------------*/
+@media (max-width: 1199px){
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65%;
+    width: 96%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 8px;
+}
+
+.container.pro {
+    position: relative;
+    width: 100%;
+}
+
+
+}
+
+@media (max-width: 991px){
+    .kin {
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    line-height: 30px;
+    margin-top: 6px;
+    margin-bottom: -33px;
+}
+
+}
+
+@media (max-width: 767px){
+    .kin {
+    text-align: center;
+    color: gray;
+    font-size: 20px;
+    font-weight: 600;
+    width: 100%;
+    line-height: 24px;
+    margin-top: 6px;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65%;
+    width: 96%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 14px;
+}
+
+.nov{
+    margin-top: 80px;
+}
+
+}
+
+@media (max-width: 414px){
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 65%;
+    width: 92%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: 14px;
+}
+
+}
+
+@media (max-width: 375px){
+    .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 42%;
+    width: 95%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+}
+
+@media (max-width: 320px){
+    .overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 36%;
+    width: 95%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
 }

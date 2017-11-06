@@ -1,0 +1,367 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
+<link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
+<style type="text/css">
+@media (max-width: 1199px){
+    .fondo {
+    background-color: #d0be97;
+    height: 92px;
+   }
+}
+</style>
+{% end %}
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+        {
+
+      var breadcrumb = "";
+
+      var b = "Home";
+
+      var miga = [];
+
+       var base_url = $.environmentVar(
+    'https://apibodegas.loadingplay.com/',
+    'https://apibodegas.loadingplay.com/',
+    'https://apibodegas.loadingplay.com/');
+     var checkout_url = $.environmentVar(
+    'https://checkout.loadingplay.com',
+    'https://checkout.loadingplay.com',
+    'https://checkout.loadingplay.com');
+var app_public = $.environmentVar(65,65,65);
+        
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product)
+            {
+
+              for(i in product.tags)
+              {
+
+                if(product.tags[i].indexOf('cat') > -1)
+                {
+
+                  if(product.tags[i].indexOf('cat1') > -1)
+                  {
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[0] = breadcrumb;
+
+                  }
+
+                  if(product.tags[i].indexOf('cat2') > -1)
+                  {
+
+                    related(product.tags[i]);
+
+                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+
+                    miga[1] = breadcrumb;
+                  }
+                }
+              }
+
+              $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]);
+
+              for(x in product.tags){
+                if(product.tags[x] == "tienda"){
+                  $(".comprar").removeClass("hidden");
+                  $(".precio").removeClass("hidden");
+                }
+                if(product.tags[x] == "cotizar"){
+                  $(".precio").addClass("hidden");
+                }
+              }
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+
+            }
+
+        })
+
+        // productos relacionados
+        var related = function(tag)
+        {
+
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 10,
+                'templateOrigin' : '#product_template_home',
+                'tag' : tag,
+                'ignore_stock' : true,
+                    'onLoad':function(){
+
+                         $(".product-related").slick({
+                          slidesToShow: 6,
+                          slidesToScroll: 1,
+                          autoplay: true,
+                          autoplaySpeed: 2000,
+                          arrows: true,
+                          nextArrow: '<i class="fa rel-arrows-r fa-chevron-circle-right"></i>',
+                          prevArrow: '<i class="fa rel-arrows-l fa-chevron-circle-left"></i>',
+                          infinite: true
+                        });
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template_home2',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+
+                     }
+                };
+            $('.product-related-2').ecommerce('product_box',config);
+        };
+
+        $(document).on("click", ".cotizar", function(){
+          location.href = "{{ site_base}}/detalle_cotizacion";
+        });
+
+    });
+
+</script>
+
+<script type="text/javascript">
+
+$(document).ready(function() {
+
+  $(".carousel").on("swipe", function(){
+
+    var swipe = function(event, direction, distance, duration, fingerCount, fingerData) {
+
+      if (direction == 'left') $(this).carousel('next');
+      if (direction == 'right') $(this).carousel('prev');
+
+    },
+    allowPageScroll = "vertical";
+
+  })
+});
+
+</script>
+    <script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+    </script>
+    
+    <script type="text/javascript">
+        $('ul.nav div.dropdown').hover(function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+
+
+
+
+<script type="text/template" id="product_detail">
+<div class="container-fluid">
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img class="{{! images[0]['thumb_500']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" alt="Chania"  width="460" height="345">
+      </div>
+    
+      <div class="item">
+       <img class="{{! images[2]['thumb_500']|hide_if_empty }} little" src="{{! images[2]['thumb_500'] }}"  alt="Chania" onload="this.src={{! images[2]['thumb_500']}}" width="460" height="345">
+      </div>
+
+      <div class="item">
+       <img class="{{! images[3]['thumb_500']|hide_if_empty }} little" src="{{! images[3]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[3]['thumb_500']}}"  width="460" height="345">
+      </div>
+    </div>
+
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+     <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
+      <span class="sr-only">Next</span>
+    </a>
+</div>
+</div>
+
+
+<div class="container-fluid">
+<section>
+     <div class="color-line"> </div>
+</section>
+</div>
+
+<div class="container-fluid">
+  <div class="col-md-10 col-sm-10 col-xs-12">
+    <div class="hidden-xs texto-header-pro-detalle buscaCat"> Home | </div>
+  </div>
+</div>
+
+
+   <section>
+        <div style="position: relative;">
+            <div class="container-fluid">
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                   
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                      <div class="precio ellipsis multiline hidden"> {{!main_price|money}} </div>
+
+                      <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar" id="open-cart" data-toggle="modal" data-target="#myModal">COMPRAR</button>
+
+                      
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                 <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>
+                <h3 class="descr_prod_detail ellipsis multiline"> 
+                {{! description }}</h3>
+               </div>
+              
+           <div class="col-md-4 col-md-offset-1">
+               <div align="center">
+                   <div class="up-ex ellipsis multiline"> {{!bullet_1}} </div>
+               </div> 
+
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[0]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[2]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[3]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[4]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[5]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+               <div class="col-md-6 col-sm-6 col-xs-4 spri">
+               <div align="center">
+                   <img id="img_part_bullet" src="{{! images[4]['thumb_500'] }}" title="" alt="" class="img_part_bullet">
+               </div>
+               </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <div class="container-fluid">
+        </div>
+        <div class="clearfix-fun-2"></div>
+        <div class="container-fluid" style="margin-bottom: 293px;">
+
+        </div>
+    </div>
+
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+<div class="det-mobi" style="height:530px;display:block;margin:auto auto 0 auto;"></div>
+<div class="container-fluid">
+    <div class="container  product-page"></div>
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+
+<div class="container-fluid">
+<section>
+     <div class="inter"></div>
+     <div class="color-line"> </div>
+</section>
+</div>
+
+
+<!-- ***productos relacionados** -->
+
+<div class="container min dano">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-relac text-center">Productos relacionados</div>
+        </div>
+    </div>
+    <div id="my-carousel" class="row product-related hidden-xs visible-md visible-lg visible-sm" data-ride="carousel" style="position: relative;top: 1px;">
+    </div>
+    <div class="row product-related-2 visible-xs hidden-md hidden-lg hidden-sm">
+    </div>
+    <div class="clearfix" style="padding-bottom:70px"></div>
+</div>
+
+
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

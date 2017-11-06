@@ -21,8 +21,6 @@
       
       <div class="brand-centered">
       <a class="navbar-brand" href="">
-        <!-- <img style="margin-right: 10px; padding: 0;" src="http://res.cloudinary.com/disputebills/image/upload/v1462474206/blue-mark_cnzgry.png" alt="Dispute Bills">Dispute Bills -->
-        <!-- LOGO -->
         <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
             {% if is_admin %}
             <div class="image-upload visible-movil">
@@ -34,7 +32,7 @@
             {% end %}
             <a id="{{ site.name + '_logo' }}" href="#">
               <div class="base-logo">
-                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
+                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
                 </div>
             </a>
         </div>
@@ -46,41 +44,75 @@
         <ul class="nav navbar-nav navbar-left">
 
           <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red">PRODUCTOS</button>
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ceremonias'">CEREMONIAS</button>
             <div class="w3-dropdown-content w3-border">
-                    <li class="dropdown-submenu">
-                    <a class="test" tabindex="-1" href="#">IDEAS PARA REGALAR <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cumpleaños">CUMPLEAÑOS</a></li>
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=aniversarios">ANIVERSARIOS</a></li>
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=saludos">SALUDOS</a></li>
-                    </ul>
-          </li>
-              <a href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a>
-              <a href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a>
-              <a href="{{ site_base }}/listado_productos?tag=ramo_novias">RAMOS DE NOVIAS</a>
-              <a href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a>
-              <a href="{{ site_base }}/listado_productos?tag=eventos">EVENTOS</a>
+              <li class="dropdown-submenu">
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=velatorios">VELATORIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=mat_judio">MATRIMONIO JUDIO</a></li>
+              </li>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=novias'">RAMOS DE NOVIAS</button>
+            <div class="w3-dropdown-content w3-border">
+             <li class="dropdown-submenu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=novias">NOVIAS</a></li>
+              </li>
+                
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ocasiones'">OCASIONES</button>
+            <div class="w3-dropdown-content w3-border">
+             <li class="dropdown-submenu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=arreglos">ARREGLOS DE FLORES</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=regalos">REGALOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cajas">CAJAS</a></li>
+              </li>
+                
             </div>
           </div>
 
-          <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red">LA LUTTY</button>
+         <!--  <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=evento'">EVENTOS</button>
             <div class="w3-dropdown-content w3-border">
-              <a href="{{ site_base }}/nosotros">NOSOTROS</a>
+              <li class="dropdown-submenu">
+               <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=buffet">ARREGLO BUFFET</a></li>
+               <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=centro_mesa">CENTRO DE MESAS</a></li>
+              </li>
+
             </div>
-          </div>
+          </div> -->
+
         </ul>
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="{{ site_base }}/locales" class="text-header">LOCALES</a> 
-          </li>
-          <li><a href="{{ site_base }}/contact" class="text-header">CONTACTANOS</a>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red">NOSOTROS</button>
+            <div class="w3-dropdown-content w3-border">
+              <a href="http://luttyflores2.lpe.cl/article/detail/quienes_somos/2021">QUIENES SOMOS</a> 
+              <a href="http://luttyflores2.lpe.cl/article/detail/nuestros_especialistas/2022">NUESTROS COLABORADORES</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red">NUESTRAS FLORES</button>
+            <div class="w3-dropdown-content w3-border">
+              <a href="http://luttyflores2.lpe.cl/article/detail/venta_de_arreglos/2023">VENTA DE ARREGLOS</a> 
+              <a href="http://luttyflores2.lpe.cl/article/detail/matrimonios_y_eventos/2024">MATRIMONIOS Y EVENTOS</a>
+              <a href="http://luttyflores2.lpe.cl/article/detail/flores_para_tu_casa/2025">FLORES PARA TU CASA</a>
+              <a href="">CUIDA TUS FLORES</a>
+              <a href="{{ site_base }}/locales">PUNTOS DE VENTA</a>
+            </div>
+          </div>
+          <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a>
           </li>
         </ul>
       </div>
-      <!--/.nav-collapse -->
+
     </div>
-    <!--/.container-fluid -->
+  
   </nav>
 </div>
 
@@ -113,7 +145,7 @@
                                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo">
                            </div>
                            {% end %}
-                           <img id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',) }}'" class="img-responsive logo" alt="item">
+                           <img id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',) }}'" class="img-responsive logo" alt="item">
                        </div>
                </div>
                      </a>
@@ -122,37 +154,52 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-left">
-              <li class=>
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">PRODUCTOS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">CEREMONIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
-                  <li class="dropdown-submenu">
-                    <a class="test" tabindex="-1" href="">IDEAS PARA REGALAR <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                    <ul class="dropdown-menu">
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cumpleaños">CUMPLEAÑOS</a></li>
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=aniversarios">ANIVERSARIOS</a></li>
-                      <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=saludos">SALUDOS</a></li>
-                    </ul>
-                  </li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTO</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=velatorios">VELATORIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=mat_judio">MATRIMONIO JUDIO</a></li>
+                </ul>
+              </li>
+                <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">RAMOS DE NOVIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=novias">NOVIAS</a></li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">OCASIONES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                 <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=arreglos">ARREGLOS DE FLORES</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=regalos">REGALOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a></li>
                   <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=ramo_novias">RAMOS DE NOVIAS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=eventos">EVENTOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cajas">CAJAS</a></li>
                 </ul>
               </li>
-              <li>
-                <a href="#" class="text-header" data-toggle="dropdown">LA LUTTY<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NOSOTROS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a href="{{ site_base }}/nosotros">NOSOTROS</a></li>
+                   <li ><a href="http://luttyflores2.lpe.cl/article/detail/quienes_somos/2021">QUIENES SOMOS</a> </li>
+                   <li> <a href="http://luttyflores2.lpe.cl/article/detail/nuestros_especialistas/2022">NUESTROS COLABORADORES</a> </li>
                 </ul>
               </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="{{ site_base }}/" class="text-header">LOCALES</a> 
+                <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NUESTRAS FLORES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                  <li> <a href="http://luttyflores2.lpe.cl/article/detail/venta_de_arreglos/2023">VENTA DE ARREGLOS</a></li>
+                  <li> 
+                  <a href="http://luttyflores2.lpe.cl/article/detail/matrimonios_y_eventos/2024">MATRIMONIOS Y EVENTOS</a></li>
+                  <li>
+                  <a href="http://luttyflores2.lpe.cl/article/detail/flores_para_tu_casa/2025">FLORES PARA TU CASA</a>
+                  <a href="">CUIDA TUS FLORES</a>
+                  <a href="{{ site_base }}/locales">PUNTOS DE VENTA</a></li>
+                </ul>
               </li>
-              <li><a href="{{ site_base }}/contact" class="text-header">CONTACTANOS</a>
-              </li>
+              <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a></li>
             </ul>
+
             </div>
             <!-- /.navbar-collapse -->
         </div>

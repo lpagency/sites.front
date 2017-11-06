@@ -1,0 +1,181 @@
+{% extends "../base.html" %}
+
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var correo = $("#itMail").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+{% end %}
+
+
+{% block css %}
+<link type="text/css" rel='stylesheet' href="{{ site_base }}/static/css/page.edit.css" />
+<style type="text/css">
+    .controls input, .controls textarea
+    {
+        padding: 10px 16px;
+    }
+</style>
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+
+<div class="container min">
+    <div class="" style="position: relative;">
+        {% if is_admin %}
+        <div class="image-upload pin con visible-movil">
+            <label for="img_banner_contact-loading">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact-loading" name="image" id="img_banner_contact-loading" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form" alt="item">
+    </div>
+</div>
+        <div class="container min">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h3 class="col-md-12 col-xs-12 text-center {{editabletext}}" text-id="{{ site.name + '_contact1' }}"> {{ read_text(site.name +  '_contact1') }}
+                    </h3>
+                </div>
+           </div>
+        </div>
+
+
+
+ <div class="container min contact product" style="display: inline;">
+    <div class="row">       
+        <div class="container min" style="margin-bottom: 100px;">                  
+            <div class="col-xs-12 col-sm-6 col-md-6 align-form-contact fondo-contact">
+                <form action="{{ site_base }}/contact" class="contact-add-form"  method="post" novalidate="novalidate" id="newsletter" autocomplete="off">
+                    <div class="row clearfix">
+                        <div class="col-xs-12 col-sm-12">
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <div class=" controls">
+                                    <input name="name" placeholder="Nombre y apellido" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                                </div>
+                                <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <div class=" controls">
+                                    <input name="email" placeholder="Email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                                    <input type="hidden" name="subject" value="contactanos" />
+                                </div>
+                                <span id="helpBlock3" class="hidden help-block help-mail">Escribe tu Email</span>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label"></label>
+                                <div class=" controls">
+                                  <input name="number" placeholder="Teléfono" id="itFono" class="form-control other-3 input-lg requiredField" type="number" data-error-invalid="Invalid number" data-error-empty="Ingrese number">
+                              </div>
+                              <span id="helpBlock2" class="hidden help-block help-fono">Escribe tu teléfono</span>
+                          </div>
+                      </div>  
+                  </div>  
+              </div>
+              <div class="col-md-6 col-sm-6 col-xs-12">
+              <div class="form-group" style=" margin-top: 30px;">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <textarea name="message" placeholder="Comentario" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje"></textarea>
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-comentario">Escribe tu Comentario</span>
+            </div>
+            <p>
+                <div class="form-group ">
+                    <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block contact " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar 
+                    </button>
+                </div>
+            </p>
+            <input type="hidden" name="submitted" id="submitted3" value="true">
+        </div>
+        </form> 
+    </div>       
+</div>
+</section>
+</div>
+{% include '../home/footer.html' %}     
+{% end %}

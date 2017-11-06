@@ -58,7 +58,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_rrss" name="image" id="img_rrss" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_rrss" src="{{ read_image(site.name + '_rrss', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss',500) }}'" class=" img_recetas decolor" alt="item">
+        <img id="{{ site.name }}_rrss" src="{{ read_image(site.name + '_rrss', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss',500) }}'" class=" img_recetas decolor" alt="item">
         <div class="box" >
             <h1 class="title-recipe text-center {{editabletext}}" text-id="{{ site.name + '_text_rrss' }}"> {{ read_text(site.name +  '_text_rrss') }}
             </h1>
@@ -87,7 +87,7 @@
                         </div>
                         {% end %}
                          <a id="{{ site.name + '_rrss1' }}" href="{{ read_link(site.name + '_rrss1') }}">
-                        <img id="{{ site.name }}_rrss1" src="{{ read_image(site.name + '_rrss1', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss1',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rrss1" src="{{ read_image(site.name + '_rrss1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss1',500) }}'" class="img-responsive img_article" alt="item">
                         </a>
   
                        <!--editable link-->
@@ -113,7 +113,7 @@
                         </div>
                         {% end %}
                     <a id="{{ site.name + '_rrss2' }}" href="{{ read_link(site.name + '_rrss2') }}">
-                        <img id="{{ site.name }}_rrss2" src="{{ read_image(site.name + '_rrss2', 1) }}" onload="this.src='{{ read_image(site.name + '_rrss2',500) }}'" class="img-responsive img_article" alt="item">
+                        <img id="{{ site.name }}_rrss2" src="{{ read_image(site.name + '_rrss2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_rrss2',500) }}'" class="img-responsive img_article" alt="item">
                     </a>
 
                         <!--editable link-->

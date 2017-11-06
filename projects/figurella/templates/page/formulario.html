@@ -144,6 +144,13 @@
                 {
                     return false;
                 }
+                else
+                {
+                    setTimeout(function()
+                    {
+                        $("#bEnviar").attr("disabled", "disabled");
+                    },1);
+                }
             });//click
         });//ready
 </script>

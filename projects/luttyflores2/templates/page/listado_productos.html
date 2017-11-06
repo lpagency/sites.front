@@ -27,19 +27,40 @@
 
       $("#OpenAlert").click();
 
-        // var config = {
-        //     'app_public' : app_public,
-        //     'base_url' : base_url,
-        //     'maxProducts' : 8,
-        //     'templateOrigin' : '#product_template',
-        //     'tag' : '',
-        //     'ignore_stock' : true,
-        //     'onLoad':function(){
-        //      }
-        // };
+    var base_url = $.environmentVar(
+        'http://apibodegas.ondev.today/',
+        'http://apibodegas.ondev.today/',
+        'https://betaapi.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'http://lpcheckout.ondev.today',
+        'http://lpcheckout.ondev.today',
+        'https://betapay.loadingplay.com');
+    var app_public = $.environmentVar(65,65,61);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 16,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
 
-        // $('.product-list').ecommerce('product_box', config);
+        $('.product-list').ecommerce('product_box', config);
 
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
     });
 </script>
 <script type="text/javascript">
@@ -80,7 +101,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_productos" name="image" id="img_productos" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container min">

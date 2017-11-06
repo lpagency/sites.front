@@ -55,7 +55,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_art" name="image" id="img_banner_list_art" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_list_art" src="{{ read_image(site.name + '_banner_list_art', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_art',500) }}'" class="banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_banner_list_art" src="{{ read_image(site.name + '_banner_list_art', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_list_art',500) }}'" class="banner_list desaturada" alt="item">
         <div class="" align="center">
             <h1 class="text_listart text-center {{editabletext}}" text-id="{{ site.name + '_text_banner_article' }}"> 
             {{ read_text(site.name +  '_text_banner_article') }}
@@ -94,7 +94,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_' }}" href="{{ read_link(site.name + '_img_home_comunidad1') }}">
-                    <img id="{{ site.name }}_home_comunidad1" src="{{ read_image(site.name + '_home_comunidad1', 1) }}" onload="this.src='{{ read_image(site.name + '_home_comunidad1',500) }}'" class="img-responsive img_embajadoras" alt="item">
+                    <img id="{{ site.name }}_home_comunidad1" src="{{ read_image(site.name + '_home_comunidad1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_comunidad1',500) }}'" class="img-responsive img_embajadoras" alt="item">
                 </a>
                 <!--editable link-->
                 {% if is_admin %}
@@ -119,7 +119,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
                     </div>
                     {% end %}
                     <a id="{{ site.name + '_img_home_comunidad2' }}" href="{{ read_link(site.name + '_img_home_comunidad2') }}">
-                        <img id="{{ site.name }}_home_comunidad2" src="{{ read_image(site.name + '_home_comunidad2', 1) }}" onload="this.src='{{ read_image(site.name + '_home_comunidad2',500) }}'" class="img-responsive img_embajadoras" alt="item">
+                        <img id="{{ site.name }}_home_comunidad2" src="{{ read_image(site.name + '_home_comunidad2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_comunidad2',500) }}'" class="img-responsive img_embajadoras" alt="item">
                     </a>
 
                     <!--editable link-->
@@ -145,7 +145,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_img_home_comunidad3' }}" href="{{ read_link(site.name + '_img_home_comunidad3') }}">
-                    <img id="{{ site.name }}_home_comunidad3" src="{{ read_image(site.name + '_home_comunidad3', 1) }}" onload="this.src='{{ read_image(site.name + '_home_comunidad3',500) }}'" class="img-responsive img_embajadoras" alt="item">
+                    <img id="{{ site.name }}_home_comunidad3" src="{{ read_image(site.name + '_home_comunidad3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_comunidad3',500) }}'" class="img-responsive img_embajadoras" alt="item">
                 </a>
 
                 <!--editable link-->
@@ -170,7 +170,7 @@ src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_img_home_comunidad4' }}" href="{{ read_link(site.name + '_img_home_comunidad4') }}">
-                    <img id="{{ site.name }}_home_comunidad4" src="{{ read_image(site.name + '_home_comunidad4', 1) }}" onload="this.src='{{ read_image(site.name + '_home_comunidad4',500) }}'" class="img-responsive img_embajadoras" alt="item">
+                    <img id="{{ site.name }}_home_comunidad4" src="{{ read_image(site.name + '_home_comunidad4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_comunidad4',500) }}'" class="img-responsive img_embajadoras" alt="item">
                 </a>
 
                 <!--editable link-->

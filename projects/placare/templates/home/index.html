@@ -9,8 +9,6 @@
 {% end %}
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
-
 <script type='text/javascript'>
     $("#testButton").live("touchstart", function() {
       $(this).addClass("active");
@@ -23,8 +21,8 @@
     $(document).ready(function()
     {
        // EXCLUSIVO PARA PLACARE
-            $("title").html("Placare - Home");
-            $("meta[name=description]").attr("content", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.");
+            $("title").html("Placare.com - Tienda Online de Zapatos para Mujer y Hombre.");
+            $("meta[name=description]").attr("content", "Conoce Placare.com un tienda personalizada zapatos para Mujer y Hombre - Compra Segura / Cambios y Devoluciones Gratis / Envios a todo Chile.");
 
       $("#OpenAlert").click();
 
@@ -73,7 +71,6 @@
     });
 </script>
 
-
 {% end %}
 
 {% block body %}
@@ -85,6 +82,8 @@
 {% end %}
 
 
+
+<body>
 <!-- *contenido* -->
 
 <!-- **section banner principal**** -->
@@ -100,7 +99,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_home" name="image" id="img_home" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.src='{{ read_image(site.name + '_home',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
     </div>
 </section>
@@ -117,7 +116,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_banner_mov' }}" href="{{ read_link(site.name + '_banner_mov') }}">
-       <img id="{{ site.name }}_banner_mov" src="{{ read_image(site.name + '_banner_mov', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_mov',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_banner_mov" src="{{ read_image(site.name + '_banner_mov', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_mov',) }}'" class="box-med" alt="item">
           </a>
         </div>
 
@@ -146,7 +145,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_3' }}" href="{{ read_link(site.name + '_box_3') }}">
-       <img id="{{ site.name }}_box_3" src="{{ read_image(site.name + '_box_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_3',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_3" src="{{ read_image(site.name + '_box_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_3',) }}'" class="box-med" alt="item">
           <!--  <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -170,7 +169,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_4' }}" href="{{ read_link(site.name + '_box_4') }}">
-       <img id="{{ site.name }}_box_4" src="{{ read_image(site.name + '_box_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_4',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_4" src="{{ read_image(site.name + '_box_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_4',) }}'" class="box-med" alt="item">
        <!--     <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -194,7 +193,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_5' }}" href="{{ read_link(site.name + '_box_5') }}">
-       <img id="{{ site.name }}_box_5" src="{{ read_image(site.name + '_box_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_5',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_5" src="{{ read_image(site.name + '_box_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_5',) }}'" class="box-med" alt="item">
           <!--  <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -218,7 +217,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_6' }}" href="{{ read_link(site.name + '_box_6') }}">
-       <img id="{{ site.name }}_box_6" src="{{ read_image(site.name + '_box_6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_6',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_6" src="{{ read_image(site.name + '_box_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_6',) }}'" class="box-med" alt="item">
            <!-- <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -242,7 +241,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_77' }}" href="{{ read_link(site.name + '_box_77') }}">
-       <img id="{{ site.name }}_box_77" src="{{ read_image(site.name + '_box_77', 1) }}" onload="this.src='{{ read_image(site.name + '_box_77',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_77" src="{{ read_image(site.name + '_box_77', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_77',) }}'" class="box-med" alt="item">
          <!--   <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -266,7 +265,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_88' }}" href="{{ read_link(site.name + '_box_88') }}">
-       <img id="{{ site.name }}_box_88" src="{{ read_image(site.name + '_box_88', 1) }}" onload="this.src='{{ read_image(site.name + '_box_88',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_88" src="{{ read_image(site.name + '_box_88', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_88',) }}'" class="box-med" alt="item">
         <!--    <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -290,7 +289,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_99' }}" href="{{ read_link(site.name + '_box_99') }}">
-       <img id="{{ site.name }}_box_99" src="{{ read_image(site.name + '_box_99', 1) }}" onload="this.src='{{ read_image(site.name + '_box_99',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_99" src="{{ read_image(site.name + '_box_99', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_99',) }}'" class="box-med" alt="item">
        <!--     <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -314,7 +313,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_100' }}" href="{{ read_link(site.name + '_box_100') }}">
-       <img id="{{ site.name }}_box_100" src="{{ read_image(site.name + '_box_100', 1) }}" onload="this.src='{{ read_image(site.name + '_box_100',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_100" src="{{ read_image(site.name + '_box_100', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_100',) }}'" class="box-med" alt="item">
           <!--  <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -338,7 +337,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_1000' }}" href="{{ read_link(site.name + '_box_1000') }}">
-       <img id="{{ site.name }}_box_1000" src="{{ read_image(site.name + '_box_1000', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1000',) }}'" class="box-med" alt="item">
+       <img id="{{ site.name }}_box_1000" src="{{ read_image(site.name + '_box_1000', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1000',) }}'" class="box-med" alt="item">
          <!--   <div align="center">
               <button type="button" class="btn btn-default comprar-home">COMPRAR AHORA</button>
            </div> -->
@@ -356,6 +355,7 @@
 </section>
 
 <div style="margin-bottom:50px;"></div>
+</body>
 
 {% include '../home/footer.html' %}
 {% end %}

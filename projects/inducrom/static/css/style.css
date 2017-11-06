@@ -18,9 +18,19 @@ div.upload input, div.image-upload input {
     height: 100%;
     overflow: hidden;
 }
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
 
 .producto-detalle-cotizacion{
     display: none;
+}
+
+.logo-tienda{
+    position: relative;
+    left: 34%;
+    top: -16px;
 }
 
 div.image-upload {
@@ -262,9 +272,34 @@ img.lugar{
     margin-top: 100px;
 }
 
+
+ .container {
+    width:100%;
+}
+
+.texto_uno {
+    text-align: center;
+    margin-top: 95px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    width: 100%;
+    color: #646464;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-bottom: 30px;
+}
+
+img.lugar {
+    float: left;
+    position: relative;
+    left: 34%;
+}
+
+
 }
 
 @media (max-width: 991px){
+
 .col-md-3.coli{
    width: 25%;
 }
@@ -350,6 +385,12 @@ img.lugar{
     margin-top: 100px;
 }
 
+img.lugar {
+    float: left;
+    position: relative;
+    left: 28%;
+}
+
 }
 
 @media (max-width: 767px){
@@ -432,6 +473,16 @@ img.lugar {
     margin-bottom: 0px;
     }
 
+    .col-xs-push-6 {
+    left: 0%;
+    }
+
+    .col-xs-pull-6 {
+    right: 0%;
+    margin-top: 45px;
+    }
+
+
 }
 
 @media (max-width: 700px){
@@ -462,6 +513,13 @@ img.lugar {
 }
 
 @media (max-width: 414px){
+
+    .logo-tienda-movil{
+        position: relative;
+        left: -46%;
+        top: -15px;
+    }
+
     .img-edit {
     height: 371px;
     object-fit: contain;

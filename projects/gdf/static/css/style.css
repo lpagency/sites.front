@@ -2331,7 +2331,17 @@ hr.derecha{
     left: 38%;
     width: auto;
     margin-left: 13px;
+    height: 17px;
 }
+
+.container.k-1{
+  height: 100px;
+}
+
+.box-content{
+     height: 20px;
+}
+
 
 .table>thead>tr>th, .table>tbody>tr>th, .table>tfoot>tr>th, .table>thead>tr>td, .table>tbody>tr>td, .table>tfoot>tr>td {
     padding: 0px;
@@ -3965,7 +3975,7 @@ td.name-car {
 }
 
 td.money.uno {
-    left: -154px;
+    left: -165px;
     text-align: left;
     top: 104px;
     font-size: 13px;
@@ -4468,7 +4478,7 @@ a.test {
     left: -15px;
     position: relative;
     margin-top: -4px;
-    margin-bottom: -12px;
+    margin-bottom:0px;
 }
 
 .btn-compra.mo{
@@ -4655,6 +4665,31 @@ tr.ver {
     left: 0px;
     position: relative;
     margin-left: 8px;
+}
+
+.talla-detalle-modal {
+    width: 100%;
+    float: left;
+    text-align: left;
+    color: #D16B52;
+    font-size: 12px;
+    position: relative;
+    left: 0px;
+    margin-bottom: 40px;
+}
+
+.stock-detalle {
+    float: right;
+    clear: both;
+    width: 100%;
+    min-height: 23px;
+    font-size: 11px;
+    color: rgb(91, 81, 83);
+    text-align: center;
+    margin-top: 0%;
+    text-decoration: underline;
+    font-style: italic;
+    font-family: 'Open Sans', sans-serif;
 }
 
 }
@@ -5720,13 +5755,13 @@ img.little-2 {
 }
 
 .logos-pagos-fot {
-    width: 263px;
+    width: 250px;
     float: initial;
     left: 0px;
     position: relative;
-    margin-top: -56px;
-    margin-bottom: -33px;
-    top: 28px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    top: -6px;
 }
 
 .lim {
@@ -5931,10 +5966,12 @@ a.test {
 }
 
 a.two {
-    left: -32px;
-    top: 21px;
+    left: -101px;
+    top: 16px;
     color: rgba(128, 128, 128, 0.47) !important;
+    font-size: 19px;
 }
+
 .num-tal-1 {
     color: rgb(91, 81, 83);
     left: 1px;
@@ -5962,6 +5999,22 @@ a.two {
     text-decoration: underline;
     font-style: italic;
     font-family: 'Open Sans', sans-serif;
+}
+
+.modal-content.car {
+    border-radius: 0px;
+    border: 1px solid transparent;
+    box-shadow: 0 0px 0px rgba(0,0,0,.5);
+    width: 100%;
+    /* overflow-x: hidden; */
+}
+
+td.can {
+    position: relative;
+    left: -104px;
+    text-align: left;
+    font-size: 12px;
+    top: 80px;
 }
 
 }
@@ -6079,11 +6132,6 @@ a.two {
     margin-top: 2px;
 }
 
-a.two {
-    left: -44px;
-    top: 21px;
-    color: rgba(128, 128, 128, 0.47) !important;
-}
 
 }
 
@@ -6211,6 +6259,13 @@ img.little-2 {
     /* height: auto; */
 }
 
+a.two {
+    left: -128px;
+    top: 16px;
+    color: rgba(128, 128, 128, 0.47) !important;
+    font-size: 19px;
+}
+
 }
 
 @media (max-width: 360px){
@@ -6318,9 +6373,10 @@ img.little-2 {
 }
 
 a.two {
-    left: -71px;
-    top: 21px;
+    left: -141px;
+    top: 16px;
     color: rgba(128, 128, 128, 0.47) !important;
+    font-size: 19px;
 }
 
 .name-car {
@@ -6461,10 +6517,6 @@ img.little-2 {
     margin-bottom: 20px;
 }
 
-a.two {
-    left: -107px;
-    top: 20px;
-}
 
 .name-car {
     width: 156px;
@@ -6481,14 +6533,14 @@ a.two {
 }
 
 td.talla-car {
-    left: -113px;
+    left: -127px;
     float: left;
     text-align: left;
     top: 44px;
 }
 
 td.color-car {
-    left: -112px;
+    left: -126px;
     float: left;
     text-align: left;
     top: 45px;
@@ -6504,10 +6556,18 @@ td.color-car {
 }
 
 td.money.uno {
-    left: -204px;
+    left: -232px;
     text-align: left;
     top: 104px;
     font-size: 13px;
+}
+
+td.can {
+    position: relative;
+    left: -171px;
+    text-align: left;
+    font-size: 12px;
+    top: 82px;
 }
 
 .bi-1 {
@@ -6525,6 +6585,13 @@ td.money.uno {
     font-size: 9px;
     width: 85%;
     padding-top: 2px;
+}
+
+a.two {
+    left: -184px;
+    top: 16px;
+    color: rgba(128, 128, 128, 0.47) !important;
+    font-size: 19px;
 }
 
 

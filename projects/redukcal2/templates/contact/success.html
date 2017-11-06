@@ -105,7 +105,7 @@ $(document).ready(function()
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_success" name="image" id="img_banner_success" >
           </div>
         {% end %}
-                <img id="{{ site.name }}_banner_success" src="{{ read_image(site.name + '_banner_success', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_success',500) }}'" class="banner_metodo hidden" alt="item">      
+                <img id="{{ site.name }}_banner_success" src="{{ read_image(site.name + '_banner_success', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_success',500) }}'" class="banner_metodo hidden" alt="item">      
        </div>
 <!--        
        <div class="container">

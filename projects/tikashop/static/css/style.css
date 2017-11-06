@@ -4,6 +4,7 @@ html, body {
     margin: 0px;
     padding: 0px;
    font-family: 'Open Sans', sans-serif;
+   overflow-x: hidden;
 }
 
 .linea {
@@ -30,8 +31,9 @@ li{
 .texto_index{
     text-align: center;
     color: gray;
-    font-size: 14px;
-    font-weight: 100;
+    font-size: 16px;
+    font-weight: 700;
+    width: 60%;
 }
 
 div.upload input, div.image-upload input {
@@ -84,21 +86,22 @@ div.upload input, div.image-upload input {
 }
 
 .btn-primary {
-    color: gray;
-    background-color: white;
+    color: rgba(74, 64, 64, 0.62);
+    background-color: rgba(128, 128, 128, 0.63);
     border-color: rgba(128, 128, 128, 0.32);
     width: 122%;
     border-radius: 0px;
     text-align: left;
     font-size: 14px;
+    font-weight: 600;
 }
 
 .article-ho{
-    margin-left: -1.2%;
+   overflow: hidden;
 }
 
 .article-ho2{
-    margin-left: 9.5%;
+  overflow: hidden;
 }
 
 .box-med{
@@ -137,8 +140,8 @@ div.upload input, div.image-upload input {
 }
 
 .container {
-    padding-right: 12px;
-    padding-left: 0px;
+    padding-right: 4px;
+    padding-left: 8px;
     margin-right: auto;
     margin-left: auto;
 }
@@ -175,19 +178,99 @@ div.upload input, div.image-upload input {
     bottom:1px;
 }
 
+.fa-caret-down.home{
+    position: relative;
+    float: right;
+    top: 0px;
+    font-size: 20px;
+    color: white;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+    color: #fff;
+    background-color: gray;
+    border-color: gray;
+}
+
+.container.homi {
+  position: relative;
+  width: 100%;
+}
+
+.image.homi {
+    width: 101%;
+    object-fit: cover;
+    margin-bottom: 5%;
+    height: 250px;
+    max-height: 250px;
+}
+
+.overlay.homi {
+    /*position: absolute;*/
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 90%;
+    width: 99%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(52, 58, 60, 0.51);
+}
+
+.container.homi:hover .overlay.homi {
+  opacity: 1;
+}
+
+.hom {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+
+}
+
+.navbar-default .navbar-nav>li>a:hover, .navbar-default .navbar-nav>li>a:focus {
+    color: #c5c1c1;
+    background-color: transparent;
+}
+
 /*------------------------------------Responsive-------------------------------------------------------*/
 
 @media (max-width: 1199px){
-    .article-ho2 {
-        margin-left: 0.4%;
-    }
 
-    .box-med {
-        width: 102.4%;
-    }
+ /*   .container {
+    padding-right: 2px;
+    padding-left: 0px;
+    margin-right: auto;
+    margin-left: auto;
+    }*/
 
-    .article-ho {
-        margin-left: 7.7%;
+    .btn-primary {
+    color: rgba(74, 64, 64, 0.62);
+    background-color: rgba(128, 128, 128, 0.63);
+    border-color: rgba(128, 128, 128, 0.32);
+    width: 137%;
+    border-radius: 0px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    }
+    .overlay.homi {
+    /* position: absolute; */
+    top: 0px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 92%;
+    width: 98%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: rgba(52, 58, 60, 0.51);
     }
 }
 
@@ -197,6 +280,121 @@ div.upload input, div.image-upload input {
     padding-left: 15px;
     margin-left: auto;
     width: 100%;
+}
+
+.gre {
+    padding: 0px 0px;
+    margin-bottom: 1%;
+    margin-left: 0%;
+    width: 85%;
+}
+
+.image.homi {
+    width: 107%;
+    object-fit: cover;
+    margin-bottom: 7%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+
+@media (max-width: 768px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 9%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+@media (max-width: 767px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 3%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+
+.espacio-1{
+  margin-top: 100px;
+}
+
+}
+
+@media (max-width: 700px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 5%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+@media (max-width: 414px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 9%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+
+@media (max-width: 375px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 10%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+@media (max-width: 360px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 10%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
+}
+
+}
+
+@media (max-width: 320px){
+    .image.homi {
+    width: 110%;
+    object-fit: cover;
+    margin-bottom: 13%;
+    height: 250px;
+    max-height: 250px;
+    position: relative;
+    right: 14px;
 }
 
 }

@@ -61,12 +61,12 @@ $(document).ready(function()
     var base_url = $.environmentVar(
         'http://apibodegas.ondev.today/',
         'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://lpcheckout.ondev.today',
         'http://lpcheckout.ondev.today',
         'https://betapay.loadingplay.com');
-    var app_public = $.environmentVar(48,48,48);
+    var app_public = $.environmentVar(65,65,61);
     var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
 
     var config = {
@@ -75,7 +75,7 @@ $(document).ready(function()
         'products_per_page' : 9, 
         'tag': tag,
         'ignore_stock': false,
-        'infinite_scroll': true,
+        'infinite_scroll': false,
         // 'maxProducts': 100,
         'checkout_url': checkout_url, 
         'operator' :'or',

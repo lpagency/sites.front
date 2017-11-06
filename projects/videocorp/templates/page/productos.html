@@ -7,15 +7,17 @@
 {% block header %}
 {% include '../home/header.html' %}
 {% end %}
+
 {% block css %}
-
-{% if is_admin %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-{% end %}
 
-
-{% block scripts %}
+{% block javascript %}
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart2.config.js"></script>
 {% end %}
 
 
@@ -27,31 +29,17 @@
 {% set editabletext = '' %}
 {% end %}
 
-<!-- *contenido* -->
-
-<section class="nov">
-   <div class="container">
-      <div align="center"> 
-        <div class="col-md-8 col-md-offset-1">
-          <div class="products">
-            <div class="spinner">
-              <div class="rect1"></div>
-              <div class="rect2"></div>
-              <div class="rect3"></div>
-              <div class="rect4"></div>
-              <div class="rect5"></div>
+<section class="container lista">
+    <div class="row">
+        <div class="col-xs-12">
+            <h3 class="lista-titulo lista-titulo-alt">Audio profesional</h3>
+            <div class="products">
             </div>
-          </div>
         </div>
-      </div> 
     </div>
 </section>
 
-<div class="clearfix-dos"> </div>
-
-</div>
 
 {% include '../home/footer.html' %}
+
 {% end %}
-
-

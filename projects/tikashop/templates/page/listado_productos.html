@@ -23,7 +23,7 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/frubik.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function()
@@ -31,19 +31,40 @@
 
       $("#OpenAlert").click();
 
-        // var config = {
-        //     'app_public' : app_public,
-        //     'base_url' : base_url,
-        //     'maxProducts' : 8,
-        //     'templateOrigin' : '#product_template',
-        //     'tag' : '',
-        //     'ignore_stock' : true,
-        //     'onLoad':function(){
-        //      }
-        // };
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(67,67,67);
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 16,
+            'templateOrigin' : '#product_template',
+            'tag' : '',
+            'ignore_stock' : true,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
 
-        // $('.product-list').ecommerce('product_box', config);
+        $('.product-list').ecommerce('product_box', config);
 
+        // destacado categoria 2
+        // config.tag = 'destacado_categoria2';
+        // $('.product-list2').ecommerce('product_box', config);
     });
 </script>
 <script type="text/javascript">
@@ -52,13 +73,13 @@
     //   
     $(document).on("click", ".subcateg", function(ev){
         // ev.preventDefault();
-
     $(".subcateg").removeClass('active');
         $(this).addClass('active');
     });
 
     });
 </script>
+
 
 <script type="text/javascript">
     $("#testButton").live("touchstart", function() {
@@ -84,7 +105,6 @@
 <body id="lapimport">
    <section>
     <div class="container">
-    <div>
     <div class="mobile img-mobile hidden-xs" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:350px; background-size:cover; margin-top:0px;
   filter: grayscale(0%) brightness(80%); -webkit-filter: grayscale(0%) brightness(80%); -moz-filter: grayscale(0%) brightness(80%); -ms-filter: grayscale(0%) brightness(80%);-o-filter: grayscale(0%) brightness(80%); background-position:center; margin-bottom: 40px;  width: 101%;" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
@@ -97,9 +117,40 @@
         {% end %}
         <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div> 
-  </div>
+           <div class="col-md-12">
+            <div class="text-center kina {{editabletext}}" text-id="{{ site.name + '_productos_til' }}"> {{ read_text(site.name +  '_productos_til') }}</div>
+          </div>
 </div>
 </section>
+
+
+<div class="espacio-1 hidden-md hidden-lg hidden-sm visible-xs"></div>
+
+
+<section>
+   <div class="container">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+      <div align="center">
+         <div class=" kin text-left {{editabletext}}" text-id="{{ site.name + 'text_kin' }}">{{ read_text(site.name +  'text_kin') }}</div>
+     </div>
+    </div>
+   </div>
+</section>
+
+<section>
+   <div class="container">
+       
+      <div align="center">
+         <hr class="pap">
+         <img class="pap" src="https://84static.loadingplay.com/static/images/bc20e1d6a4c50211ff31086d22d79ad9_papa.png">
+          <hr class="pap-2">
+     </div>
+       
+   </div>
+</section>
+
+
+<div style="margin-bottom:30px;"></div>
 
 <!-- ****dropdown categorias***** -->
 <section>
@@ -108,44 +159,45 @@
     <div class="col-md-12 gre">
       <div class="dropdown col-md-2 col-sm-12 col-xs-12 gre">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">LINEAS DE PRODUCTO
-        <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 16%;"></i></button>
+        <i class="fa fa-caret-down home" aria-hidden="true"></i></button>
         <ul class="dropdown-menu hola">
-          <li><a class="subcateg" tag="oxford">Tika Chips</a></li>
-          <li><a class="subcateg" tag="derby">Tika</a></li>
-          <li><a class="subcateg" tag="monk">Tika Crackers</a></li>
-          <li><a class="subcateg" tag="boot">Tika Pop</a></li>
-          <li><a class="subcateg" tag="chukka_boot">Tika Nativas</a></li>
-          <li><a class="subcateg" tag="loafer">Tortika Chips</a></li>
+          <li><a class="subcateg" tag="chips">Tika Chips</a></li>
+          <li><a class="subcateg" tag="stixs">Tika Stixs</a></li>
+          <li><a class="subcateg" tag="crackers">Tika Crackers</a></li>
+          <li><a class="subcateg" tag="pop">Tika Pop</a></li>
+          <li><a class="subcateg" tag="nativas">Tika Nativas</a></li>
         </ul>
       </div>
 
       <div class="dropdown  col-md-2 col-sm-12 col-xs-12 gre">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">OCASIONES DE CONSUMO
-       <i class="fa fa-angle-down" aria-hidden="true"></i></button>
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">CATEGORIAS
+      <i class="fa fa-caret-down home" aria-hidden="true"></i></button>
         <ul class="dropdown-menu hola">
-          <li><a class="subcateg" tag="plain">Cumpleaños</a></li>
-          <li><a class="subcateg" tag="toe_cap">Fiestas</a></li>
-          <li><a class="subcateg" tag="brogue">Bautizos</a></li>
-          <li><a class="subcateg" tag="semi_brogue">Eventos</a></li>
-          <li><a class="subcateg" tag="semi_brogue">Matrimonios</a></li>
+          <li><a class="subcateg" tag="nuevos">Productos nuevos</a></li>
+          <li><a class="subcateg" tag="populares">Los + Populares</a></li>
+          <li><a class="subcateg" tag="oportunidades">Oportunidades</a></li>
+          <li><a class="subcateg" tag="colaciones">Colaciones</a></li>
+          <li><a class="subcateg" tag="aperitivos">Aperitivos</a></li>
+          <li><a class="subcateg" tag="cocina">Cocina con tika</a></li>
         </ul>
       </div>
 
       <div class="dropdown  col-md-2 col-sm-12 col-xs-12 gre">
         <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">FORMATO
-        <i class="fa fa-angle-down" aria-hidden="true" style="margin-left: 59%;"></i></button>
+        <i class="fa fa-caret-down home" aria-hidden="true"></i></button>
         <ul class="dropdown-menu hola">
-          <li><a class="subcateg" tag="black">28gr</a></li>
-          <li><a class="subcateg" tag="dark_brown">55gr</a></li>
-          <li><a class="subcateg" tag="brown">140gr</a></li>
-          <li><a class="subcateg" tag="tan">180gr</a></li>
-          <li><a class="subcateg" tag="burgundy">212gr</a></li>
+          <li><a class="subcateg" tag="28gr">28gr</a></li>
+          <li><a class="subcateg" tag="55gr">55gr</a></li>
+          <li><a class="subcateg" tag="140gr">140gr</a></li>
+          <li><a class="subcateg" tag="180gr">180gr</a></li>
+          <li><a class="subcateg" tag="212gr">212gr</a></li>
         </ul>
       </div>
     </div>
   </div>
     </div>
 </section>
+
 
 
 <section class="nov">

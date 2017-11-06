@@ -1,14 +1,13 @@
 {% extends "../base.html" %}
+
 {% block title %}
-    {{ site.name }}
+{{ site.name }}
 {% end %}
+
 {% block header %}
-{% if is_admin %} 
-{% set editabletext = 'editabletext' %} 
-{% else %} 
-{% set editabletext = '' %} 
+{% include '../home/header.html' %}
 {% end %}
-{% end %}
+
 {% block scripts %}
 <script type="text/javascript" src="{{site_base}}/static/js/script.js"></script>
 <script type="text/javascript" src="{{site_base}}/static/js/lightbox.js"></script>
@@ -24,128 +23,38 @@
 {% end %}
 
 {% block css%}
-<link rel="stylesheet" href="{{site_base}}/static/css/style.css" >
-<link rel="stylesheet" href="{{site_base}}/static/css/responsive.css" >
-<link rel="stylesheet" href="{{site_base}}/static/css/lightbox.css" >
+    <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
 {% end %}
 {% block body %}
-<div class="container">
-<div class="row">
-        <div class="col-md-12 col-lg-12">
-          <div class="top-header-home">
-            <div class="logo-div-home">
-            {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-            <label for="img_header">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
-            </div>
-            {% end %}
-            <a href="{{ site_base }}">
-            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
-            </a>
-           <!--  <img src="img/logo_2.png" class="logo"> -->
-        <div class="logo-border"></div>
-              <div class="header-desktop-menu menulist">
-                <ul class="header-menu">
-                    <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
-                    <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
-                    <li><a href="{{ site_base }}/educacion">Educación</a></li>
-                    <li><a href="{{ site_base }}/arte_y_cultura">Arte y Cultura</a></li>
-                    <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
-                    <li><a href="http://www.fundacionteraike.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
-                    <li><a href="{{ site_base }}/noticias">Noticias </a></li>
-                    <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
-                    <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
-                </ul>
-              </div>
-              <div class="mobilemenu">
-                <nav>
-                  <a><i class="fa fa-bars fa-2x"></i></a>
-                  <div>
-                    {% if is_admin %}
-                    <div class="image-upload lapiz visible-movil">
-                    <label for="img_header">
-                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-                    </label>
-                    <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
-                  </div>
-                  {% end %}
-                  <a href="{{ site_base }}">
-                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
-                  </a>
-                </div>
-                  <ul>
-                    <li><a href="{{ site_base }}/quienes_somos">Quiénes somos</a></li>
-                    <li><a href="{{ site_base }}/que_hacemos">Qué hacemos</a></li>
-                    <li><a href="{{ site_base }}/educacion">Educación</a></li>
-                    <li><a href="{{ site_base }}/arte_y_cultura">Arte y Cultura</a></li>
-                    <!-- <li><a href="http://fundacionteraike2.lpe.cl/gallery/detail/galeria_de_fotos_de_el_evento_xyz/1886">Galeria</a></li> -->
-                    <li><a href="http://www.fundacionteraike.cl/article/detail/primer_concurso_escolar_de_ilustracion_literaria/1906">Concurso </a></li>
-                    <li><a href="{{ site_base }}/noticias">Noticias </a></li>
-                    <li><a href="{{ site_base }}/galeria_de_fotos">Fotos</a></li>
-                    <li><a href="{{ site_base }}/contacto">Contáctanos</a></li>
-                  </ul>
-                </nav>
-              </div>
-            </div>
-            <div class="banner-div-home">
-            {% if is_admin %}
-            <div class="image-upload lapiz visible-movil">
-            <label for="img_banner">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}banner{{request.path.replace('/', '_')}}" name="image" id="img_banner"/>
-            </div>
-            {% end %}
-            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
-            <div class="hidden-xs hidden-sm">
-              <p class="text-header">{{ gallery.title }}</p>
-            </div>
-            <div class="col-md-12 col-sm-12 col-xs-12 visible-xs visible-sm hidden-md hidden-lg">
-              <p class="text-header">{{ gallery.title }}</p>
-            </div>
-       <!--        <div class="menu-icon">
-                <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon"  aria-hidden="true"></i></a>
-              </div>
-        <div class="menu-text">Menu</div> -->
-            </div>
-          </div>
+    <div class="galeria-popup">
+        <div class="container galeria-popup-cerrar-wrapper">
+            <span class="galeria-popup-cerrar">X</span>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 col-lg-12 ">
-          <div class="col-md-offset-2">
-            <div class="banner-below-text-2 text-left ">{{ gallery.caption }}</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-12 col-lg-12 ">
-          <div class="col-md-offset-2">
-            <div class="banner-below-text text-left ">{{ gallery.description }}</div>
-          </div>
-        </div>
-      </div>
-
-
-
-      <div class="row">
-        <div class="col-md-12 margin">
-          <div class="col-md-offset-2 col-lg-offset-2">
-            <div class="col-md-13 margen">
-            {% for i in gallery.getImageList() %}
-              <div class="col-md-6 col-lg-6">
-                <a href="{{ i["thumb_500"] }}" data-lightbox="image-1" data-title="gallery-image"><img class="gallery-image" src="{{ i["thumb_500"] }}" /></a> 
-              </div>
-            {% end %}
-            </div>
-          </div>
+        <div class="container galeria-popup-contenido">
+            <img src="https://84static.loadingplay.com/static/images/a6f0c59508d8a8886e915f9661353e81_popupflecha.png" alt="Anterior" class="galeria-popup-flecha galeria-popup-flecha-activo galeria-popup-flecha-prev">
+            <img src="" alt="Imagen" class="galeria-popup-img">
+            <img src="https://84static.loadingplay.com/static/images/a6f0c59508d8a8886e915f9661353e81_popupflecha.png" alt="Siguiente" class="galeria-popup-flecha galeria-popup-flecha-activo galeria-popup-flecha-next">
         </div>
     </div>
-</div>
+
+    <section class="container galeria galeria-alt">
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="galeria-titulo">{{ gallery.title }}</h3>
+            </div>
+            <div class="col-xs-12">
+                {% for i in gallery.getImageList() %}
+                  <div class="galeria-grupo galeria-grupo-tres col-md-4">
+                    <div class="galeria-item galeria-item-trigger">
+                        <img src="{{ i["thumb_500"] }}" alt="Imagen" class="galeria-item-img">
+                    </div>
+                  </div>
+                {% end %}
+            </div>
+        </div>
+    </section>
+
 {% include ../home/footer.html %}
 {% end %}

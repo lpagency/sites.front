@@ -9,7 +9,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_footer" name="image" id="img_footer" >
     </div>
     {% end %}
-        <img id="{{ site.name }}_footer" src="{{ read_image(site.name + '_footer', 1) }}" onload="this.src='{{ read_image(site.name + '_footer',500) }}'" class="fondo_footer desaturada" alt="item">
+        <img id="{{ site.name }}_footer" src="{{ read_image(site.name + '_footer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer',500) }}'" class="fondo_footer desaturada" alt="item">
     </div>
 
     <div class="visible-xs hidden-md hidden-sm hidden-lg">
@@ -21,7 +21,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_footer_mun" name="image" id="img_footer_mun" >
     </div>
     {% end %}
-        <img id="{{ site.name }}_footer_mun" src="{{ read_image(site.name + '_footer_mun', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_mun',500) }}'" class="fondo_footer desaturada" alt="item">
+        <img id="{{ site.name }}_footer_mun" src="{{ read_image(site.name + '_footer_mun', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer_mun',500) }}'" class="fondo_footer desaturada" alt="item">
     </div>
     
     <div class="container gyly">
@@ -125,7 +125,7 @@
          size="large">
         </div>
             <div class="box-registro2 hidden-xs">
-                <li class="pull-left pad-li col-sm-2 col-xs-12" style="padding-top: 7px;list-style: none;">
+                <li class="pull-left pad-li col-sm-2 col-xs-12" style="list-style: none;">
                          <a id="login-empresa" href="#" data-toggle="modal" data-target="#myModal4" class="text-footer2 hidden-xs">
                             <img class="img_registro_mayorista" src="https://7static.loadingplay.com/static/images/6ec1c054d0da81b2384ae59e37f898ec_NewBoton_REGISTRO_MAYORISTAS.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/652fb2bdaf06d0e97c811c12306312df_NewBoton_REGISTRO_MAYORISTAS.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/6ec1c054d0da81b2384ae59e37f898ec_NewBoton_REGISTRO_MAYORISTAS.png';">
                         </a>

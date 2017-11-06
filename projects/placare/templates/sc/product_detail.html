@@ -67,7 +67,7 @@
         });
 
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
+            'https://betaapi.loadingplay.com/',
             'http://apibodegas.ondev.today/',
             'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
@@ -91,7 +91,7 @@
                 'value_template': '\
                     <div \
                         class="col-md-4 col-sm-4 col-xs-4 size-item \
-                            tallas variant-value" variant="{{! variant_name }}"\
+                            tallas variant-value btn-disabled" variant="{{! variant_name }}"\
                         value="{{! value }}" >\
                             <div class="num-tal">{{! value }}</div>\
                     </div>',
@@ -204,6 +204,21 @@
         };
 
         $('.product-detail').ecommerce('product_detail', options);
+        $('.product-detail').on(
+            'variants_stock_loaded', 
+            function(e, d)
+            {
+                for (var p in d)
+                {
+                    if(d[p] !== 0)
+                    {
+                        var l = p.split("-");
+                        var last = l[l.length-1];
+
+                        $("[value="+ last +"]").removeClass("btn-disabled");
+                    }
+                }
+            });
 
         // productos relacionados
         var related = function(tag)
@@ -296,26 +311,26 @@
                         </div>
                         <div class="col-xs-12 col-md-2 col-sm-3 cre">
                          <div class="img-container main-1 index">
-                            <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little uno" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+                            <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little uno" src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" />
                          </div>
                         <div class="img-container main-1 index">
-                            <img class="{{! images[2]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+                            <img class="{{! images[2]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
                          </div>
 
                           <div class="img-container main-1 index">
-                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
                           </div>
 
                           <div class="img-container main-1 index">
-                               <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" />
+                               <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
                           </div>
 
                           <div class="img-container main-1 index">
-                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" />
+                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[5]['thumb_500']}}" />
                          </div>
 
                          <div class="img-container main-1 index">
-                             <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" />
+                             <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[6]['thumb_500']}}" />
                          </div>
                          </div>
                     </div>
@@ -442,7 +457,7 @@
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
-                                enabled>
+                                disabled>
                                     AGREGAR AL CARRO <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                             </button>
 
@@ -459,7 +474,7 @@
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add
-                                enabled >
+                                disabled >
                                     COMPRAR AHORA <i class="fa fa-angle-right lis" aria-hidden="true"></i>
                             </button>
                             </div>
@@ -479,26 +494,26 @@
                         <div class="col-xs-3 col-md-2 col-sm-3">
 
                          <div class="img-container main-1 index">
-                            <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little uno" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+                            <img class="{{! images[1]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little uno" src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" />
                          </div>
                         <div class="img-container main-1 index">
-                            <img class="{{! images[2]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+                            <img class="{{! images[2]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
                          </div>
 
                           <div class="img-container main-1 index">
-                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[3]['thumb_500']}}" />
+                            <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
                           </div>
 
                           <div class="img-container main-1 index">
-                               <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[4]['thumb_500']}}" />
+                               <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
                           </div>
 
                           <div class="img-container main-1 index">
-                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[5]['thumb_500']}}" />
+                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[5]['thumb_500']}}" />
                          </div>
 
                          <div class="img-container main-1 index">
-                             <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.src={{! images[6]['thumb_500']}}" />
+                             <img class="{{! images[6]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[6]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[6]['thumb_500']}}" />
                          </div>
                         </div>
 
@@ -704,7 +719,7 @@
  -->
 
 <section>
-<div class="container min">
+<div class="container min dip">
         <div class="col-md-12 col-sm-12 col-xs-12">
             <hr class="lon">
             <div class="text-relac text-center {{editabletext}}" text-id="{{ site.name + '_pro_relacionados' }}"> {{ read_text(site.name +  '_pro_relacionados') }}</div>

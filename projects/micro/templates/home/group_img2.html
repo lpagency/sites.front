@@ -17,7 +17,7 @@
                 {% end %}
                 <div class="container-second">
                     <a id="{{ site.name + '_img_group_images' }}" href="{{ read_link(site.name + '_img_group_images') }}">
-                    <img class="img_group img-responsive" id="{{ site.name }}_img_group" src="{{ read_image(site.name + '_img_group', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group',500) }}'" alt="item" style=" ">
+                    <img class="img_group img-responsive" id="{{ site.name }}_img_group" src="{{ read_image(site.name + '_img_group', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_group',500) }}'" alt="item" style=" ">
                   </a>
                     <!--editable link-->
                     {% if is_admin %}
@@ -44,7 +44,7 @@
             {% end %}
             <div class="container-second">
                 <a id="{{ site.name + '_img_group_group2_2' }}" href="{{ read_link(site.name + '_img_group2_2') }}">
-                <img class="img_group img-responsive" id="{{ site.name }}_img_group2_2" src="{{ read_image(site.name + '_img_group2_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_group2_2',500) }}'" alt="item" style=" ">
+                <img class="img_group img-responsive" id="{{ site.name }}_img_group2_2" src="{{ read_image(site.name + '_img_group2_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_group2_2',500) }}'" alt="item" style=" ">
                 </a>
                 <!--editable link-->
                 {% if is_admin %}

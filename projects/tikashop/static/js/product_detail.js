@@ -4,14 +4,15 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(50,54,54);
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(67,67,67);
+    var site_name = $.environmentVar('tikashop', 'tikashop', 'tikashop');
 
     // functions 
     // productos relacionados

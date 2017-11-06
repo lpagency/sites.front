@@ -20,6 +20,15 @@ a:hover{
     text-decoration: none;
 }
 
+a:visited{
+      color: #808080;
+}
+
+a:link{
+      color: #808080;
+}
+
+
 a:focus {
     outline: thin dotted;
     outline: 0px auto -webkit-focus-ring-color;
@@ -27,7 +36,7 @@ a:focus {
 }
 
 a:hover, a:focus {
-    color: gray;
+    color: #808080;
     text-decoration: none;
 }
 
@@ -38,10 +47,10 @@ li{
 .volver {
     float: left !important;
     background: rgba(0, 0, 0, 0.24) !important;
-    font-size: 15px !important;
+    /* font-size: 15px !important; */
     padding: 15px 11px !important;
     color: white !important;
-    font-weight: 600 !important;
+    font-weight: 100;
     height: 51px;
     width: 31%;
     cursor: pointer;
@@ -121,19 +130,10 @@ div.image-upload.par1 {
 */
 
 .fa-angle-down {
-    font-size:15px !important;
+    font-size: 15px !important;
     position: relative;
-    left: 5%;
-
-/*    color: black;
-    position: relative;
-    bottom: -2px;
-    background-color: white;
-    border: 3px solid black;
-    border-radius: 35px;
-    padding:2px 1px 2px 1px;
-    width: 37px;
-    height: 37px;*/
+    left: 0%;
+    float: right;
 }
 
 
@@ -141,7 +141,7 @@ div.image-upload.par1 {
     position: relative;
     font-size: 20px;
     font-weight: 100;
-    color: gray;
+    color:#808080;
     margin-bottom: 4%;
     margin-top: -23px;
     -webkit-font-smoothing: antialiased;
@@ -233,7 +233,7 @@ div.image-upload.par1 {
 .text-intro-prov {
     margin-bottom: 45px;
     font-size: 21px;
-    color: gray;
+    color: #808080;
     top: 15px;
     position: relative;
     font-weight: 300;
@@ -411,7 +411,7 @@ div.image-upload.con {
 #slider-home{
     padding: 0;
     position: relative;
-    top: -2px;
+    top: 0px;
     margin-bottom: 65px;
     margin-left: 0;
     margin-right: 0;
@@ -502,30 +502,30 @@ div.upload input, div.image-upload input {
 
 .texto-hu{
     position: absolute;
-    bottom: 184px;
+    bottom: 167px;
     color: white;
     text-align: left;
     padding-left: 13px;
     padding-right: 13px;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 300;
 }
 
  .texto-hu-2{
     position: absolute;
-    bottom: 100px;
+    bottom:70px;
     color: white;
     text-align: left;
     padding-left: 13px;
     padding-right: 13px;
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 300;
 }
 
 .kop {
     margin-bottom: 45px;
     font-size: 17px;
-    color: gray;
+    color: #808080;
     top: 15px;
     position: relative;
     font-weight: 300;
@@ -541,7 +541,7 @@ div.upload input, div.image-upload input {
     bottom: 0px;
     left: 0%;
     height: 150px;
-    color: gray;
+    color: #808080;
     font-weight: 300;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;
@@ -562,13 +562,91 @@ div.upload input, div.image-upload input {
     position: relative;
     bottom: 0px;
     left: 0%;
-    color: gray;
+    color: #808080;
     font-weight: 300;
     font-size: 17px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     width: 100%;
     margin-top: 57px;
+}
+
+.texto-tienda {
+    margin-bottom: 0px;
+    position: relative;
+    bottom: 87px;
+    left: 3%;
+    height: 150px;
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    font-size: 15px;
+}
+
+.box-tienda {
+    width: 100%;
+    height: 272px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    padding-left: 18px;
+    bottom: 24px;
+    position: relative;
+}
+
+hr.tienda {
+    margin-top: 20px;
+    margin-bottom: 137px;
+    border: 0;
+    border-top: 1px solid #eee;
+    right: 6px;
+    position: relative;
+}
+
+.distrib-contact {
+    text-align: left;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+    margin-top: 23px;
+    position: relative;
+    right: 19px;
+    color: rgba(128, 128, 128, 0.62);
+}
+
+.titulo-negrita{
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    margin-top: 32px;
+    position: relative;
+    right: 4px;
+}
+.titulo-claro{
+    color: rgba(128, 128, 128, 0.62);
+    font-weight: 300;
+    position: relative;
+    right: 4px;
+}
+
+hr.page-contact {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: 0;
+    border-top: 1px solid #eee;
+    right: 18px;
+    position: relative;
+}
+
+.col-md-6 {
+    margin-bottom: 26px;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
+.remove-from-cart.fri {
+    padding-left: 27px;
 }
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
@@ -656,7 +734,7 @@ div.upload input, div.image-upload input {
     bottom: 0px;
     left: 0%;
     height: 150px;
-    color: gray;
+    color: #808080;
     font-weight: 300;
     font-size: 15px;
     -webkit-font-smoothing: antialiased;

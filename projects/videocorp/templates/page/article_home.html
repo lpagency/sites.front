@@ -1,17 +1,8 @@
-<div class="col-md-12">
-    
-    <div class="col-md-4 col-xs-12 tamano">
-    <div class="image-div">
-            <a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}">
-              <img class="img-responsive mini-art-home image-div2" src="{{ article["thumb_500"] }}" />
-            </a>
+<a href="{{ site_base }}/article/detail/{{ url_escape(article['title']) }}/{{ article["id"] }}" class="articulos-item">
+    <img src="{{ article["thumb_500"] }}" alt="Imagen del artículo" class="articulos-item-img">
+    <div class="articulos-item-copy">
+        <h2 class="articulos-item-titulo">{{ article["title"] }}</h2>
+        <p class="articulos-item-text">{{ article["description"] }}</p>
     </div>
-    </div>
-
-    <div class="col-md-6 col-xs-12">
-        <h4><strong>{{ article["title"] }}</strong></h4>
-        <p class="text-left dos ellipsis multiline">{{ article["description"] }} </p>
-    </div>
-
-</div>
+</a>
 

@@ -87,7 +87,7 @@
                                             <th>Nombre</th>
                                             <th>Precio</th>
                                             <th class="">Cant</th>
-                                            <th class="text-right"></th>
+                                            <th class="">Eliminar</th>
                                         </tr>
                                     </thead>
                                     <tbody class="shopping-cart">
@@ -144,7 +144,8 @@
         
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
-        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?2"></script>
+        <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+        
 <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
 <!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
 <!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
@@ -195,7 +196,7 @@
             {{! quantity }}
             <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" >+</a>
         </td>
-        <td class="remove-from-cart text-center fri" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
+        <td class="remove-from-cart fri" lp-cart-remove="{{! id }}" aria-hidden="true"> X  </td>
         <td class="vert-align fri">
             <a class="borrarproducto" cart-id="">
                 <i class="icon-close"></i>
@@ -220,9 +221,9 @@
 
 <script type="text/x-template" id="shopping-cart-checkout-form" >
     <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
-        <input name="site_id" class="form-control required" type="hidden" value="53">
+        <input name="site_id" class="form-control required" type="hidden" value="48">
         <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
-        <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+        <input name="origin" class="form-control required" type="hidden" value="luttyflores">
         <div class="form-group text-center">
              <button type="submit" class="btn bn" style="background-color:rgba(0, 0, 0, 0.24);color: white;width: 31%;border-radius: 0px;height: 51px;font-weight: 100;float: right;">
                 PAGAR

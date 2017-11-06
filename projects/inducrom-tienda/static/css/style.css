@@ -1,0 +1,651 @@
+body , html{
+/*   font-family: 'Jura', sans-serif;*/
+  font-family: 'Muli', sans-serif;
+    overflow-x: hidden;
+}
+
+.table>thead>tr>th {
+    vertical-align: bottom;
+    border-bottom: 1px solid #ddd;
+}
+
+div.upload input, div.image-upload input {
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.producto-detalle-cotizacion{
+    display: none;
+}
+
+div.image-upload {
+    z-index: 1030 !important;
+}
+
+img.editablelink {
+    z-index: 1030 !important;
+}
+
+.article-box-2 {
+    overflow: hidden;
+    padding: 0px 0px;
+    margin-bottom: 17px;
+}
+
+.container {
+    width: 1260px;
+}
+
+.img-edit {
+    height: 371px;
+    object-fit: contain;
+    display: block;
+    width: 100% \9;
+    max-width: 109%;
+    margin-bottom: -60px;
+}
+
+.col-md-3.coli {
+    width: 16%;
+}
+
+.fondo-form{
+  width: 100%;
+  height: 499px;
+  object-fit: cover;
+  margin-top: -101px; 
+  filter: grayscale(0%) brightness(55%);
+   -webkit-filter: grayscale(0%) brightness(55%); 
+   -moz-filter: grayscale(0%) brightness(55%); 
+   -ms-filter: grayscale(0%) brightness(55%);
+   -o-filter: grayscale(0%) brightness(55%);
+}
+
+.titulo-banner-contact{
+    color: white;
+    font-size: 29px;
+    position: absolute;
+    bottom: 0px;
+    font-weight: 100;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.description-contact {
+    margin-top: -26px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.align-form-contact {
+    margin-left: -9%;
+    margin-right: auto;
+    padding-left: 200px;
+    /* vertical-align: middle! important; */
+    margin-top: 30px;
+    padding-right: 200px;
+    padding-bottom: 20px;
+}
+
+.fondo-contact {
+    width: 107%;
+    height: auto;
+}
+.titulo-about{
+    font-size: 30px;
+    margin-bottom: 12px;
+    margin-top: 23px;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: 200;
+}
+
+.titulo-peq{
+    font-size: 19px;
+    margin-bottom: 30px;
+    width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+    font-weight: 200;
+}
+
+.bac {
+    float: left !important;
+    background: rgba(119, 119, 119, 0.43) !important;
+    font-size: 15px !important;
+    padding: 15px 11px !important;
+    color: gray !important;
+    font-weight: 600 !important;
+    height: 51px;
+    width: 31%;
+    cursor: pointer;
+}
+
+.box-clientes {
+    width: 82%;
+    height: 195px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin-left: 22px;
+}
+
+.t-2{
+     margin-top: 100px;
+    font-size: 30px;
+    text-align: left;
+}
+
+.text_cap{
+    font-size: 21px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 87%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 87%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.box-catag {
+    width: 84%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+    margin-left: 22px;
+}
+
+.input-lg, .form-horizontal .form-group-lg .form-control {
+    height: 46px;
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.33;
+    border-radius: 0px;
+}
+
+.texto-coti{
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: -20px;
+}
+
+#mapa-contact{
+    width: 33%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 145px;
+}
+
+.top-map{
+    border: 1px solid gray;
+}
+
+.tell {
+    text-align: center;
+    color: rgba(84, 84, 84, 0.79);
+}
+
+img.lugar{
+    float: left;
+    position: relative;
+    left: 37%;
+}
+
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: -19px;
+    margin-bottom: 23px;
+    right: 164px;
+    cursor: pointer;
+}
+.img-gallery {
+    max-width: 100%;
+    height: 300px;
+    margin-bottom: 29px;
+    object-fit: contain;
+}
+.text_cap{
+    position: relative;
+    left: 20px;
+}
+.mgt-10{
+    margin-top: 10%;
+    font-weight: 700;
+}
+
+/*------------------------------------------RESPONSIVE------------------------------------------*/
+@media (max-width: 1111px){
+    .mobile{
+       margin-top: -83px !important;
+       margin-bottom: -58px !important;
+    }
+
+    .fondo-form{
+    margin-top: -83px; 
+   }
+
+}
+
+@media (max-width: 1024px){
+.apa {
+    margin-top: 100px;
+}
+
+.conjunto{
+    margin-top: 100px;
+}
+
+.container {
+    width: 100%;
+}
+
+
+}
+
+@media (max-width: 991px){
+.col-md-3.coli{
+   width: 25%;
+}
+
+.col-sm-6.coli{
+    width: 50%;
+}
+
+.img-edit {
+    height: 371px;
+    object-fit:contain;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;    
+    margin-bottom: 14px;
+}
+
+.container-fluid{
+    padding-right: 15px !important;
+}
+
+.align-form-contact {
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-left: 0%;
+}
+
+.container {
+    width: 100%;
+}
+
+.fondo-contact {
+    width: 100%;
+    height: auto;
+}
+
+#mapa-contact {
+    width: 60%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 240px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 26px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+}
+
+@media (max-width: 768px){
+    .box-catag {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-bottom: 0px;
+    margin-left: 0px;
+}
+
+.apa {
+    margin-top: 100px;
+}
+
+.conjunto{
+    margin-top: 100px;
+}
+
+}
+
+@media (max-width: 767px){
+    .col-xs-6.coli{
+        width: 50%;
+    }
+
+    .container {
+    width: 100%;
+}
+
+.mobile {
+    margin-top: 0px !important;
+    margin-bottom: 7px !important;
+    height:300px !important;
+}
+
+ .fondo-form{
+    margin-top: 0px; 
+   }
+
+.img-edit {
+    height: 371px;
+    object-fit: contain;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    margin-bottom: -93px;
+}
+
+.texto-coti {
+    text-align: center;
+    margin-bottom: 45px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 0px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 40%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.box-clientes {
+    width: 82%;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+img.lugar {
+    float: left;
+    position: relative;
+    left: 6%;
+}
+.article-box-2 {
+    overflow: hidden;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    }
+
+}
+
+@media (max-width: 700px){
+    .description-contact {
+    margin-top: 51px;
+    margin-bottom: 30px;
+    font-size: 25px;
+    font-weight: 200;
+}
+#mapa-contact {
+    width: 100%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 290px;
+}
+
+}
+@media (max-width: 530px){
+    .texto-coti {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 40px;
+}
+
+}
+
+@media (max-width: 414px){
+    .img-edit {
+    height: 371px;
+    object-fit: contain;
+    display: block;
+    width: 100% \9;
+    max-width: 100%;
+    margin-bottom: -130px;
+}
+
+#mapa-contact {
+    width: 100%;
+    position: relative;
+    top: 12px;
+    margin-bottom: 105px;
+}
+
+.btn-default.cotizar.listado {
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 77%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.btn-default.cotizar.listado:hover {
+    color: white;
+    background-color: gray;
+    border-color: #ccc;
+    margin-bottom: 15px;
+    width: 77%;
+    position: relative;
+    top: 12px;
+    z-index: 1000;
+    border-radius: 0px;
+}
+
+.texto-coti {
+    text-align: center;
+    margin-bottom: 18px;
+    font-size: 21px;
+    color: gray;
+    font-weight: 200;
+    margin-top: 79px;
+}
+
+.form-moulie {
+    margin-bottom: -112px;
+    position: relative;
+    margin-top: 65px;
+    width: 87%;
+}
+
+.description.distrib.contact{
+      margin-top: 83px;
+}
+
+.tell {
+    text-align: center;
+    color: rgba(84, 84, 84, 0.79);
+    margin-bottom: 20px;
+}
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 150px;
+    cursor: pointer;
+}
+
+.mapi{
+    width: 100% !important;
+}
+
+.article-box-2 {
+    overflow: hidden;
+    padding: 0px 0px;
+    
+}
+.img-gallery {
+    max-width: 100%;
+    height: 100px;
+    margin-bottom: 29px;
+    object-fit: cover;
+}
+
+}
+
+@media (max-width: 400px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 140px;
+    cursor: pointer;
+}
+
+}
+
+@media (max-width: 375px){
+    img.lugar {
+    float: left;
+    position: relative;
+    left: 0%;
+}
+
+.ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 128px;
+    cursor: pointer;
+}
+.mumu {
+    position: relative !important;
+    left: -9px !important;
+    text-align: left !important;
+    width: 189px !important;
+    font-size: 10px !important;
+    height: 33px !important;
+    float: left !important;
+    margin-top: 2px !important;
+    top: 8px !important;
+}
+
+}
+
+@media (max-width: 360px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 23px;
+    right: 118px;
+    cursor: pointer;
+}
+
+.box-clientes {
+    width: 82%;
+    height: 100px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    margin-left: 0px;
+}
+
+.article-box-2 {
+    overflow: hidden;
+    padding: 0px 0px;
+    
+}
+
+}
+
+@media (max-width: 320px){
+    .ver-mapa {
+    color: rgba(84, 84, 84, 0.79);
+    position: relative;
+    margin-top: -49px;
+    margin-bottom: 23px;
+    right: 100px;
+    cursor: pointer;
+}
+
+.article-box-2 {
+    overflow: hidden;
+    padding: 0px 0px;
+    
+}
+
+
+}

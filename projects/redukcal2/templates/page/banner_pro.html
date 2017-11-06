@@ -12,7 +12,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_deta_pro" name="image" id="img_banner_deta_pro" >
           </div>
         {% end %}
-                <img id="{{ site.name }}_banner_deta_pro" src="{{ read_image(site.name + '_banner_deta_pro', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_deta_pro',500) }}'" class="banner_productos hidden" alt="item">     
+                <img id="{{ site.name }}_banner_deta_pro" src="{{ read_image(site.name + '_banner_deta_pro', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_deta_pro',500) }}'" class="banner_productos hidden" alt="item">     
        </div>
 
        <div class="container">

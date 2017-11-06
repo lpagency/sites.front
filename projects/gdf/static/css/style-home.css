@@ -4,7 +4,6 @@ html {
   overflow-x: hidden;
 }
 
-
 .modal-header {
     min-height: 16.43px;
     padding: 0px;
@@ -12,7 +11,7 @@ html {
 }
 
 .fade{
-    background: transparent;
+  background-color: transparent;
 }
 
 .texto-filtros {
@@ -321,7 +320,7 @@ p {
 
 .pad-li {
     padding: 15px;
-    padding-top: 7px;
+    padding-top: 0px;
 }
 
 .logos-pagos {
@@ -351,7 +350,8 @@ p {
 
 .box-registro2 {
     margin-left: -23px;
-    margin-top: 21px;
+    margin-top: 0px;
+/*   float: inherit; */ 
 }
 
 .text-footer2 {
@@ -727,9 +727,9 @@ ul.text1 {
 .img_registro_mayorista {
     width: 200px;
     position: relative;
-    bottom: -4px;
-    height: auto; 
-    margin-bottom: -12px;
+/*    bottom: 10px;*/
+    top: 17px;
+    height: auto;
 
 }
 
@@ -996,9 +996,6 @@ input.tel {
     color: rgb(91,81,83);
 }
 
-.modal {
-    z-index: 999999;
-}
 
 .fa-angle-right.slider{
     position: absolute;
@@ -1398,6 +1395,7 @@ img.hand-2 {
 
 .footer{
     background-color: #f6f4f2;
+    margin-top: 0px;
 }
 
 .gyly {
@@ -1495,12 +1493,25 @@ img.hand-2 {
 }
 
 .redes-footer {
-    margin-top: -15px;
+    margin-top: 2px;
     width: 28px;
     height: 41px;
     object-fit: scale-down;
     padding: 3px 6px 0px 0px;
     margin-bottom: 13px;
+}
+
+.text-footer {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: bold !important;
+    color: #424242;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.8px;
+    margin-top: -44px;
+    margin-bottom: 21px;
+    top: 22px;
+    position: relative;
 }
 
 }
@@ -1657,7 +1668,6 @@ img.hand-2 {
 
 .footer{
     background-color: #f6f4f2;
-    margin-top: 34px;
 }
 
 .incrb-text1 {
@@ -1996,7 +2006,7 @@ img.hand {
 }
 
 .text-footer2 {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     font-family: 'Open Sans Condensed', sans-serif;
     color: rgb(91, 81, 83);
     font-weight: 700;

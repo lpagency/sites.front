@@ -1,4 +1,4 @@
-<div class="header-content clearfix header hidden-xs visible-sm visible-md visible-lg">
+<header class="fixtop" data-spy="affix" data-offset-top="60"> 
 <div class="hidden-xs" style="background-color:rgb(209, 206, 201); height: 30px;"></div>
 <div class="container-fluid" style="width:100%;padding: 0px;">
 
@@ -12,12 +12,12 @@
             </button>
         </div>
         
-        <div class="container-g">
+        <div class="container-g hidden-xs hidden-sm">
         <div class="col-md-12 col-sm-12 box_menu">
             <div class="col-md-5 col-sm-5"></div>
             <div class="col-md-3 col-sm-4 col-sm-4">
-            <!-- LOGO -->
-                <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+            
+                <div class="logo_wrapper navbar-brand hidden-xs hidden-sm" style="padding: 0px; position: relative;">
                 {% if is_admin %}
                     <div class="image-upload visible-movil">
                         <label for="img_logo">
@@ -28,12 +28,12 @@
                     {% end %}
                     <a id="{{ site.name + '_logo' }}" href="#">
                         <div class="base-logo">
-                            <img class="logo image-1" id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_logo',500) }}'" alt="item">
+                            <img class="logo image-1" id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_logo',500) }}'" alt="item">
                         </div>
                     </a>
                 </div>
             </div>
-        <!-- /LOGO -->
+        
             <div class=""></div>
             <div class="col-md-4 col-sm-4 container-search" style="float:right;">
                 <div id="">
@@ -79,7 +79,7 @@
             <div class="col-md-7 col-sm-8">
                 <div id="navbarCollapse" class="collapse navbar-collapse text-center">
                     <ul class="nav navbar-nav nav-center">
-                        <!-- <li><a href="{{ site_base }}/productos?tag=coleccion" class="text-header">COLECCION</a></li> -->
+                       
                         <div class="dropdown col-md-3 col-sm-3">
                           <button class="ro btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/productos?tag=coleccion'">COLECCION
                              </button>
@@ -91,7 +91,7 @@
                                 <li><a href="{{ site_base }}/productos?tag=capsula">Cápsula Metálica</a></li>
                             </ul>
                         </div>
-                        <!-- <li><a href="{{ site_base }}/productos?tag=carteras" class="text-header ">CARTERAS</a></li> -->
+                       
                         <div class="dropdown col-md-2 col-sm-3">
                             <button class="ro btn hed btn-primary dropdown-toggle text-header" type="button" data-toggle="dropdown" tag="estilos" onclick="window.location.href='{{ site_base }}/productos?tag=estilos'">ESTILOS
                             </button>
@@ -117,15 +117,15 @@
     </nav>
 </div>
 </div>
+ </header>
 
 
 
-<!-- ***********Version movil*************** -->
 
 
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top hidden-md hidden-lg hidden-sm visible-xs">
         <div class="container  header">
-            <!-- Brand and toggle get grouped for better mobile display -->
+           
             <div class="navbar-header page-scroll">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                     <span class="sr-only">Toggle navigation</span>
@@ -157,14 +157,14 @@
                            <input type="file" class="editableimage" image-id="{{ site.name }}_img_logoooo" name="image" id="img_logoooo" >
                          </div>
                          {% end %}
-                          <img id="{{ site.name }}_img_logoooo" src="{{ read_image(site.name + '_img_logoooo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logoooo',500) }}'" class="logo" alt="item">
+                          <img id="{{ site.name }}_img_logoooo" src="{{ read_image(site.name + '_img_logoooo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logoooo',500) }}'" class="logo" alt="item">
                        </div>
                    </div>
                </div>
             </a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+          
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-left">
               <li class=>
@@ -211,12 +211,7 @@
              <a id="login-empresa" href="#" data-toggle="modal" data-target="#myModal4" class="text-footer2">
               <img class="img_registro_mayorista" src="https://7static.loadingplay.com/static/images/892a548bbf85b87d9e481e0a03f25f3a_Ingreso_y_Registro_mayorista_movil.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/e75a46afaaaaefdc43b1f48c49a90232_click_Ingreso_y_Registro_mayorista_movil.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/892a548bbf85b87d9e481e0a03f25f3a_Ingreso_y_Registro_mayorista_movil.png';">
             </a>
-<!-- 
-            <a id="various1" href="#" data-toggle="modal" data-target="#myModal3" class="text-footer2">
-              <button type="button" class="btn btn-default ingreso hidden-lg hidden-md hidden-sm visible-xs">INGRESO MAYORISTA
-                <img class="hand" src="https://84static.loadingplay.com/static/images/e432fd39a75a9d4135e29644a1d5efb3_indicando_.png">
-              </button>
-            </a> -->
+
           </li>
         </div>
       </div>
@@ -227,30 +222,20 @@
                   <img class="img_login_mayorista" src="https://84static.loadingplay.com/static/images/f335d67ca15008ba937947fc640b4001_Ingreso_y_Registro_mayorista_movil_.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/11c9b6afeb78186c2d121e9ae4dbeab8_click_Ingreso_y_Registro_mayorista_movil.png';" onmouseout="this.src='https://84static.loadingplay.com/static/images/f335d67ca15008ba937947fc640b4001_Ingreso_y_Registro_mayorista_movil_.png';">
                 </a>
 
-           <!--      <a id="login-empresa" href="#" data-toggle="modal" data-target="#myModal4" class="text-footer2">
-                  <button type="button" class="btn btn-default registro hidden-lg hidden-md hidden-sm visible-xs">REGISTRO MAYORISTA
-                    <img class="hand-2" src="https://7static.loadingplay.com/static/images/91960c4e43adf7c5ae7b889a9837f2c1_indicando_.png">
-                  </button>
-                </a> -->
               </li>
             </div>
           </div>
             </div>
-            <!-- /.navbar-collapse -->
+           
         </div>
 
-        <!-- ***Buscador**** -->
+      
         <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: none;">
           <form id="searchForm" role="search" action="{{ site_base }}/productos" method="get" class="style-form2">
             <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="Ntt" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
             <div class="closeSearch"><i class="fa fa-times-circle size CloseInput" style=""></i></div>
           </form>
         </div>
-      <!-- ***Fin buscador**+ -->
-        <!-- /.container -->
+ 
     </nav>
-
-
-
-
   

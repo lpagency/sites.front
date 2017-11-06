@@ -1,14 +1,19 @@
 
 <script type="text/template" id="product_template" class="hidden">
-  <div class="col-md-3 col-sm-3 col-xs-12 art-hi">
-		<div class="container-0">
-		  <img src="{{! images[0][3] }}" alt="" class="image" >
-		  <p class="inf ellipsis multiline">{{! name }}</p>
-		  <p class="inf3 ellipsis multiline">{{! description }}</p>
-		  <p class="inf2 ellipsis multiline">{{! main_price|money}}</p>
-          <div class="text" data-toggle="modal" data-target="#myModal-pro_{{! id }}">Ver más</div>
-          <div class="btn add-to-cart btn-default text2" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</div>
-		</div>
+  <div class="col-md-4 col-sm-4 col-xs-12 art-hi">
+
+    <div class="container pro">
+      <img src="{{! images[0][3] }}" alt="" class="image" >
+      <p class="inf ellipsis multiline">{{! name }}</p>
+      <p class="inf3 ellipsis multiline">{{! bullet_1 }}</p>
+      <p class="separa"> | </p>
+      <p class="inf4 ellipsis multiline">{{! bullet_2 }}</p>
+      <p class="inf2 ellipsis multiline">{{! main_price|money}}</p>
+  <div class="overlay">
+      <i class="fa fa-plus-circle text" aria-hidden="true" data-toggle="modal" data-target="#myModal-pro_{{! id }}"></i>
+      <i class="fa fa-shopping-cart pro add-to-cart" aria-hidden="true" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}"></i>
+  </div>
+</div>
   </div> 
 
     <!-- **modal descripcion producto** -->

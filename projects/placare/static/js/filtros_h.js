@@ -29,7 +29,7 @@ $(document).ready(function()
     window.config = {
         'app_public': app_public,
         'base_url': base_url,
-        'products_per_page' : 18,
+        'products_per_page' : 12,
         'tag': '',
         'ignore_stock': true,
         'infinite_scroll': false,
@@ -38,6 +38,15 @@ $(document).ready(function()
         'operator' :'or',
         'onLoad': function(products)
         {
+
+            if(products.length == 0)
+            {
+                $(".link-recargar").removeClass("hidden");
+            }
+            else
+            {
+                $(".link-recargar").addClass("hidden");
+            }
 
             $(".letrero-nuevo").each(function()
             {
@@ -1023,7 +1032,7 @@ function TagURL(listaTag)
                         +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
 
                 var classNombre = "." + nombre;
-                var textoRuta = $(".texto-ruta").html();
+                var textoRuta = "Home";
                 var fa = "fa-" + nombre;
                 $(".h-"+nombre).css("text-decoration", "underline");
 
@@ -1113,6 +1122,8 @@ function TagURL(listaTag)
 };
 
 //<------END FUNCION TOMA TAG DESDE LA URL--------->
+
+
 
 //<---------------FUNCION LIMPIAR------------------>
 
