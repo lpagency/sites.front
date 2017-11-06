@@ -485,6 +485,64 @@
 
 </section>
 
+<section class="h_china">
+    <div class="container kk">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_usa15">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_usa15" name="image" id="img_usa15" >
+                        </div>
+                        {% end %}
+                         <a id="{{ site.name + '_usa15' }}" href="{{ read_link(site.name + '_usa15') }}">
+                        <img id="{{ site.name }}_usa15" src="{{ read_image(site.name + '_usa15', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_usa15',500) }}'" class="img-responsive img_article" alt="item">
+                        </a>
+  
+                       <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_usa15' }}" content="{{ read_link(site.name + '_usa15') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                       {% end %}
+                    </div>
+                   
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_usa15' }}"> {{ read_text(site.name +  '_text_usa15') }}</div>
+                   
+                </div>
+            </div>
+             <div class="col-md-6 col-sm-6 col-xs-12 pad0">
+                <div>
+                    <div class="box_img">
+                        {% if is_admin %}
+                        <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                            <label for="img_usa16">
+                                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                            </label>
+                            <input type="file" class="editableimage" image-id="{{ site.name }}_usa16" name="image" id="img_usa16" >
+                        </div>
+                        {% end %}
+                    <a id="{{ site.name + '_usa16' }}" href="{{ read_link(site.name + '_usa16') }}">
+                        <img id="{{ site.name }}_usa16" src="{{ read_image(site.name + '_usa16', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_usa16',500) }}'" class="img-responsive img_article" alt="item">
+                    </a>
+
+                        <!--editable link-->
+                       {% if is_admin %}
+                       <img class="change-image editablelink" link-id="{{ site.name + '_usa16' }}" content="{{ read_link(site.name + '_usa16') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px;z-index: 2000!important;">
+                       {% end %}
+                    </div>
+        
+                       <div class="tex-vi {{editabletext}}" text-id="{{ site.name + '_text_usa16' }}"> {{ read_text(site.name +  '_text_usa16') }}</div>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
 
 
 <section class="h_third_white">
