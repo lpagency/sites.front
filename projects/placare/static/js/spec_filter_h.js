@@ -17,11 +17,11 @@ $(document).ready(function()
 
     var base_url = $.environmentVar(
         'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/',
+        'http://apibodegas.ondev.today/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://lpcheckout.ondev.today',
-        'https://betapay.loadingplay.com',
+        'http://lpcheckout.ondev.today',
         'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(53,53,53);
     var site_name = $.environmentVar('placare', 'placare', 'placare');
