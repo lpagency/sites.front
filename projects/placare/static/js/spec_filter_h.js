@@ -16,7 +16,7 @@ $(document).ready(function()
     window.listaTag = [];
 
     var base_url = $.environmentVar(
-        'http://apibodegas.ondev.today/',
+        'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
@@ -30,7 +30,7 @@ $(document).ready(function()
         'app_public': app_public,
         'base_url': base_url,
         'products_per_page' : 12,
-        'tag': '',
+        'tag': 'adf',
         'ignore_stock': false,
         'infinite_scroll': false,
         // 'maxProducts': 100,
@@ -157,19 +157,136 @@ $(document).ready(function()
     });
 
     //<-------------END ORDENAR MAYOR, MENOR Y POR ORDEN------------->
+    window.hyper = window.location.href;
+    window.split = window.hyper.split("-");
+    window.split = window.split[0].split("/");
+    window.split = window.split[window.split.length-1].toString();
+
     try
     {
-        listaTag = Utils.getUrlParameter('tag').split(',');
-        window.onload = TagURL(listaTag);
+        if(window.split != undefined)
+        {
+            var url = [];
+
+            switch (split) {
+                case "sandalias":
+                    url.push("Categoria3_Sandalias");
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
+                    listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    for(l in listaTag2)
+                    {
+                        url.push(listaTag2[l]);
+                    }
+                    window.onLoad = TagURL(url);
+                    config.tag = url.toString();
+                    listaTag = url;
+                    $('.products').ecommerce(config);
+                    break;
+                case "zapatos":
+                    url.push("Categoria3_Zapatos");
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
+                    listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    for(l in listaTag2)
+                    {
+                        url.push(listaTag2[l]);
+                    }
+                    window.onLoad = TagURL(url);
+                    config.tag = url.toString();
+                    listaTag = url;
+                    $('.products').ecommerce(config);
+                    break;
+                case "botines":
+                     url.push("Categoria3_Botines");
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
+                    listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    for(l in listaTag2)
+                    {
+                        url.push(listaTag2[l]);
+                    }
+                    window.onLoad = TagURL(url);
+                    config.tag = url.toString();
+                    listaTag = url;
+                    $('.products').ecommerce(config);
+                    break;
+                case "formales":
+                    url.push("Categoria3_Formales");
+                    url.push("Categoria2_Calzado_Mujer");
+                    url.push("-Categoria2_Calzado_Hombre");
+                    listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    for(l in listaTag2)
+                    {
+                        url.push(listaTag2[l]);
+                    }
+                    window.onLoad = TagURL(url);
+                    config.tag = url.toString();
+                    listaTag = url;
+                    $('.products').ecommerce(config);
+                    break;
+                default:
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
+                    listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    for(l in listaTag2)
+                    {
+                        url.push(listaTag2[l]);
+                    }
+                    window.onLoad = TagURL(url);
+                    config.tag = url.toString();
+                    listaTag = url;
+                $('.products').ecommerce(config);
+            }
+        }
+        else
+        {
+            listaTag = Utils.getUrlParameter('tag').split(',');
+            window.onload = TagURL(listaTag);
+        }
     }
     catch (ex)
     {
-        listaTag = [];
-        window.onload = TagURL(listaTag);
+        var url = ["Categoria2_Calzado_Hombre","-Categoria2_Calzado_Mujer"];
+        switch (split) {
+            case "sandalias":
+                url.push("Categoria3_Sandalias");
+                window.onLoad = TagURL(url);
+                config.tag = url.toString();
+                listaTag = url;
+                $('.products').ecommerce(config);
+                break;
+            case "zapatos":
+                url.push("Categoria3_Zapatos");
+                window.onLoad = TagURL(url);
+                config.tag = url.toString();
+                listaTag = url;
+                $('.products').ecommerce(config);
+                break;
+            case "botines":
+                url.push("Categoria3_Botines");
+                window.onLoad = TagURL(url);
+                config.tag = url.toString();
+                listaTag = url;
+                $('.products').ecommerce(config);
+                break;
+            case "formales":
+                url.push("Categoria3_Formales");
+                window.onLoad = TagURL(url);
+                config.tag = url.toString();
+                listaTag = url;
+                $('.products').ecommerce(config);
+                break;
+            case  "hombres":
+                window.onLoad = TagURL(url);
+                config.tag = url.toString();
+                listaTag = url;
+                $('.products').ecommerce(config);
+        }
     }
-    config.tag = listaTag.join(',');
+    // config.tag = listaTag.join(',');
     // $('.products').ecommerce(config);
-    $('.products').ecommerce(config);
+    // $('.products').ecommerce(config);
 
     $(".limpiar").click(function()
     {
@@ -252,7 +369,7 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<li class="fil-ul" id="categoria"><ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
+                '<li class="fil-ul" id="categoria3"><ul class="fil-ul '+nombre+'"><li class="ca li-fil"><div class="ordenar-precio '+nombre+'"> '
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
 
         var a = 
@@ -262,9 +379,9 @@ $(document).ready(function()
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        if($('#categoria').length > 0)
+        if($('#categoria3').length > 0)
         {
-            $("#categoria").html(a);
+            $("#categoria3").html(a);
             $("#categoria2").html(va);
         }
         else
@@ -293,7 +410,7 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', 'hombres?tag='+nombre);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -352,7 +469,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -370,7 +494,7 @@ $(document).ready(function()
         window.z = 0;
 
         var block =
-                '<li class="fil-ul" id="material"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                '<li class="fil-ul" id="mat"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
                 +va+' <i class="fa fa-times" aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
 
         var a = 
@@ -380,9 +504,9 @@ $(document).ready(function()
         var classNombre = "."+nombre;
         var textoRuta = $(".texto-ruta").html();
 
-        if($('#material').length > 0)
+        if($('#mat').length > 0)
         {
-            $("#material").html(a);
+            $("#mat").html(a);
             $("#material2").html(va);
         }
         else
@@ -411,7 +535,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -469,7 +600,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -527,7 +665,14 @@ $(document).ready(function()
         window.listaTag.push(nombre);
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -587,7 +732,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -647,7 +799,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -706,7 +865,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -765,7 +931,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -824,7 +997,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -883,7 +1063,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -942,7 +1129,14 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split != undefined)
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -963,22 +1157,23 @@ $(document).ready(function()
 
 function TagURL(listaTag)
 {
-
     for (l in listaTag)
     {
         var a = listaTag[l].replace("+", "");
         var b = ".c-" + a;
 
-        if (b != ".c-mujer" && b != ".c--hombre" && b != ".c--mujer" && b != ".c-hombre")
+        if (b != ".c-Categoria2_Calzado_Mujer" && b != ".c--Categoria2_Calzado_Hombre" && b != ".c--Categoria2_Calzado_Mujer" && b != ".c-Categoria2_Calzado_Hombre")
         {
+            var box = b.split(".c-");
+            var box2 = box[box.length-1].toString().split("_");
+            var ex = box2[0].toString().toLowerCase()
 
             if($(b).hasClass("check") && $(b).hasClass("categ"))
             {
                 var nombre = $(b).attr("value2");
                 var va = $(b).attr("value");
-                var block =
-                        '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                        +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul>';
+                var block ='<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                        +va+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+','+"'"+va+"'"+')"></i></div></li></ul></li>';
 
                 var classNombre = "." + nombre;
                 var textoRuta = "Home";
@@ -987,8 +1182,6 @@ function TagURL(listaTag)
 
                 $(b).attr("checked", true);
                 $(".ch-"+nombre).removeClass("hidden");
-
-                // $(".h-"+a).attr('onclick','uncheck("'+a+'","'+nombre+'");');
 
                 if($(".ch-"+nombre).hasClass("c-variable_uno"))
                 {
@@ -1037,8 +1230,8 @@ function TagURL(listaTag)
                         var nombre2 = $(b).attr("value2");
                         var nombre = $(b).attr("tag");
                         var block =
-                                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                                +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+                                '<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                                +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
                         $(".texto-ruta").html(textoRuta +" / "+ nombre2);
                     }
@@ -1046,8 +1239,8 @@ function TagURL(listaTag)
                     {
                         var nombre = $(b).attr("tag");
                         var block =
-                                '<ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
-                                +nombre+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul>';
+                                '<li class="fil-ul" id="'+ ex +'"><ul class="fil-ul '+nombre+'"><li class="li-fil"><div class="ordenar-precio '+nombre+'"> '
+                                +nombre2+' <i class="fa fa-times aria-hidden="true" onclick="borrar('+"'"+nombre+"'"+')"></i></div></li></ul></li>';
 
                         $(".texto-ruta").html(textoRuta +" / "+ nombre);
                     }
@@ -1093,7 +1286,7 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    history.pushState('', 'Placare', 'listado_productos?tag='+config.tag);
+    history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -1124,7 +1317,7 @@ function borrar(nombre,value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -1148,7 +1341,7 @@ function borrar(nombre,value)
             };
         };
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
