@@ -101,7 +101,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner1" name="image" id="img_banner1" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_banner1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner1',500) }}'" class=" img_banner_list desaturada" alt="item">
+        <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_banner1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner1',500) }}'" class=" img_banner_list desaturada" alt="item">
         <div class="" align="center">
             <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_banner' }}"> 
             {{ read_text(site.name +  '_text_banner') }}

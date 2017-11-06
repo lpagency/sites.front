@@ -715,6 +715,11 @@ a.talla {
     background-color: #000;
 }
 
+.variant-value.btn-disabled
+{
+    background: transparent;
+}
+
 .variant-value.active>div{
     color: white;
 }
@@ -1488,7 +1493,6 @@ hr.lon {
     margin-bottom: 22px;
     font-size: 13px;
 }
-
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
 
@@ -4604,3 +4608,20 @@ hr.lon {
 
 
 }
+
+.btn-disabled:hover{
+    background-color: transparent;
+}
+
+.btn-disabled
+{
+    border-color: #ccc;
+}
+
+.btn-disabled, .btn-disabled>div,
+.btn-disabled>div:hover, .btn-disabled:hover,
+.variant-value.btn-disabled.active
+{
+    color: #ccc!important;
+}
+
