@@ -1,0 +1,245 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+    <script>
+        $(document).ready(function(){
+          $('.dropdown-submenu a.test').on("click", function(e){
+            $(this).next('ul').toggle();
+            e.stopPropagation();
+            e.preventDefault();
+          });
+        });
+    </script>
+    
+<script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
+
+<script type="text/javascript">
+
+    $(document).ready(function()
+    {
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(48,48,48);
+
+        $(document).ecommerce('product_detail', {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'checkout_url': checkout_url,
+            'product_id' : {{ product_id }},
+            'container' : '.product-detail',
+            onLoad: function(product){
+                related(product.bullet_3);
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
+                }
+                            var mainImage = $("#mainImage");
+            $(".img-container img").hover(function(){
+             var src = $(this).attr("src");
+             $("#mainImage").attr("src",src);
+           });
+
+            mainImage.on("click",function(){
+              $(this).css("transform","scale(1.1)");
+            });
+
+            }
+
+        });
+
+        // productos relacionados
+        var related = function(tag)
+        {
+            var config = {
+                'app_public' : app_public,
+                'base_url' : base_url,
+                'maxProducts' : 8,
+                'templateOrigin' : '#product_template',
+                'tag' : '',
+                'ignore_stock' : true,
+                    'onLoad':function(){
+                         // $('.ellipsis').ellipsis();
+                         $(".ellipsis").dotdotdot();
+                     }
+                
+            };
+            $('.product-related').ecommerce('product_box', config);
+        };
+    });
+
+</script>
+
+<script type="text/template" id="product_detail">
+
+<section>
+<div class="container min">
+     <div align="center">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+       <hr class="detalle">
+   </div>
+   </div>
+</div>
+
+      <div class="container min">
+           <div class="col-xs-12 col-md-8 col-sm-8 image_little">
+                     
+                     <div class="img-container">  
+                            <img class="{{! images[0]['thumb_500']|hide_if_empty}} col-xs-3 img_prod_little" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
+                         </div>
+                         <div class="img-container">
+                             <img class="{{! images[1][’thumb_1’]|hide_if_empty }} " src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" /> 
+                         </div>
+                      
+                          <div class="img-container">
+                            <img class="{{! images[2]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[2]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
+                          </div>
+
+                          <div class="img-container">
+                               <img class="{{! images[3]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[3]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
+                          </div>
+
+                          <div class="img-container">
+                             <img class="{{! images[4]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[4]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
+                         </div>
+
+                         <div class="img-container">
+                             <img class="{{! images[5]['thumb_500']|hide_if_empty }} col-xs-3  img_prod_little" src="{{! images[5]['thumb_500'] }}" title="" alt="" onload="this.onload='';this.src={{! images[5]['thumb_500']}}" />
+                         </div>
+                  
+          </div>
+          
+                <div align="center">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div id="mainDiv">
+                    <div class="main-img-container">
+                       <img id='mainImage' class="fondo-detalle" src="{{! images[0]['thumb_500'] }}"/>
+                    </div>
+                  </div>
+           </div>
+         </div>
+
+
+
+          <div class="col-md-6 col-sm-6 col-xs-12">
+             <h1 class="name name_prod_detail ellipsis multiline" class="line" href="#">{{! name }}</h1>
+              <h3 class="descr_prod_detail ellipsis multiline"> 
+             {{! description }}</h3>
+             <button type="button" class="btn add-to-cart btn-success comprar" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button>
+          </div>
+
+    </section>
+
+
+        <div class="clearfix-fun-2"></div>
+        <div class="container">
+
+        </div>
+    </div>
+
+</script>
+
+
+<!-- 
+{% end %} -->
+
+
+
+{% block body %}
+
+
+
+<div class="container-fluid">
+    
+    <div class="container  product-page"></div>
+
+    </div>
+
+</div>
+
+
+<div class="product-detail"></div>
+<div class="container min">
+   <div align="center">
+    <div class="col-md-12 col-sm-12 col-xs-12">
+       <hr class="detalle">
+   </div>
+   </div>
+</div>
+
+
+<!-- ***productos relacionados** -->
+<!-- <hr class="detail">
+<div class="container dano">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-relac text-center"><strong class="editabletext">Productos relacionados</strong></h1>
+            <hr class="lin">
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+
+
+
+
+<!-- <div class="container-fluid">
+    <div class="space80">
+         <div class="productlist dano">
+                <article>
+                    <header>
+                        <h1 class="h1-art especial" >Contenido Relacionado</h1>
+                    </header>
+                </article>
+
+                <div class="row cont-rel">
+                    {{ getArticleList() }}
+                </div>
+
+         </div>
+    </div>
+ </div>
+
+<div class="space80"></div>
+
+<div class="container-fluid dano">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-relac text-left"><strong class="editabletext">Contenido relacionado</strong></h1>
+        </div>
+    </div>
+    <div class="row product-related">
+    </div>
+</div> -->
+       
+
+
+<!-- 
+<div align="center">
+    <h1>fdjfidjfidfidjfidifjdi</h1>
+</div> -->
+
+
+{% include '../home/footer.html' %}
+{% end %}
