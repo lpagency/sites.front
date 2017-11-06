@@ -24,7 +24,25 @@
 
 
 {% block javascript %}
-	<script type="text/javascript" src="{{ site_base }}/static/js/redirect.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/spec_filter_h.js"></script>
+<!-- 
+    <script type="text/javascript">
+      $(document).ready(function()
+      {
+
+        $(".mobile2").css("display", "none");
+
+        $(document).on("click", ".bars", function()
+        {
+
+          $(".mobile2").toggle("slow");
+
+        });
+      });
+
+    </script> -->
 
     <script type="text/javascript">
 
@@ -315,7 +333,7 @@
     <section>
         <div class="col-md-8 col-sm-8 col-xs-12 muu">
           <div class="col-md-12 col-sm-12 col-xs-12 mii">
-            <div class="texto-header-pro-2 tag-header"></div><div class="texto-header-pro-3 tag-header2"></div>
+            <div class="texto-header-pro-2 tag-header">hombres</div><div class="texto-header-pro-3 tag-header2"></div>
           </div>
         <div class="col-md-12 col-sm-12 col-xs-12 hidden-xs visible-md visible-sm visible-lg">
             <div class="dropdown">
@@ -685,7 +703,7 @@
 
 <div class="visible-xs hidden-md hidden-sm hidden-lg" style="height:450px;display:block;margin:auto auto 0 auto;"></div>
 <div class="col-md-8 col-sm-8 col-xs-12  pinki">
-	<h5>Espere por favor...</h5>
+<div class="products" style="min-height: 130px"></div>
 	<div class="col-xs-12">
 		<div align="center">
 			<a class="link-recargar hidden limpiar">Reanudar Busqueda</a>

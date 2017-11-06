@@ -433,7 +433,7 @@ width: 12.666667%;
     background-color: transparent;
     border-color: transparent;
     display: inline-block;
-    padding: 7px 16px;
+    padding: 0px;
     margin-bottom: 15px;
     font-size: 13px;
     line-height: 1.42857143;
@@ -448,12 +448,13 @@ width: 12.666667%;
     background-image: none;
     border: 1px solid transparent;
     border-radius: 4px;
-    margin-top: 10px;
+    margin-top: 16px;
     font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    left: 10px;
+    left: 28px;
     position: relative;
+    
 }
 
 .nav>li>a {
@@ -471,7 +472,35 @@ width: 12.666667%;
 }
 
 .misi {
-    width: 11.666667%;
+    width: 13.666667%;
+}
+
+.dropdown {
+    position: relative;
+    padding: 0px;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 118%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 251px;
+    padding: 20px 0;
+    margin: 2px 0 0;
+    font-size: 16px;
+    text-align: left;
+    list-style: none;
+    background-color: #E5E5E4;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
 }
 
 
