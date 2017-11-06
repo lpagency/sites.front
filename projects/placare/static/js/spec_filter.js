@@ -17,7 +17,7 @@ $(document).ready(function()
 
     var base_url = $.environmentVar(
         'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/',
+        'http://apibodegas.ondev.today/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://lpcheckout.ondev.today',
@@ -1214,7 +1214,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+            }
         }
         else
         {
@@ -1369,7 +1376,14 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    history.pushState('', 'Placare', 'listado_productos?tag='+config.tag);
+    if(window.split == "mujeres")
+    {
+        history.pushState('', 'Placare', window.split);
+    }
+    else
+    {
+        history.pushState('', 'Placare', window.split);
+    }
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -1400,7 +1414,14 @@ function borrar(nombre,value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split == "mujeres")
+        {
+            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
+        }
+        else
+        {
+            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -1424,7 +1445,14 @@ function borrar(nombre,value)
             };
         };
 
-        history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
+        if(window.split == "mujeres")
+        {
+            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
+        }
+        else
+        {
+            history.pushState('', 'Placare', window.split + '-mujer?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
