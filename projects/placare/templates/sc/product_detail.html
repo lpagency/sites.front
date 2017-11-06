@@ -159,13 +159,14 @@
                 var promo = Utils.money(promotion);
                 var original = Utils.money(main);
 
-                if(promotion != 0){
+                if(promotion > 0){
                   var resta = Math.trunc((main - promotion)*100/main);
                   $(".descuento-detalle").removeClass("hidden");
                   $(".descuento-detalle").html("("+resta+"% OFF)");
                   $('.show-on-promotion').removeClass('show-on-promotion');
-
                   $(".precio-oferta").html(promo);
+                  $(".car").attr("product-price", promotion);
+                  $(".car-2").attr("product-price", promotion);
                 }else{
                     $(".precio-oferta").html(original);
                     $(".descuento-detalle").addClass("hidden");

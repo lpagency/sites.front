@@ -89,13 +89,56 @@ li{
 
 /*----------------------------------------------RESPONSIVE------------------------------------------*/
 @media (max-width: 1024px){
-    #map {
+#map {
     height: 125px;
-    width: 256px;
+    width: 243px;
     position: relative;
-    top: 32px;
+    top: 23px;
     margin-bottom: 20px;
     right: 50px;
+}
+
+.text-fot {
+    color: white;
+    font-weight: 100;
+    text-align: left;
+    margin-bottom: -5px;
+    margin-left: 25px;
+}
+
+.text-fot-ico {
+    color: white;
+    font-weight: 100;
+    margin-left: -18px;
+    margin-top: -9px;
+}
+
+.img-foot {
+    height: 105px;
+    width: 190px;
+    float: left;
+    margin-top: -11px;
+    margin-bottom: 21px;
+    object-fit: scale-down;
+}
+
+.caja-fo {
+    height: 51px;
+    width: 100px;
+    margin-top: 0px;
+    margin-bottom: 21px;
+    left: -55px;
+    position: relative;
+}
+
+.caja-fo-red {
+    height: 45px;
+    width: 55px;
+    /* float: left; */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    position: relative;
+    left: -27px;
 }
 
 }
