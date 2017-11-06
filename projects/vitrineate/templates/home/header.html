@@ -1,0 +1,210 @@
+           <div class="container min hidden-sm">
+             <div class="col-md-12">
+               <li class="bolsa" id="open-cart" data-toggle="modal" data-target="#myModal">
+                <img class="img-bolsa" src="https://84static.loadingplay.com/static/images/a7e448549edf96dc7351da41bda4ffc2_shopping_bag.png">
+                COMPRAR
+              </li>
+            </div>
+          </div>
+
+<div class="container min visible-lg visible-md hidden-sm hidden-xs menu-safari">
+  <nav class="navbar">
+    <div class="container min">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar9">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      
+      <div class="brand-centered">
+      <a class="navbar-brand" href="">
+        <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+              <div class="base-logo">
+                <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
+                </div>
+            </a>
+        </div>
+        <!-- /LOGO -->
+      </a>
+      </div>
+      
+      <div id="navbar9" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-left">
+
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ceremonias'">CEREMONIAS</button>
+            <div class="w3-dropdown-content w3-border">
+              <li class="dropdown-submenu">
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=velatorios">VELATORIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=mat_judio">MATRIMONIO JUDIO</a></li>
+              </li>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=novias'">RAMOS DE NOVIAS</button>
+            <div class="w3-dropdown-content w3-border">
+             <li class="dropdown-submenu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=novias">NOVIAS</a></li>
+              </li>
+                
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ocasiones'">OCASIONES</button>
+            <div class="w3-dropdown-content w3-border">
+             <li class="dropdown-submenu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=arreglos">ARREGLOS DE FLORES</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=regalos">REGALOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cajas">CAJAS</a></li>
+              </li>
+                
+            </div>
+          </div>
+
+         <!--  <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=evento'">EVENTOS</button>
+            <div class="w3-dropdown-content w3-border">
+              <li class="dropdown-submenu">
+               <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=buffet">ARREGLO BUFFET</a></li>
+               <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=centro_mesa">CENTRO DE MESAS</a></li>
+              </li>
+
+            </div>
+          </div> -->
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red">NOSOTROS</button>
+            <div class="w3-dropdown-content w3-border">
+              <a href="http://luttyflores2.lpe.cl/article/detail/quienes_somos/2021">QUIENES SOMOS</a> 
+              <a href="http://luttyflores2.lpe.cl/article/detail/nuestros_especialistas/2022">NUESTROS COLABORADORES</a>
+            </div>
+          </div>
+          <div class="w3-dropdown-hover">
+            <button class="w3-btn w3-red">NUESTRAS FLORES</button>
+            <div class="w3-dropdown-content w3-border">
+              <a href="http://luttyflores2.lpe.cl/article/detail/venta_de_arreglos/2023">VENTA DE ARREGLOS</a> 
+              <a href="http://luttyflores2.lpe.cl/article/detail/matrimonios_y_eventos/2024">MATRIMONIOS Y EVENTOS</a>
+              <a href="http://luttyflores2.lpe.cl/article/detail/flores_para_tu_casa/2025">FLORES PARA TU CASA</a>
+              <a href="">CUIDA TUS FLORES</a>
+              <a href="{{ site_base }}/locales">PUNTOS DE VENTA</a>
+            </div>
+          </div>
+          <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  
+  </nav>
+</div>
+
+
+
+<!-- ******************MENU MOVIL*********************** -->
+
+ <!-- Navigation -->
+ <div class="container">
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top hidden-md hidden-lg hidden-sm visible-xs">
+        <div class="container  header">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    Menu <i class="fa fa-bars"></i>
+                </button>
+                <li class="" id="open-cart" data-toggle="modal" data-target="#myModal">
+                  <!-- <a href="" class="com"> Comprar </a> -->
+                  <img class="img-bolsa" src="https://84static.loadingplay.com/static/images/a7e448549edf96dc7351da41bda4ffc2_shopping_bag.png">
+                </li>
+                <a class="navbar-brand" href="">
+                  <div style="position:relative">
+                         <div class="base-logo">
+                             {% if is_admin %}
+                             <div class="image-upload lapiz visible-movil">
+                                <label for="img_logo">
+                                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                               </label>
+                               <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo">
+                           </div>
+                           {% end %}
+                           <img id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',) }}'" class="img-responsive logo" alt="item">
+                       </div>
+               </div>
+                     </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-left">
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">CEREMONIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=velatorios">VELATORIOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=mat_judio">MATRIMONIO JUDIO</a></li>
+                </ul>
+              </li>
+                <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">RAMOS DE NOVIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=novias">NOVIAS</a></li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">OCASIONES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                 <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=arreglos">ARREGLOS DE FLORES</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=regalos">REGALOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cajas">CAJAS</a></li>
+                </ul>
+              </li>
+              <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NOSOTROS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                   <li ><a href="http://luttyflores2.lpe.cl/article/detail/quienes_somos/2021">QUIENES SOMOS</a> </li>
+                   <li> <a href="http://luttyflores2.lpe.cl/article/detail/nuestros_especialistas/2022">NUESTROS COLABORADORES</a> </li>
+                </ul>
+              </li>
+                <li class="">
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NUESTRAS FLORES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">
+                  <li> <a href="http://luttyflores2.lpe.cl/article/detail/venta_de_arreglos/2023">VENTA DE ARREGLOS</a></li>
+                  <li> 
+                  <a href="http://luttyflores2.lpe.cl/article/detail/matrimonios_y_eventos/2024">MATRIMONIOS Y EVENTOS</a></li>
+                  <li>
+                  <a href="http://luttyflores2.lpe.cl/article/detail/flores_para_tu_casa/2025">FLORES PARA TU CASA</a>
+                  <a href="">CUIDA TUS FLORES</a>
+                  <a href="{{ site_base }}/locales">PUNTOS DE VENTA</a></li>
+                </ul>
+              </li>
+              <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a></li>
+            </ul>
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</div>
+
+
