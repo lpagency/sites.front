@@ -18,6 +18,13 @@
 
 {% block javascript %}
     <script type="text/javascript" src="{{ site_base }}/static/js/cart2.config.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var hyper = Utils.getUrlParameter('tag');
+            $(".lista-titulo").html(hyper);
+        });
+    </script>
 {% end %}
 
 
@@ -32,7 +39,7 @@
 <section class="container lista">
     <div class="row">
         <div class="col-xs-12">
-            <h3 class="lista-titulo lista-titulo-alt">Audio profesional</h3>
+            <h3 class="lista-titulo lista-titulo-alt"></h3>
             <div class="products">
             </div>
         </div>
