@@ -471,7 +471,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -537,7 +544,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -602,7 +616,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -667,7 +688,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+           if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -734,7 +762,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -801,7 +836,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -867,7 +909,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -933,7 +982,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -999,7 +1055,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -1065,7 +1128,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -1131,7 +1201,14 @@ $(document).ready(function()
 
         if(window.split != undefined)
         {
-            history.pushState('', 'Placare', window.split + '-hombre?tag='+nombre);
+            if(window.split == "hombre")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+            }
+            else
+            {
+                history.pushState('', 'Placare', window.split + '-hombres?tag='+nombre);
+            }
         }
         else
         {
@@ -1286,7 +1363,7 @@ function limpiar(config, hyper)
     listaTag.push(config.tag);
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(config);
-    history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
+    history.pushState('', 'Placare', window.split);
 };
 
 //<-------------END FUNCION LIMPIAR---------------->
@@ -1317,7 +1394,14 @@ function borrar(nombre,value)
                 window.config.tag =window.listaTag.toString();
             };
         };
-        history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
+                if(window.split == "hombres")
+        {
+            history.pushState('', 'Placare', window.split);
+        }
+        else
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
@@ -1341,7 +1425,14 @@ function borrar(nombre,value)
             };
         };
 
-        history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
+        if(window.split == "hombres")
+        {
+            history.pushState('', 'Placare', window.split);
+        }
+        else
+        {
+            history.pushState('', 'Placare', window.split + '-hombre?tag='+window.config.tag);
+        }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
