@@ -24,9 +24,20 @@
 {% end %}
 
 <section class="container-fluid banner">
-        <img src="../static/img/banner-2.jpg" alt="Banner" class="banner-bg">
+         <div style="position:relative;">
+           {% if is_admin %}
+           <div class="image-upload lapiz visible-movil">
+            <label for="img_banner_approach">
+             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_approach" name="image" id="img_banner_approach" >
+     </div>
+     {% end %}
+     <img id="{{ site.name }}_banner_approach" src="{{ read_image(site.name + '_banner_approach', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_approach',) }}'" class="banner-bg" alt="item">
+     </div>
+        <!-- <img src="../static/img/banner-2.jpg" alt="Banner" class="banner-bg"> -->
         <div class="banner-copy banner-copy-right">
-            <h1 class="banner-title">Our<br>Approach</h1>
+            <div class="banner-title {{editabletext}}" text-id="{{ site.name + '_approach' }}"> {{ read_text(site.name +  '_approach') }}</div>
         </div>
     </section>
 
