@@ -137,7 +137,7 @@
 
 .dropdown-menu {
     position: absolute;
-    top: 138%;
+    top: 143%;
     left: 0;
     z-index: 1000;
     display: none;
@@ -198,21 +198,25 @@
     outline-offset: 0px;
 }
 
-.so{
-    left: 18px;
+.so {
+    left: 6px;
     position: relative;
 }
 
-.so-2{
-    left: 18px;
+.so-2 {
+    right: 72px;
     position: relative;
 }
 
-.so-3{
-    right: 0px;
-    position: relative;
+
+.header-ja{
+    margin-left: -124px;
 }
 
+
+.header-na{
+     margin-left: -38px;
+}
 
 /*----------------------------------------RESPONSIVE------------------------------*/
 @media (max-width: 1199px){
@@ -265,6 +269,14 @@
 
 .so-3{
     right: 0px;
+}
+
+.header-na {
+    margin-left: 0px;
+}
+
+.header-ja {
+    margin-left: 0px;
 }
 
 }
