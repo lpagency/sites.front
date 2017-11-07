@@ -46,46 +46,122 @@
             <div class="col-xs-12">
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text">A broad <span class="text-black text-bold">network</span> of contacts is our primary source of deal flow. Through these relationships we have access to deals being marketed, as well as direct access to business owners andintermediaries which enables us to originate proprietary deals.</p>
+                        <div class="text text-alt approach-item-text  {{editabletext}}" text-id="{{ site.name + '_approach_box_1' }}"> {{ read_text(site.name +  '_approach_box_1') }}</div>
                     </div>
-                    <img src="../static/img/approach-1.png" alt="Approach" class="approach-item-img">
+                    <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_1">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_1" name="image" id="img_ban_approach_1" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_1" src="{{ read_image(site.name + '_ban_approach_1', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_1',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                    <!-- <img src="../static/img/approach-1.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Due diligence</span>  is at the core of our practice. We do a thorough analysis of industry dynamics as well as the particulars of the target including its risks and opportunities.</p>
+                        <div class="text text-alt approach-item-text {{editabletext}}" text-id="{{ site.name + '_approach_box_2' }}"> {{ read_text(site.name +  '_approach_box_2') }}</div>
                     </div>
-                    <img src="../static/img/approach-2.png" alt="Approach" class="approach-item-img">
+                    <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_2">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_2" name="image" id="img_ban_approach_2" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_2" src="{{ read_image(site.name + '_ban_approach_2', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_2',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                    <!-- <img src="../static/img/approach-2.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Discipline</span> is a key aspect of our approach. We are focused on doing great deals, we are not in a hurry to close deals just to deploy money.</p>
+                        <div class="text text-alt approach-item-text {{editabletext}}" text-id="{{ site.name + '_approach_box_3' }}"> {{ read_text(site.name +  '_approach_box_3') }}</div>
                     </div>
-                    <img src="../static/img/approach-3.png" alt="Approach" class="approach-item-img">
+                      <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_3">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_3" name="image" id="img_ban_approach_3" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_3" src="{{ read_image(site.name + '_ban_approach_3', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_3',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                   <!--  <img src="../static/img/approach-3.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Industry experts</span> help us speed-up our learning curve. We involve experts from the initial stages of a deal and create working relationships during the lifetime of the investment.
-                        </p>
-                    </div>
-                    <img src="../static/img/approach-4.png" alt="Approach" class="approach-item-img">
+                        <div class="text text-alt approach-item-text {{editabletext}}" text-id="{{ site.name + '_approach_box_4' }}"> {{ read_text(site.name +  '_approach_box_4') }} </div>
+                    </div>          
+                    <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_4">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_4" name="image" id="img_ban_approach_4" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_4" src="{{ read_image(site.name + '_ban_approach_4', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_4',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                   <!--  <img src="../static/img/approach-4.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Plans</span> for arriving in new companies are rigorously designed so our job can be effective since the first day. These plans consist of a combination of short term actions, strategic planning and concrete operational improvements.</p>
+                        <div class="text text-alt approach-item-text  {{editabletext}}" text-id="{{ site.name + '_approach_box_5' }}"> {{ read_text(site.name +  '_approach_box_5') }}</div>
                     </div>
-                    <img src="../static/img/approach-5.png" alt="Approach" class="approach-item-img">
+                    <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_5">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_5" name="image" id="img_ban_approach_5" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_5" src="{{ read_image(site.name + '_ban_approach_5', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_5',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                    <!-- <img src="../static/img/approach-5.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Managers</span> are the captains of our portfolio companies. We work and support them. We don´t micro manage but rather we complement their skills and knowledge to succeed in our investments.</p>
+                        <div class="text text-alt approach-item-text  {{editabletext}}" text-id="{{ site.name + '_approach_box_6' }}"> {{ read_text(site.name +  '_approach_box_6') }}</div>
                     </div>
-                    <img src="../static/img/approach-6.png" alt="Approach" class="approach-item-img">
+                    <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_6">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_6" name="image" id="img_ban_approach_6" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_6" src="{{ read_image(site.name + '_ban_approach_6', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_6',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                    <!-- <img src="../static/img/approach-6.png" alt="Approach" class="approach-item-img"> -->
                 </div>
                 <div class="approach-item">
                     <div class="approach-item-copy">
-                        <p class="text text-alt approach-item-text"><span class="text-black text-bold">Other shareholders</span> are our allies. We treat them fairly and respectfully. We align incentives from the outset of our investment to have a common shared goal so that all of the efforts are focused on creating value at the company level.</p>
+                        <div class="text text-alt approach-item-text {{editabletext}}" text-id="{{ site.name + '_approach_box_7' }}"> {{ read_text(site.name +  '_approach_box_7') }}</div>
                     </div>
-                    <img src="../static/img/approach-7.png" alt="Approach" class="approach-item-img">
+                        <div style="position:relative;">
+                     {% if is_admin %}
+                     <div class="image-upload lapiz visible-movil">
+                      <label for="img_ban_approach_7">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_ban_approach_7" name="image" id="img_ban_approach_7" >
+                   </div>
+                   {% end %}
+                   <img id="{{ site.name }}_ban_approach_7" src="{{ read_image(site.name + '_ban_approach_7', 1) }}" onload="this.src='{{ read_image(site.name + '_ban_approach_7',) }}'" class="approach-item-img" alt="item">
+                 </div>
+                   <!--  <img src="../static/img/approach-7.png" alt="Approach" class="approach-item-img"> -->
                 </div>
             </div>
         </div>
