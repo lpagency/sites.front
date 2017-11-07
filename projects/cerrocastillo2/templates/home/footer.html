@@ -19,13 +19,9 @@
                         <!-- <img src="../static/img/logo-blanco.svg" alt="Logo" class="footer__logo-img"> -->
                     </a>
                     <div class="footer-copy">
-                        <h5 class="text text-white text-small footer-text">© CERRO CASTILLO CAPITAL</h5>
-                        <p class="text text-white text-small footer-text">Rosario Norte 532, of. 1501
-                            <br>Santiago de Chile
-                            <br>Tel: 56 2 2963 9600
-                            <br>
-                            <a href="#" class="text text-white text-small text-link">Send us an email</a>
-                        </p>
+                        <div class="text text-white text-small footer-text {{editabletext}}" text-id="{{ site.name + '_texto_footer_2' }}"> {{ read_text(site.name +  '_texto_footer_1') }} </div>
+                        <div class="text text-white text-small footer-text {{editabletext}}" text-id="{{ site.name + '_texto_footer_2' }}"> {{ read_text(site.name +  '_texto_footer_2') }} </div>
+                        <div class="text text-white text-small text-link {{editabletext}}" text-id="{{ site.name + '_texto_footer_3' }}"> {{ read_text(site.name +  '_texto_footer_3') }} </div>
                     </div>
                 </div>
             </div>
