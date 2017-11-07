@@ -103,7 +103,6 @@
     </section>
 
     <section class="container-fluid intro">
-    <div style="position:relative;">
            {% if is_admin %}
            <div class="image-upload lapiz visible-movil">
             <label for="img_banner_home_2">
@@ -113,7 +112,7 @@
      </div>
      {% end %}
      <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home_2',) }}'" class="intro-img" alt="item">
-   </div>
+  
         <!-- <img src="../static/img/mountain-bg.svg" alt="Background image" class="intro-img"> -->
         <div class="container">
             <div class="row">
