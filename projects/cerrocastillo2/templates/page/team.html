@@ -45,17 +45,39 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="popup-open team-item" data-popup="gonzalo">
-                    <img src="../static/img/team.svg" alt="Team" class="team-item-bg">
+                 <div style="position:relative;">
+                   {% if is_admin %}
+                   <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_chic_1">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_chic_1" name="image" id="img_banner_chic_1" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
+                 </div>
+                    <!-- <img src="../static/img/team.svg" alt="Team" class="team-item-bg"> -->
                     <div class="team-item-copy">
-                        <h3 class="text text-brand text-big team-item-name">Gonzalo Dulanto</h3>
-                        <h4 class="text text-accent text-alt team-item-role">CEO/PARTNER</h4>
+                        <div class="text text-brand text-big team-item-name {{editabletext}}" text-id="{{ site.name + '_team_ban_1' }}"> {{ read_text(site.name +  '_team_ban_1') }}</div>
+                        <div class="text text-accent text-alt team-item-role {{editabletext}}" text-id="{{ site.name + '_team_ban_2' }}"> {{ read_text(site.name +  '_team_ban_2') }}</div>
                     </div>
                 </div>
                 <div class="popup-open team-item" data-popup="sergio">
-                    <img src="../static/img/team.svg" alt="Team" class="team-item-bg">
+                       <div style="position:relative;">
+                   {% if is_admin %}
+                   <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_chic_2">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_chic_2" name="image" id="img_banner_chic_2" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_banner_chic_2" src="{{ read_image(site.name + '_banner_chic_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_2',) }}'" class="team-item-bg" alt="item">
+                 </div>
+                 <!--    <img src="../static/img/team.svg" alt="Team" class="team-item-bg"> -->
                     <div class="team-item-copy">
-                        <h3 class="text text-brand text-big team-item-name">Sergio Gutierrez</h3>
-                        <h4 class="text text-accent text-alt team-item-role">CEO/PARTNER</h4>
+                        <div class="text text-brand text-big team-item-name {{editabletext}}" text-id="{{ site.name + '_team_ban_3' }}"> {{ read_text(site.name +  '_team_ban_3') }} </div>
+                        <div class="text text-accent text-alt team-item-role {{editabletext}}" text-id="{{ site.name + '_team_ban_4' }}"> {{ read_text(site.name +  '_team_ban_4') }} </div>
                     </div>
                 </div>
             </div>
