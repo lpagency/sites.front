@@ -30,7 +30,7 @@
         <div class="form-group required">
             <label class="control-label">url</label>
             <input name="url" id="banner_url_field" placeholder="Ingresar direcci&oacute;n web" class="form-control" type="text" value="{% if data is not None %}{{ data.url or ''}}{% end %}">
-            <div id="error_banner_url" for="url" class="error g-alert">Ingresar url completa. Debe comenzar con http:// o https://</div>
+            <div id="error_banner_url" for="url" class="error g-alert">Ingresar url completa. Debe comenzar con https:// o https://</div>
         </div>
         {% if data is not None %}
             {% set tags = data.tag_list %}
