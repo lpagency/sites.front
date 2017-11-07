@@ -4,15 +4,6 @@ body , html{
     overflow-x: hidden;
 }
 
-a.loki {
-    float: left;
-    position: relative;
-    top: 0px;
-    color: black;
-    text-align: left;
-    left: 194px;
-}
-
 div.upload input, div.image-upload input {
     position: absolute;
     left: auto;
@@ -260,6 +251,21 @@ img.lugar{
 }
 
 /*------------------------------------------RESPONSIVE------------------------------------------*/
+
+@media (max-width: 1280px){
+  
+a.loki {
+    float: left;
+    position: relative;
+    top: 0px;
+    color: black;
+    text-align: left;
+    left: 194px;
+    display: none;
+}
+
+}
+
 @media (max-width: 1111px){
     .mobile{
        margin-top: -83px !important;
@@ -314,6 +320,16 @@ img.lugar {
 th.canti{
     position: relative;
     left: -3%;
+}
+
+a.loki {
+    float: left;
+    position: relative;
+    top: 0px;
+    color: black;
+    text-align: left;
+    left: 194px;
+    display: inherit;
 }
 
 }
@@ -435,6 +451,16 @@ th.canti{
     overflow: hidden;
     padding: 0px 18px;
     margin-bottom: 17px;
+}
+
+a.loki {
+    float: left;
+    position: relative;
+    top: 0px;
+    color: black;
+    text-align: left;
+    left: 194px;
+    display: inherit;
 }
 
 }
