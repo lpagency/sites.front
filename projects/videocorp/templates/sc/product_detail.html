@@ -27,6 +27,10 @@
 
     $(document).ready(function()
     {
+        $(document).on("click", '.producto-preview-item', function(){
+            console.log($(this).attr("src"));
+            $("#img_detail").attr("src", $(this).attr('src'));
+        });
 
        var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
@@ -84,12 +88,14 @@
                 <div class="producto-main">
                     <div class="producto-preview">
                         <div class="producto-preview-lista">
-                            <img src="{{! images[0][2]|hide_if_empty}}" class="producto-preview-item">
-                            <img src="{{! images[1][2]|hide_if_empty}}" class="producto-preview-item">
-                            <img src="{{! images[2][2]|hide_if_empty}}" class="producto-preview-item">
-                            <img src="{{! images[3][2]|hide_if_empty}}" class="producto-preview-item">
+                            <img src="{{! images[0]['thumb_500'] }}" class="{{! images[0]['thumb_200']|hide_if_empty}} producto-preview-item" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
+                            <img src="{{! images[1]['thumb_500'] }}" class="{{! images[1][’thumb_1’]|hide_if_empty }} producto-preview-item" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" />
+                            <img src="{{! images[2]['thumb_500'] }}" class="{{! images[2]['thumb_500']|hide_if_empty }} producto-preview-item" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
+                            <img src="{{! images[3]['thumb_500'] }}" class="{{! images[3]['thumb_500']|hide_if_empty }} producto-preview-item" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
+                            <img src="{{! images[4]['thumb_500'] }}" class="{{! images[4]['thumb_500']|hide_if_empty }} producto-preview-item" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
+                            <img src="{{! images[5]['thumb_500'] }}" class="{{! images[5]['thumb_500']|hide_if_empty }} producto-preview-item" onload="this.onload='';this.src={{! images[5]['thumb_500']}}" />
                         </div>
-                        <img src="{{! images[0]['thumb_500']}}" alt="Producto" class="producto-preview-img">
+                        <img id="img_detail" src="{{! images[0]['thumb_500']}}" alt="Producto" class="producto-preview-img">
                     </div>
                     <div class="producto-intro">
                         <h2 class="producto-titulo">{{! name }}</h2>
