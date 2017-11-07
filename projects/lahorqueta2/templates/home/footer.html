@@ -97,8 +97,13 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_1" name="image" id="img_footer_ico_1" >
                  </div>
                  {% end %}
-                 <img id="{{ site.name }}_footer_ico_1" src="{{ read_image(site.name + '_footer_ico_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_1',) }}'" class="img-redes" alt="item">
+                 <a id="{{ site.name + '_footer_ico_1' }}" href="{{ read_link(site.name + '_footer_ico_1') }}">
+                   <img id="{{ site.name }}_footer_ico_1" src="{{ read_image(site.name + '_footer_ico_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_1',) }}'" class="img-redes" alt="item">
+                 </a>
                  </div>
+                 {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_footer_ico_1' }}" content="{{ read_link(site.name + '_footer_ico_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-12 nimi">
                   <div class="">
@@ -110,8 +115,13 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_2" name="image" id="img_footer_ico_2" >
                  </div>
                  {% end %}
-                 <img id="{{ site.name }}_footer_ico_2" src="{{ read_image(site.name + '_footer_ico_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_2',) }}'" class="img-redes" alt="item">
+                 <a id="{{ site.name + '_footer_ico_2' }}" href="{{ read_link(site.name + '_footer_ico_2') }}">
+                   <img id="{{ site.name }}_footer_ico_2" src="{{ read_image(site.name + '_footer_ico_2', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_2',) }}'" class="img-redes" alt="item">
+                 </a>
                  </div>
+                  {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_footer_ico_2' }}" content="{{ read_link(site.name + '_footer_ico_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-12 nimi">
                   <div class="">
@@ -123,8 +133,13 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_3" name="image" id="img_footer_ico_3" >
                  </div>
                  {% end %}
-                 <img id="{{ site.name }}_footer_ico_3" src="{{ read_image(site.name + '_footer_ico_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_3',) }}'" class="img-redes" alt="item">
+                  <a id="{{ site.name + '_footer_ico_3' }}" href="{{ read_link(site.name + '_footer_ico_3') }}">
+                   <img id="{{ site.name }}_footer_ico_3" src="{{ read_image(site.name + '_footer_ico_3', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_3',) }}'" class="img-redes" alt="item">
+                 </a>
                  </div>
+                  {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_footer_ico_3' }}" content="{{ read_link(site.name + '_footer_ico_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
                 </div>
                 <div class="col-md-2 col-sm-2 col-xs-12 nimi">
                   <div class="">
@@ -136,8 +151,13 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_footer_ico_4" name="image" id="img_footer_ico_4" >
                  </div>
                  {% end %}
+                <a id="{{ site.name + '_footer_ico_4' }}" href="{{ read_link(site.name + '_footer_ico_4') }}">
                  <img id="{{ site.name }}_footer_ico_4" src="{{ read_image(site.name + '_footer_ico_4', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_ico_4',) }}'" class="img-redes" alt="item">
+               </a>
                  </div>
+                {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_footer_ico_4' }}" content="{{ read_link(site.name + '_footer_ico_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
                 </div>
               </div>
 
