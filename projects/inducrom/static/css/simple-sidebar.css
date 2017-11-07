@@ -166,6 +166,26 @@
         position: relative;
         margin-right: 0;
     }
+    #wrapper.toggled #sidebar-wrapper {
+    width: 187px;
+    margin-top: -19px !important;
+    }
+    #sidebar-wrapper {
+    z-index: 1000;
+    position: absolute;
+    left: 0px;
+    width: 0;
+    height: 283px;
+    /* margin-left: 0px; */
+    overflow-y: auto;
+    background: rgba(245, 245, 245, 0.9);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
+   }
 }
 
 @media (max-width: 767px){
