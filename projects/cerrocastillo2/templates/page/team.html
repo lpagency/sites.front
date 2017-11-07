@@ -1,0 +1,60 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+ {% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/dermatologia.js"></script>
+
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+<section class="container-fluid banner">
+        <img src="../static/img/banner-4.jpg" alt="Banner" class="banner-bg">
+        <div class="banner-copy banner-copy-right">
+            <h1 class="banner-title">Team</h1>
+        </div>
+    </section>
+
+    <section class="container team">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="popup-open team-item" data-popup="gonzalo">
+                    <img src="../static/img/team.svg" alt="Team" class="team-item-bg">
+                    <div class="team-item-copy">
+                        <h3 class="text text-brand text-big team-item-name">Gonzalo Dulanto</h3>
+                        <h4 class="text text-accent text-alt team-item-role">CEO/PARTNER</h4>
+                    </div>
+                </div>
+                <div class="popup-open team-item" data-popup="sergio">
+                    <img src="../static/img/team.svg" alt="Team" class="team-item-bg">
+                    <div class="team-item-copy">
+                        <h3 class="text text-brand text-big team-item-name">Sergio Gutierrez</h3>
+                        <h4 class="text text-accent text-alt team-item-role">CEO/PARTNER</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% include '../home/footer.html' %}
+
+{% end %}
+
