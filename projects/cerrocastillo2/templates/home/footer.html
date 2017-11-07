@@ -3,6 +3,7 @@
             <div class="row">
                 <div class="col-xs-12 footer-content">
                     <a href="#" class="footer-logo">
+                      <div style="position:relative;">
                       <div class="caja-logo-footer">
                              {% if is_admin %}
                              <div class="image-upload lapiz visible-movil">
@@ -14,6 +15,7 @@
                            {% end %}
                            <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="footer__logo-img" alt="item">
                        </div>
+                     </div>
                         <!-- <img src="../static/img/logo-blanco.svg" alt="Logo" class="footer__logo-img"> -->
                     </a>
                     <div class="footer-copy">
