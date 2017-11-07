@@ -54,8 +54,14 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_chic_1" name="image" id="img_banner_chic_1" >
                  </div>
                  {% end %}
-                 <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
+                 <a id="{{ site.name + '_banner_chic_1' }}" href="{{ read_link(site.name + '_banner_chic_1') }}">
+                  <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
+                 </a>
                  </div>
+
+                 {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_banner_chic_1' }}" content="{{ read_link(site.name + '_banner_chic_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
                     <!-- <img src="../static/img/team.svg" alt="Team" class="team-item-bg"> -->
                     <div class="team-item-copy">
                         <div class="text text-brand text-big team-item-name {{editabletext}}" text-id="{{ site.name + '_team_ban_1' }}"> {{ read_text(site.name +  '_team_ban_1') }}</div>
@@ -83,7 +89,7 @@
             </div>
         </div>
     </section>
-    
+
 
 
 
