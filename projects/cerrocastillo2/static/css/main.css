@@ -53,6 +53,11 @@ button:focus {
   color: #ffffff;
 }
 
+
+.caja-logo-he{
+  background-color: white;
+}
+
 @media screen and (min-width: 768px) {
   html,
   body {
@@ -175,9 +180,11 @@ button:focus {
 }
 
 @media screen and (min-width: 768px) {
-  .text-big-small {
+.text-big-small {
     font-size: 1.5625rem;
-  }
+    width: 80%;
+}
+
 }
 
 .text-med {
@@ -1059,9 +1066,10 @@ button:focus {
 }
 
 @media screen and (min-width: 1200px) {
-  .focus-item {
-    max-height: 550px;
-  }
+.focus-item {
+    max-height: 100%;
+}
+
 }
 
 .focus-item:first-child {
