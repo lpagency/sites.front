@@ -48,9 +48,8 @@
            'infinite_scroll': true,
            'column': 'name',
            'direction': 'asc',
-           'onLoad':function(){
-              // $('.ellipsis').ellipsis();
-              // $(".ellipsis").dotdotdot();
+           'onLoad':function(products){
+              $(".product-sold-out").attr("disabled", true);
             }
        };
        $('.products').ecommerce(config);
@@ -77,6 +76,23 @@ $("#menu-toggle").click(function(e) {
     e.preventDefault();
     $("#wrapper").toggleClass("toggled");
 });
+</script>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $(document).on("click", ".mas-info", function()
+    {
+      var a = $(this).parent().parent().children("button");
+      if(a.html() == "Agotado")
+      {
+        document.cookie = "stock=none";
+      }
+      else
+      {
+        document.cookie = "stock=true";
+      }
+    });
+  });
 </script>
 
 {% end %}
