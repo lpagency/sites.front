@@ -1,18 +1,7 @@
   <div class="popup" data-popup="contact">
         <div class="popup-close popup-backdrop"></div>
         <div class="popup-content">
-                 <div class="caja-logo-footer">
-                             {% if is_admin %}
-                             <div class="image-upload lapiz visible-movil">
-                                <label for="img_header_logo">
-                                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-                               </label>
-                               <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
-                           </div>
-                           {% end %}
-                           <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="popup-close popup-content-close" alt="item">
-                 </div>
-            <!-- <img src="../static/img/close.svg" alt="Close" class="popup-close popup-content-close"> -->
+            <img src="https://84static.loadingplay.com/static/images/6aac6246036aaa1e1b12d8d0c5129b72_close.svg" alt="Close" class="popup-close popup-content-close">
             <div class="contact">
                 <div class="col-xs-12 col-sm-5 contact-copy">
                     <h3 class="text text-med-big text-black contact-text">Let's sit and talk!</h3>
@@ -36,7 +25,18 @@
         <div class="row">
             <div class="col-xs-12 header-content">
                 <a href="#" class="header-logo">
-                    <img src="../static/img/logo-color.svg" alt="Cerro Castillo Capital Logo" class="header-logo-img">
+                    <div class="caja-logo-footer">
+                       {% if is_admin %}
+                       <div class="image-upload lapiz visible-movil">
+                        <label for="img_header_logo">
+                         <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                     </label>
+                     <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                 </div>
+                 {% end %}
+                 <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="header-logo-img" alt="item">
+                 </div>
+                   <!--  <img src="../static/img/logo-color.svg" alt="Cerro Castillo Capital Logo" class="header-logo-img"> -->
                 </a>
                 <button class="header-btn">
                     <div class="header-btn-line"></div>
