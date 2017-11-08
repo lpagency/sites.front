@@ -379,7 +379,7 @@ $(document).ready(function(){
                       <a id="{{ site.name + '_banner_control_1' }}" href="{{ read_link(site.name + '_banner_control_1') }}" target="_blank">
                       <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo" alt="item">
                       </a>
-                      <!--  <p class="inf">{{! name }}</p> -->
+                       <div class="inf {{editabletext}}" text-id="{{ site.name + '_nombre_producto_1' }}"> {{ read_text(site.name +  '_nombre_producto_1') }}</div>
                  </div>
                  {% if is_admin %}
                  <img class="change-image editablelink" link-id="{{ site.name + '_banner_control_1' }}" content="{{ read_link(site.name + '_banner_control_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
