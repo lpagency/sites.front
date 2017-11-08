@@ -25,6 +25,25 @@
         </script>
 
         <script type="text/javascript" >
+            function getCookie(cname)
+            {
+              var name = cname + "=";
+              var decodedCookie = decodeURIComponent(document.cookie);
+              var ca = decodedCookie.split(';');
+              for(var i = 0; i <ca.length; i++)
+              {
+                    var c = ca[i];
+                    while (c.charAt(0) == ' ')
+                    {
+                        c = c.substring(1);
+                    }
+                    if (c.indexOf(name) == 0)
+                    {
+                        return c.substring(name.length, c.length);
+                    }
+                }
+                return "";
+            }
         $(document).ready(function() 
         {
             var base_url = 'https://apibodegas.loadingplay.com/',
@@ -41,7 +60,7 @@
             // configure for each enviroment
             if ( isLocalHost() ) 
             {
-                base_url = 'http://apibodegas.ondev.today/',
+                base_url = 'https://apibodegas.loadingplay.com/',
                 checkout_url = 'http://lpcheckout.ondev.today';
 
                 // base_url = 'http://apibodegas.ondev.today/';
@@ -62,7 +81,11 @@
                     'product_id' : {{ product_id }},
                     onLoad: function(product) 
                         {
-                            console.log(product);
+                            if(getCookie("stock") == "none")
+                            {
+                                $(".add-to-cart").html("AGOTADO");
+                                $(".add-to-cart").attr("disabled", true);
+                            }
                         }
                 });
             // $(document).on('click','.swiper-button-next', function(){
