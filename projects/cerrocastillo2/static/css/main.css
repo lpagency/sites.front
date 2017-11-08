@@ -43,6 +43,29 @@ button:focus {
   outline: none;
 }
 
+span{
+  font-size: 24px !important;
+}
+
+div.upload input, div.image-upload input {
+    position: absolute;
+    left: auto;
+    right: 0px;
+    top: 0px;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    -moz-opacity: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.posi{
+  position: relative;
+}
+
 ::-moz-selection {
   background-color: #1d4f90;
   color: #ffffff;
@@ -57,6 +80,8 @@ button:focus {
 .caja-logo-he{
   background-color: white;
 }
+
+
 
 @media screen and (min-width: 768px) {
   html,
@@ -170,7 +195,7 @@ button:focus {
 
 @media screen and (min-width: 768px) {
   .text-big-med {
-    font-size: 1.875rem;
+    font-size:24px;
     line-height: 2.5rem;
   }
 }
@@ -230,10 +255,12 @@ button:focus {
 }
 
 @media screen and (min-width: 768px) {
-  .text-small {
+.text-small {
     font-size: 0.75rem;
     line-height: 0.875rem;
-  }
+    width: 200px;
+}
+
 }
 
 /*------------- MODULES IMPORT -------------*/
@@ -372,11 +399,27 @@ button:focus {
   }
 }
 
-.intro-img {
+/*.intro-img {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
+}*/
+
+.intro-img {
+    position: relative;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    height: 324px;
+    object-fit: cover;
+    margin-bottom: 34px;
+}
+
+.intro-copy.estilo {
+    position: relative;
+    top: 100px;
+    margin-bottom: -190px;
 }
 
 .intro-text + .intro-text {
@@ -1144,14 +1187,15 @@ button:focus {
     margin-right: 2.8125rem;
     margin-bottom: 0;
     width: 30%;
-    padding: 0 3rem;
+    padding: 0rem;
     height: 15rem;
   }
 }
 
 .investments-item-logo-img {
-  width: 100%;
-  height: auto;
+    width: 100%;
+    height: 236px;
+    object-fit: contain;
 }
 
 @media screen and (min-width: 768px) {
@@ -1211,7 +1255,7 @@ button:focus {
 }
 
 .team-item {
-  cursor: pointer;
+/*  cursor: pointer;*/
   position: relative;
 }
 
@@ -1226,9 +1270,9 @@ button:focus {
 }
 
 .team-item-bg {
-  width: 100%;
-  height: auto;
-  pointer-events: none;
+    width: 100%;
+    height: 335px;
+    pointer-events: none;
 }
 
 .team-item-copy {
@@ -1242,6 +1286,8 @@ button:focus {
     top: 3rem;
     right: 2rem;
   }
+
+
 }
 
 @media screen and (min-width: 992px) {
@@ -1265,4 +1311,23 @@ button:focus {
 
 .team-popup-text + .team-popup-text {
   margin-top: 1.333rem;
+}
+
+
+@media (max-width: 1190px){
+  .investments-item-logo-img {
+    width: 100%;
+    height: 221px;
+    object-fit: contain;
+}
+
+}
+
+@media (max-width: 767px){
+    .investments-item-logo-img {
+    width: 100%;
+    height: 206px;
+    object-fit: contain;
+}
+
 }
