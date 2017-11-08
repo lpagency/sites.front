@@ -37,7 +37,7 @@
                         <div class="horizontal-center-cont">
                             <div class="box-product-info" onclick="">
                                 <!--<button type="button" class="add-to-cart btn btn-outline" product-id="{{! id }}" product-name="{{! name }}" product-upp="{{! upp }}" product-price="{{! main_price }}">DETALLE</button> -->
-                                <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                                <a class="mas-info" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
                                   <!--   <button type="button" class="Prod-btn " data-toggle="button" aria-pressed="false" autocomplete="off">Agregar al carro</button> -->
                                     <button type="button" class="btn btn-outline">DETALLE</button>
                                 </a>
@@ -49,10 +49,10 @@
                 <img src="{{! images[0][1] }}" onload="this.src='{{! images[0][2] }}'" class="img-responsive lazy" alt="item">
             </div>
         </div>
-        <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" style="z-index: 2;">
+        <a class="mas-info-detalle" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" style="z-index: 2;">
         <h1>{{! name }}</h1>
         </a>
-        <h2>{{! main_price|money }}</h2>
+        <h2 class="add-to-cart">{{! main_price|money }}</h2>
     </div>
 </div>
 
@@ -75,7 +75,7 @@
         // configure for each enviroment
         if ( isLocalHost() )
         {
-            base_url = 'http://apibodegas.ondev.today/',
+            base_url = 'https://apibodegas.loadingplay.com/',
             checkout_url = 'http://lpcheckout.ondev.today';
 
             // base_url = 'http://apibodegas.ondev.today/';
@@ -155,6 +155,38 @@
 
 </script>
 
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $(document).on("click", ".mas-info", function()
+    {
+      var a = $(this).parent().parent().parent().parent().parent().parent().parent().children("h2");
+
+      if(a.html() == "Agotado")
+      {
+        document.cookie = "stock=none";
+      }
+      else
+      {
+        document.cookie = "stock=true";
+      }
+    });
+
+    $(document).on("click", ".mas-info-detalle", function()
+    {
+      var a = $(this).parent().children("h2");
+
+      if(a.html() == "Agotado")
+      {
+        document.cookie = "stock=none";
+      }
+      else
+      {
+        document.cookie = "stock=true";
+      }
+    });
+  });
+</script>
 
 {% end %}
 
