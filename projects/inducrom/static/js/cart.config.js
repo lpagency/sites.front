@@ -107,6 +107,8 @@ $(document).ready(function()
         //     config.operator = "and";
         // }
         config.tag=$(this).attr('tag');
+        $(".products").removeClass("hidden");
+        $(".banners").addClass("hidden");
         // console.log(config);
         
         // facade.page = 1; // o 1 no estoy seguro
