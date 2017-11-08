@@ -59,14 +59,24 @@
     });
 </script>
 
-<!-- <script type="text/javascript">
-    $("#testButton").live("touchstart", function() {
-      $(this).addClass("active");
-    }).live("touchend", function() {
-      $(this).removeClass("active");
-    });
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $(document).on("click", ".mas-info", function()
+    {
+      var a = $(this).children().children("button");
 
-</script> -->
+      if(a.html() == "Agotado")
+      {
+        document.cookie = "stock=none";
+      }
+      else
+      {
+        document.cookie = "stock=true";
+      }
+    });
+  });
+</script>
 {% end %}
 
 
