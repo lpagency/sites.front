@@ -16,6 +16,21 @@
 
 
 <script type="text/javascript">
+  function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
     $(document).ready(function()
     {
         var app_public = $.environmentVar(4,4,4);
@@ -31,7 +46,7 @@
             'https://pay.loadingplay.com/'
         );
 
-        $(document).ecommerce('product_detail', {
+        $('.product-detail').ecommerce('product_detail', {
             'app_public' : app_public,
             'base_url' : base_url,
             'checkout_url': checkout_url,
@@ -39,6 +54,11 @@
             'container' : '.product-detail',
             onLoad: function(product){
                 related(product.bullet_3);
+                if(getCookie("stock") == "none")
+                {
+                  $(".add-to-cart").html("AGOTADO");
+                  $(".add-to-cart").attr("disabled", true);
+                }
             }
         });
 
