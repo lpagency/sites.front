@@ -85,7 +85,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home" name="image" id="img_banner_home" >
      </div>
      {% end %}
-     <img id="{{ site.name }}_banner_home" src="{{ read_image(site.name + '_banner_home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home',) }}'" class="banner-bg" alt="item">
+     <img id="{{ site.name }}_banner_home" src="{{ read_image(site.name + '_banner_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home',) }}'" class="banner-bg" alt="item">
    </div>
        <!--  <img src="../static/img/banner-1.jpg" alt="Banner" class="banner-bg"> -->
         <div class="banner-copy banner-copy-left">
@@ -113,7 +113,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home_2" name="image" id="img_banner_home_2" >
      </div>
      {% end %}
-     <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home_2',) }}'" class="intro-img" alt="item">
+     <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home_2',) }}'" class="intro-img" alt="item">
   
         <!-- <img src="../static/img/mountain-bg.svg" alt="Background image" class="intro-img"> -->
     </section>

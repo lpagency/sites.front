@@ -35,7 +35,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_banner_focus" name="image" id="img_banner_focus" >
      </div>
      {% end %}
-     <img id="{{ site.name }}_banner_focus" src="{{ read_image(site.name + '_banner_focus', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_focus',) }}'" class="banner-bg" alt="item">
+     <img id="{{ site.name }}_banner_focus" src="{{ read_image(site.name + '_banner_focus', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_focus',) }}'" class="banner-bg" alt="item">
      </div>
         <!-- <img src="../static/img/banner-3.jpg" alt="Banner" class="banner-bg"> -->
         <div class="banner-copy banner-copy-right">

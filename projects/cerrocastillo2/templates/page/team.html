@@ -33,7 +33,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_banner_team" name="image" id="img_banner_team" >
      </div>
      {% end %}
-     <img id="{{ site.name }}_banner_team" src="{{ read_image(site.name + '_banner_team', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_team',) }}'" class="banner-bg" alt="item">
+     <img id="{{ site.name }}_banner_team" src="{{ read_image(site.name + '_banner_team', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_team',) }}'" class="banner-bg" alt="item">
      </div>
         <!-- <img src="../static/img/banner-4.jpg" alt="Banner" class="banner-bg"> -->
         <div class="banner-copy banner-copy-right">
@@ -55,7 +55,7 @@
                  </div>
                  {% end %}
                  <a id="{{ site.name + '_banner_chic_1' }}" href="{{ read_link(site.name + '_banner_chic_1') }}">
-                  <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
+                  <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
                  </a>
                  </div>
 
@@ -101,7 +101,7 @@
                  </div>
                  {% end %}
                  <a id="{{ site.name + '_banner_chic_2' }}" href="{{ read_link(site.name + '_banner_chic_2') }}">
-                  <img id="{{ site.name }}_banner_chic_2" src="{{ read_image(site.name + '_banner_chic_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_chic_2',) }}'" class="team-item-bg" alt="item">
+                  <img id="{{ site.name }}_banner_chic_2" src="{{ read_image(site.name + '_banner_chic_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_chic_2',) }}'" class="team-item-bg" alt="item">
                 </a>
                  </div>
                  {% if is_admin %}

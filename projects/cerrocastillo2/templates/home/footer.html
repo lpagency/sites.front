@@ -13,7 +13,7 @@
                                <input type="file" class="editableimage" image-id="{{ site.name }}_footer_logo" name="image" id="img_footer_logo" >
                            </div>
                            {% end %}
-                           <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="footer__logo-img" alt="item">
+                           <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="footer__logo-img" alt="item">
                        </div>
                      </div>
                         <!-- <img src="../static/img/logo-blanco.svg" alt="Logo" class="footer__logo-img"> -->
