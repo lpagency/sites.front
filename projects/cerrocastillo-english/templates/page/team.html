@@ -1,0 +1,148 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+ {% include '../home/header.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script  type="text/javascript" src="{{ site_base }}/static/js/app.js"></script>
+
+{% end %}
+
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+<section class="container-fluid banner">
+         <div style="position:relative;">
+           {% if is_admin %}
+           <div class="image-upload lapiz visible-movil">
+            <label for="img_banner_team">
+             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_team" name="image" id="img_banner_team" >
+     </div>
+     {% end %}
+     <img id="{{ site.name }}_banner_team" src="{{ read_image(site.name + '_banner_team', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_team',) }}'" class="banner-bg" alt="item">
+     </div>
+        <!-- <img src="../static/img/banner-4.jpg" alt="Banner" class="banner-bg"> -->
+        <div class="banner-copy banner-copy-right">
+            <div class="banner-title {{editabletext}}" text-id="{{ site.name + '_team' }}"> {{ read_text(site.name +  '_team') }}</div>
+        </div>
+    </section>
+
+    <section class="container team">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="popup-open team-item" data-popup="gonzalo">
+                 <div style="position:relative;">
+                   {% if is_admin %}
+                   <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_chic_1">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_chic_1" name="image" id="img_banner_chic_1" >
+                 </div>
+                 {% end %}
+                 <a id="{{ site.name + '_banner_chic_1' }}" href="{{ read_link(site.name + '_banner_chic_1') }}">
+                  <img id="{{ site.name }}_banner_chic_1" src="{{ read_image(site.name + '_banner_chic_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_chic_1',) }}'" class="team-item-bg" alt="item">
+                 </a>
+                 </div>
+
+                 {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_banner_chic_1' }}" content="{{ read_link(site.name + '_banner_chic_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
+                    <!-- <img src="../static/img/team.svg" alt="Team" class="team-item-bg"> -->
+                    <div class="team-item-copy" data-toggle="modal" data-target="#modal-gonzalo">
+                        <div class="text-brand text-big team-item-name {{editabletext}}" text-id="{{ site.name + '_team_ban_1' }}"> {{ read_text(site.name +  '_team_ban_1') }}</div>
+                        <div class="text-accent text-alt team-item-role {{editabletext}}" text-id="{{ site.name + '_team_ban_2' }}"> {{ read_text(site.name +  '_team_ban_2') }}</div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                  <div class="modal fade" id="modal-gonzalo" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Gonzalo Dultano</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Gonzalo Dulanto tiene más de 13 años realizando inversiones de private equity.  El 2016 concretó la adquisición de Valtek, empresa prestadora de servicios integrales a los laboratorios clínicos.  Previamente, trabajó por 12 años en Southern Cross donde llegó a ser Socio.  Dentro de las inversiones realizadas durante su trabajo en Southern Cross destacan ESSBIO, GasAtacama y Supermercados del Sur, compañías de las cuales además fue miembro de sus directorios.  Antes de Southern Cross, trabajó en McKinsey & Co., consultora de gestión líder a nivel global, en donde realizó consultorías en variadas industrias y temas, todas enfocadas en mejorar el desempeño de sus clientes.  Su experiencia también incluye haber trabajado en Enersis.  Gonzalo es Ingeniero Civil Industrial de la Universidad Católica de Chile y MBA del Harvard Business School.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+
+                <div class="popup-open team-item" data-popup="sergio">
+                  <div style="position:relative;">
+                   {% if is_admin %}
+                   <div class="image-upload lapiz visible-movil">
+                    <label for="img_banner_chic_2">
+                     <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_chic_2" name="image" id="img_banner_chic_2" >
+                 </div>
+                 {% end %}
+                 <a id="{{ site.name + '_banner_chic_2' }}" href="{{ read_link(site.name + '_banner_chic_2') }}">
+                  <img id="{{ site.name }}_banner_chic_2" src="{{ read_image(site.name + '_banner_chic_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_chic_2',) }}'" class="team-item-bg" alt="item">
+                </a>
+                 </div>
+                 {% if is_admin %}
+                 <img class="change-image editablelink" link-id="{{ site.name + '_banner_chic_2' }}" content="{{ read_link(site.name + '_banner_chic_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                 {% end %}
+                 <!--    <img src="../static/img/team.svg" alt="Team" class="team-item-bg"> -->
+                    <div class="team-item-copy" data-toggle="modal" data-target="#modal-sergio">
+                        <div class="text-brand text-big team-item-name {{editabletext}}" text-id="{{ site.name + '_team_ban_3' }}"> {{ read_text(site.name +  '_team_ban_3') }} </div>
+                        <div class="text-accent text-alt team-item-role {{editabletext}}" text-id="{{ site.name + '_team_ban_4' }}"> {{ read_text(site.name +  '_team_ban_4') }} </div>
+                    </div>
+                </div>
+
+                <!-- Modal -->
+                  <div class="modal fade" id="modal-sergio" role="dialog">
+                    <div class="modal-dialog">
+                    
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Gonzalo Dultano</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Sergio Gutierrez has 10 years of experience investing in private equity. In 2009 he founded EPG Partners, a financial services boutique that participated in private equity, investment banking and wealth management. Since 2010 Sergio has acquired through EPG 6 mid-size companies based in Chile, most of them with an international presence, especially Peru and Colombia. Two were sold in 2016 (Nubox to Riverwood Capital and Colgram to Drake Enterprises).  <br>Before founding EPG Sergio worked in investment banking at Deutsche Bank and IM Trust (today Credicorp Capital). He also worked in the development area of Enersis where he gained important experience analyzing investments in utilities in Brazil. <br>Sergio sits on the board of all the portfolio companies of EPG. He is also a board member of Ze Farms (Tika Natural Chips) and non-profit Chile sin Cancer.<br>Sergio holds an Industrial Engineer degree from Universidad Catolica de Chile and an MBA from Harvard Business School.</p>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                      
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+{% include '../home/footer.html' %}
+
+{% end %}
+
