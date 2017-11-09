@@ -73,7 +73,7 @@ $(document).ready(function()
         'app_public': app_public,
         'base_url': base_url,
         'products_per_page' : 15, 
-        'tag': tag,
+        'tag': '',
         'ignore_stock': false,
         'infinite_scroll': false,
         'checkout_url': checkout_url, 
