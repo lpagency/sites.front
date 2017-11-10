@@ -25,7 +25,9 @@ outline: 5px auto -webkit-focus-ring-color;
 outline-offset: -2px;
 
 }
-
+.navbar-nav>li>a {
+    font-weight: 500;
+}
 .dropdown-menu {
     position: absolute;
     top: 32px;
@@ -89,14 +91,14 @@ outline-offset: -2px;
 }
 
 .logo {
-    width: 167px;
+    width: 200px;
     position: absolute;
     display: block;
     margin: 0 auto;
     z-index: 1;
-    margin-left: 0px;
     object-fit: scale-down;
-    margin-top: 23px;
+    left: -16px;
+    top: 22px;
 }
 
 .navbar-brand {
@@ -256,7 +258,8 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
 .w3-hover-purple,.w3-hover-deep-purple,.w3-hover-red,.w3-hover-sand,.w3-hover-teal,.w3-hover-yellow,.w3-hover-white,.w3-hover-black,.w3-hover-grey,.w3-hover-light-grey,.w3-hover-dark-grey,.w3-hover-text-amber,.w3-hover-text-aqua,.w3-hover-text-blue,.w3-hover-text-light-blue,
 .w3-hover-text-brown,.w3-hover-text-cyan,.w3-hover-text-blue-grey,.w3-hover-text-green,.w3-hover-text-light-green,.w3-hover-text-indigo,.w3-hover-text-khaki,.w3-hover-text-lime,.w3-hover-text-orange,.w3-hover-text-deep-orange,.w3-hover-text-pink,.w3-hover-text-purple,
 .w3-hover-text-deep-purple,.w3-hover-text-red,.w3-hover-text-sand,.w3-hover-text-teal,.w3-hover-text-yellow,.w3-hover-text-white,.w3-hover-text-black,.w3-hover-text-grey,.w3-hover-text-light-grey,.w3-hover-text-dark-grey
-{-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s}
+{
+    font-weight: 500;-webkit-transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s;transition:background-color .3s,color .15s,box-shadow .3s,opacity 0.3s,filter 0.3s}
 .w3-ripple:active{opacity:0.5}.w3-ripple{-webkit-transition:opacity 0s;transition:opacity 0s}
 .w3-sidenav{height:100%;width:200px;background-color:#fff;position:fixed!important;z-index:1;overflow:auto}
 .w3-sidenav a{padding:4px 2px 4px 16px}.w3-sidenav a:hover{background-color:#ccc}.w3-sidenav a,.w3-dropnav a{display:block}
@@ -288,6 +291,7 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
     display: block;
     font-weight: 300;
     color: rgba(0, 0, 0, 0.77);
+    font-weight: 500;
 
 }
 .w3-dropdown-content a:hover{background-color:#ccc}
@@ -324,14 +328,15 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
 }
 
 .logo {
-    width: 132px;
+    width: 160px;
     position: absolute;
     display: block;
     margin: 0 auto;
     z-index: 1;
     margin-left: 0px;
     object-fit: scale-down;
-    margin-top: 7px;
+    top: 8px;
+    left: -31px;
 }
 
 .navbar-nav.navbar-right:last-child {
@@ -378,14 +383,14 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
 }
 
 .logo {
-    width: 132px;
+    width: 160px;
     position: absolute;
     display: block;
     margin: 0 auto;
     z-index: 1;
-    margin-left: 69px;
+    margin-left: 59px;
     object-fit: scale-down;
-    margin-top: 7px;
+    top: 5px;
 }
 
 .img-bolsa {
