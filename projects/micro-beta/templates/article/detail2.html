@@ -1,0 +1,87 @@
+{% extends "../base.html" %}
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block scripts %}
+
+<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+
+{% if is_admin %}
+<link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+ fbq('init', '1809922755911427');
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<div id="wrap">
+        <!-- registration -->
+        
+<section style="height: 650px; display: block;position: relative;width: 100%;">
+    <div class="mobile-li">
+        <img class="img_detail_planes desaturada" src="{{ article["thumb_500"] }}" class="img-responsive lazy" data-original="{{ article["url"] }}" alt="item">
+        <div class="box">    
+            <h1 class="col-md-12 col-xs-12 text_detail_planes text-center">
+                {{! name }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div class="container-fluid productlist">
+    <div class="col-sm-12 pad_article">
+        <input type="hidden" id="article-description-ajax-url" value="{{ site.url }}article/update-description">
+        <input type="hidden" id="article-content-id" value="{{article['id']}}">
+        <!-- PRIMER TEXTO -->
+        <div class="container-fluid" style="display: block;">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <h2 class="text-art1">
+                {{! description }}
+                </h2>
+            </div>
+        </div>
+        <!-- SEGUNDO TEXTO -->
+        <div class="container-fluid" style="display: block; ">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <div id="description" class="text-art2 tex-center">
+                {{ article["description"] }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,167 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<style type="text/css">
+
+    body{
+/*      background-color: rgba(128, 128, 128, 0.15);*/
+    }
+</style>
+
+{% end %}
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    {% block active %}
+    // productos
+    $('.font_tag').removeClass('active');
+    $('.micro_suspension').addClass("active");
+    {% end %}
+
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+    //     var base_url = $.environmentVar(
+    //         'http://apibodegas.ondev.today/',
+    //         'http://apibodegas.ondev.today/',
+    //         'https://apibodegas.loadingplay.com/');
+    //     var checkout_url = $.environmentVar(
+    //         'http://lpcheckout.ondev.today/',
+    //         'http://lpcheckout.ondev.today/',
+    //         'https://checkout.loadingplay.com');
+    //     var app_public = $.environmentVar(26,26,26);
+    //     var config = {
+    //         'app_public' : app_public,
+    //         'base_url' : base_url,
+    //         'products_per_page' : 8,
+    //         'templateOrigin' : '#product_template',
+    //         'tag' : '',
+    //         'ignore_stock' : true,
+    //         'infinite_scroll': true,
+    //         'onLoad':function(){
+    //              // $('.ellipsis').ellipsis();
+    //              // $('.spinner').css("display", "none")
+    //          },
+    //          'user' : '{% try %}{{ user["email"] }}{% except %}{% end %}'
+    //     };
+
+    // $(document).ecommerce(config);
+
+
+    });
+</script>
+
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+ fbq('init', '1809922755911427');
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="fondo_nuest_prod">
+<section class="height_list_product movil-menu fondo_nuest_prod" style="">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_micro_suspension">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_micro_suspension" name="image" id="img_micro_suspension" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_micro_suspension" src="{{ read_image(site.name + '_micro_suspension', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_micro_suspension',500) }}'" class=" img_banner_list desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="col-md-12 col-xs-12 text_list_prod text-center {{editabletext}}" text-id="{{ site.name + '_text_micro_suspension' }}"> 
+            {{ read_text(site.name +  '_text_micro_suspension') }}
+            </h1>
+        </div>
+    <div class="clearfix" ></div>
+</section>
+
+    
+<section class="h_submenu fondo_nuest_prod">
+    <div class="container-fluid col-md-12 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em;padding-bottom: 30px;">
+            <a href="{{site_base}}/micro_maxi?t=max" id="Categoria1" class="w_menu_menu subya-menu subcateg mbtm5" tag="max" role="button">Micro maxi</a>
+            <a href="{{site_base}}/micro_sprite?t=micro_sprite" id="micro_sprite" class="w_menu_menu subya-menu subcateg mbtm5" tag="micro_sprite" role="button">Micro sprite</a>
+            <a href="{{site_base}}/lazy_lugagge_trike?t=lazylugagge" id="Categoria3" class="w_menu_menu subya-menu subcateg mbtm5" tag="categoria_3" role="button">Micro para adultos</a>
+            <a href="{{site_base}}/mini2go?t=mini2go" id="todo" class="w_menu_menu subya-menu subcateg mbtm5" tag="mini2go" role="button" data-toggle="modal" data-target="#myModal-pro">VER TODO</a>
+        </div>
+</section>
+
+<div class="col-md-12 h-product fondo_nuest_prod" style="position: relative;display: inline-block;">
+    <div class=" product-grid products" >
+        <!-- Aqui van los productos -->
+    </div>
+
+    <div class="clearfix"></div>
+</div>
+
+<div class="col-xs-12 fondo_nuest_prod">
+    <div style="margin-top:45px;"></div>
+        <button type="button" class="btn btn-default more-products" style="display: none font-weight: 600;border-color: black;border-radius: 0px; margin-bottom: 100px;">Cargar más productos</button>
+    </div>
+</div>
+
+<section class="h-list-prodt space30 fondo_nuest_prod" style="display: inline-block;width: 100%;margin-top: -32px;">
+        {% include '../home/group_img3.html' %}
+</section>
+<div class="clearfix"></div>
+</section>
+{% include '../home/footer.html' %}
+{% end %}

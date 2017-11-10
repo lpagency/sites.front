@@ -1,0 +1,127 @@
+<!-- 
+<section class="h-banner-one" style="position: relative;width: 100%;display: table;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_banner1">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner1" name="image" id="img_banner1" >
+        </div>
+        {% end %}
+        <div class="box-banner-one">
+            <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_banner1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner1',500) }}'" class=" img_banner desaturada" alt="item">
+        
+            <div class="box-text vertical-center " align="center" style="width: 100%;">
+                <div class="col-md-12 col-xs-12 text-banner text-center {{editabletext}}" text-id="{{ site.name + '_text_banner' }}"> 
+                {{ read_text(site.name +  '_text_banner') }}
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 flanja">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="text-banner2 text-center {{editabletext}}" text-id="{{ site.name + '_text_banner2' }}"> 
+                {{ read_text(site.name +  '_text_banner2') }}
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                <div class="text-banner3 text-center {{editabletext}}" text-id="{{ site.name + '_text_banner3' }}"> 
+                {{ read_text(site.name +  '_text_banner3') }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix" ></div>
+</section>
+ -->
+
+
+ <!-- **********************Slider************* -->
+
+ <section style="background-color: #edeceb;">
+        <div id="main_area">
+                <!-- Slider -->
+                    <div class="slider-movil" id="slider" style="margin-top: 142px;">
+                        <!-- Top part of the slider -->
+                            <div class="" id="carousel-bounding-box">
+                                <div class="carousel slide" id="myCarousel">
+                                    <!-- Carousel items -->
+                                    <div class="carousel-inner">
+                                        <div class="active item cel" data-slide-number="0" style="background:url('{{ read_image(site.name + '_img_slider_1') }}'); height:465px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:inherit; " data-img-width="1600" data-img-height="890" data-diff="100">
+                                         {% if is_admin %}
+                                         <div class="image-upload visible-movil" style="top: 153px;">
+                                          <label for="img_slider_1">
+                                             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                           </label>
+                                           <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_1" name="image" id="img_slider_1" >
+                                         </div>
+
+                                         {% end %}
+                                       <!--  <img src="http://placehold.it/770x300&text=one"> --> </div>
+
+                                        <div class="item cel" data-slide-number="1" style="background:url('{{ read_image(site.name + '_img_slider_2') }}'); height:465px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:inherit; " data-img-width="1600" data-img-height="890" data-diff="100">
+                                        {% if is_admin %}
+                                         <div class="image-upload visible-movil" style="top: 153px;">
+                                          <label for="img_slider_2">
+                                             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                           </label>
+                                           <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_2" name="image" id="img_slider_2" >
+                                         </div>
+
+                                         {% end %}
+                                        <!-- <img src="http://placehold.it/770x300&text=two"> --></div>
+
+                                        <div class="item cel" data-slide-number="2" style="background:url('{{ read_image(site.name + '_img_slider_3') }}'); height:465px; width:100%; background-repeat:no-repeat; background-size:cover; background-position:inherit; ">
+                                        {% if is_admin %}
+                                         <div class="image-upload  visible-movil" style="top: 153px;">
+                                          <label for="img_slider_3">
+                                             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                           </label>
+                                           <input type="file" class="editableimage" image-id="{{ site.name }}_img_slider_3" name="image" id="img_slider_3" >
+                                         </div>
+
+                                         {% end %}
+                                        <!-- <img src="http://placehold.it/770x300&text=three"> --></div>
+
+                                    </div><!-- Carousel nav -->
+                              
+                                    </div>
+                            </div>
+
+                            <div class="col-sm-4" id="carousel-text"></div>
+                    </div>
+                </div><!--/Slider-->
+
+                <div class="hover-slider">
+                  <div class="mak">
+                  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left"></span>                                       
+                  </a>
+                  <a class="right carousel-control rig" href="#myCarousel" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>                                       
+                  </a>  
+               
+
+                <div class="" id="slider-thumbs" style="display:none;">
+                        <!-- Bottom switcher of slider -->
+                        <ul class="hide-bullets">
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-0"><img src="{{ read_image(site.name + '_img_slider_1', 200) }}"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-1"><img src="{{ read_image(site.name + '_img_slider_2', 200) }}"></a>
+                            </li>
+
+                            <li class="col-sm-2">
+                                <a class="thumbnail" id="carousel-selector-2"><img src="{{ read_image(site.name + '_img_slider_3', 200) }}"></a>
+                            </li>
+
+
+                        </ul>                 
+                </div>
+                </div>
+        </div>
+
+</section>
+

@@ -1,0 +1,427 @@
+<!doctype html>
+<html>
+
+<head>
+    <!-- head bt inicio -->
+    <title>Micro-Chile</title>
+    <base href="{{ site_base }}/">
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="loadingplay.com">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Muli:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300,400,600,600,700,700,800,800' rel='stylesheet' type='text/css'>
+<!--     <link href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<!--     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
+    <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css?1">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style-home.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/style.css">
+     <link rel="stylesheet" href="{{ site_base }}/static/css/fancybox.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/header_movil.css">
+    <link rel="stylesheet" href="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?v=2.1.5">
+    <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css">
+    <!-- desarrollo -->
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less">
+    <script src="{{ site_base }}/common/js/less/dist/less.js" type="text/javascript"></script>
+
+
+    <!-- produccion -->
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/header.less"> -->
+    <!-- autocomplete -->
+    {% block css %}{% end %}
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+</head>
+
+<!-- MENU MOVIL -->
+<header class="fixtop affix-top" data-spy="affix" data-offset-top="60">
+<nav class="navbar navbar-default navbar-color navbar-base hidden-lg" role="navigation" style="z-index: 1;">
+  <!-- El logotipo y el icono que despliega el menú se agrupan
+       para mostrarlos mejor en los dispositivos móviles -->
+  <div class="navbar-header">
+    <p class="hidden-lg tex-menu-mov">
+         <i class="fa fa-search" aria-hidden="true" id="" data-toggle="modal" data-target="#myModalbuscador"></i>
+        <img class="bag" src="https://84static.loadingplay.com/static/images/b6a9c4ba6d73d6f34548030e8d056322_carro_compra.png" id="open-cart" data-toggle="modal" data-target="#myModal">
+    </p>
+    <button type="button" class="navbar-toggle menu-responsive" data-toggle="collapse"
+            data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Desplegar navegación</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand navbar2" href="#">
+        <!-- LOGO -->
+        <div class="logo_wrapper navbar-brand" style="padding: 0px; position: relative;">
+            {% if is_admin %}
+            <div class="image-upload visible-movil">
+                <label for="img_logo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo" name="image" id="img_logo" >
+            </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+                <img class="logo-menu-movil" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item" style="margin-right: 10px; padding: 0;">
+            </a>
+        </div>
+        <!-- /LOGO -->
+    </a>
+  </div>
+
+  <!-- Agrupar los enlaces de navegación, los formularios y cualquier
+       otro elemento que se pueda ocultar al minimizar la barra -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse navbar3 navbcolor">
+    <ul class="nav navbar-nav">
+<!--         <li><a href="http://micro.lpe.cl/article/detail/a/1594" class="text-header historia">Micro</a></li>
+        <li><a href="{{site_base}}/productos" class="text-header font-tag productos">Productos</a></li> -->
+        <li><a  href="{{site_base}}/para_ninos?tag=para_ninos" class="text-header font_tag ninos" id="9">Niños</a></li>
+        <li><a  href="{{site_base}}/para_adultos?tag=para_adultos" class="text-header font_tag adultos" id="8">Adultos</a></li>
+        <li><a  href="{{site_base}}/smart_travel?tag=smart" class="text-header font_tag smart" id="9">Smart travel</a></li>
+        <li><a  href="{{site_base}}/electrico?tag=electrico" class="text-header font_tag electrico" id="9">Electrico</a></li>
+        <li><a  href="{{site_base}}/freestyle?tag=freestyle" class="text-header font_tag freestyle" id="9">Freestyle</a></li>
+        <li><a  href="{{site_base}}/accesorios?tag=accesorios" class="text-header font_tag accesorios" id="4">Accesorios</a></li>
+        <li><a href="{{site_base}}/repuestos?tag=repuestos" class="text-header font_tag repuestos">Repuestos</a></li>
+        <!-- <li><a href="{{ site_base }}/home_comunidad" class="text-header dropdown-toggle">Comunidad</a>
+        </li> -->
+       <!--  <li><a class="text-header" href="{{ site_base }}/contact">CONTACTO</a></li> -->
+
+    </ul>
+  </div>
+</nav>
+</header>
+<!-- MENU MOVIL -->
+
+<body id="home">
+    {% block header %}{% end %}
+    <!-- boton para navegar -->
+    {% if is_admin %} {% end %}
+    <!-- botón agregar -->
+    <!-- header -->
+
+    {% include 'product/product_box.html' %}
+    {% include 'product/product_art.html' %}
+
+    {% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+    {% else %}
+    {% set editabletext = '' %}
+    {% end %}
+
+    {% block body %}{% end %}
+    <!-- Modal -->
+        <div class="modal fade modal-z" id="myModal" role="dialog">
+            <div class="modal-dialog modal-since">
+                <!-- Modal content-->
+                <div class="modal-content modal-movil">
+                    <div class="modal-header border_header">
+                        <button type="button" class=" space5 close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title space5">Resumen de tu compra</h4>
+                    </div>
+                    <div class="modal-body mlb-btn box_cart">
+                        <table class="table box_table">
+                            <tbody class="shopping-cart">
+                            </tbody>
+                        </table>
+                        <div class="checkout-form"></div>
+                        <div class="space80"></div>
+                    </div>
+                    <!--                         <div class="modal-footer">
+                          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div> -->
+                </div>
+            </div>
+        </div>
+
+    <!-- **modal categorias productos** -->
+
+<!-- Modal -->
+  <div class="modal fade" id="myModal-pro" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header-pro">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title-pro">TODAS LAS CATEGORIAS</h4>
+        </div>
+        <div class="modal-body" style="text-align:center;">
+        <a href="" id="categoria1" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_1" role="button">Categoria 1</a>
+            <a href="#" id="categoria2" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_2" role="button">Categoria 2</a>
+            <a href="#" id="categoria3" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_3" role="button">Categoria 3</a>
+            <a href="#" id="categoria4" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_4" role="button">Categoria 4</a>
+            <a href="#" id="categoria5" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_5" role="button">Categoria 5</a>
+            <a href="#" id="categoria6" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_6" role="button">Categoria 6</a>
+            <a href="#" id="categoria7" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_7" role="button">Categoria 7</a>
+            <a href="#" id="categoria8" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_8" role="button">Categoria 8</a>
+            <a href="#" id="categoria9" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_9" role="button">Categoria 9</a>
+            <a href="#" id="categoria10" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_10" role="button">Categoria 10</a>
+            <a href="#" id="categoria1" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_11" role="button">Categoria 11</a>
+            <a href="#" id="categoria12" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_12" role="button">Categoria 12</a>
+            <a href="#" id="categoria13" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_13" role="button">Categoria 13</a>
+            <a href="#" id="categoria14" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_14" role="button">Categoria 14</a>
+            <a href="#" id="categoria15" class="subcateg subcateg_fancy mbtm5 cate" tag="categoria_15" role="button">Categoria 15</a>
+        </div>
+        <div class="modal-footer">
+            <div align="center">
+                <button type="button" class="btn btn-default btn-cat-enviar" data-dismiss="modal" style="">CERRAR</button>
+            </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal de nosotros -->
+
+<!-- Modal Buscadorss-->
+<div id="myModalbuscador" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+ <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Estamos aqui para ayudarte, que necesitas?</h4>
+            </div>
+            <div class="modal-body cuerpo">
+                <div class="col-md-12">
+                    <div id="search-mobile" class="row search-box hide-top-menu hideSearch hola InputClose closeScrollInput searchBtn-static" style="display: block;">
+                        <form id="searchForm" role="search" action="{{ site_base }}/search_results" method="get" class="style-form2">
+                            <input type="text" id="autocomplete-ajax" maxlength="200" autosuggest="true" disablesuggestionpanel="false" class="t-input input-search movPosition jq-searchInput ui-autocomplete-input" name="search_query" required="" placeholder="¿Qué Buscas?" autocomplete="off" oninvalid="setCustomValidity('Ingresa la palabra, producto o código de lo que quieres buscar.');" oninput="setCustomValidity('')">
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-default">Buscar</button>
+            </div>
+            </form>
+        </div>
+  </div>
+</div>
+</div>
+
+    <!-- gif loading editableimage -->
+    <img id="imgLOAD" width="50" height="50" src="{{ site_base }}/common/css/loading.gif" />
+    <script type="text/javascript">
+    var site_base = "{{ site_base }}"
+    </script>
+    <!--FUNCION UTILS!!!! WAYO DEL FUTURO-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            var charsToSearch = ["1", "2", "3", "4", "5", "6","7","8","9","0"];
+
+            Utils.changeName = function(name)
+            {
+                if(charsToSearch.indexOf(name.charAt(0)) != -1)
+                {
+                    name = name.replace(/[0-9]/g,"");
+
+                    return name;
+                }
+                else
+                {
+                    return name;
+                }
+            }
+
+        });
+    </script>
+
+    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
+    <!-- {%!  end %} -->
+    <script type="text/javascript" src="{{ site_base }}/common/js/page_editable.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/editableimage.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
+
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?2"></script>
+
+    <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
+
+    <script src="{{ site_base }}/common/js/categories/js/category_plugin.js" type="text/javascript"></script>
+    <script src="{{ site_base }}/static/js/json.data.js" type="text/javascript"></script>
+
+
+    <!-- <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> -->
+    <script type="text/javascript" src="{{ site_base }}/static/js/checkout.js"></script>
+
+    <!-- CARRIO DE COMPRA -->
+
+        <script type="text/x-template" id="shopping-cart-product" class="hidden">
+            <tr class="carrito_box">
+                <td class="">
+                    <img class="img_cart" src="{{! images[0][2] }}">
+                </td>
+                <!-- <td class="sku_movil">{{! sku }}</td> -->
+                <td class="ellipsis multiline name-compra">
+                    {{! name }}
+                    </a>
+                </td>
+                <!-- <td class="price-compra">{{! price|money }}</td>  -->
+                <td class="quantity-compra">
+                    <a href="#" class="remove-one pull-left position_remove" lp-cart-remove-one="{{! id }}"><img src="https://7static.loadingplay.com/static/images/61350ae152ca3a2138e48e753393e51d_Menos.png"></a>
+                    <!-- <button class="remove-one pull-right position_remove" lp-cart-remove-one="{{! id }}">-</button> -->
+                    x{{! quantity}}
+                    <!-- <button class="add-one pull-right position_add" lp-cart-add-one="{{! id }}" >+</button> -->
+                    <a href="#" class="add-one pull-right position_add" lp-cart-add-one="{{! id }}"><img class="pigli" src="https://84static.loadingplay.com/static/images/65d77f64d96c67eb6eb9eb446d856fa1_Mas.png"></a>
+                </td>
+                <td class="total_money"><strong>{{! total|money }}</strong></td>
+                <!-- <td class="hidden-xs"><a href="#"><i class="fa fa-trash-o"></i></a></td> -->
+                </tr>
+        </script>
+
+    <script type="text/x-template" id="shopping-cart-checkout-form">
+            <!-- <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" target="_parent">
+                <input name="site_id" class="form-control required" type="hidden" value="33">
+                <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+                <div class="form-group space20">
+                    <a href="javascript:history.back()" target="_parent">
+                        <button type="button" class="btn btn-enviar pull-left">Seguir en la tienda</button>
+                    </a>
+                    <button type="submit" class="btn btn-enviar pull-right">Terminar la compra</button>
+                </div>
+            </form> -->
+            <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
+                <input name="site_id" class="form-control required" type="hidden" value="33">
+                <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
+                <div class="form-group space20">
+                    <button type="submit" class="btn btn-enviar pull-right">Finalizar compra</button>
+               </div>
+            </form>
+            <a href="javascript:history.back()" target="_parent">
+                        <button type="button" class="btn btn-enviar pull-left" data-dismiss="modal">Seguir en la tienda</button>
+                        </a>
+    </script>
+
+    <script>
+
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId: '348231912006000',
+            xfbml: true,
+            version: 'v2.1'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+    </script>
+    <script type="text/javascript" src="{{ site_base }}/static/js/header.js"></script>
+    <script src="{{ site_base }}/static/js/scrollReveal.min.js?ver=2.1.0"></script>
+    <script type="text/javascript">
+    window.sr = new scrollReveal({
+        reset: true,
+        move: "20px",
+        vFactor: 0.20
+    });
+    </script>
+    <!-- este es el script para unidades -->
+    <script type="text/x-template" id="shopping-cart-units-total">
+        <span> {{! upp_total }}</span>
+    </script>
+    {% block javascript %}{% end %} {% if is_admin %}
+    <!--Drag to fix content-->
+    <!--Dragging mini image-->
+    <script type="text/javascript" src="{{ site_base }}/static/js/edit_order.js"></script>
+    {% end %}
+
+    <!--
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('.dropdown-toggle').dropdown();
+    });
+    </script>
+    -->
+
+    {% if is_admin %}
+    <script type="text/javascript">
+    var site_name = "{{ site.name }}";
+    </script>
+
+    <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js"></script>
+    {% end %}
+
+    <script>
+    $(document).ready(function()
+    {
+        $('.cate').click(function(){
+            $('#myModal-pro').modal('toggle');
+            // alert("algo");
+        });
+    });
+    </script>
+
+    <!-- hover del menu -->
+    <script type="text/javascript">
+        $('li.dropdown').hover(function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+        }, function() {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
+        });
+    </script>
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', '{{ get_config("analytics") }}', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+    <script type="text/javascript">
+       jQuery(document).ready(function($) {
+
+        $('#myCarousel').carousel({
+                interval: 5000
+        });
+
+        $('#carousel-text').html($('#slide-content-0').html());
+
+        //Handles the carousel thumbnails
+       $('[id^=carousel-selector-]').click( function(){
+            var id = this.id.substr(this.id.lastIndexOf("-") + 1);
+            var id = parseInt(id);
+            $('#myCarousel').carousel(id);
+        });
+
+
+        // When the carousel slides, auto update the text
+        $('#myCarousel').on('slid.bs.carousel', function (e) {
+                 var id = $('.item.active').data('slide-number');
+                $('#carousel-text').html($('#slide-content-'+id).html());
+        });
+});
+    </script>
+</body>
+
+</html>
