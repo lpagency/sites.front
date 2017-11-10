@@ -6,12 +6,12 @@ $(document).ready(function()
 
 
     var base_url = $.environmentVar(
-         'https://apibodegas.ondev.today/',
-         'https://apibodegas.ondev.today/',
+         'https://apibodegas.loadingplay.com/',
+         'https://apibodegas.loadingplay.com/',
          'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-         'https://lpcheckout.ondev.today/',
-         'https://lpcheckout.ondev.today/',
+         'https://pay.loadingplay.com',
+         'https://pay.loadingplay.com',
          'https://pay.loadingplay.com');
     var app_public = $.environmentVar(33,33,33);
 
