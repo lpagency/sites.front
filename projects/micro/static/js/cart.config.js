@@ -61,13 +61,13 @@ $(document).ready(function()
     }
 
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://lpcheckout.ondev.today',
-        'http://lpcheckout.ondev.today',
-        'https://pay.loadingplay.com');
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(33,33,33);
     var site_name = $.environmentVar('micro', 'micro', 'micro');
 
