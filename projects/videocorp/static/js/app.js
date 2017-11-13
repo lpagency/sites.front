@@ -16,17 +16,17 @@ $(document).ready(function () {
         var $submenu = $this.find(".header-submenu");
         if ($window.width() > 768) {
             var $icono = $this.find(".header-submenu-icono");
-            $icono.fadeIn("fast");
+            $icono.fadeIn("slow");
         }
-        $submenu.slideDown("fast");
+        $submenu.slideDown("slow");
     }, function () {
         var $this = $(this);
         var $submenu = $this.find(".header-submenu");
         if ($window.width() > 768) {
             var $icono = $this.find(".header-submenu-icono");
-            $icono.fadeOut("fast");
+            $icono.fadeOut("slow");
         }
-        $submenu.slideUp("fast");
+        $submenu.slideUp("slow");
     });
 
     var $window = $(window);
