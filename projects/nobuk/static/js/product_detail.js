@@ -3,15 +3,15 @@
 
 $(document).ready(function() 
 {
-    var base_url = $.environmentVar(
-        'http://apibodegas.ondev.today/',
-        'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
-    var checkout_url = $.environmentVar(
-        'http://lpcheckout.ondev.today/',
-        'http://lpcheckout.ondev.today/',
-        'https://checkout.loadingplay.com');
-    var app_public = $.environmentVar(14,43,14);
+var base_url = $.environmentVar(
+    'https://apibodegas.loadingplay.com/',
+    'https://betaapi.loadingplay.com/',
+    'https://apibodegas.loadingplay.com/');
+var checkout_url = $.environmentVar(
+    'https://checkout.loadingplay.com',
+    'https://betapay.loadingplay.com',
+    'https://checkout.loadingplay.com');
+var app_public = $.environmentVar(34,34,34);
 
     // functions 
     // productos relacionados
