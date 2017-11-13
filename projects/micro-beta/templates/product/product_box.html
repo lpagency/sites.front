@@ -1,0 +1,21 @@
+<script type="text/template" id="product_template">
+    
+    <div class="col-lg-4 col-md-6 col-sm-6 col-xs-6 space10-1 h_detail_prod" tags="{{! tags }}">
+        <div class="product product-thumb cuadro_product">
+            <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+                <div class="box-4 ">
+                    <img class="img_product img-responsive pad0 " src="{{! images[0][1] }}" onload="this.onload='';this.src='{{! images[0][2] }}'" title="" alt=""  onClick="style.pointerEvents='none'">
+                    
+               </div>
+            </a>
+            <div>            
+                <h1 class="name  ellipsis multiline">{{! name|changeName }}</h1>
+            </div>
+            <div style="padding-bottom: 10px;">
+                <div class="price">{{! main_price|money }}</div>
+            </div>
+             
+        </div>
+    </div>
+
+</script>

@@ -1,0 +1,41 @@
+<section style="height:580px;">
+    <div class="col-lg-12 col-md-12 col-sm-12 hidden-xs" >
+        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 article_2_4 fl">
+            <h1 class="text-center article_title2"> {{ article["title"] }}</h1>
+            <p class="text-center article_text2 ellipsis multiline" > {{ article["caption"] }}</p>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-7 hidden-xs">
+            <div class="img_lis_art box-6">
+                <img class="img-responsive img_article" src="{{ article["thumb_500"] }}" />
+                    <div class="mask-6">
+                        <a class="di" href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+                        <button type="button" class="btn btn-outline home"> VER MAS</button>
+                        </a>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <!-- *****MOVIL NOSOTROS 1***** -->
+         <div class="hidden-lg hidden-md hidden-sm col-xs-12  pad0" >
+                <div class="box-img-art box-6">
+                    <img class="img-responsive img_art_movil" src="{{ article["thumb_500"] }}" />
+                    <div class="mask-6">
+                        <a class="di" href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+                        <button type="button" class="btn btn-outline home"> VER MAS</button>
+                        </a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="hidden-lg hidden-md hidden-sm col-xs-12 m-nosotros">
+            <div class="m0" align="left" style="width: 100%;">
+                <h1 class="text_art_1" > {{ article["title"] }}</h1>
+                <p class="text_art_2" > {{ article["caption"] }}</p>
+                <a class="" href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
+                <button type="button" class="btn btn-outline home"> VER MAS</button>
+                </a>
+            </div>
+        </div>
+            <!-- *****MOVIL NOSOTROS 1***** -->
+
+</section>

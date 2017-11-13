@@ -172,6 +172,15 @@ $(document).ready(function() {
     allowPageScroll = "vertical";
 
   })
+
+  setTimeout(function()
+  {
+    $(".carousel-inner").slick({
+      nextArrow: '<i class="fa rel-arrows-r fa-chevron-circle-right"></i>',
+      prevArrow: '<i class="fa rel-arrows-l fa-chevron-circle-left"></i>',
+      infinite: true
+      });
+  },2000);
 });
 
 </script>
@@ -197,18 +206,6 @@ $(document).ready(function() {
 
 <script type="text/template" id="product_detail">
 <div class="container-fluid">
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-      <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-
-    </ol>
-
-    <!-- Wrapper for slides -->
      <div class="carousel-inner" role="listbox">
                     <div class="item active">
                     <img class="{{! images[0]['thumb_500']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" alt="Chania"  width="460" height="345">
@@ -230,17 +227,6 @@ $(document).ready(function() {
                     <img class="{{! images[1]['thumb_500']|hide_if_empty }} little" src="{{! images[1]['thumb_500'] }}" alt="Chania" onload="this.src={{! images[1]['thumb_500']}}"  width="460" height="345">
                     </div>
                     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-     <i class="fa fa-chevron-circle-left" aria-hidden="true"></i>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-    <i class="fa fa-chevron-circle-right" aria-hidden="true"></i>
-      <span class="sr-only">Next</span>
-    </a>
-</div>
 </div>
 
 
@@ -330,7 +316,7 @@ $(document).ready(function() {
 {% block body %}
 
 
-<div class="det-mobi" style="height:530px;display:block;margin:auto auto 0 auto;"></div>
+<div class="det-mobi" style="height:50px;display:block;margin:auto auto 0 auto;"></div>
 <div class="container-fluid">
     <div class="container  product-page"></div>
     </div>

@@ -1,0 +1,71 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+{% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+ fbq('init', '1809922755911427');
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="h-banner-one" style="position: relative;width: 100%;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_term_cond">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_term_cond" name="image" id="img_term_cond" >
+        </div>
+        {% end %}
+        <div>
+            <img id="{{ site.name }}_banner1" src="{{ read_image(site.name + '_term_cond', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_term_cond',500) }}'" class="img_banner_term desaturada" alt="item">
+        </div>
+</section>
+
+<div class="container text-cont">
+    <div class="space50"> </div>
+    <h1 class="col-md-12 col-xs-12 text_term_cond2 text-center {{editabletext}}" text-id="{{ site.name + '_text_term_cond2' }}"> 
+    {{ read_text(site.name +  '_text_term_cond2') }}
+    </h1>
+    <br>
+    <h1 class="col-md-12 col-xs-12 text-center text_term_cond3 {{editabletext}}" text-id="{{ site.name + '_text_term_cond3' }}"> 
+    {{ read_text(site.name +  '_text_term_cond3') }}
+    </h1>
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}

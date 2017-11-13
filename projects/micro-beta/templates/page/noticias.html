@@ -1,0 +1,110 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+{% block scripts %}
+{% if is_admin %}
+<script type="text/javascript" src="{{ site_base }}/static/js/article/detail.js"></script>
+{% end %}
+{% end %}
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+
+
+{% block javascript %}
+<!-- Facebook Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+ fbq('init', '1809922755911427');
+fbq('track', 'PageView');
+</script>
+<noscript>
+ <img height="1" width="1"
+src="https://www.facebook.com/tr?id=1809922755911427&ev=PageView
+&noscript=1"/>
+</noscript>
+<!-- End Facebook Pixel Code -->
+{% end %}
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="hla hidden">
+    <div class="">
+    {% if is_admin %}
+        <div class="image-upload lapiz bi visible-movil">
+            <label for="img_noticias">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_noticias" name="image" id="img_noticias" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_noticias" src="{{ read_image(site.name + '_noticias', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_noticias',500) }}'" class="banner_list desaturada" alt="item">
+        <div class="" align="center">
+            <h1 class="text_listart text-center {{editabletext}}" text-id="{{ site.name + '_text_noticias' }}"> 
+            {{ read_text(site.name +  '_text_noticias') }}
+            </h1>
+        </div>
+    </div>
+</section>
+
+<div style="margin-top:60px;"></div>
+
+<section  class="text-article-title">
+        <div class="container"> 
+           <div class="col-md-12 col-sm-12 box">
+                <h1 class="listart1 text-center {{editabletext}}" text-id="{{ site.name + '_text_noticias1' }}"> {{ read_text(site.name +  '_text_noticias1') }}
+                </h1>
+            </div>
+
+        </div>
+</section>
+
+
+
+<section>
+    <div class="container">
+        <div class="row">
+            {{ getArticleList(html="content/article_01.html", tag="noticias,posicion 1") }}
+            {{ getArticleList(html="content/article_02.html", tag="noticias,posicion 2") }}
+            {{ getArticleList(html="content/article_03.html", tag="noticias,posicion 3") }}
+            {{ getArticleList(html="content/article_04.html", tag="noticias,posicion 4") }}
+            {{ getArticleList(html="content/article_01.html", tag="noticias,posicion 5") }}
+            {{ getArticleList(html="content/article_02.html", tag="noticias,posicion 6") }}
+            {{ getArticleList(html="content/article_03.html", tag="noticias,posicion 7") }}
+            {{ getArticleList(html="content/article_04.html", tag="noticias,posicion 8") }}
+        </div>
+    </div>
+
+</section>
+
+<section class="h_third_text">
+    <div class="col-md-12 col-sm-12 box margin_third">
+        <h1 class="text_list_art art_titletext-center {{editabletext}}" text-id="{{ site.name + '_text_noticias2' }}"> {{ read_text(site.name +  '_text_noticias2') }}
+        </h1>
+        <hr class="hr_art">
+        <h1 class="text_list_art text-center {{editabletext}}" text-id="{{ site.name + '_text_noticias3' }}"> {{ read_text(site.name +  '_text_noticias3') }}
+        </h1>
+    </div>
+</section>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}

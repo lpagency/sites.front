@@ -1,0 +1,158 @@
+<div id="footer" class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="col-lg-7 col-md-6 col-sm-4 col-xs-12 position-text0">
+        <div class="inform-comerc text-left">
+            <div class="clearfix"></div>
+                <ul class="no-dot">
+                    <div class="footer_text footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer1' }}"> 
+                    {{ read_text(site.name +  '_footer1') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer2' }}"> 
+                    {{ read_text(site.name +  '_footer2') }}
+                    </div>
+                    <!-- <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer3' }}"> 
+                    {{ read_text(site.name +  '_footer3') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer4' }}"> 
+                    {{ read_text(site.name +  '_footer4') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer5' }}"> 
+                    {{ read_text(site.name +  '_footer5') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer6' }}"> 
+                    {{ read_text(site.name +  '_footer6') }}
+                    </div>
+                    <div class="footer_text {{editabletext}}" text-id="{{ site.name + '_footer7' }}"> 
+                    {{ read_text(site.name +  '_footer7') }}
+                    </div> -->
+                    <!-- LOGO -->
+                    <div class="logo_wrapper navbar-brand visible-lg visible-md visible-sm hidden-xs" style="padding: 0px; position: relative;">
+                        {% if is_admin %}
+                            <div class="image-upload visible-movil">
+                                <label for="img_logo_footer">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="position: relative;">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo_footer" name="image" id="img_logo_footer" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_logo_footer' }}" href="#">
+                            <div class="base-logo">
+                                <img class="logo_footer" id="{{ site.name }}_img_logo_footer" src="{{ read_image(site.name + '_img_logo_footer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo_footer',500) }}'" alt="item">
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- **movil***** -->
+                 <div class="logo_wrapper  hidden-lg hidden-md hidden-sm visible-xs" style="padding: 0px; position: relative;">
+                        {% if is_admin %}
+                            <div class="image-upload visible-movil">
+                                <label for="img_logo_footer">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" style="position: relative;">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo_footer" name="image" id="img_logo_footer" >
+                            </div>
+                        {% end %}
+                        <a id="{{ site.name + '_logo_footer' }}" href="#">
+                            <div align="center">
+                            <div class="base-logo">
+                                <img class="logo_footer" id="{{ site.name }}_img_logo_footer" src="{{ read_image(site.name + '_img_logo_footer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo_footer',500) }}'" alt="item">
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12 position-text pad0 col-box2">
+        <div class="inform-comerc text-right">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text2 footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer8' }}"> 
+                    {{ read_text(site.name +  '_footer8') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer9' }}"> 
+                    {{ read_text(site.name +  '_footer9') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer10' }}"> 
+                    {{ read_text(site.name +  '_footer10') }}
+                    </div>
+                    <!-- <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer11' }}"> 
+                    {{ read_text(site.name +  '_footer11') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer12' }}"> 
+                    {{ read_text(site.name +  '_footer12') }}
+                    </div> -->
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 position-text pad0 col-box3">
+        <div class="inform-comerc text-right">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text2 footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer13' }}"> 
+                    {{ read_text(site.name +  '_footer13') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer14' }}"> 
+                    {{ read_text(site.name +  '_footer14') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer15' }}"> 
+                    {{ read_text(site.name +  '_footer15') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer16' }}"> 
+                    {{ read_text(site.name +  '_footer16') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer17' }}"> 
+                    {{ read_text(site.name +  '_footer17') }}
+                    </div>
+                    <!-- <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer18' }}"> 
+                    {{ read_text(site.name +  '_footer18') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer19' }}"> 
+                    {{ read_text(site.name +  '_footer19') }}
+                    </div> -->
+                </ul>
+        </div>
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 position-text col-box4">
+        <div class="inform-comerc text-right">
+            <div class="clearfix"></div>
+                <ul class="no-dot ">
+                    <div class="footer_text2 footer_text_t {{editabletext}}" text-id="{{ site.name + '_footer20' }}"> 
+                    {{ read_text(site.name +  '_footer20') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer21' }}"> 
+                    {{ read_text(site.name +  '_footer21') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer22' }}"> 
+                    {{ read_text(site.name +  '_footer22') }}
+                    </div>
+                    <div class="footer_text2 cont_black {{editabletext}}" text-id="{{ site.name + '_footer23' }}"> 
+                    {{ read_text(site.name +  '_footer23') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer24' }}"> 
+                    {{ read_text(site.name +  '_footer24') }}
+                    </div>
+                    <div class="footer_text2 {{editabletext}}" text-id="{{ site.name + '_footer244' }}"> 
+                    {{ read_text(site.name +  '_footer244') }}
+                    </div>
+                </ul>
+        </div>
+    </div>
+    <div class="col-md-12 col-sm-12 col-xs-12 box-loading">
+        <ul class="no-dot ">
+            <li class="footer_loading">
+                <a href="{{ site_base }}/terminos_condiciones">Términos y condiciones</a>
+            </li>
+            <li class="footer_loading">
+                <a href="https://www.loadingplay.com">Sytes tech. Developed by LoadingPlay</a>
+            </li>
+            <li class="pad0 loging">
+                {% if user is None %}
+                <a href="{{ site_base }}/auth/login" class="footer_text_login footer_loading " >LOGIN</a>
+                {% else %}
+                <a href="{{ site_base }}/auth/logout" class="footer_text footer_loading" >
+                LOGOUT</a>
+                {% end %}
+            </li>
+        </ul>
+    </div>
+</div>
