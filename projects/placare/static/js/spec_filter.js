@@ -238,7 +238,7 @@ $(document).ready(function()
                     listaTag = url;
                 $('.products').ecommerce(config);
                     break;
-                case "mules":
+                case "slippers":
                     url.push("Categoria3_Mules");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
@@ -339,7 +339,7 @@ $(document).ready(function()
                 listaTag = url;
                 $('.products').ecommerce(config);
                 break;
-            case "mules":
+            case "slippers":
                  url.push("Categoria3_Mules");
                 window.onLoad = TagURL(url);
                 config.tag = url.toString();
