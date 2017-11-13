@@ -86,7 +86,7 @@ $(document).ready(function()
             //     $(".products").html("no hay productos con estos filtros");
             // }
 
-            console.log(products);
+            console.log();
         }
     };
 
