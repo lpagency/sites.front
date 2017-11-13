@@ -1243,9 +1243,12 @@ button:focus {
 }
 
 .team-item-bg {
-  width: 100%;
-  height: auto;
-  pointer-events: none;
+    width: 100%;
+    max-width: 1140px;
+    max-height: 335px;
+    object-fit: cover;
+    height: auto;
+    pointer-events: none;
 }
 
 .team-item-copy {
