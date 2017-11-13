@@ -1,7 +1,6 @@
 <div class="">
 <div class="linea">
-
-  <div style="position:relative">
+    <a href="">
      <div class="caja-logo">
          {% if is_admin %}
          <div class="image-upload lapiz visible-movil">
@@ -15,7 +14,8 @@
        <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
     
    </div>
-</div>
+   </a>
+
 
 
 <button type="button" class="btn btn-default carro" id="open-cart" data-toggle="modal" data-target="#myModal">TU COMPRA <span class="units-total">0</span> </button>
