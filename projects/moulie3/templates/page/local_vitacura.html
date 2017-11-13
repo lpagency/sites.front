@@ -106,7 +106,7 @@
        </div>
        {% end %}
       <a id="{{ site.name + '_box_vita' }}" href="{{ read_link(site.name + '_box_vita') }}" target="_blank">
-       <img id="{{ site.name }}_box_vita" src="{{ read_image(site.name + '_box_vita', 1) }}" onload="this.src='{{ read_image(site.name + '_box_vita') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_vita" src="{{ read_image(site.name + '_box_vita', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_vita') }}'" class="box-locales" alt="item">
       </a>
       
         {% if is_admin %}
