@@ -65,6 +65,29 @@
     });
   });
 </script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    setTimeout(function(){
+      $(".inf").each(function()
+      {
+
+        var b = $(this);
+
+        var a = $(this).attr("in_stock");
+        console.log(a.toString());
+
+        if(a == "false")
+        {
+          b.parent().children().children("button").html("Agotado");
+          b.parent().children().children("button").attr("disabled", true);
+        }
+
+      });
+    },2000);
+  });
+</script>
 {% end %}
 
 

@@ -4,8 +4,8 @@
 $(document).ready(function() 
 {
 var base_url = $.environmentVar(
-    'http://apibodegas.ondev.today/',
-    'http://apibodegas.ondev.today/',
+    'https://apibodegas.ondev.today/',
+    'https://apibodegas.ondev.today/',
     'https://apibodegas.loadingplay.com/');
 var checkout_url = $.environmentVar(
     'https://lpcheckout.ondev.today',
