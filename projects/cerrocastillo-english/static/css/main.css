@@ -259,12 +259,18 @@ button:focus {
 @media screen and (min-width: 992px) {
   .banner {
     height: 555px;
+    max-height: 555px;
+    object-fit: cover;
+    max-width: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .banner {
     height: 655px;
+    max-height: 655px;
+    object-fit: cover;
+    max-width: 100%;
   }
 }
 
@@ -327,6 +333,16 @@ button:focus {
   .banner-copy-right .banner-title {
     margin-right: 6.25rem;
     margin-bottom: 11.25rem;
+  }
+
+  .approach-title {
+    margin-right: inherit !important;
+    margin-bottom: inherit !important;
+    height: 250px !important;
+    max-height: 250px !important;
+    width:80% !important;
+    max-width: 80% !important;
+    margin-right: 20% !important;
   }
 }
 
