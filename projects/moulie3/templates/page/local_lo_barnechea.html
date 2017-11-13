@@ -107,7 +107,7 @@
        {% end %}
    
    <a id="{{ site.name + '_box_bar' }}" href="{{ read_link(site.name + '_box_bar') }}" target="_blank">
-       <img id="{{ site.name }}_box_bar" src="{{ read_image(site.name + '_box_bar', 1) }}" onload="this.src='{{ read_image(site.name + '_box_bar') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_bar" src="{{ read_image(site.name + '_box_bar', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_bar') }}'" class="box-locales" alt="item">
     </a>    
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_bar' }}" content="{{ read_link(site.name + '_box_bar') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">

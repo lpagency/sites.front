@@ -85,7 +85,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_artesanal" name="image" id="img_artesanal" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_artesanal" src="{{ read_image(site.name + '_artesanal', 1) }}" onload="this.src='{{ read_image(site.name + '_artesanal',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_artesanal" src="{{ read_image(site.name + '_artesanal', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_artesanal',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
     </div>
   </div>
@@ -134,7 +134,7 @@
           <input type="file" class="editableimage" image-id="{{ site.name }}_one_artesanal" name="image" id="img_one_artesanal" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_one_artesanal" src="{{ read_image(site.name + '_one_artesanal', 1) }}" onload="this.src='{{ read_image(site.name + '_one_artesanal',500) }}'" class="banner-one show-on-mobile visible-xs visible-sm visible-lg visible-md" alt="item" />
+        <img id="{{ site.name }}_one_artesanal" src="{{ read_image(site.name + '_one_artesanal', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_one_artesanal',500) }}'" class="banner-one show-on-mobile visible-xs visible-sm visible-lg visible-md" alt="item" />
      </div>
     <!--  <img class="img-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/b015dfd6668b05e05dc57f68983e273b_SONIDO.png">
      <img class="img-no-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/03627aeb4f602374ed2db198a380d010_SILCENCIO.png"> -->

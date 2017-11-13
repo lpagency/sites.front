@@ -157,7 +157,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact-loading" name="image" id="img_banner_contact-loading" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form img-mobile" alt="item"> -->
+    <img id="{{ site.name }}_banner_contact-loading" src="{{ read_image(site.name + '_banner_contact-loading', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact-loading',500) }}'" class="desaturada fondo-form img-mobile" alt="item"> -->
         <div class="container">
            <div class="col-md-12">
                <h3 class="description distrib contact {{editabletext}}" text-id="{{ site.name + '_ti_con' }}" style="text-align: left; text-rendering: optimizeLegibility;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;font-weight: 200;margin-top: 150px;"> {{ read_text(site.name +  '_ti_con') }}</h3>

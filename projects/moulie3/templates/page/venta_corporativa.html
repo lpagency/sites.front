@@ -122,7 +122,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_venta" name="image" id="img_banner_venta" >
                 </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_venta" src="{{ read_image(site.name + '_banner_venta', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_venta',500) }}'" class="desaturada fondo-form-venta" alt="item">
+                <img id="{{ site.name }}_banner_venta" src="{{ read_image(site.name + '_banner_venta', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_venta',500) }}'" class="desaturada fondo-form-venta" alt="item">
 
                 <div class="container">
                     <div align="center">
@@ -336,7 +336,7 @@
                                  {% end %}
 
                                  <a id="{{ site.name + '_bi_1' }}" href="{{ read_link(site.name + '_bi_1') }}" target="_blank">
-                                     <img id="{{ site.name }}_bi_1" src="{{ read_image(site.name + '_bi_1', 1) }}" onload="this.src='{{ read_image(site.name + '_bi_1') }}'" class="box-medios" alt="item">
+                                     <img id="{{ site.name }}_bi_1" src="{{ read_image(site.name + '_bi_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_bi_1') }}'" class="box-medios" alt="item">
                                  </a>    
                                  {% if is_admin %}
                                  <img class="change-image editablelink loc" link-id="{{ site.name + '_bi_1' }}" content="{{ read_link(site.name + '_bi_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -360,7 +360,7 @@
                                  {% end %}
 
                                  <a id="{{ site.name + '_bi_2' }}" href="{{ read_link(site.name + '_bi_2') }}" target="_blank">
-                                     <img id="{{ site.name }}_bi_2" src="{{ read_image(site.name + '_bi_2', 1) }}" onload="this.src='{{ read_image(site.name + '_bi_2') }}'" class="box-medios" alt="item">
+                                     <img id="{{ site.name }}_bi_2" src="{{ read_image(site.name + '_bi_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_bi_2') }}'" class="box-medios" alt="item">
                                  </a>    
                                  {% if is_admin %}
                                  <img class="change-image editablelink loc" link-id="{{ site.name + '_bi_2' }}" content="{{ read_link(site.name + '_bi_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -384,7 +384,7 @@
                                  {% end %}
 
                                  <a id="{{ site.name + '_bi_3' }}" href="{{ read_link(site.name + '_bi_3') }}" target="_blank">
-                                     <img id="{{ site.name }}_bi_3" src="{{ read_image(site.name + '_bi_3', 1) }}" onload="this.src='{{ read_image(site.name + '_bi_3') }}'" class="box-medios" alt="item">
+                                     <img id="{{ site.name }}_bi_3" src="{{ read_image(site.name + '_bi_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_bi_3') }}'" class="box-medios" alt="item">
                                  </a>    
                                  {% if is_admin %}
                                  <img class="change-image editablelink loc" link-id="{{ site.name + '_bi_3' }}" content="{{ read_link(site.name + '_bi_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -408,7 +408,7 @@
                                  {% end %}
 
                                  <a id="{{ site.name + '_bi_4' }}" href="{{ read_link(site.name + '_bi_4') }}" target="_blank">
-                                     <img id="{{ site.name }}_bi_4" src="{{ read_image(site.name + '_bi_4', 1) }}" onload="this.src='{{ read_image(site.name + '_bi_4') }}'" class="box-medios" alt="item">
+                                     <img id="{{ site.name }}_bi_4" src="{{ read_image(site.name + '_bi_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_bi_4') }}'" class="box-medios" alt="item">
                                  </a>    
                                  {% if is_admin %}
                                  <img class="change-image editablelink loc" link-id="{{ site.name + '_bi_4' }}" content="{{ read_link(site.name + '_bi_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">

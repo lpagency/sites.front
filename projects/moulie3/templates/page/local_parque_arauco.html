@@ -106,7 +106,7 @@
        </div>
        {% end %}
     <a id="{{ site.name + '_box_ara' }}" href="{{ read_link(site.name + '_box_ara') }}" target="_blank">
-       <img id="{{ site.name }}_box_ara" src="{{ read_image(site.name + '_box_ara', 1) }}" onload="this.src='{{ read_image(site.name + '_box_ara') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_ara" src="{{ read_image(site.name + '_box_ara', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_ara') }}'" class="box-locales" alt="item">
     </a> 
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_ara' }}" content="{{ read_link(site.name + '_box_ara') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">

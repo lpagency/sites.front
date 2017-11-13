@@ -90,7 +90,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_home_complementa" name="image" id="img_home_complementa">
         </div>
         {% end %}
-        <img id="{{ site.name }}_home_complementa" src="{{ read_image(site.name + '_home_complementa', 1) }}" onload="this.src='{{ read_image(site.name + '_home_complementa',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_home_complementa" src="{{ read_image(site.name + '_home_complementa', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_complementa',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container-fluid">
@@ -131,7 +131,7 @@
        </div>
        {% end %}
        <a id="{{ site.name + '_box_1_home' }}" href="{{ read_link(site.name + '_box_1_home') }}">
-         <img id="{{ site.name }}_box_1_home" src="{{ read_image(site.name + '_box_1_home', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1_home',) }}'" class="box-home" alt="item">
+         <img id="{{ site.name }}_box_1_home" src="{{ read_image(site.name + '_box_1_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1_home',) }}'" class="box-home" alt="item">
 
          <div align="center">
           <div class="text-box-home text-center {{editabletext}}" text-id="{{ site.name + '_t_box_1' }}"> {{ read_text(site.name +  '_t_box_1') }}</div>
@@ -158,7 +158,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_2_home' }}" href="{{ read_link(site.name + '_box_2_home') }}">
-       <img id="{{ site.name }}_box_2_home" src="{{ read_image(site.name + '_box_2_home', 1) }}" onload="this.src='{{ read_image(site.name + '_box_2_home',) }}'" class="box-home" alt="item">
+       <img id="{{ site.name }}_box_2_home" src="{{ read_image(site.name + '_box_2_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_2_home',) }}'" class="box-home" alt="item">
        <div align="center">
         <div class="text-box-home text-center {{editabletext}}" text-id="{{ site.name + '_t_box_2' }}"> {{ read_text(site.name +  '_t_box_2') }}</div>
       </div>
@@ -184,7 +184,7 @@
      </div>
      {% end %}
      <a id="{{ site.name + '_box_3_home' }}" href="{{ read_link(site.name + '_box_3_home') }}">
-       <img id="{{ site.name }}_box_3_home" src="{{ read_image(site.name + '_box_3_home', 1) }}" onload="this.src='{{ read_image(site.name + '_box_3_home',) }}'" class="box-home" alt="item">
+       <img id="{{ site.name }}_box_3_home" src="{{ read_image(site.name + '_box_3_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_3_home',) }}'" class="box-home" alt="item">
        <div align="center">
         <div class="text-box-home text-center {{editabletext}}" text-id="{{ site.name + '_t_box_3' }}"> {{ read_text(site.name +  '_t_box_3') }}</div>
       </div>

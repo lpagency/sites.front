@@ -80,7 +80,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_todos" name="image" id="img_todos" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_todos" src="{{ read_image(site.name + '_todos', 1) }}" onload="this.src='{{ read_image(site.name + '_todos',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_todos" src="{{ read_image(site.name + '_todos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_todos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
 </section>
@@ -116,7 +116,7 @@
        </div>
        {% end %}
 
-       <img id="{{ site.name }}_box_dif_6" src="{{ read_image(site.name + '_box_dif_6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dif_6') }}'" class="box-producto-static" alt="item">
+       <img id="{{ site.name }}_box_dif_6" src="{{ read_image(site.name + '_box_dif_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dif_6') }}'" class="box-producto-static" alt="item">
      </div>
    </div>
 

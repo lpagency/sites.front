@@ -162,7 +162,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_productos_complementa" name="image" id="img_productos_complementa">
         </div>
         {% end %}
-        <img id="{{ site.name }}_productos_complementa" src="{{ read_image(site.name + '_productos_complementa', 1) }}" onload="this.src='{{ read_image(site.name + '_productos_complementa',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_productos_complementa" src="{{ read_image(site.name + '_productos_complementa', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_complementa',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container">
