@@ -44,7 +44,7 @@
                 {% end %}
                 <a id="{{ site.name + '_logo' }}" href="#">
                     <div class="base-logo">
-                        <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                        <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
                     </div>
                 </a>
             </div>
@@ -78,7 +78,7 @@
                                  <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
                              </div>
                              {% end %}
-                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
                              </div>
                              </div>
 
