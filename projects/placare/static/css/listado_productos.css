@@ -1494,6 +1494,15 @@ hr.lon {
     font-size: 13px;
 }
 
+.size-buttons-size-strike-show {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: #d5d6d9;
+}
+
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
 
 @media (max-width: 1199px){
@@ -2380,35 +2389,41 @@ a.text {
     .btn-primary {
         color: rgba(128, 128, 128, 0.65);
         background-color: white;
-        border-color: rgba(128, 128, 128, 0.4);
+        border-color: transparent;
         float: left;
         margin-top: 0px;
         border-radius: 0px;
         width: 50%;
-        text-align: left;
+        text-align: center;
         margin-bottom: 0px;
         right: 15px;
         position: relative;
+        border-bottom: 1px solid #ebedef;
+        border-top: 1px solid #ebedef;
     }
 
     .btn-primary:hover {
         color: rgba(128, 128, 128, 0.65);
         background-color: white;
-        border-color: rgba(128, 128, 128, 0.4);
+        border-color: transparent;
         float: left;
         margin-top: 0px;
         border-radius: 0px;
         width: 50%;
-        text-align: left;
+        text-align: center;
         margin-bottom: 0px;
         left: -15px;
         position: relative;
+        border-bottom: 1px solid #ebedef;
+        border-top: 1px solid #ebedef;
     }
 
     .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
         color: gray;
         background-color: white;
-        border-color: rgba(128, 128, 128, 0.4);
+        border-color: transparent;
+        border-bottom: 1px solid #ebedef;
+        border-top: 1px solid #ebedef;
     }
 
     .modal-content.filtros {
@@ -2429,8 +2444,9 @@ a.text {
      }
 
     .mii {
-    margin-bottom: -24px;
-    margin-top: 21px;
+    margin-bottom: 0px;
+    margin-top: 35px;
+    border-bottom: 1px solid #ebedef;
     }
 
 .mtl {
@@ -2532,7 +2548,7 @@ hr.listado {
 }
 
 .pinki {
-    margin-top: -350px;
+    margin-top: -370px;
 }
 
 .kinti{
@@ -2899,7 +2915,7 @@ hr.lon {
         float: left;
         left: 15px;
         position: relative;
-        margin-bottom: 20px;
+        margin-bottom: 2px;
         margin-top: -20px;
         text-align: left;
         width: 100%;
@@ -3218,7 +3234,7 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 387px;
+        height: 358px;
         margin-bottom: 0px;
         border-bottom: 1px solid #E9E9ED;
         border-right: 1px solid #E9E9ED;
@@ -3229,7 +3245,7 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 387px;
+        height: 358px;
         margin-bottom: 0px;
         border-bottom: 1px solid #E9E9ED;
         border-right: 1px solid #E9E9ED;
@@ -3240,7 +3256,7 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 387px;
+        height: 358px;
         margin-bottom: 0px;
         border-bottom: 1px solid #ebedef;
         border-right: 1px solid #ebedef;
@@ -3249,8 +3265,8 @@ hr.lon {
     .conti-de {
     position: relative;
     width: 100%;
-    height: 387px;
-    margin-bottom: 20px;
+    height: 358px;
+    margin-bottom: 0px;
     border: 1px solid transparent;
     border-bottom: 1px solid #ebedef;
     border-right: 1px solid #ebedef;
@@ -3367,15 +3383,15 @@ hr.lon {
 
 
     .texto-header-pro-2 {
-        margin-bottom: 0px;
-        position: relative;
-        left: -34px;
-        float: left;
-        font-size: 15px;
-        font-weight: 400;
-        color: rgba(0, 0, 0, 0.72);
-        width: 100%;
-        text-align: center;
+    margin-bottom: 0px;
+    position: relative;
+    left: -42px;
+    float: left;
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.72);
+    width: 100%;
+    text-align: center;
     }
 
     .filtrosRec {
@@ -3384,10 +3400,10 @@ hr.lon {
 
     .texto-header-pro-3 {
     height: 74px;
-    margin-bottom: -35px;
+    margin-bottom: -61px;
     position: relative;
-    left: 9%;
-    top: -23px;
+    left: 6%;
+    top: -21px;
     font-size: 15px;
     color: gray;
     width: 100%;
@@ -3441,12 +3457,15 @@ hr.lon {
     }
 
     .descuento-detalle {
-        position: relative;
-        float: left;
-        bottom: 37px;
-        left: 18%;
-        font-size: 11px;
-        color: #FF5722;
+    position: relative;
+    float: left;
+    bottom: 55px;
+    left: 15%;
+    font-size: 11px;
+    color: #FF5722;
+    width: 100%;
+    float: left;
+    text-align: left;
     }
 
     .linea-separacion-movil {
@@ -3698,6 +3717,36 @@ hr.lon {
     padding-right: 0px;
     }  
 
+    .btn-mo {
+        width: 49%;
+        z-index: 20;
+    }
+
+    .btn-mo-2 {
+    width: 51%;
+    float: right;
+    margin-top: -19px;
+    left: -15px;
+    position: relative;
+    }
+
+    .btn-mo-2:hover {
+     width: 51%;
+    float: right;
+    margin-top: -19px;
+    left: -15px;
+    position: relative;
+    }
+
+    .palito{
+    border-right: 1px solid rgba(128, 128, 128, 0.46);
+    width: 46%;
+    height: 19px;
+    top: 8px;
+    position: relative;
+    z-index: 10;
+    }
+
 
 }
 
@@ -3833,13 +3882,34 @@ hr.lon {
     float: left;
     left: 14px;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     margin-top: -20px;
     text-align: left;
     width: 100%;
     font-size: 13px;
     font-weight: 500;
     }
+    .conti {
+    position: relative;
+    width: 100%;
+    border: 1px solid transparent;
+    height: 336px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #E9E9ED;
+    border-right: 1px solid #E9E9ED;
+    left: -3px;
+    }
+    .conti:hover {
+    position: relative;
+    width: 100%;
+    border: 1px solid transparent;
+    height: 336px;
+    margin-bottom: 0px;
+    border-bottom: 1px solid #E9E9ED;
+    border-right: 1px solid #E9E9ED;
+    left: -3px;
+    }   
+
 
 }
 
@@ -4104,6 +4174,13 @@ hr.lon {
     width: 116%;
    }
 
+    .mii {
+    margin-bottom: 0px;
+    margin-top: 36px;
+    border-bottom: 1px solid #ebedef;
+    height: 75px;
+    }
+
 
 }
 
@@ -4293,7 +4370,7 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 349px;
+        height: 315px;
         margin-bottom: 0px;
         border-bottom: 1px solid #E9E9ED;
         border-right: 1px solid #E9E9ED;
@@ -4304,7 +4381,7 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 349px;
+        height: 315px;
         margin-bottom: 0px;
         border-bottom: 1px solid #E9E9ED;
         border-right: 1px solid #E9E9ED;
@@ -4485,14 +4562,14 @@ hr.lon {
         position: relative;
         width: 100%;
         border: 1px solid transparent;
-        height: 340px;
+        height: 315px;
         margin-bottom: 10px;
     }
 
     .conti-de {
         position: relative;
         width: 100%;
-        height: 340px;
+        height: 115px;
         margin-bottom: 10px;
         border: 1px solid transparent;
     }
@@ -4605,6 +4682,19 @@ hr.lon {
     margin-bottom: -14px;
     font-size: 15px;
    }
+
+   .original {
+    color: #282c3f;
+    float: left;
+    left: 13px;
+    position: relative;
+    margin-bottom: 0px;
+    margin-top: -20px;
+    text-align: left;
+    width: 100%;
+    font-size: 13px;
+    font-weight: 500;
+}
 
 
 }

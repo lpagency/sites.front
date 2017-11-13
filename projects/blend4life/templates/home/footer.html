@@ -131,7 +131,7 @@
                                        <input type="file" class="editableimage" image-id="{{ site.name }}_footer_1" name="image" id="img_footer_1" >
                                    </div>
                     {% end %}
-                       <img id="{{ site.name }}_footer_1" src="{{ read_image(site.name + '_footer_1', 1) }}" onload="this.src='{{ read_image(site.name + '_footer_1',500) }}'" class="img-foot" alt="item">
+                       <img id="{{ site.name }}_footer_1" src="{{ read_image(site.name + '_footer_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer_1',500) }}'" class="img-foot" alt="item">
                        </div>
                         <!-- <img class="img-footer" src="https://84static.loadingplay.com/static/images/4604eb620656011308c9994011d530f7_Cancer_de_Piel.png">  -->
 
