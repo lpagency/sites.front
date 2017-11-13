@@ -86,7 +86,7 @@ $(document).ready(function(){
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_cate_li" name="image" id="img_banner_cate_li" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_cate_li" src="{{ read_image(site.name + '_banner_cate_li', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cate_li',500) }}'" class="banner_uno_list hidden" alt="item">        
+                <img id="{{ site.name }}_banner_cate_li" src="{{ read_image(site.name + '_banner_cate_li', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cate_li',500) }}'" class="banner_uno_list hidden" alt="item">        
        </div>
        
        <div class="col-md-12">
@@ -122,7 +122,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_1' }}" href="{{ read_link(site.name + '_lin_1') }}">
-        <img id="{{ site.name }}_lin_1" src="{{ read_image(site.name + '_lin_1', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_1',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_1" src="{{ read_image(site.name + '_lin_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_1',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -144,7 +144,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_2' }}" href="{{ read_link(site.name + '_lin_2') }}">
-        <img id="{{ site.name }}_lin_2" src="{{ read_image(site.name + '_lin_2', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_2',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_2" src="{{ read_image(site.name + '_lin_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_2',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -165,7 +165,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_3' }}" href="{{ read_link(site.name + '_lin_3') }}">
-        <img id="{{ site.name }}_lin_3" src="{{ read_image(site.name + '_lin_3', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_3',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_3" src="{{ read_image(site.name + '_lin_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_3',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -186,7 +186,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_4' }}" href="{{ read_link(site.name + '_lin_4') }}">
-        <img id="{{ site.name }}_lin_4" src="{{ read_image(site.name + '_lin_4', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_4',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_4" src="{{ read_image(site.name + '_lin_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_4',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -207,7 +207,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_55' }}" href="{{ read_link(site.name + '_lin_55') }}">
-        <img id="{{ site.name }}_lin_55" src="{{ read_image(site.name + '_lin_55', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_55',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_55" src="{{ read_image(site.name + '_lin_55', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_55',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -228,7 +228,7 @@ $(document).ready(function(){
        </div>
        {% end %}
        <a id="{{ site.name + '_lin_66' }}" href="{{ read_link(site.name + '_lin_66') }}">
-        <img id="{{ site.name }}_lin_66" src="{{ read_image(site.name + '_lin_66', 1) }}" onload="this.src='{{ read_image(site.name + '_lin_66',) }}'" class="img-edit" alt="item">
+        <img id="{{ site.name }}_lin_66" src="{{ read_image(site.name + '_lin_66', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_lin_66',) }}'" class="img-edit" alt="item">
         </a> 
     </div>
 
@@ -260,7 +260,7 @@ $(document).ready(function(){
        {% end %}
    
    <a id="{{ site.name + '_box_gris_1' }}" href="{{ read_link(site.name + '_box_gris_1') }}" target="_blank">
-       <img id="{{ site.name }}_box_gris_1" src="{{ read_image(site.name + '_box_gris_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_gris_1') }}'" class="img-home-cir-gris" alt="item">
+       <img id="{{ site.name }}_box_gris_1" src="{{ read_image(site.name + '_box_gris_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_gris_1') }}'" class="img-home-cir-gris" alt="item">
     </a>    
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_gris_1' }}" content="{{ read_link(site.name + 'box_gris_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -282,7 +282,7 @@ $(document).ready(function(){
      {% end %}
      
      <a id="{{ site.name + '_box_gris_2' }}" href="{{ read_link(site.name + '_box_gris_2') }}">
-      <img id="{{ site.name }}_box_gris_2" src="{{ read_image(site.name + '_box_gris_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_gris_2',) }}'" class="img-home-cir-gris" alt="item">
+      <img id="{{ site.name }}_box_gris_2" src="{{ read_image(site.name + '_box_gris_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_gris_2',) }}'" class="img-home-cir-gris" alt="item">
      </a> 
 
     {% if is_admin %}
@@ -308,7 +308,7 @@ $(document).ready(function(){
        {% end %}
    
    <a id="{{ site.name + '_box_gris_3' }}" href="{{ read_link(site.name + '_box_gris_3') }}" target="_blank">
-       <img id="{{ site.name }}_box_gris_3" src="{{ read_image(site.name + '_box_gris_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_gris_3') }}'" class="img-home-cir-gris" alt="item">
+       <img id="{{ site.name }}_box_gris_3" src="{{ read_image(site.name + '_box_gris_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_gris_3') }}'" class="img-home-cir-gris" alt="item">
     </a>    
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_gris_3' }}" content="{{ read_link(site.name + 'box_gris_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -331,7 +331,7 @@ $(document).ready(function(){
      {% end %}
      
      <a id="{{ site.name + '_box_gris_4' }}" href="{{ read_link(site.name + '_box_gris_4') }}">
-      <img id="{{ site.name }}_box_gris_4" src="{{ read_image(site.name + '_box_gris_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_gris_4',) }}'" class="img-home-cir-gris" alt="item">
+      <img id="{{ site.name }}_box_gris_4" src="{{ read_image(site.name + '_box_gris_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_gris_4',) }}'" class="img-home-cir-gris" alt="item">
      </a> 
 
     {% if is_admin %}
@@ -356,7 +356,7 @@ $(document).ready(function(){
        {% end %}
    
    <a id="{{ site.name + '_box_gris_5' }}" href="{{ read_link(site.name + '_box_gris_5') }}" target="_blank">
-       <img id="{{ site.name }}_box_gris_5" src="{{ read_image(site.name + '_box_gris_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_gris_5') }}'" class="img-home-cir-gris" alt="item">
+       <img id="{{ site.name }}_box_gris_5" src="{{ read_image(site.name + '_box_gris_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_gris_5') }}'" class="img-home-cir-gris" alt="item">
     </a>    
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_gris_5' }}" content="{{ read_link(site.name + 'box_gris_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
