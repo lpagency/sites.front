@@ -304,4 +304,29 @@ body {
     z-index: 11111;
 }
 
+#wrapper.toggled {
+    padding-left: 0px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.63);
+    width: 100%;
+    position: fixed;
+    z-index: 100000;
+}
+
+.compi {
+    font-size: 13px;
+    font-weight: 200;
+    position: relative;
+    left: -2%;
+}
+
+#wrapper {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    margin-top: 57px;
+}
+
 }

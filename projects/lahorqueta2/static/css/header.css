@@ -5,6 +5,9 @@
     margin-top: 15px;
     margin-bottom: 21px;
     object-fit: scale-down;
+    margin-left: 52px;
+    top: 14px;
+    position: relative;
 }
 
 .caja-logo {
@@ -13,8 +16,6 @@
     float: left;
     margin-top: -7px;
     margin-bottom: 21px;
-    position: relative;
-    left: 40px;
 }
 
 .linea {
@@ -222,6 +223,11 @@
      margin-left: -38px;
 }
 
+.navbar-brand {
+    float: inherit; 
+    padding: 15px 15px;
+}
+
 /*----------------------------------------RESPONSIVE------------------------------*/
 @media (max-width: 1199px){
 .navbar-left {
@@ -283,6 +289,16 @@
     margin-left: 0px;
 }
 
+.caja-logo {
+    height: 51px;
+    width: 250px;
+    float: left;
+    margin-top: -7px;
+    margin-bottom: 21px;
+    position: relative;
+    left: 11px;
+}
+
 }
 
 
@@ -323,12 +339,13 @@
 }
 
 @media (max-width:414px){
-	.caja-logo {
+.caja-logo {
     height: 51px;
     width: 200px;
     float: left;
     margin-top: -7px;
     margin-bottom: 21px;
+    left: -10px;
 }
 
 }
