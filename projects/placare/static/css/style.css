@@ -428,7 +428,11 @@ input.cup{
     object-fit: contain;
 }
 
-
+.img-tiempo{
+    object-fit: scale-down;
+    width: 100%;
+    margin-top: -126px;
+}
 /*-----------------------------------------------------Responsive---------------------------------------*/
 
 @media (max-width: 991px){
@@ -481,6 +485,12 @@ input.cup{
     float: left;
     position: relative;
     right:0px;
+}
+
+.img-tiempo {
+    object-fit: scale-down;
+    width: 100%;
+    margin-top: 0px;
 }
 
 }

@@ -12,7 +12,7 @@
         {% end %}
         <div style="width: 100%;position: relative;">
            
-            <img class="decolor img_banner3 img-responsive" id="{{ site.name }}_img_third" src="{{ read_image(site.name + '_img_third', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_img_third',500) }}'" alt="item" style=" ">
+            <img class="decolor img_banner3 img-responsive" id="{{ site.name }}_img_third" src="{{ read_image(site.name + '_img_third', 1) }}"  onload="this.src={{ read_image(site.name + '_img_third',500) }}'" alt="item" style=" ">
             
             <div class="cuadro-layer-2">
             <div class="cuadro2-white">    
