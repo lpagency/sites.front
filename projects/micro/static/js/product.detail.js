@@ -15,7 +15,6 @@ $(document).ready(function()
          'https://pay.loadingplay.com');
     var app_public = $.environmentVar(33,33,33);
 
-
     // functions 
     // productos relacionados
     var related = function(tag) 
