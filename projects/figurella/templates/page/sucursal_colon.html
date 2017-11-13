@@ -36,7 +36,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_sucursales_colon" name="image" id="img_sucursales_colon" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_sucursales_colon" src="{{ read_image(site.name + '_sucursales_colon', 1) }}" onload="this.src='{{ read_image(site.name + '_sucursales_colon',500) }}'" class=" img_planes_banner desaturada" alt="item">
+        <img id="{{ site.name }}_sucursales_colon" src="{{ read_image(site.name + '_sucursales_colon', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_sucursales_colon',500) }}'" class=" img_planes_banner desaturada" alt="item">
         <div class="" align="center">
             <h1 class="text_planes text-center {{editabletext}}" text-id="{{ site.name + '_text_sucursales0_colon' }}"> 
             {{ read_text(site.name +  '_text_sucursales0_colon') }}
@@ -69,7 +69,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_box_colon" name="image" id="img_box_colon" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_box_colon" src="{{ read_image(site.name + '_box_colon', 1) }}" onload="this.src='{{ read_image(site.name + '_box_colon') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_colon" src="{{ read_image(site.name + '_box_colon', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_box_colon') }}'" class="box-locales" alt="item">
     
       </div>
 

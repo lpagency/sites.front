@@ -35,7 +35,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_sucursales_elgolf" name="image" id="img_sucursales_elgolf" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_sucursales_elgolf" src="{{ read_image(site.name + '_sucursales_elgolf', 1) }}" onload="this.src='{{ read_image(site.name + '_sucursales_elgolf',500) }}'" class=" img_planes_banner desaturada" alt="item">
+        <img id="{{ site.name }}_sucursales_elgolf" src="{{ read_image(site.name + '_sucursales_elgolf', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_sucursales_elgolf',500) }}'" class=" img_planes_banner desaturada" alt="item">
         <div class="" align="center">
             <h1 class="text_planes text-center {{editabletext}}" text-id="{{ site.name + '_text_sucursales0_elgolf' }}"> 
             {{ read_text(site.name +  '_text_sucursales0_elgolf') }}
@@ -68,7 +68,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_box_elgolf" name="image" id="img_box_elgolf" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_box_elgolf" src="{{ read_image(site.name + '_box_elgolf', 1) }}" onload="this.src='{{ read_image(site.name + '_box_elgolf') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_elgolf" src="{{ read_image(site.name + '_box_elgolf', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_box_elgolf') }}'" class="box-locales" alt="item">
     
       </div>
 

@@ -42,7 +42,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_historias" name="image" id="img_historias" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_historias" src="{{ read_image(site.name + '_historias', 1) }}" onload="this.src='{{ read_image(site.name + '_historias',500) }}'" class="img_historias_banner desaturada" alt="item">
+        <img id="{{ site.name }}_historias" src="{{ read_image(site.name + '_historias', 1) }}" onload=“this.onload=‘’;this.src='{{ read_image(site.name + '_historias',500) }}'" class="img_historias_banner desaturada" alt="item">
         <div class="" align="center">
             <h1 class="text_listart text-center {{editabletext}}" text-id="{{ site.name + '_text_historias' }}"> 
             {{ read_text(site.name +  '_text_historias') }}
