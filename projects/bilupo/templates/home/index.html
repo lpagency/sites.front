@@ -762,7 +762,7 @@ function myFunction() {
             <input type="file" class="editableimage imagenesBiluppo" image-id="{{ site.name }}index3" name="image" id="img_index3" style=" object-fit: cover; width: 100%;height: 100%;" />
         </div>
         {% end %}
-        <img class="imgBil" id="{{ site.name }}index3" src="{{ read_image(site.name + 'index3', 1) }}" onload="this.src='{{ read_image(site.name + 'index3',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
+        <img class="imgBil" id="{{ site.name }}index3" src="{{ read_image(site.name + 'index3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'index3',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
         <div class="mascara">
             <div class="contenedor2">
           <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index1' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index1') }}</div>
@@ -787,7 +787,7 @@ function myFunction() {
         <input type="file" class="editableimage imagenesBiluppo" image-id="{{ site.name }}index1" name="image" id="img_index1" style="object-fit: cover; width: 100%;height: 100%;" />
     </div>
     {% end %}
-    <img class="imgBil" id="{{ site.name }}index1" src="{{ read_image(site.name + 'index1', 1) }}" onload="this.src='{{ read_image(site.name + 'index1',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
+    <img class="imgBil" id="{{ site.name }}index1" src="{{ read_image(site.name + 'index1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'index1',) }}'" class="cuadros-home" alt="item" style=" object-fit: cover; width: 420px;height: 450px;">
     <div class="mascara" >
     <div class="contenedor2">
           <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index2' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index2') }}</div>
@@ -815,7 +815,7 @@ function myFunction() {
         </div>
   {% end %}
        
-        <img class="imgBil" id="{{ site.name }}index2 " src="{{ read_image(site.name + 'index2', 1) }} " onload="this.src='{{ read_image(site.name + 'index2',) }}' " class="cuadros-home " alt="item " style=" object-fit: cover; width: 420px;height: 450px;">
+        <img class="imgBil" id="{{ site.name }}index2 " src="{{ read_image(site.name + 'index2', 1) }} " onload="this.onload='';this.src='{{ read_image(site.name + 'index2',) }}' " class="cuadros-home " alt="item " style=" object-fit: cover; width: 420px;height: 450px;">
   <div class="mascara ">
   <div class="contenedor2">
           <div class="parrafo text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_index3' }}" style="font-size: 27px">{{ read_text(site.name + 'text_index3') }}</div>

@@ -49,7 +49,7 @@
     <input type="file" class="editableimage" image-id="{{ site.name }}titulo_tips" name="image" id="img_titulo_tips" style="width: 232px; height: 137px; object-fit: scale-down;" />
 </div>
 {% end %}
-<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item">
+<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item">
   <button type="subbmit" alt="Enviar" class="buscarBoton" style="float: right;margin-top: 5%"><span class="fa fa-search"></span></button><input type="text" name="tBuscar" placeholder="Buscar" style="float: right; height: 60%; margin-top: 5%">
 </div>
 <div style="padding: 50px;">
@@ -63,7 +63,7 @@
        </div>
        {% end %}
        
-        <img id="{{ site.name }}tips1" src="{{ read_image(site.name + 'tips1', 1) }}" onload="this.src='{{ read_image(site.name + 'tips1',) }}'" class="cuadros-home" alt="item" style="margin-left: 35%; width: 415px; height: 434px; object-fit: scale-down;">
+        <img id="{{ site.name }}tips1" src="{{ read_image(site.name + 'tips1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'tips1',) }}'" class="cuadros-home" alt="item" style="margin-left: 35%; width: 415px; height: 434px; object-fit: scale-down;">
   </div>
   <div style="width: 60%; float: right;">
     <h1 class="text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_tips2' }}" id="fuente" style="color: red;     margin-left: 16%; margin-top: 5%;margin-bottom: -4.7%">{{ read_text(site.name +  'text_tips2') }}</h1>
