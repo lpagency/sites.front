@@ -23,64 +23,8 @@
 {% end %}
 
 <!-- 
-<section class="container-fluid banner">
-           <div style="position:relative;">
-           {% if is_admin %}
-           <div class="image-upload lapiz visible-movil">
-            <label for="img_banner_investments">
-             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-         </label>
-         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_investments" name="image" id="img_banner_investments" >
-     </div>
-     {% end %}
-     <img id="{{ site.name }}_banner_investments" src="{{ read_image(site.name + '_banner_investments', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_investments',) }}'" class="banner-bg" alt="item">
-     </div>
-      
-        <div class="banner-copy banner-copy-right">
-            <h1 class="banner-title {{editabletext}}" text-id="{{ site.name + '_investments' }}"> {{ read_text(site.name +  '_investments') }}</h1>
-        </div>
-    </section>
 
-     <section class="container investments">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 class="text text-big text-black investments-title {{editabletext}}" text-id="{{ site.name + '_edit' }}"> {{ read_text(site.name +  '_edit') }}</h2>
-                <div class="investments-list">
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                         <div style="position:relative;">
-                           {% if is_admin %}
-                           <div class="image-upload lapiz visible-movil">
-                            <label for="img_banner_investments_1">
-                             <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-                           </label>
-                           <input type="file" class="editableimage" image-id="{{ site.name }}_banner_investments_1" name="image" id="img_banner_investments_1" >
-                         </div>
-                         {% end %}
-                         <img id="{{ site.name }}_banner_investments_1" src="{{ read_image(site.name + '_banner_investments_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_investments_1',) }}'" class="investments-item-logo-img" alt="item">
-                       </div>
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_uno' }}"> {{ read_text(site.name +  '_texto_uno') }}</div>
-                                    <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_dos' }}"> {{ read_text(site.name +  '_texto_dos') }}</div>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_tres' }}"> {{ read_text(site.name +  '_texto_tres') }}</div>
-                                    <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_cuatro' }}"> {{ read_text(site.name +  '_texto_cuatro') }}</div>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_cinco' }}"> {{ read_text(site.name +  '_texto_cinco') }}</div>
-                                    <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_seis' }}"> {{ read_text(site.name +  '_texto_seis') }}</div>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_siete' }}"> {{ read_text(site.name +  '_texto_siete') }}</div>
-                                    <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_ocho' }}"> {{ read_text(site.name +  '_texto_ocho') }}</div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                       
                     <div class="investments-item">
                         <div class="investments-item-logo">
                              <div style="position:relative;">
@@ -297,197 +241,213 @@
     </section> -->
 
 <section class="container-fluid banner">
-    <img src="../static/img/banner-5.jpg" alt="Banner" class="banner-bg">
+    {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+            <label for="img_banner_investments">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_banner_investments" name="image" id="img_banner_investments" >
+        </div>
+    {% end %}
+    <img id="{{ site.name }}_banner_investments" src="{{ read_image(site.name + '_banner_investments', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_investments',) }}'" class="banner-bg" alt="item">
     <div class="banner-copy banner-copy-right">
-        <h1 class="banner-title">Investments</h1>
+        <h1 class="banner-title approach-title {{editabletext}}" text-id="{{ site.name + '_investments' }}"> {{ read_text(site.name +  '_investments') }}</h1>
     </div>
 </section>
 
-    <section class="container investments">
-        <div class="row">
-            <div class="col-xs-12">
-                <h2 class="text text-big text-black investments-title">Our partners have been involved in the following deals:</h2>
-                <div class="investments-list">
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/valtek.gif" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Gonzalo Dulanto</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2016</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Valtek is the leading provider of equipment, reagents, software and technical support for mid/small size clinical laboratories.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+<section class="container investments">
+    <div class="row">
+        <div class="col-xs-12">
+            <h2 class="text text-big text-black investments-title {{editabletext}}" text-id="{{ site.name + '_edit' }}"> {{ read_text(site.name +  '_edit') }}</h2>
+            <div class="investments-list">
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 820px;top: 220px;">
+                                <label for="img_banner_investments_1">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage" image-id="{{ site.name }}_banner_investments_1" name="image" id="img_banner_investments_1" >
+                            </div>
+                        {% end %}
+                        <img id="{{ site.name }}_banner_investments_1" src="{{ read_image(site.name + '_banner_investments_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_investments_1',) }}'" class="investments-item-logo-img" alt="item">
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/bbr.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2014</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">BBR is the Chilean leader in Point of Sale, Store Operations, B2B and back office software applications for the retail industry.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Gonzalo Dulanto</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2016</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Valtek is the leading provider of equipment, reagents, software and technical support for mid/small size clinical laboratories.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Active</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/proestech.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2013</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Proestech offers its proprietary advanced technology designed to prepare and stabilize natural soil prior to paving, providing the structural basis required for the construction of roads. Can generate relevant cost savings especially in clay rich soils. Present in Chile, Peru and Colombia.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/bbr.png" alt="Logo" class="investments-item-logo-img">
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/colgram.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2013</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Colgram Group is a specialty retail company that has a leading position in apparel and footwear for kids and a growing
-                                        participation in outdoors. It groups 3 brands/concepts: Colloky, Opaline, and Zolkan. As of Dec. 2016, Colgram operated more than 90 stores between Chile and Peru.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Realized</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_nueve' }}"> {{ read_text(site.name +  '_texto_nueve') }}</div>
+                                <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_diez' }}"> {{ read_text(site.name +  '_texto_diez') }}</div>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_once' }}"> {{ read_text(site.name +  '_texto_once') }}</div>
+                                <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_doce' }}"> {{ read_text(site.name +  '_texto_doce') }}</div>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_trece' }}"> {{ read_text(site.name +  '_texto_trece') }}</div>
+                                <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_catorce' }}"> {{ read_text(site.name +  '_texto_catorce') }}</div>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <div class="text text-black text-big-med investments-item-info-item-key {{editabletext}}" text-id="{{ site.name + '_texto_quince' }}"> {{ read_text(site.name +  '_texto_quince') }}</div>
+                                <div class="text text-big-med investments-item-info-item-value {{editabletext}}" text-id="{{ site.name + '_texto_dieciseis' }}"> {{ read_text(site.name +  '_texto_dieciseis') }}</div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/federal.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2012</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Leading integrated security technology company which specializes in alarm monitoring, neighborhood protection and access control.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/proestech.png" alt="Logo" class="investments-item-logo-img">
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/tiaxa.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2010</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Tiaxa provides billing and rating platforms to mobile operators, as well as extending nano-credits to mobile prepaid users. Is present in Latin America and Asia.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2013</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Proestech offers its proprietary advanced technology designed to prepare and stabilize natural soil prior to paving, providing the structural basis required for the construction of roads. Can generate relevant cost savings especially in clay rich soils. Present in Chile, Peru and Colombia.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Active</span>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="investments-item">
-                        <div class="investments-item-logo">
-                            <img src="../static/img/nubox.png" alt="Logo" class="investments-item-logo-img">
-                        </div>
-                        <div class="investments-item-copy">
-                            <ul class="investments-item-info">
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">2010</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Nubox is the leading web base solution for accounting, payroll and billing software for small and mid-size businesses. As of December 2015 it had more than 4,500 active clients both in Chile and in Colombia.</span>
-                                </li>
-                                <li class="investments-item-info-item">
-                                    <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
-                                    <span class="text text-big-med investments-item-info-item-value">Active</span>
-                                </li>
-                            </ul>
-                        </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/colgram.png" alt="Logo" class="investments-item-logo-img">
+                    </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2013</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Colgram Group is a specialty retail company that has a leading position in apparel and footwear for kids and a growing
+                                participation in outdoors. It groups 3 brands/concepts: Colloky, Opaline, and Zolkan. As of Dec. 2016, Colgram operated more than 90 stores between Chile and Peru.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Realized</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/federal.png" alt="Logo" class="investments-item-logo-img">
+                    </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2012</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Leading integrated security technology company which specializes in alarm monitoring, neighborhood protection and access control.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Active</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/tiaxa.png" alt="Logo" class="investments-item-logo-img">
+                    </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2010</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Tiaxa provides billing and rating platforms to mobile operators, as well as extending nano-credits to mobile prepaid users. Is present in Latin America and Asia.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Active</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="investments-item">
+                    <div class="investments-item-logo">
+                        <img src="../static/img/nubox.png" alt="Logo" class="investments-item-logo-img">
+                    </div>
+                    <div class="investments-item-copy">
+                        <ul class="investments-item-info">
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Partner:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Sergio Gutierrez</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Year:</span>
+                                <span class="text text-big-med investments-item-info-item-value">2010</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Description:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Nubox is the leading web base solution for accounting, payroll and billing software for small and mid-size businesses. As of December 2015 it had more than 4,500 active clients both in Chile and in Colombia.</span>
+                            </li>
+                            <li class="investments-item-info-item">
+                                <span class="text text-black text-big-med investments-item-info-item-key">Status:</span>
+                                <span class="text text-big-med investments-item-info-item-value">Active</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 {% include '../home/footer.html' %}
 
