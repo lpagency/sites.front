@@ -67,7 +67,7 @@
                                  <input type="file" class="editableimage" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
                              </div>
                              {% end %}
-                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload='this.onload="";this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
+                             <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_logo',) }}'" class="img-responsive logo" alt="item">
                              </div>
                              </div>
 

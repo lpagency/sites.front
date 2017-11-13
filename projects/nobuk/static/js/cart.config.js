@@ -59,16 +59,6 @@ $(document).ready(function()
         $("#todos").addClass("active");
     }
 
-    // var base_url = $.environmentVar(
-    //     'https://apibodegas.loadingplay.com/',
-    //     'https://apibodegas.loadingplay.com/',
-    //     'https://apibodegas.loadingplay.com/');
-    // var checkout_url = $.environmentVar(
-    //     'https://checkout.loadingplay.com',
-    //     'https://checkout.loadingplay.com',
-    //     'https://checkout.loadingplay.com');
-    // var app_public = $.environmentVar(29,34,29);
-
     if (tag === '' || tag === undefined)
     {
         tag = 'madre';
@@ -95,6 +85,8 @@ $(document).ready(function()
             // {
             //     $(".products").html("no hay productos con estos filtros");
             // }
+
+            console.log(products);
         }
     };
 

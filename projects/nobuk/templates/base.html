@@ -269,7 +269,7 @@
     <!-- <script type="text/javascript" src="{{ site_base }}/static/js/imageloader.js" ></script> -->
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?12"></script>
     <!--         // <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/jquery.fancybox.pack.js"></script> -->
     <!--         <script type="text/javascript" src="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.js?v=2.1.5"></script> -->
     <!--         <script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>
@@ -353,9 +353,9 @@
     <td class="vert-align text-left">{{! name }}</td>
     <td class="vert-align money">{{! price }}</td>
     <td class="text-center vert-align">
-        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+        <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
         {{! quantity }}
-        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+        <a href="#!" class="add-one" lp-cart-add-one="{{! id }}">+</a>
     </td>
     <td class="text-center vert-align"><a class="borrarproducto" cart-id=""><i class="icon-close"></i></a></td>
 </tr>

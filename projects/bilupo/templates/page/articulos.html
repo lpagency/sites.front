@@ -185,7 +185,7 @@ body{
     <input type="file" class="editableimage" image-id="{{ site.name }}titulo_tips" name="image" id="img_titulo_tips"  />
 </div>
 {% end %}
-<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home TipsBiluppo" alt="item">
+<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home TipsBiluppo" alt="item">
 <form action=" {{site_base}}/search" method="get">
   <button type="subbmit" alt="Enviar" class="buscarBoton" style="float: right; height: 30px; position: relative;bottom: 63px; left: 61px; padding: 0 1%"><span class="fa fa-search"></span></button><input type="text" name="search_query" placeholder="Buscar" class="buscarDetalle" style="float: right; height: 60%; padding:4px 1%; font-family:'Open Sans', sans-serif; font-size: 13px; position: relative;bottom: 63px;  left: 62px">
   </form>

@@ -109,7 +109,7 @@
        {% end %}
    
    <a id="{{ site.name + '_box_lascondes' }}" href="{{ read_link(site.name + '_box_lascondes') }}" target="_blank">
-       <img id="{{ site.name }}_box_lascondes" src="{{ read_image(site.name + '_box_lascondes', 1) }}" onload="this.src='{{ read_image(site.name + '_box_lascondes') }}'" class="box-locales" alt="item">
+       <img id="{{ site.name }}_box_lascondes" src="{{ read_image(site.name + '_box_lascondes', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_lascondes') }}'" class="box-locales" alt="item">
     </a>    
         {% if is_admin %}
           <img class="change-image editablelink loc" link-id="{{ site.name + '_box_lascondes' }}" content="{{ read_link(site.name + '_box_lascondes') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">

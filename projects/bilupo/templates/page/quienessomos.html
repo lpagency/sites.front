@@ -124,7 +124,7 @@ body{
     <input type="file" class="editableimage" image-id="{{ site.name }}titulo" name="image" id="img_titulo" style="width: 375px; height: 394px;" />
 </div>
 {% end %}
-<img class="biluppoQS" id="{{ site.name }}titulo" src="{{ read_image(site.name + 'titulo', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo',) }}'" class="cuadros-home" alt="item" style="width: 308px; height: 71px; object-fit: scale-down;margin-left:30%; margin-top:-7% ">
+<img class="biluppoQS" id="{{ site.name }}titulo" src="{{ read_image(site.name + 'titulo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'titulo',) }}'" class="cuadros-home" alt="item" style="width: 308px; height: 71px; object-fit: scale-down;margin-left:30%; margin-top:-7% ">
 <br>
 <br>
 <br>
@@ -145,7 +145,7 @@ siguenos en <a href="https://www.instagram.com/biluppo/?hl=en" style="color: red
        </div>
        {% end %}
        
-        <img id="{{ site.name }}biluppo" src="{{ read_image(site.name + 'biluppo', 1) }}" onload="this.src='{{ read_image(site.name + 'biluppo',) }}'" class="cuadros-home mujeresBil" alt="item" style="width: 100%; height: 10%; margin-top: -15%">
+        <img id="{{ site.name }}biluppo" src="{{ read_image(site.name + 'biluppo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'biluppo',) }}'" class="cuadros-home mujeresBil" alt="item" style="width: 100%; height: 10%; margin-top: -15%">
     </div>
     <div class="nombres container" style="margin-right: 8%;float: right;width: 20%;margin-top: 15%;">
       <div class="nombre text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_nombre1' }}" style="width: 200px;"><b>{{ read_text(site.name +  'text_nombre1') }}</b></div>

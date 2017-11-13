@@ -1,15 +1,13 @@
 /*------------- BASE IMPORT -------------*/
 @font-face {
- /* font-family: "HelveticaNeueCon";*/
-  font-family: 'Asap Condensed', sans-serif;
-/*  src: url("../fonts/HelveticaNeueCon.otf");*/
+  font-family: "HelveticaNeueCon";
+  src: url("../fonts/HelveticaNeueCon.otf");
 }
 
 html,
 body {
   overflow-x: hidden;
   font-size: 12px;
-  font-family: 'Asap Condensed', sans-serif;
 }
 
 h1,
@@ -25,18 +23,6 @@ ol,
 span {
   margin: 0;
   padding: 0;
-}
-
-li{
-  cursor: pointer;
-}
-
-a{
-  cursor: pointer;
-}
-
-.team-item-copy{
-  cursor: pointer;
 }
 
 ul,
@@ -55,39 +41,6 @@ button:focus {
   outline: none;
 }
 
-span{
-  font-size: 24px !important;
-}
-
-div.upload input, div.image-upload input {
-    position: absolute;
-    left: auto;
-    right: 0px;
-    top: 0px;
-    margin: 0;
-    padding: 0;
-    opacity: 0;
-    -moz-opacity: 0;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.posi{
-  position: relative;
-}
-
-.text-accent.text-alt.team-item-role {
-    top: 40px;
-    left: -249px;
-}
-
-.text-brand.text-big.team-item-name {
-    left: -161px;
-    width: 391px;
-}
-
 ::-moz-selection {
   background-color: #1d4f90;
   color: #ffffff;
@@ -97,13 +50,6 @@ div.upload input, div.image-upload input {
   background-color: #1d4f90;
   color: #ffffff;
 }
-
-
-.caja-logo-he{
-  background-color: white;
-}
-
-
 
 @media screen and (min-width: 768px) {
   html,
@@ -137,7 +83,7 @@ div.upload input, div.image-upload input {
 
 .text {
   color: #6d6e71;
- /* font-family: "HelveticaNeueCon", "Helvetica", Arial, sans-serif;*/
+  font-family: "HelveticaNeueCon", "Helvetica", Arial, sans-serif;
   font-size: 2.5rem;
   line-height: 3.75rem;
 }
@@ -217,7 +163,7 @@ div.upload input, div.image-upload input {
 
 @media screen and (min-width: 768px) {
   .text-big-med {
-    font-size:24px;
+    font-size: 1.875rem;
     line-height: 2.5rem;
   }
 }
@@ -227,11 +173,9 @@ div.upload input, div.image-upload input {
 }
 
 @media screen and (min-width: 768px) {
-.text-big-small {
+  .text-big-small {
     font-size: 1.5625rem;
-    width: 80%;
-}
-
+  }
 }
 
 .text-med {
@@ -277,12 +221,10 @@ div.upload input, div.image-upload input {
 }
 
 @media screen and (min-width: 768px) {
-.text-small {
+  .text-small {
     font-size: 0.75rem;
     line-height: 0.875rem;
-    width: 200px;
-}
-
+  }
 }
 
 /*------------- MODULES IMPORT -------------*/
@@ -317,12 +259,18 @@ div.upload input, div.image-upload input {
 @media screen and (min-width: 992px) {
   .banner {
     height: 555px;
+    max-height: 555px;
+    object-fit: cover;
+    max-width: 100%;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .banner {
     height: 655px;
+    max-height: 655px;
+    object-fit: cover;
+    max-width: 100%;
   }
 }
 
@@ -386,6 +334,16 @@ div.upload input, div.image-upload input {
     margin-right: 6.25rem;
     margin-bottom: 11.25rem;
   }
+
+  .approach-title {
+    margin-right: inherit !important;
+    margin-bottom: inherit !important;
+    height: 250px !important;
+    max-height: 250px !important;
+    width:80% !important;
+    max-width: 80% !important;
+    margin-right: 20% !important;
+  }
 }
 
 .banner-title {
@@ -396,6 +354,11 @@ div.upload input, div.image-upload input {
   text-transform: uppercase;
   text-align: center;
   color: #ffffff;
+  width: 100%;
+  max-width: 100%;
+  height: 600px;
+  overflow: hidden;
+  max-height: 600px;
 }
 
 /*------------- 2. INTRO -------------*/
@@ -421,27 +384,11 @@ div.upload input, div.image-upload input {
   }
 }
 
-/*.intro-img {
+.intro-img {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-}*/
-
-.intro-img {
-    position: relative;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    height: 324px;
-    object-fit: cover;
-    margin-bottom: 34px;
-}
-
-.intro-copy.estilo {
-    position: relative;
-    top: 100px;
-    margin-bottom: -190px;
 }
 
 .intro-text + .intro-text {
@@ -752,9 +699,6 @@ div.upload input, div.image-upload input {
 
 .header-item-arrow {
   max-width: 10px;
-    position: relative;
-    left: 28%;
-    top: -6px;
 }
 
 .header-link {
@@ -1042,7 +986,6 @@ div.upload input, div.image-upload input {
 
 @media screen and (min-width: 768px) {
   .approach-item-copy {
-    position: relative;
     width: 40%;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
@@ -1054,7 +997,6 @@ div.upload input, div.image-upload input {
 
 @media screen and (min-width: 768px) {
   .approach-item:nth-child(even) .approach-item-img {
-    position: relative;
     -webkit-box-ordinal-group: 2;
     -webkit-order: 1;
     -ms-flex-order: 1;
@@ -1136,10 +1078,9 @@ div.upload input, div.image-upload input {
 }
 
 @media screen and (min-width: 1200px) {
-.focus-item {
-    max-height: 100%;
-}
-
+  .focus-item {
+    max-height: 550px;
+  }
 }
 
 .focus-item:first-child {
@@ -1214,15 +1155,14 @@ div.upload input, div.image-upload input {
     margin-right: 2.8125rem;
     margin-bottom: 0;
     width: 30%;
-    padding: 0rem;
+    padding: 0 3rem;
     height: 15rem;
   }
 }
 
 .investments-item-logo-img {
-    width: 100%;
-    height: 236px;
-    object-fit: contain;
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (min-width: 768px) {
@@ -1282,7 +1222,7 @@ div.upload input, div.image-upload input {
 }
 
 .team-item {
-/*  cursor: pointer;*/
+  cursor: pointer;
   position: relative;
 }
 
@@ -1297,9 +1237,9 @@ div.upload input, div.image-upload input {
 }
 
 .team-item-bg {
-    width: 100%;
-    height: 335px;
-    pointer-events: none;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
 }
 
 .team-item-copy {
@@ -1313,8 +1253,6 @@ div.upload input, div.image-upload input {
     top: 3rem;
     right: 2rem;
   }
-
-
 }
 
 @media screen and (min-width: 992px) {
@@ -1338,23 +1276,4 @@ div.upload input, div.image-upload input {
 
 .team-popup-text + .team-popup-text {
   margin-top: 1.333rem;
-}
-
-
-@media (max-width: 1190px){
-  .investments-item-logo-img {
-    width: 100%;
-    height: 221px;
-    object-fit: contain;
-}
-
-}
-
-@media (max-width: 767px){
-    .investments-item-logo-img {
-    width: 100%;
-    height: 206px;
-    object-fit: contain;
-}
-
 }

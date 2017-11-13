@@ -70,7 +70,7 @@
     <input type="file" class="editableimage" image-id="{{ site.name }}titulo_tips" name="image" id="img_titulo_tips"  />
 </div>
 {% end %}
-<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item" style="width: 232px; height: 137px; object-fit: scale-down; margin-left: 5%;">
+<img id="{{ site.name }}titulo_tips" src="{{ read_image(site.name + 'titulo_tips', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'titulo_tips',) }}'" class="cuadros-home" alt="item" style="width: 232px; height: 137px; object-fit: scale-down; margin-left: 5%;">
 <form action=" {{site_base}}/search" method="get">
   <button type="subbmit" alt="Enviar" class="buscarBoton" style="float: right;margin-top: 5%; height: 23px"><span class="fa fa-search"></span></button><input type="text" name="search_query" placeholder="Buscar" style="float: right; height: 60%; margin-top: 5%; padding-left:2%; font-family:'Open Sans', sans-serif; font-size: 12px ">
   </form>

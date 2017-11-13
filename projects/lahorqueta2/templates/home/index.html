@@ -47,9 +47,8 @@
             'tag' : '',
             'ignore_stock' : false,
             'infinite_scroll': false,
-            'onLoad':function(){
-               // $('.ellipsis').ellipsis();
-               // $(".ellipsis").dotdotdot();
+            'onLoad':function(products){
+               console.log(products);
              }
         };
            $(document).ecommerce({
@@ -61,6 +60,14 @@
        });
 
         $('.product-list').ecommerce('product_box', config);
+
+        $(document).on("click", ".subcateg", function(ev){
+            ev.preventDefault();
+            config.tag=$(this).attr('tag');
+            $(".product-list").html("");
+            $('.product-list').ecommerce('destroy');
+            $('.product-list').ecommerce(config);
+        });
 
         // destacado categoria 2
         // config.tag = 'destacado_categoria2';
@@ -93,7 +100,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_home" name="image" id="img_home">
         </div>
         {% end %}
-        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.src='{{ read_image(site.name + '_home',500) }}'" class="img-principal hidden" alt="item">
+        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home',500) }}'" class="img-principal hidden" alt="item">
     </div>
         
         <div class="col-md-12 col-sm-12 col-xs-12">
@@ -165,13 +172,13 @@
             <div align="center">
              <div class="gre">
                <div class="col-md-12 col-sm-12 col-xs-12">
-                <a href="#" class="subcateg" tag="casa">Casa </a> 
+                <a class="subcateg" tag="casa">Casa </a> 
                 /
-                <a href="#" class="subcateg" tag="terraza">Terraza</a>
+                <a class="subcateg" tag="terraza">Terraza</a>
                 /
-                <a href="#" class="subcateg" tag="jardin">Jardin</a>
+                <a class="subcateg" tag="jardin">Jardin</a>
                 /
-                <a href="#" class="subcateg" tag="navidad">Navidad</a>
+                <a class="subcateg" tag="navidad">Navidad</a>
               </div>
             </div>
             </div>
