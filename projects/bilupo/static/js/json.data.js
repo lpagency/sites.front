@@ -215,4 +215,18 @@ var categories =[
 	"order": 28,
 	"id": 28,
 	"type": "marca"
+},
+{
+	"name": "Swimava",
+	"tag": "swimava",
+	"order": 29,
+	"id": 29,
+	"type": "marca"
+},
+{
+	"name": "Edushapes",
+	"tag": "edushapes",
+	"order": 30,
+	"id": 30,
+	"type": "marca"
 }];
