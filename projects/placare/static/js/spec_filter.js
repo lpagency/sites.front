@@ -180,7 +180,7 @@ $(document).ready(function()
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
-                $('.products').ecommerce(config);
+                    $('.products').ecommerce(config);
                     break;
                 case "mocasines":
                     url.push("Categoria3_Mocasines");
@@ -194,7 +194,7 @@ $(document).ready(function()
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
-                $('.products').ecommerce(config);
+                    $('.products').ecommerce(config);
                     break;
                 case "ballerinas":
                     url.push("Categoria3_Ballerinas");

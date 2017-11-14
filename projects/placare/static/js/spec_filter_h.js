@@ -167,7 +167,6 @@ $(document).ready(function()
         if(window.split != undefined)
         {
             var url = [];
-
             switch (split) {
                 case "sandalias":
                     url.push("Categoria3_Sandalias");
@@ -198,7 +197,7 @@ $(document).ready(function()
                     $('.products').ecommerce(config);
                     break;
                 case "botines":
-                     url.push("Categoria3_Botines");
+                    url.push("Categoria3_Botines");
                     url.push("Categoria2_Calzado_Hombre");
                     url.push("-Categoria2_Calzado_Mujer");
                     listaTag2 = Utils.getUrlParameter('tag').split(',');
