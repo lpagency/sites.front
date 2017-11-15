@@ -1468,7 +1468,11 @@ function limpiar(config, hyper)
         $("input:radio").attr("checked", false);
         $("input:radio[name=vehicle]").attr("checked", true);
         history.pushState('', 'Placare', window.split + '-mujer');
-        listaTag.splice(-1,1);
+        if(listaTag.length > 3)
+        {
+            listaTag.splice(3,listaTag.length-1);
+        }
+        console.log(listaTag);
         config.tag = listaTag.toString();
     }
 
