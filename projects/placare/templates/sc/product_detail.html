@@ -281,17 +281,15 @@
 
 </script>
 
-<!-- <script type="text/javascript">
-    $(document).ready(function()
+ <script type="text/javascript">
+    $('ul.nav div.dropdown').hover(function() 
     {
-        setTimeout(function(){
-            $(".tallas").each(function()
-            {
-                console.log($(this).attr("in_stock").toString());
-            });
-        },2000);
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeIn(500);
+    }, function() 
+    {
+        $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     });
-</script> -->
+    </script>
 
 <script type="text/template" id="product_detail">
     <section>
