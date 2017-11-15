@@ -11,23 +11,31 @@ $(document).ready(function () {
     // Menús secundarios
     var $menuItemTrigger = $(".header-menu-item-trigger");
 
-    $menuItemTrigger.hover(function () {
-        var $this = $(this);
-        var $submenu = $this.find(".header-submenu");
-        if ($window.width() > 768) {
-            var $icono = $this.find(".header-submenu-icono");
-            $icono.fadeIn("slow");
-        }
-        $submenu.slideDown("slow");
-    }, function () {
-        var $this = $(this);
-        var $submenu = $this.find(".header-submenu");
-        if ($window.width() > 768) {
-            var $icono = $this.find(".header-submenu-icono");
-            $icono.fadeOut("slow");
-        }
-        $submenu.slideUp("slow");
-    });
+    // $menuItemTrigger.hover(function () {
+    //     var $this = $(this);
+    //     var $submenu = $this.find(".header-submenu");
+    //     if ($window.width() > 768) {
+    //         var $icono = $this.find(".header-submenu-icono");
+    //         $icono.fadeIn("slow");
+    //     }
+    //     $submenu.slideDown("slow");
+    // }, function () {
+    //     var $this = $(this);
+    //     var $submenu = $this.find(".header-submenu");
+    //     if ($window.width() > 768) {
+    //         var $icono = $this.find(".header-submenu-icono");
+    //         $icono.fadeOut("slow");
+    //     }
+    //     $submenu.slideUp("slow");
+    // });
+
+    $('.header-menu-item-trigger').hover(function() 
+        {
+            $(this).find('.header-submenu-wrapper').stop(true, true).delay(200).fadeIn(500);
+        }, function() 
+        {
+            $(this).find('.header-submenu-wrapper').stop(true, true).delay(200).fadeOut(500);
+        });
 
     var $window = $(window);
     var windowWidth;
