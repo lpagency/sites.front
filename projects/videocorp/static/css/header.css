@@ -340,6 +340,7 @@
 
 .header-submenu-wrapper {
   position: relative;
+  display: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -358,7 +359,7 @@
 
 .header-submenu {
   margin: 1rem 0;
-  display: none;
+  display: block;
 }
 
 @media screen and (min-width: 768px) {
@@ -377,7 +378,7 @@
     -webkit-transform: translate(-50%, calc(100% + 0.25rem));
     -ms-transform: translate(-50%, calc(100% + 0.25rem));
     transform: translate(-50%, calc(100% + 0.25rem));
-    display: none;
+    display: block;
     /* height: 0.5625rem; */
     width: 10%;
 }
