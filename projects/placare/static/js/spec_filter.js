@@ -238,15 +238,10 @@ $(document).ready(function()
                     listaTag = url;
                 $('.products').ecommerce(config);
                     break;
-                case "mules-slippers":
+                case "mules":
                     url.push("Categoria3_Mules");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
-                    {
-                        url.push(listaTag2[l]);
-                    }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
@@ -283,11 +278,11 @@ $(document).ready(function()
                 default:
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
-                    {
-                        url.push(listaTag2[l]);
-                    }
+                    // listaTag2 = Utils.getUrlParameter('tag').split(',');
+                    // for(l in listaTag2)
+                    // {
+                    //     url.push(listaTag2[l]);
+                    // }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
