@@ -1,15 +1,6 @@
 $(document).ready(function()
 {
     window.z = 0;
-    var hyper = Utils.getUrlParameter('tag');
-    if(hyper == undefined)
-    {
-        hyper = "";
-    }
-    else
-    {
-        hyper = Utils.getUrlParameter('tag').split(',');
-    }
 
     $(".limpiar").addClass("hidden");
 
@@ -162,6 +153,12 @@ $(document).ready(function()
     window.split = window.split[0].split("/");
     window.split = window.split[window.split.length-1].toString();
 
+    window.listaTag2 = Utils.getUrlParameter('tag');
+    if(window.listaTag2 != undefined)
+    {
+        window.listaTag2 = window.listaTag2.split(',');
+    }
+
     try
     {
         if(window.split != undefined)
@@ -172,10 +169,12 @@ $(document).ready(function()
                     url.push("Categoria3_Sandalias");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -186,10 +185,12 @@ $(document).ready(function()
                     url.push("Categoria3_Mocasines");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -200,10 +201,12 @@ $(document).ready(function()
                     url.push("Categoria3_Ballerinas");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -214,10 +217,12 @@ $(document).ready(function()
                     url.push("Categoria3_Zapatos");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -228,10 +233,12 @@ $(document).ready(function()
                      url.push("Categoria3_Botines");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -242,6 +249,13 @@ $(document).ready(function()
                     url.push("Categoria3_Mules");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
+                    if(window.listaTag2 != undefined)
+                    {
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
+                    }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
@@ -251,10 +265,12 @@ $(document).ready(function()
                     url.push("Categoria3_Plataformas");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -265,10 +281,12 @@ $(document).ready(function()
                     url.push("Categoria3_Playeras");
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    for(l in listaTag2)
+                    if(window.listaTag2 != undefined)
                     {
-                        url.push(listaTag2[l]);
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
                     }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
@@ -278,11 +296,13 @@ $(document).ready(function()
                 default:
                     url.push("Categoria2_Calzado_Mujer");
                     url.push("-Categoria2_Calzado_Hombre");
-                    // listaTag2 = Utils.getUrlParameter('tag').split(',');
-                    // for(l in listaTag2)
-                    // {
-                    //     url.push(listaTag2[l]);
-                    // }
+                    if(window.listaTag2 != undefined)
+                    {
+                        for(l in window.listaTag2)
+                        {
+                            url.push(window.listaTag2[l]);
+                        }
+                    }
                     window.onLoad = TagURL(url);
                     config.tag = url.toString();
                     listaTag = url;
@@ -547,15 +567,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -620,15 +650,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -692,15 +732,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -764,15 +814,25 @@ $(document).ready(function()
         window.listaTag.push(nombre);
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -838,15 +898,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -912,15 +982,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -985,15 +1065,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -1058,15 +1148,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -1131,15 +1231,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -1204,15 +1314,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -1277,15 +1397,25 @@ $(document).ready(function()
 
         window.config.tag = window.listaTag.toString();
 
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        tagsU = tagsU[1].toString();
+
         if(window.split != undefined)
         {
             if(window.split == "mujeres")
             {
-                history.pushState('', 'Placare', window.split + '?tag='+nombre);
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
             }
             else
             {
-                history.pushState('', 'Placare', window.split + '-mujer?tag='+nombre);
+                if(window.split == "mules")
+                {
+                    history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                }
+                else
+                {
+                    history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                }
             }
         }
         else
@@ -1464,16 +1594,32 @@ function limpiar(config, hyper)
     }
     else
     {
-        $(".filtrosRec").html(window.bloque);
-        $("input:radio").attr("checked", false);
-        $("input:radio[name=vehicle]").attr("checked", true);
-        history.pushState('', 'Placare', window.split + '-mujer');
-        if(listaTag.length > 3)
+        if(window.split == "mules")
         {
-            listaTag.splice(3,listaTag.length-1);
+            $(".filtrosRec").html(window.bloque);
+            $("input:radio").attr("checked", false);
+            $("input:radio[name=vehicle]").attr("checked", true);
+            history.pushState('', 'Placare', window.split + '-slippers-mujer');
+            if(listaTag.length > 3)
+            {
+                listaTag.splice(3,listaTag.length-1);
+            }
+            console.log(listaTag);
+            config.tag = listaTag.toString();
         }
-        console.log(listaTag);
-        config.tag = listaTag.toString();
+        else
+        {
+            $(".filtrosRec").html(window.bloque);
+            $("input:radio").attr("checked", false);
+            $("input:radio[name=vehicle]").attr("checked", true);
+            history.pushState('', 'Placare', window.split + '-mujer');
+            if(listaTag.length > 3)
+            {
+                listaTag.splice(3,listaTag.length-1);
+            }
+            console.log(listaTag);
+            config.tag = listaTag.toString();
+        }
     }
 
     $('.products').ecommerce('destroy');
@@ -1490,41 +1636,10 @@ function borrar(nombre,value)
 
     window.z = 0;
 
-    if(value == undefined)
-    {
         $( "."+nombre ).remove();
         $(".ch-"+nombre).addClass("hidden");
 
-        var textoRuta = $(".texto-ruta").html();
-        var nombre2 = "+"+nombre;
-
-        textoRuta = textoRuta.replace(" / "+nombre, "");
-        $(".texto-ruta").html(textoRuta);
-
-        for(x in window.listaTag)
-        {
-            if(window.listaTag[x] == nombre2)
-            {
-                window.listaTag.splice(x,1);
-                window.config.tag =window.listaTag.toString();
-            };
-        };
-        if(window.split == "mujeres")
-        {
-            history.pushState('', 'Placare', window.split);
-        }
-        else
-        {
-            history.pushState('', 'Placare', window.split + '?tag='+window.config.tag);
-        }
-
-        $('.products').ecommerce('destroy');
-        $('.products').ecommerce(window.config);
-    }
-    else
-    {
-        $( "."+nombre ).remove();
-        $(".ch-"+nombre).addClass("hidden");
+        $(".c-"+nombre).attr("checked", false);
 
         var textoRuta = $(".texto-ruta").html();
 
@@ -1540,16 +1655,53 @@ function borrar(nombre,value)
             };
         };
 
-        if(window.split == "mujeres")
+        var tagsU = window.config.tag.split("-Categoria2_Calzado_Hombre,");
+        if(tagsU[1] == undefined)
         {
-            history.pushState('', 'Placare', window.split);
+            tagsU = "";
         }
         else
         {
-            history.pushState('', 'Placare', window.split + '-mujer?tag='+window.config.tag);
+            tagsU = tagsU[1].toString();
+        }
+
+        if(window.split != undefined)
+        {
+            if(window.split == "mujeres")
+            {
+                history.pushState('', 'Placare', window.split + '?tag='+tagsU);
+            }
+            else
+            {
+                if(window.split == "mules")
+                {
+                    if(tagsU[1] == undefined)
+                    {
+                        history.pushState('', 'Placare', window.split + '-slippers-mujer'+tagsU);
+                    }
+                    else
+                    {
+                        history.pushState('', 'Placare', window.split + '-slippers-mujer?tag='+tagsU);
+                    }
+                }
+                else
+                {
+                    if(tagsU[1] == undefined)
+                    {
+                        history.pushState('', 'Placare', window.split + '-mujer'+tagsU);
+                    }
+                    else
+                    {
+                        history.pushState('', 'Placare', window.split + '-mujer?tag='+tagsU);
+                    }
+                }
+            }
+        }
+        else
+        {
+            history.pushState('', 'Placare', 'listado_productos?tag='+window.config.tag);
         }
 
         $('.products').ecommerce('destroy');
         $('.products').ecommerce(window.config);
-    }
 };

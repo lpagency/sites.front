@@ -52,33 +52,6 @@
 
             var hyper2 = Utils.getUrlParameter('search_query');
 
-            if(hyper2 != undefined)
-            {
-              $(".tag-header").html("Resultados");
-            }
-
-            var hyper = Utils.getUrlParameter('tag').split(',');
-
-            if(hyper[0] == "Categoria2_Calzado_Mujer")
-            {
-              $(".tag-header").html("Mujeres");
-            }
-
-            if(hyper[0] == "Categoria2_Calzado_Hombre")
-            {
-              $(".tag-header").html("Hombres");
-            }
-
-            if(hyper[0] == "nino")
-            {
-              $(".tag-header").html("Niños");
-            }
-
-            if(hyper[0] == "oferta")
-            {
-              $(".tag-header").html("Oferta");
-            }
-
         });
     </script>
     <script type="text/javascript">

@@ -69,7 +69,7 @@ $(document).ready(function()
     //     'https://checkout.loadingplay.com');
     // var app_public = $.environmentVar(29,34,29);
 
-    var config = {
+    window.config = {
         'app_public': app_public,
         'base_url': base_url,
         'products_per_page' : 9, 
@@ -88,7 +88,7 @@ $(document).ready(function()
         }
     };
 
-    $(document).ecommerce(config);
+    $(document).ecommerce(window.config);
 
     $(document).on("click", ".subcateg", function(ev){
         ev.preventDefault();
