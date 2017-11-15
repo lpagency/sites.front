@@ -12,7 +12,6 @@
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/luminous-master/dist/luminous-basic.min.css">
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/drift-master/dist/drift-basic.min.css">
 <style type="text/css">
 
 </style>
@@ -79,17 +78,6 @@
                 $(".main").css("text-decoration", "line-through");
             }
 
-            var demoTrigger = document.querySelector('.demo-trigger');
-
-            new Drift(demoTrigger, {
-              paneContainer: document.querySelector('.detail'),
-              inlinePane: 900,
-              inlineOffsetY: -85,
-              containInline: true,
-              sourceAttribute: 'href'
-            });
-
-            new Luminous(demoTrigger);
         }, 2000);
     });
 </script>
