@@ -1,0 +1,42 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- ****Contenido** -->
+<div class="container">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="texto_0">LO SENTIMOS MUCHO :(</div>
+    <div class="envio">Hubo un error al procesar tu pago <br> Por favor ponte en contacto con tu banco para que te ayuden a solucionar el problema. <br> <br> ¡Te estaremos esperando! </div>
+    <div align="center">
+      <img src="https://84static.loadingplay.com/static/images/b90accab630f9842917545a7ee8db20c_Pajaro_Gracias_por_registrarte.png" class"">
+    </div>
+    <div align="center">
+    	<button type="button" class="btn btn-default bts-2">VOLVER A LA PÁGINA DE INICIO</button>
+    </div>
+  </div>
+</div>
+<div style="margin-bottom:100px;"></div>
+{% include '../home/footer.html' %}
+{% end %}
+
+

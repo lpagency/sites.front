@@ -1,0 +1,265 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block javascript %}
+
+{% end %}
+{% block body %} 
+
+
+<div class="distancia-3"></div>
+
+<section class="hidden-lg hidden-md hidden-sm visible-xs">
+    <div class="col-xs-12" style="margin-top: 15px;">
+    <div class="col-xs-4">
+    <div class="nombre-categoria">Colección / </div>
+    </div>
+    <div class="col-xs-4">
+    <a href="#" class="nombre-tag">Cualquiera</a>
+    </div>
+    </div>
+</section>
+
+    <div class="container-fluid hidden-lg hidden-sm hidden-md visible-xs">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+        <li data-target="#myCarousel" data-slide-to="3"></li>
+        <li data-target="#myCarousel" data-slide-to="4"></li>
+        <li data-target="#myCarousel" data-slide-to="5"></li>
+    </ol>
+    
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner" role="listbox">
+      <div class="item active">
+        <img class="{{! images[0]['thumb_500']|hide_if_empty}} little-2" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" alt="Chania"  width="460" height="345">
+      </div>
+    
+      <div class="item">
+       <img class="{{! images[2]['thumb_500']|hide_if_empty }} little-2" src="{{! images[2]['thumb_500'] }}"  alt="Chania" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" width="460" height="345">
+      </div>
+
+      <div class="item">
+       <img class="{{! images[3]['thumb_500']|hide_if_empty }} little-2" src="{{! images[3]['thumb_500'] }}" alt="Chania" onload="this.onload='';this.src={{! images[3]['thumb_500']}}"  width="460" height="345">
+      </div>
+
+       <div class="item">
+       <img class="{{! images[4]['thumb_500']|hide_if_empty }} little-2" src="{{! images[4]['thumb_500'] }}" alt="Chania" onload="this.onload='';this.src={{! images[4]['thumb_500']}}"  width="460" height="345">
+      </div>
+
+       <div class="item">
+       <img class="{{! images[5]['thumb_500']|hide_if_empty }} little-2" src="{{! images[5]['thumb_500'] }}" alt="Chania" onload="this.onload='';this.src={{! images[5]['thumb_500']}}"  width="460" height="345">
+      </div>
+       <div class="item">
+       <img class="{{! images[1]['thumb_500']|hide_if_empty }} little-2" src="{{! images[1]['thumb_500'] }}" alt="Chania" onload="this.onload='';this.src={{! images[1]['thumb_500']}}"  width="460" height="345">
+      </div>
+    </div>
+</div>
+</div>
+
+
+    <div class="col-md-12 col-sm-12 col-xs-12 space20 h_detail_prod1">
+        <div class="col-md-2 col-sm-12 col-xs-12 hidden-xs visible-lg visible-md visible-sm">
+            <div id="gallery_01" class="image_little pad0">
+                <div class="title-comb" >Otras combinaciones</div>
+             
+                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[3]['thumb_500'] }}" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
+
+                 <img id="img_01" class="{{! images[4]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[4]['thumb_500'] }}" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
+
+            </div>
+        </div>
+
+
+
+        <div class="col-md-7 col-sm-12 col-xs-12 hidden-xs">
+        <div class="cuerpo-producto clearfix">
+        <div class="producto-foto">
+         <img id="img_detail" src="{{! images[0]['thumb_500'] }}" data-zoom-image="{{! images[0]['thumb_500'] }}" alt="" class="foto-producto" style="display: block;">
+        </div>
+        <div class="producto-info">
+        <div class="container">
+          <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
+        </div>
+
+        <div class="container">
+          <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
+        </div>
+
+
+        <div class="container">
+         <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[3]['thumb_500'] }}" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
+        </div>
+
+
+        <div class="container">
+         <img id="img_01" class="{{! images[4]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[4]['thumb_500'] }}" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" />
+        </div>
+
+
+        <div class="container">
+       <img id="img_01" class="{{! images[5]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[5]['thumb_500'] }}" onload="this.onload='';this.src={{! images[5]['thumb_500']}}" />
+        </div>
+
+      <div class="container">
+       <img id="img_01" class="{{! images[1]['thumb_1']|hide_if_empty}} little image image-14 otro-angulo" src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" />
+        </div>
+
+        <div class="container">
+        </div>
+        <div class="container">
+        </div>
+        </div>
+        </div>
+        </div>
+
+
+
+        <div class="col-md-3 col-sm-12 col-xs-12 pad0" style="left: 3px;">
+            <h1 class="title-detail">{{! name }}</h1>
+             <div class="price_detail">
+                <span class="price-p">{{! main_price|money }}</span>
+                <span class="price  anterior-oferta-sale-detalle">{{! main_price|money }}</span>
+                <br>
+            </div>
+            <div class="" style="height: 100px;">
+                <div class="text-center color-detalle">Color: Serpiente Gris</div>
+                <div class="text-center stock-detalle">en stock</div>
+                <div class="text-center talla-detalle">TALLAS</div>
+                <div class="col-md-12 box-talla-2" style="">
+                    <div class="centrado-mayo">
+                       <table class="table summary mayo">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th class="mayoristas">Stock</th>
+                                <th class="mayoristas">Cantidad</th>
+                                <th class="mayoristas">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                      
+                            <tr>
+                                <td>
+                                    3343
+                                </td>
+                                <td>
+                                  353
+                                </td>
+                                <td>
+                                    <input id="quantity" class="quantity mayo" type="text" value="0" name="quantity" max="" size="" price="">
+                                    <a href="#!" class="remove-one" product-id="3610">-</a>
+                                    <a href="#!" class="add-one" product-id="3610">+</a>
+                                </td>
+                                <td class="subtotal">
+                                    -
+                                </td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+            <div class="cart2">
+                <div>
+                    <!-- <button type="button" class="btn add-to-cart btn-success car" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}">Comprar</button> -->
+                   <!--  <button type="button" class="btn btn-default btn-nutr {{! bullet_1 |hide_if_empty}}" data-toggle="modal" data-target="#myModal_detail">Información</button> -->
+
+                    <button type="button" value="Comprar" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="btn add-to-cart btn-success car" data-toggle="modal" data-target="#myModal" >AGREGAR A LA BOLSA</button>
+                </div>
+
+            </div>
+            <div>
+                <div class="col-md-12">
+                    <div align="center">
+                      <hr class="detalle">
+                   </div>
+                </div>
+
+                <div class="descrip_title">Descripción</div>
+                <h5 class="descrip_detail1 ellipsis multiline">{{! description }}</h5>
+                <div class="texto-envios">Envíos a todo Chile entre 3 y 7 días</div>
+                <a href="" class="talla-detalle-modal" data-toggle="modal" data-target="#myModal-talla" onclick="">¿CÚAL ES TU TALLA?</a>
+           </div>
+            
+        </div>
+
+        
+    </div> 
+    <div class="clearfix"></div>
+
+<!--     <div class="col-md-12 col-sm-12 mbtm100 margin_movil">
+        <div align="center">
+            <div class="fin text-center"> Descripción del producto en detalle </div>
+                <hr class="hr_prod">
+                    <h3 class="descr_prod_detail ellipsis multiline"> 
+                    {{! description }}
+                    </h3>
+        </div>
+        <div class="box_img_prod">
+            <img class="img_detail_prod" src="{{! images[1]['thumb_500'] }}" title="" alt="" class="fondo-detalle">
+        </div>
+    </div> -->
+    <div class="clearfix"></div>
+
+<div class="modal fade" id="myModal_detail" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title ">Información</h4>
+                </div>
+                <div class="modal-body">
+                   <h5 class="descrip_detail1_modal ellipsis multiline">{{!bullet_1}}</h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+<div class="container-fluid hidden-sm hidden-xs">
+    <div class="space80">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+            <hr class="izquierda">
+                <h1 class="text-relac text-center">TAMBIEN PODRIA GUSTARTE :)</h1>
+             <hr class="derecha">
+            </div>
+        </div>
+        <div class="row product-related">
+        </div>
+    </div>
+ </div>
+
+ <div class="clearfix"></div>
+
+
+
+
+
+ <div class="clearfix"></div>
+
+<div id="content" class="container product_detail space60 space-container">
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}
