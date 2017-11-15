@@ -55,33 +55,16 @@
             onLoad: function(product)
             {
                 related("");
-                // if (product.bullet_1 != "" ){
-                //     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                //     {
-                //         $("#article-reladed").html(data);
-                //     });
-                // }
+                if($(".main").attr("promotion") != 0)
+                {
+                    $(".promotion").removeClass("hidden");
+                    $(".main").css("text-decoration", "line-through");
+                }
             }
         });
     });
 
 </script>
-
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        setTimeout(function()
-        {
-            if($(".main").attr("promotion") != 0)
-            {
-                $(".promotion").removeClass("hidden");
-                $(".main").css("text-decoration", "line-through");
-            }
-
-        }, 2000);
-    });
-</script>
-
 
 <script type="text/template" id="product_detail">
     <section>
