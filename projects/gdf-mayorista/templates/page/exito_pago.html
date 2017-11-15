@@ -1,0 +1,43 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block css %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<!-- ****Contenido** -->
+<div class="container">
+  <div class="col-md-12 col-sm-12 col-xs-12">
+    <div class="texto_0">¡YUJUUUU! ESTAMOS PROCESANDO TU COMPRA</div>
+    <div class="envio">Te enviaremos a tu correo la información del pedido,la boleta y número de seguimiento.<br> Cualquier duda o problema que tengas, escribenos a <a href="" class="m-1">contacto@gianidafirenze.cl</a></div>
+    <div align="center">
+      <img src="https://84static.loadingplay.com/static/images/b90accab630f9842917545a7ee8db20c_Pajaro_Gracias_por_registrarte.png" class"">
+    </div>
+    <div align="center">
+    	<button type="button" class="btn btn-default bts">CUÉNTANOS COMO FUE TU EXPERIENCIA DE COMPRA</button>
+    </div>
+    <a href="" class="yu">VOLVER A LA PÁGINA DE INICIO</a>
+  </div>
+</div>
+<div style="margin-bottom:100px;"></div>
+{% include '../home/footer.html' %}
+{% end %}
+
+

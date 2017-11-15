@@ -1,0 +1,787 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+{% block css %}
+
+{% if is_admin %}
+{% end %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+{% block javascript %}
+
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script> 
+<script type="text/javascript" src="{{ site_base }}/static/js/micro.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/banners.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/js/breadcrumbs.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.dropdown-submenu a.test').on("click", function(e){
+    $(this).next('ul').toggle();
+    e.stopPropagation();
+    e.preventDefault();
+  });
+});
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+
+    if($(window).width() < 800)
+    {
+        $(".size-item-click").removeClass("size-item-3");
+    }
+
+
+    $('.lupa').click(function(){
+
+      $('#search-mobile').toggle(1000);
+
+    });
+  });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".m-ordenar", function(ev){
+        // ev.preventDefault();
+
+        //MUESTRA LA CATEGORIA COMO TITULO
+
+        var valorSubCateg = $(this).html();
+
+        $(".ordena-nombre").html("  " + valorSubCateg);
+
+    });
+    });
+
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", ".demo2", function()
+        {
+            if($(".demo3").css("display")=="none")
+            {
+                $(".demo3").css("display","block");
+            }
+            else
+            {
+                $(".demo3").css("display","none");
+            }
+        });
+
+        $(document).on("click",".demo4_desk", function()
+        {
+            if($(".demo3").css("display")=="block")
+            {
+                $(".demo3").css("display","none");
+            }
+        });
+
+        $(document).on("click", ".btn-filtros-movil", function()
+        {
+            if($(".movil").css("display")=="none")
+            {
+                $(".movil").css("display","block");
+                $(".btn-filtros-movil").css("color", "white");
+                $(".btn-filtros-movil").css("background-color", "rgba(204, 108, 78, 1)");
+                $(".btn-filtros-movil").css("border-color", "rgba(204, 108, 78, 1)");
+                $(".btn-filtros-movil").css("-webkit-font-smoothing", "antialiased");
+            }
+            else
+            {
+                $(".movil").css("display","none");
+                $(".btn-filtros-movil").css("color", "rgb(91, 81, 83)");
+                $(".btn-filtros-movil").css("background-color", "transparent");
+                $(".btn-filtros-movil").css("border-color", "rgba(204, 108, 78, 1)");
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    $("#testButton").live("touchstart", function() {
+      $(this).addClass("active");
+    }).live("touchend", function() {
+      $(this).removeClass("active");
+    });
+
+</script>
+
+
+<script type="text/javascript">
+
+    {% block active %}
+    // productos
+    $('.font_tag').removeClass('active');
+    $('.productos').addClass("active");
+    {% end %}
+
+    $(document).ready(function()
+    {
+    //   
+    $(document).on("click", ".subcateg", function(ev){
+        // ev.preventDefault();
+
+    $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+    });
+</script>
+<script type="text/javascript">
+  function esconder(ev, sec)
+  {
+    if(sec == undefined)
+    {
+      if($("."+ev).hasClass("hidden"))
+      {
+        $(".sub").addClass("hidden");
+        $("."+ev).removeClass("hidden");
+        $(".drop").css("margin-top", "10px");
+      }
+      else
+      {
+        $("."+ev).addClass("hidden");
+        $(".drop").css("margin-top", "10px");
+      }
+    }
+    else
+    {
+      if($("."+ev).hasClass("hidden"))
+      {
+        $(".sub").addClass("hidden");
+        $("."+ev).removeClass("hidden");
+        $(".drop").css("margin-top", "10px");
+        if(sec == ".color")
+        {
+          $(sec).css("margin-top", "20%");
+        }
+        if(sec == ".tipo")
+        {
+          $(sec).css("margin-top", "64%");
+        }
+        if(sec == ".ordenar")
+        {
+          $(sec).css("margin-top", "40%");
+        }
+      }
+      else
+      {
+        $("."+ev).addClass("hidden");
+        $(".drop").css("margin-top", "10px");
+      }
+    }
+  }
+</script>
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+<section class="container-g">
+
+<section class="h-list-prod hidden-xs" style="">
+    <div class="col-md-12">
+
+    <!-- BANNER COLECCION -->
+
+        <div class="banner_coleccion banner_top" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_prod">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_prod" name="image" id="img_list_prod" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_prod" src="{{ read_image(site.name + '_list_prod', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_prod',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER zapatos -->
+
+        <div class="banner_top banner_zapatos" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_zapatos">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_zapatos" name="image" id="img_list_zapatos" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_zapatos" src="{{ read_image(site.name + '_list_zapatos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_zapatos',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER botas -->
+
+        <div class="banner_top banner_botas" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_botas">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_botas" name="image" id="img_list_botas" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_botas" src="{{ read_image(site.name + '_list_botas', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_botas',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER botines -->
+
+        <div class="banner_top banner_botines" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_botines">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_botines" name="image" id="img_list_botines" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_botines" src="{{ read_image(site.name + '_list_botines', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_botines',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER estilos -->
+
+        <div class="banner_top banner_estilos" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_estilos">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_estilos" name="image" id="img_list_estilos" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_estilos" src="{{ read_image(site.name + '_list_estilos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_estilos',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER nuevo -->
+
+        <div class="banner_top banner_nuevo" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_nuevo">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_nuevo" name="image" id="img_list_nuevo" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_nuevo" src="{{ read_image(site.name + '_list_nuevo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_nuevo',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER zapatillas -->
+
+        <div class="banner_top banner_zapatillas" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_zapatillas">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_zapatillas" name="image" id="img_list_zapatillas" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_zapatillas" src="{{ read_image(site.name + '_list_zapatillas', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_zapatillas',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER sandalias -->
+
+        <div class="banner_top banner_sandalias" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_sandalias">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_sandalias" name="image" id="img_list_sandalias" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_sandalias" src="{{ read_image(site.name + '_list_sandalias', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_sandalias',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER raices -->
+
+        <div class="banner_top banner_raices" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_raices">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_raices" name="image" id="img_list_raices" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_raices" src="{{ read_image(site.name + '_list_raices', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_raices',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER festival -->
+
+        <div class="banner_top banner_festival" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_festival">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_festival" name="image" id="img_list_festival" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_festival" src="{{ read_image(site.name + '_list_festival', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_festival',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+        <!-- BANNER clasicos -->
+
+        <div class="banner_top banner_clasicos" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_clasicos">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_clasicos" name="image" id="img_list_clasicos" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_clasicos" src="{{ read_image(site.name + '_list_clasicos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_clasicos',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+
+        <!-- BANNER capsula -->
+
+        <div class="banner_top banner_capsula" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_capsula">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_capsula" name="image" id="img_list_capsula" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_capsula" src="{{ read_image(site.name + '_list_capsula', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_capsula',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+    <!-- BANNER SALE -->
+
+        <div class="banner_top banner_sale" style="display: none">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="top: 208px;">
+                <label for="img_list_sale">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_list_sale" name="image" id="img_list_sale" >
+            </div>
+            {% end %}
+            <div class="box-list-prod">
+                <img id="{{ site.name }}_list_sale" src="{{ read_image(site.name + '_list_sale', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_list_sale',500) }}'" class=" img_banner desaturada" alt="item">
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="hidden-xs visible-lg visible-md visible-sm">
+    <div class="pop">
+    <div class="container-g">
+      <div class="col-md-1 col-sm-3 col-xs-2 on">
+    <div class="dropdown fil-productos">
+      <button class="btn btn-primary ordenar dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">ORDENAR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+      </button> 
+      <ul class="dropdown-menu ordenar">
+         <div class="" style="height: 62px;">
+            <div class="col-md-12 hovi" style="padding: 0px;">
+                <a href="#!" class="mod menor" style="cursor: pointer;"><div class="pad5 m-ordenar" style="text-align: -webkit-left;font-size: 11px;font-weight: 600;">PRECIO (MENOR A MAYOR)</div></a>
+                <a href="#!" class="mod mayor" style="cursor: pointer;"><div class="pad5 m-ordenar" style="text-align: -webkit-left;font-size: 11px;font-weight: 600;">PRECIO (MAYOR A MENOR)</div></a>
+                <a href="#!" class="mod nombre" style="cursor: pointer;"><div class="pad5 m-ordenar" style="text-align: -webkit-left;font-size: 11px;font-weight: 600;">NOMBRE (A-Z)</div></a>
+                <!-- <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div> -->
+            </div>
+        </div>
+
+        <div class="col-md-12 hidden">
+          <div align="center">
+            <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
+            <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
+          </div>
+        </div>
+    </ul>
+</div>
+</div>
+
+        <div class="col-md-1 col-sm-3 col-xs-2  yan-1">
+            <div class="dropdown fil-productos">
+              <button class="btn btn-primary filtrar dropdown-toggle demo2" type="button" data-toggle="dropdown">TALLAS <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+              </button> 
+              <ul class="dropdown-menu filtrar demo3" style="display: none">
+               <div class="text-center talla-onclick">TALLA </div>
+               <div class="col-md-12 box-talla" style="">
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla35" style="">
+                    <div class="num-tal-2 talla_35" tag="35" onclick="checkTallas('35'); deshabilitarDesk('35')">35</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla36">
+                    <div class="num-tal-2 talla_36" tag="36" onclick="checkTallas('36'); deshabilitarDesk('36')">36</div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla37" style="">
+                  <div class="num-tal-2 talla_37" tag="37" onclick="checkTallas('37'); deshabilitarDesk('37')">37</div>
+              </div>
+          </div>
+          <div class="col-md-12 box-talla" style="">
+            <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla38" style="">
+               <div class="num-tal-2 talla_38" tag="38" onclick="checkTallas('38'); deshabilitarDesk('38')">38</div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla39">
+               <div class="num-tal-2 talla_39" tag="39" onclick="checkTallas('39'); deshabilitarDesk('39')">39</div>
+           </div>
+           <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click talla40" style="">
+               <div class="num-tal-2 talla_40" tag="40" onclick="checkTallas('40'); deshabilitarDesk('40')">40</div>
+           </div>
+       </div>
+       <div class="col-md-12">
+        <div align="center">
+          <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
+          <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
+        </div>
+    </div>
+</ul>
+</div>
+</div>
+
+
+<div class="col-md-1 col-sm-3 col-xs-2 yan-2">
+  <div class="dropdown fil-productos">
+    <button class="btn btn-primary color dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">COLOR <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    </button> 
+    <ul class="dropdown-menu color">
+     <div class="text-center talla-onclick">COLOR</div>
+  
+  <div class="col-md-12" style="padding: 0px;">
+  <div class="col-md-6 col-sm-6 col-xs-12 don">
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-taupe" type="checkbox" name="animal" value="Cat" tag="taupe" onclick="check('taupe')" />TAUPE </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-negro" type="checkbox" name="animal" value="Cat" tag="negro" onclick="check('negro')" /> NEGRO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-blanco" type="checkbox" name="animal" value="Cat" tag="blanco" onclick="check('blanco')" /> BLANCO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-cafe" type="checkbox" name="animal" value="Cat" tag="cafe" onclick="check('cafe')" /> CAFE </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-chocolate" type="checkbox" name="animal" value="Cat" tag="chocolate" onclick="check('chocolate')" /> CHOCOLATE </div>
+    </form>
+  </div>
+
+   <div class="col-md-6 col-sm-6 col-xs-12 don-2">
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-camel" type="checkbox" name="animal" value="Cat" tag="camel" onclick="check('camel')" /> CAMEL </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-oxido" type="checkbox" name="animal" value="Cat" tag="oxido" onclick="check('oxido')" /> OXIDO </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-arena" type="checkbox" name="animal" value="Cat" tag="arena" onclick="check('arena')" /> ARENA </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-animal_print" type="checkbox" name="animal" value="Cat" tag="animal print" onclick="check('animal_print', 'animal print')" /> ANIMAL PRINT </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-color"><input class="categ-color c-gris" type="checkbox" name="animal" value="Cat" tag="gris" onclick="check('gris')" /> GRIS </div>
+    </form>
+  </div>
+  </div>
+
+   <div class="col-md-12">
+    <div align="center">
+    <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
+    <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
+    </div>
+  </div>
+</ul>
+</div>
+</div>
+
+
+<div class="col-md-1 col-sm-3 col-xs-2 yan-3">
+  <div class="dropdown fil-productos">
+    <button class="btn btn-primary tipo dropdown-toggle demo4_desk" type="button" data-toggle="dropdown">TIPO <i class="fa fa-caret-down fit" aria-hidden="true"></i> <a href="" style="color:#cc6c4e;"> </a>
+    </button> 
+    <ul class="dropdown-menu tipo">
+     <div class="text-center talla-onclick">TIPO</div>
+  
+  <div class="col-md-12" style="padding: 0px;">
+  <div class="col-md-6 col-sm-6 col-xs-12 don" style="">
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas" onclick="check('botas')" /> BOTAS </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines" onclick="check('botines')" /> BOTINES </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras" onclick="check('bucaneras')" /> BUCANERAS </div>
+    </form>
+  </div>
+
+   <div class="col-md-6 col-sm-6 col-xs-12 don-2">
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-zapatillas" name="animal" value="Cat" tag="zapatillas" onclick="check('zapatillas')" /> ZAPATILLAS </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-zapatos" name="animal" value="Cat" tag="zapatos" onclick="check('zapatos')" /> ZAPATOS </div>
+    </form>
+    <form action="" class="chek">
+    <div class="filtro-tipos"><input type="checkbox" class="categ-tipo c-sandalias" name="animal" value="Cat" tag="sandalias" onclick="check('sandalias')" /> SANDALIAS</div>
+    </form>
+  </div>
+  </div>
+
+   <div class="col-md-12">
+    <div align="center">
+    <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
+    <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
+    </div>
+  </div>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- **+*+ FILTROS VERSION MOVIL*** -->
+
+<section class="hidden-lg hidden-md hidden-sm visible-xs">
+    <div class="col-xs-12" style="margin-top: 90px;">
+    <div class="col-xs-4">
+        <div class="nombre-categoria">Colección / </div>
+    </div>
+    <div class="col-xs-4">
+        <a href="#" class="nombre-tag">Cualquiera</a>
+    </div>
+    </div>
+</section>
+
+<section class="visible-xs hidden-lg hidden-sm hidden-md">
+    <div class="dropdown">
+        <button class="btn btn-filtros-movil dropdown-toggle" style="font-weight: 600; padding: 3% 0px;" type="button" data-toggle="dropdown">FILTRAR Y ORDENAR
+            <i class="fa fa-angle-right fil-2" aria-hidden="true"></i></button>
+            <ul class="dropdown-menu movil" style="display: none">
+              <li class="dropdown-submenu x4 tallas drop">
+                <a class="test" tabindex="-1" onclick="esconder('tallas2', '.color')">TALLAS <i class="fa fa-caret-down mibi" aria-hidden="true"></i></a>
+              </li>
+                <li class="dropdown-submenu x4 sub tallas2 hidden">
+                  <div class="col-xs-12 lol">
+                    <div class="dropdown fil-productos">
+                      <ul class=" filtrar">
+                        <div class="text-center talla-onclick"> </div>
+                        <div class="col-md-12 box-talla" style="">
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click" style="">
+                            <div class="num-tal-2 talla35" tag="35" onclick="checkTallas('35'); deshabilitar('35');">35</div>
+                          </div>
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click">
+                            <div class="num-tal-2 talla36" tag="36" onclick="checkTallas('36'); deshabilitar('36');">36</div>
+                          </div>
+                          <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click" style="">
+                            <div class="num-tal-2 talla37" tag="37" onclick="checkTallas('37'); deshabilitar('37');">37</div>
+                          </div>
+                        </div>
+                        <div class="col-md-12 box-talla" style="">
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click" style="">
+                           <div class="num-tal-2 talla38" tag="38" onclick="checkTallas('38'); deshabilitar('38');">38</div>
+                         </div>
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click">
+                           <div class="num-tal-2 talla39" tag="39" onclick="checkTallas('39'); deshabilitar('39');">39</div>
+                         </div>
+                         <div class="col-md-4 col-sm-4 col-xs-4 size-item-3 size-item-2 size-item-click" style="">
+                           <div class="num-tal-2 talla40" tag="40" onclick="checkTallas('40'); deshabilitar('40');">40</div>
+                         </div>
+                       </div>
+                      </ul>
+                    </div>
+                  </div>
+               </li>
+
+<li class="dropdown-submenu x4 color drop">
+    <a class="test" tabindex="-1" onclick="esconder('color2', '.tipo')">COLOR <i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 sub color2 hidden">
+       <div class="text-center talla-onclick"></div>
+
+       <div class="col-md-12" style="padding: 5% 0;">
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-taupe" type="radio" name="animal" value="Cat" tag="taupe" onclick="check('taupe')" /> TAUPE </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-negro" type="radio" name="animal" value="Cat" tag="negro" onclick="check('negro')"/> NEGRO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-blanco" type="radio" name="animal" value="Cat" tag="blanco" onclick="check('blanco')"/> BLANCO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-cafe" type="radio" name="animal" value="Cat" tag="cafe" onclick="check('cafe')"/> CAFE </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-chocolate" type="radio" name="animal" value="Cat" tag="chocolate" onclick="check('chocolate')"/> CHOCOLATE </div>
+            </form>
+        </div>
+
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-camel" type="radio" name="animal" value="Cat" tag="camel" onclick="check('camel')"/> CAMEL </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-oxido" type="radio" name="animal" value="Cat" tag="oxido" onclick="check('oxido')"/> OXIDO </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-arena" type="radio" name="animal" value="Cat" tag="arena" onclick="check('arena')"/> ARENA </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-animal" type="radio" name="animal" value="Cat" tag="animal print" onclick="check('animal_print', 'animal print')" /> ANIMAL PRINT </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-color"><input class="categ-color c-gris" type="radio" name="animal" value="Cat" tag="gris" onclick="check('gris')" /> GRIS </div>
+            </form>
+        </div>
+    </div>
+</li>
+
+<li class="dropdown-submenu x4 tipo drop">
+    <a class="test" tabindex="-1" onclick="esconder('tipo2', '.ordenar')">TIPO<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 sub tipo2 hidden">
+       <div class="text-center talla-onclick"></div>
+
+       <div class="col-md-12"  style="padding: 5% 0;">
+        <div class="col-xs-6" style="">
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botas" name="animal" value="Cat" tag="botas" onclick="check('botas')"/> BOTAS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-botines" name="animal" value="Cat" tag="botines" onclick="check('botines')"/> BOTINES </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-bucaneras" name="animal" value="Cat" tag="bucaneras" onclick="check('bucaneras')"/> BUCANERAS </div>
+            </form>
+        </div>
+
+        <div class="col-xs-6">
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-zapatillas" name="animal" value="Cat" tag="zapatillas" onclick="check('zapatillas')" /> ZAPATILLAS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-zapatos" name="animal" value="Cat" tag="zapatos" onclick="check('zapatos')" /> ZAPATOS </div>
+            </form>
+            <form action="" class="chek">
+                <div class="filtro-tipos"><input type="radio" class="categ-tipo c-sandalias" name="animal" value="Cat" tag="sandalias" onclick="check('sandalias')"/> SANDALIAS</div>
+            </form>
+        </div>
+    </div>
+</li>
+
+<li class="dropdown-submenu x4 ordenar drop">
+    <a class="test" tabindex="-1" onclick="esconder('ordenar2')">ORDENAR<i class="fa fa-caret-down mibi" aria-hidden="true"></i> </a>
+</li>
+<li class="dropdown-submenu x4 sub ordenar2 hidden">
+       <div align="center">
+         <div class="" style="height: 100px; width:100%">
+            <div class="col-md-12">
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><input style="margin: 3% 0;" type="radio" href="#!" class="mod menor"/><p class="bi-1" style="position: absolute;left: 11%;top: 7px;">PRECIO: MENOR A MAYOR</p></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left;"><input  style="margin: 3% 0;"  type="radio" href="#!" class="mod mayor"/><p class="bi-1" style="position: absolute;left: 11%;top: 7px;">PRECIO :MAYOR A MENOR</p></div>
+                <div class="pad5 m-ordenar" style="text-align: -webkit-left; border:none"><input  style="margin: 3% 0;"  type="radio" href="#!" class="mod nombre"/><p class="bi-1" style="position: absolute;left: 11%;top: 7px;">NOMBRE: A-Z</p></div>
+                <!-- <div class="pad5 m-ordenar" style="text-align: -webkit-left;">NOVEDAD<a href="#!" class="mod llegada">(orden de llegada)</a></div> -->
+            </div>
+            </div>
+        </div>
+    </li>
+    <div class="col-xs-12 lim"> 
+       <div class="col-xs-6 lim">
+         <button type="button" class="btn btn-default-fil" onclick="filtrar()">FILTRAR</button>
+     </div>
+     <div class="col-xs-6 lim">
+         <button type="button" class="btn btn-default-ord" onclick="limpiar()">LIMPIAR</button>
+     </div>
+ </div>
+</ul>
+</div>
+<div class="texto-filtros" style="z-index: 100"><!--AQUI VAN LOS FILTROS--></div>
+
+    
+                            
+</section>
+<!-- ***fin filtros movil*** -->
+
+
+    <div class="paginacion col-md-12 col-sm-12 col-xs-12 hidden-xs visible-lg visible-md visible-sm">
+    <div class="texto-filtros" style="z-index: 100"><!--AQUI VAN LOS FILTROS--></div>
+        <ul class="disti" style="display:none;">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <li><a href="#" class="active">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </ul>
+    </div>
+    <div>
+      <div class="ordena-nombre"></div>
+    </div>
+</section>
+
+
+
+<div class="container-g">
+<div class="col-md-12 h-product" style="position: relative;display: inline-block;top: 18px;">
+    <div class=" product-grid products inline-menu" >
+      
+        <!-- Aqui van los productos -->
+    </div>
+</div>
+</div>
+
+</section>
+
+
+<div style="height:100%"></div>
+
+{% include '../home/footer.html' %}
+{% end %}
