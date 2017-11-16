@@ -3,7 +3,7 @@
     {{ site.name }}
 {% end %}
 {% block css %}
-<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Lato" type="text/css"/>
 {% if is_admin %}
 <link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/detalle_articulos.css">
@@ -39,19 +39,14 @@
 
       $("#OpenAlert").click();
 
-        // base_url = 'http://localhost:8520/';
-        // checkout_url = 'http://localhost:8522/';
-
-        // base_url = 'http://apibodegas.ondev.today/';
-        // checkout_url = 'http://lpcheckout.ondev.today/';
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'http://localhost:8522/',
-            'http://lpcheckout.ondev.today/',
-            'https://pay.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(20,20,20);
         var config = {
             'app_public' : app_public,

@@ -10,11 +10,11 @@ function isDevelopment() {
 $(document).ready(function()
 {
     var base_url = $.environmentVar(
-        "https://apibodegas.loadingplay.com/",
-        "http://apibodegas.ondev.today/",
-        "https://apibodegas.loadingplay.com/"
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/"
     );
-    var app_public = $.environmentVar(9,15,9);
+    var app_public = $.environmentVar(9,9,9);
 
     var config = {
         'app_public' : app_public,

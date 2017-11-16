@@ -4,14 +4,14 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
-        'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(19,11,20);
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
+    var app_public = $.environmentVar(20,20,20);
 
     // functions 
     // productos relacionados

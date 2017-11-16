@@ -1,13 +1,13 @@
 
 
 var base_url = $.environmentVar(
-    'https://apibodegas.loadingplay.com/',
-    'https://apibodegas.loadingplay.com/',
-    'https://apibodegas.loadingplay.com/');
+    'https://betaapi.loadingplay.com/',
+    'https://betaapi.loadingplay.com/',
+    'https://betaapi.loadingplay.com/');
 var checkout_url = $.environmentVar(
-     'https://pay.loadingplay.com',
-     'https://pay.loadingplay.com',
-     'https://pay.loadingplay.com');
+     'https://betapay.loadingplay.com',
+     'https://betapay.loadingplay.com',
+     'https://betapay.loadingplay.com');
 var app_public = $.environmentVar(20,20,20);
 
 var initMap = function(){

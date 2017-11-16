@@ -19,16 +19,16 @@
     $(document).ready(function()
     {
         var api_url = $.environmentVar(
-                            'http://apibodegas.ondev.today/',
-                            'http://apibodegas.ondev.today/',
-                            'https://apibodegas.loadingplay.com/');
+                            'https://betaapi.loadingplay.com/',
+                            'https://betaapi.loadingplay.com/',
+                            'https://betaapi.loadingplay.com/');
 
         var checkout_url = $.environmentVar(
-                                'http://lpcheckout.ondev.today',
-                                'http://lpcheckout.ondev.today',
-                                'https://checkout.loadingplay.com');
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com');
 
-        var app_public = $.environmentVar(7,7,8);
+        var app_public = $.environmentVar(7,7,7);
 
         $(document).ecommerce(
         {
@@ -36,7 +36,8 @@
             'products_per_page' : 6,
             'ignore_stock': true,
             'base_url' : api_url,
-            'checkout_url': checkout_url
+            'checkout_url': checkout_url,
+            'site_name': 'rukayen'
         });
     });
 </script>
@@ -55,7 +56,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_products" name="image" id="{{ site.name }}_banner_products" >
         </div>
     {% end %}
-    <img id="{{ site.name }}_banner_products" src="{{ read_image(site.name + '_banner_products', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_products',500) }}'" class="img-responsive  b-produ" alt="item" style="height: 100%;">
+    <img id="{{ site.name }}_banner_products" src="{{ read_image(site.name + '_banner_products', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_products',500) }}'" class="img-responsive  b-produ" alt="item" style="height: 100%;">
 
 
 

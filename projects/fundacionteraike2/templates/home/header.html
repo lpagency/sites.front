@@ -12,7 +12,7 @@
             </div>
             {% end %}
             <a href="{{ site_base }}">
-            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
+            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
             </a>
            <!--  <img src="img/logo_2.png" class="logo"> -->
         <div class="logo-border"></div>
@@ -42,7 +42,7 @@
                   </div>
                   {% end %}
                   <a href="{{ site_base }}">
-                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
                   </a>
                 </div>
                   <ul>
@@ -68,7 +68,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}banner{{request.path.replace('/', '_')}}" name="image" id="img_banner"/>
             </div>
             {% end %}
-            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
+            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
               <div class="editable text_main text-left" text-id="{{ site.name + 'text_banner_header1' + request.path.replace('/', '_') }}">{{ read_text(site.name +  'text_banner_header1' + request.path.replace('/', '_')) }}</div>
               <div class="menu-icon">
                 <a href="#!" class="menu-fonticon" id="hideshow"><i class="fa fa-bars icon hidden-lg hidden-sm hidden-md visible-xs"  aria-hidden="true"></i></a>
