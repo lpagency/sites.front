@@ -32,9 +32,9 @@
                             'https://betaapi.loadingplay.com/');
 
             var checkout_url = $.environmentVar(
-                                'http://lpcheckout.ondev.today',
-                                'http://lpcheckout.ondev.today',
-                                'https://checkout.loadingplay.com');
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com');
 
 // <<<<<<< HEAD
 //             // configure for each enviroment
@@ -43,13 +43,13 @@
 //               // base_url = 'http://localhost:8520/';
 //               // checkout_url = 'http://localhost:8522/';
 //               base_url = 'https://betaapi.loadingplay.com/';
-//               checkout_url = 'http://lpcheckout.ondev.today/';
+//               checkout_url = 'https://betapay.loadingplay.com/';
 //               app_public= 7;
 //             } 
 //             else if ( isDevelopment() ) 
 //             {
 //               base_url = 'https://betaapi.loadingplay.com/';
-//               checkout_url = 'http://lpcheckout.ondev.today/';
+//               checkout_url = 'https://betapay.loadingplay.com/';
 //               app_public = 7;
 //             }
 //         $(document).ready(function() 
@@ -61,7 +61,7 @@
 //                 'base_url' : base_url,
 //                 // 'base_url' : 'https://betaapi.loadingplay.com/',
 //                 'checkout_url': checkout_url,
-//                 // 'checkout_url': 'http://lpcheckout.ondev.today',
+//                 // 'checkout_url': 'https://betapay.loadingplay.com',
 //                 'product_id' : {{ product_id }}
 //             });
 // =======
@@ -77,7 +77,7 @@
                     'base_url' : base_url,
                     // 'base_url' : 'https://betaapi.loadingplay.com/',
                     'checkout_url': checkout_url,
-                    // 'checkout_url': 'http://lpcheckout.ondev.today',
+                    // 'checkout_url': 'https://betapay.loadingplay.com',
                     'product_id' : {{ product_id }}
                 });
 
@@ -89,7 +89,8 @@
                     'base_url' : base_url,
                     // 'base_url' : 'https://betaapi.loadingplay.com/',
                     'checkout_url': checkout_url,
-                    // 'checkout_url': 'http://lpcheckout.ondev.today',
+                    'site_name': 'rukayen',
+                    // 'checkout_url': 'https://betapay.loadingplay.com',
                     'product_id' : {{ product_id }}
                 });
 
