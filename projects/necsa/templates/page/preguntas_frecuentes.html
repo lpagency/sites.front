@@ -32,7 +32,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_faq" name="image" id="img_faq">
                </div>
                 {% end %}
-                <img id="{{ site.name }}_faq" src="{{ read_image(site.name + '_faq', 1) }}" onload="this.src='{{ read_image(site.name + '_faq',500) }}'" class="desaturada faq_img" alt="item">
+                <img id="{{ site.name }}_faq" src="{{ read_image(site.name + '_faq', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_faq',500) }}'" class="desaturada faq_img" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12 faq-text text-center {{editabletext}}" text-id="{{ site.name + '_text_faq' }}"> {{ read_text(site.name +  '_text_faq') }}
