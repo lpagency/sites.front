@@ -11,7 +11,7 @@
               <input type="file" class="editableimage" image-id="{{ site.name }}_logo" name="image" id="img_logo" >
             </div>
             {% end %}
-            <img id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_logo',500) }}'" class="logo-header" alt="item" />
+            <img id="{{ site.name }}_logo" src="{{ read_image(site.name + '_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_logo',500) }}'" class="logo-header" alt="item" />
          <!--      <img class="logo-header" src="https://84static.loadingplay.com/static/images/c91f2d23e84ffdb7e5f6cc3d2450addc_logo_Glam_header.png"> -->
           </div>
        </div>
@@ -28,7 +28,7 @@
           </div>
           {% end %}
           <a href="https://www.facebook.com/GlamCoColombia/" target="blank">
-          <img id="{{ site.name }}_icono_uno" src="{{ read_image(site.name + '_icono_uno', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_uno',500) }}'" class="iconos-redes" alt="item" />
+          <img id="{{ site.name }}_icono_uno" src="{{ read_image(site.name + '_icono_uno', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_icono_uno',500) }}'" class="iconos-redes" alt="item" />
                <!--  <img class="iconos-redes" src="https://84static.loadingplay.com/static/images/9919b5e12c871e50f9906155747198b5_facebook.png"> -->
                </a>
           </div>
@@ -43,7 +43,7 @@
           </div>
           {% end %}
          <a href="https://www.instagram.com/glamco_colombia/" target="blank">
-          <img id="{{ site.name }}_icono_dos" src="{{ read_image(site.name + '_icono_dos', 1) }}" onload="this.src='{{ read_image(site.name + '_icono_dos',500) }}'" class="iconos-redes-dos" alt="item" />  
+          <img id="{{ site.name }}_icono_dos" src="{{ read_image(site.name + '_icono_dos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_icono_dos',500) }}'" class="iconos-redes-dos" alt="item" />  
                <!--  <img class="iconos-redes" src="https://84static.loadingplay.com/static/images/7be2221f50467be7b8ed229022ac2cf7_instagram.png"> -->
             </a>
           </div>
