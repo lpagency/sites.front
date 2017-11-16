@@ -23,7 +23,7 @@
                       <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
                   </div>
               {% end %}
-              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
+              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.onload='';this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
 
     <!-- <img src="https://84static.loadingplay.com/static/images/60e1be07c64bde4a3eb5e23bf1c5f077_Logo_rukayen_2.png" class="img-responsive logo"  alt="logo" width="150"> --></a>
 
