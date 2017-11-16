@@ -43,7 +43,7 @@
             </div>
             {% end %}
             <a href="{{ site_base }}">
-            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
+            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen desktop">
             </a>
            <!--  <img src="img/logo_2.png" class="logo"> -->
         <div class="logo-border"></div>
@@ -73,7 +73,7 @@
                   </div>
                   {% end %}
                   <a href="{{ site_base }}">
-                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+                  <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
                   </a>
                 </div>
                   <ul>
@@ -99,7 +99,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}banner{{request.path.replace('/', '_')}}" name="image" id="img_banner"/>
             </div>
             {% end %}
-            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
+            <img id="{{ site.name }}banner{{ request.path.replace('/', '_') }}" src="{{ read_image(site.name + 'banner' + request.path.replace('/', '_'), 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'banner'+ request.path.replace('/', '_'),) }}'" alt="item">
             <div class="hidden-xs hidden-sm">
               <p class="text-header">{{ gallery.title }}</p>
             </div>
