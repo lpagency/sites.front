@@ -22,13 +22,13 @@
     $(document).ready(function()
     {
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapibodegas.loadingplay.com/',
+            'https://betaapibodegas.ondev.today/',
+            'https://betaapibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://pay.loadingplay.com',
+            'https://betapay.loadingplay.com',
             'https://lpcheckout.ondev.today/',
-            'https://pay.loadingplay.com');
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(20,21,20);
 
         $(document).ecommerce('product_detail', {
