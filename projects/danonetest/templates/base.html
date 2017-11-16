@@ -71,7 +71,7 @@
                                       <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
                                   </div>
                               {% end %}
-                              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
+                              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.onload='';this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
                     <a class="navbar-brand" href=""></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
@@ -182,13 +182,13 @@
     var site_base = "{{ site_base }}"
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-    <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
     <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
     <!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
 
         <script type="text/javascript" src="{{ site_base }}/static/js/me.js" ></script> -->
     <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/editablelink.js"></script>
