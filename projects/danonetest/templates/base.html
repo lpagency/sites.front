@@ -71,7 +71,7 @@
                                       <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
                                   </div>
                               {% end %}
-                              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
+                              <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.onload='';this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item" width="150" />
                     <a class="navbar-brand" href=""></a>
         </div>
         <div class="collapse navbar-collapse navbar-ex1-collapse">
