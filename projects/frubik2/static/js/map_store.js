@@ -1,9 +1,9 @@
 
 
 var base_url = $.environmentVar(
-    'https://betaapibodegas.loadingplay.com/',
-    'https://betaapibodegas.loadingplay.com/',
-    'https://betaapibodegas.loadingplay.com/');
+    'https://betabodegas.loadingplay.com/',
+    'https://betabodegas.loadingplay.com/',
+    'https://betabodegas.loadingplay.com/');
 var checkout_url = $.environmentVar(
      'https://betapay.loadingplay.com',
      'https://betapay.loadingplay.com',

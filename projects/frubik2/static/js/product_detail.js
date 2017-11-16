@@ -5,8 +5,8 @@ $(document).ready(function()
 {
     var base_url = $.environmentVar(
         'http://localhost:8520/',
-        'https://betaapibodegas.ondev.today/',
-        'https://betaapibodegas.loadingplay.com/');
+        'https://betabodegas.ondev.today/',
+        'https://betabodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
         'http://lpcheckout.ondev.today/',
