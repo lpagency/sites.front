@@ -130,7 +130,7 @@
                 <div for="phone" id="error_profile_phone" class="error" style="color: red; text-align: left; font-style: italic; display: none">Debe ingresar un número válido</div>
             </div>
             <div class="form-group">
-                <input name="url" placeholder="http://www." class="form-control" type="text" value="{%if data is not None %}{% if 'data' in data %}{{data['data']['url'][0]}}{% end %}{% end %}">
+                <input name="url" placeholder="https://www." class="form-control" type="text" value="{%if data is not None %}{% if 'data' in data %}{{data['data']['url'][0]}}{% end %}{% end %}">
                 <div for="url" id="error_profile_phone" class="error" style="color: red; text-align: left; font-style: italic; display: none">Debe ingresar una url valida</div>
             </div>
             {% try %}
