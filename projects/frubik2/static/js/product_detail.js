@@ -5,12 +5,12 @@ $(document).ready(function()
 {
     var base_url = $.environmentVar(
         'http://localhost:8520/',
-        'https://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapibodegas.ondev.today/',
+        'https://betaapibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
         'http://lpcheckout.ondev.today/',
-        'https://pay.loadingplay.com');
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(19,11,20);
 
     // functions 

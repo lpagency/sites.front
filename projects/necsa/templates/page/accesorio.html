@@ -69,7 +69,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_amortiguadores" name="image" id="img_amortiguadores">
                </div>
                 {% end %}
-                <img id="{{ site.name }}_amortiguadores" src="{{ read_image(site.name + '_amortiguadores', 1) }}" onload="this.src='{{ read_image(site.name + '_amortiguadores',500) }}'" class="desaturada amortiguadores_img" alt="item">
+                <img id="{{ site.name }}_amortiguadores" src="{{ read_image(site.name + '_amortiguadores', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_amortiguadores',500) }}'" class="desaturada amortiguadores_img" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12 text-amortiguadores text-center {{editabletext}}" text-id="{{ site.name + '_text-amortiguadores' }}"> {{ read_text(site.name +  '_text-amortiguadores') }}

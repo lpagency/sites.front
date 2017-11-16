@@ -73,7 +73,7 @@
         <div class="img-welcome vertical-center desaturada">
        
             <div class="col-sm-12 text-center">
-             <img class="img-welcome2 {{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+             <img class="img-welcome2 {{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
                 <h2 class="titulo-password text-center text-uppercase">PARA INGRESAR A ESTE SITIO</h2>
                 <h2 class="titulo-password text-center text-uppercase"><a href="{{ site_base }}/auth/login" >registrarse o entrar</a></h2>
             </div>
@@ -98,7 +98,7 @@
         var site_base = "{{ site_base }}"
         </script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-        <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         
 <!--         <script type="text/javascript" src="{{ site_base }}/static/js/mlb.js"></script>
 
@@ -106,7 +106,7 @@
 
         <!-- <script type="text/javascript" src="{{ site_base }}/static/js/main.js"></script> -->
 
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
         <script type="text/javascript" src="{{ site_base }}/common/js/jquery.editable.js" ></script>
         <script type="text/javascript" src="{{ site_base }}/common/js/editabletext.js"></script>

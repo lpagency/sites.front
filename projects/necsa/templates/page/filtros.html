@@ -68,7 +68,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_filtros" name="image" id="img_filtros">
                </div>
                 {% end %}
-                <img id="{{ site.name }}_filtros" src="{{ read_image(site.name + '_filtros', 1) }}" onload="this.src='{{ read_image(site.name + '_filtros',500) }}'" class="desaturada filtro_img" alt="item">
+                <img id="{{ site.name }}_filtros" src="{{ read_image(site.name + '_filtros', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_filtros',500) }}'" class="desaturada filtro_img" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12 text-filtros text-center {{editabletext}}" text-id="{{ site.name + '_text-filtros' }}"> {{ read_text(site.name +  '_text-filtros') }}
