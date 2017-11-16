@@ -18,7 +18,7 @@
         // checkout_url = 'http://localhost:8522/';
         var api_url = $.environmentVar(
             'http://localhost:8520/',
-            'http://apibodegas.ondev.today/',
+            'https://apibodegas.ondev.today/',
             'https://apibodegas.loadingplay.com/');
 
         var checkout_url = $.environmentVar(
@@ -63,7 +63,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_carrito" name="image" id="img_banner_carrito">
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_carrito" src="{{ read_image(site.name + '_banner_carrito', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_carrito',500) }}'" class="carrito" alt="item">
+                <img id="{{ site.name }}_banner_carrito" src="{{ read_image(site.name + '_banner_carrito', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_carrito',500) }}'" class="carrito" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12  text-cart text-center {{editabletext}}" text-id="{{ site.name + '_carrito' }}"> {{ read_text(site.name +  '_carrito') }}

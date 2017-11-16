@@ -70,7 +70,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_baterias" name="image" id="img_baterias">
                </div>
                 {% end %}
-                <img id="{{ site.name }}_baterias" src="{{ read_image(site.name + '_baterias', 1) }}" onload="this.src='{{ read_image(site.name + '_baterias',500) }}'" class="desaturada baterias_img" alt="item">
+                <img id="{{ site.name }}_baterias" src="{{ read_image(site.name + '_baterias', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_baterias',500) }}'" class="desaturada baterias_img" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12 text-baterias text-center {{editabletext}}" text-id="{{ site.name + '_text-baterias' }}"> {{ read_text(site.name +  '_text-baterias') }}
