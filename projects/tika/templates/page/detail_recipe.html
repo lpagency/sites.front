@@ -86,7 +86,7 @@
   <div type="template" id="product_detail" class="hidden">
 
      <div class="width-banner">
-       <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[1]['thumb_1'] }}" onload="this.src='{{! images[1]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
+       <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
      </div>
 
       <section class="cpbuy-bg space50" style="color:#fff;">
@@ -132,7 +132,7 @@
         <div class="parallax-window" data-parallax="scroll" data-image-src="{{ read_image(site.name + '_banner_detalle-recipe',500) }}"></div>
     </div>
  -->
-  <!--  <img id="{{ site.name }}_banner_detalle-recipe" src="{{ read_image(site.name + '_banner_detalle-recipe', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle-recipe',500) }}'" class="fondo-banner" alt="item" style="position:relative;"> -->
+  <!--  <img id="{{ site.name }}_banner_detalle-recipe" src="{{ read_image(site.name + '_banner_detalle-recipe', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle-recipe',500) }}'" class="fondo-banner" alt="item" style="position:relative;"> -->
  </div>
  <div class="background-color">
      <div class="container-fluid recipe-detail" >

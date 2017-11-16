@@ -48,7 +48,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1',500) }}'" class="img-responsive visible-movil" alt="item" style="height: 100%;">
+    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1',500) }}'" class="img-responsive visible-movil" alt="item" style="height: 100%;">
     <!-- fin editar imagen -->
     <!-- <img class="fondo" src="{{! site_base }}/static/img/home.jpg"> -->
     <div class="top_wrapper">
