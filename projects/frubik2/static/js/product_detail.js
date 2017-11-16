@@ -5,7 +5,7 @@ $(document).ready(function()
 {
     var base_url = $.environmentVar(
         'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
+        'https://apibodegas.ondev.today/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',

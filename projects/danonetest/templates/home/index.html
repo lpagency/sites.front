@@ -14,11 +14,11 @@
     {
               // base_url = 'http://localhost:8520/';
         // checkout_url = 'http://localhost:8522/';
-        // base_url = 'http://apibodegas.ondev.today/';
+        // base_url = 'https://apibodegas.ondev.today/';
         // checkout_url = 'http://lpcheckout.ondev.today/';
         var base_url = $.environmentVar(
             'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
+            'https://apibodegas.ondev.today/',
             'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'https://checkout.loadingplay.com',
@@ -103,7 +103,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home_2" name="image" id="img_banner_home_2" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home_2',500) }}'" class="banner-hom-2" alt="item">
+                <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home_2',500) }}'" class="banner-hom-2" alt="item">
 
                  <div class="col-md-12">
                     <h1 class="text-center bay {{editabletext}}" text-id="{{ site.name + '_bay_1' }}"> {{ read_text(site.name +  '_bay_1') }}</h1>
@@ -124,7 +124,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home_4" name="image" id="img_banner_home_4" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_home_4" src="{{ read_image(site.name + '_banner_home_4', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_home_4',500) }}'" class="banner-hom-4" alt="item">
+                <img id="{{ site.name }}_banner_home_4" src="{{ read_image(site.name + '_banner_home_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home_4',500) }}'" class="banner-hom-4" alt="item">
 
                 <div align="center">
                       <a href="{{ site_base }}/listado_producto">
@@ -204,7 +204,7 @@
                </div>
           {% end %}
             <a id="{{ site.name + '_box_dan_1' }}" href="{{ read_link(site.name + '_box_dan_1') }}">
-               <img id="{{ site.name }}_box_dan_1" src="{{ read_image(site.name + '_box_dan_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dan_1',500) }}'" class="box-dan img-responsive" alt="item">
+               <img id="{{ site.name }}_box_dan_1" src="{{ read_image(site.name + '_box_dan_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dan_1',500) }}'" class="box-dan img-responsive" alt="item">
             </a>   
 
           <!--  <img class="img-resposnive" src="https://7static.loadingplay.com/static/images/b4ef8e06a26a0fb3a6d55921ee20c127_2939603_640px.png"> -->
@@ -230,7 +230,7 @@
                </div>
           {% end %}
                <a id="{{ site.name + '_box_dan_2' }}" href="{{ read_link(site.name + '_box_dan_2') }}">
-               <img id="{{ site.name }}_box_dan_2" src="{{ read_image(site.name + '_box_dan_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dan_2',500) }}'" class="box-dan img-responsive" alt="item">
+               <img id="{{ site.name }}_box_dan_2" src="{{ read_image(site.name + '_box_dan_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dan_2',500) }}'" class="box-dan img-responsive" alt="item">
                </a>
          <!--   <img class="img-responsive" src="https://7static.loadingplay.com/static/images/b4ef8e06a26a0fb3a6d55921ee20c127_2939603_640px.png"> -->
             <div class="texto-box text-left {{editabletext}}" text-id="{{ site.name + '_text_2' }}"> {{ read_text(site.name +  '_text_2') }}</div>
@@ -256,7 +256,7 @@
                </div>
           {% end %}
                <a id="{{ site.name + '_box_dan_3' }}" href="{{ read_link(site.name + '_box_dan_3') }}">
-               <img id="{{ site.name }}_box_dan_3" src="{{ read_image(site.name + '_box_dan_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dan_3',500) }}'" class="box-dan img-responsive" alt="item">
+               <img id="{{ site.name }}_box_dan_3" src="{{ read_image(site.name + '_box_dan_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dan_3',500) }}'" class="box-dan img-responsive" alt="item">
                </a>
           <!--  <img class="img-responsive" src="https://7static.loadingplay.com/static/images/b4ef8e06a26a0fb3a6d55921ee20c127_2939603_640px.png"> -->
               <div class="texto-box text-left {{editabletext}}" text-id="{{ site.name + '_text_3_3' }}"> {{ read_text(site.name +  '_text_3_3') }}</div>
@@ -280,7 +280,7 @@
                </div>
           {% end %}
               <a id="{{ site.name + '_box_dan_4' }}" href="{{ read_link(site.name + '_box_dan_4') }}">
-               <img id="{{ site.name }}_box_dan_4" src="{{ read_image(site.name + '_box_dan_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dan_4',500) }}'" class="box-dan img-responsive" alt="item">
+               <img id="{{ site.name }}_box_dan_4" src="{{ read_image(site.name + '_box_dan_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dan_4',500) }}'" class="box-dan img-responsive" alt="item">
                </a>
          <!--   <img class="img-responsive" src="https://7static.loadingplay.com/static/images/b4ef8e06a26a0fb3a6d55921ee20c127_2939603_640px.png"> -->
               <div class="texto-box text-left {{editabletext}}" text-id="{{ site.name + '_text_4' }}"> {{ read_text(site.name +  '_text_4') }}</div>
@@ -304,7 +304,7 @@
                </div>
           {% end %}
             <a id="{{ site.name + '_box_dan_5' }}" href="{{ read_link(site.name + '_box_dan_5') }}">
-               <img id="{{ site.name }}_box_dan_5" src="{{ read_image(site.name + '_box_dan_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_dan_5',500) }}'" class="box-dan img-responsive" alt="item">
+               <img id="{{ site.name }}_box_dan_5" src="{{ read_image(site.name + '_box_dan_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_dan_5',500) }}'" class="box-dan img-responsive" alt="item">
             </a>   
 
           <!--  <img class="img-resposnive" src="https://7static.loadingplay.com/static/images/b4ef8e06a26a0fb3a6d55921ee20c127_2939603_640px.png"> -->

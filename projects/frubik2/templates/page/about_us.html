@@ -17,11 +17,11 @@
         // base_url = 'http://localhost:8520/';
         // checkout_url = 'http://localhost:8522/';
 
-        // base_url = 'http://apibodegas.ondev.today/';
+        // base_url = 'https://apibodegas.ondev.today/';
         // checkout_url = 'http://lpcheckout.ondev.today/';
         var base_url = $.environmentVar(
             'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
+            'https://apibodegas.ondev.today/',
             'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'https://pay.loadingplay.com',
@@ -74,7 +74,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container">
@@ -126,7 +126,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_box_sy" name="image" id="img_box_sy" >
                 </div>
                 {% end %}
-                <img id="{{ site.name }}_box_sy" src="{{ read_image(site.name + '_box_sy', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy',500) }}'" class="box-medium" alt="item" />
+                <img id="{{ site.name }}_box_sy" src="{{ read_image(site.name + '_box_sy', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy',500) }}'" class="box-medium" alt="item" />
 
                 <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
                 <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
@@ -151,7 +151,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_box_sy_2" name="image" id="img_box_sy_2" >
                 </div>
                 {% end %}
-                <img id="{{ site.name }}_box_sy_2" src="{{ read_image(site.name + '_box_sy_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_2',500) }}'" class="box-medium-2" alt="item" />
+                <img id="{{ site.name }}_box_sy_2" src="{{ read_image(site.name + '_box_sy_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_2',500) }}'" class="box-medium-2" alt="item" />
 
                 <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
                 <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
@@ -173,7 +173,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_box_sy_3" name="image" id="img_box_sy_3" >
                 </div>
                 {% end %}
-                <img id="{{ site.name }}_box_sy_3" src="{{ read_image(site.name + '_box_sy_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_3',500) }}'" class="box-medium-3" alt="item" />
+                <img id="{{ site.name }}_box_sy_3" src="{{ read_image(site.name + '_box_sy_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_3',500) }}'" class="box-medium-3" alt="item" />
 
                 <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
                 <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
@@ -200,7 +200,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_box_sy_4" name="image" id="img_box_sy_4" >
                 </div>
                 {% end %}
-                <img id="{{ site.name }}_box_sy_4" src="{{ read_image(site.name + '_box_sy_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_4',500) }}'" class="box-medium" alt="item" />
+                <img id="{{ site.name }}_box_sy_4" src="{{ read_image(site.name + '_box_sy_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_4',500) }}'" class="box-medium" alt="item" />
 
                 <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
                 <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
