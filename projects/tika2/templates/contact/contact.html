@@ -121,7 +121,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact" name="image" id="img_banner_contact" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_contact" src="{{ read_image(site.name + '_banner_contact', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contact',500) }}'" class="fondo-form" alt="item">
+    <img id="{{ site.name }}_banner_contact" src="{{ read_image(site.name + '_banner_contact', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact',500) }}'" class="fondo-form" alt="item">
     <!-- fin editar imagen -->
 	 <div class="container" >
        <div class="row">
