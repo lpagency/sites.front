@@ -1279,12 +1279,26 @@ img#cerrocastillo-english_footer_logo {
   margin-top: 2rem;
 }
 
+@media screen and (max-width: 420px){
+  .header-logo-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .team-item-copy {
     margin-top: 0;
     position: absolute;
     top: 3rem;
     right: 2rem;
+  }
+
+  .header-logo-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
   }
 }
 
