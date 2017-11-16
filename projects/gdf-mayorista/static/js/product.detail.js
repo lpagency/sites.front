@@ -7,7 +7,7 @@ $(document).ready(function()
         var base_url = $.environmentVar(
             'https://betaapi.loadingplay.com/',
             'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/');
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'http://lpcheckout.ondev.today',
             'http://lpcheckout.ondev.today',

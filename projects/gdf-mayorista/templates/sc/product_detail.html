@@ -53,7 +53,7 @@
             $("#img_detail").attr("src", $(this).attr('src'));
         });
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
             'http://apibodegas.ondev.today/',
             'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
@@ -79,7 +79,7 @@
                     <div \
                         class="col-md-2 size-item-1 \
                             tallas variant-value" variant="{{! variant_name }}"\
-                        value="{{! value }}" >\
+                        value="{{! value }}">\
                             <div class="num-tal-1">{{! value }}</div>\
                     </div>',
                 'active_class': 'active'},
@@ -124,15 +124,27 @@
 
                 var tagProd = prodSku.substring(corte, -1);
 
-                related(tagProd.toLowerCase());
+                // related(tagProd.toLowerCase());
 
-                related2(prodBull.toLowerCase());
+                // related2(prodBull.toLowerCase());
             }
         }
 
         $('.product_detail').ecommerce('product_detail', options);
+        setTimeout(function(){
+            console.log("asdfasdfa");
+            $('.product-detail').on(
+            'variants_stock_loaded', 
+            function(e, d)
+            {
+                for (var p in d)
+                {
+                    console.log(p+" = "+d[p]);
+                }
+            });
+        },10000);
 
-        // productos relacionados
+        productos relacionados
         var related = function(tag)
         {
             var config = {
