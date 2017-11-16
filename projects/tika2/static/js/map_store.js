@@ -14,7 +14,7 @@ function isDevelopment() {
 // configure for each enviroment
 if ( isLocalHost() ) 
 {
-    base_url = 'http://apibodegas.ondev.today/';
+    base_url = 'https://apibodegas.ondev.today/';
     checkout_url = 'http://lpcheckout.ondev.today/';
     app_public = 9;
     // base_url = 'http://localhost:8520/';
@@ -23,7 +23,7 @@ if ( isLocalHost() )
 } 
 else if ( isDevelopment() ) 
 {
-    base_url = 'http://apibodegas.ondev.today/';
+    base_url = 'https://apibodegas.ondev.today/';
     checkout_url = 'http://lpcheckout.ondev.today/';
     app_public = 15;
 }
