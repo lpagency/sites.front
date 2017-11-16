@@ -11,7 +11,7 @@ $(document).ready(function()
         'http://localhost:8522/',
         'http://lpcheckout.ondev.today/',
         'https://betapay.loadingplay.com');
-    var app_public = $.environmentVar(19,11,20);
+    var app_public = $.environmentVar(20,20,20);
 
     // functions 
     // productos relacionados
