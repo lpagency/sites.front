@@ -1,0 +1,26 @@
+<footer class="container-fluid footer">
+  <div class="container-fluid-content">
+    <div class="row">
+      <div class="col-xs-12 footer-content">
+        <a href="#" class="footer-logo">
+          {% if is_admin %}
+            <div class="image-upload lapiz visible-movil" style="right: 1000px;">
+              <label for="img_footer_logo">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+              </label>
+              <input type="file" class="editableimage" image-id="{{ site.name }}_footer_logo" name="image" id="img_footer_logo" >
+            </div>
+          {% end %}
+          <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="footer__logo-img" alt="item">
+        </a>
+        <div class="footer-copy">
+          <div class="text text-white text-small footer-text {{editabletext}}" text-id="{{ site.name + '_texto_footer_1' }}"> {{ read_text(site.name +  '_texto_footer_1') }} </div>
+          <div class="text text-white text-small footer-text {{editabletext}}" text-id="{{ site.name + '_texto_footer_2' }}"> {{ read_text(site.name +  '_texto_footer_2') }} </div>
+          <div class="text text-white text-small text-link {{editabletext}}" text-id="{{ site.name + '_texto_footer_3' }}"> {{ read_text(site.name +  '_texto_footer_3') }} </div>
+          <div class="text text-white text-small text-link {{editabletext}}" text-id="{{ site.name + '_texto_footer_4' }}"> {{ read_text(site.name +  '_texto_footer_4') }} </div>
+          <div class="text text-white text-small text-link {{editabletext}}" text-id="{{ site.name + '_texto_footer_5' }}"> {{ read_text(site.name +  '_texto_footer_5') }} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
