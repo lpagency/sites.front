@@ -25,16 +25,16 @@
 
 
     var base_url = $.environmentVar(
-        "https://apibodegas.loadingplay.com/",
-        "https://apibodegas.ondev.today/",
-        "https://apibodegas.loadingplay.com/"
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/"
     );
     var checkout_url = $.environmentVar(
         'https://checkout.loadingplay.com/',
-        'http://lpcheckout.ondev.today/',
+        'https://betapay.loadingplay.com/',
         'https://checkout.loadingplay.com/'
     );
-    var app_public = $.environmentVar(9,15,9);
+    var app_public = $.environmentVar(9,9,9);
 
     var related = function(tag){
         var config = {
