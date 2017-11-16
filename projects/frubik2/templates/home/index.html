@@ -86,7 +86,7 @@
      <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
    </div>
    {% end %}
-   <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-frub" alt="item">
+   <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-frub" alt="item">
   
    <div align="center">
    <div class="contenedor">
@@ -100,7 +100,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_pel_1" name="image" id="img_pel_1" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_pel_1" src="{{ read_image(site.name + '_pel_1', 1) }}" onload="this.src='{{ read_image(site.name + '_pel_1',) }}'" class="img-pe" alt="item">
+       <img id="{{ site.name }}_pel_1" src="{{ read_image(site.name + '_pel_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pel_1',) }}'" class="img-pe" alt="item">
 
         <div class="texto-fru  {{editabletext}}" text-id="{{ site.name + '_pel' }}"> {{ read_text(site.name +  '_pel') }} </div>
      </div>
@@ -116,7 +116,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_pel_2" name="image" id="img_pel_2" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_pel_2" src="{{ read_image(site.name + '_pel_2', 1) }}" onload="this.src='{{ read_image(site.name + '_pel_2',) }}'" class="img-pe" alt="item">
+       <img id="{{ site.name }}_pel_2" src="{{ read_image(site.name + '_pel_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pel_2',) }}'" class="img-pe" alt="item">
         <div class="texto-fru  {{editabletext}}" text-id="{{ site.name + '_pel_2' }}"> {{ read_text(site.name +  '_pel_2') }} </div>
      </div>
 
@@ -131,7 +131,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_pel_3" name="image" id="img_pel_3" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_pel_3" src="{{ read_image(site.name + '_pel_3', 1) }}" onload="this.src='{{ read_image(site.name + '_pel_3',) }}'" class="img-pe" alt="item">
+       <img id="{{ site.name }}_pel_3" src="{{ read_image(site.name + '_pel_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pel_3',) }}'" class="img-pe" alt="item">
         <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_pel_3' }}"> {{ read_text(site.name +  '_pel_3') }} </div>
      </div>
 
@@ -146,7 +146,7 @@
          <input type="file" class="editableimage" image-id="{{ site.name }}_pel_4" name="image" id="img_pel_4" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_pel_4" src="{{ read_image(site.name + '_pel_4', 1) }}" onload="this.src='{{ read_image(site.name + '_pel_4',) }}'" class="img-pe" alt="item">
+       <img id="{{ site.name }}_pel_4" src="{{ read_image(site.name + '_pel_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pel_4',) }}'" class="img-pe" alt="item">
         <div class="texto-fru {{editabletext}}" text-id="{{ site.name + '_pel_4' }}"> {{ read_text(site.name +  '_pel_4') }} </div>
      </div>
 
@@ -265,7 +265,7 @@
        <img class="change-image editablelink or" link-id="{{ site.name + '_box_chi_1' }}" content="{{ read_link(site.name + '_box_chi_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
        {% end %}
 <a id="{{ site.name + '_box_chi_1' }}" href="{{ read_link(site.name + '_box_chi_1') }}">
-  <img id="{{ site.name }}_box_chi_1" src="{{ read_image(site.name + '_box_chi_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_1') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_1" src="{{ read_image(site.name + '_box_chi_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_1') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box' }}"> {{ read_text(site.name +  '_t_box') }}</div>
     </div>
@@ -301,7 +301,7 @@
        <img class="change-image editablelink or" link-id="{{ site.name + '_box_chi_2' }}" content="{{ read_link(site.name + '_box_chi_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
        {% end %}
  <a id="{{ site.name + '_box_chi_2' }}" href="{{ read_link(site.name + '_box_chi_2') }}">      
-  <img id="{{ site.name }}_box_chi_2" src="{{ read_image(site.name + '_box_chi_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_2') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_2" src="{{ read_image(site.name + '_box_chi_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_2') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box_2' }}"> {{ read_text(site.name +  '_t_box_2') }}</div>
     </div>
@@ -338,7 +338,7 @@
        <img class="change-image editablelink or" link-id="{{ site.name + '_box_chi_3' }}" content="{{ read_link(site.name + '_box_chi_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
        {% end %}
 <a id="{{ site.name + '_box_chi_3' }}" href="{{ read_link(site.name + '_box_chi_3') }}">
-  <img id="{{ site.name }}_box_chi_3" src="{{ read_image(site.name + '_box_chi_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_3') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_3" src="{{ read_image(site.name + '_box_chi_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_3') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box_33' }}"> {{ read_text(site.name +  '_t_box_33') }}</div>
     </div>
@@ -376,7 +376,7 @@
   {% end %}
 
 <a id="{{ site.name + '_box_chi_4' }}" href="{{ read_link(site.name + '_box_chi_4') }}">
-  <img id="{{ site.name }}_box_chi_4" src="{{ read_image(site.name + '_box_chi_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_4') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_4" src="{{ read_image(site.name + '_box_chi_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_4') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box_34' }}"> {{ read_text(site.name +  '_t_box_34') }}</div>
     </div>
@@ -416,7 +416,7 @@
   {% end %}
 
 <a id="{{ site.name + '_box_chi_5' }}" href="{{ read_link(site.name + '_box_chi_5') }}">
-  <img id="{{ site.name }}_box_chi_5" src="{{ read_image(site.name + '_box_chi_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_5') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_5" src="{{ read_image(site.name + '_box_chi_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_5') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box_345' }}"> {{ read_text(site.name +  '_t_box_345') }}</div>
     </div>
@@ -457,7 +457,7 @@
   {% end %}
 
 <a id="{{ site.name + '_box_chi_6' }}" href="{{ read_link(site.name + '_box_chi_6') }}">
-  <img id="{{ site.name }}_box_chi_6" src="{{ read_image(site.name + '_box_chi_6', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_6') }}'" class="img-edit" alt="item">
+  <img id="{{ site.name }}_box_chi_6" src="{{ read_image(site.name + '_box_chi_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_6') }}'" class="img-edit" alt="item">
   <div class="img-text-center">
     <div class="text-box text-left {{editabletext}}" text-id="{{ site.name + '_t_box_346' }}"> {{ read_text(site.name +  '_t_box_346') }}</div>
     </div>
