@@ -36,7 +36,7 @@
         <script type="text/template" id="product_template" >
             <div class="product" >
                 <div>{{! name }}</div>
-                <img height="300" width="300" class="product-image" src="{{! images[0][1] }}" />
+                <img height="300" width="300" class="product-image" src="{{! images[0]['thumb_200'] }}" />
                 <div class="money" >{{! main_price }}</div>
                 <div style="height:200px;overflow:hidden" >{{! description }}</div>
                 <a href="/sample/product.html?id={{! id }}">Ver detalle</a>
@@ -60,7 +60,7 @@
                 <div>{{! name }}</div>
                 <div class="money" >{{! price }}</div>
                 <button class="remove-from-cart" product-id="{{! id }}">Remove</button>
-                <button class="remove-one" product-id="{{! id }}">-</button>
+                <button class="remove-one" lp-cart-remove-one id="{{! id }}" product-id="{{! id }}">-</button>
                 <span class="quantity" >{{! quantity }}</span>
                 <button class="add-one" product-id="{{! id }}">+</button>
                 <span class="product-total money">{{! total }}</span>
@@ -99,7 +99,7 @@
         <script type="text/x-template" id="shopping-cart-product" >
             <div> {{! name }} | {{! quantity }}
                 <button class="remove-from-cart" product-id="{{! id }}" >Remove</button>
-                <button class="remove-one" product-id="{{! id }}" >-</button>
+                <button class="remove-one" lp-cart-remove-one id="{{! id }}" product-id="{{! id }}" >-</button>
                 <button class="add-one" product-id="{{! id }}" >+</button>
                 <span class="product-total" >{{! total }}</span>
             </div>

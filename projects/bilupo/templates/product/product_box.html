@@ -95,7 +95,7 @@
         <div class="product product-thumb cuadro_product">
             <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
                 <div class="box-4 caja-productos" style="width: 242px;height: 200px; padding-bottom:10px; background-color: white">
-                    <img class="img_product img-responsive pad0 img-re" id="imagen_producto" src="{{! images[0][1] }}" style="max-width: 100%!important;width: 242px;height: 200px;object-fit: scale-down;margin: 0 auto;position: absolute;padding: 15px 25px 15px 25px" onload="this.onload='';this.src='{{! images[0][3] }}'" title="" alt=""  onClick="style.pointerEvents='none'">
+                    <img class="img_product img-responsive pad0 img-re" id="imagen_producto" src="{{! images[0]['thumb_200'] }}" style="max-width: 100%!important;width: 242px;height: 200px;object-fit: scale-down;margin: 0 auto;position: absolute;padding: 15px 25px 15px 25px" onload="this.onload='';this.src='{{! images[0]["thumb_500"] }}'" title="" alt=""  onClick="style.pointerEvents='none'">
                     <div class="product-image-foreground hidden-xs hidden-md hidden-sm">
                     </div>
                </div>
@@ -107,7 +107,7 @@
                         product-name="{{! name }}" 
                         product-price="{{! main_price }}" 
                         product-upp="{{! upp }}" 
-                        product-img="{{! images[0][2] }}"
+                        product-img="{{! images[0]['thumb_200'] }}"
                         class="add-to-cart add-to-cart-animation" 
                         data-toggle="modal" 
                         data-target="#myModal" 
