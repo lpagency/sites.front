@@ -84,6 +84,13 @@
               $(".tag-header").html("Oferta");
             }
 
+            setTimeout(function(){
+              if(scroll > 794)
+              {
+                $(".more-products").click();
+              }
+            },2000);
+
         });
     </script>
     <script type="text/javascript">
@@ -100,6 +107,7 @@
           $("#wrapper").toggleClass("toggled");
       });
     </script>
+
 
 
 {% end %}
