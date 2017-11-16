@@ -14,18 +14,18 @@
 
       $("#OpenAlert").click();
 
-        // base_url = 'http://localhost:8520/';
-        // checkout_url = 'http://localhost:8522/';
+        // base_url = 'https://betaapi.loadingplay.com/';
+        // checkout_url = 'https://betapay.loadingplay.com';
 
         // base_url = 'https://betaapi.loadingplay.com/';
-        // checkout_url = 'https://lpcheckout.ondev.today/';
+        // checkout_url = 'https://betapay.loadingplay.com';
         var base_url = $.environmentVar(
             'https://betaapi.loadingplay.com/',
             'https://betaapi.loadingplay.com/',
             'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
             'https://betapay.loadingplay.com',
-            'https://lpcheckout.ondev.today/',
+            'https://betapay.loadingplay.com',
             'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(20,20,20);
         var config = {
