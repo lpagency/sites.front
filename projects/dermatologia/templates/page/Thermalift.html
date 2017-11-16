@@ -29,7 +29,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_cat_10" name="image" id="img_cat_10" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_cat_10" src="{{ read_image(site.name + '_cat_10', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_10',500) }}'" class="banner_uno_list hidden" alt="item">
+                <img id="{{ site.name }}_cat_10" src="{{ read_image(site.name + '_cat_10', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_10',500) }}'" class="banner_uno_list hidden" alt="item">
        </div>
             <div class="col-md-12">
                 <h1 class="text-center titulo {{editabletext}}" text-id="{{ site.name + '_til_10' }}"> {{ read_text(site.name +  '_til_10') }}</h1>
