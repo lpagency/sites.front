@@ -130,21 +130,26 @@
             }
         }
 
-        $('.product_detail').ecommerce('product_detail', options);
-        setTimeout(function(){
-            console.log("asdfasdfa");
-            $('.product-detail').on(
+        var ecommerce = $('.product_detail').ecommerce('product_detail', options);
+        ecommerce.on(
             'variants_stock_loaded', 
             function(e, d)
             {
                 for (var p in d)
                 {
-                    console.log(p+" = "+d[p]);
+                    if(d[p] !== 0)
+                    {
+                        // var l = p.split("-");
+                        // var last = l[l.length-1];
+
+                        // $("[value="+ last +"]").removeClass("btn-disabled");
+                        // $("[value="+ last +"]").children("span").remove();
+
+                        console.log(p+" = "+d[p]);
+                    }
                 }
             });
-        },10000);
-
-        //productos relacionados
+        // productos relacionados
         var related = function(tag)
         {
             var config = {
