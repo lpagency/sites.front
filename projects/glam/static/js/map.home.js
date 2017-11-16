@@ -16,13 +16,13 @@ $(document).ready(function()
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
+        base_url = 'http://betaapi.loadingplay.com/';
         checkout_url = 'http://lpcheckout.ondev.today/';
         app_public = 19;
     } 
     else if ( isDevelopment() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
+        base_url = 'http://betaapi.loadingplay.com/';
         checkout_url = 'http://lpcheckout.ondev.today/';
         app_public = 19;
     }
