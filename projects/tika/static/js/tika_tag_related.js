@@ -12,7 +12,7 @@ $(document).ready(function()
 
     var base_url = $.environmentVar(
         "https://apibodegas.loadingplay.com/",
-        "http://apibodegas.ondev.today/",
+        "https://apibodegas.ondev.today/",
         "https://apibodegas.loadingplay.com/"
     );
     var app_public = $.environmentVar(9,15,9);
