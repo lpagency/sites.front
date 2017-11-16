@@ -49,9 +49,9 @@ $(document).ready(function()
     var tag_exist = false;
 
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         '/bilupo/checkout',
         '/checkout',
