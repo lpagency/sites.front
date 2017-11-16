@@ -11,11 +11,11 @@ $(document).ready(function()
 {
 
     var base_url = $.environmentVar(
-        "https://apibodegas.loadingplay.com/",
-        "https://apibodegas.ondev.today/",
-        "https://apibodegas.loadingplay.com/"
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/"
     );
-    var app_public = $.environmentVar(10,15,10);
+    var app_public = $.environmentVar(10,10,10);
 
     var config = {
         'app_public' : app_public,

@@ -6,10 +6,11 @@ function isDevelopment() {
     return document.location.href.indexOf('ondev.today') != -1;
 }
 
-$(document).ready(function(){
-
+$(document).ready(function()
+{
     // detalle recetas
-    $(".fancybox").fancybox({
+    $(".fancybox").fancybox(
+    {
         'width':400,
         'height':400,
         'autoSize' : false,
@@ -17,27 +18,20 @@ $(document).ready(function(){
         'padding': 0,
         'helpers': {
                 overlay: {
-                    locked: false,
-                    // css: { 
-                    //     'background': 'url(https://7static.loadingplay.com/static/images/eb91172c27b8ba2f678ac75a371cf33d_BACKGROUND.png) no-repeat center center',
-                    //     'background-size':'cover',
-                    //     '-moz-background-size': 'cover',
-                    //     '-webkit-background-size': 'cover',
-                    //     '-o-background-size': 'cover'
-                    //     } 
+                    locked: false
                 }
             }
     });
 
 
-    // var base_url= "https://apibodegas.loadingplay.com/";
+    // var base_url= "https://betaapi.loadingplay.com/";
 
     var base_url = $.environmentVar(
-        "https://apibodegas.loadingplay.com/",
-        "https://apibodegas.ondev.today/",
-        "https://apibodegas.loadingplay.com/"
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/",
+        "https://betaapi.loadingplay.com/"
     );
-    var app_public = $.environmentVar(9,15,9);
+    var app_public = $.environmentVar(9,9,9);
 
     // listado productos
     var config = {
