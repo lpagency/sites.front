@@ -84,6 +84,13 @@
               $(".tag-header").html("Oferta");
             }
 
+            setTimeout(function(){
+              if(scroll > 794)
+              {
+                $(".more-products").click();
+              }
+            },2000);
+
         });
     </script>
     <script type="text/javascript">
@@ -100,6 +107,7 @@
           $("#wrapper").toggleClass("toggled");
       });
     </script>
+
 
 
 {% end %}
@@ -623,7 +631,7 @@
           <button class="btn btn-primary btn-mo dropdown-toggle" type="button" data-toggle="modal" data-target="#myModal-orde">Ordenar por:
           <span class="caret"></span></button>
           <div class="palito"> </div>
-          <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="modal" data-target="#myModal-fil-men">Filtrar por:
+          <button class="btn btn-primary  dropdown-toggle" type="button" data-toggle="modal" data-target="#myModal-fil">Filtrar por:
           <span class="caret"></span></button>
        </div>
     </div>
