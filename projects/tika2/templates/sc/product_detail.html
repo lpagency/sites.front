@@ -39,13 +39,13 @@
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        // base_url = 'http://apibodegas.ondev.today/';
+        // base_url = 'https://apibodegas.ondev.today/';
         // checkout_url = 'http://lpcheckout.ondev.today/';
         // app_public= 15;
     } 
     else if ( isDevelopment() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
+        base_url = 'https://apibodegas.ondev.today/';
         checkout_url = 'http://lpcheckout.ondev.today/';
         app_public = 15;
     }
@@ -90,7 +90,7 @@
 <script type="text/template" id="product_detail">
 
     <div class="width-banner" >
-        <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[4]['thumb_1'] }}" onload="this.src='{{! images[4]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
+        <img id="{{ site.name }}_banner_detalle-prod" src="{{! images[4]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[4]['thumb_500'] }}'" class="fondo-banner" alt="item" style="position:relative;">
     </div>
 
     <section class="buy-bg space50" style="color:#fff;">
@@ -98,7 +98,7 @@
             <div class="row">
                 <div class="col-md-5">
 
-                    <img src="{{! images[5]['thumb_1'] }}" onload="this.src='{{! images[5]['thumb_500'] }}'" class="img-responsive img-descrip" alt="item">
+                    <img src="{{! images[5]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[5]['thumb_500'] }}'" class="img-responsive img-descrip" alt="item">
                 </div>
                 <div class="col-md-7 text-descrip desc-prod">
                     <h2 class="name-prod space75">{{! name }}
@@ -106,8 +106,8 @@
                     {{! bullet_1 }}
                     </h2>
                     <p class="desc-prod"><div>{{! description }}</div></p>
-                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[1]['thumb_1'] }}" onload="this.src='{{! images[1]['thumb_500'] }}'">
-                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[2]['thumb_1'] }}" onload="this.src='{{! images[2]['thumb_500'] }}'">
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[1]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[1]['thumb_500'] }}'">
+                    <img class="col-sm-12 col-xs-12 img-nutric" src="{{! images[2]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[2]['thumb_500'] }}'">
                     <div class="col-sm-12 space70">
                         <button type="button" class="btn btn-default btn-nutr" data-toggle="modal" data-target="#myModal">nutrition facts</button>
                         <!-- <button type="button" class="btn btn-default btn-compr">Donde Comprar</button> -->
@@ -126,7 +126,7 @@
                     <h4 class="modal-title ">Información nutricional</h4>
                 </div>
                 <div class="modal-body">
-                    <img class="col-sm-12 img-modal" src="{{! images[3]['thumb_1'] }}" onload="this.src='{{! images[3]['thumb_500'] }}'">
+                    <img class="col-sm-12 img-modal" src="{{! images[3]['thumb_1'] }}" onload="this.onload='';this.src='{{! images[3]['thumb_500'] }}'">
                 </div>
             </div>
 
