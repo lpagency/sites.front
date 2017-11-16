@@ -5,7 +5,7 @@ $(document).ready(function()
 {
     var base_url = $.environmentVar(
         'http://localhost:8520/',
-        'https://betaapi.ondev.today/',
+        'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
