@@ -125,7 +125,7 @@
 <script type="text/javascript">
     $(document).ready(function()
     {
-        var base_url = 'https://apibodegas.loadingplay.com/',
+        var base_url = 'https://betaapi.loadingplay.com/',
             checkout_url = 'https://checkout.loadingplay.com/';
 
         function isLocalHost() {
@@ -144,8 +144,8 @@
         } 
         else if ( isDevelopment() ) 
         {
-            base_url = 'http://apibodegas.ondev.today/';
-            checkout_url = 'http://lpcheckout.ondev.today/';
+            base_url = 'https://betaapi.loadingplay.com/';
+            checkout_url = 'https://betapay.loadingplay.com/';
         }
 
         // initialize ecommerce

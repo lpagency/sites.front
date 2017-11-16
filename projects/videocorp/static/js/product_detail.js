@@ -5,11 +5,11 @@ $(document).ready(function()
 {
     var base_url = $.environmentVar(
         'http://localhost:8520/',
-        'http://apibodegas.ondev.today/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
-        'http://lpcheckout.ondev.today/',
+        'https://betapay.loadingplay.com/',
         'https://checkout.loadingplay.com');
     var app_public = $.environmentVar(50,54,54);
 

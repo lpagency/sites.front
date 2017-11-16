@@ -59,13 +59,13 @@ $(document).ready(function()
         $("#todos").addClass("active");
     }
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com');
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
 
     var app_public = $.environmentVar(29,29,29);
     var site_name = $.environmentVar('vitrineate', 'vitrineate', 'vitrineate');
@@ -80,6 +80,7 @@ $(document).ready(function()
         // 'maxProducts': 100,
         'checkout_url': checkout_url, 
         'operator' :'or',
+        'site_name': site_name,
         'onLoad': function(products) 
         {
             // if (products.length === 0)

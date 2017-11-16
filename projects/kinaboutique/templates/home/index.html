@@ -56,7 +56,7 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
 
 
      <script type="text/javascript">
-  var base_url = 'https://apibodegas.loadingplay.com/',
+  var base_url = 'https://betaapi.loadingplay.com/',
  checkout_url = 'https://checkout.loadingplay.com/';
   var app_public = 10;
 
@@ -71,14 +71,14 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public= 10;
     } 
     else if ( isDevelopment() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public = 10;
     }
 

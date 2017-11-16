@@ -61,8 +61,8 @@
     $(document).ready(function()
     {
 
-        var base_url = 'https://apibodegas.loadingplay.com/',
-            checkout_url ='https://pay.loadingplay.com';
+        var base_url = 'https://betaapi.loadingplay.com/',
+            checkout_url ='https://betapay.loadingplay.com';
 
         function isLocalHost() {
             return document.location.href.indexOf('localhost') != -1;
@@ -75,17 +75,17 @@
         // configure for each enviroment
         if ( isLocalHost() )
         {
-            base_url = 'https://apibodegas.loadingplay.com/',
-            checkout_url = 'http://lpcheckout.ondev.today';
+            base_url = 'https://betaapi.loadingplay.com/',
+            checkout_url = 'https://betapay.loadingplay.com';
 
-            // base_url = 'http://apibodegas.ondev.today/';
-            // checkout_url = 'http://apibodegas.ondev.today/';
+            // base_url = 'https://betaapi.loadingplay.com/';
+            // checkout_url = 'https://betaapi.loadingplay.com/';
         }
         else if ( isDevelopment() )
         {
 
-            base_url = 'http://apibodegas.ondev.today/',
-            checkout_url = 'http://lpcheckout.ondev.today';
+            base_url = 'https://betaapi.loadingplay.com/',
+            checkout_url = 'https://betapay.loadingplay.com';
         }
 
         // initialize ecommerce
