@@ -330,7 +330,7 @@
         <div class="marca_producto titulos"><b>{{! brand }}</b></div>
         <div class="cantidad_producto titulos">
             <span class="quantity titulos canti">{{! quantity }}</span> &nbsp;
-            <a href="#" class="add-one fa fa-plus-circle boton_redondo" product-id="{{! id }}"></a>
+            <a href="#" class="add-one fa fa-plus-circle boton_redondo" lp-cart-add-one="{{! id }}" product-id="{{! id }}"></a>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <a href="#" class="remove-one fa fa-minus-circle boton_redondo boton_menos" lp-cart-remove-one id="{{! id }}" product-id="{{! id }}"></a>
         </div>
@@ -338,7 +338,7 @@
             <span class="product-total moneyProducto titulos">{{! total|money }}</span>
         </div>
         <div id="eh" style="z-index: 1;float: right;margin-right: 5%; margin-top: -7%;">
-            <a href="#" class="remove-from-cart basurero" product-id="{{! id }}" id="basura"><img src="https://7static.loadingplay.com/static/images/03dc3ce6b9d6bebfa6f7bbb0928d3ce6_basurerito.png" style="width: 20px"></a>
+            <a href="#" class="remove-from-cart basurero" lp-cart-remove="{{!id }}" product-id="{{! id }}" id="basura"><img src="https://7static.loadingplay.com/static/images/03dc3ce6b9d6bebfa6f7bbb0928d3ce6_basurerito.png" style="width: 20px"></a>
         </div>
         <br>
         <div>
