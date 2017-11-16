@@ -1285,6 +1285,18 @@ img#cerrocastillo-english_footer_logo {
     object-fit: scale-down;
     height: auto;
   }
+
+  .banner-bg{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
+
+  .intro-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -1322,6 +1334,12 @@ img#cerrocastillo-english_footer_logo {
     overflow: hidden;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+}
+
+@media screen and (max-width: 420px){
+  .team-item-role, .team-item-name {
+    width: 100%;
+  }
 }
 
 .team-popup-text + .team-popup-text {
