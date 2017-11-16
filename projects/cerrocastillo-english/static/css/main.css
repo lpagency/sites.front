@@ -51,6 +51,14 @@ button:focus {
   color: #ffffff;
 }
 
+img#cerrocastillo-english_footer_logo {
+    width: 180px;
+    max-width: 180px;
+    height: 97px;
+    max-height: 97px;
+    object-fit: cover;
+}
+
 @media screen and (min-width: 768px) {
   html,
   body {
@@ -278,10 +286,13 @@ button:focus {
 }
 
 .banner-bg {
-  width: 100%;
-  height: auto;
-  min-height: 100%;
-  pointer-events: none;
+    width: 1275px;
+    height: 956px;
+    max-height: 956px;
+    max-width: 1275px;
+    min-height: 100%;
+    pointer-events: none;
+    object-fit: cover;
 }
 
 .banner-copy {
@@ -388,10 +399,14 @@ button:focus {
 }
 
 .intro-img {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 1275px;
+    max-width: 1275px;
+    height: 264px;
+    max-height: 264px;
+    object-fit: cover;
 }
 
 .intro-text + .intro-text {
@@ -561,8 +576,11 @@ button:focus {
 }
 
 .header-logo-img {
-  width: 100%;
-  height: auto;
+    width: 261px;
+    height: 120px;
+    max-width: 261px;
+    max-height: 120px;
+    object-fit: cover;
 }
 
 .header-nav {
@@ -970,13 +988,15 @@ button:focus {
   .approach-item-img {
     margin-bottom: 0;
     margin-left: 6.25rem;
-    width: 50%;
+    width: 425px;
+    height: 426px;
     -webkit-box-ordinal-group: 3;
     -webkit-order: 2;
     -ms-flex-order: 2;
     order: 2;
     max-width: 425px;
-    max-height: 456px;
+    object-fit: cover;
+    max-height: 426px;
   }
 }
 
@@ -1168,8 +1188,11 @@ button:focus {
 }
 
 .investments-item-logo-img {
-  width: 100%;
-  height: auto;
+    width: 290px;
+    height: 122px;
+    max-width: 290px;
+    max-height: 122px;
+    object-fit: cover;
 }
 
 @media screen and (min-width: 768px) {
@@ -1256,12 +1279,38 @@ button:focus {
   margin-top: 2rem;
 }
 
+@media screen and (max-width: 420px){
+  .header-logo-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
+
+  .banner-bg{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
+
+  .intro-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .team-item-copy {
     margin-top: 0;
     position: absolute;
     top: 3rem;
     right: 2rem;
+  }
+
+  .header-logo-img{
+    width: 100%;
+    object-fit: scale-down;
+    height: auto;
   }
 }
 
@@ -1280,8 +1329,17 @@ button:focus {
 }
 
 .team-item-role, .team-item-name {
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
+    width: 480px;
+    height: 45px;
+    overflow: hidden;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 420px){
+  .team-item-role, .team-item-name {
+    width: 100%;
+  }
 }
 
 .team-popup-text + .team-popup-text {

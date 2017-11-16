@@ -404,5 +404,15 @@ if(!$("html").hasClass("touch")){
         });
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            if($(window).width() < 800 && $(window).width() > 421)
+            {
+                $(".header-nav").css("display", "block");
+            }
+        });
+    </script>
+
     </body>
 </html>

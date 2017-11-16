@@ -32,6 +32,12 @@
 
         $(document).ready(function()
         {
+
+            var scroll = $(window).scrollTop();
+            // yada
+            $("html").scrollTop(scroll);
+
+
             // EXCLUSIVO PARA PLACARE
             $("title").html("Placare - Listado de productos");
             $("meta[name=description]").attr("content", "Es un hecho establecido hace demasiado tiempo que un lector se distraerá con el contenido del texto de un sitio mientras que mira su diseño.");
@@ -78,6 +84,13 @@
               $(".tag-header").html("Oferta");
             }
 
+            setTimeout(function(){
+              if(scroll > 794)
+              {
+                $(".more-products").click();
+              }
+            },2000);
+
         });
     </script>
     <script type="text/javascript">
@@ -94,6 +107,7 @@
           $("#wrapper").toggleClass("toggled");
       });
     </script>
+
 
 
 {% end %}

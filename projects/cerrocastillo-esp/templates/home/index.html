@@ -1,0 +1,66 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+{% end %}
+
+{% block javascript %}
+<script  type="text/javascript" src="{{ site_base }}/static/js/app.js"></script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+ <section class="container-fluid banner">
+  {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+      <label for="img_banner_home">
+        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+      </label>
+      <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home" name="image" id="img_banner_home" >
+    </div>
+  {% end %}
+  <img id="{{ site.name }}_banner_home" src="{{ read_image(site.name + '_banner_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home',) }}'" class="banner-bg" alt="item">
+  <div class="banner-copy banner-copy-left">
+    <div class="banner-title {{editabletext}}" text-id="{{ site.name + '_texto_home_ban' }}"> {{ read_text(site.name +  '_texto_home_ban') }} </div>
+  </div>
+</section>
+
+<section class="container-fluid intro">
+  {% if is_admin %}
+    <div class="image-upload lapiz visible-movil">
+      <label for="img_banner_home_2">
+        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+      </label>
+      <input type="file" class="editableimage" image-id="{{ site.name }}_banner_home_2" name="image" id="img_banner_home_2" >
+    </div>
+  {% end %}
+  <img id="{{ site.name }}_banner_home_2" src="{{ read_image(site.name + '_banner_home_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_home_2',) }}'" class="intro-img" alt="item">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="intro-copy">
+          <div  class="text intro-text {{editabletext}}" text-id="{{ site.name + '_texto_home' }}"> {{ read_text(site.name +  '_texto_home') }} </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include '../home/footer.html' %}
+{% end %}
+
+

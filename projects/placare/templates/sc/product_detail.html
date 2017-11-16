@@ -62,7 +62,7 @@
         });
 
         var base_url = $.environmentVar(
-        'https://apibodegas.ondev.today/',
+        'https://betaapi.loadingplay.com/',
         'https://apibodegas.ondev.today/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
@@ -220,6 +220,8 @@
 
                         $("[value="+ last +"]").removeClass("btn-disabled");
                         $("[value="+ last +"]").children("span").remove();
+
+                        console.log(p+" = "+d[p]);
                     }
                 }
             });

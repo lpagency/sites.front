@@ -441,7 +441,6 @@ $(document).ready(function(){
 
             <a href="#" id="productos_nuevos" class="gris subcateg mbtm5 index" tag="productos_nuevos" role="button" sub2="productos nuevos" sub="productos nuevos">Productos nuevos</a>
                 <a href="#" id="todos" class="subcateg mbtm5 index" tag="" role="button" sub2="" sub="todos los productos">Todos los productos</a>
-                <!--<button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar listado" id="open-cart" onclick="window.location.href='{{ site_base }}/detalle_cotizacion'">COTIZAR</button> -->
           
           </div>
           </div>
@@ -459,7 +458,7 @@ $(document).ready(function(){
           <!-- ** CATEGORIA CONTROL ACCESO**** -->
           <div class="control_de_acceso ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="Control de acceso inteligente" sub="Control de acceso | Inteligente" tag="inteligente">
+              <div class="contenedor-banner" sub2="Control de acceso inteligente" sub="Control de acceso | Inteligente" tag="inteligente">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_control_1">
@@ -468,12 +467,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_1" name="image" id="img_banner_control_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_1' }}"> {{ read_text(site.name +  '_nombre_producto_1') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="control de acceso mecanico" sub="Control de acceso | Mecanico" tag="mecanico">
+              <div class="contenedor-banner" sub2="control de acceso mecanico" sub="Control de acceso | Mecanico" tag="mecanico">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_control_2">
@@ -482,12 +481,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_2" name="image" id="img_banner_control_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_2" src="{{ read_image(site.name + '_banner_control_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_2',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_control_2" src="{{ read_image(site.name + '_banner_control_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_2' }}"> {{ read_text(site.name +  '_nombre_producto_2') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="separador de filas" sub="Control de acceso | Separador de filas" tag="filas">
+              <div class="contenedor-banner" sub2="separador de filas" sub="Control de acceso | Separador de filas" tag="filas">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_control_3">
@@ -496,12 +495,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_3" name="image" id="img_banner_control_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_3" src="{{ read_image(site.name + '_banner_control_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_3',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_control_3" src="{{ read_image(site.name + '_banner_control_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_3' }}"> {{ read_text(site.name +  '_nombre_producto_3') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="portaletreros" sub="Control de acceso | Portaletreros" tag="letreros">
+              <div class="contenedor-banner" sub2="portaletreros" sub="Control de acceso | Portaletreros" tag="letreros">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_control_4">
@@ -510,12 +509,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_4" name="image" id="img_banner_control_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_4" src="{{ read_image(site.name + '_banner_control_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_4',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_control_4" src="{{ read_image(site.name + '_banner_control_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_4' }}"> {{ read_text(site.name +  '_nombre_producto_4') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="otros para control de acceso" sub="Control de acceso | Otros Para Control De Acceso" tag="otros_acceso">
+              <div class="contenedor-banner" sub2="otros para control de acceso" sub="Control de acceso | Otros Para Control De Acceso" tag="otros_acceso">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_control_5">
@@ -524,7 +523,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_5" name="image" id="img_banner_control_5" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_5" src="{{ read_image(site.name + '_banner_control_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_5',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_control_5" src="{{ read_image(site.name + '_banner_control_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_5' }}"> {{ read_text(site.name +  '_nombre_producto_5') }}</div>
               </div>
             </div>
@@ -534,7 +533,7 @@ $(document).ready(function(){
           <!-- ****CATEGORIA PRODUCTOS ECOLOGICOS*** -->
           <div class="basureros ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="basureros" sub="Productos Ecologicos | Basureros" tag="basurero_ecologico">
+              <div class="contenedor-banner" sub2="basureros" sub="Productos Ecologicos | Basureros" tag="basurero_ecologico">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_basurero_1">
@@ -543,7 +542,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_1" name="image" id="img_banner_basurero_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_1" src="{{ read_image(site.name + '_banner_basurero_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_basurero_1" src="{{ read_image(site.name + '_banner_basurero_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_1' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_1') }}</div>
               </div>
             </div>
@@ -553,7 +552,7 @@ $(document).ready(function(){
           <!-- ********* CATEGORIA MOBILIARIO URBANO **** -->
           <div class="mob_urbano ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="basureros" sub="Mobiliario Urbano | Basureros" tag="basureros">
+              <div class="contenedor-banner" sub2="basureros" sub="Mobiliario Urbano | Basureros" tag="basureros">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_basurero_urbano_1">
@@ -562,12 +561,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_1" name="image" id="img_banner_basurero_urbano_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_1" src="{{ read_image(site.name + '_banner_basurero_urbano_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_1" src="{{ read_image(site.name + '_banner_basurero_urbano_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_1' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_1') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="banquetas/Escaños" sub="Mobiliario Urbano | Banquetas/Escaños" tag="banqueta">
+              <div class="contenedor-banner" sub2="banquetas/Escaños" sub="Mobiliario Urbano | Banquetas/Escaños" tag="banqueta">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_basurero_urbano_2">
@@ -576,12 +575,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_2" name="image" id="img_banner_basurero_urbano_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_2" src="{{ read_image(site.name + '_banner_basurero_urbano_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_2',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_2" src="{{ read_image(site.name + '_banner_basurero_urbano_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_2' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_2') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="bicicleteros" sub="Mobiliario Urbano | Bicicleteros" tag="bicicleteros">
+              <div class="contenedor-banner" sub2="bicicleteros" sub="Mobiliario Urbano | Bicicleteros" tag="bicicleteros">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_basurero_urbano_3">
@@ -590,12 +589,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_3" name="image" id="img_banner_basurero_urbano_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_3" src="{{ read_image(site.name + '_banner_basurero_urbano_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_3',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_3" src="{{ read_image(site.name + '_banner_basurero_urbano_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_3' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_3') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="refiguos para bicicletas" sub="Mobiliario Urbano | Refugios Para Bicicletas" tag="refugio_bici">
+              <div class="contenedor-banner" sub2="refiguos para bicicletas" sub="Mobiliario Urbano | Refugios Para Bicicletas" tag="refugio_bici">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_basurero_urbano_4">
@@ -604,7 +603,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_4" name="image" id="img_banner_basurero_urbano_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_4" src="{{ read_image(site.name + '_banner_basurero_urbano_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_4',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_4" src="{{ read_image(site.name + '_banner_basurero_urbano_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_4' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_4') }}</div>
               </div>
             </div>
@@ -614,7 +613,7 @@ $(document).ready(function(){
           <!-- ***********CATEGORIA ESPACIOS PUBLICOS********** -->
           <div class="espa_publicos ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="papeleros ceniceros" sub="Espacios Publicos | Papeleros Ceniceros" tag="pape_ceni">
+              <div class="contenedor-banner" sub2="papeleros ceniceros" sub="Espacios Publicos | Papeleros Ceniceros" tag="pape_ceni">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_papelero_ceni_1">
@@ -623,12 +622,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_1" name="image" id="img_banner_papelero_ceni_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_1" src="{{ read_image(site.name + '_banner_papelero_ceni_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_1" src="{{ read_image(site.name + '_banner_papelero_ceni_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_1' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_1') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="papeleros oficina" sub="Espacios Publicos | Papeleros Oficina" tag="pape_ofi">
+              <div class="contenedor-banner" sub2="papeleros oficina" sub="Espacios Publicos | Papeleros Oficina" tag="pape_ofi">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_papelero_ceni_2">
@@ -637,12 +636,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_2" name="image" id="img_banner_papelero_ceni_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_2" src="{{ read_image(site.name + '_banner_papelero_ceni_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_2',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_2" src="{{ read_image(site.name + '_banner_papelero_ceni_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_2' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_2') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="papeleros tapa pendulo" sub="Espacios Publicos | Papeleros Tapa Pendulo" tag="pape_pendu">
+              <div class="contenedor-banner" sub2="papeleros tapa pendulo" sub="Espacios Publicos | Papeleros Tapa Pendulo" tag="pape_pendu">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_papelero_ceni_3">
@@ -651,12 +650,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_3" name="image" id="img_banner_papelero_ceni_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_3" src="{{ read_image(site.name + '_banner_papelero_ceni_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_3',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_3" src="{{ read_image(site.name + '_banner_papelero_ceni_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_3' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_3') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="papeleros tapa pedal" sub="Espacios Publicos | Papeleros Tapa Pedal" tag="pape_pedal">
+              <div class="contenedor-banner" sub2="papeleros tapa pedal" sub="Espacios Publicos | Papeleros Tapa Pedal" tag="pape_pedal">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_papelero_ceni_4">
@@ -665,12 +664,12 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_4" name="image" id="img_banner_papelero_ceni_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_4" src="{{ read_image(site.name + '_banner_papelero_ceni_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_4',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_4" src="{{ read_image(site.name + '_banner_papelero_ceni_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_4' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_4') }}</div>
               </div>
             </div>
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="ceniceros" sub="Espacios Publicos | Ceniceros" tag="cenicero">
+              <div class="contenedor-banner" sub2="ceniceros" sub="Espacios Publicos | Ceniceros" tag="cenicero">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_papelero_ceni_5">
@@ -679,7 +678,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_5" name="image" id="img_banner_papelero_ceni_5" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_5" src="{{ read_image(site.name + '_banner_papelero_ceni_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_5',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_5" src="{{ read_image(site.name + '_banner_papelero_ceni_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_5' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_5') }}</div>
               </div>
             </div>
@@ -689,7 +688,7 @@ $(document).ready(function(){
           <!-- ************CATEGORIA PRODUCTOS ESPECIALES***** -->
           <div class="prod_especiales ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="productos especiales" sub="Productos Especiales | Productos Especiales" tag="especiales">
+              <div class="contenedor-banner" sub2="productos especiales" sub="Productos Especiales | Productos Especiales" tag="especiales">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_productos_especiales_1">
@@ -698,7 +697,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_productos_especiales_1" name="image" id="img_banner_productos_especiales_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_productos_especiales_1" src="{{ read_image(site.name + '_banner_productos_especiales_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_especiales_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_productos_especiales_1" src="{{ read_image(site.name + '_banner_productos_especiales_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_especiales_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_productos_especiales_1' }}"> {{ read_text(site.name +  '_nombre_producto_productos_especiales_1') }}</div>
               </div>
             </div>
@@ -708,7 +707,7 @@ $(document).ready(function(){
           <!-- ************PRODUCTOS NUEVOS***** -->
           <div class="prod_nuevos ban hidden">
             <div class="col-md-4 col-sm-4 col-xs-12">
-              <div class="contenedor-banner subcateg scrollUp" sub2="productos nuevos" sub="Productos Nuevos | Productos Nuevos" tag="pro_nuevos">
+              <div class="contenedor-banner" sub2="productos nuevos" sub="Productos Nuevos | Productos Nuevos" tag="pro_nuevos">
                 {% if is_admin %}
                   <div class="image-upload part1 lapiz visible-movil">
                     <label for="img_banner_productos_nuevos_1">
@@ -717,7 +716,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_productos_nuevos_1" name="image" id="img_banner_productos_nuevos_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_productos_nuevos_1" src="{{ read_image(site.name + '_banner_productos_nuevos_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_nuevos_1',500) }}'" class="img-productos-nuevo" alt="item">
+                <img id="{{ site.name }}_banner_productos_nuevos_1" src="{{ read_image(site.name + '_banner_productos_nuevos_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_nuevos_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_productos_nuevos_1' }}"> {{ read_text(site.name +  '_nombre_producto_productos_nuevos_1') }}</div>
               </div>
             </div>
