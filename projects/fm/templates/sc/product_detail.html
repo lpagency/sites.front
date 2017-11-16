@@ -67,7 +67,7 @@
                     <div class="col-xs-12 text-center">
                         <h2 class="product-title" >{{! name }}</h2>
                         <div class="">
-                            <span class="money pre">{{! main_price }}</span>
+                            <span class="money pre">{{! main_price|money }}</span>
                         </div>
                     </div>
                 </div>
@@ -85,12 +85,12 @@
                                 {{! bullet_2}}
                             </p>
                             <div class="main-price hidden-xs">
-                                <span class="money" style="font-size:30px;">{{! main_price }}</span>
+                                <span class="money" style="font-size:30px;">{{! main_price|money }}</span>
                             </div>
                             <div class="product-detail">
                                 <p>{{! description }}</p>
                             </div>
-                            <button type="button" class="btn btn-right-1 add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" >Añadir al carro</button>
+                            <button type="button" class="btn btn-right-1 add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price|money }}" >Añadir al carro</button>
                         </div>
                     </form>
                 </div>

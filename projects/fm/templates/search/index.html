@@ -47,12 +47,12 @@
             </div>
             <!--<span class="text-cant-prod">{{! manufacturer }}</span>-->
             <div class="row row-main-price">
-                <span class="text-price-prod money">{{! main_price }}</span>
+                <span class="text-price-prod money">{{! main_price|money }}</span>
                 <br/>
             </div>
             <div class="row row-add-to-cart">
                 <button class="add-cart-prod add-to-cart add-to-cart-animation" product-sku="{{! sku }}"
-                lp-cart-add product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" > <i class="icons-cart" style="margin-right: 13px;"></i> Agregar</button>
+                lp-cart-add product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price|money }}" > <i class="icons-cart" style="margin-right: 13px;"></i> Agregar</button>
             </div>
         </div>
     </div>
