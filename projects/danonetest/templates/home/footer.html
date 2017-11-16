@@ -12,7 +12,7 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_logo_footer" name="image" id="img_logo_footer" >
             </div>
             {% end %}
-            <img id="{{ site.name }}_logo_footer" src="{{ read_image(site.name + '_logo_footer', 1) }}" onload="this.src='{{ read_image(site.name + '_logo_footer',500) }}'" class="col-md-5 logo-footer" alt="item" />
+            <img id="{{ site.name }}_logo_footer" src="{{ read_image(site.name + '_logo_footer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_logo_footer',500) }}'" class="col-md-5 logo-footer" alt="item" />
                <!--  <img class="col-md-5 logo-footer" src="https://84static.loadingplay.com/static/images/0002442fe013ffbd94c2f2ff4b077684_0031.png"> -->        
                 <p class="foo">
                    

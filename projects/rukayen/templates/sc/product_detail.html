@@ -213,7 +213,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle" name="image" id="{{ site.name }}_banner_detalle" >
         </div>
     {% end %}
-    <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="img-responsive b-detail" alt="item" style="height: 100%;">
+    <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="img-responsive b-detail" alt="item" style="height: 100%;">
 
     
     <div class="container2">

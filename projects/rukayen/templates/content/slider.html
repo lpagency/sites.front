@@ -64,8 +64,8 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1a" name="image" id="img_banner_1a" >
                 </div>
             {% end %} 
-            <img id="mlb_banner_1" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_1') }}'" /> <!---->
-            <img id="mlb_banner_1a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_1a') }}'" />
+            <img id="mlb_banner_1" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1') }}'" /> <!---->
+            <img id="mlb_banner_1a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1a') }}'" />
           
             <div class="info-product banner-principal">
                 <h2>
@@ -104,8 +104,8 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_9a" name="image" id="img_banner_9a" >
             </div>
             {% end %}
-            <img id="mlb_banner_9" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_9') }}'" />
-            <img id="mlb_banner_9a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_9a') }}'"/>
+            <img id="mlb_banner_9" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_9') }}'" />
+            <img id="mlb_banner_9a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_9a') }}'"/>
               
   <!--           <img class="img-responsive show-hide" src="{{ site_base }}/static/img/mlb_009.png">
             <img class="img-responsive hide-show" src="{{ site_base }}/static/img/mlb_009a.png"> -->
@@ -146,8 +146,8 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_10a" name="image" id="img_banner_10a">
             </div>
             {% end %}
-            <img id="mlb_banner_10" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_10') }}'" />
-            <img id="mlb_banner_10a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_10a') }}'"/>
+            <img id="mlb_banner_10" class="img-responsive show-hide" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_10') }}'" />
+            <img id="mlb_banner_10a" class="img-responsive hide-show" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_10a') }}'"/>
              
             <div class="info-product banner-secundario">
                 <h2>
@@ -186,7 +186,7 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
             </div>
             {% end %}
-            <img id="mlb_banner_2" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_2') }}'"class="img-responsive" alt="item" style="height: 100%;">
+            <img id="mlb_banner_2" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_2') }}'"class="img-responsive" alt="item" style="height: 100%;">
             <div class="info-product">
                 <h2>{% if is_admin %}
                 <span class="editabletext" text-id="{{ site.name + '_banner2_tit' }}" >{{ read_text(site.name + '_banner2_tit') }}</span>
@@ -214,7 +214,7 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_3" name="image" id="img_banner_3" >
             </div>
             {% end %}
-            <img id="mlb_banner_3" src="{{ site_base }}/static/img/loading.gif" onload="this.src='{{ read_image(site.name + '_banner_3') }}'" class="img-responsive" alt="item" style="height: 100%;">
+            <img id="mlb_banner_3" src="{{ site_base }}/static/img/loading.gif" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_3') }}'" class="img-responsive" alt="item" style="height: 100%;">
             <!-- <img src="{{ site_base }}/static/img/mlb_003.png" class="img-responsive" alt="item"> -->
             <div class="info-article">
                 <h2>{% if is_admin %}
