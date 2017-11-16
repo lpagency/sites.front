@@ -70,7 +70,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_destacados" name="image" id="img_destacados">
                </div>
                 {% end %}
-                <img id="{{ site.name }}_destacados" src="{{ read_image(site.name + '_destacados', 1) }}" onload="this.src='{{ read_image(site.name + '_destacados',500) }}'" class="desaturada categ_img" alt="item">
+                <img id="{{ site.name }}_destacados" src="{{ read_image(site.name + '_destacados', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_destacados',500) }}'" class="desaturada categ_img" alt="item">
 
                 <div class="midled">
                     <h1 class="col-md-12 col-xs-12 text-categ text-center {{editabletext}}" text-id="{{ site.name + '_text-destacados' }}"> {{ read_text(site.name +  '_text-destacados') }}

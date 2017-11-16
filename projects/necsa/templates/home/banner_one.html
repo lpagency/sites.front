@@ -10,7 +10,7 @@
                </div>
         {% end %}
             <a href="">
-                <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1',500) }}'" class=" desaturada banner_home" alt="item">
+                <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1',500) }}'" class=" desaturada banner_home" alt="item">
             </a>
                 <h1 class="col-md-12 col-xs-12 text-home text-center {{editabletext}}" text-id="{{ site.name + '_text_home' }}"> {{ read_text(site.name +  '_text_home') }}
                 </h1>

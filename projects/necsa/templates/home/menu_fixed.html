@@ -24,7 +24,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_logo' }}" href="#">
-                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
                 </a>
             </div>
             <form class="navbar-form navbar-left pad0" role="search" action="{{ site_base }}/search" method="get" >
