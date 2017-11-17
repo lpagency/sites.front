@@ -8,9 +8,9 @@ $(document).ready(function()
         'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(62,62,62);
 
     // functions 

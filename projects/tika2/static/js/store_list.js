@@ -15,7 +15,7 @@ $(document).on('pjax:end ready', function() {
     // });
 
     var base_url = 'https://betaapi.loadingplay.com/store/pagination/',
-    checkout_url = 'https://checkout.loadingplay.com/';
+    checkout_url = 'https://betapay.loadingplay.com/';
     var app_public = 9;
 
     function isLocalHost() {

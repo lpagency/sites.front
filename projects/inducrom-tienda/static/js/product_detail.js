@@ -10,7 +10,7 @@ $(document).ready(function()
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
         'https://betapay.loadingplay.com/',
-        'https://checkout.loadingplay.com');
+        'https://betapay.loadingplay.com');
  var app_public = $.environmentVar(65,65,65);
 
     // functions 

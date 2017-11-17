@@ -5,7 +5,7 @@ $(document).ready(function(){
     //         'app_public' : 4,
     //         'products_per_page' : 36,
     //         'base_url' : 'https://betaapi.loadingplay.com/',
-    //         'checkout_url': 'https://checkout.loadingplay.com',
+    //         'checkout_url': 'https://betapay.loadingplay.com',
     //         'ignore_stock' : true
     //     });
 

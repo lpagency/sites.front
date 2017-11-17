@@ -2,7 +2,7 @@
 {
     // $('.slider').tinycarousel();
     var base_url = 'https://betaapi.loadingplay.com/',
-    checkout_url = 'https://checkout.loadingplay.com/';
+    checkout_url = 'https://betapay.loadingplay.com/';
     var app_public = 7;
 
     function isLocalHost() {

@@ -10,7 +10,7 @@ $(document).ready(function()
     // var checkout_url = $.environmentVar(
     //     'https://betapay.loadingplay.com/',
     //     'https://betapay.loadingplay.com/',
-    //     'https://checkout.loadingplay.com');
+    //     'https://betapay.loadingplay.com');
     // var app_public = $.environmentVar(26,26,26);
 
     // // functions 
