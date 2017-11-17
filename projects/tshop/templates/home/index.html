@@ -29,8 +29,8 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
            
             <div class="imageHover hasCart">
                 <a href="{{ site_base }}/sc/product/detail/{{!name|friendly}}/{{!id}}">
-                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0][3] }}"></a>
-                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0][3] }}"></a>
+                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0]['thumb_500'] }}"></a>
+                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0]['thumb_500'] }}"></a>
                     <div class="product-btn-box">
                         <a class="btn btn-product-flat btn-primary">
                             <span class="add2cart add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>

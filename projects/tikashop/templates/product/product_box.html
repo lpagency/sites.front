@@ -3,7 +3,7 @@
   <div class="col-md-4 col-sm-4 col-xs-12 art-hi">
 
     <div class="container pro">
-      <img src="{{! images[0][3] }}" alt="" class="image" >
+      <img src="{{! images[0]['thumb_500'] }}" alt="" class="image" >
       <p class="inf ellipsis multiline">{{! name }}</p>
       <p class="inf3 ellipsis multiline">{{! bullet_1 }}</p>
       <p class="separa"> | </p>
@@ -28,7 +28,7 @@
               <h4 class="modal-title text-center">Descripción del producto</h4>
           </div>
           <div class="modal-body">
-              <img src="{{! images[0][3] }}" alt="" class="image-mod" >
+              <img src="{{! images[0]['thumb_500'] }}" alt="" class="image-mod" >
               <p>{{! name }}</p>
               <p>Precio: {{! main_price|money}}</p>
               <p>{{! description }}</p>
