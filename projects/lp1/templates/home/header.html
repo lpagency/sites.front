@@ -20,7 +20,7 @@
                             <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo" name="image" id="{{ site.name }}_site_logo" >
                         </div>
                     {% end %}
-                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
+                    <img id="{{ site.name }}_site_logo" src="{{ read_image(site.name + '_site_logo') }}" onload="this.onload='';this.src='{{ read_image(site.name + '_site_logo',500) }}'" class="logo" alt="item">
                 </a>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                                 {% end %}
 
                                <a href="">
-                                 <img id="{{ site.name }}_he_1" src="{{ read_image(site.name + '_he_1', 1) }}" onload="this.src='{{ read_image(site.name + '_he_1',500) }}'" class="iconos-header-0" alt="item" />
+                                 <img id="{{ site.name }}_he_1" src="{{ read_image(site.name + '_he_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_he_1',500) }}'" class="iconos-header-0" alt="item" />
                                </a>
                              </li>
                               <li>   {% if is_admin %}
@@ -89,7 +89,7 @@
                                 {% end %}
 
                                <a href="">
-                                 <img id="{{ site.name }}_he_2" src="{{ read_image(site.name + '_he_2', 1) }}" onload="this.src='{{ read_image(site.name + '_he_2',500) }}'" class="iconos-header" alt="item" />
+                                 <img id="{{ site.name }}_he_2" src="{{ read_image(site.name + '_he_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_he_2',500) }}'" class="iconos-header" alt="item" />
                                </a>
                              </li>
                             </div>

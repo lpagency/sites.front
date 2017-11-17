@@ -46,7 +46,7 @@
                         </div>
                     </div>
                 </div>
-                <img src="{{! images[0][1] }}" onload="this.src='{{! images[0][2] }}'" class="img-responsive lazy" alt="item">
+                <img src="{{! images[0][1] }}" onload="this.onload='';this.src='{{! images[0][2] }}'" class="img-responsive lazy" alt="item">
             </div>
         </div>
         <a class="mas-info-detalle" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" style="z-index: 2;">

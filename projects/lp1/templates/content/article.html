@@ -1,6 +1,6 @@
 <div class="col-xs-12 col-md-3 article-box box-5">
     <div class="article-box-content" >
-        <img src="{{ article["thumb_1"] }}" onload="this.src='{{ article["thumb_500"] }}'" alt="" class="img-responsive img-arti" >
+        <img src="{{ article["thumb_1"] }}" onload="this.onload='';this.src='{{ article["thumb_500"] }}'" alt="" class="img-responsive img-arti" >
         <p class="rese"> {{ article["title"][:200] }}{% if len(article["title"]) > 200 %}...{% end %}</p> 
         <div class="mask-5">
             <a class="vi" href="{{ site_base }}/article/detail/a/{{ article["id"] }}">

@@ -90,7 +90,7 @@ else if ( isDevelopment() )
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_comprar_im" name="image" id="img_banner_comprar_im" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_comprar_im" src="{{ read_image(site.name + '_banner_comprar_im', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_comprar_im',500) }}'" class="fondo-banner" alt="item">
+    <img id="{{ site.name }}_banner_comprar_im" src="{{ read_image(site.name + '_banner_comprar_im', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_comprar_im',500) }}'" class="fondo-banner" alt="item">
     <!-- fin editar imagen -->
  <div class="container">
 

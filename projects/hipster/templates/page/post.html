@@ -52,7 +52,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_post_1" name="image" id="img_post_1" >
                 </div>
                 {% end %}
-                  <img id="{{ site.name }}_post_1" src="{{ read_image(site.name + '_post_1', 1) }}" onload="this.src='{{ read_image(site.name + '_post_1',) }}'" class="img-responsive" alt="item" >
+                  <img id="{{ site.name }}_post_1" src="{{ read_image(site.name + '_post_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_post_1',) }}'" class="img-responsive" alt="item" >
             <!-- <img src="img/blog2.jpg" alt="Example blog post alt" class="img-responsive"> -->
             </p>
             <h2 class="{{editabletext}}" text-id="{{ site.name + '_post_4' }}">{{ read_text(site.name +  '_post_4') }}
@@ -88,7 +88,7 @@
                 </div>
                 {% end %}
 
-                  <img id="{{ site.name }}_post_2" src="{{ read_image(site.name + '_post_2', 1) }}" onload="this.src='{{ read_image(site.name + '_post_2',) }}'" class="img-responsive" alt="item" >
+                  <img id="{{ site.name }}_post_2" src="{{ read_image(site.name + '_post_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_post_2',) }}'" class="img-responsive" alt="item" >
               <!-- <img src="img/blog.jpg" alt="Example blog post alt" class="img-responsive"> -->
               </p>
 
@@ -111,7 +111,7 @@
                 </div>
                 {% end %}
 
-                  <img id="{{ site.name }}_avatar2" src="{{ read_image(site.name + '_avatar2', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar2',) }}'" class="img-responsive img-circle" alt="item" >
+                  <img id="{{ site.name }}_avatar2" src="{{ read_image(site.name + '_avatar2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_avatar2',) }}'" class="img-responsive img-circle" alt="item" >
                   <!-- <img src="img/blog-avatar2.jpg" alt="" class="img-responsive img-circle"> -->
                   </p>
               </div>
@@ -137,7 +137,7 @@
                 </div>
                 {% end %}
 
-                  <img id="{{ site.name }}_avatar3" src="{{ read_image(site.name + '_avatar3', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar3',) }}'" class="img-responsive img-circle" alt="item" >
+                  <img id="{{ site.name }}_avatar3" src="{{ read_image(site.name + '_avatar3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_avatar3',) }}'" class="img-responsive img-circle" alt="item" >
                 </p>
               </div>
               <div class="col-sm-9 col-md-10">
@@ -212,7 +212,7 @@
                 </div>
                 {% end %}
 
-                  <img id="{{ site.name }}_avatar4" src="{{ read_image(site.name + '_avatar4', 1) }}" onload="this.src='{{ read_image(site.name + '_avatar4',) }}'" class="img-responsive" alt="item" >
+                  <img id="{{ site.name }}_avatar4" src="{{ read_image(site.name + '_avatar4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_avatar4',) }}'" class="img-responsive" alt="item" >
             <!-- <img src="img/banner.jpg" alt="" class="img-responsive"> -->
             </a>
             </div>

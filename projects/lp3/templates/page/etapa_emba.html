@@ -22,7 +22,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_list_emba" name="image" id="img_banner_list_emba" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_list_emba" src="{{ read_image(site.name + '_banner_list_emba', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_list_emba',500) }}'" class="banner_list hidden" alt="item">
+                <img id="{{ site.name }}_banner_list_emba" src="{{ read_image(site.name + '_banner_list_emba', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_list_emba',500) }}'" class="banner_list hidden" alt="item">
 
                
            </div>

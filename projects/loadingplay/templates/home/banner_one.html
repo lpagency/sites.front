@@ -22,7 +22,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_one" name="image" id="img_banner_one" >
                </div>
         {% end %}
-               <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="desaturada banner-uno" alt="item"> -->
+               <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="desaturada banner-uno" alt="item"> -->
 
             <!-- <img class="desaturada banner-uno" src="https://84static.loadingplay.com/static/images/05d19f91160ae67f21b4e5604905defe_foto_banner_1.png"> -->  
          <!--    <div id="a"  class="div-video hidden-xs">
@@ -44,7 +44,7 @@
                         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_one" name="image" id="img_banner_one" >
                     </div>
                 {% end %}
-                    <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="banner-one desaturada" alt="item" style="height: 100%;">
+                    <img id="{{ site.name }}_banner_one" src="{{ read_image(site.name + '_banner_one', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_one',500) }}'" class="banner-one desaturada" alt="item" style="height: 100%;">
                <!-- fin imagen movil -->
                
                     <div class="row">

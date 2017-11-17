@@ -31,7 +31,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" />
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1') }}'" class="img-edit banner1" alt="item" style="width:100%;height:100%" />
+        <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1') }}'" class="img-edit banner1" alt="item" style="width:100%;height:100%" />
 
         <div class="banner-caption text-center info-article"><!-- start banner caption -->
             {% if is_admin %}
@@ -82,7 +82,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
+        <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_2') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
     	<div class="col-md-8 col-md-offset-2 text-center"><!-- start banner caption -->
 		{% if is_admin %}
         	<h2><span class="editabletext" text-id="{{ site.name + '_banner2' }}" >{{ read_text(site.name + '_banner2') }}</span></h2>
@@ -119,7 +119,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_banner_3" name="image" id="img_banner_3" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_banner_3" src="{{ read_image(site.name + '_banner_3', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_3') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
+        <img id="{{ site.name }}_banner_3" src="{{ read_image(site.name + '_banner_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_3') }}'" class="img-edit banner1" alt="item" style="height: 100%;">
     	<div class="col-md-8 col-md-offset-2 text-center "><!-- start banner caption -->
 		{% if is_admin %}
         	<h2><span class="editabletext" text-id="{{ site.name + '_banner3' }}" >{{ read_text(site.name + '_banner3') }}</span></h2>

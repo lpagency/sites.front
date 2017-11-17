@@ -4,7 +4,7 @@
         <div class=" product-grid">
             <div class="img_box">
                 
-                <img class="img_product img-responsive" src="{{! images[0][1] }}" onload="this.src='{{! images[0][3] }}'" title="" alt="">
+                <img class="img_product img-responsive" src="{{! images[0][1] }}" onload="this.onload='';this.src='{{! images[0][3] }}'" title="" alt="">
                 <a  href="{{site_base}}/sc/product/{{! bullet_3 === '' ? 'detail' : 'detail2' }}/{{! name|friendly }}/{{! id }}?product_id={{! id }}" class="cart mask">
                     <button type="button" class="hover-recipe button">Ver detalle</button>
 

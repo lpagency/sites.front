@@ -33,7 +33,7 @@
                <input type="file" class="editableimage" image-id="{{ site.name }}_img_nosotros" name="image" id="img_nosotros" >
            </div>
            {% end %}
-            <img id="{{ site.name }}_img_nosotros" src="{{ read_image(site.name + '_img_nosotros', 1) }}" onload="this.src='{{ read_image(site.name + '_img_nosotros',500) }}'" class=".img-responsive banner_nosotros" alt="item">
+            <img id="{{ site.name }}_img_nosotros" src="{{ read_image(site.name + '_img_nosotros', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_nosotros',500) }}'" class=".img-responsive banner_nosotros" alt="item">
             <div class="box">
                 <h1 class="col-md-12 col-xs-12 text_banner text-center {{editabletext}}" text-id="{{ site.name + '_text_nosotros' }}"> 
                 {{ read_text(site.name +  '_text_nosotros') }}
@@ -88,7 +88,7 @@
                <input type="file" class="editableimage" image-id="{{ site.name }}_img_nosotros2" name="image" id="img_nosotros2" >
            </div>
            {% end %}
-            <img id="{{ site.name }}_img_nosotros2" src="{{ read_image(site.name + '_img_nosotros2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_nosotros2',500) }}'" class="img-responsive imag-nosotros" alt="item">
+            <img id="{{ site.name }}_img_nosotros2" src="{{ read_image(site.name + '_img_nosotros2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_nosotros2',500) }}'" class="img-responsive imag-nosotros" alt="item">
             <!--<img class="img-responsive"src="{{ site_base }}/static/img/mlb-aboutus-detail.png"> -->
         </div>
     </div>

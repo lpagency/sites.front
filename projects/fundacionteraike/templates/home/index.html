@@ -103,7 +103,7 @@
                         <input type="file" class="editableimage" image-id="{{ site.name }}_cat_1" name="image" id="img_cat_1">
                     </div>
                     {% end %}
-                    <img id="{{ site.name }}_cat_1" src="{{ read_image(site.name + '_cat_1', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_1',500) }}'" class="img-box" alt="item">
+                    <img id="{{ site.name }}_cat_1" src="{{ read_image(site.name + '_cat_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_1',500) }}'" class="img-box" alt="item">
                        <!-- <img class="img-box" src="https://84static.loadingplay.com/static/images/a1f02436a3a769646e26c9465abef95b_featured_homex.png" alt="Concurso Pintura Escolar Fundación Teraike"> -->
                     </div>
                 </div>

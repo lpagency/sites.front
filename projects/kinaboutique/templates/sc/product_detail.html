@@ -113,16 +113,16 @@
             <div class="main-image sp-wrap col-lg-12 no-padding">
 
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive">
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive"> 
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive"> 
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
                 </a>
             </div>
         </div>
@@ -227,7 +227,7 @@ is_admin
    </div>
    {% end %}
 <div style="position:relative">
-   <img id="{{ site.name }}_banner_detalle-prod" src="{{ read_image(site.name + '_banner_detalle-prod', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle-prod',500) }}'" class="fondo-banner" alt="item" style="position:relative;">
+   <img id="{{ site.name }}_banner_detalle-prod" src="{{ read_image(site.name + '_banner_detalle-prod', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle-prod',500) }}'" class="fondo-banner" alt="item" style="position:relative;">
 </div>
 <div class="container space50"  style="margin-left:0px;">
     <div class="spinner">

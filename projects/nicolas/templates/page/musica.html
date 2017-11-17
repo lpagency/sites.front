@@ -45,7 +45,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_musica" name="image" id="img_musica" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_musica" src="{{ read_image(site.name + '_musica', 1) }}" onload="this.src='{{ read_image(site.name + '_musica',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_musica" src="{{ read_image(site.name + '_musica', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_musica',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container-fluid">
@@ -71,7 +71,7 @@
         </div>
         {% end %}
         <a id="{{ site.name + '_box_music' }}" href="{{ read_link(site.name + '_box_music') }}">
-          <img id="{{ site.name }}_box_ren_3" src="{{ read_image(site.name + '_box_music', 1) }}" onload="this.src='{{ read_image(site.name + '_box_music',) }}'" class="img-music" alt="item">
+          <img id="{{ site.name }}_box_ren_3" src="{{ read_image(site.name + '_box_music', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_music',) }}'" class="img-music" alt="item">
         </a>
         {% if is_admin %}
         <img class="change-image editablelink" link-id="{{ site.name + '_box_music' }}" content="{{ read_link(site.name + '_box_music') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">

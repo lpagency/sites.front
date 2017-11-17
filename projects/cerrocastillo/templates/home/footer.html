@@ -17,7 +17,7 @@
                   <input type="file" class="editableimage" image-id="{{ site.name }}_site_logo_footer" name="image" id="{{ site.name }}_site_logo_footer" >
                 </div>
               {% end %}
-              <img id="{{ site.name }}_site_logo_footer" src="{{ read_image(site.name + '_site_logo_footer') }}" onload="this.src='{{ read_image(site.name + '_site_logo_footer',500) }}'" class="logo-footer" alt="item">
+              <img id="{{ site.name }}_site_logo_footer" src="{{ read_image(site.name + '_site_logo_footer') }}" onload="this.onload='';this.src='{{ read_image(site.name + '_site_logo_footer',500) }}'" class="logo-footer" alt="item">
             </a>
     </div>
   </div>
