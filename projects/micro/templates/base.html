@@ -18,7 +18,8 @@
 <!--     <link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz:200,300,400,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet"> -->
     <!-- <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'> -->
-    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css"> 
+    <!-- <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css"> -->
+    <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css?1">
     <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="{{ site_base }}/static/css/style-home.css">
@@ -254,7 +255,7 @@
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.cookie.js"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/environment.detection.js"></script>
 
-    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas/dist/bodegas.client.js"></script>
+    <script type="text/javascript" src="{{ site_base }}/common/js/bodegas2/bodegas.client.js?2"></script>
 
     <script type="text/javascript" src="{{ site_base }}/static/fancybox/source/jquery.fancybox.js?v=2.1.5"></script>
     <script type="text/javascript" src="{{ site_base }}/common/js/jquery.ellipsis.js"></script>
@@ -280,11 +281,11 @@
                 </td>
                 <!-- <td class="price-compra">{{! price|money }}</td>  -->
                 <td class="quantity-compra">
-                    <a href="#" class="remove-one pull-left position_remove" product-id="{{! id }}"><img src="https://7static.loadingplay.com/static/images/61350ae152ca3a2138e48e753393e51d_Menos.png"></a>
-                    <!-- <button class="remove-one pull-right position_remove" product-id="{{! id }}">-</button> -->
+                    <a href="#" class="remove-one pull-left position_remove" lp-cart-remove-one="{{! id }}"><img src="https://7static.loadingplay.com/static/images/61350ae152ca3a2138e48e753393e51d_Menos.png"></a>
+                    <!-- <button class="remove-one pull-right position_remove" lp-cart-remove-one="{{! id }}">-</button> -->
                     x{{! quantity}}
-                    <!-- <button class="add-one pull-right position_add" product-id="{{! id }}">+</button> -->
-                    <a href="#" class="add-one pull-right position_add" product-id="{{! id }}"><img class="pigli" src="https://84static.loadingplay.com/static/images/65d77f64d96c67eb6eb9eb446d856fa1_Mas.png"></a>
+                    <!-- <button class="add-one pull-right position_add" lp-cart-add-one="{{! id }}" >+</button> -->
+                    <a href="#" class="add-one pull-right position_add" lp-cart-add-one="{{! id }}"><img class="pigli" src="https://84static.loadingplay.com/static/images/65d77f64d96c67eb6eb9eb446d856fa1_Mas.png"></a>
                 </td>
                 <td class="total_money"><strong>{{! total|money }}</strong></td>
                 <!-- <td class="hidden-xs"><a href="#"><i class="fa fa-trash-o"></i></a></td> -->
@@ -293,7 +294,7 @@
 
     <script type="text/x-template" id="shopping-cart-checkout-form">
             <!-- <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" target="_parent">
-                <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+                <input name="site_id" class="form-control required" type="hidden" value="33">
                 <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
                 <div class="form-group space20">
                     <a href="javascript:history.back()" target="_parent">
@@ -303,7 +304,7 @@
                 </div>
             </form> -->
             <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
-                <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
+                <input name="site_id" class="form-control required" type="hidden" value="33">
                 <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
                 <div class="form-group space20">
                     <button type="submit" class="btn btn-enviar pull-right">Finalizar compra</button>
