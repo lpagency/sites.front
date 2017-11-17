@@ -17,12 +17,12 @@
 </thead>
 <tr>
 	<td>Total:</td>	
-	<td id="total" class="text-right money">{{! total }}</td>
+	<td id="total" class="text-right money">{{! total|money }} </td>
 	<td></td>
 </tr>
 </script>
 <script type="text/x-template" id="shopping-cart-units-total" >
-    <span> {{! upp_total }}</span>
+    <span> {{! upp_total|money }} </span>
 </script>
 <script type="text/x-template" id="shopping-cart-checkout-form" >
 <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform">
