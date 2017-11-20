@@ -68,7 +68,7 @@ $(document).ready(function()
         'https://betapay.loadingplay.com');
 
     var app_public = $.environmentVar(29,29,29);
-    var site_name = $.environmentVar('vitrineate', 'vitrineate', 'vitrineate');
+    var site_name = $.environmentVar('test', 'test', 'test');
 
     var config = {
         'app_public': app_public,
