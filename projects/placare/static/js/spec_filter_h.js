@@ -17,7 +17,7 @@ $(document).ready(function()
 
     var base_url = $.environmentVar(
         'https://betaapi.loadingplay.com/',
-        'https://apibodegas.ondev.today/',
+        'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://lpcheckout.ondev.today',
@@ -224,8 +224,8 @@ $(document).ready(function()
                     break;
                 case "formales":
                     url.push("Categoria3_Formales");
-                    url.push("Categoria2_Calzado_Mujer");
-                    url.push("-Categoria2_Calzado_Hombre");
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
                     if(window.listaTag2 != undefined)
                     {
                         for(l in window.listaTag2)

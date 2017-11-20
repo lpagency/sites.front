@@ -86,6 +86,8 @@
             onLoad: function(product)
             {
 
+                window.price = product.main_price;
+
                 if (variants_loaded)
                 {
                     return;
@@ -139,13 +141,23 @@
                 {
                     if(d[p] !== 0)
                     {
-                        // var l = p.split("-");
-                        // var last = l[l.length-1];
+                        var i = p.split("-");
+                        $(".tallas").each(function()
+                        {
 
-                        // $("[value="+ last +"]").removeClass("btn-disabled");
-                        // $("[value="+ last +"]").children("span").remove();
+                            if($(this).attr("value") == i[1])
+                            {
 
-                        console.log(p+" = "+d[p]);
+                                $(this).html($(this).html() 
+                                + '<div class="variant-stock">'+ d[p] +'</div>\
+                                <div class="variant-c">\
+                                    <i class="btn-variants fa fa-minus" product-id="'+i[1]+'"></i>\
+                                    <div id="'+i[1]+'">0</div>\
+                                    <i class="btn-variants fa fa-plus" va="'+d[p]+'" product-id="'+i[1]+'"></i>\
+                                </div><div class="variant-s" product-id="'+i[1]+'">$0</div>');
+                            }
+
+                        });
                     }
                 }
             });
@@ -186,6 +198,60 @@
     });
 
 
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        setTimeout(function()
+        {
+
+            $(document).on("click", ".fa-plus", function()
+            {
+
+                var subtotal = $(".precio").html();
+                subtotal = subtotal.split("+");
+                subtotal = subtotal[0].toString();
+                subtotal = subtotal.split("$");
+                subtotal = subtotal[1].toString();
+                subtotal = parseInt(subtotal);
+
+                var aux = parseInt($("#"+$(this).attr("product-id")).html());
+                if(aux < parseInt($(this).attr("va")))
+                {
+                    aux = aux + 1;
+
+                    subtotal = subtotal * aux;
+
+                    $(this).parent().parent().children(".variant-s").html("$"+subtotal);
+
+                }
+                $("#"+$(this).attr("product-id")).html(aux);
+            });
+
+            $(document).on("click", ".fa-minus", function()
+            {
+
+                var subtotal = $(".precio").html();
+                subtotal = subtotal.split("+");
+                subtotal = subtotal[0].toString();
+                subtotal = subtotal.split("$");
+                subtotal = subtotal[1].toString();
+                subtotal = parseInt(subtotal);
+
+                var aux = parseInt($("#"+$(this).attr("product-id")).html());
+                if(aux > 0)
+                {
+                    aux = aux - 1;
+
+                    // subtotal = subtotal/subtotal * aux;
+
+                    $(this).parent().parent().children(".variant-s").html("$"+subtotal);
+                }
+                $("#"+$(this).attr("product-id")).html(aux);
+            });
+        },2000);
+    });
 </script>
 
 <script type="text/template" id="product_detail" class="container-g">
@@ -311,7 +377,7 @@
         <div class="col-md-3 col-sm-12 col-xs-12 pad0" style="left: 3px;">
             <h1 class="title-detail">{{! name|changeName }}</h1>
              <div class="price_detail">
-                <span class="precio price">{{! main_price|money }}</span>
+                <span class="precio price">{{! main_price|money }} + iva</span>
                 <span class="promo price-p hidden">{{! promotion_price|money }}</span>
                 <br>
             </div>
@@ -319,6 +385,9 @@
                 <div class="text-center color-detalle">Color: {{! bullet_1 }}</div>
                 <div class="text-center stock-detalle">en stock</div>
                 <div class="text-center talla-detalle">TALLAS</div>
+                <div class="text-center talla-stock">Stock</div>
+                <div class="text-center talla-cantidad">Cantidad</div>
+                <div class="text-center talla-subtotal">Subtotal</div>
                 <div class="col-md-12 box-talla-2 variants-container" style="">
                 </div>
             </div>
