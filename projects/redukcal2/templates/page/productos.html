@@ -50,6 +50,7 @@
            'direction': 'asc',
            'onLoad':function(products){
               $(".product-sold-out").attr("disabled", true);
+              console.log(products);
             }
        };
        $('.products').ecommerce(config);
@@ -92,6 +93,29 @@ $("#menu-toggle").click(function(e) {
         document.cookie = "stock=true";
       }
     });
+  });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    setTimeout(function(){
+      $(".informacion").each(function()
+      {
+
+        var b = $(this);
+
+        var a = $(this).attr("in_stock");
+        console.log(a.toString());
+
+        if(a == "false")
+        {
+          b.parent().children(".add-to-cart").html("Agotado");
+          b.parent().children(".add-to-cart").attr("disabled", true);
+        }
+
+      });
+    },2000);
   });
 </script>
 
