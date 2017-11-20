@@ -21,13 +21,13 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://pay.loadingplay.com',
-            'https://pay.loadingplay.com',
-            'https://pay.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(20,20,20);
         var config = {
             'app_public' : app_public,
@@ -44,8 +44,8 @@
          $(document).ecommerce({
         'app_public' : 4,
         'animation' : 'simple',
-        'base_url' : 'https://apibodegas.loadingplay.com/',
-        'checkout_url' : 'https://pay.loadingplay.com/',
+        'base_url' : 'https://betaapi.loadingplay.com/',
+        'checkout_url' : 'https://betapay.loadingplay.com/',
         'products_per_page' : 9
     });
 
@@ -83,7 +83,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
                </div>
         {% end %}
-               <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-frub" alt="item">
+               <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-frub" alt="item">
         </div>
 
         <div align="center">
@@ -177,7 +177,7 @@
        {% end %}
 
       <a id="{{ site.name + '_box_chi_1' }}" href="{{ read_link(site.name + '_box_chi_1') }}">
-       <img id="{{ site.name }}_box_chi_1" src="{{ read_image(site.name + '_box_chi_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_1',500) }}'" class="box-chi" alt="item">
+       <img id="{{ site.name }}_box_chi_1" src="{{ read_image(site.name + '_box_chi_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_1',500) }}'" class="box-chi" alt="item">
        </a>
 
        <div align="center">
@@ -201,7 +201,7 @@
      {% end %}
 
      <a id="{{ site.name + '_box_chi_2' }}" href="{{ read_link(site.name + '_box_chi_2') }}">
-       <img id="{{ site.name }}_box_chi_2" src="{{ read_image(site.name + '_box_chi_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_2',500) }}'" class="box-chi" alt="item">
+       <img id="{{ site.name }}_box_chi_2" src="{{ read_image(site.name + '_box_chi_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_2',500) }}'" class="box-chi" alt="item">
      </a>
 
      <div align="center">
@@ -225,7 +225,7 @@
    {% end %}
 
    <a id="{{ site.name + '_box_chi_3' }}" href="{{ read_link(site.name + '_box_chi_3') }}">
-     <img id="{{ site.name }}_box_chi_3" src="{{ read_image(site.name + '_box_chi_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_3',500) }}'" class="box-chi" alt="item">
+     <img id="{{ site.name }}_box_chi_3" src="{{ read_image(site.name + '_box_chi_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_3',500) }}'" class="box-chi" alt="item">
    </a>
 
    <div align="center">
@@ -249,7 +249,7 @@
  {% end %}
 
  <a id="{{ site.name + '_box_chi_4' }}" href="{{ read_link(site.name + '_box_chi_4') }}">
-   <img id="{{ site.name }}_box_chi_4" src="{{ read_image(site.name + '_box_chi_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_chi_4',500) }}'" class="box-chi" alt="item">
+   <img id="{{ site.name }}_box_chi_4" src="{{ read_image(site.name + '_box_chi_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_chi_4',500) }}'" class="box-chi" alt="item">
  </a>
 
  <div align="center">

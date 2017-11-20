@@ -21,13 +21,13 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'http://lpcheckout.ondev.today/',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com/',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
@@ -73,7 +73,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_contacto" name="image" id="img_contacto" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_contacto" src="{{ read_image(site.name + '_contacto', 1) }}" onload="this.src='{{ read_image(site.name + '_contacto',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_contacto" src="{{ read_image(site.name + '_contacto', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_contacto',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container">
@@ -105,8 +105,8 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_fo" name="image" id="img_fo" >
             </div>
             {% end %}
-            <img id="{{ site.name }}_fo" src="{{ read_image(site.name + '_fo', 1) }}" onload="this.src='{{ read_image(site.name + '_fo',500) }}'" class="img-foto" alt="item">
-            <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+            <img id="{{ site.name }}_fo" src="{{ read_image(site.name + '_fo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_fo',500) }}'" class="img-foto" alt="item">
+            <!-- <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
             <!--  <p class="inf">{{! name }}</p> -->
         </div>
     </div>

@@ -46,8 +46,8 @@
             }
         $(document).ready(function() 
         {
-            var base_url = 'https://apibodegas.loadingplay.com/',
-                checkout_url = 'https://pay.loadingplay.com';
+            var base_url = 'https://betaapi.loadingplay.com/',
+                checkout_url = 'https://betapay.loadingplay.com';
 
             function isLocalHost() {
                 return document.location.href.indexOf('localhost') != -1;
@@ -60,25 +60,27 @@
             // configure for each enviroment
             if ( isLocalHost() ) 
             {
-                base_url = 'https://apibodegas.loadingplay.com/',
-                checkout_url = 'http://lpcheckout.ondev.today';
+                base_url = 'https://betaapi.loadingplay.com/',
+                checkout_url = 'https://betapay.loadingplay.com';
 
-                // base_url = 'http://apibodegas.ondev.today/';
-                // checkout_url = 'http://lpcheckout.ondev.today/';
+                // base_url = 'https://betaapi.loadingplay.com/';
+                // checkout_url = 'https://betapay.loadingplay.com/';
             } 
             else if ( isDevelopment() ) 
             {
-                base_url = 'http://apibodegas.ondev.today/',
-                checkout_url = 'http://lpcheckout.ondev.today';
+                base_url = 'https://betaapi.loadingplay.com/',
+                checkout_url = 'https://betapay.loadingplay.com';
             }
 
             // initialize ecommerce
             var facade = $(document).ecommerce('product_detail',
                 {
                     'app_public' : 3,
+                    'site_id': 3,
                     'base_url' : base_url,
                     'checkout_url': checkout_url,
                     'product_id' : {{ product_id }},
+                    'site_name': 'mlb',
                     onLoad: function(product) 
                         {
                             if(getCookie("stock") == "none")
@@ -102,7 +104,7 @@
                     <div class="col-xs-12 text-center tit-mobile info-product-detail">
                         <h2 class="product-title" >{{! name }}</h2><br>
                         <div class="main-price">
-                            <span class="money" style="font-size:30px;">{{! main_price }}</span>
+                            <span class="money" style="font-size:30px;">{{! main_price|money }}</span>
                         </div><br>
                     </div>
                 </div>
@@ -141,9 +143,9 @@
                                 <p>{{! description }}</p>
                             </div>
                             <div class="main-price hidden-xs">
-                                <span class="money" style="font-size:30px;">{{! main_price }}</span>
+                                <span class="money" style="font-size:30px;">{{! main_price|money }}</span>
                             </div>
-                            <button type="button" class="btn add-to-cart" style="background-color: rgba(0, 0, 0, 0.24);" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" lp-cart-add>Añadir al carro</button>
+                            <button type="button" class="btn add-to-cart" style="background-color: rgba(0, 0, 0, 0.24);" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price|money }}" product-sku="{{! sku }}" lp-cart-add>Añadir al carro</button>
                         </div>
                     </form>
                     </div>

@@ -30,13 +30,13 @@
       $("#OpenAlert").click();
 
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com',
-        'https://checkout.loadingplay.com');
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(48,48,48);
         var config = {
             'app_public' : app_public,
@@ -92,7 +92,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
                </div>
         {% end %}
-          <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-cerrocastillo" alt="item">
+          <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1',) }}'" class="banner-cerrocastillo" alt="item">
           <div class="container">
             <div class="one-til {{editabletext}}" text-id="{{ site.name + '_cerrocastillo' }}"> {{ read_text(site.name +  '_cerrocastillo') }} </div>
           </div>

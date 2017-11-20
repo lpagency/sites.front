@@ -84,13 +84,13 @@
       // base_url 'http://localhost:8520/'
       // checkout_url 'http://localhost:8522/'
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
@@ -158,7 +158,7 @@
                                 <input type="file" class="editableimage" image-id="{{ site.name }}_sup" name="image" id="img_sup" >
                             </div>
                         {% end %}
-                        <img id="{{ site.name }}_sup" src="{{ read_image(site.name + '_sup', 1) }}" onload="this.src='{{ read_image(site.name + '_sup',500) }}'" class="banner_su hidden" alt="item">
+                        <img id="{{ site.name }}_sup" src="{{ read_image(site.name + '_sup', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_sup',500) }}'" class="banner_su hidden" alt="item">
                     </div>
                     <div class="container txt-contact">
                     <div class="col-md-12 title-contact">

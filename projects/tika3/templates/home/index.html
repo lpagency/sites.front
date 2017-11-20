@@ -64,7 +64,7 @@
      <input type="file" class="editableimage" image-id="{{ site.name }}_banner_grande_home" name="image" id="img_banner_grande_home" >
  </div>
  {% end %}
- <img id="{{ site.name }}_banner_grande_home" src="{{ read_image(site.name + '_banner_grande_home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_grande_home',500) }}'" class="fondo" alt="item">
+ <img id="{{ site.name }}_banner_grande_home" src="{{ read_image(site.name + '_banner_grande_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_grande_home',500) }}'" class="fondo" alt="item">
 
  <!-- <img class="fondo" src="https://7static.loadingplay.com/static/images/702ba4f86ddd7e098d1e08feaa76262f_banner2.png">  -->
 </div>
@@ -96,7 +96,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_home_info" name="image" id="img_home_info" >
                </div>
                {% end %}
-               <img id="{{ site.name }}_home_info" src="{{ read_image(site.name + '_home_info', 1) }}" onload="this.src='{{ read_image(site.name + '_home_info',500) }}'" class="info" alt="item" />
+               <img id="{{ site.name }}_home_info" src="{{ read_image(site.name + '_home_info', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_info',500) }}'" class="info" alt="item" />
 
                <!-- <img class="info" src="https://7static.loadingplay.com/static/images/102d3c2c9f85551425a3129ef8c95eed_Banner_nuestra_historia_1.png">  -->
            </div>
@@ -112,7 +112,7 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_home_info_video" name="image" id="img_home_info_video" >
             </div>
             {% end %}
-            <img id="{{ site.name }}_home_info_video" src="{{ read_image(site.name + '_home_info_video', 1) }}" onload="this.src='{{ read_image(site.name + '_home_info_video',500) }}'" class="info fo" alt="item" />
+            <img id="{{ site.name }}_home_info_video" src="{{ read_image(site.name + '_home_info_video', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home_info_video',500) }}'" class="info fo" alt="item" />
 
             <!--  <img class="info fo" src="https://7static.loadingplay.com/static/images/30dd9655e1f38ef95f90b30ef996ee91_bannervideo.png"> -->
             <!-- <img class="icon" src="https://84static.loadingplay.com/static/images/5979205750a3839671cd7c331c2fa889_icono_video.png"> -->
@@ -189,7 +189,7 @@
            <input type="file" class="editableimage" image-id="{{ site.name }}_papas_redes" name="image" id="img_papas_redes" >
        </div>
        {% end %}
-       <img id="{{ site.name }}_papas_redes" src="{{ read_image(site.name + '_papas_redes', 1) }}" onload="this.src='{{ read_image(site.name + '_papas_redes',500) }}'" class="papas" alt="item">
+       <img id="{{ site.name }}_papas_redes" src="{{ read_image(site.name + '_papas_redes', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_papas_redes',500) }}'" class="papas" alt="item">
 
        <!--   <img class="col-md-8 col-xs-12 papas" src="https://84static.loadingplay.com/static/images/59e2eabc011bb29c457d41ef29737c74_banner_redes_sociales.png"> -->
    </div>
@@ -265,7 +265,7 @@
                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_importador" name="image" id="img_banner_importador" >
                    </div>
                    {% end %}
-                   <img id="{{ site.name }}_banner_importador" src="{{ read_image(site.name + '_banner_importador', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_importador',500) }}'" class="cuadros" alt="item">
+                   <img id="{{ site.name }}_banner_importador" src="{{ read_image(site.name + '_banner_importador', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_importador',500) }}'" class="cuadros" alt="item">
                    <!-- <img class="cuadros" src="https://7static.loadingplay.com/static/images/91a0afc0433534823094a6f6905b86bf_importador.png"> -->
                    <h3 class="sobre {{editabletext}}" text-id="{{ site.name + '_ser_importador' }}"> {{ read_text(site.name +  '_ser_importador') }}</h3>
                    <a href="{{ site_base }}/contact2" class="btn mas btn-lg active actii" role="button">CONOCE MÁS</a>
@@ -282,7 +282,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_proveedor" name="image" id="img_banner_proveedor" >
                </div>
                {% end %}
-               <img id="{{ site.name }}_banner_proveedor" src="{{ read_image(site.name + '_banner_proveedor', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_proveedor',500) }}'" class="cuadross" alt="item">
+               <img id="{{ site.name }}_banner_proveedor" src="{{ read_image(site.name + '_banner_proveedor', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_proveedor',500) }}'" class="cuadross" alt="item">
                <!--  <img class="cuadross" src="https://84static.loadingplay.com/static/images/c63194b5ca415f50f3696d60e6b34e4c_proveedor.png"> -->
                <h3 class="sobre2 {{editabletext}}" text-id="{{ site.name + '_ser_proveedor' }}"> {{ read_text(site.name +  '_ser_proveedor') }}</h3>
                <a href="{{ site_base }}/contact3" class="btn mas btn-lg active actiii" role="button">CONOCE MÁS</a>
@@ -299,7 +299,7 @@
                 <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contacto_home" name="image" id="img_banner_contacto_home" >
             </div>
             {% end %}
-            <img id="{{ site.name }}_banner_contacto_home" src="{{ read_image(site.name + '_banner_contacto_home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_contacto_home',500) }}'" class="cuadrosss ulti" alt="item">
+            <img id="{{ site.name }}_banner_contacto_home" src="{{ read_image(site.name + '_banner_contacto_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contacto_home',500) }}'" class="cuadrosss ulti" alt="item">
             <!--  <img class="cuadross ulti" src="https://84static.loadingplay.com/static/images/c63194b5ca415f50f3696d60e6b34e4c_proveedor.png"> -->
             <h3 class="sobre3 {{editabletext}}" text-id="{{ site.name + '_cont_tac' }}"> {{ read_text(site.name +  '_cont_tac') }}</h3>
             <a href="{{ site_base }}/contact" class="btn mas btn-lg active actiiii btn-img-3" role="button">CONOCE MÁS</a>

@@ -52,7 +52,7 @@ Home
     <div class="product-limit-image row">
         <div class="col-sm-4 col-xs-4 especial">
             <a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
-                <img src="{{! images[0][1] }}" class="img-responsive product-image" alt="item" >
+                <img src="{{! images[0]['thumb_1'] }}" class="img-responsive product-image" alt="item" >
             </a>
         </div>
         <div class="col-sm-1"></div>
@@ -79,10 +79,12 @@ Home
             </div>
             <div class="row row-add-to-cart">
                 <button class="add-cart-prod add-to-cart add-to-cart-animation" 
+                product-sku="{{! sku }}"
+                lp-cart-add
                 product-upp="{{! upp }}" 
                 product-id="{{! id }}" 
                 product-name="{{! name }}" 
-                product-price="{{! main_price }}"
+                product-price="{{! main_price|money }}"
                 product-bullet1="{{! bullet_1 }}"
                 product-bullet2="{{! bullet_2 }}"
                 product-bullet3="{{! bullet_3 }}"
@@ -102,8 +104,8 @@ Home
 <script type="text/javascript">
     $(document).ready(function()
     {
-        var base_url = 'https://apibodegas.loadingplay.com/',
-            checkout_url = 'https://checkout.loadingplay.com/';
+        var base_url = 'https://betaapi.loadingplay.com/',
+            checkout_url = 'https://betapay.loadingplay.com/';
 
         // function isLocalHost() {
         //     return document.location.href.indexOf('localhost') != -1;
@@ -118,13 +120,13 @@ Home
         // {
         //     base_url = 'http://localhost:8520/';
         //     checkout_url = 'http://localhost:8522/';
-        //     // base_url = 'http://apibodegas.ondev.today/';
+        //     // base_url = 'https://betaapi.loadingplay.com/';
         //     // checkout_url = 'http://localhost:8522/';
         // } 
         // else if ( isDevelopment() ) 
         // {
-        //     base_url = 'http://apibodegas.ondev.today/';
-        //     checkout_url = 'http://lpcheckout.ondev.today/';
+        //     base_url = 'https://betaapi.loadingplay.com/';
+        //     checkout_url = 'https://betapay.loadingplay.com/';
         // }
 
         // initialize ecommerce

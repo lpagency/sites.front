@@ -2,8 +2,8 @@
 {
     var tags = [];
     var app_id = 7;
-    var base_url = 'https://apibodegas.loadingplay.com/';
-    var url_tag_list = 'https://apibodegas.loadingplay.com/tag/list_all/7';
+    var base_url = 'https://betaapi.loadingplay.com/';
+    var url_tag_list = 'https://betaapi.loadingplay.com/tag/list_all/7';
     var priority_1 = 'priority%201';
     var priority_2 = 'priority%202';
 
@@ -18,16 +18,16 @@
     // configure for each enviroment
     if ( isLocalHost()) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
-        url_tag_list = 'http://apibodegas.ondev.today/tag/list_all/5';
+        base_url = 'https://betaapi.loadingplay.com/';
+        url_tag_list = 'https://betaapi.loadingplay.com/tag/list_all/5';
         app_id = 5;
         priority_1 = 'priority%201';
         priority_2 = 'priority%202';
     }
     else if (isDevelopment()) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
-        url_tag_list = 'http://apibodegas.ondev.today/tag/list_all/5';
+        base_url = 'https://betaapi.loadingplay.com/';
+        url_tag_list = 'https://betaapi.loadingplay.com/tag/list_all/5';
         app_id = 5;
         priority_1 = 'priority%201';
         priority_2 = 'priority%202';

@@ -2,7 +2,7 @@
     
     <div class="col-md-6 col-xs-12 zig">
         <a href="{{ site_base }}/article/detail/a/{{ article["id"] }}">
-          <img class="mini-articulos" src="{{ article['thumb_200'] }}" onload="this.src='{{ article['thumb_500'] }}'" />
+          <img class="mini-articulos" src="{{ article['thumb_200'] }}" onload="this.onload='';this.src='{{ article['thumb_500'] }}'" />
         </a>
     </div>
 

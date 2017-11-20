@@ -14,8 +14,8 @@ $(document).on('pjax:end ready', function() {
     //     "locale": "es"
     // });
 
-    var base_url = 'https://apibodegas.loadingplay.com/store/pagination/',
-    checkout_url = 'https://checkout.loadingplay.com/';
+    var base_url = 'https://betaapi.loadingplay.com/store/pagination/',
+    checkout_url = 'https://betapay.loadingplay.com/';
 
     var app_public = 9;
 
@@ -30,17 +30,17 @@ $(document).on('pjax:end ready', function() {
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        // base_url = 'http://apibodegas.ondev.today/store/pagination/';
-        // checkout_url = 'http://lpcheckout.ondev.today/';
+        // base_url = 'https://betaapi.loadingplay.com/store/pagination/';
+        // checkout_url = 'https://betapay.loadingplay.com/';
         // app_public = 15;
-        base_url = 'http://apibodegas.ondev.today/store/pagination/';
+        base_url = 'https://betaapi.loadingplay.com/store/pagination/';
         checkout_url = 'http://localhost:8522/';
         app_public= 15;
     } 
     else if ( isDevelopment() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/store/pagination/';
-        checkout_url = 'http://lpcheckout.ondev.today/';
+        base_url = 'https://betaapi.loadingplay.com/store/pagination/';
+        checkout_url = 'https://betapay.loadingplay.com/';
         app_public = 15;
     }
 

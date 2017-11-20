@@ -18,16 +18,16 @@
     $(document).ready(function()
     {
         var api_url = $.environmentVar(
-                            'http://apibodegas.ondev.today/',
-                            'http://apibodegas.ondev.today/',
-                            'https://betaapibodegas.loadingplay.com/');
+                            'https://betaapi.loadingplay.com/',
+                            'https://betaapi.loadingplay.com/',
+                            'https://betaapi.loadingplay.com/');
 
         var checkout_url = $.environmentVar(
-                                'http://lpcheckout.ondev.today',
-                                'http://lpcheckout.ondev.today',
-                                'https://checkout.loadingplay.com');
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com',
+                                'https://betapay.loadingplay.com');
 
-        var app_public = $.environmentVar(7,7,8);
+        var app_public = $.environmentVar(8,8,8);
 
         $(document).ecommerce(
         {
@@ -35,7 +35,8 @@
             'products_per_page' : 6,
             'ignore_stock': true,
             'base_url' : api_url,
-            'checkout_url': checkout_url
+            'checkout_url': checkout_url,
+            'site_name': 'rukayen'
         });
     });
 </script>

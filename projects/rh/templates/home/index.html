@@ -38,13 +38,13 @@ $(document).ready(function() {
     $(document).ready(function()
     {
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(8,8,8);
         var config = {
             'app_public' : app_public,
@@ -85,7 +85,7 @@ $(document).ready(function() {
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                    <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_1', 500) }}'" class="img-responsive item" alt="item" >
+                    <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_1', 500) }}'" class="img-responsive item" alt="item" >
                 </a>
                   <!-- <a href="#">
                     <img src="assets/img/image_holder_1500x698.png" alt="">
@@ -103,7 +103,7 @@ $(document).ready(function() {
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
+                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
                 </a>
                 <!-- <a href="#">
                   <img src="assets/img/image_holder_1500x698.png" alt="">
@@ -120,7 +120,7 @@ $(document).ready(function() {
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
+                    <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_2',500) }}'" class="img-responsive item" alt="item" >
                 </a>
                <!--  <a href="#">
                   <img src="assets/img/image_holder_1500x698.png" alt="">

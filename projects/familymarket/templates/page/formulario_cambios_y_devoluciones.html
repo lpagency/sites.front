@@ -111,12 +111,12 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
             'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(53,53,53);
         var site_name = $.environmentVar('placare', 'placare', 'placare');
@@ -182,7 +182,7 @@
         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_devo-loading" name="image" id="img_banner_devo-loading" >
     </div>
     {% end %}
-    <img id="{{ site.name }}_banner_devo-loading" src="{{ read_image(site.name + '_banner_devo-loading', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_devo-loading',500) }}'" class="desaturada fondo-form" alt="item">
+    <img id="{{ site.name }}_banner_devo-loading" src="{{ read_image(site.name + '_banner_devo-loading', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_devo-loading',500) }}'" class="desaturada fondo-form" alt="item">
 
 </div>
 </div>

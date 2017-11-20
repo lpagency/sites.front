@@ -150,7 +150,7 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_contact_1" name="image" id="img_contact_1" >
                   </div>
                   {% end %}
-                  <img id="{{ site.name }}_contact_1" src="{{ read_image(site.name + '_contact_1', 1) }}" onload="this.src='{{ read_image(site.name + '_contact_1',) }}'" class="img-responsive img-thumbnail item" alt="title" >
+                  <img id="{{ site.name }}_contact_1" src="{{ read_image(site.name + '_contact_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_contact_1',) }}'" class="img-responsive img-thumbnail item" alt="title" >
                     <!-- <img src="assets/img/world-map-250x200.png" alt="" title="" class="img-thumbnail"> -->
                   </div>
                   <div class="col-sm-3">

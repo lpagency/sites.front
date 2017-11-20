@@ -19,13 +19,13 @@
     $(document).ready(function()
     {
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'http://lpcheckout.ondev.today/',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com/',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(14,43,14);
 
         $(document).ecommerce('product_detail', {
@@ -94,9 +94,9 @@
                         <div class="container-fluid">
                           
                                <div align="center">
-                                  <img class=" img_two" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_200']}}" />
-                                  <img class="{{! images[1][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[1]['thumb_200'] }}" onload="this.src={{! images[1]['thumb_200']}}" />
-                                  <img class="{{! images[2][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[2]['thumb_200'] }}" onload="this.src={{! images[2]['thumb_200']}}" />
+                                  <img class=" img_two" src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_200']}}" />
+                                  <img class="{{! images[1][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[1]['thumb_200'] }}" onload="this.onload='';this.src={{! images[1]['thumb_200']}}" />
+                                  <img class="{{! images[2][’thumb_1’]|hide_if_empty }} img_two" src="{{! images[2]['thumb_200'] }}" onload="this.onload='';this.src={{! images[2]['thumb_200']}}" />
                                </div>
                           
                         </div>

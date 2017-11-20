@@ -195,7 +195,7 @@
           <input type="file" class="editableimage" image-id="{{ site.name }}_one" name="image" id="img_one" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_one" src="{{ read_image(site.name + '_one', 1) }}" onload="this.src='{{ read_image(site.name + '_one',500) }}'" class="banner-one show-on-mobile" alt="item" />
+        <img id="{{ site.name }}_one" src="{{ read_image(site.name + '_one', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_one',500) }}'" class="banner-one show-on-mobile" alt="item" />
      </div>
      <img class="img-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/b015dfd6668b05e05dc57f68983e273b_SONIDO.png">
      <img class="img-no-sonido toggle-sound hidden-xs" src="https://84static.loadingplay.com/static/images/03627aeb4f602374ed2db198a380d010_SILCENCIO.png">
@@ -220,7 +220,7 @@
           <input type="file" class="editableimage" image-id="{{ site.name }}_for" name="image" id="img_for" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_for" src="{{ read_image(site.name + '_for', 1) }}" onload="this.src='{{ read_image(site.name + '_for',500) }}'" class="img-for" alt="item" />
+        <img id="{{ site.name }}_for" src="{{ read_image(site.name + '_for', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_for',500) }}'" class="img-for" alt="item" />
         
       </div>
       <div class="col-md-8">

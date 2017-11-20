@@ -41,7 +41,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_mision" name="image" id="img_mision" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_mision" src="{{ read_image(site.name + '_mision', 1) }}" onload="this.src='{{ read_image(site.name + '_mision',500) }}'" class="banner_home hidden" alt="item">
+        <img id="{{ site.name }}_mision" src="{{ read_image(site.name + '_mision', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_mision',500) }}'" class="banner_home hidden" alt="item">
     </div>
 
    <div class="container">

@@ -2,7 +2,7 @@
     <div class="lg-yellow box space20">
         <div class="row ">
             <div class="col-md-6 text-center product-center">
-                <img src="{{ images[0][0] }}" onload="this.src'{{ images[0][2] }}'" class="img-responsive product-image mautomargin" alt="ite">
+                <img src="{{ images[0]['url'] }}" onload="this.onload='';this.src'{{ images[0]['thumb_200'] }}'" class="img-responsive product-image mautomargin" alt="ite">
             </div>
             <div class="col-md-6 box-desc">
                 <h2>{{ name }}</h2>

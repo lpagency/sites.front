@@ -29,8 +29,8 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
            
             <div class="imageHover hasCart">
                 <a href="{{ site_base }}/sc/product/detail/{{!name|friendly}}/{{!id}}">
-                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0][3] }}"></a>
-                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0][3] }}"></a>
+                    <img class="img-responsive primaryImage" alt="img" src="{{! images[0]['thumb_500'] }}"></a>
+                    <img class="img-responsive secondaryImage" alt="img" src="{{! images[0]['thumb_500'] }}"></a>
                     <div class="product-btn-box">
                         <a class="btn btn-product-flat btn-primary">
                             <span class="add2cart add-to-cart" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}"><i class="glyphicon glyphicon-shopping-cart"> </i> Add to cart </span>
@@ -56,8 +56,8 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
 
 
      <script type="text/javascript">
-  var base_url = 'https://apibodegas.loadingplay.com/',
- checkout_url = 'https://checkout.loadingplay.com/';
+  var base_url = 'https://betaapi.loadingplay.com/',
+ checkout_url = 'https://betapay.loadingplay.com/';
   var app_public = 7;
 
     function isLocalHost() {
@@ -71,14 +71,14 @@ document.getElementById('pagestyle').setAttribute('href', sheet);
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public= 7;
     } 
     else if ( isDevelopment() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public = 7;
     }
 

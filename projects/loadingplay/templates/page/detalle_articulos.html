@@ -30,7 +30,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle" name="image" id="img_banner_detalle" >
                </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="desaturada banner-detalles" alt="item">
+                <img id="{{ site.name }}_banner_detalle" src="{{ read_image(site.name + '_banner_detalle', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle',500) }}'" class="desaturada banner-detalles" alt="item">
                 
 
                 <h1 class="col-md-12 col-xs-12 detalle_text text-center {{editabletext}}" text-id="{{ site.name + '_detalle_text1' }}"> {{ read_text(site.name +  '_detalle_text1') }}
@@ -98,7 +98,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_detalle_dos" name="image" id="img_banner_detalle_dos" >
                </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_detalle_dos" src="{{ read_image(site.name + '_banner_detalle_dos', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle_dos',500) }}'" class="desaturada banner-deta-dos" alt="item">
+                <img id="{{ site.name }}_banner_detalle_dos" src="{{ read_image(site.name + '_banner_detalle_dos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle_dos',500) }}'" class="desaturada banner-deta-dos" alt="item">
                 
 
                 <h1 class="col-md-12 col-xs-12 detalle_text text-center {{editabletext}}" text-id="{{ site.name + '_detalle_dos' }}"> {{ read_text(site.name +  '_detalle_dos') }}

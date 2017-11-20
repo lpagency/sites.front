@@ -1,6 +1,6 @@
 
-var base_url = 'https://apibodegas.loadingplay.com/',
-checkout_url = 'https://checkout.loadingplay.com/';
+var base_url = 'https://betaapi.loadingplay.com/',
+checkout_url = 'https://betapay.loadingplay.com/';
 var app_public = 9;
 
 function isLocalHost() {
@@ -15,7 +15,7 @@ function isDevelopment() {
 if ( isLocalHost() ) 
 {
     base_url = 'https://apibodegas.ondev.today/';
-    checkout_url = 'http://lpcheckout.ondev.today/';
+    checkout_url = 'https://betapay.loadingplay.com/';
     app_public = 9;
     // base_url = 'http://localhost:8520/';
     // checkout_url = 'http://localhost:8522/';
@@ -24,7 +24,7 @@ if ( isLocalHost() )
 else if ( isDevelopment() ) 
 {
     base_url = 'https://apibodegas.ondev.today/';
-    checkout_url = 'http://lpcheckout.ondev.today/';
+    checkout_url = 'https://betapay.loadingplay.com/';
     app_public = 15;
 }
 

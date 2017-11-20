@@ -3,7 +3,7 @@
     {{ site.name }}
 {% end %}
 {% block css %}
-<link href="http://fonts.googleapis.com/css?family=Lato" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Lato" type="text/css"/>
 <link rel="stylesheet" href="{{ site_base }}/static/css/header_inside.css">
 {% if is_admin %}
 <link rel="stylesheet" href="{{ site_base }}/static/css/textbox_io.css" type="text/css">
@@ -151,7 +151,7 @@
                         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2_listart" name="image" id="img_banner_2_listart" >
                     </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_2_listart" src="{{ read_image(site.name + '_banner_2_listart', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2_listart',500) }}'"  class="banner-art-1 fondo-arts" alt="item">
+                <img id="{{ site.name }}_banner_2_listart" src="{{ read_image(site.name + '_banner_2_listart', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_2_listart',500) }}'"  class="banner-art-1 fondo-arts" alt="item">
                 <!-- *** [TITULO "SERVICIO"] *** -->
             <div class="service-banner-art">
                 <div class="col-md-12 col-sm-12 col-xs-12">

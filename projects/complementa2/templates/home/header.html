@@ -14,7 +14,7 @@
             </div>
                 {% end %}
                 <a href="{{site_base }}/">
-                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
                 </a>
         </div>
         <!-- /LOGO -->
@@ -43,7 +43,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_logo' }}" href="#">
-                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
+                    <img class="logo" id="{{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="">
                 </a>
             <!-- /LOGO -->
             </li >

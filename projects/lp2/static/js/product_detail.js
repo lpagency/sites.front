@@ -4,13 +4,13 @@
 $(document).ready(function() 
 {
     // var base_url = $.environmentVar(
-    //     'http://apibodegas.ondev.today/',
-    //     'http://apibodegas.ondev.today/',
-    //     'https://apibodegas.loadingplay.com/');
+    //     'https://betaapi.loadingplay.com/',
+    //     'https://betaapi.loadingplay.com/',
+    //     'https://betaapi.loadingplay.com/');
     // var checkout_url = $.environmentVar(
-    //     'http://lpcheckout.ondev.today/',
-    //     'http://lpcheckout.ondev.today/',
-    //     'https://checkout.loadingplay.com');
+    //     'https://betapay.loadingplay.com/',
+    //     'https://betapay.loadingplay.com/',
+    //     'https://betapay.loadingplay.com');
     // var app_public = $.environmentVar(26,26,26);
 
     // // functions 

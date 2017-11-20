@@ -21,13 +21,13 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'http://lpcheckout.ondev.today/',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com/',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
@@ -73,7 +73,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_productos" name="image" id="img_productos" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
     <div class="container">
@@ -98,8 +98,8 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
+                <!-- <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
                <!--  <p class="inf">{{! name }}</p> -->
                 </a>
               </div>
@@ -115,10 +115,10 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
+                <!-- <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
                <!--  <p class="inf">{{! name }}</p> -->
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+                <!-- <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
                 </a>
               </div>
           </div> 
@@ -133,10 +133,10 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_cat_3" name="image" id="img_cat_3" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
-                <!-- <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+        <img id="{{ site.name }}_cat_3" src="{{ read_image(site.name + '_cat_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cat_3',500) }}'" class="img-pro" alt="item">
+                <!-- <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
                <!--  <p class="inf">{{! name }}</p> -->
-               <!--  <img src="{{! images[0][2] }}" alt="" class="img-responsive img-pro" > -->
+               <!--  <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-responsive img-pro" > -->
                 <p class="inf">{{! name }}</p>
                 </a>
               </div>

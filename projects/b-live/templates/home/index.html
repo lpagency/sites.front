@@ -27,13 +27,13 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(58,58,58);
         var config = {
             'app_public' : app_public,
@@ -83,7 +83,7 @@
                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_1" name="image" id="img_banner_1" >
                    </div>
                 {% end %}
-                    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_1',500) }}'"  class="banner-home-1 " alt="item">
+                    <img id="{{ site.name }}_banner_1" src="{{ read_image(site.name + '_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_1',500) }}'"  class="banner-home-1 " alt="item">
             </div>
         </div>
     </div>
@@ -117,7 +117,7 @@
                         <input type="file" class="editableimage" image-id="{{ site.name }}_banner_2" name="image" id="img_banner_2" >
                     </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_2',500) }}'"  class="banner-home-1 fondo-only" alt="item">
+                <img id="{{ site.name }}_banner_2" src="{{ read_image(site.name + '_banner_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_2',500) }}'"  class="banner-home-1 fondo-only" alt="item">
                 <!-- *** [TITULO "SERVICIO"] *** -->
             <div class="service-banner-home">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -213,7 +213,7 @@
                       <input type="file" class="editableimage" image-id="{{ site.name }}_banner-3-home" name="image" id="img_banner-3-home" >
                   </div>
               {% end %}
-                <img id="{{ site.name }}_banner-3-home" src="{{ read_image(site.name + '_banner-3-home', 1) }}" onload="this.src='{{ read_image(site.name + '_banner-3-home',500) }}'"  class="banner-home-3 fondo-only" alt="item">
+                <img id="{{ site.name }}_banner-3-home" src="{{ read_image(site.name + '_banner-3-home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner-3-home',500) }}'"  class="banner-home-3 fondo-only" alt="item">
                 <div class="col-md-12 col-sm-12 col-xs-12 texto-team text-center {{editabletext}}" text-id="{{ site.name + '_three' }}"> {{ read_text(site.name +  '_three') }} </div>
                 <div class="texto-team2 text-center {{editabletext}}" text-id="{{ site.name + '_four' }}"> {{ read_text(site.name +  '_four') }} </div>
                 </div>

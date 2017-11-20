@@ -30,13 +30,13 @@ s{% extends "../base.html" %}
       // base_url 'http://localhost:8520/'
       // checkout_url 'http://localhost:8522/'
         // var base_url = $.environmentVar(
-        //     'https://apibodegas.loadingplay.com/',
+        //     'https://betaapi.loadingplay.com/',
         //     'http://apibodegas.loadingplay.com/',
-        //     'https://apibodegas.loadingplay.com/');
+        //     'https://betaapi.loadingplay.com/');
         // var checkout_url = $.environmentVar(
-        //     'https://pay.loadingplay.com',
+        //     'https://betapay.loadingplay.com',
         //     'http://pay.loadingplay.com',
-        //     'https://pay.loadingplay.com');
+        //     'https://betapay.loadingplay.com');
         // var app_public = $.environmentVar(20,20,20);
         // var config = {
         //     'app_public' : app_public,
@@ -93,13 +93,13 @@ s{% extends "../base.html" %}
 
 
     //     var base_url = $.environmentVar(
-    //         'http://apibodegas.ondev.today/',
-    //         'http://apibodegas.ondev.today/',
-    //         'https://apibodegas.loadingplay.com/');
+    //         'https://betaapi.loadingplay.com/',
+    //         'https://betaapi.loadingplay.com/',
+    //         'https://betaapi.loadingplay.com/');
     //     var checkout_url = $.environmentVar(
-    //         'http://lpcheckout.ondev.today/',
-    //         'http://lpcheckout.ondev.today/',
-    //         'https://pay.loadingplay.com');
+    //         'https://betapay.loadingplay.com/',
+    //         'https://betapay.loadingplay.com/',
+    //         'https://betapay.loadingplay.com');
     //     var app_public = $.environmentVar(26,26,26);
     //     var config = {
     //         'app_public' : app_public,
@@ -173,7 +173,7 @@ s{% extends "../base.html" %}
             <div align="center">
                   <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_blender_2' }}"> {{ read_text(site.name +  '_blender_2') }} </div>
              </div> 
-      <!--   <img class="img_banner" id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" alt="item" style=" "> -->
+      <!--   <img class="img_banner" id="{{ site.name }}_img_slider_2" src="{{ read_image(site.name + '_img_slider_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_2',500) }}'" alt="item" style=" "> -->
 
    <!--        <img src="{{ read_image(site.name + '_slide2', 500) }}" alt="Slide 2" longdesc="{{ read_image(site.name + '_slide2', 500) }}" /> -->
       </div>
@@ -193,7 +193,7 @@ s{% extends "../base.html" %}
                   <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_blender_3' }}"> {{ read_text(site.name +  '_blender_3') }} </div>
 
              </div> 
-        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" alt="item" style=" "> -->
+        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_3" src="{{ read_image(site.name + '_img_slider_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_3',500) }}'" alt="item" style=" "> -->
      <!--      <img src="{{ read_image(site.name + '_slide3', 500) }}" alt="Slide 3" longdesc="{{ read_image(site.name + '_slide3', 500) }}" /> -->
       </div>
 
@@ -212,7 +212,7 @@ s{% extends "../base.html" %}
                   <div class="lis-pro text-center {{editabletext}}" text-id="{{ site.name + '_blender_4' }}"> {{ read_text(site.name +  '_blender_4') }} </div>
 
              </div> 
-        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_4" src="{{ read_image(site.name + '_img_slider_4', 1) }}" onload="this.src='{{ read_image(site.name + '_img_slider_4',500) }}'" alt="item" style=" "> -->
+        <!-- <img class="img_banner" id="{{ site.name }}_img_slider_4" src="{{ read_image(site.name + '_img_slider_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_slider_4',500) }}'" alt="item" style=" "> -->
       <!--   <img src="{{ read_image(site.name + '_slide4', 500) }}" alt="Slide 4" longdesc="{{ read_image(site.name + '_slide4', 500) }}" /> -->
         </div>
     </div>
@@ -287,7 +287,7 @@ s{% extends "../base.html" %}
                </div>
         {% end %}
                
-               <img id="{{ site.name }}_box_blender" src="{{ read_image(site.name + '_box_blender', 1) }}" onload="this.src='{{ read_image(site.name + '_box_blender',500) }}'" class="img-uno" alt="item">
+               <img id="{{ site.name }}_box_blender" src="{{ read_image(site.name + '_box_blender', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_blender',500) }}'" class="img-uno" alt="item">
             
                {% if is_admin %}
                   <img class="change-image editablelink" link-id="{{ site.name + '_box_blender' }}" content="{{ read_link(site.name + '_box_blender') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
@@ -314,7 +314,7 @@ s{% extends "../base.html" %}
                </div>
         {% end %}
               
-               <img id="{{ site.name }}_box_blender_2" src="{{ read_image(site.name + '_box_blender_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_blender_2',500) }}'" class="img-dos" alt="item">
+               <img id="{{ site.name }}_box_blender_2" src="{{ read_image(site.name + '_box_blender_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_blender_2',500) }}'" class="img-dos" alt="item">
       
 
                {% if is_admin %}
@@ -339,7 +339,7 @@ s{% extends "../base.html" %}
                </div>
         {% end %}
                
-               <img id="{{ site.name }}_box_blender_3" src="{{ read_image(site.name + '_box_blender_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_blender_3',500) }}'" class="img-tres" alt="item">
+               <img id="{{ site.name }}_box_blender_3" src="{{ read_image(site.name + '_box_blender_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_blender_3',500) }}'" class="img-tres" alt="item">
              
 
                {% if is_admin %}
@@ -368,7 +368,7 @@ s{% extends "../base.html" %}
         {% end %}
                
             
-               <img id="{{ site.name }}_box_blender_4" src="{{ read_image(site.name + '_box_blender_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_blender_4',500) }}'" class="img-uno" alt="item">
+               <img id="{{ site.name }}_box_blender_4" src="{{ read_image(site.name + '_box_blender_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_blender_4',500) }}'" class="img-uno" alt="item">
         
          <!--  <img class="img-cuatro" src="https://84static.loadingplay.com/static/images/681957094d62655f8d15c78538438d7b_ws_Blue_Flowers_852x480.png" > -->
 

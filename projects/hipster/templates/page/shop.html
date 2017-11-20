@@ -15,14 +15,14 @@
     $(document).ready(function()
     {
         var api_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
 
         var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
 
         var app_public = $.environmentVar(7,7,8);
 
@@ -83,7 +83,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                    <img id="{{ site.name }}_banner_produc" src="{{ read_image(site.name + '_banner_produc', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_produc',) }}'" class="img-responsive" alt="item" >
+                    <img id="{{ site.name }}_banner_produc" src="{{ read_image(site.name + '_banner_produc', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_produc',) }}'" class="img-responsive" alt="item" >
                 </a>
 
             </div>
@@ -135,7 +135,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                    <img id="{{ site.name }}_banner_produc2" src="{{ read_image(site.name + '_banner_produc2', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_produc2',) }}'" class="img-responsive" alt="item" >
+                    <img id="{{ site.name }}_banner_produc2" src="{{ read_image(site.name + '_banner_produc2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_produc2',) }}'" class="img-responsive" alt="item" >
                 </a>
             </div>
             <div class="pages">

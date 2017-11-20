@@ -19,13 +19,13 @@
       $("#OpenAlert").click();
 
     // var base_url = $.environmentVar(
-    //     'https://apibodegas.loadingplay.com/',
-    //     'https://apibodegas.loadingplay.com/',
-    //     'https://apibodegas.loadingplay.com/');
+    //     'https://betaapi.loadingplay.com/',
+    //     'https://betaapi.loadingplay.com/',
+    //     'https://betaapi.loadingplay.com/');
     // var checkout_url = $.environmentVar(
-    //     'https://checkout.loadingplay.com',
-    //     'https://checkout.loadingplay.com',
-    //     'https://checkout.loadingplay.com');
+    //     'https://betapay.loadingplay.com',
+    //     'https://betapay.loadingplay.com',
+    //     'https://betapay.loadingplay.com');
     // var app_public = $.environmentVar(29,29,29);
         var config = {
             'app_public' : app_public,
@@ -79,7 +79,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_cate_li_concepto" name="image" id="img_banner_cate_li_concepto" >
                </div>
         {% end %}
-                <img id="{{ site.name }}_banner_cate_li_concepto" src="{{ read_image(site.name + '_banner_cate_li_concepto', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_cate_li_concepto',500) }}'" class="banner_uno_list hidden" alt="item">        
+                <img id="{{ site.name }}_banner_cate_li_concepto" src="{{ read_image(site.name + '_banner_cate_li_concepto', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_cate_li_concepto',500) }}'" class="banner_uno_list hidden" alt="item">        
        </div>
        
        <div class="col-md-12">

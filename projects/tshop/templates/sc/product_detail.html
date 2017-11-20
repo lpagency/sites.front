@@ -30,8 +30,8 @@
   <script type="text/javascript">
 
   
-  var base_url = 'https://apibodegas.loadingplay.com/',
- checkout_url = 'https://checkout.loadingplay.com/';
+  var base_url = 'https://betaapi.loadingplay.com/',
+ checkout_url = 'https://betapay.loadingplay.com/';
   var app_public = 7;
 
     function isLocalHost() {
@@ -45,14 +45,14 @@
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public= 7;
     } 
     else if ( isDevelopment() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public = 7;
     }
 
@@ -113,16 +113,16 @@
             <div class="main-image sp-wrap col-lg-12 no-padding">
 
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive">
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive"> 
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" alt="item" class="img-responsive"> 
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
                 </a>
                 <a href="{{! images[0]['thumb_500'] }}">
-                    <img src="{{! images[0]['thumb_200'] }}" onload="this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
+                    <img src="{{! images[0]['thumb_200'] }}" onload="this.onload='';this.src='{{! images[0]['thumb_500'] }}'" class="img-responsive" alt="img">
                 </a>
             </div>
         </div>
@@ -227,7 +227,7 @@ is_admin
    </div>
    {% end %}
 <div style="position:relative">
-   <img id="{{ site.name }}_banner_detalle-prod" src="{{ read_image(site.name + '_banner_detalle-prod', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_detalle-prod',500) }}'" class="fondo-banner" alt="item" style="position:relative;">
+   <img id="{{ site.name }}_banner_detalle-prod" src="{{ read_image(site.name + '_banner_detalle-prod', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_detalle-prod',500) }}'" class="fondo-banner" alt="item" style="position:relative;">
 </div>
 <div class="container space50"  style="margin-left:0px;">
     <div class="spinner">

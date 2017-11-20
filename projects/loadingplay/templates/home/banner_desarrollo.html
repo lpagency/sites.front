@@ -8,7 +8,7 @@
                    <input type="file" class="editableimage" image-id="{{ site.name }}_banner_desar" name="image" id="img_banner_desar" >
                </div>
         {% end %}
-               <img id="{{ site.name }}_banner_desar" src="{{ read_image(site.name + '_banner_desar', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_desar',500) }}'" class="desaturada banner-dos" alt="item">
+               <img id="{{ site.name }}_banner_desar" src="{{ read_image(site.name + '_banner_desar', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_desar',500) }}'" class="desaturada banner-dos" alt="item">
 
            <!--  <img class="desaturada banner-dos" src="https://7static.loadingplay.com/static/images/11d155a100169c20f91239e4e0114d40_Banner2.png"> -->
 

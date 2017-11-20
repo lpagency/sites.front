@@ -37,7 +37,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_nosotros" name="image" id="img_nosotros" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_nosotros" src="{{ read_image(site.name + '_nosotros', 1) }}" onload="this.src='{{ read_image(site.name + '_nosotros',500) }}'" class=" img_nosotros desaturada" alt="item">
+        <img id="{{ site.name }}_nosotros" src="{{ read_image(site.name + '_nosotros', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_nosotros',500) }}'" class=" img_nosotros desaturada" alt="item">
   
 
         <div class="contenedor-text" align="center">

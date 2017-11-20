@@ -84,9 +84,9 @@ $(document).ready(function() {
     };
 
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         '/bilupo/checkout',
         '/checkout',
@@ -155,7 +155,7 @@ $(document).ready(function() {
         	<h3 class="alinear" style="color: #E53623; font-family: 'Open Sans', sans-serif; font-size: 17px;letter-spacing: 1px;margin-top: 23px"><b>{{! main_price|money }}</b></h3>
         </div>
         <br>
-        <input type="button" product-id="{{! id }}" product-name="{{! name }}" product-img="{{! images[0]['thumb_200'] }}" product-price="{{! main_price }}" product-upp="{{! upp }}" id="busca" data-toggle="modal" class="add-to-cart comp boton-comprar-detalle" data-target="#myModal" value="COMPRAR" style="width: 130px;height: 27px; font-size: 12px; letter-spacing: 1px;bottom:15px; ">
+        <input type="button" product-id="{{! id }}" product-name="{{! name }}" product-img="{{! images[0]['thumb_200'] }}" product-price="{{! main_price }}" product-upp="{{! upp }}" id="busca" data-toggle="modal" class="add-to-cart comp boton-comprar-detalle" data-target="#myModal" value="COMPRAR" product-sku="{{! sku }}" lp-cart-add style="width: 130px;height: 27px; font-size: 12px; letter-spacing: 1px;bottom:15px; ">
         &nbsp;&nbsp;
         <button 
             product-id="{{! id }}" 
@@ -166,6 +166,8 @@ $(document).ready(function() {
             class="add-to-cart add-to-cart-animation carroComprar" 
             data-toggle="modal" 
             data-target="#myModal" 
+            product-sku="{{! sku }}" 
+            lp-cart-add
             id="busca" 
             style="width: 141px;height: 27px; padding:auto; position: relative;z-index: 10; font-size: 12px; letter-spacing: 1px;" >
                 AGREGAR 

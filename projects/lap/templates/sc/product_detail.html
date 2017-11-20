@@ -20,8 +20,8 @@
   <script type="text/javascript">
 
   
-  var base_url = 'https://apibodegas.loadingplay.com/',
- checkout_url = 'https://checkout.loadingplay.com/';
+  var base_url = 'https://betaapi.loadingplay.com/',
+ checkout_url = 'https://betapay.loadingplay.com/';
   var app_public = 7;
 
     function isLocalHost() {
@@ -41,8 +41,8 @@
     } 
     else if ( isDevelopment() ) 
     {
-      base_url = 'http://apibodegas.ondev.today/';
-      checkout_url = 'http://lpcheckout.ondev.today/';
+      base_url = 'https://betaapi.loadingplay.com/';
+      checkout_url = 'https://betapay.loadingplay.com/';
       app_public = 5;
     }
   $(document).ready(function()
@@ -207,7 +207,7 @@
     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_where_to_buy" name="image" id="img_banner_where_to_buy">
   </div>
   {% end %}
-  <img id="{{ site.name }}_banner_where_to_buy" src="{{ read_image(site.name + '_banner_where_to_buy', 1) }}" onload="this.src='{{ read_image(site.name + '_banner_where_to_buy') }}'" class="img-edit" alt="item" style="height: 100%;">
+  <img id="{{ site.name }}_banner_where_to_buy" src="{{ read_image(site.name + '_banner_where_to_buy', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_where_to_buy') }}'" class="img-edit" alt="item" style="height: 100%;">
 
   <div class="banner-caption text-center info-article text-categorie"><!-- start banner caption -->
 

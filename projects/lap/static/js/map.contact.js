@@ -1,8 +1,8 @@
     $(document).ready(function()
 {
     // $('.slider').tinycarousel();
-    var base_url = 'https://apibodegas.loadingplay.com/',
-    checkout_url = 'https://checkout.loadingplay.com/';
+    var base_url = 'https://betaapi.loadingplay.com/',
+    checkout_url = 'https://betapay.loadingplay.com/';
     var app_public = 7;
 
     function isLocalHost() {
@@ -16,14 +16,14 @@
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
-        checkout_url = 'http://lpcheckout.ondev.today/';
+        base_url = 'https://betaapi.loadingplay.com/';
+        checkout_url = 'https://betapay.loadingplay.com/';
         app_public = 5;
     } 
     else if ( isDevelopment() ) 
     {
-        base_url = 'http://apibodegas.ondev.today/';
-        checkout_url = 'http://lpcheckout.ondev.today/';
+        base_url = 'https://betaapi.loadingplay.com/';
+        checkout_url = 'https://betapay.loadingplay.com/';
         app_public = 5;
     }
 

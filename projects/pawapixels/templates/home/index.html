@@ -28,7 +28,7 @@
                 <div class="productlist">
                     <div class="col-sm-6">
                         <a href="{{ site_base }}/sc/product/detail/10_tickets/1252">
-                            <img src="{{! images[0][2] }}"  class="img-responsive box-img" alt="item">
+                            <img src="{{! images[0]['thumb_200'] }}"  class="img-responsive box-img" alt="item">
                             <span class="productlist-price-container">
                                 <span class="product-price">
                                     <span class="price">{{! main_price}}</span>
@@ -49,7 +49,7 @@
             // iniciaiza el ecommerce
             $(document).ecommerce({
                 'app_public' : '11',
-                'base_url' : 'https://apibodegas.loadingplay.com/'
+                'base_url' : 'https://betaapi.loadingplay.com/'
             });
 
         });

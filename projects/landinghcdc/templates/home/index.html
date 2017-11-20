@@ -25,13 +25,13 @@
       $("#OpenAlert").click();
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'http://lpcheckout.ondev.today/',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com/',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(28,27,28);
         var config = {
             'app_public' : app_public,
@@ -76,7 +76,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_home" name="image" id="img_home" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.src='{{ read_image(site.name + '_home',500) }}'" class="banner_uno_list hidden" alt="item">
+        <img id="{{ site.name }}_home" src="{{ read_image(site.name + '_home', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_home',500) }}'" class="banner_uno_list hidden" alt="item">
 
 <div align="center">
         <div class="lateral l-movil" style="position: relative; margin-top: 200px; float:left; left:40px;">

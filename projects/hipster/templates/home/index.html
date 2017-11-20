@@ -14,13 +14,13 @@
     $(document).ready(function()
     {
         var base_url = $.environmentVar(
-            'http://apibodegas.ondev.today/',
-            'http://apibodegas.ondev.today/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'http://lpcheckout.ondev.today',
-            'http://lpcheckout.ondev.today',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(7,7,8);
         var config = {
             'app_public' : app_public,
@@ -60,7 +60,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_1',) }}'" class="img-responsive item" alt="item" >
+                <img id="{{ site.name }}_slider_1" src="{{ read_image(site.name + '_slider_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_1',) }}'" class="img-responsive item" alt="item" >
                 </a>
 
               <div class="content">
@@ -80,7 +80,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_2',) }}'" class="img-responsive item" alt="item" >
+                <img id="{{ site.name }}_slider_2" src="{{ read_image(site.name + '_slider_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_2',) }}'" class="img-responsive item" alt="item" >
                 </a>
             <!-- <div style="background-image: url('{{ site_base }}/static/img/slider2.jpg');" class="item"> -->
               <div class="content">
@@ -101,7 +101,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                <img id="{{ site.name }}_slider_3" src="{{ read_image(site.name + '_slider_3', 1) }}" onload="this.src='{{ read_image(site.name + '_slider_3',) }}'" class="img-responsive item" alt="item" >
+                <img id="{{ site.name }}_slider_3" src="{{ read_image(site.name + '_slider_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_slider_3',) }}'" class="img-responsive item" alt="item" >
                 </a>
             <!-- <div style="background-image: url('{{ site_base }}/static/img/slider3.jpg');" class="item"> -->
               <div class="content"> 
@@ -129,7 +129,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                <img id="{{ site.name }}_promobox" src="{{ read_image(site.name + '_promobox', 1) }}" onload="this.src='{{ read_image(site.name + '_promobox', 200) }}'" class="img-responsive" alt="item" >
+                <img id="{{ site.name }}_promobox" src="{{ read_image(site.name + '_promobox', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_promobox', 200) }}'" class="img-responsive" alt="item" >
                 </a>
             <!-- <img src="{{ site_base }}/static/img/promobox-item-1.jpg" alt="" class="img-responsive"> -->
           
@@ -146,7 +146,7 @@
                 </div>
                 {% end %}
                 <a id="{{ site.name + '_div1' }}" href="{{ read_link(site.name + '_div1') }}">
-                <img id="{{ site.name }}_promobox2" src="{{ read_image(site.name + '_promobox2', 1) }}" onload="this.src='{{ read_image(site.name + '_promobox2', 200) }}'" class="img-responsive" alt="item" >
+                <img id="{{ site.name }}_promobox2" src="{{ read_image(site.name + '_promobox2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_promobox2', 200) }}'" class="img-responsive" alt="item" >
                 </a>
             <!-- fin editar imagen -->
               <!-- <img src="{{ site_base }}/static/img/promobox-item-2.jpg" alt="" class="img-responsive"> -->
@@ -197,7 +197,7 @@
                 </div>
                 {% end %}
                 
-                <img id="{{ site.name }}_cuadro1" src="{{ read_image(site.name + '_cuadro1', 1) }}" onload="this.src='{{ read_image(site.name + '_cuadro1',) }}'" class="img-responsive" alt="item" >
+                <img id="{{ site.name }}_cuadro1" src="{{ read_image(site.name + '_cuadro1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cuadro1',) }}'" class="img-responsive" alt="item" >
                 <!-- <img src="{{ site_base }}/static/img/blog.jpg" alt="" class="img-responsive"> -->
                 </div>
               <a href="post.html">
@@ -222,7 +222,7 @@
                 </div>
                 {% end %}
                 
-                <img id="{{ site.name }}_cuadro2" src="{{ read_image(site.name + '_cuadro2', 1) }}" onload="this.src='{{ read_image(site.name + '_cuadro2',) }}'" class="img-responsive" alt="item" >
+                <img id="{{ site.name }}_cuadro2" src="{{ read_image(site.name + '_cuadro2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cuadro2',) }}'" class="img-responsive" alt="item" >
               <!-- <img src="{{ site_base }}/static/img/blog2.jpg" alt="" class="img-responsive"> -->
               </div>
               <a href="post.html">

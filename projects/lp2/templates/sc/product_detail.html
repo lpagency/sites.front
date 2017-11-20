@@ -32,13 +32,13 @@
         });
 
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://pay.loadingplay.com',
-            'https://pay.loadingplay.com',
-            'https://pay.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         var app_public = $.environmentVar(48,48,48);
 
         $(document).ecommerce('product_detail', {
@@ -96,17 +96,17 @@
             <div id="gallery_01" class="image_little pad0" style="display: inline-block;">
              
 
-                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.src={{! images[0]['thumb_500']}}" />
+                 <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
 
 
 
-                 <img id="img_01" class="{{! images[1]['thumb_1']|hide_if_empty}} little" src="{{! images[1]['thumb_500'] }}" onload="this.src={{! images[1]['thumb_500']}}" />
+                 <img id="img_01" class="{{! images[1]['thumb_1']|hide_if_empty}} little" src="{{! images[1]['thumb_500'] }}" onload="this.onload='';this.src={{! images[1]['thumb_500']}}" />
 
 
-                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little" src="{{! images[2]['thumb_500'] }}" onload="this.src={{! images[2]['thumb_500']}}" />
+                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
 
 
-                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little" src="{{! images[3]['thumb_500'] }}" onload="this.src={{! images[3]['thumb_500']}}" />
+                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little" src="{{! images[3]['thumb_500'] }}" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
 
             </div>
 
@@ -144,7 +144,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_prod_detail2" name="image" id="img_prod_detail2" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_prod_detail2" src="{{ read_image(site.name + '_prod_detail2', 1) }}" onload="this.src='{{ read_image(site.name + '_prod_detail2',500) }}'" class="img_detail desaturada" alt="item">
+        <img id="{{ site.name }}_prod_detail2" src="{{ read_image(site.name + '_prod_detail2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_prod_detail2',500) }}'" class="img_detail desaturada" alt="item">
     </div>
     <div class="clearfix" ></div>
 </section>
@@ -179,7 +179,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}_prod_detail" name="image" id="img_prod_detail" >
         </div>
         {% end %}
-        <img id="{{ site.name }}_prod_detail" src="{{ read_image(site.name + '_prod_detail', 1) }}" onload="this.src='{{ read_image(site.name + '_prod_detail',500) }}'" class="desaturada img_nosotros desaturada" alt="item">
+        <img id="{{ site.name }}_prod_detail" src="{{ read_image(site.name + '_prod_detail', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_prod_detail',500) }}'" class="desaturada img_nosotros desaturada" alt="item">
   
 
         <!-- <div class="contenedor-text" align="center">

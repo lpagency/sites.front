@@ -9,7 +9,7 @@
             <input type="file" class="editableimage" image-id="{{ site.name }}header" name="image" id="img_header"/>
             </div>
             {% end %}
-            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+            <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
         </div>
         <div class="col-md-4 footer-menu">
           

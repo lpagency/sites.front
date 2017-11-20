@@ -11,7 +11,7 @@
                     'ignore_stock' : true,
                     'app_public' : 4,
                     'animation' : 'simple',
-                    'base_url' : 'http://apibodegas.ondev.today/',
+                    'base_url' : 'https://betaapi.loadingplay.com/',
                     'products_per_page' : 20
                 });
     });
@@ -22,9 +22,9 @@
         <div class="product" >
             <h1>{{! name }}</h1>
             <p>{{! description }}</p>
-            <img height="300" class="product-image" src="{{! images[0][1] }}" height="300" />
+            <img height="300" class="product-image" src="{{! images[0]['thumb_1'] }}" height="300" />
             <!-- <div>{{! name }}</div>
-            aaaa : {{! images[0][1] }}
+            aaaa : {{! images[0]['thumb_1'] }}
             <img height="300" class="product-image" src="{{! images }}" />
             <div class="money" >{{! main_price }}</div>
             <div style="height:200px;overflow:hidden" >{{! description }}</div>

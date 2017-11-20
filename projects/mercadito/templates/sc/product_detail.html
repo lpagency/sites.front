@@ -28,7 +28,7 @@
                 </div>  
                 <div class="row">
                     <div class="col-sm-8 ">
-                        <img class="product-img img-responsive image" src="{{! images[0][2] }}"  alt="item">
+                        <img class="product-img img-responsive image" src="{{! images[0]['thumb_200'] }}"  alt="item">
                     </div>
                     <div class="col-sm-4 ">
                         <h2 class="product-title hidden-xs">{{! name}}</h2>
@@ -60,8 +60,8 @@
             {
                 $(document).ecommerce('product_detail', {
                     'app_public' : 7,
-                    'base_url' :'http://apibodegas.ondev.today/',
-                    'checkout_url': 'http://lpcheckout.ondev.today/',
+                    'base_url' :'https://betaapi.loadingplay.com/',
+                    'checkout_url': 'https://betapay.loadingplay.com/',
                     'product_id' :1251,
                 });
 
@@ -71,9 +71,9 @@
 
     <!-- // <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.11.3.min.js"></script> -->
     
-    <!-- // <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
+    <!-- // <script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script> -->
 
-    <!-- // <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
+    <!-- // <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script> -->
 {% end %}
 
 {% block body %}

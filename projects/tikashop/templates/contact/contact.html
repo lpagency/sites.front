@@ -87,13 +87,13 @@
       // base_url 'http://localhost:8520/'
       // checkout_url 'http://localhost:8522/'
     var base_url = $.environmentVar(
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/');
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com',
-        'https://pay.loadingplay.com');
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com',
+        'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(67,67,67);
         var config = {
             'app_public' : app_public,
@@ -236,7 +236,7 @@
            {% end %}
 
            <a id="{{ site.name + '_tienda_1' }}" href="{{ read_link(site.name + '_tienda_1') }}">
-              <img id="{{ site.name }}_tienda_1" src="{{ read_image(site.name + '_tienda_1', 1) }}" onload="this.src='{{ read_image(site.name + '_tienda_1',) }}'" class="box-tienda" alt="item">
+              <img id="{{ site.name }}_tienda_1" src="{{ read_image(site.name + '_tienda_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_tienda_1',) }}'" class="box-tienda" alt="item">
          </a>
      </div>
      {% if is_admin %}
@@ -274,7 +274,7 @@
            {% end %}
 
            <a id="{{ site.name + '_tienda_2' }}" href="{{ read_link(site.name + '_tienda_2') }}">
-              <img id="{{ site.name }}_tienda_2" src="{{ read_image(site.name + '_tienda_2', 1) }}" onload="this.src='{{ read_image(site.name + '_tienda_2',) }}'" class="box-tienda" alt="item">
+              <img id="{{ site.name }}_tienda_2" src="{{ read_image(site.name + '_tienda_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_tienda_2',) }}'" class="box-tienda" alt="item">
          </a>
      </div>
      {% if is_admin %}

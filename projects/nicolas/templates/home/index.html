@@ -25,16 +25,16 @@
         // base_url = 'http://localhost:8520/';
         // checkout_url = 'http://localhost:8522/';
 
-        // base_url = 'http://apibodegas.ondev.today/';
-        // checkout_url = 'http://lpcheckout.ondev.today/';
+        // base_url = 'https://betaapi.loadingplay.com/';
+        // checkout_url = 'https://betapay.loadingplay.com/';
         var base_url = $.environmentVar(
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/',
-            'https://apibodegas.loadingplay.com/');
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/',
+            'https://betaapi.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com',
-            'https://checkout.loadingplay.com');
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com',
+            'https://betapay.loadingplay.com');
         // var app_public = $.environmentVar(20,20,20);
         var config = {
             'app_public' : app_public,
@@ -246,7 +246,7 @@
                 {% end %}
                 
 <!--                 <a id="{{ site.name + '_box_sy_' }}" href="{{ read_link(site.name + '_box_sy_') }}"> -->
-                <img id="{{ site.name }}_box_sy" src="{{ read_image(site.name + '_box_sy', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy',500) }}'" class="box-medium" alt="item" />
+                <img id="{{ site.name }}_box_sy" src="{{ read_image(site.name + '_box_sy', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy',500) }}'" class="box-medium" alt="item" />
             <!--    </a> -->
 
                  {% if is_admin %}
@@ -285,7 +285,7 @@
                 {% end %}
                
 <!--                 <a id="{{ site.name + '_box_sy_2' }}" href="{{ read_link(site.name + '_box_sy_2') }}"> -->
-                <img id="{{ site.name }}_box_sy_2" src="{{ read_image(site.name + '_box_sy_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_2',500) }}'" class="box-medium-2" alt="item" />
+                <img id="{{ site.name }}_box_sy_2" src="{{ read_image(site.name + '_box_sy_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_2',500) }}'" class="box-medium-2" alt="item" />
              <!--    </a> -->
 
                  {% if is_admin %}
@@ -321,7 +321,7 @@
                 {% end %}
                
                 <!-- <a id="{{ site.name + '_box_sy_3' }}" href="{{ read_link(site.name + '_box_sy_3') }}"> -->
-                <img id="{{ site.name }}_box_sy_3" src="{{ read_image(site.name + '_box_sy_3', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_3',500) }}'" class="box-medium-3" alt="item" />
+                <img id="{{ site.name }}_box_sy_3" src="{{ read_image(site.name + '_box_sy_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_3',500) }}'" class="box-medium-3" alt="item" />
                 <!-- </a> -->
 
                 {% if is_admin %}
@@ -364,7 +364,7 @@
                 {% end %}
                 
                  <!-- <a id="{{ site.name + '_box_sy_4' }}" href="{{ read_link(site.name + '_box_sy_4') }}"> -->
-                <img id="{{ site.name }}_box_sy_4" src="{{ read_image(site.name + '_box_sy_4', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_4',500) }}'" class="box-medium-2-2" alt="item" />
+                <img id="{{ site.name }}_box_sy_4" src="{{ read_image(site.name + '_box_sy_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_4',500) }}'" class="box-medium-2-2" alt="item" />
                 <!-- </a> -->
 
                   {% if is_admin %}
@@ -400,7 +400,7 @@
                 {% end %}
                 
 <!--                 <a id="{{ site.name + '_box_sy_5' }}" href="{{ read_link(site.name + '_box_sy_5') }}"> -->
-                <img id="{{ site.name }}_box_sy_5" src="{{ read_image(site.name + '_box_sy_5', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_5',500) }}'" class="box-medium" alt="item" />
+                <img id="{{ site.name }}_box_sy_5" src="{{ read_image(site.name + '_box_sy_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_5',500) }}'" class="box-medium" alt="item" />
                <!--  </a> -->
 
 
@@ -443,7 +443,7 @@
                 {% end %}
                
                <!--  <a id="{{ site.name + '_box_sy_y' }}" href="{{ read_link(site.name + '_box_sy_y') }}"> -->
-                <img id="{{ site.name }}_box_sy_y" src="{{ read_image(site.name + '_box_sy_y', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_y',500) }}'" class="box-medium-2" alt="item" />
+                <img id="{{ site.name }}_box_sy_y" src="{{ read_image(site.name + '_box_sy_y', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_y',500) }}'" class="box-medium-2" alt="item" />
               <!--   </a> -->
 
                  {% if is_admin %}
@@ -480,7 +480,7 @@
                 {% end %}
                 
                <!--  <a id="{{ site.name + '_box_sy_y_2' }}" href="{{ read_link(site.name + '_box_sy_y_2') }}"> -->
-                <img id="{{ site.name }}_box_sy_y_2" src="{{ read_image(site.name + '_box_sy_y_2', 1) }}" onload="this.src='{{ read_image(site.name + '_box_sy_y_2',500) }}'" class="box-medium" alt="item" />
+                <img id="{{ site.name }}_box_sy_y_2" src="{{ read_image(site.name + '_box_sy_y_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_sy_y_2',500) }}'" class="box-medium" alt="item" />
                 <!-- </a> -->
 
 

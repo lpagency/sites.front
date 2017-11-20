@@ -36,7 +36,7 @@
         <script type="text/template" id="product_template" >
             <div class="product" >
                 <div>{{! name }}</div>
-                <img height="300" width="300" class="product-image" src="{{! images[0][1] }}" />
+                <img height="300" width="300" class="product-image" src="{{! images[0]['thumb_200'] }}" />
                 <div class="money" >{{! main_price }}</div>
                 <div style="height:200px;overflow:hidden" >{{! description }}</div>
                 <a href="/sample/product.html?id={{! id }}">Ver detalle</a>
@@ -59,10 +59,10 @@
                 <div>{{! id }}</div>
                 <div>{{! name }}</div>
                 <div class="money" >{{! price }}</div>
-                <button class="remove-from-cart" product-id="{{! id }}">Remove</button>
-                <button class="remove-one" product-id="{{! id }}">-</button>
+                <button class="remove-from-cart" lp-cart-remove="{{! id }}" product-id="{{! id }}">Remove</button>
+                <button class="remove-one" lp-cart-remove-one="{{! id }}" id="{{! id }}" product-id="{{! id }}">-</button>
                 <span class="quantity" >{{! quantity }}</span>
-                <button class="add-one" product-id="{{! id }}">+</button>
+                <button class="add-one" lp-cart-add-one="{{! id }}" product-id="{{! id }}">+</button>
                 <span class="product-total money">{{! total }}</span>
             </div>
         </div>
@@ -98,9 +98,9 @@
 
         <script type="text/x-template" id="shopping-cart-product" >
             <div> {{! name }} | {{! quantity }}
-                <button class="remove-from-cart" product-id="{{! id }}" >Remove</button>
-                <button class="remove-one" product-id="{{! id }}" >-</button>
-                <button class="add-one" product-id="{{! id }}" >+</button>
+                <button class="remove-from-cart" lp-cart-remove="{{! id }}" product-id="{{! id }}" >Remove</button>
+                <button class="remove-one" lp-cart-remove-one="{{! id }}" id="{{! id }}" product-id="{{! id }}" >-</button>
+                <button class="add-one" lp-cart-add-one="{{! id }}" product-id="{{! id }}" >+</button>
                 <span class="product-total" >{{! total }}</span>
             </div>
         </script>
@@ -130,8 +130,8 @@
                     'ignore_stock' : true,
                     'app_public' : 2,
                     'animation' : 'ghost',
-                    'base_url' : 'http://apibodegas.ondev.today/',
-                    'checkout_url' : 'http://apibodegas.ondev.today/',
+                    'base_url' : 'https://betaapi.loadingplay.com/',
+                    'checkout_url' : 'https://betapay.loadingplay.com/',
                     'products_per_page' : 9,
                     'analytics' : analytics,
                     'user' : 'ricardo@loadingplay.com'
