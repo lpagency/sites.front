@@ -182,7 +182,7 @@
       
         <tr>
             <td>
-             <img src="{{! images[0]['thumb_200'] }}" alt="" class="img-cart">
+             <img src="{{! images[0]['thumb_500'] }}" alt="" class="img-cart">
             </td>
             
             <td>
@@ -221,7 +221,7 @@
         </div>
         <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
             <input name="site_id" class="form-control required" type="hidden" value="4">
-            <input name="cart_id" class="form-control required" type="hidden" value="{{ site.name }}">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
             <div class="form-group mod text-center">
 
                 <button type="submit" class="btn fin" style="
