@@ -186,27 +186,23 @@
             </td>
             
             <td>
-            <div class="ellipsis multiline vert-align text-left nam-car">{{! name }}</div>
-            <div class="vert-align up-car">{{! upp }}</div>
-            <div class="vert-align sob">Sobres</div>
-            <div class="vert-align money mon-car">{{! price }}</div>
-            <div class="equis">x</div>
-            <div class="vert-align number-car">
-                <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
-                {{! quantity }}
-                <a href="#!" class="add-one" product-id="{{! id }}">+</a>
-                <i class="fa fa-trash two remove-from-cart" product-id="{{! id }}" aria-hidden="true"></i>
+                <div class="ellipsis multiline vert-align text-left nam-car">{{! name }}</div>
+                <div class="vert-align up-car">{{! upp }}</div>
+                <div class="vert-align sob">Sobres</div>
+                <div class="vert-align money mon-car">{{! price }}</div>
+                <div class="equis">x</div>
+                <div class="vert-align number-car">
+                    <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}">-</a>
+                    {{! quantity }}
+                    <a href="#!" class="add-one" lp-cart-add-one="{{! id }}">+</a>
+                    <i class="fa fa-trash two remove-from-cart" lp-cart-remove="{{! id }}" aria-hidden="true"></i>
+                </div>
             </td>
                      
         </tr>
     </script>
     <script type="text/x-template" id="shopping-cart-total">
-     <thead>
-        <tr>
-           <!--  <th colspan="3" class="text-center">Resumen Pedido</th> -->
 
-        </tr>
-        </thead>
         <tr>
             <td class="to">TOTAL:</td>
             <td id="total" class="text-center money cen">{{! total }}</td>
@@ -216,7 +212,7 @@
     </script>
     <script type="text/x-template" id="shopping-cart-checkout-form">
         <div class=""> 
-            <a href="{{site_base}}/productos">
+            <a class="modal-close pin" data-dismiss="modal" aria-hidden="true">
                <button type="submit" class="btn" style="
                 background-color: rgba(69, 139, 34, 0.68); color:white; width:100%;border-radius: 8px;   margin-bottom: 6px;">Seguir Comprando
                </button>
@@ -225,7 +221,7 @@
         </div>
         <form action="{{! checkout_url}}" method="get" novalidate id="shipping-form" class="myform" onclick="return Validate()">
             <input name="site_id" class="form-control required" type="hidden" value="4">
-            <input name="cart_id" class="form-control required" type="hidden" value="4">
+            <input name="cart_id" class="form-control required" type="hidden" value="{{ site.name }}">
             <div class="form-group mod text-center">
 
                 <button type="submit" class="btn fin" style="
