@@ -10,6 +10,7 @@
 
 
 {% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/mayorista.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('.lupa').click(function(){
@@ -126,9 +127,9 @@
 
                 var tagProd = prodSku.substring(corte, -1);
 
-                // related(tagProd.toLowerCase());
+                related(tagProd.toLowerCase());
 
-                // related2(prodBull.toLowerCase());
+                related2(prodBull.toLowerCase());
             }
         }
 
@@ -200,73 +201,6 @@
 
 </script>
 
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        setTimeout(function()
-        {
-            var resta = $(".precio").html();
-            resta = resta.split("+");
-            resta = resta[0].toString();
-            resta = resta.split("$");
-            resta = resta[1].toString();
-            resta = resta.replace(".","");
-            resta = parseInt(resta);
-
-
-            $(document).on("click", ".fa-plus-square", function()
-            {
-
-                var subtotal = $(".precio").html();
-                subtotal = subtotal.split("+");
-                subtotal = subtotal[0].toString();
-                subtotal = subtotal.split("$");
-                subtotal = subtotal[1].toString();
-                subtotal = subtotal.replace(".","");
-                subtotal = parseInt(subtotal);
-
-                var aux = parseInt($("#"+$(this).attr("product-id")).html());
-                if(aux < parseInt($(this).attr("va")))
-                {
-                    aux = aux + 1;
-
-                    subtotal = subtotal * aux;
-
-                    subtotal = subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-                    $(this).parent().parent().children(".variant-s").html("$"+subtotal);
-
-                }
-                $("#"+$(this).attr("product-id")).html(aux);
-            });
-
-            $(document).on("click", ".fa-minus-square", function()
-            {
-                var subtotal = $(this).parent().parent().children(".variant-s").html();
-                subtotal = subtotal.split("+");
-                subtotal = subtotal[0].toString();
-                subtotal = subtotal.split("$");
-                subtotal = subtotal[1].toString();
-                subtotal = subtotal.replace(".","");
-                subtotal = parseInt(subtotal);
-
-                var aux = parseInt($("#"+$(this).attr("product-id")).html());
-                if(aux > 0)
-                {
-                    aux = aux - 1;
-
-                    subtotal = subtotal - resta;
-
-                    subtotal = subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
-
-                    $(this).parent().parent().children(".variant-s").html("$"+subtotal);
-                }
-                $("#"+$(this).attr("product-id")).html(aux);
-            });
-        },2000);
-    });
-</script>
-
 <script type="text/template" id="product_detail" class="container-g">
 <div class="distancia-3"></div>
 
@@ -331,13 +265,6 @@
                 <div class="product-related">
                     
                 </div>
-                 <!-- <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[3]['thumb_500'] }}" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[4]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[4]['thumb_500'] }}" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" /> -->
 
             </div>
         </div>
@@ -389,6 +316,7 @@
 
         <div class="col-md-3 col-sm-12 col-xs-12 pad0" style="left: 3px;">
             <h1 class="title-detail">{{! name|changeName }}</h1>
+            <h6 class="hidden id-producto">{{! id }}</h6>
              <div class="price_detail">
                 <span class="precio price">{{! main_price|money }} + iva</span>
                 <span class="promo price-p hidden">{{! promotion_price|money }}</span>
@@ -421,6 +349,7 @@
                                 product-sku="{{! sku }}"
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
+                                product-quantity=""
                                 lp-cart-add
                                 disabled >AGREGAR A LA BOLSA</button>
                 </div>
