@@ -1326,7 +1326,7 @@ div.upload input, div.image-upload input {
     width: 100%;
     position: relative;
     margin-left: 0px;
-    margin-top: 11px;
+    margin-top: -15px;
     margin-bottom: 20px;
 
 }
@@ -2060,7 +2060,7 @@ transition-delay:.2s;
     margin-top: 10px;
 }
 
-.size-item-1.active{
+/*.size-item-1.active{
     padding: 5px 7px;
     margin-bottom: 0px;
     width: 31px;
@@ -2072,7 +2072,7 @@ transition-delay:.2s;
     margin-left: 6px;
     border-radius: 48px!important;
     border: 1px solid rgba(204, 108, 78, 1);
-}
+}*/
 
 .size-item-1 {
     padding: 5px 7px;
@@ -2086,7 +2086,7 @@ transition-delay:.2s;
     margin-left: 6px;
 }
 
-.size-item-1:hover {
+/*.size-item-1:hover {
     color: rgb(91, 81, 83);
     left: 0px;
     position: relative;
@@ -2098,6 +2098,60 @@ transition-delay:.2s;
     width: 31px;
     height: 30px;
     margin-left:06px;
+}*/
+
+.variant-stock {
+    position: relative;
+    top: -155%;
+    left: 338%;
+}
+
+.talla-stock{
+    position: relative;
+    top: 20%;
+    left: -10%;
+    margin-bottom: 3%;
+    font-size: 11px;
+}
+
+.talla-cantidad{
+    font-size: 11px;
+    position: relative;
+    left: 11%;
+    top: -2%;
+}
+
+.talla-subtotal {
+    font-size: 11px;
+    position: relative;
+    left: 101px;
+    top: -16px;
+}
+
+.variant-c {
+    position: relative;
+    top: -71px;
+    left: 115px;
+}
+
+.variant-s {
+    position: relative;
+    left: 177px;
+    top: -110px;
+}
+
+i.btn-variants.fa.fa-minus {
+    position: relative;
+    left: -20px;
+    top: 22px;
+    z-index: 100;
+}
+
+i.btn-variants.fa.fa-plus {
+    position: relative;
+    top: -19px;
+    left: 22px;
+    z-index: 100;
 }
 
 .num-tal-1 {
