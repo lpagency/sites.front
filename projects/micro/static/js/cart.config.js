@@ -66,7 +66,7 @@ $(document).ready(function()
         'https://betaapi.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'https://betapay.loadingplay.com',
-        'https://betapay.loadingplay.com',
+        'https://lpcheckout.ondev.today',
         'https://betapay.loadingplay.com');
     var app_public = $.environmentVar(33,33,33);
     var site_name = $.environmentVar('micro', 'micro', 'micro');
