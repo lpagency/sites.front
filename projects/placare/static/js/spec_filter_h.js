@@ -224,8 +224,8 @@ $(document).ready(function()
                     break;
                 case "formales":
                     url.push("Categoria3_Formales");
-                    url.push("Categoria2_Calzado_Mujer");
-                    url.push("-Categoria2_Calzado_Hombre");
+                    url.push("Categoria2_Calzado_Hombre");
+                    url.push("-Categoria2_Calzado_Mujer");
                     if(window.listaTag2 != undefined)
                     {
                         for(l in window.listaTag2)
