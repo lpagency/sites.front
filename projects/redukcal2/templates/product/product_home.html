@@ -13,7 +13,20 @@
                     <a href="{{ site_base }}/sc/plans/detail/{{! name|friendly }}/{{! id }}">
                     <button type="button" class="btn btn-warning pro">MÁS INFORMACIÓN</button>
                     </a>
-                    <button type="button" class="btn btn-warning carr">AÑADIR AL CARRITO</button>
+                    <button 
+                        type="button" 
+                        class="btn add-to-cart btn-default carr" 
+                        id="open-cart" 
+                        data-toggle="modal" 
+                        data-target="#myModal"
+                        product-upp="{{! upp }}"
+                        product-name="{{! name }}"
+                        product-price="{{! main_price }}"
+                        product-sku="{{! sku }}"
+                        product-id="{{! id }}"
+                        product-img="{{! images[0]['thumb_200'] }}"
+                        lp-cart-add >AÑADIR AL CARRO
+                    </button>
                   </div>
                 </div>
                

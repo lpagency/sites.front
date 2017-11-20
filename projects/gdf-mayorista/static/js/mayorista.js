@@ -1,20 +1,18 @@
-var sendToCheckout = function(price, product, combination, name, quantity, img)
+var sendToCheckout = function(price, product, combination, name, img)
 {
     var facade = $('.product_detail').data('ecommerce');
 
-    console.log(facade);
-
     facade.ecommerce.cart.addProduct(
-        5688, // product.id, 
-        "DONACION",
-        "",
+        parseInt(product), // product.id, 
+        name,
+        combination,
         price,// product.price, 
-        name, // product.name, 
+        name, 
         1, // product.upp, 
         "", // product.bullet1, 
         "", // product.bullet2, 
         "", // product.bullet3,
-        "", // product.images, 
+        img, // product.images, 
         ""
     );
 };
@@ -37,7 +35,7 @@ $(document).ready(function()
 
             var subtotal = $(".precio").html();
             var nombre = $(".title-detail").html();
-            var idPtoducto = $(".id-producto").html();
+            var idProducto = $(".id-producto").html();
             var img = $(".img_detail").attr("src");
             var talla = $(this).attr("product-id");
             subtotal = subtotal.split("+");
@@ -57,7 +55,7 @@ $(document).ready(function()
                 subtotal = subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
                 $(this).parent().parent().children(".variant-s").html("$"+subtotal);
-                sendToCheckout(subtotal, talla, nombre, idPtoducto, aux, img);
+                sendToCheckout(subtotal, idProducto, talla, nombre, img);
 
             }
 
@@ -68,7 +66,7 @@ $(document).ready(function()
         {
             var subtotal = $(this).parent().parent().children(".variant-s").html();
             var nombre = $(".title-detail").html();
-            var idPtoducto = $(".id-producto").html();
+            var idProducto = $(".id-producto").html();
             var img = $(".img_detail").attr("src");
             var talla = $(this).attr("product-id");
             subtotal = subtotal.split("+");
