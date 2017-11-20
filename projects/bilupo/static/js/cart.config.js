@@ -174,7 +174,12 @@ $(document).ready(function()
             }
 
             config.tag = multiple_tag;
-            
+            var hyper = window.location.href;
+
+            hyper = hyper.split("?");
+
+            history.pushState('', 'Biluppo', hyper[0]);
+
             $(".products").html("");
             $(document).ecommerce('destroy');
             $(document).ecommerce(config);

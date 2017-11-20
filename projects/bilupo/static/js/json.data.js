@@ -225,7 +225,7 @@ var categories =[
 },
 {
 	"name": "Edushapes",
-	"tag": "edushapes",
+	"tag": "edushape",
 	"order": 30,
 	"id": 30,
 	"type": "marca"
