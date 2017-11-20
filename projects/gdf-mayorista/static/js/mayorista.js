@@ -17,6 +17,17 @@ var sendToCheckout = function(price, product, combination, name, img)
     );
 };
 
+var remover = function(id)
+{
+    $(".remove-product").each(function()
+    {
+         if($(this).attr("lp-cart-remove-one") == id)
+        {
+            $(this).click();
+        }
+    });
+}
+
 $(document).ready(function()
 {
     setTimeout(function()
@@ -57,6 +68,7 @@ $(document).ready(function()
                 $(this).parent().parent().children(".variant-s").html("$"+subtotal);
                 sendToCheckout(subtotal, idProducto, talla, nombre, img);
 
+                window.id = $(".add-one").attr("product-id");
             }
 
             $("#"+$(this).attr("product-id")).html(aux);
@@ -86,6 +98,7 @@ $(document).ready(function()
                 subtotal = subtotal.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 
                 $(this).parent().parent().children(".variant-s").html("$"+subtotal);
+                remover(window.id);
             }
             $("#"+$(this).attr("product-id")).html(aux);
         });
