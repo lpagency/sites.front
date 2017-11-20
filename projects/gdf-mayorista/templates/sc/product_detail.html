@@ -10,6 +10,7 @@
 
 
 {% block javascript %}
+<script type="text/javascript" src="{{ site_base }}/static/js/mayorista.js"></script>
 <script type="text/javascript">
   $(document).ready(function(){
     $('.lupa').click(function(){
@@ -86,6 +87,8 @@
             onLoad: function(product)
             {
 
+                window.price = product.main_price;
+
                 if (variants_loaded)
                 {
                     return;
@@ -124,9 +127,9 @@
 
                 var tagProd = prodSku.substring(corte, -1);
 
-                // related(tagProd.toLowerCase());
+                related(tagProd.toLowerCase());
 
-                // related2(prodBull.toLowerCase());
+                related2(prodBull.toLowerCase());
             }
         }
 
@@ -139,13 +142,23 @@
                 {
                     if(d[p] !== 0)
                     {
-                        // var l = p.split("-");
-                        // var last = l[l.length-1];
+                        var i = p.split("-");
+                        $(".tallas").each(function()
+                        {
 
-                        // $("[value="+ last +"]").removeClass("btn-disabled");
-                        // $("[value="+ last +"]").children("span").remove();
+                            if($(this).attr("value") == i[1])
+                            {
 
-                        console.log(p+" = "+d[p]);
+                                $(this).html($(this).html() 
+                                + '<div class="variant-stock">'+ d[p] +'</div>\
+                                <div class="variant-c">\
+                                    <i class="btn-variants fa fa-minus-square" product-id="'+i[1]+'"></i>\
+                                    <div id="'+i[1]+'">0</div>\
+                                    <i class="btn-variants fa fa-plus-square" va="'+d[p]+'" product-id="'+i[1]+'"></i>\
+                                </div><div class="variant-s" product-id="'+i[1]+'">-</div>');
+                            }
+
+                        });
                     }
                 }
             });
@@ -252,13 +265,6 @@
                 <div class="product-related">
                     
                 </div>
-                 <!-- <img id="img_01" class="{{! images[0]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[0]['thumb_500'] }}" onload="this.onload='';this.src={{! images[0]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[2]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[2]['thumb_500'] }}" onload="this.onload='';this.src={{! images[2]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[3]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[3]['thumb_500'] }}" onload="this.onload='';this.src={{! images[3]['thumb_500']}}" />
-
-                 <img id="img_01" class="{{! images[4]['thumb_1']|hide_if_empty}} little-fila" src="{{! images[4]['thumb_500'] }}" onload="this.onload='';this.src={{! images[4]['thumb_500']}}" /> -->
 
             </div>
         </div>
@@ -310,8 +316,9 @@
 
         <div class="col-md-3 col-sm-12 col-xs-12 pad0" style="left: 3px;">
             <h1 class="title-detail">{{! name|changeName }}</h1>
+            <h6 class="hidden id-producto">{{! id }}</h6>
              <div class="price_detail">
-                <span class="precio price">{{! main_price|money }}</span>
+                <span class="precio price">{{! main_price|money }} + iva</span>
                 <span class="promo price-p hidden">{{! promotion_price|money }}</span>
                 <br>
             </div>
@@ -319,6 +326,9 @@
                 <div class="text-center color-detalle">Color: {{! bullet_1 }}</div>
                 <div class="text-center stock-detalle">en stock</div>
                 <div class="text-center talla-detalle">TALLAS</div>
+                <div class="text-center talla-stock">Stock</div>
+                <div class="text-center talla-cantidad">Cantidad</div>
+                <div class="text-center talla-subtotal">Subtotal</div>
                 <div class="col-md-12 box-talla-2 variants-container" style="">
                 </div>
             </div>
@@ -339,6 +349,7 @@
                                 product-sku="{{! sku }}"
                                 product-id="{{! id }}"
                                 product-img="{{! images[1]['thumb_500'] }}"
+                                product-quantity=""
                                 lp-cart-add
                                 disabled >AGREGAR A LA BOLSA</button>
                 </div>

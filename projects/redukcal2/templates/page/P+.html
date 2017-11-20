@@ -16,7 +16,6 @@ $(document).ready(function()
 
     // $("#OpenAlert").click();
 
-    var app_public = $.environmentVar(4,4,4);
     var base_url = $.environmentVar(
         'https://betaapi.loadingplay.com/',
         'https://betaapi.loadingplay.com/',
@@ -25,9 +24,10 @@ $(document).ready(function()
 
     var checkout_url = $.environmentVar(
         'https://betapay.loadingplay.com/',
-        'https://lpcheckout.ondev.today/',
+        'https://betapay.loadingplay.com/',
         'https://betapay.loadingplay.com/'
     );
+    var site_name = $.environmentVar('redukcal', 'redukcal', 'redukcal'); 
 
     $(document).ecommerce({
         'app_public' : app_public,
