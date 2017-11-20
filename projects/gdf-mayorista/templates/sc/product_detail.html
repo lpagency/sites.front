@@ -205,6 +205,14 @@
     {
         setTimeout(function()
         {
+            var resta = $(".precio").html();
+            resta = resta.split("+");
+            resta = resta[0].toString();
+            resta = resta.split("$");
+            resta = resta[1].toString();
+            resta = resta.replace(".","");
+            resta = parseInt(resta);
+
 
             $(document).on("click", ".fa-plus", function()
             {
@@ -214,6 +222,7 @@
                 subtotal = subtotal[0].toString();
                 subtotal = subtotal.split("$");
                 subtotal = subtotal[1].toString();
+                subtotal = subtotal.replace(".","");
                 subtotal = parseInt(subtotal);
 
                 var aux = parseInt($("#"+$(this).attr("product-id")).html());
@@ -231,8 +240,7 @@
 
             $(document).on("click", ".fa-minus", function()
             {
-
-                var subtotal = $(".precio").html();
+                var subtotal = $(this).parent().parent().children(".variant-s").html();
                 subtotal = subtotal.split("+");
                 subtotal = subtotal[0].toString();
                 subtotal = subtotal.split("$");
@@ -244,7 +252,7 @@
                 {
                     aux = aux - 1;
 
-                    // subtotal = subtotal/subtotal * aux;
+                    subtotal = subtotal - resta;
 
                     $(this).parent().parent().children(".variant-s").html("$"+subtotal);
                 }
