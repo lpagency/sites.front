@@ -33,9 +33,10 @@ $(document).ready(function()
 
     var checkout_url = $.environmentVar(
         'https://betapay.loadingplay.com/',
-        'https://lpcheckout.ondev.today/',
+        'https://betapay.loadingplay.com/',
         'https://betapay.loadingplay.com/'
     );
+    var site_name = $.environmentVar('redukcal', 'redukcal', 'redukcal'); 
 
     $(document).ecommerce({
         'app_public' : app_public,

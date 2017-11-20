@@ -23,16 +23,17 @@
 
       var app_public = $.environmentVar(4,4,4);
       var base_url = $.environmentVar(
-          'https://betaapi.loadingplay.com/',
-          'https://betaapi.loadingplay.com/',
-          'https://betaapi.loadingplay.com/'
-      );
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/'
+    );
 
-      var checkout_url = $.environmentVar(
-          'https://betapay.loadingplay.com/',
-          'https://lpcheckout.ondev.today/',
-          'https://betapay.loadingplay.com/'
-      );
+    var checkout_url = $.environmentVar(
+        'https://betapay.loadingplay.com/',
+        'https://betapay.loadingplay.com/',
+        'https://betapay.loadingplay.com/'
+    );
+    var site_name = $.environmentVar('redukcal', 'redukcal', 'redukcal'); 
 
        var config = {
            'base_url' : base_url,
