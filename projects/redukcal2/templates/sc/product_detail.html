@@ -10,6 +10,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/css/sc.css">
 {% end %}
 
 {% block javascript %}
@@ -40,16 +41,17 @@
     {
         var app_public = $.environmentVar(4,4,4);
         var base_url = $.environmentVar(
-            'https://betaapi.loadingplay.com/',
-            'https://apibodegas.ondev.today/',
-            'https://betaapi.loadingplay.com/'
-        );
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/',
+        'https://betaapi.loadingplay.com/'
+    );
 
-        var checkout_url = $.environmentVar(
-            'https://betapay.loadingplay.com/',
-            'https://lpcheckout.ondev.today/',
-            'https://betapay.loadingplay.com/'
-        );
+    var checkout_url = $.environmentVar(
+        'https://betapay.loadingplay.com/',
+        'https://betapay.loadingplay.com/',
+        'https://betapay.loadingplay.com/'
+    );
+    var site_name = $.environmentVar('redukcal', 'redukcal', 'redukcal'); 
 
         $('.product-detail').ecommerce('product_detail', {
             'app_public' : app_public,
@@ -142,7 +144,7 @@
                                      <div class="product-price-2">{{! main_price|money }} </div>
                                     <h3 class="descr_prod_detail ellipsis multiline"> 
                                    {{! description }}</h3>
-                                    <button type="button" class="btn add-to-cart btn-success" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-img="{{! images[0]['thumb_200'] }}">AGREGAR AL CARRO</button>
+                                    <button type="button" class="btn add-to-cart btn-success" id="open-cart" data-toggle="modal" data-target="#myModal" product-upp="{{! upp }}" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-img="{{! images[0]['thumb_200'] }}" lp-cart-add>AGREGAR AL CARRO</button>
                          
                             </div>
                        </div>
