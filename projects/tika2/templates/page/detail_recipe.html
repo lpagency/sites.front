@@ -31,8 +31,8 @@
 <script src="https://maps.googleapis.com/maps/api/js"></script>
 <script type="text/javascript">
 
-  var base_url = 'https://betaapi.loadingplay.com/',
-  checkout_url = 'https://betapay.loadingplay.com/';
+  var base_url = 'https://apibodegas.loadingplay.com/',
+  checkout_url = 'https://pay.loadingplay.com/';
 
   var app_public = 10;
 
@@ -47,13 +47,13 @@
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-      base_url = 'https://betapay.loadingplay.com/';
+      base_url = 'https://pay.loadingplay.com/';
       checkout_url = 'http://betapay.loadingplay.com/';
       app_public= 15;
     } 
     else if ( isDevelopment() ) 
     {
-      base_url = 'https://betapay.loadingplay.com/';
+      base_url = 'https://pay.loadingplay.com/';
       checkout_url = 'http://betapay.loadingplay.com/';
       app_public = 15;
     }

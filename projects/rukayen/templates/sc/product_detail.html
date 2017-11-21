@@ -27,29 +27,29 @@
         <script type="text/javascript" >
 
             var base_url = $.environmentVar(
-                            'https://betaapi.loadingplay.com/',
-                            'https://betaapi.loadingplay.com/',
-                            'https://betaapi.loadingplay.com/');
+                            'https://apibodegas.loadingplay.com/',
+                            'https://apibodegas.loadingplay.com/',
+                            'https://apibodegas.loadingplay.com/');
 
             var checkout_url = $.environmentVar(
-                                'https://betapay.loadingplay.com',
-                                'https://betapay.loadingplay.com',
-                                'https://betapay.loadingplay.com');
+                                'https://pay.loadingplay.com',
+                                'https://pay.loadingplay.com',
+                                'https://pay.loadingplay.com');
 
 // <<<<<<< HEAD
 //             // configure for each enviroment
 //             if ( isLocalHost() ) 
 //             {
-//               // base_url = 'https://betaapi.loadingplay.com/';
-//               // checkout_url = 'https://betapay.loadingplay.com/';
-//               base_url = 'https://betaapi.loadingplay.com/';
-//               checkout_url = 'https://betapay.loadingplay.com/';
+//               // base_url = 'https://apibodegas.loadingplay.com/';
+//               // checkout_url = 'https://pay.loadingplay.com/';
+//               base_url = 'https://apibodegas.loadingplay.com/';
+//               checkout_url = 'https://pay.loadingplay.com/';
 //               app_public= 7;
 //             } 
 //             else if ( isDevelopment() ) 
 //             {
-//               base_url = 'https://betaapi.loadingplay.com/';
-//               checkout_url = 'https://betapay.loadingplay.com/';
+//               base_url = 'https://apibodegas.loadingplay.com/';
+//               checkout_url = 'https://pay.loadingplay.com/';
 //               app_public = 7;
 //             }
 //         $(document).ready(function() 
@@ -59,9 +59,9 @@
 //                 'products_per_page' : 6,
 //                 'ignore_stock': true,
 //                 'base_url' : base_url,
-//                 // 'base_url' : 'https://betaapi.loadingplay.com/',
+//                 // 'base_url' : 'https://apibodegas.loadingplay.com/',
 //                 'checkout_url': checkout_url,
-//                 // 'checkout_url': 'https://betapay.loadingplay.com',
+//                 // 'checkout_url': 'https://pay.loadingplay.com',
 //                 'product_id' : {{ product_id }}
 //             });
 // =======
@@ -75,9 +75,9 @@
                     'products_per_page' : 6,
                     'ignore_stock': true,
                     'base_url' : base_url,
-                    // 'base_url' : 'https://betaapi.loadingplay.com/',
+                    // 'base_url' : 'https://apibodegas.loadingplay.com/',
                     'checkout_url': checkout_url,
-                    // 'checkout_url': 'https://betapay.loadingplay.com',
+                    // 'checkout_url': 'https://pay.loadingplay.com',
                     'product_id' : {{ product_id }}
                 });
 
@@ -87,10 +87,10 @@
                     'products_per_page' : 6,
                     'ignore_stock': true,
                     'base_url' : base_url,
-                    // 'base_url' : 'https://betaapi.loadingplay.com/',
+                    // 'base_url' : 'https://apibodegas.loadingplay.com/',
                     'checkout_url': checkout_url,
                     'site_name': 'rukayen',
-                    // 'checkout_url': 'https://betapay.loadingplay.com',
+                    // 'checkout_url': 'https://pay.loadingplay.com',
                     'product_id' : {{ product_id }}
                 });
 

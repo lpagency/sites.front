@@ -1,7 +1,7 @@
 /*global $*/
 'use strict';
 
-var base_url = 'https://betaapi.loadingplay.com/';
+var base_url = 'https://apibodegas.loadingplay.com/';
 
 function isLocalHost() {
     return document.location.href.indexOf('localhost') != -1;
@@ -18,11 +18,11 @@ if ( isLocalHost() )
 } 
 else if ( isDevelopment() ) 
 {
-    base_url = 'https://betaapi.loadingplay.com/';
+    base_url = 'https://apibodegas.loadingplay.com/';
 }
 
 var Utils = {  //jshint ignore: line
-    // base_url : 'https://betaapi.loadingplay.com/',
+    // base_url : 'https://apibodegas.loadingplay.com/',
     base_url: base_url,
     strEndsWith : function(str, suffix)
     {

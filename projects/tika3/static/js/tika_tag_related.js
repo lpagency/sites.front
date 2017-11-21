@@ -10,16 +10,16 @@ function isDevelopment() {
 $(document).ready(function()
 {
 
-    var base_url= "https://betaapi.loadingplay.com/";
+    var base_url= "https://apibodegas.loadingplay.com/";
 
     // configure for each enviroment
     if ( isLocalHost() ) 
     {
-        base_url="https://betaapi.loadingplay.com/";
+        base_url="https://apibodegas.loadingplay.com/";
     } 
     else if ( isDevelopment() ) 
     {
-        base_url="https://betaapi.loadingplay.com/";
+        base_url="https://apibodegas.loadingplay.com/";
     }
 
     var config = {

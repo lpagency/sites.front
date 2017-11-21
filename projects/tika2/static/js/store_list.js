@@ -14,8 +14,8 @@ $(document).on('pjax:end ready', function() {
     //     "locale": "es"
     // });
 
-    var base_url = 'https://betaapi.loadingplay.com/store/pagination/',
-    checkout_url = 'https://betapay.loadingplay.com/';
+    var base_url = 'https://apibodegas.loadingplay.com/store/pagination/',
+    checkout_url = 'https://pay.loadingplay.com/';
     var app_public = 9;
 
     function isLocalHost() {
@@ -30,7 +30,7 @@ $(document).on('pjax:end ready', function() {
     if ( isLocalHost() ) 
     {
         // base_url = 'https://apibodegas.ondev.today/store/pagination/';
-        // checkout_url = 'https://betapay.loadingplay.com/';
+        // checkout_url = 'https://pay.loadingplay.com/';
         // app_public = 15;
         base_url = 'http://localhost:8520/store/pagination/';
         checkout_url = 'http://localhost:8522/';
@@ -39,7 +39,7 @@ $(document).on('pjax:end ready', function() {
     else if ( isDevelopment() ) 
     {
         base_url = 'https://apibodegas.ondev.today/store/pagination/';
-        checkout_url = 'https://betapay.loadingplay.com/';
+        checkout_url = 'https://pay.loadingplay.com/';
         app_public = 15;
     }
 

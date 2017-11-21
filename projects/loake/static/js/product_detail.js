@@ -4,13 +4,13 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/');
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         'http://localhost:8522/',
-        'https://betapay.loadingplay.com/',
-        'https://betapay.loadingplay.com');
+        'https://pay.loadingplay.com/',
+        'https://pay.loadingplay.com');
     var app_public = $.environmentVar(50,54,54);
 
     // functions 

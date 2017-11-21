@@ -4,7 +4,7 @@ $(document).ready(function() {
 	{
 		'app_public' : 6,
 		'products_per_page' : 9,
-		'base_url' : 'https://betaapi.loadingplay.com/'
+		'base_url' : 'https://apibodegas.loadingplay.com/'
 	});
 });
 

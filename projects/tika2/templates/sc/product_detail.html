@@ -24,8 +24,8 @@
 <script type="text/javascript">
 
 
-    var base_url = 'https://betaapi.loadingplay.com/',
-    checkout_url = 'https://betapay.loadingplay.com/';
+    var base_url = 'https://apibodegas.loadingplay.com/',
+    checkout_url = 'https://pay.loadingplay.com/';
     var app_public = 10;
 
     function isLocalHost() {
@@ -40,12 +40,12 @@
     if ( isLocalHost() ) 
     {
         // base_url = 'https://apibodegas.ondev.today/';
-        // checkout_url = 'https://betapay.loadingplay.com/';
+        // checkout_url = 'https://pay.loadingplay.com/';
         // app_public= 15;
     } 
     else if ( isDevelopment() ) 
     {
-        base_url = 'https://betaapi.loadingplay.com/';
+        base_url = 'https://apibodegas.loadingplay.com/';
         checkout_url = 'http://betapay.loadingplay.com/';
         app_public = 15;
     }

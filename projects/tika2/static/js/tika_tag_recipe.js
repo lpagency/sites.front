@@ -10,9 +10,9 @@ function isDevelopment() {
 $(document).ready(function()
 {
     var base_url = $.environmentVar(
-        "https://betaapi.loadingplay.com/",
-        "https://betaapi.loadingplay.com/",
-        "https://betaapi.loadingplay.com/"
+        "https://apibodegas.loadingplay.com/",
+        "https://apibodegas.loadingplay.com/",
+        "https://apibodegas.loadingplay.com/"
     );
     var app_public = $.environmentVar(10,10,10);
 

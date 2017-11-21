@@ -6,13 +6,13 @@ $(document).ready(function()
 
 
     var base_url = $.environmentVar(
-        'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/',
-        'https://betaapi.loadingplay.com/');
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'https://betapay.loadingplay.com',
-        'https://betapay.loadingplay.com',
-        'https://betapay.loadingplay.com');
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com');
     var app_public = $.environmentVar(33,33,33);
     var site_name = $.environmentVar('micro', 'micro', 'micro');
 
