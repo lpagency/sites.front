@@ -55,10 +55,6 @@
         $(".tituloCategoria").html("CONTROL DE ACCESO");
         log = $(".tituloCategoria").html().toLowerCase();
         $(".control_de_acceso").removeClass("hidden");
-        // if(!$(".products").hasClass("hidden"))
-        // {
-        //   $(".products").addClass("hidden");
-        // }
       }
       if( tags == "productos_ecologicos"){
         $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
@@ -119,46 +115,8 @@
     $(document).on("click", ".subcateg", function(ev){
         // ev.preventDefault();
 
-    $(".subcateg").removeClass('active');
-        $(this).addClass('active');
-
-        //MUESTRA LA FLECHA
-
-        $(".fa-caret-right").addClass('hidden');
-        $(this).parent().find("i").removeClass('hidden');
-
-        if($(this).hasClass("index")){
-          $(".fa-caret-right").addClass('hidden');
-          $(this).parent().find("i").removeClass('hidden');
-        }
-
-        //MUESTRA LA CATEGORIA COMO TITULO
-
-        var valorSubCateg = $(this).attr("sub");
-        var valorSubCateg2 = $(this).attr("sub2");
-        $(".tituloCategoria").html(valorSubCateg2);
-
-        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
-
-        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
-
-        localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg);
-
-    });
-    console.log(window.location.href);
-
-    localStorage.setItem("url", window.location.href);
-
-    console.log($(".buscaCat").html());
-    });
-</script>
-<script type="text/javascript">
-  $(document).ready(function()
-  {
-    $(document).on("click", ".subcateg", function()
-    {
-
-      var tags = $(this).attr("tag");
+        console.log($(this));
+        var tags = $(this).attr("tag");
 
       if( tags == "control_de_acceso"){
         $(".tituloCategoria").html("CONTROL DE ACCESO");
@@ -245,8 +203,39 @@
         $(".prod_nuevos").removeClass("hidden");
       }
 
+        $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+
+        //MUESTRA LA FLECHA
+
+        $(".fa-caret-right").addClass('hidden');
+        $(this).parent().find("i").removeClass('hidden');
+
+        if($(this).hasClass("index")){
+          $(".fa-caret-right").addClass('hidden');
+          $(this).parent().find("i").removeClass('hidden');
+        }
+
+        //MUESTRA LA CATEGORIA COMO TITULO
+
+        var valorSubCateg = $(this).attr("sub");
+        var valorSubCateg2 = $(this).attr("sub2");
+        $(".tituloCategoria").html(valorSubCateg2);
+
+        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
+
+        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
+
+        localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
+
     });
-  });
+    console.log(window.location.href);
+
+    localStorage.setItem("url", window.location.href);
+
+    console.log($(".buscaCat").html());
+    });
+
 </script>
 
 <script type="text/javascript">
@@ -466,7 +455,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_1" name="image" id="img_banner_control_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="Control de acceso inteligente" sub="Control de acceso | Inteligente" tag="inteligente">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_1' }}"> {{ read_text(site.name +  '_nombre_producto_1') }}</div>
               </div>
             </div>
@@ -480,7 +469,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_2" name="image" id="img_banner_control_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_2" src="{{ read_image(site.name + '_banner_control_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_control_2" src="{{ read_image(site.name + '_banner_control_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="control de acceso mecanico" sub="Control de acceso | Mecanico" tag="mecanico">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_2' }}"> {{ read_text(site.name +  '_nombre_producto_2') }}</div>
               </div>
             </div>
@@ -494,7 +483,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_3" name="image" id="img_banner_control_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_3" src="{{ read_image(site.name + '_banner_control_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_control_3" src="{{ read_image(site.name + '_banner_control_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="separador de filas" sub="Control de acceso | Separador de filas" tag="filas">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_3' }}"> {{ read_text(site.name +  '_nombre_producto_3') }}</div>
               </div>
             </div>
@@ -508,7 +497,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_4" name="image" id="img_banner_control_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_4" src="{{ read_image(site.name + '_banner_control_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_control_4" src="{{ read_image(site.name + '_banner_control_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub="Control de acceso | Portaletreros" tag="letreros">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_4' }}"> {{ read_text(site.name +  '_nombre_producto_4') }}</div>
               </div>
             </div>
@@ -522,7 +511,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_5" name="image" id="img_banner_control_5" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_control_5" src="{{ read_image(site.name + '_banner_control_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_control_5" src="{{ read_image(site.name + '_banner_control_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub="Control de acceso | Otros Para Control De Acceso" tag="otros_acceso">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_5' }}"> {{ read_text(site.name +  '_nombre_producto_5') }}</div>
               </div>
             </div>
@@ -541,7 +530,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_1" name="image" id="img_banner_basurero_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_1" src="{{ read_image(site.name + '_banner_basurero_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_basurero_1" src="{{ read_image(site.name + '_banner_basurero_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub="Productos Ecologicos | Basureros" tag="basurero_ecologico">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_1' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_1') }}</div>
               </div>
             </div>
@@ -560,7 +549,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_1" name="image" id="img_banner_basurero_urbano_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_1" src="{{ read_image(site.name + '_banner_basurero_urbano_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_1" src="{{ read_image(site.name + '_banner_basurero_urbano_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="basureros" sub="Mobiliario Urbano | Basureros" tag="basureros">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_1' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_1') }}</div>
               </div>
             </div>
@@ -574,7 +563,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_2" name="image" id="img_banner_basurero_urbano_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_2" src="{{ read_image(site.name + '_banner_basurero_urbano_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_2" src="{{ read_image(site.name + '_banner_basurero_urbano_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="banquetas/Escaños" sub="Mobiliario Urbano | Banquetas/Escaños" tag="banqueta">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_2' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_2') }}</div>
               </div>
             </div>
@@ -588,7 +577,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_3" name="image" id="img_banner_basurero_urbano_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_3" src="{{ read_image(site.name + '_banner_basurero_urbano_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_3" src="{{ read_image(site.name + '_banner_basurero_urbano_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="bicicleteros" sub="Mobiliario Urbano | Bicicleteros" tag="bicicleteros">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_3' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_3') }}</div>
               </div>
             </div>
@@ -602,7 +591,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_4" name="image" id="img_banner_basurero_urbano_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_basurero_urbano_4" src="{{ read_image(site.name + '_banner_basurero_urbano_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_basurero_urbano_4" src="{{ read_image(site.name + '_banner_basurero_urbano_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="refiguos para bicicletas" sub="Mobiliario Urbano | Refugios Para Bicicletas" tag="refugio_bici">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_4' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_4') }}</div>
               </div>
             </div>
@@ -621,7 +610,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_1" name="image" id="img_banner_papelero_ceni_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_1" src="{{ read_image(site.name + '_banner_papelero_ceni_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_1" src="{{ read_image(site.name + '_banner_papelero_ceni_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="papeleros ceniceros" sub="Espacios Publicos | Papeleros Ceniceros" tag="pape_ceni">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_1' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_1') }}</div>
               </div>
             </div>
@@ -635,7 +624,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_2" name="image" id="img_banner_papelero_ceni_2" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_2" src="{{ read_image(site.name + '_banner_papelero_ceni_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_2" src="{{ read_image(site.name + '_banner_papelero_ceni_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="papeleros oficina" sub="Espacios Publicos | Papeleros Oficina" tag="pape_ofi">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_2' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_2') }}</div>
               </div>
             </div>
@@ -649,7 +638,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_3" name="image" id="img_banner_papelero_ceni_3" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_3" src="{{ read_image(site.name + '_banner_papelero_ceni_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_3" src="{{ read_image(site.name + '_banner_papelero_ceni_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="papeleros tapa pendulo" sub="Espacios Publicos | Papeleros Tapa Pendulo" tag="pape_pendu">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_3' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_3') }}</div>
               </div>
             </div>
@@ -663,7 +652,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_4" name="image" id="img_banner_papelero_ceni_4" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_4" src="{{ read_image(site.name + '_banner_papelero_ceni_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_4" src="{{ read_image(site.name + '_banner_papelero_ceni_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="papeleros tapa pedal" sub="Espacios Publicos | Papeleros Tapa Pedal" tag="pape_pedal">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_4' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_4') }}</div>
               </div>
             </div>
@@ -677,7 +666,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_papelero_ceni_5" name="image" id="img_banner_papelero_ceni_5" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_papelero_ceni_5" src="{{ read_image(site.name + '_banner_papelero_ceni_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_papelero_ceni_5" src="{{ read_image(site.name + '_banner_papelero_ceni_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_papelero_ceni_5',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="ceniceros" sub="Espacios Publicos | Ceniceros" tag="cenicero">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_papelero_ceni_5' }}"> {{ read_text(site.name +  '_nombre_producto_papelero_ceni_5') }}</div>
               </div>
             </div>
@@ -696,7 +685,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_productos_especiales_1" name="image" id="img_banner_productos_especiales_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_productos_especiales_1" src="{{ read_image(site.name + '_banner_productos_especiales_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_especiales_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_productos_especiales_1" src="{{ read_image(site.name + '_banner_productos_especiales_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_especiales_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="productos especiales" sub="Productos Especiales | Productos Especiales" tag="especiales">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_productos_especiales_1' }}"> {{ read_text(site.name +  '_nombre_producto_productos_especiales_1') }}</div>
               </div>
             </div>
@@ -715,7 +704,7 @@ $(document).ready(function(){
                     <input type="file" class="editableimage" image-id="{{ site.name }}_banner_productos_nuevos_1" name="image" id="img_banner_productos_nuevos_1" >
                   </div>
                 {% end %}
-                <img id="{{ site.name }}_banner_productos_nuevos_1" src="{{ read_image(site.name + '_banner_productos_nuevos_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_nuevos_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item">
+                <img id="{{ site.name }}_banner_productos_nuevos_1" src="{{ read_image(site.name + '_banner_productos_nuevos_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_productos_nuevos_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="productos nuevos" sub="Productos Nuevos | Productos Nuevos" tag="pro_nuevos">
                 <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_productos_nuevos_1' }}"> {{ read_text(site.name +  '_nombre_producto_productos_nuevos_1') }}</div>
               </div>
             </div>
