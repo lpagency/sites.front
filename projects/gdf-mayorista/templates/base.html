@@ -75,7 +75,6 @@
     {% end %}
 
     {% block header %}{% end %}
-    <!-- boton para navegar -->
     {% if is_admin %} {% end %}
     <!-- botón agregar -->
     <!-- header -->
@@ -83,7 +82,35 @@
     {% include 'product/product_box.html' %} 
     {% include 'product/product_art.html' %}
 
-    {% block body %}{% end %}
+    {% if user is None %}
+        <div align="center">
+            <div class="modal fade" id="myLogin" role="dialog">
+                <div class="modal-dialog login">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title ">REGISTRATE</h4>
+                        </div>
+                        <div class="modal-body mlb-btn">
+                            <h2 class="titulo-password text-center text-uppercase">PARA INGRESAR A ESTE SITIO</h2>
+                            <h2 class="titulo-password text-center text-uppercase"><a href="{{ site_base }}/auth/login" >registrarse o entrar</a></h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <a class="btn boton-log hidden" data-toggle="modal" href="#myModal2"> -->
+        <!-- <div class="img-welcome vertical-center desaturada">
+       
+            <div class="col-sm-12 text-center">
+             <img class="img-welcome2 {{ site.name }}_img_logo" src="{{ read_image(site.name + '_img_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo',500) }}'" alt="item">
+                <h2 class="titulo-password text-center text-uppercase">PARA INGRESAR A ESTE SITIO</h2>
+                <h2 class="titulo-password text-center text-uppercase"><a href="{{ site_base }}/auth/login" >registrarse o entrar</a></h2>
+            </div>
+        </div> -->
+        {% else %}
+        {% block body %}{% end %}
+        {% end %}
     <!-- Modal -->
         <!-- <div class="modal fade modal-z" id="myModalC" role="dialog">
             <div class="modal-dialog modal-since">
@@ -531,7 +558,7 @@
     <input name="site_id" class="form-control required" type="hidden" value="50">
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
-    <input name="l" type="hidden" value="t">
+    <input name="l" class="form-control required" type="hidden" value="t">
     <div class="form-group text-center">
          <button type="submit" class="btn bn btn-compra mo" style="background-color: white;color: rgba(204, 108, 78, 1);border-radius: 0px;height: 41px;float: left;width: 94%;padding-top: 4px;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;letter-spacing: 1.5px; font-size: 16px; font-weight: bold;border: 2px solid rgba(204, 108, 78, 1);font-family: 'Open Sans', sans-serif; margin-top: 17px;">IR A PAGAR
         </button>
@@ -658,6 +685,19 @@
             });
         });
     </script>
+
+    {% if user is None %}
+    <style type="text/css">
+        .login{
+            margin: 142px auto !important;
+        }
+    </style>
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#myLogin').modal('show');
+        });
+    </script>
+    {% end %}
 
 </body>
 

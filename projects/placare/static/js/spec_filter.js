@@ -38,6 +38,19 @@ $(document).ready(function()
                 $(this).html(titulo);
             });
 
+            var scroll = $(window).scrollTop();
+            // if(scroll > 744)
+            // {
+            //     setTimeout(function()
+            //     {
+            //         $(".more-products").click();
+            //         setTimeout(function()
+            //         {
+            //             $("html").scrollTop(scroll)
+            //         },4000);
+            //     },2000);
+            // }
+
             if(products.length == 0)
             {
                 $(".link-recargar").removeClass("hidden");
