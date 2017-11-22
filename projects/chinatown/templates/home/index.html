@@ -102,8 +102,8 @@ Home
 <script type="text/javascript">
     $(document).ready(function()
     {
-        var base_url = 'https://betaapi.loadingplay.com/',
-            checkout_url = 'https://betapay.loadingplay.com/';
+        var base_url = 'https://apibodegas.loadingplay.com/',
+            checkout_url = 'https://pay.loadingplay.com/';
 
         function isLocalHost() {
             return document.location.href.indexOf('localhost') != -1;
@@ -121,8 +121,8 @@ Home
         } 
         else if ( isDevelopment() ) 
         {
-            base_url = 'https://betaapi.loadingplay.com/';
-            checkout_url = 'https://betapay.loadingplay.com/';
+            base_url = 'https://apibodegas.loadingplay.com/';
+            checkout_url = 'https://pay.loadingplay.com/';
         }
 
         // initialize ecommerce

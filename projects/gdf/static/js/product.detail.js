@@ -5,13 +5,13 @@ $(document).ready(function()
     {
 
         var base_url = $.environmentVar(
-            'https://betaapi.loadingplay.com/',
-            'https://betaapi.loadingplay.com/',
-            'https://betaapi.loadingplay.com/');
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
         var checkout_url = $.environmentVar(
-            'https://betapay.loadingplay.com',
-            'https://betapay.loadingplay.com',
-            'https://betapay.loadingplay.com');
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
         var app_public = $.environmentVar(50,50,50);
         var site_name = $.environmentVar('testgdf', 'testgdf', 'testgdf');
         var variants_loaded = false;
