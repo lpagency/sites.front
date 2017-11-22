@@ -1,15 +1,6 @@
 $(document).ready(function()
 {
     window.z = 0;
-    var hyper = Utils.getUrlParameter('tag');
-    if(hyper == undefined)
-    {
-        hyper = "";
-    }
-    else
-    {
-        hyper = Utils.getUrlParameter('tag').split(',');
-    }
 
     $(".limpiar").addClass("hidden");
 
@@ -38,6 +29,14 @@ $(document).ready(function()
         'operator' :'or',
         'onLoad': function(products)
         {
+
+            //PARCHE ESTUPIDO!!!!!!!
+
+            $(".up-ex").each(function()
+            {
+                var titulo = $(this).html().replace("_"," ");
+                $(this).html(titulo);
+            });
 
             if(products.length == 0)
             {

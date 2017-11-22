@@ -30,6 +30,14 @@ $(document).ready(function()
         'onLoad': function(products)
         {
 
+            //PARCHE ESTUPIDO!!!!!!!
+
+            $(".up-ex").each(function()
+            {
+                var titulo = $(this).html().replace("_"," ");
+                $(this).html(titulo);
+            });
+
             if(products.length == 0)
             {
                 $(".link-recargar").removeClass("hidden");

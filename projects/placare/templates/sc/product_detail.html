@@ -94,6 +94,13 @@
                 'active_class': 'active'
             }, onLoad: function(product)
             {
+
+                //PARCHE ESTUPIDO!!!!!!!!
+
+                var titulo = $(".up-ex-detalle").html().replace("_"," ");
+
+                $(".up-ex-detalle").html(titulo);
+
                 // check if variants were triggered
                 if (variants_loaded)
                 {
