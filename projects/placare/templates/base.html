@@ -853,7 +853,6 @@
     <script type="text/javascript">
       $(document).ready(function()
       {
-
         $('#formid').on('keyup keypress', function(e) {
           var keyCode = e.keyCode || e.which;
           if (keyCode === 13)
@@ -866,13 +865,14 @@
     </script>
 
     <script type="text/javascript">
-      $(window).bind("orientationchange", function(){
-          var orientation = window.orientation;
-          var new_orientation = (orientation) ? 0 : 180 + orientation;
-          $('body').css({
-              "-webkit-transform": "rotate(" + new_orientation + "deg)"
-          });
-      });
+      $(document).ready(function () {
+  function reorient(e) {
+    var portrait = (window.orientation % 180 == 0);
+    $("body > div").css("-webkit-transform", !portrait ? "rotate(-90deg)" : "");
+  }
+  window.onorientationchange = reorient;
+  window.setTimeout(reorient, 0);
+});
     </script>
 
     <!-- Facebook Pixel Code -->
