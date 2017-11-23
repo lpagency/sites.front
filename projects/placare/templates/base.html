@@ -853,6 +853,9 @@
     <script type="text/javascript">
       $(document).ready(function()
       {
+        screen.orientation.lock();
+        screen.lockOrientation("orientation");
+
         $('#formid').on('keyup keypress', function(e) {
           var keyCode = e.keyCode || e.which;
           if (keyCode === 13)
