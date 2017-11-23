@@ -865,6 +865,16 @@
       });
     </script>
 
+    <script type="text/javascript">
+      $(window).bind("orientationchange", function(){
+          var orientation = window.orientation;
+          var new_orientation = (orientation) ? 0 : 180 + orientation;
+          $('body').css({
+              "-webkit-transform": "rotate(" + new_orientation + "deg)"
+          });
+      });
+    </script>
+
     <!-- Facebook Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
