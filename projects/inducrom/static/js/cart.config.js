@@ -56,7 +56,11 @@ $(document).ready(function()
 
     $("#"+tag).addClass("active");
     if (tag === undefined || tag === 'todos'){
-        $("#todos").addClass("active");
+        setTimeout(function()
+        {
+            $("#todos").click();
+            $("#todos").addClass("active");
+        },2000);
     }
 
     var base_url = $.environmentVar(
