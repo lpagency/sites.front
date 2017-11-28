@@ -9,32 +9,34 @@
 
         grunt.initConfig({
 
-            "babel": {
-                options: {
-                    sourceMap: true
-                },
-                dist: {
-                    files: {
-                        'static/css/style.es5.css': 'static/css/style.css',
-                        'static/css/header.es5.css': 'static/css/header.css',
-                    }
-                }
-            },
+            // uglify: {
+            //     my_target: {
+            //         files: {
+            //             'static/css/style.min.css': ['static/css/style.es5.css'],
+            //             'static/css/header.min.css': ['static/css/header.es5.css']
+            //         }
+            //     }
+            // },
 
-            uglify: {
-                my_target: {
-                    files: {
-                        'static/css/style.min.css': ['static/css/style.es5.css'],
-                        'static/css/header.min.css': ['static/css/header.es5.css']
-                    }
+            cssmin: {
+              options: {
+                mergeIntoShorthands: false,
+                roundingPrecision: -1
+              },
+              target: {
+                files: {
+                    'static/css/style.min.css': ['static/css/style.css'],
+                    'static/css/header.min.css': ['static/css/header.css']
                 }
+              }
             }
+
 
         });
 
         grunt.loadNpmTasks('grunt-contrib-uglify');
-        grunt.loadNpmTasks('grunt-babel');
+        grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-        grunt.registerTask('build', ['babel', 'uglify']);
+        grunt.registerTask('build', ['cssmin']);
     };
 })();
