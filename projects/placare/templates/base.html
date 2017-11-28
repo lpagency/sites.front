@@ -575,36 +575,11 @@
         <!-- CSS -->
 
 
-        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css?1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css?1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css?1">
+
+        
         <link rel="stylesheet" href="{{ site_base }}/static/css/style.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?1">
         <link rel="stylesheet" href="{{ site_base }}/static/css/header.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.ho.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/listado_articulos.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/listado_productos.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/checkout.css?1">
-        <link rel="stylesheet" href="{{ site_base }}/static/css/simple-sidebar.css?1">
-
-
-        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?1?v=2.1.5" media="screen" />
-
-        <!-- aqui se ponen los demas css -de las paginas -->
-        <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css?1">
-
-
-        <!-- autocomplete
-        <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/plugins/selectize/selectize.css?1" />
-        <!-autocomplete -->
-       <link rel="stylesheet" href="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.css?1">
-
-
-        <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css?1">
-
-
-        <!-- <link rel="stylesheet" href="{{ site_base }}/static/js/fancybox/source/jquery.fancybox.css?1?v=2.1.5"> -->
-
-        <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css?1">
 
         <!-- Start of placarehelp Zendesk Widget script -->
         <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="placarehelp.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
@@ -614,27 +589,37 @@
         
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104850079-1"></script>
         <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        gtag('config', 'UA-104850079-1');
+        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-104850079-1');
         </script>
 
-
-
         <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css?1"/> -->
-
 
         {% block css %}{% end %}
 
 
         <noscript id="deferred-styles">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css?1">
+          <link rel="stylesheet" type="text/css" href="{{ site_base }}/static/fancybox/source/jquery.fancybox.css?1?v=2.1.5" media="screen" />
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/common/css/editableimage.css?1">
           <link href="https://fonts.googleapis.com/css?family=Fira+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+          <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css?1" >
+
+          <link rel="stylesheet" href="{{ site_base }}/static/css/gallery.ho.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css?1">
+
+          <link rel="stylesheet" href="{{ site_base }}/static/css/listado_articulos.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/static/css/listado_productos.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/static/css/checkout.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/static/css/simple-sidebar.css?1">
+
+          <link rel="stylesheet" href="{{ site_base }}/common/js/plugins/loadingplay/fileuploader/dist/fileuploader.css?1">
+
+
+          <link rel="stylesheet" href="{{ site_base }}/static/css/ligthbox-d.css?1">
+          <link rel="stylesheet" href="{{ site_base }}/common/css/ellipsis.css?1">
+
           <!--  <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700" rel="stylesheet"> -->
           <!-- <link rel="stylesheet" type="text/css" href="https://cloud.typography.com/7400796/8002792/css/fonts.css?1" /> -->
-          <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css?1" >
         </noscript>
         <script>
           var loadDeferredStyles = function() {
