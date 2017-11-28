@@ -37,6 +37,13 @@ $(document).ready(function () {
             $(this).find('.header-submenu-wrapper').stop(true, true).delay(200).fadeOut(500);
         });
 
+    $('.dropdown-submenu a.test').on("click", function(e){
+        $(this).parent().parent().children().children(".dropdown-menu").css("display", "none");
+        $(this).next('ul').toggle();
+        e.stopPropagation();
+        e.preventDefault();
+      });
+
     var $window = $(window);
     var windowWidth;
     $window.resize(function () {

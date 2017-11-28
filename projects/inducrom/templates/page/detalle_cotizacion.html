@@ -269,6 +269,17 @@ function getCookie1(cname) {
   });
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", ".demo", function(ev)
+        {
+            ev.preventDefault();
+            window.location.href = "{{ site_base }}/listado_productos";
+        });
+    });
+</script>
+
 {% end %}
 {% block body %}
 

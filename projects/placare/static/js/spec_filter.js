@@ -38,19 +38,6 @@ $(document).ready(function()
                 $(this).html(titulo);
             });
 
-            var scroll = $(window).scrollTop();
-            // if(scroll > 744)
-            // {
-            //     setTimeout(function()
-            //     {
-            //         $(".more-products").click();
-            //         setTimeout(function()
-            //         {
-            //             $("html").scrollTop(scroll)
-            //         },4000);
-            //     },2000);
-            // }
-
             if(products.length == 0)
             {
                 $(".link-recargar").removeClass("hidden");
@@ -121,6 +108,23 @@ $(document).ready(function()
             $(".tag-header2").html(h);
         }
     };
+
+    $(document).ready(function()
+    {
+        var scroll = $(window).scrollTop();
+        if(scroll > 744)
+        {
+
+            window.config.infinite_scroll = true;
+            $(".more-products").remove();
+            $(".products").ecommerce(config);
+            setTimeout(function()
+            {
+                $("html").scrollTop(scroll);
+            },3000);
+
+         }
+    });
 
     //<-------------ORDENAR MAYOR, MENOR Y POR NOMBRE------------->
 

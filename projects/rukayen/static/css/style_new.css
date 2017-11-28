@@ -629,6 +629,12 @@ filter: grayscale(0%) brightness(50%);
     left: 0;
     width: 50%;
 }
+.map-abs-epu{
+    position: absolute;
+    height: 100%;
+    right: 0;
+    width: 50%;
+}
 .map_abs p {
     line-height: 48px;
 }
@@ -864,6 +870,56 @@ img.img-edit{
 {
     font-weight: 100;
 }
+.menu-drop-rukayen{
+    font-size: 14px;
+    color: #fff !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 7px 10px !important;
+    font-weight: 500;
+    background-color: transparent;
+}
+.menu-drop-rukayen:hover{
+    background: #fff;
+    color: #000 !important;
+    border-radius:3px;
+}
+.dropdown-menu-rukayen>li>a {
+    font-size: 14px;
+    color: #fff !important;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 7px 10px !important;
+    font-weight: 500;
+    background-color: transparent;
+}
+.dropdown-menu-rukayen>li>a:hover{
+    background: #fff;
+    color: #000 !important;
+    border-radius:3px;
+}
+.dropdown-menu-rukayen {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 100%;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    font-size: 14px;
+    text-align: left;
+    list-style: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #ccc;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0,0,0,.175);
+    box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
 
 /*.video-overlay
 {
@@ -985,6 +1041,11 @@ img.img-edit{
 h1.product_title{
     text-align: left!important;
     padding-left: 6px;
+}
+.map-epu{
+    float: left;  
+    height: 400px;
+    width: 50%;
 }
 /********************fin mapa*********************************/
 /********************footer**********************************/
@@ -1461,8 +1522,21 @@ div.image-upload{
        width: 166px;
        height: 34px;
      }
+    .menu-drop-rukayen{
 
-     
+        background: #848484;
+        margin: 2px;
+        width: 166px;
+    }
+    .dropdown-menu-rukayen {
+        position: relative;
+        background: #848484;
+        margin: 2px;
+        width: 166px;
+    }
+    .mg-5-movil{
+        margin-top: 25%;
+    }
      .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > li > a {
         background: #848484;
         margin: 2px;

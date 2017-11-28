@@ -1,0 +1,460 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+ {% include '../home/header_inside.html' %}
+{% end %}
+
+{% block javascript %}
+<SCRIPT language=JavaScript>
+
+<!--
+
+function err(x) {
+
+ alert("Please select each field in the form " + x);
+
+}
+
+ 
+
+function r(rr) {
+
+ var n ="";
+
+ for (var i = 0; i < rr.length; i++){
+
+  if (rr[i].checked) {
+
+   n=parseInt(rr[i].id);
+
+  }
+
+ }
+
+ return n;
+
+}
+
+ 
+
+function t(rr) {
+
+ var n ="";
+
+ for (var i = 0; i < rr.length; i++){
+
+  if (rr[i].selected) {
+
+   n=parseInt(rr[i].id);
+
+  }
+
+ }
+
+ return n;
+
+}
+
+ 
+
+function Calc(frm) {
+
+ if (t(frm.Dropdown)<0 || t(frm.Dropdown2)<0 || t(frm.Dropdown3)<0 || t(frm.Radio6)<0 || t(frm.Dropdown4)<0 || t(frm.Dropdown6)<0) {
+
+  alert("Por favor responda todas las preguntas.");
+
+  return false;
+
+ }
+
+risklevel = new Array("minimo", "moderado", "alto", "muy alto");
+
+score = new Array(0, 9, 15, 25);
+
+act = new Array("", "revision dermatologica anual. Recuerde su score", "y revision dermatologica bianual.  Recuerde su score", "y revision dermatologica cada tres meses.  Recuerde su score");
+
+var rl = 0;
+
+ 
+
+var v1 =  r(frm.Radio) + t(frm.Dropdown) + r(frm.Radio1) + r(frm.Radio3) + r(frm.Radio5);
+
+v1 += t(frm.Dropdown2) + t(frm.Dropdown3) + r(frm.Radio6) + t(frm.Dropdown4) + t(frm.Dropdown5) + t(frm.Dropdown6);
+
+ 
+
+
+if (r(frm.Radio1) != 0)  v1 += r(frm.Radio2);
+
+if (r(frm.Radio3) != 0)  v1 += r(frm.Radio4);
+
+if (r(frm.Radio5) != 0)  v1 += t(frm.Dropdown1);
+
+ 
+
+frm.SingleLine.value = v1;
+
+ 
+
+while(v1 > score[rl]) {
+
+ rl++;
+
+}
+
+ 
+
+prop = "El Total de su score es " + v1 + " significa que usted tiene " +  risklevel[--rl]+ " nivel de riesgo.\n";
+
+prop += "Usted tiene que realizarce un autoexamen todos los meses " + act[rl];
+
+alert(prop);
+
+// window.location="contacto1.htm" 
+
+}
+
+// -->
+
+</SCRIPT>
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+<section>
+     <div class="mobile-ho fullscreen background parallax" style="background:url('{{ read_image(site.name + '_banner_contact',500) }}'); background-attachment:fixed; height:710px; background-size:cover; margin-top: -153px;  filter: grayscale(0%) brightness(65%);
+    -webkit-filter: grayscale(0%) brightness(65%); -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+    background-position:center;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+               <div class="image-upload part1 lapiz visible-movil">
+                   <label for="img_banner_contact">
+                       <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                   </label>
+                   <input type="file" class="editableimage" image-id="{{ site.name }}_banner_contact" name="image" id="img_banner_contact" >
+               </div>
+        
+        {% end %}
+                <img id="{{ site.name }}_banner_contact" src="{{ read_image(site.name + '_banner_contact', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_contact',500) }}'" class="banner_contact hidden" alt="item">
+           
+       </div>
+
+                <div class="col-md-12">
+            <div class="text-center titulo-2 {{editabletext}}" text-id="{{ site.name + '_til_cont' }}"> {{ read_text(site.name +  '_til_cont') }}</div>
+                </div>
+</section>
+
+<div class="container" align="center">
+  <TABLE cellSpacing=0 cellPadding=0 width=703 bgColor=#000000 border=0>
+
+      <div align="center"><strong><font color="#CCCCCC" size="3" face="Arial, Helvetica, sans-serif"><TBODY> 
+
+        AUTO EVALUACION DE CANCER DE PIEL </font></strong></div>
+
+  <TR>
+
+    <TD class=td1>
+
+      <TABLE cellSpacing=1 cellPadding=0 width=703 bgColor=#000000 border=0>
+
+        <TBODY>
+
+        <TR>
+
+              <TD width=50 background="/img/fondo_r.jpg" bgColor=#FFFFFF class=td1>&nbsp;</TD>
+
+          <TD class=td1>
+
+            <TABLE cellSpacing=2 cellPadding=2 width=650 bgColor=#ffffff 
+
+            border=0>
+
+              <FORM action='https://forms.zohopublic.com/sytes/form/dermatologiaexamendelunares/formperma/DCmk121g18_EAabD2K959C3Ek/htmlRecords/submit' name=frm id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data' onSubmit="zf_validateandsubmitdata();">
+
+              <TBODY>
+
+              <TR>
+
+                      <TD width=226>Nivel de educacion completa:</TD>
+
+                <TD width=1 rowSpan=10>&nbsp;</TD>
+
+                <TD colSpan=4><INPUT type=radio CHECKED value="basico" name="Radio" id=1>
+
+                        Basico
+
+<INPUT type=radio value="medio" name="Radio" id=2>
+
+                        Medio
+
+<INPUT type=radio 
+
+                  value="universidad" name="Radio" id=3>
+
+                        Universidad
+
+<INPUT type=radio value="post grado" name="Radio" id=4>
+
+                        Post Grado</TD>
+
+                    </TR>
+
+              <TR>
+
+                      <TD>Cuando tiene exposicion solar:</TD>
+
+                <TD colSpan=4><SELECT name="Dropdown">
+
+                          <option id=-1 selected>--- Seleccionar ---</option>
+
+                          <option value="Siempre me quemo, nunca me bronceo" id=6>Siempre me quemo, nunca me bronceo</option>
+
+                          <option value="Habitualmente me quemo, me bronceo con dificultad" id=5>Habitualmente me quemo, me bronceo 
+
+                          con dificultad</option>
+
+                          <option value="A veces me quemo, habitualmentemente me bronceo" id=4>A veces me quemo, habitualmentemente 
+
+                          me bronceo</option>
+
+                          <option value="Ocasionalmente me quemo, habitualmente me bronceo oscuro" id=3>Ocasionalmente me quemo, habitualmente 
+
+                          me bronceo oscuro</option>
+
+                          <option value="Rara vez me quemo, siempre me bronceo" id=2>Rara vez me quemo, siempre me bronceo</option>
+
+                          <option value="(Si usted es de raza negra) marque aqui" id=1>(Si usted es de raza negra) marque 
+
+                          aqui</option>
+
+                        </SELECT> </TD></TR>
+
+              <TR>
+
+                      <TD width=226>Alguna vez a tenido cancer de piel?</TD>
+
+                <TD width=107><INPUT type=radio id=3 name="Radio1" value="Si">
+
+                        Si<BR>
+
+                        <INPUT 
+
+                  onclick="frm.Radio2[1].checked = 'true'" type=radio CHECKED 
+
+                  id=0 name="Radio1" value="No"> No </TD>
+
+                <TD width=13>&nbsp;</TD>
+
+                      <TD width=156>Si es si, fue melanoma?</TD>
+
+                <TD width=109><INPUT onclick="frm.Radio1[0].checked = 'true'" 
+
+                  type=radio id=5 value="Si" name=Radio2>
+
+                        Si<BR>
+
+                        <INPUT type=radio CHECKED 
+
+                  id=0 value="No" name=Radio2> No </TD></TR>
+
+              <TR>
+
+                      <TD>Algun miembro de su familia ha tenido cancer de piel?</TD>
+
+                <TD><INPUT type=radio id=1 value="Si" name=Radio3> Si<BR><INPUT 
+
+                  onclick="frm.Radio4[1].checked = 'true'" type=radio CHECKED 
+
+                  id=0 value="No" name=Radio3> No </TD>
+
+                <TD>&nbsp;</TD>
+
+                    <TD>Si es si, fue melanoma?</TD>
+
+                <TD><INPUT onclick="frm.Radio3[0].checked = 'true'" type=radio 
+
+                  id=2 value="Si" name=Radio4> Si<BR><INPUT type=radio CHECKED id=0 value="No" 
+
+                  name=Radio4> No </TD></TR>
+
+              <TR>
+
+                      <TD>&iquest;Usted tiene un padre, un hermano o un hijo que 
+
+                        ha tenido un melanoma (lunar canceroso)?</TD>
+
+                <TD><INPUT type=radio id=4 value="Si" name=Radio5>
+
+                        Si<BR>
+
+                        <INPUT 
+
+                  type=radio CHECKED id=0 value="No" name=Radio5> No </TD>
+
+                <TD>&nbsp;</TD>
+
+                      <TD>Si hay mas de uno cuantos fueron?</TD>
+
+                <TD><SELECT onchange="frm.Radio5[0].checked = 'true'" name="Dropdown1">
+
+                          <option id="0" selected>-</option>
+
+                          <option id="1" value="1">1</option>
+
+                          <option id="2" value="2">2</option>
+
+                          <option id="3" value="3 o mas">3 or more</option>
+
+                        </SELECT> </TD></TR>
+
+              <TR>
+
+                      <TD>&iquest;Cu&aacute;ntos lunares oscuros tiene usted que 
+
+                        sean mayores a 3 mil&iacute;metros de diametro ?</TD>
+
+                <TD colSpan=4><SELECT name="Dropdown2">
+
+                          <option id="-1" selected>--- Seleccionar ---</option>
+
+                          <option value="No" id="0">No</option>
+
+                          <option value="Menos de 20" id="1">Menos de 20</option>
+
+                          <option value="20 a 29" id="2">20 a 29</option>
+
+                          <option value="30 a 39" id="3">30 a 39</option>
+
+                          <option value="40 a 49" id="4">40 a 49</option>
+
+                          <option value="50 o mas" id="5">50 o m&aacute;s</option>
+
+                        </SELECT> </TD></TR>
+
+              <TR>
+
+                      <TD>&iquest;Cu&aacute;ntos lunares oscuros tiene usted que 
+
+                        sean mayores a 6 mil&iacute;metros de diametro ?</TD>
+
+                <TD colSpan=4><SELECT name="Dropdown3">
+
+                          <option id="-1" selected>--- Seleccionar ---</option>
+
+                          <option value="Ninguno" id="0">Ninguno</option>
+
+                          <option value="1 - 5" id="1">1 - 5</option>
+
+                          <option value="6 - 9" id="2">6 - 9</option>
+
+                          <option value="10 o mas" id="3">10 o m&aacute;s</option>
+
+                        </SELECT> </TD></TR>
+
+              <TR>
+
+                      <TD>En los ultimos 5 a&ntilde;os usted ha presentado quemaduras 
+
+                        solares ?</TD>
+
+                <TD colSpan=4><INPUT type=radio id=2 value="Si" name=Radio6>
+
+                        Si<BR>
+
+                        <INPUT 
+
+                  type=radio CHECKED id=0 value="No" name=Radio6> No </TD></TR>
+
+              <TR>
+
+                      <TD>En los ultimos 5 a&ntilde;os usted cuantas veces se 
+
+                        ha quemado con sol ?</TD>
+
+                <TD colSpan=4><SELECT name=Dropdown4>
+
+                          <option id="-1" selected>--- Seleccionar ---</option>
+
+                          <option id="2" value="Frecuentemente">Frecuentemente</option>
+
+                          <option id="1" value="Ocasionalmente">Ocasionalmente</option>
+
+                          <option id="0" value="Nunca">Nunca</option>
+
+                        </SELECT>
+
+                      </TD>
+
+                    </TR>
+
+              <TR>
+
+                      <TD>Color de pelo (natural, antes de las canas ):</TD>
+
+                <TD><SELECT name=Dropdown5>
+
+                          <option id="-1" selected>--- Seleccionar ---</option>
+
+                          <option value="Negro" id="0">Negro</option>
+
+                          <option value="Cafe" id="1">Caf&eacute;</option>
+
+                          <option value="Rubio" id="2">Rubio</option>
+
+                          <option value="Pelirojo" id="3">Pelirojo</option>
+
+                        </SELECT> </TD>
+
+                <TD>&nbsp;</TD>
+
+
+                      <TD>Color de ojos:</TD>
+
+                <TD><SELECT name=Dropdown6>
+
+                          <option id="-1" selected>--- Seleccionar ---</option>
+
+                          <option value="Verde" id="2">Verde</option>
+
+                          <option value="Azul" id="3">Azul</option>
+
+                          <option value="Castaño" id="2">Casta&ntilde;o</option>
+
+                          <option value="Cafe" id="1">Caf&eacute;</option>
+
+                          <option value="Gris" id="3">Gris</option>
+
+                        </SELECT> 
+
+                </TD></TR>
+
+              <TR>
+
+                <TD align=middle colSpan=7>Total score: <INPUT size=5 value=0 
+
+                  name=SingleLine>
+                          <font color="#0066CC"><strong>( RECUERDE SU SCORE )</strong></font></TD>
+                      </TR>
+
+              <TR>
+
+                <TD align=middle colSpan=7><INPUT onclick=Calc(this.form) type=submit value=Calcular name=calc></TD></TR></FORM>
+
+                </TABLE></TD></TR>
+
+        </TABLE></TD></TR></TBODY></TABLE>
+</div>
+
+{% include '../home/footer.html' %}
+
+{% end %}

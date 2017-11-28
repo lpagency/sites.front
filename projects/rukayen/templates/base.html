@@ -314,7 +314,15 @@
         </script>
         <script type="text/javascript" src="{{ site_base }}/common/js/contentmanager.js" ></script>
         {% end %}
+        <script src="{{ site_base }}/static/js/smoothScroll.js"></script>
+        <script type="text/javascript">
+            $('#map-epu').smoothScroll({
+                duration: 1000, // animation speed
+                easing: 'swing', // find more easing options on http://api.jqueryui.com/easings/
+                offset: 0 // custom offset
+                });
 
+        </script>
         <script src="https://maps.googleapis.com/maps/api/js"></script>
         <script>
             if($("#map-canvas").length){
@@ -357,7 +365,15 @@
                 <div class="rect5"></div>
             </div>
         </div> -->
-
+<script type="text/javascript">
+        $('ul.nav div.dropdown').hover(function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeIn(300);
+        }, function() 
+        {
+            $(this).find('.dropdown-menu').stop(true, true).delay(100).fadeOut(300);
+        });
+    </script>
         <div type="template" id="product_template" class="hidden">
             <div class="box space20"> 
                     <!-- <div class="row "> -->
@@ -429,11 +445,13 @@
         <script type="text/javascript" src="{{ site_base }}/static/js/header.js" ></script>
         <script src="{{ site_base }}/static/js/scrollReveal.min.js?ver=2.1.0"></script>
         <script type="text/javascript">
-        window.sr= new scrollReveal({ 
-            reset: true,
-            move:"20px" 
-        });
-    </script>
+
+            window.sr= new scrollReveal({ 
+                reset: true,
+                move:"20px" 
+            });
+        </script>
+
     <!-- Initialize Swiper -->
     <script>
     setTimeout(function() {
