@@ -21,6 +21,15 @@
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    if($(window).width() < 800)
+    {
+      $(".h-submenu").remove();
+    }
+  });
+</script>
 
 <script type="text/javascript">
   function setCookie(cname,cvalue) {
