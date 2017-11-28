@@ -1,0 +1,50 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+{% include '../home/header_inside.html' %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+            <!-- editar imagen -->
+            {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_empre_div_ku">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_empre_div_ku" name="image" id="img_empre_div_ku" >
+                </div>
+            {% end %}
+            <a id="{{ site.name + '_empre_div_ku' }}" href="{{ read_link(site.name + '_empre_div_ku') }}">
+                <img id="{{ site.name }}_single_div_1" src="{{ read_image(site.name + '_single_div_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_empre_div_ku', 200) }}'" class="img-responsive" alt="item" style="height: 100%;">
+            </a>
+            <!-- fin editar imagen --> 
+        </div>
+        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12"></div>
+    </div>
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}
+
