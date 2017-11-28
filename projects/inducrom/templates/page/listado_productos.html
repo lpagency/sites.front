@@ -113,6 +113,7 @@
     {
     $(document).on("click", ".subcateg", function(ev){
         ev.preventDefault();
+        ev.stopPropagation();
 
         console.log($(this));
         var tags = $(this).attr("tag");
@@ -226,8 +227,6 @@
         var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
 
         localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
-
-        return false;
 
     });
     console.log(window.location.href);
