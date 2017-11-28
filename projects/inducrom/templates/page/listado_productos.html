@@ -21,99 +21,9 @@
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 
-
 <script type="text/javascript">
-  function setCookie(cname,cvalue) {
-    document.cookie = cname + "=" + cvalue + ";path=/";
-  }
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function()
-  {
-    var hyper = Utils.getUrlParameter('tag');
-
-    setCookie("url", hyper);
-
-  });
-</script>
-
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-
-      var tag = Utils.getUrlParameter("tag");
-
-      if(tag == "tienda"){
-        $(".cotizar").addClass("hidden");
-      }
-
-      var tags = Utils.getUrlParameter("tag");
-      var log = "";
-
-      if( tags == "control_de_acceso"){
-        $(".tituloCategoria").html("CONTROL DE ACCESO");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".control_de_acceso").removeClass("hidden");
-      }
-      if( tags == "productos_ecologicos"){
-        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".basureros").removeClass("hidden");
-      }
-      if( tags == "mobiliario_urbano"){
-        $(".tituloCategoria").html("MOBILIARIO URBANO");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".mob_urbano").removeClass("hidden");
-      }
-      if( tags == "espacios_publicos"){
-        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".espa_publicos").removeClass("hidden");
-      }
-      if( tags == "productos_especiales"){
-        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".prod_especiales").removeClass("hidden");
-      }
-      if( tags == "productos_nuevos"){
-        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
-        log = $(".tituloCategoria").html().toLowerCase();
-        $(".prod_nuevos").removeClass("hidden");
-      }
-
-
-
-
-      var catProd = $(".buscaCat").html(" Home | " + log);
-
-      $(".buscaCat").css("text-transform", "capitalize");
-
-      localStorage.setItem("subcategoriaProd"," Home | " + log);
-
-      $("#OpenAlert").click();
-
-        // var config = {
-        //     'app_public' : app_public,
-        //     'base_url' : base_url,
-        //     'maxProducts' : 8,
-        //     'templateOrigin' : '#product_template',
-        //     'tag' : '',
-        //     'ignore_stock' : true,
-        //     'onLoad':function(){
-        //      }
-        // };
-
-        // $('.product-list').ecommerce('product_box', config);
-
-    });
-</script>
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-    $(document).on("click", ".subcateg", function(ev){
+  function attr(ev){
         ev.preventDefault();
-        ev.stopPropagation();
         console.log($(this));
         var tags = $(this).attr("tag");
 
@@ -227,12 +137,113 @@
 
         localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
 
+    };
+</script>
+
+<script type="text/javascript">
+  function setCookie(cname,cvalue) {
+    document.cookie = cname + "=" + cvalue + ";path=/";
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    var hyper = Utils.getUrlParameter('tag');
+
+    setCookie("url", hyper);
+
+  });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      $(document).on("click", ".subcateg", function(ev)
+      {
+        attr(ev);
+      });
+
+      $(document).on("tap", ".subcateg", function(ev)
+      {
+        attr(ev);
+      });
+      var tag = Utils.getUrlParameter("tag");
+
+      if(tag == "tienda"){
+        $(".cotizar").addClass("hidden");
+      }
+
+      var tags = Utils.getUrlParameter("tag");
+      var log = "";
+
+      if( tags == "control_de_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".control_de_acceso").removeClass("hidden");
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".basureros").removeClass("hidden");
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".mob_urbano").removeClass("hidden");
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".espa_publicos").removeClass("hidden");
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".prod_especiales").removeClass("hidden");
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".prod_nuevos").removeClass("hidden");
+      }
+
+
+
+
+      var catProd = $(".buscaCat").html(" Home | " + log);
+
+      $(".buscaCat").css("text-transform", "capitalize");
+
+      localStorage.setItem("subcategoriaProd"," Home | " + log);
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
     });
-    console.log(window.location.href);
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+    
+      console.log(window.location.href);
 
-    localStorage.setItem("url", window.location.href);
+      localStorage.setItem("url", window.location.href);
 
-    console.log($(".buscaCat").html());
+      console.log($(".buscaCat").html());
     });
 
 </script>
@@ -413,21 +424,21 @@ $(document).ready(function(){
    <section class="h_submenu hidden-md hidden-lg">
           <div class="container col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 50px;">
             <div align="center">
-            <div id="control_de_acceso" class="azul subcateg mbtm5 index" tag="control_de_acceso" role="button" sub2="control de acceso" sub="Control de acceso">Control de acceso</div>
+            <a href="#!" id="control_de_acceso" class="azul subcateg mbtm5 index" tag="control_de_acceso" role="button" sub2="control de acceso" sub="Control de acceso">Control de acceso</a>
 
 
-            <div id="productos_ecologicos" class="verde subcateg mbtm5 index" tag="productos_ecologicos" role="button" sub2="productos ecologicos" sub="Productos Ecologicos">Productos ecologicos</div>
+            <a href="#!" id="productos_ecologicos" class="verde subcateg mbtm5 index" tag="productos_ecologicos" role="button" sub2="productos ecologicos" sub="Productos Ecologicos">Productos ecologicos</a>
 
 
-            <div id="mobiliario_urbano" class="amarillo subcateg mbtm5 index" tag="mobiliario_urbano" role="button" sub2="Mobiliario urbano" sub="Mobiliario urbano">Mobiliario urbano</div>
+            <a href="#!" id="mobiliario_urbano" class="amarillo subcateg mbtm5 index" tag="mobiliario_urbano" role="button" sub2="Mobiliario urbano" sub="Mobiliario urbano">Mobiliario urbano</a>
 
-            <div id="espacios_publicos" class="naranjo subcateg mbtm5 index" tag="espacios_publicos" role="button" sub2="Espacios publicos" sub="Espacios publicos">Espacios publicos</div>
+            <a href="#!" id="espacios_publicos" class="naranjo subcateg mbtm5 index" tag="espacios_publicos" role="button" sub2="Espacios publicos" sub="Espacios publicos">Espacios publicos</a>
            
-            <div id="productos_especiales" class="rojo subcateg mbtm5 index" tag="productos_especiales" role="button" sub2="productos Especiales" sub="productos especiales">Productos especiales</div>
+            <a href="#!" id="productos_especiales" class="rojo subcateg mbtm5 index" tag="productos_especiales" role="button" sub2="productos Especiales" sub="productos especiales">Productos especiales</a>
           
 
-            <div id="productos_nuevos" class="gris subcateg mbtm5 index" tag="productos_nuevos" role="button" sub2="productos nuevos" sub="productos nuevos">Productos nuevos</div>
-                <div id="todos" class="subcateg mbtm5 index" tag="" role="button" sub2="" sub="todos los productos">Todos los productos</div>
+            <a href="#!" id="productos_nuevos" class="gris subcateg mbtm5 index" tag="productos_nuevos" role="button" sub2="productos nuevos" sub="productos nuevos">Productos nuevos</a>
+                <a href="#!" id="todos" class="subcateg mbtm5 index" tag="" role="button" sub2="" sub="todos los productos">Todos los productos</a>
           
           </div>
           </div>
