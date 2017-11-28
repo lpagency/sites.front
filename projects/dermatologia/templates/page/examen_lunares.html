@@ -81,9 +81,9 @@ var rl = 0;
 
  
 
-var v1 =  r(frm.Radio) + t(frm.Dropdown) + r(frm.Radio1) + r(frm.Radio3) + r(frm.Radio5);
+window.v1 =  r(frm.Radio) + t(frm.Dropdown) + r(frm.Radio1) + r(frm.Radio3) + r(frm.Radio5);
 
-v1 += t(frm.Dropdown2) + t(frm.Dropdown3) + r(frm.Radio6) + t(frm.Dropdown4) + t(frm.Dropdown5) + t(frm.Dropdown6);
+window.v1 += t(frm.Dropdown2) + t(frm.Dropdown3) + r(frm.Radio6) + t(frm.Dropdown4) + t(frm.Dropdown5) + t(frm.Dropdown6);
 
  
 
@@ -96,11 +96,11 @@ if (r(frm.Radio5) != 0)  v1 += t(frm.Dropdown1);
 
  
 
-frm.SingleLine.value = v1;
+frm.SingleLine.value = window.v1;
 
  
 
-while(v1 > score[rl]) {
+while(window.v1 > score[rl]) {
 
  rl++;
 
@@ -326,7 +326,50 @@ alert(prop);
                       </SELECT> 
                     </TD>
                   </TR>
+                  <tr>
+                    <TD height="50" width="80%">
+                      Nombre:
+                    </TD>
+                    <TD width="10%" colSpan=4>
+                      <input type="text" class="nombres" maxlength="255" name="Name_First" invlovedinsalesiq=false  fieldType=7 required />
+                    </TD>
+                  </tr>
+                  <tr>
+                    <TD height="50" width="80%">
+                      Apellido:
+                    </TD>
+                    <TD width="10%" colSpan=4>
+                      <input type="text" class="nombres" maxlength="255" name="Name_Last" invlovedinsalesiq=false  fieldType=7 required />
+                    </TD>
+                  </tr>
+                  <tr>
+                    <TD height="50" width="80%">
+                      Email:
+                    </TD>
+                    <TD width="10%" colSpan=4>
+                      <input type="text" class="nombres" maxlength="255" name="Email" value="" invlovedinsalesiq=false  fieldType=9 required />
+                    </TD>
+                  </tr>
+                  <tr>
+                    <TD height="50" width="80%">
+                      Telefono:
+                    </TD>
+                    <TD width="10%" colSpan=4>
+                      <input type="text" class="nombres" name="Number" value="" maxlength="18" required />
+                    </TD>
+                  </tr>
                   <TR>
+                    <TD height="50" width="80%">Cada cuánto quieres que te contactemos?</TD>
+                    <TD colSpan=4 width="10%">
+                      <input type="radio" id="Radio7_1" name="Radio7" value="3 meses" checked> 3 Meses
+                      <BR>
+                      <input type="radio" id="Radio7_2" name="Radio7" value="6 meses"> 6 Meses
+                      <BR>
+                      <input type="radio" id="Radio7_3" name="Radio7" value="1 año"> 1 Año
+                    </TD>
+                  </TR>
+                  <TR>
+                    <br>
                     <TD align=middle colSpan=7>Total score: <INPUT size=5 value=0 name=SingleLine>
                       <font color="#0066CC">
                         <strong>( RECUERDE SU SCORE )</strong>
@@ -335,6 +378,7 @@ alert(prop);
                   </TR>
                   <TR>
                     <TD align=middle colSpan=7>
+                      <br>
                       <INPUT onclick=Calc(this.form) type=submit value=Calcular name=calc></TD>
                   </TR>
                 </FORM>
