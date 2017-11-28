@@ -4,14 +4,15 @@
 $(document).ready(function() 
 {
     var base_url = $.environmentVar(
-        'http://localhost:8520/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
-        'http://localhost:8522/',
-        'https://pay.loadingplay.com/',
+        'https://pay.loadingplay.com',
+        'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
-    var app_public = $.environmentVar(14,43,14);
+    var app_public = $.environmentVar(64,64,64);
+    var site_name = $.environmentVar('lahorqueta2', 'lahorqueta2', 'lahorqueta2');
 
     // functions 
     // productos relacionados
