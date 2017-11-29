@@ -121,7 +121,8 @@
 </script>
 
 <script type="text/javascript">
-    $(".subcateg").live("touchstart", function() {
+    $(".subcateg").live("touchstart", function(ev) {
+      ev.stopPropagation();
       alert("adlkjfhaldkjfha");
     });
 
