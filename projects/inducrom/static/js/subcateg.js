@@ -117,7 +117,7 @@ $(document).ready(function()
 
     });
 
-    $(document).on("click", ".mobile", function(ev){
+    $(document).on("touchstart", ".subcateg", function(ev){
         alert("kdjfhaksdjf");
         ev.stopPropagation();
 
