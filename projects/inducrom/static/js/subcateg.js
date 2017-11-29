@@ -124,7 +124,7 @@ $(document).ready(function()
 
     });
 
-    $(document).on("touchstart", ".subcateg", function(ev){
+    $(".subcateg").live("touchstart", function(ev) {
         alert("kdjfhaksdjf");
         ev.stopPropagation();
 
@@ -239,6 +239,6 @@ $(document).ready(function()
         var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
 
         localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
-
+        return false;
     });
   });
