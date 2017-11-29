@@ -25,6 +25,19 @@ blockquote {
 
 }
 
+.mobile-ho2.fullscreen.background.parallax {
+    background-attachment:fixed; 
+    height: 300px; 
+    background-size:cover; 
+    margin-top: -153px;
+    filter: grayscale(0%) brightness(65%);
+    -webkit-filter: grayscale(0%) brightness(65%); 
+    -moz-filter: grayscale(0%) brightness(65%);
+    -ms-filter: grayscale(0%) brightness(65%); 
+    -o-filter: grayscale(0%) brightness(65%); 
+    background-position:center;
+}
+
 .titulo-suc{
     margin-top: 84px;
     font-size: 25px;
@@ -1531,7 +1544,7 @@ div.image-upload{
 
 @media (max-width: 796px){
     .titulo-2{
-    bottom: 179px;
+        bottom: 120px;
     }
 }
 
@@ -1638,6 +1651,10 @@ div.image-upload{
     letter-spacing: 0px;
     bottom: 224px;
     }
+    .text-center.titulo-2.editabletext {
+        top: -84px;
+        font-size: 33px;
+    }
     
     .titulo{
     bottom: 170px;
@@ -1698,8 +1715,10 @@ div.image-upload{
     }
 
     .franja-color{
-    bottom: -508px;
-    background:#ccc;
+        top: 100px;
+        height: 60px;
+        bottom: -508px;
+        background:#ccc;
     }
 
     
@@ -1872,6 +1891,11 @@ div.image-upload{
     margin-top: -60px!important;
     background-attachment: inherit !important;
 
+   }
+
+   .mobile-ho2.fullscreen.background.parallax {
+        height: 100px !important;
+        margin-top: -60px;
    }
    
    .cero{
