@@ -123,4 +123,30 @@ $(document).ready(function()
             // alert($(this).attr("tag"));
     });
 
+    $(".subcateg").live("touchstart", function(ev){
+        ev.preventDefault();
+        // $(".subcateg").css("border-bottom", "");
+        // $(this).css("border-bottom", "dashed 1px rgba(0, 0, 0, 0.33)");
+
+        // if (tag === $(this).attr('tag')){
+        //     config.tag=tag;
+        //     config.operator = "or";
+        // }else{
+        //     var multiple_tag = tag+", "+$(this).attr('tag');
+        //     config.tag=multiple_tag;
+        //     config.operator = "and";
+        // }
+        config.tag=$(this).attr('tag');
+        $(".products").removeClass("hidden");
+        $(".banners").addClass("hidden");
+        // console.log(config);
+        
+        // facade.page = 1; // o 1 no estoy seguro
+        alert("aaaaaaaa");
+        $(".products").html("");
+        $(document).ecommerce('destroy');
+        $(document).ecommerce(config);
+
+            // alert($(this).attr("tag"));
+    });
 });
