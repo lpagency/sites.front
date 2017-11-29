@@ -19,7 +19,92 @@
 
 
 {% block javascript %}
-<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() 
+{
+    var params = getIncludeParameters();
+    var tag = '';
+
+    try
+    {
+        tag = Utils.getUrlParameter('tag');
+        tag = tag.replaceAll("%20", " ");
+    }
+    catch(ex)
+    {
+        // nothing here... 
+    }
+
+    $("#"+tag).addClass("active");
+    if (tag === undefined || tag === 'todos'){
+        setTimeout(function()
+        {
+            $("#todos").click();
+            $("#todos").addClass("active");
+        },2000);
+    }
+
+    var base_url = $.environmentVar(
+    'https://apibodegas.loadingplay.com/',
+    'https://apibodegas.loadingplay.com/',
+    'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+    'https://pay.loadingplay.com',
+    'https://pay.loadingplay.com',
+    'https://pay.loadingplay.com');
+     var app_public = $.environmentVar(47,47,47);
+
+    var config = {
+        'app_public': app_public,
+        'base_url': base_url,
+        'products_per_page' : 9, 
+        'tag': tag,
+        'ignore_stock': false,
+        'infinite_scroll': true,
+        'maxProducts': 200,
+        'checkout_url': checkout_url,
+        'column': 'position',
+        'order': 'asc',
+        'operator' :'or',
+        'onLoad': function(products) 
+        {
+            console.log(products);
+            // if (products.length === 0)
+            // {
+            //     $(".products").html("no hay productos con estos filtros");
+            // }
+        }
+    };
+
+    $(document).ecommerce(config);
+
+    $(document).on("click", ".subcateg", function(ev){
+        ev.preventDefault();
+        // $(".subcateg").css("border-bottom", "");
+        // $(this).css("border-bottom", "dashed 1px rgba(0, 0, 0, 0.33)");
+
+        // if (tag === $(this).attr('tag')){
+        //     config.tag=tag;
+        //     config.operator = "or";
+        // }else{
+        //     var multiple_tag = tag+", "+$(this).attr('tag');
+        //     config.tag=multiple_tag;
+        //     config.operator = "and";
+        // }
+        config.tag=$(this).attr('tag');
+        $(".products").removeClass("hidden");
+        $(".banners").addClass("hidden");
+        // console.log(config);
+        
+        // facade.page = 1; // o 1 no estoy seguro
+        $(".products").html("");
+        $(document).ecommerce('destroy');
+        $(document).ecommerce(config);
+
+            // alert($(this).attr("tag"));
+    });
+});
+</script>
 <script type="text/javascript" src="{{ site_base }}/static/js/subcateg.js"></script>
 
 <script type="text/javascript">
@@ -246,7 +331,7 @@
         $(".products").html("");
         $(document).ecommerce('destroy');
         $(document).ecommerce(config);
-        
+
         return false;
     });
 </script>
