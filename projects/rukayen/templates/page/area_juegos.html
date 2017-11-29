@@ -24,8 +24,8 @@
 
 
 {% include '../home/header_inside.html' %}
-<div class="container">
-    <div class="container-fluid">
+<!--  imagen principal--> 
+    <div style="position:relative; top:80px;">
             <!-- editar imagen -->
             {% if is_admin %}
                 <div class="image-upload">
@@ -35,35 +35,288 @@
                     <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos" name="image" id="img_area_juegos" >
                 </div>
             {% end %}
-            <a id="{{ site.name + '_area_juegos' }}" href="{{ read_link(site.name + '_area_juegos') }}">
-                <img id="{{ site.name }}_area_juegos" src="{{ read_image(site.name + '_area_juegos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos', 200) }}'" class="img-responsive fondo-articulo-juego" alt="item" style="height: 100%;">
-            </a>
+            
+                <img id="{{ site.name }}_area_juegos" src="{{ read_image(site.name + '_area_juegos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos', 500) }}'" class="img-responsive fondo-articulo-juegos" alt="item" style="height: 100%;">
+            
             <!-- fin editar imagen --> 
+            <h1 align="center" class="{{editabletext}} txt-area-juegos-title"  text-id="{{ site.name + '_txt-area_juegos_title' }}">{{ read_text(site.name + '_txt_area_juegos_title') }}</h1>
+    </div>
+<!--  imagen peuqeñas + texto --> 
+    <div class="container info-area-juegos">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 align="center" class="{{editabletext}} txt-area-juegos-info"  text-id="{{ site.name + '_txt-area_juegos_info' }}">{{ read_text(site.name + '_txt_area_juegos_info') }}</h2>
+                <h2 align="center" class="{{editabletext}} txt-area-juegos-info"  text-id="{{ site.name + '_txt-area_juegos_info' }}">{{ read_text(site.name + '_txt_area_juegos_info') }}</h2>
+            </div>
         </div>
-    <div class="row">
-        <!-- AQUI VA LA IMAGEN -->
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <!-- editar imagen -->
-            {% if is_admin %}
-                <div class="image-upload">
-                    <label for="img_area_juegos">
-                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
-                    </label>
-                    <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos" name="image" id="img_area_juegos" >
-                </div>
-            {% end %}
-            <a id="{{ site.name + '_area_juegos' }}" href="{{ read_link(site.name + '_area_juegos') }}">
-                <img id="{{ site.name }}_area_juegos" src="{{ read_image(site.name + '_area_juegos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos', 200) }}'" class="img-responsive img-area-juego" alt="item" style="height: 100%;">
-            </a>
-            <!-- fin editar imagen --> 
+        <!--  info general imagen peuqeñas + texto 1 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_1">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_1" name="image" id="img_area_juegos_mini_1" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_1' }}" href="{{ read_link(site.name + '_area_juegos_mini_1') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_1" src="{{ read_image(site.name + '_area_juegos_mini_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_1', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_1' }}">{{ read_text(site.name + '_txt_area_juegos_mini_1') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_1' }}">{{ read_text(site.name + '_txt-area_juegos_mini_1') }}</p>
+            </div>
         </div>
-        <!-- AQUI VA EL TEXTO -->
-        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
-            <p class="{{editabletext}} txt-area-juego"  text-id="{{ site.name + '_quienes_somoss' }}">{{ read_text(site.name + '_quienes_somoss') }}</p>
+        <!--  info general imagen peuqeñas + texto 2 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_2' }}">{{ read_text(site.name + '_txt_area_juegos_mini_2') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_2' }}">{{ read_text(site.name + '_txt-area_juegos_mini_2') }}</p>
+            </div>
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_2">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_2" name="image" id="img_area_juegos_mini_2" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_2' }}" href="{{ read_link(site.name + '_area_juegos_mini_2') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_2" src="{{ read_image(site.name + '_area_juegos_mini_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_2', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
         </div>
+        <!--  info general imagen peuqeñas + texto 3 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_3">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_3" name="image" id="img_area_juegos_mini_3" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_3' }}" href="{{ read_link(site.name + '_area_juegos_mini_3') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_3" src="{{ read_image(site.name + '_area_juegos_mini_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_3', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_3' }}">{{ read_text(site.name + '_txt_area_juegos_mini_3') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_3' }}">{{ read_text(site.name + '_txt-area_juegos_mini_3') }}</p>
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 4 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_4' }}">{{ read_text(site.name + '_txt_area_juegos_mini_4') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_4' }}">{{ read_text(site.name + '_txt-area_juegos_mini_4') }}</p>
+            </div>
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_4">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_1" name="image" id="img_area_juegos_mini_4" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_4' }}" href="{{ read_link(site.name + '_area_juegos_mini_4') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_4" src="{{ read_image(site.name + '_area_juegos_mini_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_4', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 5 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_5">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_5" name="image" id="img_area_juegos_mini_5" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_5' }}" href="{{ read_link(site.name + '_area_juegos_mini_5') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_5" src="{{ read_image(site.name + '_area_juegos_mini_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_5', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> s
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_5' }}">{{ read_text(site.name + '_txt_area_juegos_mini_5') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_5' }}">{{ read_text(site.name + '_txt-area_juegos_mini_5') }}</p>
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 6 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_6' }}">{{ read_text(site.name + '_txt_area_juegos_mini_6') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_6' }}">{{ read_text(site.name + '_txt-area_juegos_mini_6') }}</p>
+            </div>
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_6">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_6" name="image" id="img_area_juegos_mini_6" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_6' }}" href="{{ read_link(site.name + '_area_juegos_mini_6') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_6" src="{{ read_image(site.name + '_area_juegos_mini_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_6', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 7 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_7">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_7" name="image" id="img_area_juegos_mini_7" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_7' }}" href="{{ read_link(site.name + '_area_juegos_mini_7') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_7" src="{{ read_image(site.name + '_area_juegos_mini_7', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_7', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_7' }}">{{ read_text(site.name + '_txt_area_juegos_mini_7') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_7' }}">{{ read_text(site.name + '_txt-area_juegos_mini_7') }}</p>
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 8 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_8' }}">{{ read_text(site.name + '_txt_area_juegos_mini_8') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_8' }}">{{ read_text(site.name + '_txt-area_juegos_mini_8') }}</p>
+            </div>
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_8">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_8" name="image" id="img_area_juegos_mini_8" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_8' }}" href="{{ read_link(site.name + '_area_juegos_mini_8') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_8" src="{{ read_image(site.name + '_area_juegos_mini_8', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_8', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 9 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_9">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_9" name="image" id="img_area_juegos_mini_9" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_9' }}" href="{{ read_link(site.name + '_area_juegos_mini_9') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_9" src="{{ read_image(site.name + '_area_juegos_mini_9', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_9', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12  txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_9' }}">{{ read_text(site.name + '_txt_area_juegos_mini_9') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_9' }}">{{ read_text(site.name + '_txt-area_juegos_mini_9') }}</p>
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 10 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_10' }}">{{ read_text(site.name + '_txt_area_juegos_mini_10') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_10' }}">{{ read_text(site.name + '_txt-area_juegos_mini_10') }}</p>
+            </div>
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_10">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_10" name="image" id="img_area_juegos_mini_10" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_10' }}" href="{{ read_link(site.name + '_area_juegos_mini_10') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_10" src="{{ read_image(site.name + '_area_juegos_mini_10', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_10', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+        </div>
+        <!--  info general imagen peuqeñas + texto 11 --> 
+        <div class="row mg-t5 orden-movil">
+            <!-- AQUI VA LA IMAGEN -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+                <!-- editar imagen -->
+                {% if is_admin %}
+                    <div class="image-upload">
+                        <label for="img_area_juegos_mini_11">
+                            <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos_mini_11" name="image" id="img_area_juegos_mini_11" >
+                    </div>
+                {% end %}
+                <a id="{{ site.name + '_area_juegos_mini_11' }}" href="{{ read_link(site.name + '_area_juegos_mini_11') }}">
+                    <img id="{{ site.name }}_area_juegos_mini_11" src="{{ read_image(site.name + '_area_juegos_mini_11', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos_mini_11', 500) }}'" class="img-responsive img-area-juegos" alt="item" style="height: 100%;">
+                </a>
+                <!-- fin editar imagen --> 
+            </div>
+            <!-- AQUI VA EL TEXTO -->
+            <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 txt-orden-movil">
+                <h3 class="{{editabletext}} txt-area-juegos-mini-1"  text-id="{{ site.name + '_txt-area_juegos_mini_11' }}">{{ read_text(site.name + '_txt_area_juegos_mini_11') }}</h3>
+                <p class="{{editabletext}} txt-area-juegos"  text-id="{{ site.name + '_txt-area_juegos_mini_11' }}">{{ read_text(site.name + '_txt-area_juegos_mini_11') }}</p>
+            </div>
+        </div>
+
+
     </div>
 </div>
 
 {% include '../home/footer.html' %}
 {% end %}
-
