@@ -1,0 +1,69 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css" />
+{% end %}
+
+{% block javascript %}
+
+
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+    {% set editabletext = 'editabletext' %}
+{% else %}
+    {% set editabletext = '' %}
+{% end %}
+
+
+{% include '../home/header_inside.html' %}
+<div class="container">
+    <div class="container-fluid">
+            <!-- editar imagen -->
+            {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_area_juegos">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos" name="image" id="img_area_juegos" >
+                </div>
+            {% end %}
+            <a id="{{ site.name + '_area_juegos' }}" href="{{ read_link(site.name + '_area_juegos') }}">
+                <img id="{{ site.name }}_area_juegos" src="{{ read_image(site.name + '_area_juegos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos', 200) }}'" class="img-responsive fondo-articulo-juego" alt="item" style="height: 100%;">
+            </a>
+            <!-- fin editar imagen --> 
+        </div>
+    <div class="row">
+        <!-- AQUI VA LA IMAGEN -->
+        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+            <!-- editar imagen -->
+            {% if is_admin %}
+                <div class="image-upload">
+                    <label for="img_area_juegos">
+                        <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
+                    </label>
+                    <input type="file" class="editableimage" image-id="{{ site.name }}_area_juegos" name="image" id="img_area_juegos" >
+                </div>
+            {% end %}
+            <a id="{{ site.name + '_area_juegos' }}" href="{{ read_link(site.name + '_area_juegos') }}">
+                <img id="{{ site.name }}_area_juegos" src="{{ read_image(site.name + '_area_juegos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_area_juegos', 200) }}'" class="img-responsive img-area-juego" alt="item" style="height: 100%;">
+            </a>
+            <!-- fin editar imagen --> 
+        </div>
+        <!-- AQUI VA EL TEXTO -->
+        <div class="col-md-6 col-lg-6 col-xs-12 col-sm-12">
+            <p class="{{editabletext}} txt-area-juego"  text-id="{{ site.name + '_quienes_somoss' }}">{{ read_text(site.name + '_quienes_somoss') }}</p>
+        </div>
+    </div>
+</div>
+
+{% include '../home/footer.html' %}
+{% end %}
+
