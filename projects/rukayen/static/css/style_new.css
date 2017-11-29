@@ -1097,29 +1097,54 @@ h1.product_title{
 }
 
 /******************** Area juegos ***************************/
-.img-area-juego{
-    width: 450px;
-    height: 450px;
-    object-fit: scale-down;
-}
-.txt-area-juego{
-    font-size: 15px;
-    color: black;
-}
-.fondo-articulo-juego{
-    object-fit: cover;
-    display: table;
+.img-area-juegos{
     width: 100%;
-    height: 300px;
-    position: static;
-    top: 100px;
+    height: 350px !important;
+    object-fit: cover;
+}
+.txt-area-juegos{
+    font-size: 16px;
+    color: black;
+    position: relative;
+}
+.fondo-articulo-juegos{
+    object-fit: cover;
+    display: inline-block;
+    width: 100%;
+    height: 300px !important;
+    position: relative;
     padding: 0px !important;
     z-index: -1;
-       filter: grayscale(0%) brightness(50%);
--webkit-filter: grayscale(0%) brightness(50%);
--moz-filter: grayscale(0%) brightness(50%);
--ms-filter: grayscale(0%) brightness(50%);
--o-filter: grayscale(0%) brightness(50%);
+    margin-bottom: 70px;
+    filter: grayscale(0%) brightness(50%);
+    -webkit-filter: grayscale(0%) brightness(50%);
+    -moz-filter: grayscale(0%) brightness(50%);
+    -ms-filter: grayscale(0%) brightness(50%);
+    -o-filter: grayscale(0%) brightness(50%);
+}
+.txt-area-juegos-title{
+    position: absolute;
+    color: white;
+    bottom: 65px;
+    width: 100%;
+}
+.info-area-juegos{
+    margin-top: 7%;
+}
+.txt-area-juegos-info{
+    width: 100%;
+}
+.mg-t5{
+    margin-top:5%;
+}
+.txt-area-juegos-mini-1{    
+    color: rgb(0, 35, 96);
+    width: 100% !important;
+    margin: 0 !important;
+    position: relative;
+    z-index: 1111;
+    text-align: left;
+    left: 2px;
 }
 /******************** Articulos ***************************/
 .blog-content{
@@ -1500,6 +1525,21 @@ div.image-upload{
 
     p.nosotros{
         left: 57px !important;
+    }
+    .orden-movil{
+    /* border: solid red 1px; */
+    position: relative;
+    height: 650px;
+    }
+    .img-orden-movil{
+
+    }
+    .txt-orden-movil{
+    position: absolute;
+    top: 355px;
+    /* border: solid green 1px; */
+    height: 100%;
+
     }
 
 }
@@ -1913,7 +1953,6 @@ div.image-upload{
    .search_wrapper button{
     display: none;
    }  
-
 }
 
 
