@@ -1,5 +1,12 @@
 $(document).ready(function()
     {
+      $(document).ready(function()
+  {
+    if($(window).width() < 800)
+    {
+      $(".desk").remove();
+    }
+  });
     $(document).on("click", ".subcateg", function(ev){
         ev.stopPropagation();
 
