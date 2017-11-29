@@ -498,5 +498,20 @@ $(document).ready(function(){
   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyClR2Pea0RdGqfES7gqYBY0vdJljHKZdCM&callback=initMap">
  </script>
 
+<script type="text/javascript">
+  function setCookie(cname,cvalue) {
+    document.cookie = cname + "=" + cvalue + ";path=/";
+  }
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    var hyper = window.location.href;
+    setCookie("url", hyper);
+
+  });
+</script>
+
     </body>
 </html>

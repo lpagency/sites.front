@@ -30,8 +30,7 @@
 <script type="text/javascript">
   $(document).ready(function()
   {
-    var hyper = Utils.getUrlParameter('tag');
-    hyper = "?tag="+hyper;
+    var hyper = window.location.href;
     setCookie("url", hyper);
 
   });

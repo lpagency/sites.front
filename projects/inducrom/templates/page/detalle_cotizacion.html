@@ -39,7 +39,7 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var cookieCotizar = getCookie("url");
-        window.urlVolver = "{{ site_base }}/listado_productos"+cookieCotizar;
+        window.urlVolver = cookieCotizar;
 
         $(".volver").attr("src", urlVolver);
         $(".demo").attr("href", urlVolver);
