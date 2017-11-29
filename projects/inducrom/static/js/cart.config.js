@@ -142,8 +142,11 @@ $(document).ready(function()
         // console.log(config);
         
         // facade.page = 1; // o 1 no estoy seguro
-        alert("aaaaaaaa");
-        $(".products").html("");
+        var valorSubCateg = $(this).attr("sub");
+        var valorSubCateg2 = $(this).attr("sub2");
+        $(".tituloCategoria").html(valorSubCateg2);
+
+        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
         $(document).ecommerce('destroy');
         $(document).ecommerce(config);
 
