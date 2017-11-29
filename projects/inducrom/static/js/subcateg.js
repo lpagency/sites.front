@@ -10,236 +10,235 @@ $(document).ready(function()
     $(document).on("click", ".subcateg", function(ev){
         ev.stopPropagation();
 
-        alert("sdkfhadlfhads");
-    //     var tags = $(this).attr("tag");
+        var tags = $(this).attr("tag");
 
-    //   if( tags == "control_de_acceso"){
-    //     $(".tituloCategoria").html("CONTROL DE ACCESO");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".control_de_acceso").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_ecologicos"){
-    //     $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".basureros").removeClass("hidden");
-    //   }
-    //   if( tags == "mobiliario_urbano"){
-    //     $(".tituloCategoria").html("MOBILIARIO URBANO");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".mob_urbano").removeClass("hidden");
-    //   }
-    //   if( tags == "espacios_publicos"){
-    //     $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".espa_publicos").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_especiales"){
-    //     $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".prod_especiales").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_nuevos"){
-    //     $(".tituloCategoria").html("MOBILIARIO NUEVOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".prod_nuevos").removeClass("hidden");
-    //   }
+      if( tags == "control_de_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".control_de_acceso").removeClass("hidden");
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".basureros").removeClass("hidden");
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".mob_urbano").removeClass("hidden");
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".espa_publicos").removeClass("hidden");
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_especiales").removeClass("hidden");
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_nuevos").removeClass("hidden");
+      }
 
-    //     $(".subcateg").removeClass('active');
-    //     $(this).addClass('active');
+        $(".subcateg").removeClass('active');
+        $(this).addClass('active');
 
-    //     //MUESTRA LA FLECHA
+        //MUESTRA LA FLECHA
 
-    //     $(".fa-caret-right").addClass('hidden');
-    //     $(this).parent().find("i").removeClass('hidden');
+        $(".fa-caret-right").addClass('hidden');
+        $(this).parent().find("i").removeClass('hidden');
 
-    //     if($(this).hasClass("index")){
-    //       $(".fa-caret-right").addClass('hidden');
-    //       $(this).parent().find("i").removeClass('hidden');
-    //     }
+        if($(this).hasClass("index")){
+          $(".fa-caret-right").addClass('hidden');
+          $(this).parent().find("i").removeClass('hidden');
+        }
 
-    //     //MUESTRA LA CATEGORIA COMO TITULO
+        //MUESTRA LA CATEGORIA COMO TITULO
 
-    //     var valorSubCateg = $(this).attr("sub");
-    //     var valorSubCateg2 = $(this).attr("sub2");
-    //     $(".tituloCategoria").html(valorSubCateg2);
+        var valorSubCateg = $(this).attr("sub");
+        var valorSubCateg2 = $(this).attr("sub2");
+        $(".tituloCategoria").html(valorSubCateg2);
 
-    //     //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
+        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
 
-    //     var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
+        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
 
-    //     localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
+        localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
 
-    // });
+    });
 
-    // $(document).on("touchstart", ".subcateg", function(ev){
-    //     alert("kdjfhaksdjf");
-    //     ev.stopPropagation();
+    $(document).on("touchstart", ".subcateg", function(ev){
+        alert("kdjfhaksdjf");
+        ev.stopPropagation();
 
-    //     var tags = $(this).attr("tag");
+        var tags = $(this).attr("tag");
 
-    //   if( tags == "control_de_acceso"){
-    //     $(".tituloCategoria").html("CONTROL DE ACCESO");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".control_de_acceso").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_ecologicos"){
-    //     $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".basureros").removeClass("hidden");
-    //   }
-    //   if( tags == "mobiliario_urbano"){
-    //     $(".tituloCategoria").html("MOBILIARIO URBANO");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".mob_urbano").removeClass("hidden");
-    //   }
-    //   if( tags == "espacios_publicos"){
-    //     $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".espa_publicos").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_especiales"){
-    //     $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".prod_especiales").removeClass("hidden");
-    //   }
-    //   if( tags == "productos_nuevos"){
-    //     $(".tituloCategoria").html("MOBILIARIO NUEVOS");
-    //     log = $(".tituloCategoria").html().toLowerCase();
-    //     if(!$(".products").hasClass("hidden"))
-    //     {
-    //       $(".products").addClass("hidden");
-    //     }
-    //     if($(".banners").hasClass("hidden"))
-    //     {
-    //       $(".banners").removeClass("hidden");
-    //     }
-    //     $(".ban").addClass("hidden");
-    //     $(".prod_nuevos").removeClass("hidden");
-    //   }
+      if( tags == "control_de_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".control_de_acceso").removeClass("hidden");
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".basureros").removeClass("hidden");
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".mob_urbano").removeClass("hidden");
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".espa_publicos").removeClass("hidden");
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_especiales").removeClass("hidden");
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_nuevos").removeClass("hidden");
+      }
 
-    //     $(".subcateg").removeClass('active');
-    //     $(this).addClass('active');
+        $(".subcateg").removeClass('active');
+        $(this).addClass('active');
 
-    //     //MUESTRA LA FLECHA
+        //MUESTRA LA FLECHA
 
-    //     $(".fa-caret-right").addClass('hidden');
-    //     $(this).parent().find("i").removeClass('hidden');
+        $(".fa-caret-right").addClass('hidden');
+        $(this).parent().find("i").removeClass('hidden');
 
-    //     if($(this).hasClass("index")){
-    //       $(".fa-caret-right").addClass('hidden');
-    //       $(this).parent().find("i").removeClass('hidden');
-    //     }
+        if($(this).hasClass("index")){
+          $(".fa-caret-right").addClass('hidden');
+          $(this).parent().find("i").removeClass('hidden');
+        }
 
-    //     //MUESTRA LA CATEGORIA COMO TITULO
+        //MUESTRA LA CATEGORIA COMO TITULO
 
-    //     var valorSubCateg = $(this).attr("sub");
-    //     var valorSubCateg2 = $(this).attr("sub2");
-    //     $(".tituloCategoria").html(valorSubCateg2);
+        var valorSubCateg = $(this).attr("sub");
+        var valorSubCateg2 = $(this).attr("sub2");
+        $(".tituloCategoria").html(valorSubCateg2);
 
-    //     //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
+        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
 
-    //     var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
+        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
 
-    //     localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
+        localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
 
     });
   });
