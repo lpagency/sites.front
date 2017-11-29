@@ -39,8 +39,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
         var cookieCotizar = getCookie("url");
-        var urlVolver = "{{ site_base }}/listado_productos?tag="+cookieCotizar;
+        window.urlVolver = "{{ site_base }}/listado_productos"+cookieCotizar;
 
+        $(".volver").attr("src", urlVolver);
         $(".demo").attr("href", urlVolver);
     });
 </script>
@@ -275,7 +276,7 @@ function getCookie1(cname) {
         $(document).on("click", ".demo", function(ev)
         {
             ev.preventDefault();
-            window.location.href = "{{ site_base }}/listado_productos";
+            window.location.href = window.urlVolver;
         });
     });
 </script>
