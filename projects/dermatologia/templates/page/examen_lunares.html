@@ -59,7 +59,15 @@ function t(rr) {
 
 }
 
- 
+function env(frm) {
+  if (t(frm.Dropdown)<0 || t(frm.Dropdown2)<0 || t(frm.Dropdown3)<0 || t(frm.Radio6)<0 || t(frm.Dropdown4)<0 || t(frm.Dropdown6)<0) {
+
+  alert("Por favor responda todas las preguntas.");
+
+  return false;
+
+ }
+}
 
 function Calc(frm) {
 
@@ -145,7 +153,7 @@ alert(prop);
 {% end %}
 
 <section>
-     <div class="mobile-ho2 fullscreen background parallax" style="background:url('{{ read_image(site.name + '_banner_contact',500) }}'); " data-img-width="1600" data-img-height="1064" data-diff="100">
+     <div class="mobile-ho2 fullscreen background parallax hidden-xs" style="background:url('{{ read_image(site.name + '_banner_contact',500) }}'); " data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
                <div class="image-upload part1 lapiz visible-movil">
                    <label for="img_banner_contact">
@@ -187,9 +195,9 @@ alert(prop);
                       <TD width=1 rowSpan=10>&nbsp;</TD>
                       <TD colSpan=4 width="10%">
                       <INPUT type=radio CHECKED value="basico" name="Radio" id=1>Basico
-                      <INPUT type=radio value="medio" name="Radio" id=2>Medio
-                      <INPUT type=radio value="universidad" name="Radio" id=3>Universidad
-                      <INPUT type=radio value="post grado" name="Radio" id=4>Post Grado
+                      <INPUT type=radio value="medio" name="Radio" id=2> Medio
+                      <INPUT type=radio value="universidad" name="Radio" id=3> Universidad
+                      <INPUT type=radio value="post grado" name="Radio" id=4> Post Grado
                     </TD>
                   </TR>
                   <TR>
@@ -209,14 +217,14 @@ alert(prop);
                   <TR>
                     <TD width=226 height="50" width="10%">Alguna vez a tenido cancer de piel?</TD>
                     <TD width="10%">
-                      <INPUT type=radio id=3 name="Radio1" value="Si">Si
+                      <INPUT type=radio id=3 name="Radio1" value="Si"> Si
                       <BR>
                       <INPUT onclick="frm.Radio2[1].checked = 'true'" type=radio CHECKED id=0 name="Radio1" value="No"> No 
                     </TD>
                     <TD width=13>&nbsp;</TD>
                     <TD width=156>Si es si, fue melanoma?</TD>
                     <TD width=109>
-                      <INPUT onclick="frm.Radio1[0].checked = 'true'" type=radio id=5 value="Si" name=Radio2>Si
+                      <INPUT onclick="frm.Radio1[0].checked = 'true'" type=radio id=5 value="Si" name=Radio2> Si
                       <BR>
                       <INPUT type=radio CHECKED id=0 value="No" name=Radio2> No 
                     </TD>
@@ -239,7 +247,7 @@ alert(prop);
                   <TR>
                     <TD height="50" width="80%">&iquest;Usted tiene un padre, un hermano o un hijo que ha tenido un melanoma (lunar canceroso)?</TD>
                     <TD width="10%">
-                      <INPUT type=radio id=4 value="Si" name=Radio5>Si
+                      <INPUT type=radio id=4 value="Si" name=Radio5> Si
                       <BR>
                       <INPUT type=radio CHECKED id=0 value="No" name=Radio5> No </TD>
                     <TD>&nbsp;</TD>
@@ -282,7 +290,7 @@ alert(prop);
                   <TR>
                     <TD height="50" width="80%">En los ultimos 5 a&ntilde;os usted ha presentado quemaduras solares ?</TD>
                     <TD colSpan=4 width="10%">
-                      <INPUT type=radio id=2 value="Si" name=Radio6>Si
+                      <INPUT type=radio id=2 value="Si" name=Radio6> Si
                       <BR>
                       <INPUT type=radio CHECKED id=0 value="No" name=Radio6> No 
                     </TD>
@@ -357,16 +365,18 @@ alert(prop);
                   <TR>
                     <TD height="50" width="80%">Cada cuánto quieres que te contactemos?</TD>
                     <TD colSpan=4 width="10%">
-                      <input type="radio" id="Radio7_1" name="Radio7" value="3 meses" checked> 3 Meses
+                      <input type="radio" id="Radio7_1" name="Radio7" value="No quiero que me contacten" checked> No quiero que me contacten
+                      <br>
+                      <input type="radio" id="Radio7_2" name="Radio7" value="3 meses"> 3 Meses
                       <BR>
-                      <input type="radio" id="Radio7_2" name="Radio7" value="6 meses"> 6 Meses
+                      <input type="radio" id="Radio7_3" name="Radio7" value="6 meses"> 6 Meses
                       <BR>
-                      <input type="radio" id="Radio7_3" name="Radio7" value="1 año"> 1 Año
+                      <input type="radio" id="Radio7_4" name="Radio7" value="1 año"> 1 Año
                     </TD>
                   </TR>
                   <TR>
                     <br>
-                    <TD align=middle colSpan=7>Total score: <INPUT size=5 value=0 name=SingleLine>
+                    <TD align=middle colSpan=7>Total score: <INPUT size=5 value=0 name=SingleLine disabled>
                       <font color="#0066CC">
                         <strong>( RECUERDE SU SCORE )</strong>
                       </font>
@@ -375,7 +385,8 @@ alert(prop);
                   <TR>
                     <TD align=middle colSpan=7>
                       <br>
-                      <INPUT onclick=Calc(this.form) type=submit value=Calcular name=calc></TD>
+                      <INPUT onclick=Calc(this.form) type=submit value=Calcular name=calc>
+                      <INPUT onclick=env(this.form) type=submit value=Enviar name=submit></TD>
                   </TR>
                 </FORM>
               </TABLE>
@@ -398,10 +409,10 @@ alert(prop);
     </div>
     <br>
     <div class="subtitulo-titulo-form">
-      <INPUT type=radio CHECKED value="basico" name="Radio" id=1>Basico
-      <INPUT type=radio value="medio" name="Radio" id=2>Medio
-      <INPUT type=radio value="universidad" name="Radio" id=3>Universidad
-      <INPUT type=radio value="post grado" name="Radio" id=4>Post Grado
+      <INPUT type=radio CHECKED value="basico" name="Radio" id=1> Basico
+      <INPUT type=radio value="medio" name="Radio" id=2> Medio
+      <INPUT type=radio value="universidad" name="Radio" id=3> Universidad
+      <INPUT type=radio value="post grado" name="Radio" id=4> Post Grado
     </div>
     <br>
     <div class="subtitulo-titulo-form">
@@ -602,11 +613,13 @@ alert(prop);
     </div>
     <br>
     <div class="subtitulo-titulo-form">
-      <input type="radio" id="Radio7_1" name="Radio7" value="3 meses" checked> 3 Meses
+      <input type="radio" id="Radio7_1" name="Radio7" value="No quiero que me contacten" checked> No quiero que me contacten
+      <br>
+      <input type="radio" id="Radio7_2" name="Radio7" value="3 meses"> 3 Meses
       <BR>
-      <input type="radio" id="Radio7_2" name="Radio7" value="6 meses"> 6 Meses
+      <input type="radio" id="Radio7_3" name="Radio7" value="6 meses"> 6 Meses
       <BR>
-      <input type="radio" id="Radio7_3" name="Radio7" value="1 año"> 1 Año
+      <input type="radio" id="Radio7_4" name="Radio7" value="1 año"> 1 Año
     </div>
     <br>
     <div class="subtitulo-titulo-form">
@@ -618,6 +631,7 @@ alert(prop);
     <br>
     <div class="subtitulo-titulo-form">
       <INPUT onclick=Calc(this.form) type=submit value=Calcular name=calc class="box">
+      <INPUT onclick=env(this.form) type=submit value=Enviar name=submit class="box">
     </div>
   </form>
 </div>
