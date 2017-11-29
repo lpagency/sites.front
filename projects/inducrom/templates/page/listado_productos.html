@@ -236,6 +236,17 @@
         var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
 
         localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
+
+        config.tag=$(this).attr('tag');
+        $(".products").removeClass("hidden");
+        $(".banners").addClass("hidden");
+        // console.log(config);
+        
+        // facade.page = 1; // o 1 no estoy seguro
+        $(".products").html("");
+        $(document).ecommerce('destroy');
+        $(document).ecommerce(config);
+        
         return false;
     });
 </script>
