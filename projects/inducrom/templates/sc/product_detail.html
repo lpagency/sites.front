@@ -254,7 +254,14 @@ $(document).ready(function() {
 
                       <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar hidden" id="open-cart" data-toggle="modal" data-target="#myModal" product-sku="{{! sku }}" lp-cart-add >COMPRAR</button>
 
-                      <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar" id="open-cart" lp-cart-add product-sku="{{! sku }}">COTIZAR</button>
+                      <button type="button" class="btn add-to-cart btn-default cotizar"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                product-id="{{! id }}"
+                                product-img="{{! images[1]['thumb_500'] }}"
+                                lp-cart-add>COTIZAR</button>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12"> 
                 <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>
