@@ -92,6 +92,7 @@ function getCookie1(cname) {
   $(document).ready(function(){
 
     var cookie = getCookie("shopping-cart");
+    console.log(cookie);
 
     $(document).on("click", ".add-one", function(){
         $.get("https://apibodegas.loadingplay.com/cart/load/"+cookie, function(p){ 
