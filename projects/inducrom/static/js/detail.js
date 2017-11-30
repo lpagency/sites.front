@@ -42,7 +42,7 @@ function getCookie1(cname) {
         var prod = "";
 
     $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){
-        console.log(p);
+        console.log(p.items);
         for (x in p.items) {
             prod = prod + "sku: " + p.items[x].sku + ", nombre: "+ p.items[x].name +", Cantidad: " + p.items[x].quantity +"\n";
         }
