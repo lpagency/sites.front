@@ -42,9 +42,9 @@ function getCookie1(cname) {
         var prod = "";
 
     $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){
-        console.log(p.products);
-        for (x in p.products) {
-            prod = prod + "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n";
+        console.log(p);
+        for (x in p.items) {
+            prod = prod + "sku: " + p.items[x].sku + ", nombre: "+ p.items[x].name +", Cantidad: " + p.items[x].quantity +"\n";
         }
 
         $(".cotizar").html(prod);
@@ -57,8 +57,8 @@ function getCookie1(cname) {
     $(document).on("click", ".add-one", function(){
         $.get("https://apibodegas.loadingplay.com/v1/cart"+cookie, function(p){ 
 
-            for (x in p.products) {
-                var prod = "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n" + prod;
+            for (x in p.items) {
+                var prod = "sku: " + p.items[x].sku + ", nombre: "+ p.items[x].name +", Cantidad: " + p.items[x].quantity +"\n" + prod;
             }
 
             $(".cotizar").html(prod);
@@ -74,8 +74,8 @@ function getCookie1(cname) {
     $(document).on("click", ".remove-one", function(){
         $.get("https://apibodegas.loadingplay.com/v1/cart"+cookie, function(p){ 
 
-            for (x in p.products) {
-                var prod = "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n" + prod;
+            for (x in p.items) {
+                var prod = "sku: " + p.items[x].sku + ", nombre: "+ p.items[x].name +", Cantidad: " + p.items[x].quantity +"\n" + prod;
             }
 
             $(".cotizar").html(prod);
