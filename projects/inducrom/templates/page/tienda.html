@@ -20,7 +20,15 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.tienda.js"></script>
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    var hyper = window.location.href;
+    setCookie("url", hyper);
+    console.log(hyper);
 
+  });
+</script>
 
 <script type="text/javascript">
   function setCookie(cname,cvalue) {
