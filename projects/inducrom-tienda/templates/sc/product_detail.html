@@ -58,26 +58,28 @@
             onLoad: function(product)
             {
 
-              for(i in product.tags)
+              for(var i = 0; i < product.tags.length; i++)
               {
-
-                if(product.tags[i].indexOf('cat') > -1)
+                console.log(product.tags[i].name);
+                if(product.tags[i].name.indexOf('cat') > -1)
                 {
 
-                  if(product.tags[i].indexOf('cat1') > -1)
+                  console.log("aaaaaaa");
+
+                  if(product.tags[i].name.indexOf('cat1') > -1)
                   {
-                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+                    breadcrumb = product.tags[i].name.replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
 
                     miga[0] = breadcrumb;
 
                   }
 
-                  if(product.tags[i].indexOf('cat2') > -1)
+                  if(product.tags[i].name.indexOf('cat2') > -1)
                   {
 
                     related(product.tags[i]);
 
-                    breadcrumb = product.tags[i].replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
+                    breadcrumb = product.tags[i].name.replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
 
                     miga[1] = breadcrumb;
                   }
@@ -86,15 +88,24 @@
 
               $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]);
 
-              for(x in product.tags){
-                if(product.tags[x] == "tienda"){
-                  $(".comprar").removeClass("hidden");
-                  $(".precio").removeClass("hidden");
+              // for(x in product.tags){
+              //   if(product.tags[x] == "tienda"){
+              //     $(".comprar").removeClass("hidden");
+              //     $(".precio").removeClass("hidden");
+              //   }
+              //   if(product.tags[x] == "cotizar"){
+              //     $(".precio").addClass("hidden");
+              //   }
+              // }
+
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
                 }
-                if(product.tags[x] == "cotizar"){
-                  $(".precio").addClass("hidden");
-                }
-              }
+
+            }
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
@@ -251,8 +262,14 @@ $(document).ready(function() {
                 </div>
                 <div class="col-md-4 col-sm-4 col-xs-12">
                       <div class="precio ellipsis multiline hidden"> {{!main_price|money}} </div>
-
-                      <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default comprar hidden" id="open-cart" data-toggle="modal" data-target="#myModal">COMPRAR</button>
+                      <button type="button" data-toggle="modal" data-target="#myModal" id="open-cart"  class="btn add-to-cart btn-default comprar"
+                                product-upp="{{! upp }}"
+                                product-name="{{! name }}"
+                                product-price="{{! main_price }}"
+                                product-sku="{{! sku }}"
+                                product-id="{{! id }}"
+                                product-img="{{! images[1]['thumb_500'] }}"
+                                lp-cart-add>COMPRAR</button>
 
                       <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar" id="open-cart">COTIZAR</button>
                 </div>
