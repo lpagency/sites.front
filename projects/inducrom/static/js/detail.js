@@ -36,15 +36,15 @@ function getCookie1(cname) {
     if (parts.length == 2) return parts.pop().split(";").shift();
   }
 
-  var cookie = getCookie("shopping-cart");
-  var prod = "";
-
   $(document).ready(function(){
 
-    $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){ 
-        console.log("aaaaaa");
+        var cookie = getCookie("shopping-cart");
+        var prod = "";
+
+    $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){
         for (x in p.products) {
-          prod = prod + "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n";
+            prod = prod + "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n";
+            console.log(prod);
         }
 
         $(".cotizar").html(prod);
