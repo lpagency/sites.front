@@ -36,29 +36,29 @@ function getCookie1(cname) {
     if (parts.length == 2) return parts.pop().split(";").shift();
   }
 
-  var cookie = getCookie("shopping-cart");
-  var prod = "";
-
-  $.get("https://apibodegas.loadingplay.com/cart/load/"+cookie, function(p){ 
-
-    for (x in p.products) {
-      prod = prod + "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n";
-    }
-
-    $(".cotizar").html(prod);
-
-  });
-
   $(document).ready(function(){
+
+        var cookie = getCookie("shopping-cart");
+        var prod = "";
+
+    $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){
+        console.log(p.cart.items);
+        for (x in p.cart.items) {
+            prod = prod + "sku: " + p.cart.items[x].sku + ", nombre: "+ p.cart.items[x].name +", Cantidad: " + p.cart.items[x].quantity +"\n";
+        }
+
+        $(".cotizar").html(prod);
+
+      });
 
     var cookie = getCookie("shopping-cart");
     console.log(cookie);
 
     $(document).on("click", ".add-one", function(){
-        $.get("https://apibodegas.loadingplay.com/cart/load/"+cookie, function(p){ 
+        $.get("https://apibodegas.loadingplay.com/v1/cart"+cookie, function(p){ 
 
-            for (x in p.products) {
-                var prod = "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n" + prod;
+            for (x in p.cart.items) {
+                var prod = "sku: " + p.cart.items[x].sku + ", nombre: "+ p.cart.items[x].name +", Cantidad: " + p.cart.items[x].quantity +"\n" + prod;
             }
 
             $(".cotizar").html(prod);
@@ -72,10 +72,10 @@ function getCookie1(cname) {
     var cookie = getCookie("shopping-cart");
 
     $(document).on("click", ".remove-one", function(){
-        $.get("https://apibodegas.loadingplay.com/cart/load/"+cookie, function(p){ 
+        $.get("https://apibodegas.loadingplay.com/v1/cart"+cookie, function(p){ 
 
-            for (x in p.products) {
-                var prod = "sku: " + p.products[x].sku + ", nombre: "+ p.products[x].name +", Cantidad: " + p.products[x].quantity +"\n" + prod;
+            for (x in p.cart.items) {
+                var prod = "sku: " + p.cart.items[x].sku + ", nombre: "+ p.cart.items[x].name +", Cantidad: " + p.cart.items[x].quantity +"\n" + prod;
             }
 
             $(".cotizar").html(prod);
