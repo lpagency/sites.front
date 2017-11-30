@@ -46,18 +46,18 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-left">
                 <li>
-                    <a href="">QUIENES SOMOS</a>
+                    <a href="#">QUIENES SOMOS</a>
                 </li>
                 <div class="dropdown col-md-2 col-sm-2 so">
                     <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
                      <li>
-                      <a href="#" class="btn-primary tienda">CASA</a>
+                      <a href="{{ site_base }}/listado_productos?tag=casa" class="btn-primary tienda">CASA</a>
                     </li>
                    </a>
                    <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                      <li><a href="#">BAÑO VISITA</a></li>
-                      <li><a href="#">COCINA COZY</a></li>
-               <!--        <li class="dropdown-submenu">
+                      <li><a href="{{ site_base }}/listado_productos?tag=bano">BAÑO VISITA</a></li>
+                      <li><a href="{{ site_base }}/listado_productos?tag=cocina">COCINA COZY</a></li>
+               <!--   <li class="dropdown-submenu">
                         <a tabindex="-1" href="#">COCINA COZY</a>
                         <ul class="dropdown-menu">
                           <li><a tabindex="-1" href="#">Second level</a></li>
@@ -70,13 +70,13 @@
         <div class="dropdown col-md-2 col-sm-2 so-2">
             <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
              <li>
-              <a href="#" class="btn-primary tienda">TERRAZA</a>
+              <a href="{{ site_base }}/listado_productos?tag=terraza" class="btn-primary tienda">TERRAZA</a>
             </li>
             </a>
             <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-              <li><a href="#">PLAYA</a></li>
-              <li><a href="#">CAMPO</a></li>
-              <li><a href="#">CIUDAD</a></li>
+              <li><a href="{{ site_base }}/listado_productos?tag=playa">PLAYA</a></li>
+              <li><a href="{{ site_base }}/listado_productos?tag=campo">CAMPO</a></li>
+              <li><a href="{{ site_base }}/listado_productos?tag=ciudad">CIUDAD</a></li>
 
              <!--  <li class="dropdown-submenu">
                 <a tabindex="-1" href="#">CAMPO</a>
@@ -84,16 +84,16 @@
         </ul>
     </div>
     <li class="header-ja">
-      <a href="">JARDIN</a>
+      <a href="{{ site_base }}/listado_productos?tag=jardin">JARDIN</a>
     </li>
       <li class="header-na">
-      <a href="">NAVIDAD</a>
+      <a href="{{ site_base }}/listado_productos?tag=navidad">NAVIDAD</a>
     </li>
 <div class="dropdown col-md-2 col-sm-2">
     <a id="dLabel" role="button" data-toggle="dropdown" class="btn btn-primary tienda" data-target="#" href="/page.html">
     </a>
     <li>
-      <a href="#" class="btn-primary tienda">REGALOS</a>
+      <a href="{{ site_base }}/listado_productos?tag=regalo" class="btn-primary tienda">REGALOS</a>
     </li>
  <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
   <li>

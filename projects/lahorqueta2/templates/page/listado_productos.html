@@ -21,8 +21,7 @@
 
 {% block javascript %}
     <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/static/js/filter.js"></script>
-    <script type="text/javascript" src="{{ site_base }}/static/js/filtros.js"></script>
+
 
 <script type="text/javascript">
     $(document).ready(function()
@@ -47,7 +46,7 @@
             'maxProducts' : 100,
             'templateOrigin' : '#product_template',
             'tag' : '',
-            'ignore_stock' : false,
+            'ignore_stock' : true,
             'infinite_scroll': false,
             'onLoad':function(){
                // $('.ellipsis').ellipsis();
@@ -119,7 +118,7 @@
  
 </section>
 
-<!-- *********CATEGORIAS******** -->
+<!-- *********CATEGORIAS******** ->
     <section class="h_submenu cubrecama hidden-xs">
         <div class="container min" style="padding-top: 1em;padding-bottom: 33px;">
             <div align="center">
@@ -134,7 +133,7 @@
         </div>
     </section>
 
-    <!-- ***FIN CATEGORIAS***** -->
+    <!- ***FIN CATEGORIAS***** -->
 
 <section>
   <div class="container min">
