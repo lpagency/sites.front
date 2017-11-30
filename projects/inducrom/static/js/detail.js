@@ -23,7 +23,6 @@ function getCookie1(cname) {
             c = c.substring(1);
         }
         if (c.indexOf(name) == 0) {
-            console.log(c.substring(name.length, c.length));
             return c.substring(name.length, c.length);
         }
     }
@@ -42,7 +41,6 @@ function getCookie1(cname) {
         var prod = "";
 
     $.get("https://apibodegas.loadingplay.com/v1/cart/"+cookie, function(p){
-        console.log(p.cart.items);
         for (x in p.cart.items) {
             prod = prod + "sku: " + p.cart.items[x].sku + ", nombre: "+ p.cart.items[x].name +", Cantidad: " + p.cart.items[x].quantity +"\n";
         }
@@ -52,7 +50,6 @@ function getCookie1(cname) {
       });
 
     var cookie = getCookie("shopping-cart");
-    console.log(cookie);
 
     $(document).on("click", ".add-one", function(){
         $.get("https://apibodegas.loadingplay.com/v1/cart"+cookie, function(p){ 
@@ -62,7 +59,6 @@ function getCookie1(cname) {
             }
 
             $(".cotizar").html(prod);
-            console.log($(".cotizar").html());
 
         });
     });
@@ -79,7 +75,6 @@ function getCookie1(cname) {
             }
 
             $(".cotizar").html(prod);
-            console.log($(".cotizar").html());
 
         });
     });
@@ -102,8 +97,6 @@ function getCookie1(cname) {
         var cookieEmail = $.cookie("e-mail", email);
 
     });
-
-    console.log(document.cookie);
 
     var cookie1 = $.cookie("user-name");
     var cookie2 = $.cookie("last-name");
@@ -221,8 +214,6 @@ function getCookie1(cname) {
         $.removeCookie("last-name");
         $.removeCookie("telephone-number");
         $.removeCookie("e-mail");
-
-        console.log(document.cookie);
 
       });
   });
