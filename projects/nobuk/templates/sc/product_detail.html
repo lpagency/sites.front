@@ -67,26 +67,26 @@
 
                 var prodSku = product.sku;
 
-                // var tagProd = prodSku.split("-");
+                var tagProd = prodSku.split("-");
 
-                // var tagProd2 = tagProd[0] + "-" + tagProd[1];
+                var tagProd2 = tagProd[0] + "-" + tagProd[1];
 
-                // console.log(tagProd2);
+                console.log(tagProd2);
 
                 related(tagProd2.toLowerCase());
 
-                // if (product.bullet_1 != "" ){
-                //     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                //     {
-                //         $("#article-reladed").html(data);
-                //     });
-                // }
-                if(getCookie("stock") == "none")
-                {
-                    console.log(getCookie("stock"));
-                    $(".add-to-cart").html("AGOTADO");
-                    $(".add-to-cart").attr("disabled", true);
+                if (product.bullet_1 != "" ){
+                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                    {
+                        $("#article-reladed").html(data);
+                    });
                 }
+                console.log(getCookie("stock"));
+                // if(getCookie("stock") == "none")
+                // {
+                //     $(".add-to-cart").html("AGOTADO");
+                //     $(".add-to-cart").attr("disabled", true);
+                // }
             }
         });
 
@@ -114,7 +114,7 @@
 
 </script>
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $(document).ready(function()
     {
         setTimeout(function()
@@ -127,7 +127,7 @@
                 }
         },2000);
     }
-</script> -->
+</script>
 
 <script type="text/template" id="product_detail">
     <section>
