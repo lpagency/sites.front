@@ -65,6 +65,13 @@
             'container' : '.product-detail',
             onLoad: function(product){
 
+                if(getCookie("stock") == "none")
+                {
+                    console.log(getCookie("stock"));
+                    $(".add-to-cart").html("AGOTADO");
+                    $(".add-to-cart").attr("disabled", true);
+                }
+
                 var prodSku = product.sku;
 
                 var tagProd = prodSku.split("-");
@@ -119,12 +126,7 @@
     {
         setTimeout(function()
         {
-            if(getCookie("stock") == "none")
-                {
-                    console.log(getCookie("stock"));
-                    $(".add-to-cart").html("AGOTADO");
-                    $(".add-to-cart").attr("disabled", true);
-                }
+            
         },2000);
     });
 </script>
