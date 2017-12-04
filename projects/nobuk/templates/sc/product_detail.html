@@ -67,20 +67,20 @@
 
                 var prodSku = product.sku;
 
-                var tagProd = prodSku.split("-");
+                // var tagProd = prodSku.split("-");
 
-                var tagProd2 = tagProd[0] + "-" + tagProd[1];
+                // var tagProd2 = tagProd[0] + "-" + tagProd[1];
 
                 console.log(tagProd2);
 
                 related(tagProd2.toLowerCase());
 
-                if (product.bullet_1 != "" ){
-                    $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
-                    {
-                        $("#article-reladed").html(data);
-                    });
-                }
+                // if (product.bullet_1 != "" ){
+                //     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
+                //     {
+                //         $("#article-reladed").html(data);
+                //     });
+                // }
                 if(getCookie("stock") == "none")
                 {
                     console.log(getCookie("stock"));
