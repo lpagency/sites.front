@@ -52,6 +52,7 @@
   {
     $(document).on("click", ".mas-info", function()
     {
+      console.log($(this).children().children("button").html());
       var a = $(this).children().children("button");
 
       if(a.html() == "Agotado")
