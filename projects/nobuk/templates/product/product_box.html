@@ -3,7 +3,7 @@
 <div class="clearfix-dos ocul">
   <div class="col-md-3 col-xs-12 art-hi hidden-xs">
       <div class="hovereffect hidden-xs">
-        <a class="mas-info" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+        <a class="mas-info" in_stock="{{! in_stock }}" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
            <img src="{{! images[0]['thumb_500'] }}" alt="" class="img-responsive img-pro hidden-xs" >
            <p class="inf ellipsis multiline hidden-xs" in_stock="{{! in_stock }}">{{! name }}</p>
               <div class="overlay hidden-xs" id="testButton">
@@ -19,7 +19,7 @@
 
 
     <div class="col-md-4 col-xs-12 art-hi hidden-lg hidden-md hidden-sm">
-        <a class="mas-info" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+        <a class="mas-info" in_stock="{{! in_stock }}" href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
            <img src="{{! images[0]['thumb_500'] }}" alt="" class="img-responsive img-pro hidden-lg hidden-md hidden-sm" >
               <p class="inf ellipsis multiline hidden-lg hidden-md hidden-sm" in_stock="{{! in_stock }}">{{! name }}</p>
               <div class="product-price pri hidden-lg hidden-md hidden-sm">{{! main_price|money }} </div>

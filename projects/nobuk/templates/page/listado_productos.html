@@ -50,26 +50,6 @@
 <script type="text/javascript">
   $(document).ready(function()
   {
-    $(document).on("click", ".mas-info", function()
-    {
-      console.log($(this).children().children("button").html());
-      var a = $(this).children().children("button");
-
-      if(a.html() == "Agotado")
-      {
-        document.cookie = "stock=none";
-      }
-      else
-      {
-        document.cookie = "stock=true";
-      }
-    });
-  });
-</script>
-
-<script type="text/javascript">
-  $(document).ready(function()
-  {
     setTimeout(function(){
       $(".inf").each(function()
       {
@@ -88,6 +68,26 @@
       });
     },2000);
   });
+</script>
+
+<script type="text/javascript">
+  $(document).ready(function()
+  {
+    $(document).on("click", ".mas-info", function()
+    {
+      var a = $(this).children().children("button");
+
+      if(a.html() == "Agotado")
+      {
+        document.cookie = "stock=none";
+      }
+      else
+      {
+        document.cookie = "stock=true";
+      }
+    });
+  });
+
 </script>
 {% end %}
 
