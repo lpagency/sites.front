@@ -114,7 +114,20 @@
 
 </script>
 
-
+<script type="text/javascript">
+    $(document).ready(function())
+    {
+        setTimeout(function()
+        {
+            if(getCookie("stock") == "none")
+                {
+                    console.log(getCookie("stock"));
+                    $(".add-to-cart").html("AGOTADO");
+                    $(".add-to-cart").attr("disabled", true);
+                }
+        },2000);
+    }
+</script>
 
 <script type="text/template" id="product_detail">
     <section>
