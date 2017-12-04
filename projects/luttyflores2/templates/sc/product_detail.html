@@ -49,7 +49,9 @@
             'product_id' : {{ product_id }},
             'container' : '.product-detail',
             onLoad: function(product){
-                related(product.bullet_3);
+                related(product.tags[0].name);
+
+                console.log(product.tags[0].name);
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
