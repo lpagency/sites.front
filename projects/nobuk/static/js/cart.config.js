@@ -81,6 +81,7 @@ $(document).ready(function()
         'operator' :'and',
         'onLoad': function(products) 
         {
+            console.log(products);
             // if (products.length === 0)
             // {
             //     $(".products").html("no hay productos con estos filtros");
