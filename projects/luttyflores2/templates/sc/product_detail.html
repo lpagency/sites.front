@@ -49,9 +49,13 @@
             'product_id' : {{ product_id }},
             'container' : '.product-detail',
             onLoad: function(product){
-                related(product.tags[0].name);
 
+              if(Array.isArray(product) == false)
+              {
+                related(product.tags[0].name);
                 console.log(product.tags[0].name);
+              }
+
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
@@ -81,11 +85,10 @@
                 'base_url' : base_url,
                 'maxProducts' : 8,
                 'templateOrigin' : '#product_template_home',
-                'tag' : '',
+                'tag' : tag,
                 'ignore_stock' : true,
                     'onLoad':function(){
-                         // $('.ellipsis').ellipsis();
-                         $(".ellipsis").dotdotdot();
+                         
                      }
                 
             };
