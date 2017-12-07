@@ -65,9 +65,10 @@
             'container' : '.product-detail',
             onLoad: function(product){
 
-                if(getCookie("stock") == "none")
+                console.log(product.in_stock);
+
+                if(product.in_stock == false)
                 {
-                    console.log(getCookie("stock"));
                     $(".add-to-cart").html("AGOTADO");
                     $(".add-to-cart").attr("disabled", true);
                 }
@@ -88,12 +89,6 @@
                         $("#article-reladed").html(data);
                     });
                 }
-                console.log(getCookie("stock"));
-                // if(getCookie("stock") == "none")
-                // {
-                //     $(".add-to-cart").html("AGOTADO");
-                //     $(".add-to-cart").attr("disabled", true);
-                // }
             }
         });
 
