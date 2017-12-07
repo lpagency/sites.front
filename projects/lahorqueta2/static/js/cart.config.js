@@ -60,6 +60,42 @@ $(document).ready(function()
         tag = "";
     }
 
+    $("#OpenAlert").click();
+        var base_url = $.environmentVar(
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/',
+            'https://apibodegas.loadingplay.com/');
+        var checkout_url = $.environmentVar(
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com',
+            'https://pay.loadingplay.com');
+        var app_public = $.environmentVar(64,64,64);
+        var site_name = $.environmentVar('lahorqueta2', 'lahorqueta2', 'lahorqueta2');
+  
+
+        var config = {
+            'app_public' : app_public,
+            'base_url' : base_url,
+            'maxProducts' : 100,
+            'templateOrigin' : '#product_template',
+            'tag' : tag,
+            'ignore_stock' : true,
+            'infinite_scroll': false,
+            'onLoad':function(){
+               // $('.ellipsis').ellipsis();
+               // $(".ellipsis").dotdotdot();
+             }
+        };
+         $(document).ecommerce({
+       'app_public' :  app_public,
+       'animation' : 'simple',
+       'base_url' : base_url,
+       'checkout_url' :  checkout_url,
+       'products_per_page' : 9
+     });
+
+        $('.product-list').ecommerce('product_box', config);
+
     $(document).on("click", ".subcateg", function(ev){
         ev.preventDefault();
         // $(".subcateg").css("border-bottom", "");
