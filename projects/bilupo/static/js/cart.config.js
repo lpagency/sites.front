@@ -50,13 +50,15 @@ $(document).ready(function()
 
     var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
-        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.ondev.today/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
         '/bilupo/checkout',
-        '/checkout',
+        // '/checkout',
+         'https://lpcheckout.ondev.today/checkout',
         '/checkout');
     var app_public = $.environmentVar(42,42,42);
+    var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
 
     var config = {
         'app_public': app_public,
