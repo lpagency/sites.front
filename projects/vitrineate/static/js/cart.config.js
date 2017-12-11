@@ -51,8 +51,9 @@ $(document).ready(function()
     }
     catch(ex)
     {
-        // nothing here... 
+        tag = '';
     }
+
 
     $("#"+tag).addClass("active");
     if (tag === undefined || tag === 'todos'){
@@ -82,6 +83,7 @@ $(document).ready(function()
         'site_name': site_name,
         'onLoad': function(products) 
         {
+            banners(tag);
             // if (products.length === 0)
             // {
             //     $(".products").html("no hay productos con estos filtros");

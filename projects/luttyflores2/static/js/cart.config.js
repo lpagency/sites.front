@@ -51,8 +51,10 @@ $(document).ready(function()
     }
     catch(ex)
     {
-        // nothing here... 
+        tag = '';
     }
+
+    console.log(tag);
 
     $("#"+tag).addClass("active");
     if (tag === undefined || tag === 'todos'){
@@ -81,12 +83,15 @@ $(document).ready(function()
         'operator' :'or',
         'onLoad': function(products) 
         {
+            console.log(products);
             // if (products.length === 0)
             // {
             //     $(".products").html("no hay productos con estos filtros");
             // }
         }
     };
+
+    console.log(config);
 
     $(document).ecommerce(config);
 
