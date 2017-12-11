@@ -44,51 +44,51 @@
 
 
           <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ceremonias'">MUJER</button>
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=mujer'">MUJER</button>
             <div class="w3-dropdown-content w3-border">
               <li class="dropdown-submenu">
-                <li><a tabindex="-1" href="">POLERAS</a></li>
-                <li><a tabindex="-1" href="">CHAQUETAS/POLERONES</a></li>
-                <li><a tabindex="-1" href="">PANTALONES</a></li>
-                <li><a tabindex="-1" href="">FALDAS</a></li>
-                <li><a tabindex="-1" href="{">SHORT</a></li>
-                <li><a tabindex="-1" href="">VESTIDOS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=poleras">POLERAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=chaquetas">CHAQUETAS/POLERONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=pantalones">PANTALONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=faldas">FALDAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=short">SHORT</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=vestido">VESTIDOS</a></li>
               </li>
             </div>
           </div>
           <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=novias'">HOMBRE</button>
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=hombre'">HOMBRE</button>
             <div class="w3-dropdown-content w3-border">
              <li class="dropdown-submenu">
-                <li><a tabindex="-1" href="">POLERAS</a></li>
-                <li><a tabindex="-1" href="">CHAQUETAS/POLERONES</a></li>
-                <li><a tabindex="-1" href="">PANTALONES</a></li>
-                <li><a tabindex="-1" href="">CAMISAS</a></li>
-                <li><a tabindex="-1" href="{">SHORT</a></li>
-                <li><a tabindex="-1" href="">CORBATAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">POLERAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CHAQUETAS/POLERONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">PANTALONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CAMISAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">SHORT</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CORBATAS</a
               </li>
                 
             </div>
           </div>
           <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ocasiones'">TRAJE DE BAÑO</button>
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=traje-de-bano'">TRAJE DE BAÑO</button>
             <div class="w3-dropdown-content w3-border">
              <li class="dropdown-submenu">
-                <li><a tabindex="-1" href="">MUJER</a></li>
-                <li><a tabindex="-1" href="">HOMBRE</a></li>
-                <li><a tabindex="-1" href="">NIÑO</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">MUJER</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">HOMBRE</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">NIÑO</a></li>
               </li>
                 
             </div>
           </div>
            <div class="w3-dropdown-hover">
-            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=ocasiones'">ACCESORIOS</button>
+            <button class="w3-btn w3-red" data-toggle="dropdown" tag="colecciones" onclick="window.location.href='{{ site_base }}/listado_productos?tag=accesorios'">ACCESORIOS</button>
             <div class="w3-dropdown-content w3-border">
              <li class="dropdown-submenu">
-                <li><a tabindex="-1" href="">AROS</a></li>
-                <li><a tabindex="-1" href="">COLLARES</a></li>
-                <li><a tabindex="-1" href="">CINTURONES</a></li>
-                <li><a tabindex="-1" href="">CALCETINES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">AROS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">COLLARES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CINTURONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CALCETINES</a></li>
               </li>
                 
             </div>
@@ -152,47 +152,36 @@
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-left">
               <li class="">
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">CEREMONIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu">
-                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=matrimonios">MATRIMONIOS</a></li>
-                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=velatorios">VELATORIOS</a></li>
-                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=mat_judio">MATRIMONIO JUDIO</a></li>
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">MUJER<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <ul class="dropdown-menu">           
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=poleras">POLERAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=chaquetas">CHAQUETAS/POLERONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=pantalones">PANTALONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=faldas">FALDAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=short">SHORT</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=vestido">VESTIDOS</a></li>
                 </ul>
               </li>
                 <li class="">
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">RAMOS DE NOVIAS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">HOMBRES<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=novias">NOVIAS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">POLERAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CHAQUETAS/POLERONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">PANTALONES</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CAMISAS</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">SHORT</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">CORBATAS</a></li>
                 </ul>
               </li>
               <li class="">
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">OCASIONES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
+                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">TRAJE DE BAÑO<i class="fa fa-angle-down" aria-hidden="true"></i></a>
                 <ul class="dropdown-menu">
-                 <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=arreglos">ARREGLOS DE FLORES</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=regalos">REGALOS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=nacimientos">NACIMIENTOS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=condolencias">CONDOLENCIAS</a></li>
-                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=cajas">CAJAS</a></li>
+                  <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">MUJER</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">HOMBRE</a></li>
+                <li><a tabindex="-1" href="{{ site_base }}/listado_productos?tag=">NIÑO</a></li>
                 </ul>
               </li>
-              <li class="">
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NOSOTROS <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu">
-                   <li ><a href="#">QUIENES SOMOS</a> </li>
-                   <li> <a href="#">NUESTROS COLABORADORES</a> </li>
-                </ul>
-              </li>
-                <li class="">
-                <a href="#" class="text-header dropdown-toggle" data-toggle="dropdown">NUESTRAS FLORES <i class="fa fa-angle-down" aria-hidden="true"></i></a>
-                <ul class="dropdown-menu">
-                  <li> <a href="#">VENTA DE ARREGLOS</a></li>
-                  <li> 
-                  <a href="#">MATRIMONIOS Y EVENTOS</a></li>
-                  <li>
-                  <a href="#">FLORES PARA TU CASA</a>
-                  <a href="#">CUIDA TUS FLORES</a>
-                  <a href="#">PUNTOS DE VENTA</a></li>
-                </ul>
+              
               </li>
               <li><a href="{{ site_base }}/contact" class="text-header">CONTACTO</a></li>
             </ul>
