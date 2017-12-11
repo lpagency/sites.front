@@ -20,8 +20,8 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
-
-<script type="text/javascript">
+<script type="text/javascript" src="{{ site_base }}/static/js/banners.js"></script>
+<!-- <script type="text/javascript">
     $(document).ready(function()
     {
 
@@ -42,7 +42,7 @@
             'base_url' : base_url,
             'maxProducts' : 16,
             'templateOrigin' : '#product_template',
-            'tag' : '',
+            'tag' : ,
             'ignore_stock' : true,
             'onLoad':function(){
                // $('.ellipsis').ellipsis();
@@ -63,7 +63,7 @@
         // config.tag = 'destacado_categoria2';
         // $('.product-list2').ecommerce('product_box', config);
     });
-</script>
+</script> -->
 <script type="text/javascript">
     $(document).ready(function()
     {
@@ -93,7 +93,8 @@
 <body id="lapimport">
    <div class="container min"> 
    <section>
-    <div class="mobile" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+    <!--LISTADO PRODUCTOS-->
+    <div class="mobile hidden listado_productos" style="background:url('{{ read_image(site.name + '_productos',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
         {% if is_admin %}
         <div class="image-upload part1 lapiz visible-movil">
             <label for="img_productos">
@@ -105,11 +106,251 @@
         <img id="{{ site.name }}_productos" src="{{ read_image(site.name + '_productos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos',500) }}'" class="banner_uno_list hidden" alt="item">
     </div>
 
-    <div class="container min">
+    <div class="container hidden min listado_productos">
         <div class="col-md-12">
             <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos' }}"> {{ read_text(site.name +  '_productos') }}</div>
         </div>
     </div>
+    <!--END LISTADO PRODUCTOS-->
+
+        <!--HOMBRE-->
+    <div class="mobile hidden listado_productos_hombre" style="background:url('{{ read_image(site.name + '_productos_hombre',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_hombre">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_hombre" name="image" id="img_productos_hombre" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_hombre" src="{{ read_image(site.name + '_productos_hombre', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_hombre',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_hombre">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_hombre' }}"> {{ read_text(site.name +  '_productos_hombre') }}</div>
+        </div>
+    </div>
+    <!--END HOMBRE-->
+
+        <!--LISTADO MUJER-->
+    <div class="mobile hidden listado_productos_mujer" style="background:url('{{ read_image(site.name + '_productos_mujer',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_mujer">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_mujer" name="image" id="img_productos_mujer" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_mujer" src="{{ read_image(site.name + '_productos_mujer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_mujer',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_mujer">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_mujer' }}"> {{ read_text(site.name +  '_productos_mujer') }}</div>
+        </div>
+    </div>
+    <!--END MUJER-->
+
+        <!--TRAJE DE BAÑO-->
+    <div class="mobile hidden listado_productos_traje" style="background:url('{{ read_image(site.name + '_productos_traje',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_traje">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_traje" name="image" id="img_productos_traje" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_traje" src="{{ read_image(site.name + '_productos_traje', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_traje',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_traje">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_traje' }}"> {{ read_text(site.name +  '_productos_traje') }}</div>
+        </div>
+    </div>
+    <!--END TRAJE DE BAÑO-->
+        <!--ACCESORIOS-->
+    <div class="mobile hidden listado_productos_accesorios" style="background:url('{{ read_image(site.name + '_productos_accesorios',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_accesorios">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_accesorios" name="image" id="img_productos_accesorios" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_accesorios" src="{{ read_image(site.name + '_productos_accesorios', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_accesorios',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_accesorios">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_accesorios' }}"> {{ read_text(site.name +  '_productos_accesorios') }}</div>
+        </div>
+    </div>
+    <!--END ACCESORIOS-->
+
+        <!--MARCAS-->
+    <div class="mobile hidden listado_productos_marcas" style="background:url('{{ read_image(site.name + '_productos_marcas',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marcas">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marcas" name="image" id="img_productos_marcas" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marcas" src="{{ read_image(site.name + '_productos_marcas', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marcas',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marcas">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marcas' }}"> {{ read_text(site.name +  '_productos_marcas') }}</div>
+        </div>
+    </div>
+    <!--END MARCAS-->
+
+        <!--NIÑOS-->
+    <div class="mobile hidden listado_productos_ninos" style="background:url('{{ read_image(site.name + '_productos_ninos',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_ninos">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_ninos" name="image" id="img_productos_ninos" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_ninos" src="{{ read_image(site.name + '_productos_ninos', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_ninos',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_ninos">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_ninos' }}"> {{ read_text(site.name +  '_productos_ninos') }}</div>
+        </div>
+    </div>
+    <!--END NIÑOS-->
+
+        <!--ROSARIO SCARINI-->
+    <div class="mobile hidden listado_productos_marca1" style="background:url('{{ read_image(site.name + '_productos_marca1',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca1">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca1" name="image" id="img_productos_marca1" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca1" src="{{ read_image(site.name + '_productos_marca1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca1',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca1">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca1' }}"> {{ read_text(site.name +  '_productos_marca1') }}</div>
+        </div>
+    </div>
+    <!--END ROSARIO SCARINI-->
+
+        <!--ANA BOLENA-->
+    <div class="mobile hidden listado_productos_marca2" style="background:url('{{ read_image(site.name + '_productos_marca2',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca2">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca2" name="image" id="img_productos_marca2" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca2" src="{{ read_image(site.name + '_productos_marca2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca2',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca2">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca2' }}"> {{ read_text(site.name +  '_productos_marca2') }}</div>
+        </div>
+    </div>
+    <!--END ANA BOLENA-->
+
+        <!--CORK DESIGN-->
+    <div class="mobile hidden listado_productos_marca3" style="background:url('{{ read_image(site.name + '_productos_marca3',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca3">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca3" name="image" id="img_productos_marca3" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca3" src="{{ read_image(site.name + '_productos_marca3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca3',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca3">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca3' }}"> {{ read_text(site.name +  '_productos_marca3') }}</div>
+        </div>
+    </div>
+    <!--END CORK DESIGN-->
+
+        <!--LA PIJAMERIA-->
+    <div class="mobile hidden listado_productos_marca4" style="background:url('{{ read_image(site.name + '_productos_marca4',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca4">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca4" name="image" id="img_productos_marca4" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca4" src="{{ read_image(site.name + '_productos_marca4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca4',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca4">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca4' }}"> {{ read_text(site.name +  '_productos_marca4') }}</div>
+        </div>
+    </div>
+    <!--END LA PIJAMERIA-->
+
+        <!--ANTONIMA-->
+    <div class="mobile hidden listado_productos_marca5" style="background:url('{{ read_image(site.name + '_productos_marca5',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca5">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca5" name="image" id="img_productos_marca5" >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca5" src="{{ read_image(site.name + '_productos_marca5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca5',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca5">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca5' }}"> {{ read_text(site.name +  '_productos_marca5') }}</div>
+        </div>
+    </div>
+    <!--END ANTONIMA-->
+
+        <!--PILI SAENZ JOYAS-->
+    <div class="mobile hidden listado_productos_marca6" style="background:url('{{ read_image(site.name + '_productos_marca6',500) }}'); height:300px; background-size:cover; margin-top: -1px;  filter: grayscale(0%) brightness(90%); -webkit-filter: grayscale(0%) brightness(90%); -moz-filter: grayscale(0%) brightness(90%); -ms-filter: grayscale(0%) brightness(90%);-o-filter: grayscale(0%) brightness(90%); background-position:center; margin-bottom: 40px;" data-img-width="1600" data-img-height="1064" data-diff="100">
+        {% if is_admin %}
+        <div class="image-upload part1 lapiz visible-movil">
+            <label for="img_productos_marca6 ">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+            </label>
+            <input type="file" class="editableimage" image-id="{{ site.name }}_productos_marca6" name="image" id="img_productos_marca6 " >
+        </div>
+        {% end %}
+        <img id="{{ site.name }}_productos_marca6" src="{{ read_image(site.name + '_productos_marca6 ', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_productos_marca6',500) }}'" class="banner_uno_list hidden" alt="item">
+    </div>
+
+    <div class="container hidden min listado_productos_marca6">
+        <div class="col-md-12">
+            <div class="text-center titulo-prou {{editabletext}}" text-id="{{ site.name + '_productos_marca6 ' }}"> {{ read_text(site.name +  '_productos_marca6') }}</div>
+        </div>
+    </div>
+    <!--END PILI SAENZ JOYAS-->
 </section>
 </div>
 
