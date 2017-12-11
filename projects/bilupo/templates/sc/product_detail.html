@@ -83,17 +83,17 @@ $(document).ready(function() {
         next.css('display', 'block');
     };
 
-           var base_url = $.environmentVar(
-          'https://apibodegas.ondev.today/',
-          'https://apibodegas.ondev.today/',
-          'https://apibodegas.loadingplay.com/');
-      var checkout_url = $.environmentVar(
-          'https://lpcheckout.ondev.today',
-          'https://lpcheckout.ondev.today',
-          'https://pay.loadingplay.com');
-      var app_public = $.environmentVar(48,48,48);
-        var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
-
+    var base_url = $.environmentVar(
+        'https://apibodegas.loadingplay.com/',
+        'https://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+        '/bilupo/checkout',
+        // '/checkout',
+         'https://lpcheckout.ondev.today/checkout',
+        '/checkout');
+    var app_public = $.environmentVar(42,42,42);
+    var site_name = $.environmentVar('bilupo', 'bilupo', 'bilupo');
     var config = {
         'app_public': app_public,
         'base_url': base_url,

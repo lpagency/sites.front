@@ -58,7 +58,7 @@ $(document).ready(function()
          'https://lpcheckout.ondev.today/checkout',
         '/checkout');
     var app_public = $.environmentVar(42,42,42);
-    var site_name = $.environmentVar('luttyflores', 'luttyflores', 'luttyflores');
+    var site_name = $.environmentVar('bilupo', 'bilupo', 'bilupo');
 
     var config = {
         'app_public': app_public,
