@@ -26,7 +26,7 @@ function banners(tag)
 			$(".listado_productos_ninos").removeClass("hidden");
 		break;
 
-		case "rosario_scarini":
+		case "rosaria_scarini":
 			$(".listado_productos_marca1").removeClass("hidden");
 		break;
 
