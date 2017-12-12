@@ -2,7 +2,7 @@ function banners(tag)
 {
 	switch(tag)
 	{
-		case "cat1_hombres":
+		case "cat1_hombre":
 			$(".listado_productos_hombre").removeClass("hidden");
 		break;
 
@@ -18,7 +18,7 @@ function banners(tag)
 			$(".listado_productos_accesorios").removeClass("hidden");
 		break;
 
-		case "cat1_marcas":
+		case "cat1_marca":
 			$(".listado_productos_marcas").removeClass("hidden");
 		break;
 
@@ -38,7 +38,7 @@ function banners(tag)
 			$(".listado_productos_marca3").removeClass("hidden");
 		break;
 
-		case "la_pijamera":
+		case "la_pijameria":
 			$(".listado_productos_marca4").removeClass("hidden");
 		break;
 
@@ -48,6 +48,10 @@ function banners(tag)
 
 		case "pili_saenz_joyas":
 			$(".listado_productos_marca6").removeClass("hidden");
+		break;
+		
+		case "oferta":
+			$(".listado_productos_oferta").removeClass("hidden");
 		break;
 	}
 }
