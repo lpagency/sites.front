@@ -42,28 +42,32 @@
         var config = {
             'app_public' : app_public,
             'base_url' : base_url,
-            'maxProducts' : 6,
+            'checkout_url': checkout_url,
+            'products_per_page' : 6,
+            'max_products' : 6,
             'templateOrigin' : '#product_template',
             'tag' : 'home',
             'ignore_stock' : true,
             'onLoad':function(){
-               // $('.ellipsis').ellipsis();
-               // $(".ellipsis").dotdotdot();
+               
              }
         };
-         $(document).ecommerce({
-       'app_public' :  app_public,
-       'animation' : 'simple',
-       'base_url' : base_url,
-       'checkout_url' :  checkout_url,
-       'products_per_page' : 9
-     });
+        $('.products').ecommerce(config);
+        
+        //  $(document).ecommerce({
+        //     'app_public' : app_public,
+        //     'animation' : 'simple',
+        //     'base_url' : base_url,
+        //     'checkout_url' : checkout_url,
+        //     'products_per_page' : 9
+        // });
 
-        $('.product-list').ecommerce('product_box', config);
+        
 
         // destacado categoria 2
         // config.tag = 'destacado_categoria2';
         // $('.product-list2').ecommerce('product_box', config);
+  
     });
 </script>
 
