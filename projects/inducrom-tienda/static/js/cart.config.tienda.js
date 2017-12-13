@@ -67,7 +67,8 @@ $(document).ready(function()
     'https://pay.loadingplay.com',
     'https://pay.loadingplay.com',
     'https://pay.loadingplay.com');
-     var app_public = $.environmentVar(65,65,65);
+    var app_public = $.environmentVar(65,65,65);
+    var site_name = $.environmentVar('inducrom-tienda', 'inducrom-tienda', 'inducrom-tienda');
 
     var config = {
         'app_public': app_public,

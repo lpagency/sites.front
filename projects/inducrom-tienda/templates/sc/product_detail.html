@@ -24,8 +24,7 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
+
 
 <script type="text/javascript">
 
@@ -38,15 +37,16 @@
 
       var miga = [];
 
-       var base_url = $.environmentVar(
-    'https://apibodegas.loadingplay.com/',
-    'https://apibodegas.loadingplay.com/',
-    'https://apibodegas.loadingplay.com/'); 
-     var checkout_url = $.environmentVar(
-    'https://pay.loadingplay.com',
-    'https://pay.loadingplay.com',
-    'https://pay.loadingplay.com');
-     var app_public = $.environmentVar(47,47,47);
+    var base_url = $.environmentVar(
+      'https://apibodegas.loadingplay.com/',
+      'https://apibodegas.loadingplay.com/',
+      'https://apibodegas.loadingplay.com/');
+    var checkout_url = $.environmentVar(
+      'https://pay.loadingplay.com',
+      'https://pay.loadingplay.com',
+      'https://pay.loadingplay.com');
+    var app_public = $.environmentVar(65,65,65);
+    var site_name = $.environmentVar('inducrom-tienda', 'inducrom-tienda', 'inducrom-tienda');
         
 
         $(document).ecommerce('product_detail', {
@@ -105,7 +105,7 @@
                     });
                 }
 
-            }
+            
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
@@ -201,7 +201,8 @@ $(document).ready(function() {
         $("#wrapper").toggleClass("toggled");
     });
     </script>
-    
+    <script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
     <script type="text/javascript">
         $('ul.nav div.dropdown').hover(function() 
         {
