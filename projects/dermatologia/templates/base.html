@@ -381,6 +381,26 @@ if(!$("html").hasClass("touch")){
         ga('create', '{{ get_config("analytics") }}', 'auto');
         ga('send', 'pageview');
     </script>
+
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+            if($(window).width() < 500)
+            {
+                $(document).on("click", ".navbar-toggle", function()
+                {
+                    if($(".franja-color").hasClass("hidden"))
+                    {
+                        $(".franja-color").removeClass("hidden");
+                    }
+                    else
+                    {
+                        $(".franja-color").addClass("hidden");
+                    }
+                });
+            }
+        });
+    </script>
    
     </body>
 </html>
