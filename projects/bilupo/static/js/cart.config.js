@@ -59,7 +59,7 @@ $(document).ready(function()
     var app_public = $.environmentVar(42,42,42);
     var site_name = $.environmentVar('bilupo', 'bilupo', 'bilupo');
 
-    var config = {
+    window.config = {
         'app_public': app_public,
         'base_url': base_url,
         'products_per_page' : 9, 
@@ -78,7 +78,7 @@ $(document).ready(function()
         }
     };
 
-    $(document).ecommerce(config);
+    $(document).ecommerce(window.config);
 
     $(".busqueda-edad").displayCategories({
         "type": "edad"
@@ -94,7 +94,6 @@ $(document).ready(function()
 
     $("button.dropbtnup").click(function(){
         var dropdownlist = $(this).parent().find(".dropdownlist");
-        console.log(dropdownlist.css("display"))
         if(dropdownlist.css("display") === 'none')
         {
             $(".dropdownlist").hide();
@@ -161,7 +160,7 @@ $(document).ready(function()
                     multiple_tag = tag_area;
                 }else{
                     multiple_tag = multiple_tag + ", " + tag_area;
-                    config.operator = "and";
+                    window.config.operator = "and";
                 }
             }
 
@@ -170,11 +169,12 @@ $(document).ready(function()
                     multiple_tag = tag_marca;
                 }else{
                     multiple_tag = multiple_tag + ", " + tag_marca;
-                    config.operator = "and";
+                    window.config.operator = "and";
                 }
             }
 
-            config.tag = multiple_tag;
+            window.config.tag = multiple_tag;
+            document.cookie = 'multiple_tag = '+multiple_tag;
             var hyper = window.location.href;
 
             hyper = hyper.split("?");
@@ -183,33 +183,33 @@ $(document).ready(function()
 
             $(".products").html("");
             $(document).ecommerce('destroy');
-            $(document).ecommerce(config);
+            $(document).ecommerce(window.config);
         }
     });
 
     $(document).on("click", ".mayor", function(ev)
     {
         ev.preventDefault();
-        config.column = "main_price";
-        config.direction = "desc";
+        window.config.column = "main_price";
+        window.config.direction = "desc";
 
         $('.products').html("");
         $(document).ecommerce("destroy");
 
-        $(document).ecommerce(config);
+        $(document).ecommerce(window.config);
 
     });
 
     $(document).on("click", ".menor", function(ev)
     {
         ev.preventDefault();
-        config.column = "main_price";
-        config.direction = "asc";
+        window.config.column = "main_price";
+        window.config.direction = "asc";
 
         $('.products').html("");
         $(document).ecommerce("destroy");
 
-        $(document).ecommerce(config);
+        $(document).ecommerce(window.config);
 
     });
 });
