@@ -97,10 +97,18 @@ $(document).ready(function()
             filtro2 = filtro2.replace("-","_");
             filtro3 = filtro3.replace("/","_");
 
-            tag.push(filtro.toLowerCase());
-            tag.push(filtro2.toLowerCase());
-            tag.push(filtro3.toLowerCase());
-
+            if(filtro != "Todo")
+            {
+                tag.push(filtro.toLowerCase());
+            }
+            if(filtro2 != "Todo")
+            {
+                tag.push(filtro2.toLowerCase());
+            }
+            if(filtro3 != "Todo")
+            {
+                tag.push(filtro3.toLowerCase());
+            }
             if(tag[0] != "")
             {
 
