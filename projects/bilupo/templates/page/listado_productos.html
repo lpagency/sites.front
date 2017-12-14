@@ -22,6 +22,7 @@
 {% end %}
 
 {% block scripts %}
+<script type="text/javascript" src="{{ site_base }}/static/js/cart.config.js"></script>
 <script type="text/javascript">
 $(document).ready(function()
 {
@@ -64,10 +65,8 @@ $(document).ready(function()
                     html_builder.push($(this).val());
                 }
             });
-            console.log(html_builder.join(' >'));
 
             categ = html_builder[0].toString() + ">" + html_builder[1].toString() + ">" + html_builder[2].toString();
-
         });
 
         $('.buscarPorFiltros').on('click', function()
@@ -76,6 +75,50 @@ $(document).ready(function()
             $('.filter-breadcrumb').html(categ);
             $('.filter-breadcrumb').removeClass("hidden");
         });
+    });
+</script>
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        setTimeout(function()
+        {
+            var tag = [];
+
+            var filtro = $(".filtrosMensaje").val();
+            var filtro2 = $(".filtrosMensaje2").val();
+            var filtro3 = $(".filtrosMensaje3").val();
+            filtro = filtro.replace(" ","_");
+            filtro = filtro.replace("-","_");
+            filtro = filtro.replace("/","_");
+            filtro2 = filtro2.replace(" ","_");
+            filtro2 = filtro2.replace("-","_");
+            filtro2 = filtro2.replace("/","_");
+            filtro3 = filtro3.replace(" ","_");
+            filtro2 = filtro2.replace("-","_");
+            filtro3 = filtro3.replace("/","_");
+
+            if(filtro != "Todo")
+            {
+                tag.push(filtro.toLowerCase());
+            }
+            if(filtro2 != "Todo")
+            {
+                tag.push(filtro2.toLowerCase());
+            }
+            if(filtro3 != "Todo")
+            {
+                tag.push(filtro3.toLowerCase());
+            }
+            if(tag[0] != "")
+            {
+
+                window.config.tag = tag.toString();
+
+                $(".products").html("");
+                $(document).ecommerce('destroy');
+                $(document).ecommerce(window.config);
+            }
+        },1000);
     });
 </script>
 
@@ -441,7 +484,7 @@ body{
             <br>
             <div>
                 <div class="dropdown">
-                    <input type="text" class="filtrosBuscador" placeholder="Busca por marca" style="padding-left: 5%">
+                    <input type="text" class="filtrosBuscador filtrosMensaje3" placeholder="Busca por marca" style="padding-left: 5%">
                     <button class="dropbtnup">
                         <span class="fa fa-chevron-down" id="btnDown"></span>
                     </button>

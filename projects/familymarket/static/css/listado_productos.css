@@ -131,17 +131,23 @@ div.image-upload.part1 {
 }
 
 .inf {
-    position: relative;
+position: relative;
     bottom: 29px;
     width: 81%;
-    text-align: left;    
+    text-align: left;
     left: 9px;
-    color:#3e4152;
+    text-overflow: ellipsis;
+    white-space: nowrap !important;
+    color: #3e4152;
     font-size: 13px;
     font-weight: 400;
     margin-bottom: -15px;
     float: left;
     height: 22px;
+}
+
+.bul{
+    top: -23px;
 }
 
 .inf-rel {
@@ -294,9 +300,10 @@ hr.len {
 .up-ex {
     float: left;
     text-align: left;
-    width: 100%;
+    width: 85%;
     position: relative;
     top: -32px;
+    height: 52px;
     margin-bottom: -6px;
     font-size: 13px;
     font-weight: 500;
@@ -305,6 +312,13 @@ hr.len {
     -moz-osx-font-smoothing: grayscale;
     left: 9px;
     color: #282c3f;
+}
+
+.parr{
+    height: 12px;
+    position: relative;
+    left: 78%;
+    top: -43px;
 }
 
 .up-ex-detalle {
@@ -335,6 +349,7 @@ hr.len {
 }
 
 .original {
+    top: -13px;
     color: #282c3f;
     float: left;
     left: 9px;
@@ -619,6 +634,7 @@ hr.len {
     color: #282c3f !important;
     font-weight: 600;
     left: 3%;
+    margin-top: 5%;
 }
 
 .fondo-detalle-producto{
@@ -1101,7 +1117,7 @@ a.variables:active{
 .conti {
     position: relative;
     width: 109%;
-    height: 275px;
+    height: 347px;
     margin-bottom:20px;
     border: 1px solid white;
 }
@@ -1110,7 +1126,7 @@ a.variables:active{
     position: relative;
     width: 109%;
     border: 1px solid #E9E9ED;
-    height: 275px;
+    height: 347px;
     margin-bottom:20px;
 }
 
@@ -1450,6 +1466,24 @@ hr.lon {
 }
 
 /*-------------------------------------------------------------------Responsive--------------------------------------*/
+
+@media only screen and(max-width: 1400px){
+    .bul{
+        top: -25px;
+    }
+    .up-ex{
+        top: -31px;
+    }
+    .original{
+        top: -13px;
+    }
+    .conti{
+        height: 287px;
+    }
+    .conti:hover{
+        height: 287px;
+    }
+}
 
 @media (max-width: 1199px){
     .fa-check-square.other {
@@ -3044,6 +3078,11 @@ a.text {
     width: 100%;
     font-weight: 600;
 }
+
+.bul{
+    top: -36px;
+}
+
 a.talla {
     float: left;
     /* width: 100%; */
@@ -3633,6 +3672,10 @@ a.text.detalle {
     padding-left: 0px;
     left: 0%;
     position: relative;
+}
+
+.bul{
+    top: -38px;
 }
 
 a.text {

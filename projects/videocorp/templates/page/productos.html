@@ -22,8 +22,13 @@
         $(document).ready(function()
         {
             var hyper = Utils.getUrlParameter('tag');
+            hyper = hyper.replace("cat1","");
+            hyper = hyper.replace("cat2","");
+            hyper = hyper.replace("cat3","");
+            hyper = hyper.replace("cat4","");
             hyper = hyper.replace("_"," ");
-            $(".lista-titulo").html(hyper);
+            hyper = hyper.replace("_"," ");
+            $(".lista-titulo").html(hyper.toUpperCase());
         });
     </script>
 {% end %}
