@@ -1,0 +1,82 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{% end %}
+
+{% block header %}
+{% include '../home/header_inside.html' %}
+{% end %}
+
+{% block javascript %}
+<!-- Google Code for Conversion Nueva Figurella Conversion Page -->
+<script type="text/javascript">
+/* <![CDATA[ */
+var google_conversion_id = 845980367;
+var google_conversion_language = "en";
+var google_conversion_format = "3";
+var google_conversion_color = "ffffff";
+var google_conversion_label = "IxQ4CMPlo3QQz8WykwM";
+var google_remarketing_only = false;
+/* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+<div style="display:inline;">
+<img height="1" width="1" style="border-style:none;" alt="" src="//www.googleadservices.com/pagead/conversion/845980367/?label=IxQ4CMPlo3QQz8WykwM&amp;guid=ON&amp;script=0"/>
+</div>
+</noscript>
+<!-- Event snippet for Nueva Conversión Figurella conversion page -->
+<script>
+  gtag('event', 'conversion', {'send_to': 'AW-845980367/tpJzCPjlvXoQz8WykwM'});
+</script>
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+
+<section style="margin-bottom:45px;">
+  <div class="container">
+    <div class="col-md-12 b2">
+      <div style="position:relative;">
+        {% if is_admin %}
+        <div class="image-upload lapiz visible-movil">
+         <label for="img_success2">
+           <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+         </label>
+         <input type="file" class="editableimage" image-id="{{ site.name }}_success2" name="image" id="img_success2" >
+       </div>
+       {% end %}
+         <img id="{{ site.name }}_success2" src="{{ read_image(site.name + '_success2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_success2',) }}'" class="img_success desaturada" alt="item">
+         <div align="center">
+             <div class="text_success text-center {{editabletext}}" text-id="{{ site.name + '_text_success2' }}"> {{ read_text(site.name +  '_text_success2') }}
+          </div>
+        </div>
+    </div>
+      </div>
+</div>
+
+</section>
+
+
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <a href="{{ site_base }}/formulario">
+     <div class="box-ros">
+         <!-- <i class="glyphicon glyphicon-envelope" aria-hidden="true"></i> -->
+         <i class="fa fa-envelope" aria-hidden="true"></i>
+         <div class="texto-rer"> Reserva <br> tu evaluación <br> sin costo </div>
+     </div>
+ </a>
+</div>
+
+
+
+{% include '../home/footer.html' %}
+{% end %}
