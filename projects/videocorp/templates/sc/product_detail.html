@@ -15,6 +15,7 @@
 <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
+<link rel="stylesheet" href="{{ site_base }}/static/css/ocul.css">
 {% end %}
 
 {% block javascript %}
@@ -32,15 +33,16 @@
             $("#img_detail").attr("src", $(this).attr('src'));
         });
 
-       var base_url = $.environmentVar(
+    var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
-         var checkout_url = $.environmentVar(
+    var checkout_url = $.environmentVar(
         'https://pay.loadingplay.com',
         'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
-         var app_public = $.environmentVar(29,29,29);
+    var app_public = $.environmentVar(60,60,60);
+    var site_name = $.environmentVar('videocorp', 'videocorp', 'videocorp'); 
         
 
         $(document).ecommerce('product_detail', {
