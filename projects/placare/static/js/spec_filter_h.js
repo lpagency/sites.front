@@ -917,6 +917,9 @@ function onLoadInit(tagGroups, tag_url){
 
     //Load filters
 
+    url = retrieveLocation();
+    var chosenTag = "";
+
     if(url.includes("botines"))
     {
         chosenTag = "c-Categoria3_Botines";
@@ -940,7 +943,6 @@ function onLoadInit(tagGroups, tag_url){
 
     if(chosenTag!=="")
     {
-        $("."+chosenTag).attr('checked',true);
         $("."+chosenTag).trigger('change',[false]);
     }
 

@@ -1002,7 +1002,6 @@ function onLoadInit(tagGroups, tag_url){
 
     if(chosenTag!=="")
     {
-        $("."+chosenTag).attr('checked',true);
         $("."+chosenTag).trigger('change',[false]);
     }
  
