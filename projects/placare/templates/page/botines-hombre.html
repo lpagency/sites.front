@@ -160,7 +160,7 @@
           <div class="text-fil-2"> TIPO DE CALZADO </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-filtros">
-                <input type="radio" class="categ c-Categoria3_Botines" name="vehicle" tag="Categoria3_Botines" value="Car" value2="Botines"> 
+                <input type="radio" class="categ c-Categoria3_Botines" name="vehicle" tag="Categoria3_Botines" value="Car" value2="Botines" disabled="true"> 
                 <div class="fil h-Categoria3_Botines" onclick="checkNombre('Categoria3_Botines','Botines')">Botines</div>
               </div>
           </form>
@@ -171,29 +171,29 @@
             <div>
             <form action="/action_page.php" class="chek">
             <div class="filtro-color">
-              <input type="radio" name="color" class="categ c-Color_Azul" tag="Color_Azul" value2="Azul">
+              <input type="checkbox" name="color" class="categ c-Color_Azul" tag="Color_Azul" value2="Azul">
               <div class="fil h-Color_Azul" onclick="checkNombre('Color_Azul','Azul')">Azul</div>
             </div>
             <div class="filtro-color">
-               <input type="radio" name="color" class="categ c-Color_Beige" tag="Color_Beige" value2="Beige">
+               <input type="checkbox" name="color" class="categ c-Color_Beige" tag="Color_Beige" value2="Beige">
                <div class="fil h-Color_Beige" onclick="checkNombre('Color_Beige','Beige')">Beige</div>
                
             </div>
             <div class="filtro-color">
-               <input type="radio" name="color" class="categ c-Color_Cafe" value2="Café" tag="Color_Cafe">
+               <input type="checkbox" name="color" class="categ c-Color_Cafe" value2="Café" tag="Color_Cafe">
                <div class="fil h-Color_Cafe" onclick="checkNombre('Color_Cafe', 'Café')">Cafe</div>
             </div>
             <div class="filtro-color">
-               <input type="radio" name="color" class="categ c-Color_Negro" tag="Color_Negro" value2="Negro">
+               <input type="checkbox" name="color" class="categ c-Color_Negro" tag="Color_Negro" value2="Negro">
                <div class="fil h-Color_Negro" onclick="checkNombre('Color_Negro','Negro')">Negro</div>
             </div>
              <div class="filtro-color">
-               <input type="radio" name="color" class="categ c-Color_Burdeo" tag="Color_Burdeo" value2="Burdeo">
+               <input type="checkbox" name="color" class="categ c-Color_Burdeo" tag="Color_Burdeo" value2="Burdeo">
                <div class="fil h-Color_Burdeo" onclick="checkNombre('Color_Burdeo','Burdeo')">Burdeo</div>
             </div>
 
             <div class="filtro-color">
-               <input type="radio" name="color" class="categ c-Color_Verde" tag="Color_Verde" value2="Verde">
+               <input type="checkbox" name="color" class="categ c-Color_Verde" tag="Color_Verde" value2="Verde">
                <div class="fil h-Color_Verde" onclick="checkNombre('Color_Verde','Verde')">Verde</div>
              </div>
             </form>
@@ -202,11 +202,11 @@
          <div class="text-fil"> MATERIAL DEL ZAPATO </div>
           <form action="/action_page.php" class="chek">
               <div class="filtro-talla">
-                <input type="radio" class="categ c-Mat_Capellada_Cuero" name="material" tag="Mat_Capellada_Cuero" value2="Cuero" value="Bike">
+                <input type="checkbox" class="categ c-Mat_Capellada_Cuero" name="material" tag="Mat_Capellada_Cuero" value2="Cuero" value="Bike">
                 <div class="fil h-Mat_Capellada_Cuero" onclick="checkNombre('Mat_Capellada_Cuero','Cuero')"> Cuero </div>
               </div>
              <!-- <div class="filtro-talla">
-                <input type="radio" class="categ c-Mat_Capellada_Eco_Cuero" name="vehicle2" tag="Mat_Capellada_Eco_Cuero" value="Eco Cuero" value="Cara" onclick="checkNombre('Mat_Capellada_Eco_Cuero','Eco')">
+                <input type="checkbox" class="categ c-Mat_Capellada_Eco_Cuero" name="vehicle2" tag="Mat_Capellada_Eco_Cuero" value="Eco Cuero" value="Cara" onclick="checkNombre('Mat_Capellada_Eco_Cuero','Eco')">
                 <div class="fil h-Mat_Capellada_Eco_Cuero" onclick="checkNombre('Mat_Capellada_Eco_Cuero','Eco')"> Eco Cuero </div> 
                 <i class="fa fa-check-square ch-Mat_Capellada_Eco_Cuero hidden" aria-hidden="true" onclick="uncheck('Mat_Capellada_Eco_Cuero','Eco')"></i>
               </div>-->
@@ -217,40 +217,40 @@
           <div class="text-fil"> MARCA </div>
           <form action="/action_page.php" class="chek">
            <!--  <div class="filtro-marca">
-                <input type="radio" class="categ c-Belle" name="vehicle2" tag="Belle" value="Car" onclick="checkNombre('Belle')">
+                <input type="checkbox" class="categ c-Belle" name="vehicle2" tag="Belle" value="Car" onclick="checkNombre('Belle')">
                 <div class="fil h-Belle" onclick="checkNombre('Belle')">Belle</div>
                <i class="fa fa-check-square ch-Belle hidden" aria-hidden="true" onclick="uncheck('Belle')"></i>
                </div> -->
               <div class="filtro-marca">
-                <input type="radio" class="categ c-Marca_Caffeine" name="marca" tag="Marca_Caffeine" value2="Caffeine">
+                <input type="checkbox" class="categ c-Marca_Caffeine" name="marca" tag="Marca_Caffeine" value2="Caffeine">
                 <div class="fil h-Caffeine" onclick="checkNombre('Caffeine')">Caffeine</div>
                <i class="fa fa-check-square ch-Caffeine hidden" aria-hidden="true" onclick="uncheck('Caffeine')"></i>
                </div> 
               <div class="filtro-marca">
-                <input type="radio" class="categ c-Marca_Cocomate" name="marca" tag="Marca_Cocomate" value2="Cocomate">
+                <input type="checkbox" class="categ c-Marca_Cocomate" name="marca" tag="Marca_Cocomate" value2="Cocomate">
                 <div class="fil h-Cocomate" onclick="checkNombre('Cocomate')">Cocomate</div>
                </div> 
               <!--<div class="filtro-marca">
-                <input type="radio" class="categ c-Degas" name="vehicle1" tag="Degas" value="Bike" onclick="checkNombre('Degas')"> 
+                <input type="checkbox" class="categ c-Degas" name="vehicle1" tag="Degas" value="Bike" onclick="checkNombre('Degas')"> 
                 <div class="fil h-Degas" onclick="checkNombre('Degas')">Degas </div>
                 <i class="fa fa-check-square ch-Degas hidden" aria-hidden="true" onclick="uncheck('Degas')"></i>
               </div>-->
               <div class="filtro-marca">
-                <input type="radio" class="categ c-Marca_Manzini" name="marca" tag="Marca_Manzini" value2="Manzini">
+                <input type="checkbox" class="categ c-Marca_Manzini" name="marca" tag="Marca_Manzini" value2="Manzini">
                 <div class="fil h-Manzini" onclick="checkNombre('Manzini', 'Manzini')">Manzini</div>
                </div> 
                <!--<div class="filtro-marca">
-                <input type="radio" class="categ c-Lola_Canales" name="marca" tag="Lola_Canales" value="Car" onclick="checkNombre('Lola_Canales', 'Lola Canales')">
+                <input type="checkbox" class="categ c-Lola_Canales" name="marca" tag="Lola_Canales" value="Car" onclick="checkNombre('Lola_Canales', 'Lola Canales')">
                 <div class="fil h-Lola_Canales" onclick="checkNombre('Lola_Canales', 'Lola Canales')">Lola Canales</div>
                <i class="fa fa-check-square ch-Lola_Canales hidden" aria-hidden="true" onclick="uncheck('Lola_Canales', 'Lola Canales')"></i>
                </div>
                 <div class="filtro-marca">
-                <input type="radio" class="categ c-Pasoli" name="marca" tag="Pasoli" value="Car" onclick="checkNombre('Pasoli')">
+                <input type="checkbox" class="categ c-Pasoli" name="marca" tag="Pasoli" value="Car" onclick="checkNombre('Pasoli')">
                 <div class="fil h-Pasoli" onclick="checkNombre('Pasoli')">Pasoli</div>
                <i class="fa fa-check-square ch-Pasoli hidden" aria-hidden="true" onclick="uncheck('Pasoli')"></i>
                </div> -->
                 <div class="filtro-marca">
-                <input type="radio" class="categ c-Marca_Tarragona" name="marca" tag="Marca_Tarragona" value2="Tarragona">
+                <input type="checkbox" class="categ c-Marca_Tarragona" name="marca" tag="Marca_Tarragona" value2="Tarragona">
                 <div class="fil h-Tarragona" onclick="checkNombre('Tarragona')">Tarragona</div>
                </div> 
           </form>
