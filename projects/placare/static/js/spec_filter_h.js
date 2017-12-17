@@ -1,7 +1,8 @@
 $(document).ready(function()
 {
     window.z = 0;
-    var static_tag = "Categoria2_Calzado_Hombre,-Categoria2_Calzado_Mujer";
+
+    window.default_tag = getDefaultFilter();
 
     $(".limpiar").addClass("hidden");
 
@@ -9,15 +10,15 @@ $(document).ready(function()
 
     window.tagGroups = { // Groups of tags for 
         'Categoria3' : [], // Tipo calzado
-        'Color' : [], 
+        'Color' : [],  // Color calzado
         'Mat' : [], // Material calzado
-        'Marca' : []
+        'Marca' : [] // Marca calzado
     };
 
     window.url_tags = []; // list of tags that go in the url
 
     var base_url = $.environmentVar(
-        'https://apibodegas.ondev.today/',
+        'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/',
         'https://apibodegas.loadingplay.com/');
     var checkout_url = $.environmentVar(
@@ -1013,3 +1014,46 @@ function getLocPart(){
 
     return urlPart;
 }
+
+
+function getDefaultFilter(){
+
+    var loc = retrieveLocation();
+
+    var static_tag = "Categoria3_Calzado_Mujer,-Categoria3_Calzado_Hombre";
+
+    var defaultTag = "";
+
+    var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
+
+    for(var u in friendlyurls)
+    {
+        if(loc.includes(u))
+        {
+            defaultTag = " c-Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
+        }
+
+    }
+    return defaultTag;
+}
+
+function getClassDefaultTag()
+{
+    var loc = retrieveLocation();
+
+    var static_tag = "Categoria3_Calzado_Mujer,-Categoria3_Calzado_Hombre";
+
+    var defaultTag = "";
+
+    var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
+
+    for(var u in friendlyurls)
+    {
+        if(loc.includes(u))
+        {
+            defaultTag = " Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
+        }
+
+    }
+
+    return defaultTag;
