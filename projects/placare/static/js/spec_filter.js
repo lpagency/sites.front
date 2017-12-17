@@ -2,7 +2,9 @@ $(document).ready(function()
 {
     window.z = 0;
 
-    window.default_tag = getDefaultFilter();
+    window.default_tag = getClassDefaultTag();
+
+    var random_seed = 'random('+Math.random()+')';
 
     $(".limpiar").addClass("hidden");
 
@@ -10,13 +12,12 @@ $(document).ready(function()
 
     window.tagGroups = { // Groups of tags for 
         'Categoria3' : [], // Tipo calzado
-        'Color' : [], 
+        'Color' : [],  // Color calzado
         'Mat' : [], // Material calzado
-        'Marca' : []
+        'Marca' : [] // Marca calzado
     };
 
     window.url_tags = []; // list of tags that go in the url
-
 
     var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
@@ -36,7 +37,7 @@ $(document).ready(function()
         'tag': window.default_tag,
         'ignore_stock': false,
         'infinite_scroll': false,
-        'column' : 'random',
+        'column' : random_seed,
         // 'maxProducts': 100,
         'checkout_url': checkout_url,
         'operator' :'or',
@@ -139,7 +140,7 @@ $(document).ready(function()
          }
     });
 
-    //<-------------ORDENAR MAYOR, MENOR Y POR NOMBRE------------->
+    //<-------------ORDENAR MAYOR, MENOR, POR NOMBRE Y ORDEN ALEATORIO------------->
 
     $(document).on("click", ".mayor", function(ev)
     {
@@ -185,7 +186,18 @@ $(document).ready(function()
 
     });
 
-    // Clean button on mobile view, doesn't fully work
+    $(document).on("click", ".aleatorio", function(ev)
+    {
+        ev.preventDefault();
+        config.column = "random("+Math.random()+")";
+
+        $('.products').html("");
+        $('.products').ecommerce('destroy');
+        $('.products').ecommerce(config);
+
+        return false;
+    });
+
     $(".limpiar").click(function()
     {
         limpiar();
@@ -288,11 +300,11 @@ $(document).ready(function()
 
         url = getCurrentUrl();
         
-
         history.pushState('', 'Placare', url+'?tag='+url_tags.join(','));
 
         if(shouldLoad!==false)
         {
+            $('.products').html("");
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
@@ -317,17 +329,23 @@ $(document).ready(function()
 
         // New filter logic
 
-        tagGroups.Color = updateGroupTag(tagGroups.Color, nombre);
+        var groups = window.tagGroups.Color;
+
+        window.tagGroups.Color = updateGroupTag(groups, nombre);
 
         window.config.tag = prepareTags(tagGroups);
 
-        url_tags = updateURLTags(url_tags,nombre);
+        var tags = window.url_tags;
 
-        history.pushState('', 'Placare', 'mujer?tag='+url_tags.join(','));
+        window.url_tags = updateURLTags(tags,nombre);
+
+        url = getCurrentUrl();
+
+        history.pushState('', 'Placare', url+'?tag='+url_tags.join(','));
 
         if(shouldLoad!==false)
         {
-            $('.products').empty();
+            $('.products').html("");
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
@@ -355,17 +373,23 @@ $(document).ready(function()
 
         // New filter logic
 
-        tagGroups.Mat = updateGroupTag(tagGroups.Mat, nombre);
+        var groups = window.tagGroups.Mat;
+
+        window.tagGroups.Mat = updateGroupTag(groups, nombre);
 
         window.config.tag = prepareTags(tagGroups);
-        console.log(window.config.tag);
 
-        url_tags = updateURLTags(url_tags,nombre);
+        var tags = window.url_tags;
 
-        history.pushState('', 'Placare', 'mujer?tag='+url_tags.join(','));
+        window.url_tags = updateURLTags(tags,nombre);
+
+        url = getCurrentUrl();
+
+        history.pushState('', 'Placare', url+'?tag='+url_tags.join(','));
 
         if(shouldLoad!==false)
         {
+            $('.products').html("");
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
@@ -393,16 +417,23 @@ $(document).ready(function()
 
         // New filter logic
 
-        tagGroups.Mat = updateGroupTag(tagGroups.Mat, nombre);
+        var groups = window.tagGroups.Marca;
+
+        window.tagGroups.Marca = updateGroupTag(groups, nombre);
 
         window.config.tag = prepareTags(tagGroups);
 
-        url_tags = updateURLTags(url_tags,nombre);
+        var tags = window.url_tags;
 
-        history.pushState('', 'Placare', 'mujer?tag='+url_tags.join(','));
+        window.url_tags = updateURLTags(tags,nombre);
+
+        url = getCurrentUrl();
+
+        history.pushState('', 'Placare', url+'?tag='+url_tags.join(','));
 
         if(shouldLoad!==false)
         {
+            $('.products').html("");
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
@@ -780,9 +811,11 @@ function limpiar()
     window.url_tags = [];
 
     window.config.tag = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
-    window.config.column = 'random';
+    window.config.column = 'random('+Math.random()+')';
 
-    history.pushState('', 'Placare', 'mujer'); //Agregar url custom
+    var url = getCurrentUrl();
+
+    history.pushState('', 'Placare', url+'?tag='); //Agregar url custom
 
     $('.products').ecommerce('destroy');
     $('.products').ecommerce(window.config);
@@ -923,7 +956,6 @@ function onLoadInit(tagGroups, tag_url){
     if(default_tag!=="")
         $("."+default_tag).trigger('change',[false]);
 
- 
     // Load filters from tag parameter in url
     if(Utils.getUrlParameter('tag')!==undefined)
     {
@@ -985,7 +1017,7 @@ function getDefaultFilter(){
 
     var loc = retrieveLocation();
 
-    var static_tag = "Categoria3_Calzado_Mujer,-Categoria3_Calzado_Hombre";
+    var static_tag = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
 
     var defaultTag = "";
 
@@ -1006,8 +1038,6 @@ function getClassDefaultTag()
 {
     var loc = retrieveLocation();
 
-    var static_tag = "Categoria3_Calzado_Mujer,-Categoria3_Calzado_Hombre";
-
     var defaultTag = "";
 
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
@@ -1016,12 +1046,12 @@ function getClassDefaultTag()
     {
         if(loc.includes(u))
         {
-            defaultTag = "Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
+            defaultTag = ",Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
         }
 
     }
 
-    return defaultTag;
+    return static_tag+defaultTag;
 }
 
 function updateTextRoute(name, category){
@@ -1040,7 +1070,4 @@ function updateTextRoute(name, category){
         $(".texto-ruta").html(textoRuta + " / " +element);
         console.log($('.texto-ruta'));
     }
-
-
-    
 }
