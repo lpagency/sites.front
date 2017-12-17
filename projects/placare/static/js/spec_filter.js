@@ -1040,6 +1040,8 @@ function getClassDefaultTag()
 
     var defaultTag = "";
 
+    var static_tag = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
+
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
     for(var u in friendlyurls)
