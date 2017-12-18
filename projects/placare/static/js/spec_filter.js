@@ -693,10 +693,8 @@ function limpiar()
 
     var defaultTag = getDefaultFilter();
 
-    if(default_tag!=="")
-        $("."+default_tag).trigger('change',[false]);
-
-    window.default_tag = getClassDefaultTag();
+    if(defaultTag!=="")
+        $("."+defaultTag).trigger('change',[false]);
 
     window.tagGroups = { 
         'Categoria3' : [], 
@@ -711,7 +709,7 @@ function limpiar()
 
     window.url_tags = [];
 
-    window.config.tag = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
+    window.config.tag = getClassDefaultTag();
     window.config.column = 'random('+Math.random()+')';
 
     var url = getCurrentUrl();
@@ -899,6 +897,7 @@ function getCurrentUrl(){
 
     for(var u in friendlyurls)
     {
+        console.log(u);
         if(loc.includes(u))
             urlPart = u + "-mujer";
     }
@@ -907,6 +906,8 @@ function getCurrentUrl(){
     {
         urlPart = "listado_productos";
     }
+
+    console.log(urlPart);
 
     return urlPart;
 }
