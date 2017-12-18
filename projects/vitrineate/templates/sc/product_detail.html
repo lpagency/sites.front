@@ -48,8 +48,16 @@
             'checkout_url': checkout_url,
             'product_id' : {{ product_id }},
             'container' : '.product-detail',
-            onLoad: function(product){
-                related(product.bullet_3);
+            onLoad: function(product)
+            {
+                for(var i=0; i<product.tags.length; i++)
+                {
+                  if(product.tags[i].name.indexOf("Cat3_") != -1 || product.tags[i].name.indexOf("cat3_") != -1)
+                  {
+                    console.log(product.tags[i].name);
+                    related(product.tags[i].name);
+                  }
+                }
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_1, function(data)
@@ -79,7 +87,7 @@
                 'base_url' : base_url,
                 'maxProducts' : 8,
                 'templateOrigin' : '#product_template_home',
-                'tag' : '',
+                'tag' : tag,
                 'ignore_stock' : true,
                     'onLoad':function(){
                          // $('.ellipsis').ellipsis();
