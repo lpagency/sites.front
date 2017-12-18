@@ -921,13 +921,12 @@ function getDefaultFilter(){
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
     friendlyurls.forEach(function(i){
-        if(loc.includes(u))
-            defaultTag = "c-Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
+        if(loc.includes(i))
+            defaultTag = "c-Categoria3_" + i.charAt(0).toUpperCase() + i.slice(1);
     });
 
     return defaultTag;
 }
-
 function getClassDefaultTag()
 {
     var loc = retrieveLocation();
@@ -939,8 +938,8 @@ function getClassDefaultTag()
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
     friendlyurls.forEach(function(i){
-        if(loc.includes(u))
-            defaultTag = ",Categoria3_"+ i.charAt(0).toUpperCase()+u.slice(1);
+        if(loc.includes(i))
+            defaultTag = ",Categoria3_"+ i.charAt(0).toUpperCase()+i.slice(1);
     }); 
 
     return static_tag+defaultTag;
