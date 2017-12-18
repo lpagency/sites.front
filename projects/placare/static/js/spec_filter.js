@@ -895,12 +895,10 @@ function getCurrentUrl(){
 
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
-        console.log(u);
-        if(loc.includes(u))
-            urlPart = u + "-mujer";
-    }
+    friendlyurls.forEach(function(i){
+        if(loc.includes(i))
+            urlPart = i + "-mujer";
+    });
 
     if(loc.includes("listado_productos"))
     {
@@ -922,14 +920,11 @@ function getDefaultFilter(){
 
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
+    friendlyurls.forEach(function(i){
         if(loc.includes(u))
-        {
             defaultTag = "c-Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
-        }
+    });
 
-    }
     return defaultTag;
 }
 
@@ -943,14 +938,10 @@ function getClassDefaultTag()
 
     var friendlyurls = ["ballerinas","botines","mocasines","mules","plataformas","playeras","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
+    friendlyurls.forEach(function(i){
         if(loc.includes(u))
-        {
-            defaultTag = ",Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
-        }
-
-    }
+            defaultTag = ",Categoria3_"+ i.charAt(0).toUpperCase()+u.slice(1);
+    }); 
 
     return static_tag+defaultTag;
 }
