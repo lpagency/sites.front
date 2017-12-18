@@ -500,13 +500,31 @@ function onLoadInit(tagGroups, tag_url){
 
         tag_list.forEach(function(i){
             var temp = i.replace(/[+-]/g,"");
-            $('input:checkbox').each(function(a, v){
-                if($(this).hasClass("c-"+temp))
+            if($(window).width()<800) //on mobile
+            {
+                console.log("on mobile");
+                if(retrieveLocation().includes("hombre")||retrieveLocation.includes("listado_productos_hombre"))
                 {
-                    $(this).trigger('change', [false]);
-                    $(this).attr('checked',true);
+                    $('input.mobile-filter.male-filter[type=checkbox]').each(function(a, v){
+                        if($(this).hasClass("c-"+temp))
+                        {
+                            $(this).trigger('change', [false]);
+                            $(this).attr('checked',true);
+                        }
+                    });;
                 }
-            });
+            }
+            else
+            {
+                console.log("on desktop");
+                $('input.desk-filter[type=checkbox]').each(function(a, v){
+                    if($(this).hasClass("c-"+temp))
+                    {
+                        $(this).trigger('change', [false]);
+                        $(this).attr('checked',true);
+                    }
+                });
+            }
         });
     }
 
