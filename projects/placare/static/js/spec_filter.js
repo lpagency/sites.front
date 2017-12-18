@@ -649,8 +649,6 @@ function onLoadInit(tagGroups, tag_url){
     if(defaultFilter!=="")
         $("."+defaultFilter).trigger('change',[false]);
 
-
-
     // Load filters from tag parameter in url
     if(Utils.getUrlParameter('tag')!==undefined)
     {
@@ -903,11 +901,7 @@ function getCurrentUrl(){
     });
 
     if(loc.includes("listado_productos"))
-    {
         urlPart = "listado_productos";
-    }
-
-    console.log(urlPart);
 
     return urlPart;
 }
@@ -915,8 +909,6 @@ function getCurrentUrl(){
 function getDefaultFilter(){
 
     var loc = retrieveLocation();
-
-    var static_tag = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
 
     var defaultTag = "";
 

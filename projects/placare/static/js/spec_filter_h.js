@@ -488,10 +488,10 @@ function onLoadInit(tagGroups, tag_url){
 
     //Load default filter from friendly url
 
-    var defaultTag = getDefaultFilter();
+    var defaultFilter = getDefaultFilter();
 
-    if(defaultTag!=="")
-        $("."+defaultTag).trigger('change',[false]);
+    if(defaultFilter!=="")
+        $("."+defaultFilter).trigger('change',[false]);
 
     // Load filters from tag parameter in url
     if(Utils.getUrlParameter('tag')!==undefined)
@@ -534,6 +534,11 @@ function limpiar()
         $(this).empty();
     });
 
+    var defaultTag = getDefaultFilter();
+
+    if(defaultTag!=="")
+        $("."+defaultTag).trigger('change',[false]);
+
     window.tagGroups = { 
         'Categoria3' : [], 
         'Color' : [], 
@@ -544,7 +549,7 @@ function limpiar()
 
     window.url_tags = [];
 
-    window.config.tag = "Categoria2_Calzado_Hombre,-Categoria2_Calzado_Mujer";
+    window.config.tag = getClassDefaultTag();
     window.config.column = 'random('+Math.random()+')';
 
     var url = getCurrentUrl();
@@ -560,7 +565,7 @@ function limpiar()
 
 function prepareTags(tG){
 
-    var tg = "Categoria2_Calzado_Hombre,-Categoria2_Calzado_Mujer";
+    var tg = window.default_tag;
 
     jQuery.each(tG, function(i, val)
     {
@@ -705,11 +710,13 @@ function getCurrentUrl(){
 
     var friendlyurls = ["botines","formales","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
-        if(loc.includes(u))
-            urlPart = u + "-hombres";
-    }
+    friendlyurls.forEach(function(i){
+        if(loc.includes(i))
+         urlPart = i + "-hombre";
+    });
+
+    if(loc.includes("listado_productos_hombre"))
+        urlPart="listado_productos_hombre";
 
     return urlPart;
 }
@@ -722,14 +729,11 @@ function getDefaultFilter(){
 
     var friendlyurls = ["botines","formales","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
-        if(loc.includes(u))
-        {
-            defaultTag = " c-Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
-        }
+    friendlyurls.forEach(function(i){
+        if(loc.includes(i))
+            defaultTag ="c-Categoria3_"+ i.charAt(0).toUpperCase() + i.slice(1);
+    });
 
-    }
     return defaultTag;
 }
 
@@ -737,20 +741,16 @@ function getClassDefaultTag()
 {
     var loc = retrieveLocation();
 
-    var static_tag = "Categoria2_Calzado_Hombre,-Categoria2_Calzado_Mujer";
-
     var defaultTag = "";
+
+    var static_tag = "Categoria2_Calzado_Hombre,-Categoria2_Calzado_Mujer";
 
     var friendlyurls = ["botines","formales","sandalias","zapatos"];
 
-    for(var u in friendlyurls)
-    {
-        if(loc.includes(u))
-        {
-            defaultTag = ",Categoria3_" + u.charAt(0).toUpperCase() + u.slice(1);
-        }
-
-    }
+    friendlyurls.forEach(function(i){
+        if(loc.includes(i))
+            defaultTag = ",Categoria3_" + i.charAt(0).toUpperCase() + i.slice(1);
+    });
 
     return static_tag+defaultTag;
 }
