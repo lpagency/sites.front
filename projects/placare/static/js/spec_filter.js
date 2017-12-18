@@ -273,6 +273,7 @@ $(document).ready(function()
 
     $("input:checkbox[name=vehicle]").change(function(ev,shouldLoad)
     {
+
         var $box = $(this);
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
@@ -312,10 +313,11 @@ $(document).ready(function()
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
+
     });
 
-    $("input:checkbox[name=color]").change(function(ev,shouldLoad)
-    {
+    $("input:checkbox[name=color]").change(function(ev,shouldLoad){
+
         var $box = $(this);
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
@@ -393,7 +395,7 @@ $(document).ready(function()
 
         if(shouldLoad!==false)
         {
-            $('.products').html("");
+            $('.products').empty();
             $('.products').ecommerce('destroy');
             $('.products').ecommerce(window.config);
         }
@@ -655,14 +657,34 @@ function onLoadInit(tagGroups, tag_url){
         tag_list = Utils.getUrlParameter('tag').split(',');
 
         tag_list.forEach(function(i){
+
             var temp = i.replace(/[+-]/g,"");
-            $('input:checkbox').each(function(a, v){
-                if($(this).hasClass("c-"+temp))
+            if($(window).width()<800) //on mobile
+            {
+                console.log("on mobile");
+                if(retrieveLocation().includes("mujer")||retrieveLocation.includes("listado_productos"))
                 {
-                    $(this).trigger('change', [false]);
-                    $(this).attr('checked',true);
+                    $('input.mobile-filter.female-filter[type=checkbox]').each(function(a, v){
+                        console.log($(this));
+                        if($(this).hasClass("c-"+temp))
+                        {
+                            $(this).trigger('change', [false]);
+                            $(this).attr('checked',true);
+                        }
+                    });
                 }
-            });
+            }
+            else
+            {
+                console.log("on desktop");
+                $('input.desk-filter[type=checkbox]').each(function(a, v){
+                    if($(this).hasClass("c-"+temp))
+                    {
+                        $(this).trigger('change', [false]);
+                        $(this).attr('checked',true);
+                    }
+                });
+            }
         });
     }
 
