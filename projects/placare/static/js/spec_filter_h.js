@@ -501,9 +501,8 @@ function onLoadInit(tagGroups, tag_url){
         tag_list.forEach(function(i){
             var temp = i.replace(/[+-]/g,"");
             if($(window).width()<800) //on mobile
-            {
-                console.log("on mobile");
-                if(retrieveLocation().includes("hombre")||retrieveLocation.includes("listado_productos_hombre"))
+            {;
+                if(retrieveLocation().includes("hombre")||retrieveLocation().includes("listado_productos_hombre"))
                 {
                     $('input.mobile-filter.male-filter[type=checkbox]').each(function(a, v){
                         if($(this).hasClass("c-"+temp))
@@ -516,7 +515,6 @@ function onLoadInit(tagGroups, tag_url){
             }
             else
             {
-                console.log("on desktop");
                 $('input.desk-filter[type=checkbox]').each(function(a, v){
                     if($(this).hasClass("c-"+temp))
                     {
@@ -708,7 +706,6 @@ function retrieveLocation(){
         if(/(.*?).*(?=\?)/g.test(loc))
         {
             return loc.match(/(.*?)(?=\?)/g)[0];
-            console.log("with ?");
         }
         else
         {
@@ -782,11 +779,9 @@ function updateTextRoute(name, category){
     if($('#'+category).html()!==undefined)
     {
         $('#'+category).html(name);
-        console.log($('#'+category));
     }
     else
     {
-        $(".texto-ruta").html(textoRuta + " / " +element);
-        console.log($('.texto-ruta'));
+        $(".texto-ruta").html(textoRuta + " / " +element);;
     }
 }
