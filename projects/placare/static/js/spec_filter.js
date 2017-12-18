@@ -644,10 +644,12 @@ function onLoadInit(tagGroups, tag_url){
 
     //Load default filter from friendly url
 
-    var defaultTag = getDefaultFilter();
+    var defaultFilter = getDefaultFilter();
 
-    if(defaultTag!=="")
-        $("."+defaultTag).trigger('change',[false]);
+    if(defaultFilter!=="")
+        $("."+defaultFilter).trigger('change',[false]);
+
+
 
     // Load filters from tag parameter in url
     if(Utils.getUrlParameter('tag')!==undefined)
@@ -724,7 +726,7 @@ function limpiar()
 
 function prepareTags(tG){
 
-    var tg = "Categoria2_Calzado_Mujer,-Categoria2_Calzado_Hombre";
+    var tg = window.default_tag;
 
     jQuery.each(tG, function(i, val)
     {
