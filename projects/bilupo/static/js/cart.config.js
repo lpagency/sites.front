@@ -47,6 +47,32 @@ $(document).ready(function()
     var tag_marca = "";
     var info ="";
     var tag_exist = false;
+    window.tag = [];
+    var filtro = $(".filtrosMensaje").val();
+    var filtro2 = $(".filtrosMensaje2").val();
+    var filtro3 = $(".filtrosMensaje3").val();
+    filtro = filtro.replace(" ","_");
+    filtro = filtro.replace("-","_");
+    filtro = filtro.replace("/","_");
+    filtro2 = filtro2.replace(" ","_");
+    filtro2 = filtro2.replace("-","_");
+    filtro2 = filtro2.replace("/","_");
+    filtro3 = filtro3.replace(" ","_");
+    filtro2 = filtro2.replace("-","_");
+    filtro3 = filtro3.replace("/","_");
+
+    if(filtro != "Todo")
+    {
+        window.tag.push(filtro.toLowerCase());
+    }
+    if(filtro2 != "Todo")
+    {
+        window.tag.push(filtro2.toLowerCase());
+    }
+    if(filtro3 != "Todo")
+    {
+        window.tag.push(filtro3.toLowerCase());
+    }
 
     var base_url = $.environmentVar(
         'https://apibodegas.loadingplay.com/',
@@ -77,6 +103,12 @@ $(document).ready(function()
             var prod = $(".product-grid").html();
         }
     };
+
+    if(window.tag[0] != "")
+    {
+        window.config.tag = window.tag.toString();
+        $(document).ecommerce(window.config);
+    }
 
     $(document).ecommerce(window.config);
 
