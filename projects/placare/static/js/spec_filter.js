@@ -661,11 +661,9 @@ function onLoadInit(tagGroups, tag_url){
             var temp = i.replace(/[+-]/g,"");
             if($(window).width()<800) //on mobile
             {
-                console.log("on mobile");
-                if(retrieveLocation().includes("mujer")||retrieveLocation.includes("listado_productos"))
+                if(retrieveLocation().includes("mujer")||retrieveLocation().includes("listado_productos"))
                 {
                     $('input.mobile-filter.female-filter[type=checkbox]').each(function(a, v){
-                        console.log($(this));
                         if($(this).hasClass("c-"+temp))
                         {
                             $(this).trigger('change', [false]);
@@ -676,7 +674,6 @@ function onLoadInit(tagGroups, tag_url){
             }
             else
             {
-                console.log("on desktop");
                 $('input.desk-filter[type=checkbox]').each(function(a, v){
                     if($(this).hasClass("c-"+temp))
                     {
