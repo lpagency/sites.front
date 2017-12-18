@@ -53,7 +53,16 @@
             'container' : '.product-detail',
             onLoad: function(product)
             {
-                related(product.tags[0]);
+                if(product.tags != undefined)
+                {
+                    for(i in product.tags)
+                    {
+                        if(product.tags[i].name.indexOf("cat2_") != -1)
+                        {
+                            related(product.tags[i].name);
+                        }
+                    }
+                }
             }
 
         })
@@ -66,7 +75,7 @@
                 'app_public' : app_public,
                 'base_url' : base_url,
                 'maxProducts' : 10,
-                'templateOrigin' : '#product_template',
+                'templateOrigin' : '#product_template_box',
                 'tag' : tag,
                 'ignore_stock' : true,
                     'onLoad':function(){
@@ -117,8 +126,7 @@
 </script>
 
 
-<!-- 
-{% end %} -->
+{% end %}
 
 
 
@@ -127,8 +135,6 @@
 
 
 <div class="product-detail"></div>
-
-
     <section class="container lista">
         <div class="row">
             <div class="col-xs-12">
@@ -138,7 +144,6 @@
                         <a href="#" class="lista-grupo-link">Ver todos</a>
                     </div>
                     <div class="lista-grupo lista-grupo-borde product-related">
-
                     </div>
                 </div>
             </div>

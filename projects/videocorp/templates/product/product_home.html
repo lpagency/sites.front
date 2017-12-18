@@ -1,11 +1,13 @@
 <script type="text/template" id="product_template" class="hidden">
-	<div class="col-md-4 lista-item ocultar-detalle">
-		<div class="lista-item-main">
-			<div class="lista-item-img-wrapper">
-				<img src="{{! images[0]['thumb_500'] }}" alt="Imagen" class="lista-item-img">
+	<a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}">
+		<div class="col-md-4 lista-item ocultar-detalle">
+			<div class="lista-item-main">
+				<div class="lista-item-img-wrapper">
+					<img src="{{! images[0]['thumb_500'] }}" alt="Imagen" class="lista-item-img">
+				</div>
+				<h4 class="lista-item-titulo">{{! name }}</h4>
 			</div>
-			<h4 class="lista-item-titulo">{{! name }}</h4>
+			<div class="lista-item-cta">Ver detalle</div>
 		</div>
-		<a href="{{ site_base }}/sc/product/detail/{{! name|friendly }}/{{! id }}" class="lista-item-cta">Ver detalle</a>
-	</div>
+	</a>
 </script>
