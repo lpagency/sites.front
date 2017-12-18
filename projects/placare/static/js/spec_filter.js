@@ -18,7 +18,8 @@ $(document).ready(function()
         'Talla' : [],
         'Taco' : [],
         'Alt_Taco' : [],
-        'Alt_Plat' : []
+        'Alt_Plat' : [],
+        'Otros' : []
     };
 
     window.url_tags = []; // list of tags that go in the url
@@ -657,8 +658,8 @@ function onLoadInit(tagGroups, tag_url){
         tag_list = Utils.getUrlParameter('tag').split(',');
 
         tag_list.forEach(function(i){
-
             var temp = i.replace(/[+-]/g,"");
+
             if($(window).width()<800) //on mobile
             {
                 if(retrieveLocation().includes("mujer")||retrieveLocation().includes("listado_productos"))
@@ -672,7 +673,7 @@ function onLoadInit(tagGroups, tag_url){
                     });
                 }
             }
-            else
+            else // on desktop
             {
                 $('input.desk-filter[type=checkbox]').each(function(a, v){
                     if($(this).hasClass("c-"+temp))
@@ -682,6 +683,20 @@ function onLoadInit(tagGroups, tag_url){
                     }
                 });
             }
+
+            //Test for special filters
+            if(/Categoria4_/g.test(temp)||/Cierre_/g.test(temp))
+            {
+                window.tagGroups.Otros.push(temp);
+            }
+        });
+    }
+
+    if(window.tagGroups.Otros.length>0)
+    {
+        window.tagGroups.Otros.forEach(function(i)
+        {
+            window.config.tag+=","+i;
         });
     }
 
@@ -921,6 +936,9 @@ function getCurrentUrl(){
 
     if(loc.includes("listado_productos"))
         urlPart = "listado_productos";
+
+    if(urlPart==="mules-mujer")
+        urlPart==="mules-slippers-mujer";
 
     return urlPart;
 }

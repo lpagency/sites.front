@@ -18,7 +18,8 @@ $(document).ready(function()
         'Talla' : [],
         'Taco' : [],
         'Alt_Taco' : [],
-        'Alt_Plat' : []
+        'Alt_Plat' : [],
+        'Otros': []
     };
 
     window.url_tags = []; // list of tags that go in the url
@@ -523,6 +524,20 @@ function onLoadInit(tagGroups, tag_url){
                     }
                 });
             }
+
+            //Test for special filters
+            if(/Categoria4_/g.test(temp)||/Cierre_/g.test(temp))
+            {
+                window.tagGroups.Otros.push(temp);
+            }
+        });
+    }
+
+    if(window.tagGroups.Otros.length>0)
+    {
+        window.tagGroups.Otros.forEach(function(i)
+        {
+            window.config.tag+=","+i;
         });
     }
 
