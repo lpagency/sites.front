@@ -22,12 +22,47 @@
         $(document).ready(function()
         {
             var hyper = Utils.getUrlParameter('tag');
-            hyper = hyper.replace("cat1","");
-            hyper = hyper.replace("cat2","");
-            hyper = hyper.replace("cat3","");
-            hyper = hyper.replace("cat4","");
+            hyper = hyper.replace("cat1_","");
+            hyper = hyper.replace("cat2_","");
+            hyper = hyper.replace("cat3_","");
+            hyper = hyper.replace("cat4_","");
             hyper = hyper.replace("_"," ");
             hyper = hyper.replace("_"," ");
+
+            switch(hyper) 
+            {
+                case "microfonia":
+                    hyper = "microfonía";
+                break;
+
+                case "edicion post produccion":
+                    hyper = "edición y post producción"
+                break;
+
+                case "grabacion":
+                    hyper = "grabación";
+                break;
+
+                case "post produccion":
+                    hyper = "post producción";
+                break;
+
+                case "electricos":
+                    hyper = "eléctricos";
+                break;
+
+                case "carteleria digital":
+                    hyper = "cartelería digital";
+                break;
+
+                case "inalambricos":
+                    hyper = "inalámbricos";
+                break;
+            }
+
+            console.log(hyper);
+
+
             $(".lista-titulo").html(hyper.toUpperCase());
         });
     </script>

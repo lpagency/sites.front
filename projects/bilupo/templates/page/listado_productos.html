@@ -77,50 +77,6 @@ $(document).ready(function()
         });
     });
 </script>
-<script type="text/javascript">
-    $(document).ready(function()
-    {
-        setTimeout(function()
-        {
-            var tag = [];
-
-            var filtro = $(".filtrosMensaje").val();
-            var filtro2 = $(".filtrosMensaje2").val();
-            var filtro3 = $(".filtrosMensaje3").val();
-            filtro = filtro.replace(" ","_");
-            filtro = filtro.replace("-","_");
-            filtro = filtro.replace("/","_");
-            filtro2 = filtro2.replace(" ","_");
-            filtro2 = filtro2.replace("-","_");
-            filtro2 = filtro2.replace("/","_");
-            filtro3 = filtro3.replace(" ","_");
-            filtro2 = filtro2.replace("-","_");
-            filtro3 = filtro3.replace("/","_");
-
-            if(filtro != "Todo")
-            {
-                tag.push(filtro.toLowerCase());
-            }
-            if(filtro2 != "Todo")
-            {
-                tag.push(filtro2.toLowerCase());
-            }
-            if(filtro3 != "Todo")
-            {
-                tag.push(filtro3.toLowerCase());
-            }
-            if(tag[0] != "")
-            {
-
-                window.config.tag = tag.toString();
-
-                $(".products").html("");
-                $(document).ecommerce('destroy');
-                $(document).ecommerce(window.config);
-            }
-        },1000);
-    });
-</script>
 
 {% end %}
 

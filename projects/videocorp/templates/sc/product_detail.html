@@ -10,8 +10,7 @@
 
 {% block css %}
 <link rel="stylesheet" type="text/css" href="{{ site_base }}/common/js/bodegas/dist/bodegas.client.css">
-<link rel="stylesheet" type="text/css" href="{{ site_base }}/static/js/slick-1.8.0/slick/slick.css"/>
-<link rel="stylesheet" href="{{ site_base }}/static/css/det.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/main.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/header.css">
 <link rel="stylesheet" href="{{ site_base }}/static/css/footer.css">
@@ -20,9 +19,8 @@
 
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/js/slick-1.8.0/slick/slick.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script type="text/javascript" src="{{ site_base }}/static/js/app.js"></script>
-<script type="text/javascript" src="{{ site_base }}/static/jquery-cookie-master/src/jquery.cookie.js"></script>
 
 <script type="text/javascript">
 
@@ -53,7 +51,16 @@
             'container' : '.product-detail',
             onLoad: function(product)
             {
-                related(product.tags[0]);
+                if(product.tags != undefined)
+                {
+                    for(i in product.tags)
+                    {
+                        if(product.tags[i].name.indexOf("cat2_") != -1)
+                        {
+                            related(product.tags[i].name);
+                        }
+                    }
+                }
             }
 
         })
@@ -65,11 +72,39 @@
             var config = {
                 'app_public' : app_public,
                 'base_url' : base_url,
-                'maxProducts' : 10,
-                'templateOrigin' : '#product_template',
+                'maxProducts' : 15,
+                'templateOrigin' : '#product_template_box',
                 'tag' : tag,
                 'ignore_stock' : true,
                     'onLoad':function(){
+                        $(".product-related").slick({
+                            mobileFirst: true,
+                            slidesToScroll: 1,
+                            slidesToShow: 1,
+                            dots: false,
+                            prevArrow: "<img src='https://7static.loadingplay.com/static/images/5daa261ecc2951e2b42363b3c9051ffc_listaflecha.png' class='lista-slider-flecha lista-slider-flecha-prev'>",
+                            nextArrow: "<img src='https://7static.loadingplay.com/static/images/5daa261ecc2951e2b42363b3c9051ffc_listaflecha.png' class='lista-slider-flecha lista-slider-flecha-next'>",
+                            responsive: [
+                                {
+                                    breakpoint: 768,
+                                    settings: {
+                                        slidesToShow: 3
+                                    }
+                                },
+                                {
+                                    breakpoint: 992,
+                                    settings: {
+                                        slidesToShow: 4
+                                    }
+                                },
+                                {
+                                    breakpoint: 1200,
+                                    settings: {
+                                        slidesToShow: 5
+                                    }
+                                }
+                            ]
+                        });
 
                      }
                 
@@ -117,8 +152,7 @@
 </script>
 
 
-<!-- 
-{% end %} -->
+{% end %}
 
 
 
@@ -127,8 +161,6 @@
 
 
 <div class="product-detail"></div>
-
-
     <section class="container lista">
         <div class="row">
             <div class="col-xs-12">
@@ -137,8 +169,7 @@
                         <h4 class="lista-grupo-titulo">Productos de la misma categoría</h4>
                         <a href="#" class="lista-grupo-link">Ver todos</a>
                     </div>
-                    <div class="lista-grupo lista-grupo-borde product-related">
-
+                    <div class="lista-grupo lista-grupo-borde lista-slider product-related">
                     </div>
                 </div>
             </div>
