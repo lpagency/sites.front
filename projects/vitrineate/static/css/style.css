@@ -648,6 +648,147 @@ hr.page-contact {
 .remove-from-cart.fri {
     padding-left: 27px;
 }
+/*   ***[logos]***   */
+.logo-editable{
+  top: 65px !important;
+  z-index: 1000 !important;
+  right: inherit !important;
+}
+.logo-2{
+  left: 180px;
+}
+.logo-3{
+  left: 380px;
+}
+
+.logo-4{
+  left: 580px;
+}
+
+.logo-5{
+  left: 780px;
+}
+
+.logo-6{
+  left: 930px;
+}
+
+.logo-7{
+  left: 1100px;
+}
+.logo2{
+  left: 15% !important;
+}
+.logo3{
+  left: 30% !important;
+}
+
+.logo4{
+  left: 45% !important;
+}
+
+.logo5{
+  left: 60% !important;
+}
+
+.logo6{
+  left: 75% !important;
+}
+
+.logo7{
+  left: 90% !important;
+}
+.logos {
+  padding: 2.9167rem 15px 5.4167rem 15px;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .logos {
+    padding: 2.1875rem 15px 4.0625rem 15px;
+  }
+}
+
+.logos-titulo {
+    position: relative;
+    font-size: 20px;
+    font-weight: 100;
+    color: #808080;
+    margin-bottom: 4%;
+    margin-top: -23px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+}
+
+@media screen and (min-width: 768px) {
+  .logos-titulo {
+    font-size: 1.875rem;
+    margin: 0 auto 3.125rem auto;
+    width: 70%;
+  }
+}
+
+.logos-lista {
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .logos-lista {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 0 3.125rem;
+  }
+}
+
+.logos-item {
+  margin: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logos-item {
+    margin: 0;
+    width: 10%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logos-item {
+    width: 20%;
+    max-width: 100px;
+    height: 20%;
+    max-height: 100px;
+    object-fit: scale-down;
+    padding: 2px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logos-item:first-child {
+    width: 7%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .logos-item:first-child {
+    width: 7%;
+    max-width: 7%;
+    height: 40px;
+    max-height: 40px;
+  }
+}
+
+/*   ***   /[logos]***   */
 
 /*-----------------------------------------------Responsive--------------------------------------------------*/
 @media (max-width:1199px){

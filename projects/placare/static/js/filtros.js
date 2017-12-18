@@ -31,6 +31,7 @@ $(document).ready(function()
         'base_url': base_url,
         'products_per_page' : 12,
         'tag': '',
+        'column': 'random',
         'ignore_stock': false,
         'infinite_scroll': false,
         // 'maxProducts': 100,

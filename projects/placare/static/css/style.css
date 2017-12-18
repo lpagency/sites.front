@@ -51,7 +51,7 @@ div.image-upload {
 }
 
 .linea-prefooter{
-    width: 73%;
+    width: 75%;
 }
 
 div.upload input, div.image-upload input {
@@ -76,11 +76,12 @@ div.upload input, div.image-upload input {
 }
 
 .linea-pre-footer{
-    width: 80%;
+    width: 82%;
 }
 
 .pre-footer-text{
     width: 92%;
+    text-align: justify;
 }
 
 .box-pe{
@@ -271,7 +272,6 @@ div.upload input, div.image-upload input {
     right: 15px;
     font-size: 13px;
     font-weight: 500;
-}
 }
 
 .modal-title {
@@ -523,7 +523,7 @@ input.cup{
     body{
      /*   background-color:rgba(213, 214, 217, 0.14);*/
         overflow-x: hidden;
-        width: 95%;
+        width: 100%;
     }
 
     .fondo-contact {
@@ -592,7 +592,9 @@ input.cup{
     height: 369px;
     object-fit: contain;
 }
-
+.linea-prefooter {
+    width: 92%;
+}
 .cli {
     margin-bottom: 11px !important;
     margin-top: -8px;
@@ -607,7 +609,14 @@ input.cup{
     text-align: right;
     padding-right: 0px !important;
 }
-
+.pre-footer {
+    width: 105%!important;
+    height: 200px;
+    margin-left: 3.2%;
+}
+.linea-pre-footer {
+    display: none;
+}
 }
 
 @media (max-width: 375px){

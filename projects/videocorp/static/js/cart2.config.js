@@ -68,6 +68,7 @@ $(document).ready(function()
         'https://pay.loadingplay.com',
         'https://pay.loadingplay.com');
     var app_public = $.environmentVar(60,60,60);
+    var site_name = $.environmentVar('videocorp', 'videocorp', 'videocorp'); 
 
     var config = {
         'app_public': app_public,
