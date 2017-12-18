@@ -258,32 +258,36 @@
 
 <section>
   <div class="container">
-    <div class="col-md-6 col-sm-6 col-xs-12 article-ho">
-      <div class="container homi">
-        <div style="position:relative;">
-          {% if is_admin %}
-          <div class="image-upload lapiz visible-movil">
-            <label for="img_box_1">
-              <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
-            </label>
-            <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
-          </div>
-          {% end %}
-          
-          <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1',) }}'" class="image homi" alt="item">
-        </div>
-        {% if is_admin %}
-        <img class="change-image editablelink" link-id="{{ site.name + '_box_1' }}" content="{{ read_link(site.name + '_box_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-        {% end %}
+    {% if is_admin %}
+    <img class="change-image editablelink" link-id="{{ site.name + '_box_1' }}" content="{{ read_link(site.name + '_box_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+    {% end %}
+    <a id="{{ site.name + '_box_1' }}" href="{{ read_link(site.name + '_box_1') }}">
+      <div class="col-md-6 col-sm-6 col-xs-12 article-ho">
+        <div class="container homi">
+          <div style="position:relative;">
+            {% if is_admin %}
+            <div class="image-upload lapiz visible-movil">
+              <label for="img_box_1">
+                <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+              </label>
+              <input type="file" class="editableimage" image-id="{{ site.name }}_box_1" name="image" id="img_box_1" >
+            </div>
+            {% end %}
 
-        <div class="overlay homi">
-          <a id="{{ site.name + '_box_1' }}" href="{{ read_link(site.name + '_box_1') }}">
-          <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_1' }}">{{ read_text(site.name +  'text_side_box_1') }}</div>
-        </a>
+            <img id="{{ site.name }}_box_1" src="{{ read_image(site.name + '_box_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_1',) }}'" class="image homi" alt="item">
+          </div>
+          
+
+          <div class="overlay homi">
+            <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_1' }}">{{ read_text(site.name +  'text_side_box_1') }}</div>
+          </div>
         </div>
       </div>
-    </div>
-
+    </a>
+    {% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_2' }}" content="{{ read_link(site.name + '_box_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+      <a id="{{ site.name + '_box_2' }}" href="{{ read_link(site.name + '_box_2') }}">
     <div class="col-md-6 col-sm-6 col-xs-12 article-ho2">
       <div class="container homi">
       <div style="position:relative;">
@@ -298,17 +302,17 @@
         {% end %}
         <img id="{{ site.name }}_box_2" src="{{ read_image(site.name + '_box_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_2',) }}'" class="image homi" alt="item">
       </div>
-      {% if is_admin %}
-      <img class="change-image editablelink" link-id="{{ site.name + '_box_2' }}" content="{{ read_link(site.name + '_box_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-      {% end %}
       <div class="overlay homi">
-        <a id="{{ site.name + '_box_2' }}" href="{{ read_link(site.name + '_box_2') }}">
           <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_2' }}">{{ read_text(site.name +  'text_side_box_2') }}</div>
-        </a>
       </div>
     </div>
     </div>
+  </a>
 
+    {% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_3' }}" content="{{ read_link(site.name + '_box_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+      <a id="{{ site.name + '_box_3' }}" href="{{ read_link(site.name + '_box_3') }}">
     <div class="col-md-6 col-sm-6 col-xs-12 article-ho">
       <div class="container homi">
       <div style="position:relative;">
@@ -322,17 +326,17 @@
         {% end %}
         <img id="{{ site.name }}_box_3" src="{{ read_image(site.name + '_box_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_3',) }}'" class="image homi" alt="item">
       </div>
-      {% if is_admin %}
-      <img class="change-image editablelink" link-id="{{ site.name + '_box_3' }}" content="{{ read_link(site.name + '_box_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-      {% end %}
         <div class="overlay homi">
-          <a id="{{ site.name + '_box_3' }}" href="{{ read_link(site.name + '_box_3') }}">
           <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_3' }}">{{ read_text(site.name +  'text_side_box_3') }}</div>
-        </a>
       </div>
     </div>
   </div>
+</a>
 
+  {% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_4' }}" content="{{ read_link(site.name + '_box_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+      <a id="{{ site.name + '_box_4' }}" href="{{ read_link(site.name + '_box_4') }}">
     <div class="col-md-6 col-sm-6 col-xs-12 article-ho2">
       <div class="container homi">
       <div style="position:relative;">
@@ -346,17 +350,17 @@
         {% end %}
         <img id="{{ site.name }}_box_4" src="{{ read_image(site.name + '_box_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_4',) }}'" class="image homi" alt="item">
       </div>
-      {% if is_admin %}
-      <img class="change-image editablelink" link-id="{{ site.name + '_box_4' }}" content="{{ read_link(site.name + '_box_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-      {% end %}
         <div class="overlay homi">
-          <a id="{{ site.name + '_box_4' }}" href="{{ read_link(site.name + '_box_4') }}">
           <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_4' }}">{{ read_text(site.name +  'text_side_box_4') }}</div>
-        </a>
       </div>
     </div>
   </div>
+</a>
 
+{% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_5' }}" content="{{ read_link(site.name + '_box_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+      <a id="{{ site.name + '_box_5' }}" href="{{ read_link(site.name + '_box_5') }}">
     <div class="col-md-6 col-sm-6 col-xs-12 article-ho">
       <div class="container homi">
       <div style="position:relative;">
@@ -370,18 +374,17 @@
         {% end %}
         <img id="{{ site.name }}_box_5" src="{{ read_image(site.name + '_box_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_5',) }}'" class="image homi" alt="item">
       </div>
-      {% if is_admin %}
-      <img class="change-image editablelink" link-id="{{ site.name + '_box_5' }}" content="{{ read_link(site.name + '_box_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-      {% end %}
         <div class="overlay homi">
-          <a id="{{ site.name + '_box_5' }}" href="{{ read_link(site.name + '_box_5') }}">
           <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_5' }}">{{ read_text(site.name +  'text_side_box_5') }}</div>
-        </a>
       </div>
     </div>
   </div>
-
+</a>
   
+  {% if is_admin %}
+      <img class="change-image editablelink" link-id="{{ site.name + '_box_6' }}" content="{{ read_link(site.name + '_box_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+      {% end %}
+      <a id="{{ site.name + '_box_6' }}" href="{{ read_link(site.name + '_box_6') }}">
     <div class="col-md-6 col-sm-6 col-xs-12 article-ho">
       <div class="container homi">
       <div style="position:relative;">
@@ -395,16 +398,13 @@
         {% end %}
         <img id="{{ site.name }}_box_6" src="{{ read_image(site.name + '_box_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_box_6',) }}'" class="image homi" alt="item">
       </div>
-      {% if is_admin %}
-      <img class="change-image editablelink" link-id="{{ site.name + '_box_6' }}" content="{{ read_link(site.name + '_box_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
-      {% end %}
+      
         <div class="overlay homi">
-          <a id="{{ site.name + '_box_6' }}" href="{{ read_link(site.name + '_box_6') }}">
           <div class="hom {{editabletext}}" text-id="{{ site.name + 'text_side_box_6' }}">{{ read_text(site.name +  'text_side_box_6') }}</div>
-        </a>
       </div>
     </div>
   </div>
+</a>
 
 </div>
 
