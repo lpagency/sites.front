@@ -274,7 +274,6 @@ $(document).ready(function()
 
     $("input:checkbox[name=vehicle]").change(function(ev,shouldLoad)
     {
-
         var $box = $(this);
         var nombre = $(this).attr("tag");
         var va = $(this).attr("value2");
@@ -312,9 +311,8 @@ $(document).ready(function()
         {
             $('.products').html("");
             $('.products').ecommerce('destroy');
-            $('.products').ecommerce(window.config);
+            $('.products').ecommerce(window.config)
         }
-
     });
 
     $("input:checkbox[name=color]").change(function(ev,shouldLoad){
@@ -938,7 +936,7 @@ function getCurrentUrl(){
         urlPart = "listado_productos";
 
     if(urlPart==="mules-mujer")
-        urlPart==="mules-slippers-mujer";
+        urlPart = "mules-slippers-mujer";
 
     return urlPart;
 }
