@@ -52,6 +52,19 @@
         <!-- bt inicio -->
         <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 
+        <script type="text/javascript">
+            $(document).ready(function()
+            {
+                $.ajax({
+                    url: 'https://apibodegas.ondev.today/v1/cart/d8a6d754-34b1-4487-826d-0a4db11c0068',
+                    success: function(data)
+                    {
+                        console.log(data);
+                    }
+                })
+            });
+        </script>
+
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
         <!-- bt fin -->
 
