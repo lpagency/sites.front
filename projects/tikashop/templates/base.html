@@ -371,13 +371,16 @@
             }
             return "";
         }
+    </script>
+
+    <script type="text/javascript">
 
         $(document).ready(function()
         {
-            var cookie = getCookie('shopping-cart');
+            var cookieCart = getCookie('shopping-cart');
 
             $.ajax({
-                url: 'https://apibodegas.ondev.today/v1/cart/'+cookie,
+                url: 'https://apibodegas.ondev.today/v1/cart/'+cookieCart,
                 success: function(data)
                 {
                     console.log(data.cart.expired);
