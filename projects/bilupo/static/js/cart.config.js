@@ -61,15 +61,15 @@ $(document).ready(function()
     filtro2 = filtro2.replace("-","_");
     filtro3 = filtro3.replace("/","_");
 
-    if(filtro != "Todo")
+    if(filtro != "Todo" && filtro != "")
     {
         window.tag.push(filtro.toLowerCase());
     }
-    if(filtro2 != "Todo")
+    if(filtro2 != "Todo" && filtro2 != "")
     {
         window.tag.push(filtro2.toLowerCase());
     }
-    if(filtro3 != "Todo")
+    if(filtro3 != "Todo" && filtro3 != "")
     {
         window.tag.push(filtro3.toLowerCase());
     }
@@ -103,6 +103,8 @@ $(document).ready(function()
             var prod = $(".product-grid").html();
         }
     };
+
+    console.log(window.tag);
 
     if(window.tag[0] != "")
     {
