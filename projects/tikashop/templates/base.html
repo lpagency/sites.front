@@ -380,6 +380,7 @@
                 url: 'https://apibodegas.ondev.today/v1/cart/'+cookie,
                 success: function(data)
                 {
+                    console.log(data.cart.expired);
                     if(data.cart.expired == true)
                     {
                         $.removeCookie('shopping-cart', { path: '/' });
