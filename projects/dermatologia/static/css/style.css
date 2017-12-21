@@ -1406,11 +1406,13 @@ div.image-upload{
 
 }
 
-/*@media (max-width: 1024px){
+@media (max-width: 1024px){
     .derma-banner{
-        background-size: inherit !important;
+        background-size: auto !important;
+        background-position: initial !important;
+        height: 500px;
     }
-}*/
+}
 
 @media (max-width: 1023px){
   .no-dot {
@@ -1550,7 +1552,7 @@ div.image-upload{
 
 @media (max-width: 796px){
     .titulo-2{
-        bottom: 120px;
+        bottom: 180px;
     }
 }
 
