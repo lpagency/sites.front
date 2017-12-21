@@ -496,7 +496,10 @@ $(document).ready(function(){
     {
         $(document).on("click", "#open-cart", function()
         {
-            console.log($("#total").html());
+            if($(".total-carro").val() > 0)
+            {
+                $(".pagar-carro").attr("disabled", false);
+            }
         });
     });
 </script>
