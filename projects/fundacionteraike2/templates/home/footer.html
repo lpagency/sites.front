@@ -10,6 +10,26 @@
             </div>
             {% end %}
             <img id="{{ site.name }}header" src="{{ read_image(site.name + 'header', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'header',) }}'" alt="item" class="logo-imagen">
+
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil lapiz-footer" style="right: 224px;">
+                    <label for="img_rrss">
+                      <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                    </label>
+                    <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss" style="right: 40px;" name="image" id="img_rrss"/>
+                  </div>
+                  {% end %}
+                  <img id="{{ site.name }}rrss" src="{{ read_image(site.name + 'rrss', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss',) }}'" alt="item" class="rrss">
+
+                  {% if is_admin %}
+                  <div class="image-upload lapiz visible-movil lapiz-footer" style="right: 224px;">
+                    <label for="img_rrss_1">
+                      <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
+                    </label>
+                    <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss_1" style="right: 40px;" name="image" id="img_rrss_1"/>
+                  </div>
+                  {% end %}
+                  <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss">
         </div>
         <div class="col-md-4 footer-menu">
           
@@ -28,34 +48,6 @@
               </li>
               <li>
                 <div class="menu text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer5' }}">{{ read_text(site.name +  'text_footer5') }}</div>
-              </li>
-              <li>
-                <div class="logo-rrss">
-                  {% if is_admin %}
-                  <div class="image-upload lapiz visible-movil lapiz-footer" style="right: 224px;">
-                    <label for="img_rrss">
-                      <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-                    </label>
-                    <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss" style="right: 40px;" name="image" id="img_rrss"/>
-                  </div>
-                  {% end %}
-                  <img id="{{ site.name }}rrss" src="{{ read_image(site.name + 'rrss', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss',) }}'" alt="item" class="rrss">
-                  <div class="text-footer text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer6' }}">{{ read_text(site.name +  'text_footer6') }}</div>
-                </div>
-              </li>
-              <li>
-                <div class="logo-rrss">
-                  {% if is_admin %}
-                  <div class="image-upload lapiz visible-movil lapiz-footer" style="right: 224px;">
-                    <label for="img_rrss_1">
-                      <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'" />
-                    </label>
-                    <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss_1" style="right: 40px;" name="image" id="img_rrss_1"/>
-                  </div>
-                  {% end %}
-                  <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss">
-                  <div class="text-footer text_main text-left {{editabletext}}" text-id="{{ site.name + 'text_footer7' }}">{{ read_text(site.name +  'text_footer7') }}</div>
-                </div>
               </li>
             </ul>
             <br>
