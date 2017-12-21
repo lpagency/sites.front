@@ -25,6 +25,25 @@
 {% block javascript %}
 <script type="text/javascript" src="{{ site_base }}/static/js/product_detail.js"></script>
 
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", "#open-cart", function()
+        {
+          setTimeout(function()
+          {
+            if($(".total-carro").val() > 0)
+            {
+              $(".pagar-carro").attr("disabled", false);
+            }
+          },100);
+            // $("#myModal").load(function()
+            // {
+            //   console.log($("#total").val());
+            // });
+        });
+    });
+</script>
 
 <script type="text/javascript">
 

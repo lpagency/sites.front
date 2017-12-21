@@ -221,9 +221,9 @@
     <td class="vert-align text-left">{{! name }}</td>
     <td class="vert-align money">{{! price }}</td>
     <td class="text-center vert-align">
-        <a href="#!" class="remove-one" product-id="{{! id }}">-</a>
+        <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}" product-id="{{! id }}">-</a>
         {{! quantity }}
-        <a href="#!" class="add-one" product-id="{{! id }}">+</a>
+        <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" product-id="{{! id }}">+</a>
     </td>
 </tr>
 <tr class="producto-detalle-cotizacion">
@@ -236,7 +236,7 @@
             </div>
             </td>
             <td style="">
-                <i class="fa fa-minus menos remove-one" product-id="{{! id }}" aria-hidden="true"></i>
+                <i class="fa fa-minus menos remove-one"  product-id="{{! id }}" aria-hidden="true"></i>
             </td>
             <td class="mumu-3" style="text-align: left;font-size: 12px;left: 33px;position: relative;">
                  {{! quantity }} 
@@ -265,9 +265,10 @@
     <input name="site_id" class="form-control required" type="hidden" value="{{! site_id}}">
     <input name="cart_id" class="form-control required" type="hidden" value="{{! cart_id}}">
     <input name="origin" class="form-control required" type="hidden" value="{{ site.name }}">
+    <input name="total" class="total-carro" type="hidden" value="{{! total }}">
     <div class="form-group text-center">
-         <button type="submit" class="btn bn" style="
-            background-color: rgba(0, 0, 0, 0.24); color: #777; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;">PAGAR
+         <button type="submit" class="btn bn pagar-carro" style="
+            background-color: rgba(0, 0, 0, 0.24); color: #777; width: 31%;border-radius: 0px; height: 51px; font-weight: 600; float:right;" disabled>PAGAR
         </button>
     
     </div>
@@ -488,6 +489,16 @@ $(document).ready(function(){
     e.preventDefault();
   });
 });
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        $(document).on("click", "#open-cart", function()
+        {
+            console.log($("#total").html());
+        });
+    });
 </script>
 
 
