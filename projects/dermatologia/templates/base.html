@@ -392,10 +392,14 @@ if(!$("html").hasClass("touch")){
                     if($(".franja-color").hasClass("hidden"))
                     {
                         $(".franja-color").removeClass("hidden");
+                        $(".mobile-ho").css("margin-top", "-60px");
+                        $(".mobile").css("margin-top", "-60px");
                     }
                     else
                     {
                         $(".franja-color").addClass("hidden");
+                        $(".mobile-ho").css("margin-top", "20px");
+                        $(".mobile").css("margin-top", "20px");
                     }
                 });
             }
