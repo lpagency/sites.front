@@ -110,10 +110,23 @@ $(document).ready(function()
         //     config.tag=multiple_tag;
         //     config.operator = "and";
         // }
+        if($(this).attr('tag') == '')
+        {
+            var hyper = window.location.href;
+            hyper = hyper.split("?");
+            for(var i = 0; i < hyper.length; i++)
+            {
+                var a = hyper[0].toString();
+            }
+            console.log(a);
+            history.pushState('', 'Inducrom', a);
+            config.tag = '';
+            console.log(config);
+        }
         config.tag=$(this).attr('tag');
         $(".products").removeClass("hidden");
         $(".banners").addClass("hidden");
-        // console.log(config);
+        console.log(config.tag);
         
         // facade.page = 1; // o 1 no estoy seguro
         $(".products").html("");
