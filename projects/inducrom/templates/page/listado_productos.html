@@ -287,6 +287,10 @@ $(document).ready(function(){
      $('.scrollUp').click(function(){
          $("html, body").animate({ scrollTop: 0 }, 500);
      });
+
+     $('.scrollUp').on("touchend",function(){
+         $("body").animate({ scrollTop: 0 }, 500);
+     });
 })
 </script>
 {% end %}
