@@ -105,7 +105,7 @@
                 }
               }
 
-              $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]);
+              $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]+" | "+product.name);
 
               // for(x in product.tags){
               //   if(product.tags[x] == "tienda"){
@@ -291,7 +291,6 @@ $(document).ready(function() {
                                 product-img="{{! images[1]['thumb_500'] }}"
                                 lp-cart-add>COMPRAR</button>
 
-                      <button type="button" product-id="{{! id }}" product-name="{{! name }}" product-price="{{! main_price }}" product-upp="{{! upp }}" product-img="{{! images[0]['thumb_200'] }}" class="add-to-cart btn btn-default cotizar" id="open-cart">COTIZAR</button>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12"> 
                 <h1 class="name texto-detalle" class="line" href="#">{{! name }}</h1>

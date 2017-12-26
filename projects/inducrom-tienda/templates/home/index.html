@@ -29,31 +29,250 @@
 </script>
 
 <script type="text/javascript">
+    $(document).ready(function()
+    {
+
+      var tag = Utils.getUrlParameter("tag");
+
+      if(tag == "tienda"){
+        $(".cotizar").addClass("hidden");
+      }
+
+      var tags = Utils.getUrlParameter("tag");
+      var log = "";
+
+      if( tags == "control_de_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".control_de_acceso").removeClass("hidden");
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".basureros").removeClass("hidden");
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".mob_urbano").removeClass("hidden");
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".espa_publicos").removeClass("hidden");
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".prod_especiales").removeClass("hidden");
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        $(".prod_nuevos").removeClass("hidden");
+      }
+
+
+
+
+      var catProd = $(".buscaCat").html(" Home | " + log);
+
+      $(".buscaCat").css("text-transform", "capitalize");
+
+      localStorage.setItem("subcategoriaProd"," Home | " + log);
+
+      $("#OpenAlert").click();
+
+        // var config = {
+        //     'app_public' : app_public,
+        //     'base_url' : base_url,
+        //     'maxProducts' : 8,
+        //     'templateOrigin' : '#product_template',
+        //     'tag' : '',
+        //     'ignore_stock' : true,
+        //     'onLoad':function(){
+        //      }
+        // };
+
+        // $('.product-list').ecommerce('product_box', config);
+
+    });
+</script>
+<script type="text/javascript">
   $(document).ready(function()
   {
-    var hyper = Utils.getUrlParameter('tag');
+    $(document).on("click", ".index", function(ev)
+    {
 
-    setCookie("url", hyper);
-
+      ev.preventDefault();
+      var tags = $(this).attr('tag');
+      console.log(tags);
+          var log = "";
+            $(".ban").addClass("hidden");
+          if( tags == "control_acceso"){
+            $(".tituloCategoria").html("CONTROL DE ACCESO");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".control_de_acceso").removeClass("hidden");
+          }
+          if( tags == "productos_ecologicos"){
+            $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".basureros").removeClass("hidden");
+          }
+          if( tags == "mobiliario_urbano"){
+            $(".tituloCategoria").html("MOBILIARIO URBANO");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".mob_urbano").removeClass("hidden");
+          }
+          if( tags == "espacios_publicos"){
+            $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".espa_publicos").removeClass("hidden");
+          }
+          if( tags == "productos_especiales"){
+            $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".prod_especiales").removeClass("hidden");
+          }
+          if( tags == "productos_nuevos"){
+            $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".prod_nuevos").removeClass("hidden");
+          }
+    });
   });
 </script>
-
 <script type="text/javascript">
-  $(document).on("click", ".subcateg", function(ev){
+    $(document).ready(function()
+    {
+      console.log(window.location.href);
 
+      localStorage.setItem("url", window.location.href);
 
-  });
-</script>
-
-<script type="text/javascript">
-    $("#testButton").live("touchstart", function() {
-      $(this).addClass("active");
-    }).live("touchend", function() {
-      $(this).removeClass("active");
+      console.log($(".buscaCat").html());
     });
 
 </script>
 
+<script type="text/javascript">
+      $(".subcateg1").live("touchstart", function(ev) {
+        ev.stopPropagation();
+
+        var tags = $(this).attr("tag");
+
+      if( tags == "control_de_acceso"){
+        $(".tituloCategoria").html("CONTROL DE ACCESO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".control_de_acceso").removeClass("hidden");
+      }
+      if( tags == "productos_ecologicos"){
+        $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".basureros").removeClass("hidden");
+      }
+      if( tags == "mobiliario_urbano"){
+        $(".tituloCategoria").html("MOBILIARIO URBANO");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".mob_urbano").removeClass("hidden");
+      }
+      if( tags == "espacios_publicos"){
+        $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".espa_publicos").removeClass("hidden");
+      }
+      if( tags == "productos_especiales"){
+        $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_especiales").removeClass("hidden");
+      }
+      if( tags == "productos_nuevos"){
+        $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+        $(".prod_nuevos").removeClass("hidden");
+      }
+
+        $(".subcateg").removeClass('active');
+        $(this).addClass('active');
+
+        //MUESTRA LA FLECHA
+
+        $(".fa-caret-right").addClass('hidden');
+        $(this).parent().find("i").removeClass('hidden');
+
+        if($(this).hasClass("index")){
+          $(".fa-caret-right").addClass('hidden');
+          $(this).parent().find("i").removeClass('hidden');
+        }
+
+        //MUESTRA LA CATEGORIA COMO TITULO
+
+        var valorSubCateg = $(this).attr("sub");
+        var valorSubCateg2 = $(this).attr("sub2");
+        $(".tituloCategoria").html(valorSubCateg2);
+
+        //MUESTRA LA CATEGORIA EN HOME | SUBCATEGORIAS
+
+        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
+
+        // localStorage.setItem("subcategoriaProd"," Home | " + valorSubCateg2);
+
+        return false;
+    });
+</script>
 <script type="text/javascript">
 // $(window).scroll(function(){
 //         if ($(this).scrollTop() > 100) {
@@ -123,7 +342,7 @@ $(document).ready(function(){
           <div class="container-fluid col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 100px;position: relative;top: 18px; padding-bottom: 22px;">
             <div>
               <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-              <a href="#" id="control_de_acceso" class="mgt-10 azul subcateg mbtm5 index" tag="control_acceso" role="button" sub="Control de acceso">Control de acceso</a>
+              <a href="#" id="control_de_acceso" class="mgt-10 azul subcateg-ban mbtm5 index" tag="control_acceso" role="button" sub="Control de acceso">Control de acceso</a>
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -131,7 +350,7 @@ $(document).ready(function(){
             </div>
             <div>
               <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-              <a href="#" id="mobiliario_urbano" class="mgt-10 amarillo subcateg mbtm5 index" tag="mobiliario_urbano" role="button" sub="Mobiliario urbano">Mobiliario urbano</a>
+              <a href="#" id="mobiliario_urbano" class="mgt-10 amarillo subcateg-ban mbtm5 index" tag="mobiliario_urbano" role="button" sub="Mobiliario urbano">Mobiliario urbano</a>
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -149,7 +368,7 @@ $(document).ready(function(){
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
               <a href="#" id="refugio_bici" class="amarillo subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button" sub=" Moviliario urbano | Refugios para bicicletas">Refugios para bicicletas</a>
             </div>
-            <a href="#" id="todos" class="mgt-10 subcateg mbtm5 index scrollUp" tag="" role="button" sub="Todos los productos">Todos los productos</a>
+            <a href="#" id="todos" class="mgt-10 subcateg-ban mbtm5 index scrollUp" tag="" role="button" sub="Todos los productos">Todos los productos</a>
           </div>
         </div>
   </section>
@@ -191,6 +410,82 @@ $(document).ready(function(){
               <div class="texto-header-pro-2 tituloCategoria"></div>
             </div>
             <div class="col-md-8 col-md-offset-1">
+            <section class="banners">
+              <div class="control_de_acceso ban hidden">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contenedor-banner" sub2="Separador de filas" sub="Control de acceso | Separador de filas" tag="filas">
+                    {% if is_admin %}
+                      <div class="image-upload part1 lapiz visible-movil">
+                        <label for="img_banner_control_1">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_control_1" name="image" id="img_banner_control_1" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_banner_control_1" src="{{ read_image(site.name + '_banner_control_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_control_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="Control de acceso Separador de filas" sub="Control de acceso | Separador de filas" tag="Separador de filas">
+                    <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_1' }}"> {{ read_text(site.name +  '_nombre_producto_1') }}</div>
+                  </div>
+                </div>
+              </div>
+              <div class="mob_urbano ban hidden">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contenedor-banner" sub2="basureros" sub="Mobiliario Urbano | Basureros" tag="basureros">
+                    {% if is_admin %}
+                      <div class="image-upload part1 lapiz visible-movil">
+                        <label for="img_banner_basurero_urbano_1">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_1" name="image" id="img_banner_basurero_urbano_1" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_banner_basurero_urbano_1" src="{{ read_image(site.name + '_banner_basurero_urbano_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_1',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="basureros" sub="Mobiliario Urbano | Basureros" tag="basureros">
+                    <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_1' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_1') }}</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contenedor-banner" sub2="banquetas/Escaños" sub="Mobiliario Urbano | Banquetas/Escaños" tag="banqueta">
+                    {% if is_admin %}
+                      <div class="image-upload part1 lapiz visible-movil">
+                        <label for="img_banner_basurero_urbano_2">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_2" name="image" id="img_banner_basurero_urbano_2" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_banner_basurero_urbano_2" src="{{ read_image(site.name + '_banner_basurero_urbano_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_2',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="banquetas/Escaños" sub="Mobiliario Urbano | Banquetas/Escaños" tag="banqueta">
+                    <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_2' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_2') }}</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contenedor-banner" sub2="bicicleteros" sub="Mobiliario Urbano | Bicicleteros" tag="bicicleteros">
+                    {% if is_admin %}
+                      <div class="image-upload part1 lapiz visible-movil">
+                        <label for="img_banner_basurero_urbano_3">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_3" name="image" id="img_banner_basurero_urbano_3" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_banner_basurero_urbano_3" src="{{ read_image(site.name + '_banner_basurero_urbano_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_3',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="bicicleteros" sub="Mobiliario Urbano | Bicicleteros" tag="bicicleteros">
+                    <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_3' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_3') }}</div>
+                  </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                  <div class="contenedor-banner" sub2="refiguos para bicicletas" sub="Mobiliario Urbano | Refugios Para Bicicletas" tag="refugio_bici">
+                    {% if is_admin %}
+                      <div class="image-upload part1 lapiz visible-movil">
+                        <label for="img_banner_basurero_urbano_4">
+                          <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_banner_basurero_urbano_4" name="image" id="img_banner_basurero_urbano_4" >
+                      </div>
+                    {% end %}
+                    <img id="{{ site.name }}_banner_basurero_urbano_4" src="{{ read_image(site.name + '_banner_basurero_urbano_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_banner_basurero_urbano_4',500) }}'" class="img-productos-nuevo subcateg scrollUp" alt="item" sub2="refiguos para bicicletas" sub="Mobiliario Urbano | Refugios Para Bicicletas" tag="refugio_bici">
+                    <div class="inf ellipsis multiline {{editabletext}}" text-id="{{ site.name + '_nombre_producto_basurero_urbano_4' }}"> {{ read_text(site.name +  '_nombre_producto_basurero_urbano_4') }}</div>
+                  </div>
+                </div>
+              </div>
+            </section>
               <div class="products">
                   <div class="spinner">
                     <div class="rect1"></div>
