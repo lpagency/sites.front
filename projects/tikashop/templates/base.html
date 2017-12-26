@@ -263,24 +263,24 @@
         }
 
 
-        $(document).ready(function()
-        {
-            var cookieCart = getCookie('shopping-cart');
+        // $(document).ready(function()
+        // {
+        //     var cookieCart = getCookie('shopping-cart');
 
-            $.ajax({
-                url: 'https://apibodegas.ondev.today/v1/cart/'+cookieCart,
-                success: function(data)
-                {
-                    console.log(data.cart.expired);
+        //     $.ajax({
+        //         url: 'https://apibodegas.ondev.today/v1/cart/'+cookieCart,
+        //         success: function(data)
+        //         {
+        //             console.log(data.cart.expired);
 
-                    if(data.cart.expired == true)
-                    {
-                        $.removeCookie('shopping-cart', { path: '/' });
+        //             if(data.cart.expired == true)
+        //             {
+        //                 $.removeCookie('shopping-cart', { path: '/' });
 
-                    }
-                }
-            });
-        });
+        //             }
+        //         }
+        //     });
+        // });
 
     </script>
 
