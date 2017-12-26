@@ -184,6 +184,13 @@
                                     <li class="footer-menu-item">
                                         <div class=" footer-menu-link {{editabletext}}" text-id="{{ site.name + 'text_quienes_5' }}">{{ read_text(site.name +  'text_quienes_5') }}</div>
                                     </li>
+                                    <li class="footer-menu-item">
+                                        {% if user is None %}
+                                            <a class="footer-menu-link" href="{{ site_base }}/auth/login" id="hyper">Login</a>
+                                        {% else %}
+                                            <a class="footer-menu-link" href="{{ site_base }}/auth/logout" id="hyper">Logout</a>
+                                        {% end %}
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
