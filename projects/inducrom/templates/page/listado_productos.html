@@ -107,6 +107,50 @@
     });
 </script>
 <script type="text/javascript">
+  $(document).ready(function()
+  {
+    $(document).on("click", ".index", function(ev)
+    {
+
+      ev.preventDefault();
+      var tags = $(this).attr('tag');
+      console.log(tags);
+          var log = "";
+            $(".ban").addClass("hidden");
+          if( tags == "control_de_acceso"){
+            $(".tituloCategoria").html("CONTROL DE ACCESO");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".control_de_acceso").removeClass("hidden");
+          }
+          if( tags == "productos_ecologicos"){
+            $(".tituloCategoria").html("PRODUCTOS ECOLÓGICOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".basureros").removeClass("hidden");
+          }
+          if( tags == "mobiliario_urbano"){
+            $(".tituloCategoria").html("MOBILIARIO URBANO");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".mob_urbano").removeClass("hidden");
+          }
+          if( tags == "espacios_publicos"){
+            $(".tituloCategoria").html("ESPACIOS PÚBLICOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".espa_publicos").removeClass("hidden");
+          }
+          if( tags == "productos_especiales"){
+            $(".tituloCategoria").html("PRODUCTOS ESPECIALES");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".prod_especiales").removeClass("hidden");
+          }
+          if( tags == "productos_nuevos"){
+            $(".tituloCategoria").html("MOBILIARIO NUEVOS");
+            log = $(".tituloCategoria").html().toLowerCase();
+            $(".prod_nuevos").removeClass("hidden");
+          }
+    });
+  });
+</script>
+<script type="text/javascript">
     $(document).ready(function()
     {
       console.log(window.location.href);
@@ -120,7 +164,6 @@
 
 <script type="text/javascript">
       $(".subcateg1").live("touchstart", function(ev) {
-
         ev.stopPropagation();
 
         var tags = $(this).attr("tag");
@@ -299,7 +342,7 @@ $(document).ready(function(){
           <div class="container-fluid col-md-3 col-sm-12 col-xs-12 mtl text-center" style="padding-top: 1em; margin-bottom: 100px;position: relative;top: 18px; padding-bottom: 22px;">
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="control_de_acceso" class="mgt-10 azul subcateg mbtm5 index scrollUp" tag="control_de_acceso" role="button" sub2="Control de acceso" sub="Control de acceso">Control de acceso</a>
+            <a href="#" id="control_de_acceso" class="mgt-10 azul subcateg-ban mbtm5 index scrollUp" tag="control_de_acceso" role="button" sub2="Control de acceso" sub="Control de acceso">Control de acceso</a>
           </div>
               <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -324,7 +367,7 @@ $(document).ready(function(){
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_ecologicos" class="mgt-10 verde subcateg mbtm5 index scrollUp" tag="productos_ecologicos" role="button" sub2="productos ecologicos" sub="productos ecologicos">Productos ecologicos</a>
+            <a href="#" id="productos_ecologicos" class="mgt-10 verde subcateg-ban mbtm5 index scrollUp" tag="productos_ecologicos" role="button" sub2="productos ecologicos" sub="productos ecologicos">Productos ecologicos</a>
             </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -333,7 +376,7 @@ $(document).ready(function(){
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="mobiliario_urbano" class="mgt-10 amarillo subcateg mbtm5 index scrollUp" tag="mobiliario_urbano" role="button" sub2="Mobiliario urbano" sub="Mobiliario urbano">Mobiliario urbano</a>
+            <a href="#" id="mobiliario_urbano" class="mgt-10 amarillo subcateg-ban mbtm5 index scrollUp" tag="mobiliario_urbano" role="button" sub2="Mobiliario urbano" sub="Mobiliario urbano">Mobiliario urbano</a>
             </div>
                 <div>
                 <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -354,7 +397,7 @@ $(document).ready(function(){
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="espacios_publicos" class="mgt-10 naranjo subcateg mbtm5 index scrollUp" tag="espacios_publicos" role="button" sub2="Espacios publicos" sub="Espacios publicos">Espacios publicos</a>
+            <a href="#" id="espacios_publicos" class="mgt-10 naranjo subcateg-ban mbtm5 index scrollUp" tag="espacios_publicos" role="button" sub2="Espacios publicos" sub="Espacios publicos">Espacios publicos</a>
             </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -379,7 +422,7 @@ $(document).ready(function(){
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_especiales" class="mgt-10 rojo subcateg mbtm5 index scrollUp" tag="productos_especiales" role="button" sub2="productos especiales" sub="productos especiales">Productos especiales</a>
+            <a href="#" id="productos_especiales" class="mgt-10 rojo subcateg-ban mbtm5 index scrollUp" tag="productos_especiales" role="button" sub2="productos especiales" sub="productos especiales">Productos especiales</a>
             </div>
                <div>
                <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
@@ -388,13 +431,13 @@ $(document).ready(function(){
 
             <div>
             <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
-            <a href="#" id="productos_nuevos" class="mgt-10 gris subcateg mbtm5 index scrollUp" tag="productos_nuevos" role="button" sub2="productos nuevos" sub="productos nuevos">Productos nuevos</a>
+            <a href="#" id="productos_nuevos" class="mgt-10 gris subcateg-ban mbtm5 index scrollUp" tag="productos_nuevos" role="button" sub2="productos nuevos" sub="productos nuevos">Productos nuevos</a>
             </div>
                 <div>
                 <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
                 <a href="#" id="pro_nuevos" class="subcateg gris partes mbtm5 scrollUp" tag="pro_nuevos" role="button" sub2="productos nuevos" sub=" Productos nuevos | Productos nuevos">Productos nuevos</a>
                 </div>
-            <a href="#" id="todos" class="mgt-10 subcateg mbtm5 index scrollUp" tag="" role="button" sub2="todos los productos" sub="Todos los productos">Todos los productos</a>
+            <a href="#" id="todos" class="mgt-10 subcateg-ban mbtm5 index scrollUp" tag="" role="button" sub2="todos los productos" sub="Todos los productos">Todos los productos</a>
           </div>
           </div>
   </section>
