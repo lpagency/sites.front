@@ -695,7 +695,7 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
 }
 
 .img-bolsa {
-    width: 9%;
+    width: 8%;
     position: relative;
     left: -13px;
     top: 9px;
@@ -719,6 +719,16 @@ ul.w3-ul{list-style-type:none;padding:0;margin:0}ul.w3-ul li{padding:6px 2px 6px
 
 }
 
+@media (max-width: 375px){
+  .img-bolsa {
+      width: 9%;
+      position: relative;
+      left: -13px;
+      top: 9px;
+      cursor: pointer;
+      float: right;
+  }
+}
 
 @media (max-width: 360px){
     .base-logo {
