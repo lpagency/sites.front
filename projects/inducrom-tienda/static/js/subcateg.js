@@ -12,6 +12,20 @@ $(document).ready(function()
 
         var tags = $(this).attr("tag");
 
+      if( tags == ""){
+        $(".tituloCategoria").html("TODOS LOS PRODUCTOS");
+        log = $(".tituloCategoria").html().toLowerCase();
+        if(!$(".products").hasClass("hidden"))
+        {
+          $(".products").addClass("hidden");
+        }
+        if($(".banners").hasClass("hidden"))
+        {
+          $(".banners").removeClass("hidden");
+        }
+        $(".ban").addClass("hidden");
+      }
+
       if( tags == "control_de_acceso"){
         $(".tituloCategoria").html("CONTROL DE ACCESO");
         log = $(".tituloCategoria").html().toLowerCase();
