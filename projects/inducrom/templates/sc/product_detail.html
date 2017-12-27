@@ -60,17 +60,22 @@
 
               for(var i = 0; i < product.tags.length; i++)
               {
-                console.log(product.tags[i].name);
+
                 if(product.tags[i].name.indexOf('cat') > -1)
                 {
-
-                  console.log("aaaaaaa");
 
                   if(product.tags[i].name.indexOf('cat1') > -1)
                   {
                     breadcrumb = product.tags[i].name.replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
 
                     miga[0] = breadcrumb;
+
+                  }
+
+                  if(product.tags[i].name.indexOf('cat1') == -1)
+                  {
+
+                    miga[0] = "";
 
                   }
 
@@ -82,6 +87,11 @@
                     breadcrumb = product.tags[i].name.replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
 
                     miga[1] = breadcrumb;
+                  }
+
+                  if(product.tags[i].name.indexOf('cat2') == -1)
+                  {
+                    miga[1] = "";
                   }
                 }
               }
