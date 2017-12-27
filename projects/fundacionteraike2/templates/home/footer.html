@@ -36,11 +36,11 @@
                   </div>
                   {% end %}
                   <a id="{{ site.name + '_img_rrss_1' }}" href="{{ read_link(site.name + '_img_rrss_1') }}">
-                    <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss">
+                    <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss" style="top: -31px;right: -71px;">
                   </a>
 
                   {% if is_admin %}
-                    <img class="change-image editablelink" link-id="{{ site.name + '_img_rrss_1' }}" content="{{ read_link(site.name + '_img_rrss_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="z-index: 2000!important;">
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_rrss_1' }}" content="{{ read_link(site.name + '_img_rrss_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="z-index: 2000!important;position: relative;left: 60px;">
                   {% end %}
         </div>
         <div class="col-md-4 footer-menu">
