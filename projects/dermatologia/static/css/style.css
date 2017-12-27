@@ -29,6 +29,10 @@ blockquote {
     margin-top: -153px;
 }
 
+.derma-head{
+    top: -21px;
+}
+
 .cancer{
     margin-top: -180px;
 }
@@ -967,6 +971,7 @@ div.image-upload{
     bottom: 43px !important;
     position: relative !important;
     left: -32px;
+    top: 6px;
 }
 
 /*** article box ***/
@@ -1263,8 +1268,8 @@ div.image-upload{
   
     .navbar-toggle{
     position: relative;
-    /*top: -132px;*/
-    left: 0px;
+    top: 5px;
+    right: 100px;
     }
   
     .dropdown-menu>li>a {
@@ -2180,6 +2185,14 @@ div.image-upload{
 
 }
 
-@media screen and 
+@media only screen and (max-width: 768px){
+    .derma-head{
+        position: relative !important;
+        left: 200px !important;
+        top: -70px !important;
+    }
 
-
+    .search-1{
+        top: inherit;
+    }
+}

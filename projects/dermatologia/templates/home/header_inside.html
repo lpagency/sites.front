@@ -2,15 +2,7 @@
 <div class="container">
 <nav role="navigation" class="navbar navbar-default">
 
-        <div class="navbar-header">
-            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-
-        </div>
+        
  
         <div id="navbarCollapse" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
@@ -42,9 +34,19 @@
 </div>
 
      <div class="franja-color ">
-        <a href="">
-         <h1 class="one">Dermatologia.cl</h1>
-         </a>
+        <div class="col-sm-3 navbar-header hidden-lg hidden-md">
+            <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" style="border: 1px solid grey;">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar" style="background-color: grey;"></span>
+                <span class="icon-bar" style="background-color: grey;"></span>
+                <span class="icon-bar" style="background-color: grey;"></span>
+            </button>
+        </div>
+        <div class="col-sm-6 derma-head">
+            <a href="">
+                 <h1 class="one">Dermatologia.cl</h1>
+                 </a>
+        </div>
           <form class="navbar-form navbar-right ol" role="search" action="{{ site_base }}/search" method="get" >
                 <div class="form-group search-1">
                     <input type="text" name="search_query" class="form-control input_buscar" placeholder="Buscar" value="{% try %}{{ search_query }}{% except %}{% end %}">
