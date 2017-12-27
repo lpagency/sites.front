@@ -128,31 +128,28 @@ $(document).ready(function()
 
     $(".subcateg").live("touchstart", function(ev){
         ev.preventDefault();
-        // $(".subcateg").css("border-bottom", "");
-        // $(this).css("border-bottom", "dashed 1px rgba(0, 0, 0, 0.33)");
 
-        // if (tag === $(this).attr('tag')){
-        //     config.tag=tag;
-        //     config.operator = "or";
-        // }else{
-        //     var multiple_tag = tag+", "+$(this).attr('tag');
-        //     config.tag=multiple_tag;
-        //     config.operator = "and";
-        // }
+        if($(this).attr('tag') == '')
+        {
+            var hyper = window.location.href;
+            hyper = hyper.split("?");
+            for(var i = 0; i < hyper.length; i++)
+            {
+                var a = hyper[0].toString();
+            }
+            console.log(a);
+            history.pushState('', 'Inducrom', a);
+            config.tag = '';
+            console.log(config);
+        }
         config.tag=$(this).attr('tag');
         $(".products").removeClass("hidden");
         $(".banners").addClass("hidden");
-        // console.log(config);
+        console.log(config.tag);
         
         // facade.page = 1; // o 1 no estoy seguro
-        var valorSubCateg = $(this).attr("sub");
-        var valorSubCateg2 = $(this).attr("sub2");
-        $(".tituloCategoria").html(valorSubCateg2);
-
-        var catProd = $(".buscaCat").html(" Home | " + valorSubCateg);
+        $(".products").html("");
         $(document).ecommerce('destroy');
         $(document).ecommerce(config);
-
-            // alert($(this).attr("tag"));
     });
 });
