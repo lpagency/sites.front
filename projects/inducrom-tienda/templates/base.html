@@ -221,9 +221,9 @@
     <td class="vert-align text-left">{{! name }}</td>
     <td class="vert-align money">{{! price }}</td>
     <td class="text-center vert-align">
-        <a href="#!" class="remove-one" lp-cart-remove-one="{{! id }}" product-id="{{! id }}">-</a>
+        <a href="#!" class="remove-one indu" lp-cart-remove-one="{{! id }}" product-id="{{! id }}">-</a>
         {{! quantity }}
-        <a href="#!" class="add-one" lp-cart-add-one="{{! id }}" product-id="{{! id }}">+</a>
+        <a href="#!" class="add-one indu" lp-cart-add-one="{{! id }}" product-id="{{! id }}">+</a>
     </td>
 </tr>
 <tr class="producto-detalle-cotizacion">
@@ -501,6 +501,28 @@ $(document).ready(function(){
                 $(".pagar-carro").attr("disabled", false);
             }
         });
+
+        $(document).on("click", ".add-one", function()
+        {
+          setTimeout(function()
+          {
+            if($(".total-carro").val() > 0)
+            {
+              $(".pagar-carro").attr("disabled", false);
+            }
+          },1);
+        });
+
+        $(document).on("click", ".remove-one", function()
+        {
+          setTimeout(function()
+          {
+            if($(".total-carro").val() > 0)
+            {
+              $(".pagar-carro").attr("disabled", false);
+            }
+          },1);
+
     });
 </script>
 

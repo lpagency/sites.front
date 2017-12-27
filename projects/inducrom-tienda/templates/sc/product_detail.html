@@ -37,10 +37,28 @@
               $(".pagar-carro").attr("disabled", false);
             }
           },100);
-            // $("#myModal").load(function()
-            // {
-            //   console.log($("#total").val());
-            // });
+        });
+
+        $(document).on("click", ".add-one", function()
+        {
+          setTimeout(function()
+          {
+            if($(".total-carro").val() > 0)
+            {
+              $(".pagar-carro").attr("disabled", false);
+            }
+          },1);
+        });
+
+        $(document).on("click", ".remove-one", function()
+        {
+          setTimeout(function()
+          {
+            if($(".total-carro").val() > 0)
+            {
+              $(".pagar-carro").attr("disabled", false);
+            }
+          },1);
         });
     });
 </script>
@@ -79,11 +97,8 @@
 
               for(var i = 0; i < product.tags.length; i++)
               {
-                console.log(product.tags[i].name);
                 if(product.tags[i].name.indexOf('cat') > -1)
                 {
-
-                  console.log("aaaaaaa");
 
                   if(product.tags[i].name.indexOf('cat1') > -1)
                   {
