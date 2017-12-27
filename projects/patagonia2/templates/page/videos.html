@@ -280,6 +280,58 @@
                     {% end %}
                 </div>
             </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 pad0 fil">
+                <div class="box_img" style="position: relative;">
+                    {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                        <label for="img_videos9">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_img_videos9" name="image" id="img_videos9" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_img_videos9' }}" href="{{ read_link(site.name + '_img_videos9') }}">
+
+                        <img id="{{ site.name }}_img_videos9" src="{{ read_image(site.name + '_img_videos9', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_videos9',500) }}'" class="img-responsive img_article decolor" alt="item">
+                        <div class="box" >
+                            <div class="text-videos text-center v_1 {{editabletext}}" text-id="{{ site.name + '_text_video9' }}"> {{ read_text(site.name +  '_text_video9') }}
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--editable link-->
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_videos9' }}" content="{{ read_link(site.name + '_img_videos9') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                    {% end %}
+                </div>
+            </div>
+
+            <div class="col-md-6 col-sm-12 col-xs-12 pad0 fil">
+                <div class="box_img" style="position: relative;">
+                    {% if is_admin %}
+                    <div class="image-upload lapiz visible-movil" style="z-index: 2000!important;">
+                        <label for="img_videos10">
+                            <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                        </label>
+                        <input type="file" class="editableimage" image-id="{{ site.name }}_img_videos10" name="image" id="img_videos10" >
+                    </div>
+                    {% end %}
+                    <a id="{{ site.name + '_img_videos10' }}" href="{{ read_link(site.name + '_img_videos10') }}">
+
+                        <img id="{{ site.name }}_img_videos10" src="{{ read_image(site.name + '_img_videos10', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_videos10',500) }}'" class="img-responsive img_article decolor" alt="item">
+                        <div class="box" >
+                            <div class="text-videos text-center v_1 {{editabletext}}" text-id="{{ site.name + '_text_video10' }}"> {{ read_text(site.name +  '_text_video10') }}
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--editable link-->
+                    {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_videos10' }}" content="{{ read_link(site.name + '_img_videos10') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="top: 20px; z-index: 2000!important;">
+                    {% end %}
+                </div>
+            </div>
         </div>
     </div>
 
