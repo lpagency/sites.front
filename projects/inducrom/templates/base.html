@@ -237,13 +237,13 @@
             </div>
             </td>
             <td style="">
-                <i class="fa fa-minus menos remove-one" product-id="{{! id }}" lp-cart-remove-one="{{! id }}" aria-hidden="true"></i>
+                <i class="fa fa-minus menos remove-one" product-id="{{! id }}" lp-cart-remove-one="{{! id }}"></i>
             </td>
             <td class="mumu-3" style="text-align: left;font-size: 12px;left: 33px;position: relative;">
                  {{! quantity }} 
             </td>
             <td>
-                <i class="fa fa-plus mas add-one" product-id="{{! id }}" lp-cart-add-one="{{! id }}" aria-hidden="true"></i>
+                <i class="fa fa-plus mas add-one" product-id="{{! id }}" lp-cart-add-one="{{! id }}"></i>
             </td>
         </tr>
 </script>
@@ -500,6 +500,24 @@ $(document).ready(function(){
   function setCookie(cname,cvalue) {
     document.cookie = cname + "=" + cvalue + ";path=/";
   }
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var total = parseInt($(".mumu-3").html());
+        $(document).live("touchstart", ".add-one", function()
+        {
+            total = total + 1;
+            $(".mumu-3").html(total);
+        });
+
+        $(document).live("touchstart", ".remove-one", function()
+        {
+            total = total - 1;
+            $(".mumu-3").html(total);
+        });
+    });
 </script>
 
     </body>
