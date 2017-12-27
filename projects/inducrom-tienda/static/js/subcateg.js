@@ -15,15 +15,9 @@ $(document).ready(function()
       if( tags == ""){
         $(".tituloCategoria").html("TODOS LOS PRODUCTOS");
         log = $(".tituloCategoria").html().toLowerCase();
-        if(!$(".products").hasClass("hidden"))
-        {
-          $(".products").addClass("hidden");
-        }
-        if($(".banners").hasClass("hidden"))
-        {
-          $(".banners").removeClass("hidden");
-        }
-        $(".ban").addClass("hidden");
+
+        $(".products").removeClass("hidden");
+        $(".banners").addClass("hidden");
       }
 
       if( tags == "control_de_acceso"){
