@@ -49,25 +49,40 @@
             </div>
   
             <div class="col-md-3 col-sm-3 col-xs-12">
-            <div class="inform-comerc text-left">
-                <div class="clearfix"></div>
-                    <ul class="no-dot d-o">
-                         <li class="ul-2 {{editabletext}}" text-id="{{ site.name + '_foot_2323' }}"> {{ read_text(site.name +  '_foot_2323') }}
-                        </li>
-                          <div class="de {{editabletext}}" text-id="{{ site.name + '_footer_31' }}"> {{ read_text(site.name +  '_footer_31') }}
-                        </div>
-                         <div class="de  {{editabletext}}" text-id="{{ site.name + '_footer_lodin' }}"> {{ read_text(site.name +  '_footer_lodin') }}
-                        </div>
-                        <li>
-                           {% if user is None %}
-                              <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
-                              {% else %}
-                              <a href="{{ site_base }}/auth/logout" class="a-footer" >
-                                Logout</a>
-                           {% end %}
-                        </li> 
-                    </ul>
+              <div class="inform-comerc text-left">
+                  <div class="clearfix"></div>
+                  <ul class="no-dot d-o">
+                      <li class="ul-2 {{editabletext}}" text-id="{{ site.name + '_foot_2323' }}"> {{ read_text(site.name +  '_foot_2323') }}
+                      </li>
+                      <div class="de {{editabletext}}" text-id="{{ site.name + '_footer_31' }}"> {{ read_text(site.name +  '_footer_31') }}
+                      </div>
+                      <div class="de  {{editabletext}}" text-id="{{ site.name + '_footer_lodin' }}"> {{ read_text(site.name +  '_footer_lodin') }}
+                      </div>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-md-12 col-xs-3 logo-footer">
+            {% if is_admin %}
+            <div class="image-upload visible-movil" style="left: 25px;">
+                <label for="img_logo_footer">
+                   <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+               </label>
+                <input type="file" class="editableimage" image-id="{{ site.name }}_img_logo_footer" name="image" id="img_logo_footer" >
             </div>
-        </div>
+            {% end %}
+            <a id="{{ site.name + '_logo' }}" href="#">
+              <div class="base-logo">
+                <img class="l-footer" id="{{ site.name }}_img_logo_footer" src="{{ read_image(site.name + '_img_logo_footer', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_img_logo_footer',500) }}'" alt="item">
+              </div>
+            </a>
+            <div class="col-md-3">
+              {% if user is None %}
+                <a href="{{ site_base }}/auth/login" class="a-footer" >Login</a>
+              {% else %}
+                <a href="{{ site_base }}/auth/logout" class="a-footer" >Logout</a>
+              {% end %}
+            </div> 
+          </div>
+          <div class="col-md-12 col-xs-12 firma">Sytes tech. Developed by LoadingPlay</div>
       </div>
   </div>
