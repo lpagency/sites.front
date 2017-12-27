@@ -19,7 +19,13 @@
                     <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss" style="right: 40px;" name="image" id="img_rrss"/>
                   </div>
                   {% end %}
-                  <img id="{{ site.name }}rrss" src="{{ read_image(site.name + 'rrss', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss',) }}'" alt="item" class="rrss">
+                  <a id="{{ site.name + '_img_rrss' }}" href="{{ read_link(site.name + '_img_rrss') }}">
+                    <img id="{{ site.name }}rrss" src="{{ read_image(site.name + 'rrss', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss',) }}'" alt="item" class="rrss">
+                  </a>
+
+                  {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_rrss' }}" content="{{ read_link(site.name + '_img_rrss') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="z-index: 2000!important;">
+                  {% end %}
 
                   {% if is_admin %}
                   <div class="image-upload lapiz visible-movil lapiz-footer" style="top: 94px;right: 224px;">
@@ -29,7 +35,13 @@
                     <input type="file" class="editableimage rrss" image-id="{{ site.name }}rrss_1" style="right: 40px;" name="image" id="img_rrss_1"/>
                   </div>
                   {% end %}
-                  <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss">
+                  <a id="{{ site.name + '_img_rrss_1' }}" href="{{ read_link(site.name + '_img_rrss_1') }}">
+                    <img id="{{ site.name }}rrss_1" src="{{ read_image(site.name + 'rrss_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + 'rrss_1',) }}'" alt="item" class="rrss">
+                  </a>
+
+                  {% if is_admin %}
+                    <img class="change-image editablelink" link-id="{{ site.name + '_img_rrss_1' }}" content="{{ read_link(site.name + '_img_rrss_1') }}" src="https://7static.loadingplay.com/static/images/41664a512d21bc8d33cfea94bce3b63e_link.png" style="z-index: 2000!important;">
+                  {% end %}
         </div>
         <div class="col-md-4 footer-menu">
           
