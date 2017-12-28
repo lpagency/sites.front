@@ -137,7 +137,7 @@ $(document).on("click", ".subcateg-ban", function(ev){
 
         var tags = $(this).attr("tag");
 
-      if( tags == "control_acceso"){
+      if( tags == "control_de_acceso"){
         $(".tituloCategoria").html("CONTROL DE ACCESO");
         log = $(".tituloCategoria").html().toLowerCase();
         if(!$(".products").hasClass("hidden"))

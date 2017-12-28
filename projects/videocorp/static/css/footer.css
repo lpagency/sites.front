@@ -28,6 +28,13 @@
   top: 20px;
 }
 
+.firma{
+    position: relative;
+    top: 118px;
+    text-align: center;
+    font-size: 12px;
+}
+
 .footer_2{
   right: 222px;
   left: inherit !important;
@@ -188,6 +195,15 @@
 
 .footer-social-item + .footer-social-item {
   margin-top: 5px;
+}
+
+@media screen and (max-width: 414px){
+  .firma {
+      position: relative;
+      top: 60px;
+      text-align: center;
+      font-size: 12px;
+  }
 }
 
 /*   ***   /[footer]***   */
