@@ -1129,6 +1129,9 @@ div.image-upload{
 .mostrar{
     display: block;
 }
+.esconder{
+    display: none;
+}
 /*---------------------------------Responsive---------------------------------*/
 
 
@@ -2143,6 +2146,7 @@ div.image-upload{
     .buscador-movil{
         height: 45px;
     }
+
     .mostrar{
         display: none;
     }
@@ -2155,6 +2159,9 @@ div.image-upload{
     }
     .input-form{
         left:0px;
+    }
+    .esconder{
+        display: block;
     }
 }
 @media (max-width: 439px){
