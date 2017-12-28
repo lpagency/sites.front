@@ -1,5 +1,5 @@
 
-<div class="container">
+<div>
 <nav role="navigation" class="navbar navbar-default">
 
         
@@ -27,6 +27,13 @@
                     <li><a href="{{site_base}}/Thermalift" class="">Thermalift</a></li>
                     <li class="pip hidden-sm hidden-xs">|</li>
                     <li><a href="{{site_base}}/botox" class="">Botox</a></li>
+                    <li class="buscador-movil">
+                        <form class="form-movil navbar-form navbar-right ol" role="search" action="{{ site_base }}/search" method="get" >
+                            <div class="form-group search-1 div-form">
+                                <input type="text" name="search_query" class="input-form form-control input_buscar" placeholder="Buscar" value="{% try %}{{ search_query }}{% except %}{% end %}">
+                            </div>
+                        </form>
+                    </li>
             </ul>
         </div>
      
@@ -34,7 +41,7 @@
 </div>
 
      <div class="franja-color ">
-        <div class="col-sm-3 navbar-header hidden-lg hidden-md">
+        <div class="col-sm-1 col-xs-1 navbar-header">
             <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle" style="border: 1px solid grey;">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar" style="background-color: grey;"></span>
@@ -42,12 +49,12 @@
                 <span class="icon-bar" style="background-color: grey;"></span>
             </button>
         </div>
-        <div class="col-sm-6 derma-head">
+        <div class="col-sm-6 col-xs-6 derma-head">
             <a href="">
                  <h1 class="one">Dermatologia.cl</h1>
                  </a>
         </div>
-          <form class="navbar-form navbar-right ol" role="search" action="{{ site_base }}/search" method="get" >
+          <form class="col-sm-5 col-xs-5 mostrar navbar-form navbar-right ol" role="search" action="{{ site_base }}/search" method="get" >
                 <div class="form-group search-1">
                     <input type="text" name="search_query" class="form-control input_buscar" placeholder="Buscar" value="{% try %}{{ search_query }}{% except %}{% end %}">
                 </div>

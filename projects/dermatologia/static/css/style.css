@@ -30,7 +30,9 @@ blockquote {
 }
 
 .derma-head{
-    top: -21px;
+    bottom: 20px;
+    padding: 0;
+    right: 91px;
 }
 
 .cancer{
@@ -190,10 +192,11 @@ a:hover{
 
 }
 .navbar-default{
-    bottom: 0px !important;
-    position: relative !important;
-    z-index: 1030 !important;
-    background: none !important;
+    width: 100%;
+    bottom: 0px;
+    position: relative;
+    z-index: 1030;
+    background: none;
     border-color: transparent;
 }
 
@@ -968,10 +971,10 @@ div.image-upload{
 }
 
 .search-1{
-    bottom: 43px !important;
-    position: relative !important;
-    left: -32px;
-    top: 6px;
+    bottom: 43px ;
+    position: relative ;
+    left: 0px;
+    top: 4px;
 }
 
 /*** article box ***/
@@ -1116,6 +1119,16 @@ div.image-upload{
     margin-right: 16px;
     margin-left: 0px;
 }
+/*--- MENU DESKTOP --- */
+.navbar-nav {
+    float: left;
+    margin: 0;
+    position: relative;
+    bottom: 5px;
+}
+.mostrar{
+    display: block;
+}
 /*---------------------------------Responsive---------------------------------*/
 
 
@@ -1134,12 +1147,12 @@ div.image-upload{
     position: relative;
     display: block;
     padding: 0px 0px;
-    margin-top: 5px;
-    bottom: -12px;
-     font-weight: 400;
+    margin-top: 15px;
+    bottom: 0px;
+    font-weight: 400;
 }
   .navbar-collapse.collapse{
-           margin-left: -64px;
+    margin-left: 0px;
   }
 
   .nav>li {
@@ -1185,7 +1198,7 @@ div.image-upload{
 @media (max-width: 1266px){
     .nav>li>a {
     padding: 12px 0px;
-    margin-top: -12px;
+    margin-top: 4px;
 
     }
 
@@ -1196,7 +1209,7 @@ div.image-upload{
 
 @media (max-width: 1244px){
     .nav>li>a {
-    padding: 12px 3px;
+    padding: 8px 3px;
     }
 
     .nav>li {
@@ -1206,6 +1219,12 @@ div.image-upload{
 }
 
 @media (max-width: 1230px){
+    .derma-head {
+    right: 0px;
+    }
+     .navbar-default{
+    width: 300px;
+    }
     .franja-color{
     bottom: 20px;
     }
@@ -1214,9 +1233,6 @@ div.image-upload{
     margin-top: -204px;
     }
 
-    .navbar-header {
-        float: none;
-    }
     .navbar-toggle {
     display: block;
 
@@ -1258,7 +1274,9 @@ div.image-upload{
     position: absolute;
     background: #999;
     width: 100%;
-    top: 111px;
+    top: 108px;
+    margin-left: -1px;
+    padding-left: 43px;
     }
    
     .pip{
@@ -1269,7 +1287,11 @@ div.image-upload{
     .navbar-toggle{
     position: relative;
     top: 5px;
-    right: 100px;
+    left: 0px;
+    padding: 10px 10px;
+    margin-top: 7px;
+    margin-right: 4px;
+    margin-bottom: 10px;
     }
   
     .dropdown-menu>li>a {
@@ -1310,7 +1332,6 @@ div.image-upload{
 
 
 @media (max-width: 1199px){
-
     .mini-art-home{
     height: 172px;
     }
@@ -1466,6 +1487,10 @@ div.image-upload{
     .inf{
     bottom: 0px;
     }
+    .navbar-toggle {
+    left: 0px;
+    float: none;
+}
 }
 
 @media (max-width: 991px){
@@ -1578,11 +1603,29 @@ div.image-upload{
 
 @media (max-width: 796px){
     .titulo-2{
-        bottom: 180px;
+        bottom: 80px;
     }
 }
 
 @media(max-width:768px){
+    .derma-head{
+        position: relative;
+        left: 15px;
+        top: auto;
+    }
+    .navbar-form.navbar-right:last-child {
+        margin-right: 0px;
+    }
+    .search-1{
+        position: relative;
+        margin-top: 4px;
+        bottom: 43px;
+        left: 0px;
+        top: 0px;
+    }
+    .titulo-2 {
+        bottom: 80px;
+    }
     .navbar-collapse.collapse {
     display: none!important;
     margin-left: -12px;
@@ -1592,7 +1635,7 @@ div.image-upload{
     position: absolute;
     background: #999;
     width: 100%;
-    top: 111px;
+    top: 108px;
 }
 
 .navbar-nav {
@@ -1609,6 +1652,9 @@ div.image-upload{
 
 
 @media (max-width: 767px){
+    .navbar-form {
+    margin-top: 0px;
+}
    .no-dot{
     /* text-align: center; */
     font-size: 16px;
@@ -1635,7 +1681,7 @@ div.image-upload{
     
     .search-1{
         float: right;
-        width: 28%;
+        width: 100%;
     }
     
     #footer {
@@ -1700,7 +1746,8 @@ div.image-upload{
     
 
     .navbar {
-    top: -3px;
+        position: absolute;
+        top: -3px;
     }
 
     .nav>li>a{
@@ -1741,15 +1788,13 @@ div.image-upload{
     }
     .one {
     font-size: 28px;
-    left: 36px;
+    left: 0px;
     top: 13px;
-    /* color: white; */
     width: 70%;
     }
     .derma-head {
-    position: relative !important;
-    left: 20px !important;
-    top: -70px !important;
+    position: relative;
+    left: 20px;
     }
     .navbar-toggle{
     float: left;
@@ -1807,16 +1852,16 @@ div.image-upload{
    
     
     .search-1{
-    width: 87%;
-    bottom: 37px !important;
-    padding-right: 54px;
-     left: 0px;
+    width: 100%;
+    bottom: 37px;
+    left: 0px;
 
     }
 
     .form-control{
-         font-size: 19px;
-
+        font-size: 19px;
+        position: relative;
+        left: 20px;
     }
 
     .t-2{
@@ -1979,7 +2024,11 @@ div.image-upload{
     width: 91%;
     left: 4px;
 }
-
+.derma-head {
+    position: relative;
+    left: 15px;
+    top: auto;
+}
 }
 
 @media (max-width: 643px){
@@ -2006,7 +2055,11 @@ div.image-upload{
     width: 91%;
     left: 4px;
 }
-
+.derma-head {
+    position: relative;
+    left: 15px;
+    top: auto;
+}
 .uno {
     font-size: 20px;
 }
@@ -2036,6 +2089,11 @@ div.image-upload{
     border-radius: 26px;
 }
 
+.derma-head {
+    position: relative;
+    left: 25px;
+    top: auto;
+}
 }
 
 @media (max-width: 516px){
@@ -2075,9 +2133,30 @@ div.image-upload{
     left: 4px;
     border-radius: 26px;
 }
-
+.derma-head {
+    position: relative;
+    left: 35px;
+    top: auto;
 }
-
+}
+@media (max-width: 444px){
+    .buscador-movil{
+        height: 45px;
+    }
+    .mostrar{
+        display: none;
+    }
+    .form-movil.navbar-form{
+        top: 0;
+        width: 100%;
+        border: none;
+        padding: 0;
+        height: 100%;
+    }
+    .input-form{
+        left:0px;
+    }
+}
 @media (max-width: 439px){
 .mini-art-home-medium {
     height: 99px;
@@ -2089,9 +2168,7 @@ div.image-upload{
     left: 10%;
     top: 21px;
 }
-
 }
-
 @media (max-width: 409px){
 .mini-art-home-medium {
     height: 92px;
@@ -2195,16 +2272,4 @@ div.image-upload{
         padding: 0px 10px 10px 10px;
     }
 
-}
-
-@media only screen and (max-width: 768px){
-    .derma-head{
-        position: relative !important;
-        left: 200px ;
-        top: -70px !important;
-    }
-
-    .search-1{
-        top: inherit;
-    }
 }
