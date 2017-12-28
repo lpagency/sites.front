@@ -119,6 +119,9 @@
                   }
                 }
               }
+              // EXCLUSIVO PARA SEO
+                $("title").html(product.name);
+                $("meta[name=description]").attr("content", product.bullet_1);
 
               $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]+" | "+product.name);
 
