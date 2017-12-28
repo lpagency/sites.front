@@ -10,6 +10,22 @@
 
 {% block javascript %}
 
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+            panel.style.display = "none";
+        } else {
+            panel.style.display = "block";
+        }
+    }
+}
+</script>
 
 {% end %}
 
@@ -25,7 +41,6 @@
 
 {% include '../home/header_inside.html' %}
 <div style="position:relative;top: 0px;height: 500px;">
-<!-- editar imagen -->
     {% if is_admin %}
         <div class="image-upload" style="position: absolute; top: 100px;">
             <label for="img_cumple">
@@ -35,16 +50,14 @@
         </div>
     {% end %}
     <img id="{{ site.name }}_cumple" src="{{ read_image(site.name + '_cumple', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple', 500) }}'" class="img-responsive fondo-articulo-juegos" alt="item" style="height: 100%;">
-    <!-- fin editar imagen --> 
     <h1 align="center" class="{{editabletext}} txt-area-juegos-title"  text-id="{{ site.name + '_txt_cumples' }}">{{ read_text(site.name + '_txt_cumples') }}</h1>
 </div>
-<div class="container">
+<!-- <div class="container">-->
 
     <div align="center" class="{{editabletext}} cumples"  text-id="{{ site.name + '_txt_cumples' }}">{{ read_text(site.name + '_txt_cumples') }}</div>
 
     <div style="position:relative;top: 0px;height: 500px;">
-    <!-- editar imagen -->
-        {% if is_admin %}
+            {% if is_admin %}
             <div class="image-upload" style="position: absolute; top: 100px;">
                 <label for="img_cumple_1">
                     <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
@@ -53,14 +66,12 @@
             </div>
         {% end %}
         <img id="{{ site.name }}_cumple_1" src="{{ read_image(site.name + '_cumple_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple_1', 500) }}'" class="img-responsive fondo-articulo-a" alt="item" style="height: 100%;">
-        <!-- fin editar imagen --> 
         <h1 align="center" class="{{editabletext}} txt-a-title"  text-id="{{ site.name + '_txt_cumple_1' }}">{{ read_text(site.name + '_txt_cumple_1') }}</h1>
         <h4 align="center" class="{{editabletext}} txt-b-title"  text-id="{{ site.name + '_txt_cumple_1_1' }}">{{ read_text(site.name + '_txt_cumple_1_1') }}</h4>
     </div>
 
     <div style="position:relative;top: 50px;height: 500px;">
-    <!-- editar imagen -->
-        {% if is_admin %}
+            {% if is_admin %}
             <div class="image-upload" style="position: absolute; top: 100px;">
                 <label for="img_cumple_2">
                     <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
@@ -69,14 +80,12 @@
             </div>
         {% end %}
         <img id="{{ site.name }}_cumple_2" src="{{ read_image(site.name + '_cumple_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple_2', 500) }}'" class="img-responsive fondo-articulo-a" alt="item" style="height: 100%;">
-        <!-- fin editar imagen --> 
         <h1 align="center" class="{{editabletext}} txt-c-title"  text-id="{{ site.name + '_txt_cumple_2' }}">{{ read_text(site.name + '_txt_cumple_2') }}</h1>
         <h4 align="center" class="{{editabletext}} txt-d-title"  text-id="{{ site.name + '_txt_cumple_2_1' }}">{{ read_text(site.name + '_txt_cumple_2_1') }}</h4>
     </div>
 
     <div style="position:relative;top: -15px;height: 500px;">
-    <!-- editar imagen -->
-        {% if is_admin %}
+            {% if is_admin %}
             <div class="image-upload" style="position: absolute; top: 100px;">
                 <label for="img_cumple_3">
                     <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
@@ -85,14 +94,12 @@
             </div>
         {% end %}
         <img id="{{ site.name }}_cumple_3" src="{{ read_image(site.name + '_cumple_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple_3', 500) }}'" class="img-responsive fondo-articulo-a" alt="item" style="height: 100%;">
-        <!-- fin editar imagen --> 
         <h1 align="center" class="{{editabletext}} txt-a-title"  text-id="{{ site.name + '_txt_cumple_3' }}">{{ read_text(site.name + '_txt_cumple_3') }}</h1>
         <h4 align="center" class="{{editabletext}} txt-b-title"  text-id="{{ site.name + '_txt_cumple_3_1' }}">{{ read_text(site.name + '_txt_cumple_3_1') }}</h4>
     </div>
 
     <div style="position:relative;top: -81px;height: 500px;">
-    <!-- editar imagen -->
-        {% if is_admin %}
+            {% if is_admin %}
             <div class="image-upload" style="position: absolute; top: 100px;">
                 <label for="img_cumple_4">
                     <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
@@ -101,14 +108,12 @@
             </div>
         {% end %}
         <img id="{{ site.name }}_cumple_4" src="{{ read_image(site.name + '_cumple_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple_4', 500) }}'" class="img-responsive fondo-articulo-a" alt="item" style="height: 100%;">
-        <!-- fin editar imagen --> 
         <h1 align="center" class="{{editabletext}} txt-c-title"  text-id="{{ site.name + '_txt_cumple_4' }}">{{ read_text(site.name + '_txt_cumple_4') }}</h1>
         <h4 align="center" class="{{editabletext}} txt-d-title"  text-id="{{ site.name + '_txt_cumple_4_1' }}">{{ read_text(site.name + '_txt_cumple_4_1') }}</h4>
     </div>
 
-    <div style="position:relative;top: -146px;height: 500px; margin-bottom: -233px;">
-    <!-- editar imagen -->
-        {% if is_admin %}
+    <div style="position:relative;top: -146px;height: 400px; margin-bottom: -80px;">
+            {% if is_admin %}
             <div class="image-upload" style="position: absolute; top: 100px;">
                 <label for="img_cumple_5">
                     <img class="change-image" src="{{ site_base }}/static/img/btn-edit.png" onmouseover="this.src='{{ site_base }}/static/img/btn-edit-hover.png';" onmouseout="this.src='{{ site_base }}/static/img/btn-edit.png';">
@@ -117,9 +122,52 @@
             </div>
         {% end %}
         <img id="{{ site.name }}_cumple_5" src="{{ read_image(site.name + '_cumple_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_cumple_5', 500) }}'" class="img-responsive fondo-articulo-a" alt="item" style="height: 100%;">
-        <!-- fin editar imagen --> 
         <h1 align="center" class="{{editabletext}} txt-a-title"  text-id="{{ site.name + '_txt_cumple_5' }}">{{ read_text(site.name + '_txt_cumple_5') }}</h1>
         <h4 align="center" class="{{editabletext}} txt-b-title"  text-id="{{ site.name + '_txt_cumple_5_1' }}">{{ read_text(site.name + '_txt_cumple_5_1') }}</h4>
+    </div>
+    <button class="col-md-12 col-xs-12 accordion bordes">
+        <b>Display 1</b>
+        <i class="fa fa-plus mas"></i>
+    </button>
+    <div class="panel">
+        <p>Coca-Cola Zero Sugar will be available in stores nationwide starting now. We’re making a significant media investment to promote Coke Zero Sugar, too. Keep an eye out for a full marketing campaign and national sampling tour launching in early September… just in time for football season.</p>
+        <p>The new-and-improved recipe will be available across all current Coke Zero package sizes, but at this time there are no plans to change the recipes for Cherry Coke Zero<sup>™</sup>, Vanilla Coke Zero<sup>™</sup> and Caffeine Free Coke Zero<sup>™</sup>. Fountain machines and Coca-Cola Freestyle<sup>®</sup> will be updated to the improved Coke Zero Sugar recipe and graphics later this month.</p>
+    </div>
+    <div class="clearfix" style="padding-bottom: 20px"></div>
+    <button class="col-md-12 col-xs-12 accordion bordes">
+        <b>Display 2</b>
+        <i class="fa fa-plus mas"></i>
+    </button>
+    <div class="panel">
+        <p>Coca-Cola Zero Sugar will be available in stores nationwide starting now. We’re making a significant media investment to promote Coke Zero Sugar, too. Keep an eye out for a full marketing campaign and national sampling tour launching in early September… just in time for football season.</p>
+        <p>The new-and-improved recipe will be available across all current Coke Zero package sizes, but at this time there are no plans to change the recipes for Cherry Coke Zero<sup>™</sup>, Vanilla Coke Zero<sup>™</sup> and Caffeine Free Coke Zero<sup>™</sup>. Fountain machines and Coca-Cola Freestyle<sup>®</sup> will be updated to the improved Coke Zero Sugar recipe and graphics later this month.</p>
+    </div>
+    <div class="clearfix" style="padding-bottom: 20px"></div>
+    <button class="col-md-12 col-xs-12 accordion bordes">
+        <b>Display 3</b>
+        <i class="fa fa-plus mas"></i>
+    </button>
+    <div class="panel">
+        <p>Coca-Cola Zero Sugar will be available in stores nationwide starting now. We’re making a significant media investment to promote Coke Zero Sugar, too. Keep an eye out for a full marketing campaign and national sampling tour launching in early September… just in time for football season.</p>
+        <p>The new-and-improved recipe will be available across all current Coke Zero package sizes, but at this time there are no plans to change the recipes for Cherry Coke Zero<sup>™</sup>, Vanilla Coke Zero<sup>™</sup> and Caffeine Free Coke Zero<sup>™</sup>. Fountain machines and Coca-Cola Freestyle<sup>®</sup> will be updated to the improved Coke Zero Sugar recipe and graphics later this month.</p>
+    </div>
+    <div class="clearfix" style="padding-bottom: 20px"></div>
+    <button class="col-md-12 col-xs-12 accordion bordes">
+        <b>Display 4</b>
+        <i class="fa fa-plus mas"></i>
+    </button>
+    <div class="panel">
+        <p>Coca-Cola Zero Sugar will be available in stores nationwide starting now. We’re making a significant media investment to promote Coke Zero Sugar, too. Keep an eye out for a full marketing campaign and national sampling tour launching in early September… just in time for football season.</p>
+        <p>The new-and-improved recipe will be available across all current Coke Zero package sizes, but at this time there are no plans to change the recipes for Cherry Coke Zero<sup>™</sup>, Vanilla Coke Zero<sup>™</sup> and Caffeine Free Coke Zero<sup>™</sup>. Fountain machines and Coca-Cola Freestyle<sup>®</sup> will be updated to the improved Coke Zero Sugar recipe and graphics later this month.</p>
+    </div>
+    <div class="clearfix" style="padding-bottom: 20px"></div>
+    <button class="col-md-12 col-xs-12 accordion bordes">
+        <b>Display 5</b>
+        <i class="fa fa-plus mas"></i>
+    </button>
+    <div class="panel">
+        <p>Coca-Cola Zero Sugar will be available in stores nationwide starting now. We’re making a significant media investment to promote Coke Zero Sugar, too. Keep an eye out for a full marketing campaign and national sampling tour launching in early September… just in time for football season.</p>
+        <p>The new-and-improved recipe will be available across all current Coke Zero package sizes, but at this time there are no plans to change the recipes for Cherry Coke Zero<sup>™</sup>, Vanilla Coke Zero<sup>™</sup> and Caffeine Free Coke Zero<sup>™</sup>. Fountain machines and Coca-Cola Freestyle<sup>®</sup> will be updated to the improved Coke Zero Sugar recipe and graphics later this month.</p>
     </div>
 </div>
 {% include '../home/footer.html' %}
