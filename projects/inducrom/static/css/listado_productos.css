@@ -119,6 +119,33 @@ div.image-upload.part1 {
     letter-spacing: 0.3px;
 }
 
+.inf-2 {
+    position: absolute;
+    bottom: 33px;
+    width: 202px;
+    text-align: center;
+    left: 18px;
+    color: #fff;
+    font-size: 9px;
+    font-weight: 300;
+    margin-bottom: -12px;
+    height: 26px;
+    padding-left: 9px;
+    padding-right: 9px;
+    font-weight: 600;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -ms-transform: scaleY(1.2);
+    -moz-transform: scaleY(1.2);
+    -webkit-transform: scaleY(1.2);
+    -o-transform: scaleY(1.2);
+    background: #04264e;
+    text-transform: uppercase;
+    width: 244px;
+    letter-spacing: 0.3px;
+}
+
 .clearfix-dos {
     margin-top: 18px;
     margin-bottom: 0px;
@@ -1192,10 +1219,14 @@ visibility: hidden;
 
 @media (max-width: 768px){
     .inf {
-    width: 93%;
-    bottom: 26px;
-    left: 16px;
-}
+        width: 93%;
+        bottom: 26px;
+        left: 16px;
+    }
+
+    .inf-2{
+        width: 204px;
+    }
 
 .descr_prod_detail {
     position: relative;
@@ -1795,8 +1826,16 @@ img.little {
 
 @media (max-width: 640px){
     .inf {
-    width: 88%;
-}
+        width: 88%;
+    }
+
+    .contenedor-banner{
+        width: 100%;
+    }
+
+    .inf-2 {
+        width: 288px;
+    }
 
 }
 
@@ -2310,12 +2349,12 @@ td.mumu-2 {
     left: 5px;
 }
 
-.inf-2{
-    width: 95.5%;
+.inf-2 {
+    width: 87%;
     bottom: 32px;
     font-size: 8px;
-    height: 41px;
-    left: 15px;
+    height: 30px;
+    left: 18px;
 }
 
 .titulo-prou {
