@@ -32,14 +32,17 @@
     $(document).ready(function()
     {
 
-      var tag = Utils.getUrlParameter("tag");
+      var tags = Utils.getUrlParameter("tag");
+      var log = "";
 
-      if(tag == "tienda"){
+      if(tags == "tienda"){
         $(".cotizar").addClass("hidden");
       }
 
-      var tags = Utils.getUrlParameter("tag");
-      var log = "";
+      if(tags == undefined)
+      {
+        log = "Tienda";
+      }
 
       if( tags == "control_de_acceso"){
         $(".tituloCategoria").html("CONTROL DE ACCESO");
@@ -346,7 +349,7 @@ $(document).ready(function(){
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="filas" class="azul subcateg partes mbtm5 scrollUp" tag="filas" role="button" sub=" Control de acceso | Separador de filas">Separador de filas</a>
+              <a href="#" id="filas" class="azul subcateg partes mbtm5 scrollUp" tag="filas" role="button" sub=" Control de acceso | Separador de filas" sub2="Separador de filas">Separador de filas</a>
             </div>
             <div>
               <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
@@ -354,19 +357,19 @@ $(document).ready(function(){
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="basureros" class="amarillo subcateg partes mbtm5 scrollUp" tag="basureros" role="button" sub=" Mobiliario urbano | Basureros">Basureros</a>
+              <a href="#" id="basureros" class="amarillo subcateg partes mbtm5 scrollUp" tag="basureros" role="button" sub=" Mobiliario urbano | Basureros" sub2="Basureros">Basureros</a>
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="banqueta" class="amarillo subcateg partes mbtm5 scrollUp" tag="banqueta" role="button" sub=" Moviliario urbano | Banquetas/Escaños">Banquetas/Escaños</a>
+              <a href="#" id="banqueta" class="amarillo subcateg partes mbtm5 scrollUp" tag="banqueta" role="button" sub=" Moviliario urbano | Banquetas/Escaños" sub2="Banquetas/Escaños">Banquetas/Escaños</a>
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="bicicleteros" class="amarillo subcateg partes mbtm5 scrollUp" tag="bicicleteros" role="button" sub=" Moviliario urbano | Bicicleteros">Bicicleteros</a>
+              <a href="#" id="bicicleteros" class="amarillo subcateg partes mbtm5 scrollUp" tag="bicicleteros" role="button" sub=" Moviliario urbano | Bicicleteros" sub2="Bicicleteros">Bicicleteros</a>
             </div>
             <div>
               <i class="fa fa-caret-right hidden" aria-hidden="true"></i>
-              <a href="#" id="refugio_bici" class="amarillo subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button" sub=" Moviliario urbano | Refugios para bicicletas">Refugios para bicicletas</a>
+              <a href="#" id="refugio_bici" class="amarillo subcateg partes mbtm5 scrollUp" tag="refugio_bici" role="button" sub=" Moviliario urbano | Refugios para bicicletas" sub2="Refugios para bicicletas">Refugios para bicicletas</a>
             </div>
             <div>
               <i class="fa fa-caret-right categ hidden" aria-hidden="true"></i>
