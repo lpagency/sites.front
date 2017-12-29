@@ -58,6 +58,8 @@
             onLoad: function(product)
             {
 
+              console.log(product.tags);
+
               for(var i = 0; i < product.tags.length; i++)
               {
 
@@ -81,18 +83,17 @@
 
                   if(product.tags[i].name.indexOf('cat2') > -1)
                   {
-
-                    related(product.tags[i]);
+                    related(product.tags[i].name);
 
                     breadcrumb = product.tags[i].name.replace("cat1","").replace("cat2","").replace("_"," ").replace("_"," ").replace("_"," ");
 
                     miga[1] = breadcrumb;
                   }
 
-                  if(product.tags[i].name.indexOf('cat2') == -1)
-                  {
-                    miga[1] = "";
-                  }
+                  // if(product.tags[i].name.indexOf('cat2') == -1)
+                  // {
+                  //   miga[1] = "";
+                  // }
                 }
               }
               // EXCLUSIVO PARA SEO
@@ -100,16 +101,6 @@
                 $("meta[name=description]").attr("content", product.bullet_1);
 
               $(".buscaCat").html("Home | "+miga[0]+" | "+miga[1]+" | "+product.name);
-
-              // for(x in product.tags){
-              //   if(product.tags[x] == "tienda"){
-              //     $(".comprar").removeClass("hidden");
-              //     $(".precio").removeClass("hidden");
-              //   }
-              //   if(product.tags[x] == "cotizar"){
-              //     $(".precio").addClass("hidden");
-              //   }
-              // }
 
                 if (product.bullet_1 != "" ){
                     $.get(site_base + "/article/tag?tag="+product.bullet_2, function(data)
