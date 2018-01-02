@@ -41,6 +41,12 @@
   top: 50px;
 }
 
+.banner-footer-logo{
+    position: relative;
+    top: 120px;
+    right: 265px;
+}
+
 .footer_3{
   right: 142px;
   left: inherit !important;
@@ -115,6 +121,12 @@
 @media screen and (min-width: 768px) {
   .footer-logo-wrapper {
     width: 25%;
+  }
+}
+
+@media screen and (max-width: 1024px){
+  .banner-footer-logo{
+    right: 215px;
   }
 }
 
@@ -203,6 +215,11 @@
       top: 60px;
       text-align: center;
       font-size: 12px;
+  }
+
+  .banner-footer-logo{
+    top: inherit;
+    right: inherit;
   }
 }
 
