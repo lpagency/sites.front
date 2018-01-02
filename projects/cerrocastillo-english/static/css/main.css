@@ -25,6 +25,20 @@ span {
   padding: 0;
 }
 
+.header-item-arrow {
+    max-width: 45px;
+    position: absolute;
+    top: 18px;
+    right: 50px;
+}
+
+@media screen and (max-width: 414px)
+{
+  .header-item-arrow{
+    position: inherit;
+  }
+}
+
 a{
   color: white !important;
 }
@@ -743,10 +757,6 @@ img#cerrocastillo-english_footer_logo {
   .header-item-icon {
     width: 45px;
   }
-}
-
-.header-item-arrow {
-  max-width: 10px;
 }
 
 .header-link {
