@@ -1,0 +1,64 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Style.css">
+{% end %}
+
+{% block javascript %}
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="banner banner-bg-cover">
+        {% if is_admin %}
+            <div class="image-upload lapiz visible-movil ban-lapiz">
+                <label for="img_history_banner_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_history_banner_1" name="image" id="img_history_banner_1" >
+            </div>
+        {% end %}
+        <div class="base-logo">
+            <img id="{{ site.name }}_history_banner_1" src="{{ read_image(site.name + '_history_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_history_banner_1',) }}'" class="banner-bg" alt="item">
+        </div>
+    </section>
+
+    <section class="u-padding-bottom-huge u-position-relative section-cases">
+        <div class="title title-secondary banner-title">
+            <h2 class="heading heading-med heading-font-main-reg">HISTORIAS</h2>
+        </div>
+        <div class="u-padding-top-huge container">
+            <div class="row">
+                <div class="col-xs-12 section-cases-group">
+                    {{ getArticleList(tag='historia') }}
+                    {{ getArticleList(tag='historia2') }}
+                    {{ getArticleList(tag='historia3') }}
+                </div>
+                <div class="col-xs-12 section-cases-group">
+                    {{ getArticleList(tag='historia4') }}
+                    {{ getArticleList(tag='historia5') }}
+                    {{ getArticleList(tag='historia6') }}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include '../home/footer.html' %}
+
+{% end %}

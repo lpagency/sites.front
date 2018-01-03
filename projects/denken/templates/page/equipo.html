@@ -1,0 +1,166 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Style.css">
+{% end %}
+
+{% block javascript %}
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="banner banner-bg-cover">
+        {% if is_admin %}
+            <div class="image-upload lapiz visible-movil ban-lapiz">
+                <label for="img_team_banner_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_banner_1" name="image" id="img_team_banner_1" >
+            </div>
+        {% end %}
+        <div class="base-logo">
+            <img id="{{ site.name }}_team_banner_1" src="{{ read_image(site.name + '_team_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_banner_1',) }}'" class="banner-bg" alt="item">
+        </div>
+    </section>
+
+        <section class="u-padding-top-big u-padding-bottom-med u-position-relative section-team">
+            <div class="title title-primary banner-title">
+                <h2 class="heading heading-med heading-font-main-reg">EQUIPO</h2>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 section-team-group">
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_1">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_1" name="image" id="img_team_1" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_1" src="{{ read_image(site.name + '_team_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_1',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_1' }}">{{ read_text(site.name +  'text_team_1') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_1_1' }}">{{ read_text(site.name +  'text_team_1_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_1_1_1' }}">{{ read_text(site.name +  'text_team_1_1_1') }}</div>
+                        </div>
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_2">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_2" name="image" id="img_team_2" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_2" src="{{ read_image(site.name + '_team_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_2',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_2' }}">{{ read_text(site.name +  'text_team_2') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_2_1' }}">{{ read_text(site.name +  'text_team_2_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_2_1_1' }}">{{ read_text(site.name +  'text_team_2_1_1') }}</div>
+                        </div>
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_3">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_3" name="image" id="img_team_3" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_3" src="{{ read_image(site.name + '_team_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_3',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_3' }}">{{ read_text(site.name +  'text_team_3') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_3_1' }}">{{ read_text(site.name +  'text_team_3_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_3_1_1' }}">{{ read_text(site.name +  'text_team_3_1_1') }}</div>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 section-team-group">
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_4">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_4" name="image" id="img_team_4" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_4" src="{{ read_image(site.name + '_team_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_4',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_4' }}">{{ read_text(site.name +  'text_team_4') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_4_1' }}">{{ read_text(site.name +  'text_team_4_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_4_1_1' }}">{{ read_text(site.name +  'text_team_4_1_1') }}</div>
+                        </div>
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_5">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_5" name="image" id="img_team_5" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_5" src="{{ read_image(site.name + '_team_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_5',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_5' }}">{{ read_text(site.name +  'text_team_5') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_5_1' }}">{{ read_text(site.name +  'text_team_5_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_5_1_1' }}">{{ read_text(site.name +  'text_team_5_1_1') }}</div>
+                        </div>
+                        <div class="section-team-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: inherit;">
+                                    <label for="img_team_6">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_team_6" name="image" id="img_team_6" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_team_6" src="{{ read_image(site.name + '_team_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_team_6',) }}'" class="u-responsive-img-full section-team-item-img" alt="item">
+                            </div>
+                            <div class="u-margin-vertical-smallest">
+                                <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_team_6' }}">{{ read_text(site.name +  'text_team_6') }}</div>
+                                <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent u-color-primary" text-id="{{ site.name + 'text_team_6_1' }}">{{ read_text(site.name +  'text_team_6_1') }}</div>
+                            </div>
+                            <div class="{{editabletext}} paragraph u-weight-thin paragraph-font-accent" text-id="{{ site.name + 'text_team_6_1_1' }}">{{ read_text(site.name +  'text_team_6_1_1') }}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    {% include '../home/footer.html' %}
+
+{% end %}

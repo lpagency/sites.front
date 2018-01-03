@@ -1,0 +1,38 @@
+<footer class="footer">
+        <div class="container container-big">
+            <div class="row">
+                <div class="col-xs-12 footer-content">
+                    <a href="#" class="logo footer-logo">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 1000px;">
+                                <label for="img_footer_logo">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_footer_logo" name="image" id="img_footer_logo" >
+                            </div>
+                        {% end %}
+                        <div class="base-logo">
+                            <img id="{{ site.name }}_footer_logo" src="{{ read_image(site.name + '_footer_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_footer_logo',) }}'" class="logo-img" alt="item">
+                        </div>
+                    </a>
+                    <ul class="menu header-menu">
+                        <li class="menu-item menu-item-less-margin">
+                            <a href="#" class="heading heading-small menu-link">FACEBOOK</a>
+                        </li>
+                        <li class="menu-item menu-item-less-margin">
+                            <a href="#" class="heading heading-small menu-link">E-MAIL</a>
+                        </li>
+                        <li class="menu-item menu-item-less-margin">
+                            <a href="#" class="heading heading-small menu-link">TWITTER</a>
+                        </li>
+                        <li class="menu-item menu-item-less-margin">
+                            <a href="{{ site_base }}/contact" class="heading heading-small menu-link">CONTÁCTENOS</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12 col-xs-12 firma">
+            <a href="https://www.loadingplay.com" style="color: white">Sytes tech. Developed by LoadingPlay.</a>
+        </div>
+    </footer>

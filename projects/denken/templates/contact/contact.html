@@ -1,0 +1,203 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Style.css">
+{% end %}
+
+{% block javascript %}
+
+<script type="text/javascript">
+
+    //Expresión para validar un correo electrónico
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        //Expresión para validar edad de 18 a 60 años
+        var expr2 = /^1[8-9]|[2-5]\d|60$/;
+        $(document).ready(function(){
+            //función click
+            $("#bEnviar").click(function(){
+
+                //Guardar en variables el valor que tengan las cajas de texto
+                //Por medio de los id's
+                //Y tener mejor manipulación de dichos valores
+                var nombre = $("#itNombre").val();
+                var apellido = $("#itApellido").val();
+                var correo = $("#itMail").val();
+                var servicios = $("#itServicios").val();
+                var asunto = $("#itComentario").val();
+
+                var error_count = 0;
+ 
+                // --- Condicionales anidados ----
+                //Si nombre está vacío
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(nombre == ""){
+                    $("#itNombre").parents(".form-group").addClass("has-error");
+                    $(".help-nombre").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itNombre").parents(".form-group").removeClass("has-error");
+                    $(".help-nombre").addClass('hidden');
+                }
+
+                if(apellido == ""){
+                    $("#itApellido").parents(".form-group").addClass("has-error");
+                    $(".help-apellido").removeClass('hidden');
+                    error_count += 1;
+                }
+                //en otro caso, el mensaje no se muestra
+                else{
+                    $("#itApellido").parents(".form-group").removeClass("has-error");
+                    $(".help-apellido").addClass('hidden');
+                }
+
+                //Si correo está vacío y la expresión NO corresponde -test es función de JQuery
+                //Muestra el mensaje
+                //Con false sale de los if's y espera a que sea pulsado de nuevo el botón de enviar
+                if(correo == "" || !expr.test(correo)){
+                    $("#itMail").parents(".form-group").addClass("has-error");
+                    $(".help-mail").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itMail").parents(".form-group").removeClass("has-error");
+                    $(".help-mail").addClass('hidden');
+                }
+
+                if(servicios == ""){
+                    $("#itServicios").parents(".form-group").addClass("has-error");
+                    $(".help-servicios").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itServicios").parents(".form-group").removeClass("has-error");
+                    $(".help-servicios").addClass('hidden');
+                }
+
+                if(asunto == ""){
+                    $("#itComentario").parents(".form-group").addClass("has-error");
+                    $(".help-comentario").removeClass('hidden');
+                    error_count += 1;
+                }
+                else
+                {
+                    $("#itComentario").parents(".form-group").removeClass("has-error");
+                    $(".help-comentario").addClass('hidden');
+                }
+
+                if (error_count > 0)
+                {
+                    return false;
+                }
+ 
+            });//click
+        });//ready
+</script>
+
+{% end %}
+
+{% block body %}
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="banner banner-bg-cover">
+        {% if is_admin %}
+            <div class="image-upload lapiz visible-movil ban-lapiz">
+                <label for="img_contact_banner_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_contact_banner_1" name="image" id="img_contact_banner_1" >
+            </div>
+        {% end %}
+        <div class="base-logo">
+            <img id="{{ site.name }}_contact_banner_1" src="{{ read_image(site.name + '_contact_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_contact_banner_1',) }}'" class="banner-bg" alt="item">
+        </div>
+    </section>
+
+    <section class="u-padding-bottom-huge u-position-relative section-clients">
+        <div class="title banner-title">
+            <h2 class="heading heading-med heading-font-main-reg">CONTÁCTANOS</h2>
+        </div>
+        <div class="u-padding-top-huge container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <form action='https://forms.zohopublic.com/sytes/form/denkenformulariocontacto/formperma/rDwGO0m9oiegEu-Qy89LERPWDxaGoj-RRbOSVey-a5g/htmlRecords/submit' name='form' id='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data' onSubmit="zf_validateandsubmitdata();">
+                        <input type="text" name="Name_First" id="itNombre" class="form-input" placeholder="NOMBRE">
+                        <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+                        <input type="text" name="Name_Last" id="itApellido" class="form-input" placeholder="APELLIDO">
+                        <span id="helpBlock2" class="hidden help-block help-apellido">Escribe tu apellido</span>
+                        <input type="email" name="Mail" id="itMail" class="form-input" placeholder="E-MAIL">
+                        <span id="helpBlock2" class="hidden help-block help-mail">Escribe tu email</span>
+                        <input type="text" name="SingleLine" id="itServicios" class="form-input" placeholder="SERVICIOS POR LOS QUE NOS CONTACTAS">
+                        <span id="helpBlock2" class="hidden help-block help-servicios">Escribe el servicio</span>
+                        <textarea class="form-input form-input-textarea" name="MultiLine" id="itComentario" placeholder="COMENTARIOS"></textarea>
+                        <span id="helpBlock2" class="hidden help-block help-comentario">Escribe tu comentario</span>
+                        <input type="submit" id="bEnviar" class="form-btn" value="Enviar">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- <section class="container galeria">
+    <form action='https://forms.zohopublic.com/sytes/form/videocorpformulariocontacto/formperma/j4D510G2dJf9F5J0K5B00E55G/htmlRecords/submit' name='form' method='POST' accept-charset='UTF-8' enctype='multipart/form-data'>
+        <div class="col-xs-12 col-sm-6">
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                    <input name="Name_First" placeholder="nombre completo" class="form-control input-lg requiredField" type="text" id="itNombre" data-error-invalid="Invalid email address" data-error-empty="Ingrese nombre">
+                </div>
+                <span id="helpBlock2" class="hidden help-block help-nombre">Escribe tu nombre</span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                    <input name="Email" placeholder="email" class="form-control input-lg requiredField" type="email" id="itMail" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                </div>
+                <span id="helpBlock3" class="hidden help-block help-mail">escribe tu email</span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class=" controls">
+                    <input name="Number" placeholder="Numero de telefono" class="form-control input-lg requiredField" type="number" id="itTelefono" data-error-invalid="Invalid email address" data-error-empty="Ingrese email">
+                </div>
+                <span id="helpBlock3" class="hidden help-block help-telefono">escribe tu telefono</span>
+            </div>
+        </div>  
+
+        <div class="col-sm-6">
+            <div class="form-group">
+                <label class="control-label"></label>
+                <div class="controls">
+                    <textarea name="MultiLine" placeholder="mensaje" class="form-control input-lg requiredField" id="itComentario" rows="5" data-error-empty="Ingrese mensaje" style="height: 130px;"></textarea>
+                </div>
+                <span id="helpBlock4" class="hidden help-block help-comentario">escribe tu comentario</span>
+            </div>
+        </div>
+
+        <div class="col-md-12 col-sm-12 col-xs-12">
+            <button name="submit" id="bEnviar" type="submit" class="btn btn-store btn-block " data-error-message="Error!" data-sending-message="Sending..." data-ok-message="Email Sent">Enviar </button>
+            <input type="hidden" name="submitted" id="submitted3" value="true">
+        </div>
+    </form>
+</section> -->
+    {% include '../home/footer.html' %}
+{% end %}

@@ -1,0 +1,424 @@
+{% extends "../base.html" %}
+
+{% block title %}
+{{ site.name }}
+{% end %}
+
+{% block header %}
+{% include '../home/header.html' %}
+{% end %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ site_base }}/static/css/Style.css">
+{% end %}
+
+{% block javascript %}
+{% end %}
+
+
+{% block body %}
+
+{% if is_admin %}
+{% set editabletext = 'editabletext' %}
+{% else %}
+{% set editabletext = '' %}
+{% end %}
+
+    <section class="banner banner-bg-cover">
+        {% if is_admin %}
+            <div class="image-upload lapiz visible-movil ban-lapiz">
+                <label for="img_client_banner_1">
+                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                </label>
+                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_banner_1" name="image" id="img_client_banner_1" >
+            </div>
+        {% end %}
+        <div class="base-logo">
+            <img id="{{ site.name }}_client_banner_1" src="{{ read_image(site.name + '_client_banner_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_banner_1',) }}'" class="banner-bg" alt="item">
+        </div>
+    </section>
+
+    <section class="u-padding-bottom-huge u-position-relative section-clients">
+        <div class="title title-secondary banner-title">
+            <h2 class="heading heading-med heading-font-main-reg">CLIENTES</h2>
+        </div>
+        <div class="u-padding-top-huge container">
+            <div class="row">
+                <div class="col-xs-12 section-clients-group">
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_1">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_1" name="image" id="img_client_1" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_1" src="{{ read_image(site.name + '_client_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_1',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_1' }}">{{ read_text(site.name +  'text_client_1') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_1_1' }}">{{ read_text(site.name +  'text_client_1_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_2">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_2" name="image" id="img_client_2" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_2" src="{{ read_image(site.name + '_client_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_2',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_2' }}">{{ read_text(site.name +  'text_client_2') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_2_1' }}">{{ read_text(site.name +  'text_client_2_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_3">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_3" name="image" id="img_client_3" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_3" src="{{ read_image(site.name + '_client_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_3',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_3' }}">{{ read_text(site.name +  'text_client_3') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_3_1' }}">{{ read_text(site.name +  'text_client_3_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_4">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_4" name="image" id="img_client_4" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_4" src="{{ read_image(site.name + '_client_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_4',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_4' }}">{{ read_text(site.name +  'text_client_4') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_4_1' }}">{{ read_text(site.name +  'text_client_4_1') }}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 section-clients-group">
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_5">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_5" name="image" id="img_client_5" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_5" src="{{ read_image(site.name + '_client_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_5',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_5' }}">{{ read_text(site.name +  'text_client_5') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_5_1' }}">{{ read_text(site.name +  'text_client_5_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_6">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_6" name="image" id="img_client_6" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_6" src="{{ read_image(site.name + '_client_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_6',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_6' }}">{{ read_text(site.name +  'text_client_6') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_6_1' }}">{{ read_text(site.name +  'text_client_6_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_7">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_7" name="image" id="img_client_7" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_7" src="{{ read_image(site.name + '_client_7', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_7',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_7' }}">{{ read_text(site.name +  'text_client_7') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_7_1' }}">{{ read_text(site.name +  'text_client_7_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_8">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_8" name="image" id="img_client_8" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_8" src="{{ read_image(site.name + '_client_8', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_8',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_8' }}">{{ read_text(site.name +  'text_client_8') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_8_1' }}">{{ read_text(site.name +  'text_client_8_1') }}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 section-clients-group">
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_9">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_9" name="image" id="img_client_9" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_9" src="{{ read_image(site.name + '_client_9', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_9',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_9' }}">{{ read_text(site.name +  'text_client_9') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_9_1' }}">{{ read_text(site.name +  'text_client_9_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_10">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_10" name="image" id="img_client_10" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_10" src="{{ read_image(site.name + '_client_10', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_10',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_10' }}">{{ read_text(site.name +  'text_client_10') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_10_1' }}">{{ read_text(site.name +  'text_client_10_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_11">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_11" name="image" id="img_client_11" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_11" src="{{ read_image(site.name + '_client_11', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_11',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_11' }}">{{ read_text(site.name +  'text_client_11') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_11_1' }}">{{ read_text(site.name +  'text_client_11_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_12">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_12" name="image" id="img_client_12" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_12" src="{{ read_image(site.name + '_client_12', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_12',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_12' }}">{{ read_text(site.name +  'text_client_12') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_12_1' }}">{{ read_text(site.name +  'text_client_12_1') }}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 section-clients-group">
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_13">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_13" name="image" id="img_client_13" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_13" src="{{ read_image(site.name + '_client_13', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_13',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_13' }}">{{ read_text(site.name +  'text_client_13') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_13_1' }}">{{ read_text(site.name +  'text_client_13_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_14">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_14" name="image" id="img_client_14" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_14" src="{{ read_image(site.name + '_client_14', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_14',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_14' }}">{{ read_text(site.name +  'text_client_14') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_14_1' }}">{{ read_text(site.name +  'text_client_14_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_15">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_15" name="image" id="img_client_15" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_15" src="{{ read_image(site.name + '_client_15', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_15',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_15' }}">{{ read_text(site.name +  'text_client_15') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_15_1' }}">{{ read_text(site.name +  'text_client_15_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_16">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_16" name="image" id="img_client_16" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_16" src="{{ read_image(site.name + '_client_16', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_16',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_16' }}">{{ read_text(site.name +  'text_client_16') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_16_1' }}">{{ read_text(site.name +  'text_client_16_1') }}</div>
+                    </div>
+                </div>
+                <div class="col-xs-12 section-clients-group">
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_17">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_17" name="image" id="img_client_17" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_17" src="{{ read_image(site.name + '_client_17', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_17',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_17' }}">{{ read_text(site.name +  'text_client_17') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_17_1' }}">{{ read_text(site.name +  'text_client_17_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_18">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_18" name="image" id="img_client_18" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_18" src="{{ read_image(site.name + '_client_18', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_18',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_18' }}">{{ read_text(site.name +  'text_client_18') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_18_1' }}">{{ read_text(site.name +  'text_client_18_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_19">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_19" name="image" id="img_client_19" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_19" src="{{ read_image(site.name + '_client_19', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_19',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_19' }}">{{ read_text(site.name +  'text_client_19') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_19_1' }}">{{ read_text(site.name +  'text_client_19_1') }}</div>
+                    </div>
+                    <div class="col-xs-12 col-sm-3 section-clients-item">
+                        <div class="section-clients-item-logo">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil">
+                                    <label for="img_client_20">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_client_20" name="image" id="img_client_20" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_client_20" src="{{ read_image(site.name + '_client_20', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_client_20',) }}'" class="u-responsive-img" alt="item">
+                            </div>
+                        </div>
+                        <div class="u-margin-vertical-smallest divider divider-gray-light divider-big divider-short"></div>
+                        <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_client_20' }}">{{ read_text(site.name +  'text_client_20') }}</div>
+                        <div class="{{editabletext}} paragraph paragraph-small" text-id="{{ site.name + 'text_client_20_1' }}">{{ read_text(site.name +  'text_client_20_1') }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% include '../home/footer.html' %}
+
+{% end %}

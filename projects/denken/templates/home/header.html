@@ -1,0 +1,45 @@
+<header class="header">
+    <div class="container container-big header-content">
+        <a href="#" class="logo header-logo">
+            {% if is_admin %}
+                <div class="image-upload lapiz visible-movil logo-edit">
+                    <label for="img_header_logo">
+                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                    </label>
+                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_header_logo" name="image" id="img_header_logo" >
+                </div>
+            {% end %}
+            <div class="base-logo">
+                <img id="{{ site.name }}_header_logo" src="{{ read_image(site.name + '_header_logo', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_header_logo',) }}'" class="logo-img" alt="item">
+            </div>
+        </a>
+        <button class="header-btn">
+            <span class="header-btn-line"></span>
+        </button>
+        <nav class="header-nav">
+            <ul class="menu header-menu">
+                <li class="menu-item">
+                    <a href="#" class="heading heading-small menu-link">QUIÉNES SOMOS</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ site_base }}/equipo" class="heading heading-small menu-link">EQUIPO</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="heading heading-small menu-link">QUÉ HACEMOS</a>
+                </li>
+                <li class="menu-item">
+                    <a href="#" class="heading heading-small menu-link">METODOLOGÍAS</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ site_base }}/clientes" class="heading heading-small menu-link">CLIENTES</a>
+                </li>
+                <li class="menu-item">
+                    <a href="{{ site_base }}/historias" class="heading heading-small menu-link">CASOS DE ÉXITO</a>
+                </li>
+            </ul>
+            <a href="{{ site_base }}/contact" class="header-messages">
+                <img src="https://84static.loadingplay.com/static/images/d8d9ca80b928c9a128c85224e5e06e53_imail.svg" alt="Mensajes" class="header-messages-icon">
+            </a>
+        </nav>
+    </div>
+</header>
