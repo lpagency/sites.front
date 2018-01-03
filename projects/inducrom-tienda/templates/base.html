@@ -475,9 +475,12 @@ if(!$("html").hasClass("touch")){
 //         }
 // });
 $(document).ready(function(){
-     $(document).on('click', '.scrollUp', function(){
-         $("html, body").animate({ scrollTop: 0 }, 500);
-     });
+    if($(window).width() > 800)
+    {
+         $(document).on('click', '.scrollUp', function(){
+             $("html, body").animate({ scrollTop: 0 }, 500);
+         });
+    }
 })
     </script>
 
