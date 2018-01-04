@@ -33,7 +33,8 @@
 
     <div class="container2 text-center">
         <!-- <h3>Mira lo que hacemos..</h3> -->
-            <div class="text_div_hom editabletext" text-id="{{ site.name + '_caption' }}" >{{ read_text(site.name + '_caption') }}</div>
+
+            <div class="text_div_hom {{editabletext}}" text-id="{{ site.name + '_caption' }}" >{{ read_text(site.name + '_caption') }}</div>
 
             <!-- ***Franja naranja****** -->
 
@@ -41,7 +42,7 @@
                 <div align="center">
                     <div class="col-md-12">
                          <div class="franja-naranja">
-                            <div class="text_hora editabletext" text-id="{{ site.name + '_caption_horario' }}" >{{ read_text(site.name + '_caption_horario') }} </div>
+                            <div class="text_hora {{editabletext}}" text-id="{{ site.name + '_caption_horario' }}" >{{ read_text(site.name + '_caption_horario') }} </div>
                           </div>
                      </div>
                 </div>
@@ -65,12 +66,13 @@
                     </a>
                     <!-- fin editar imagen -->
                     <!-- <img src="{{ site_base }}/static/img/img1.jpg"> -->
+                       {% if is_admin %}
                     <a id="{{ site.name + '_double_new_1' }}" href="{{ read_link(site.name + '_double_new_1') }}">
                         <div class="abs_txt">
                             <p class="hvr-bounce-in {{editabletext}}" text-id="{{ site.name + '_new_div_1' }}">{{ read_text(site.name + '_new_div_1')}} </p>
                         </div>
                     </a>
-                    {% if is_admin %}
+                 
                         <img class="change-image editablelink" link-id="{{ site.name + '_double_new_1' }}" content="{{ read_link(site.name + '_double_new_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="bottom:38px;">
                     {% end %}
                 </div>
