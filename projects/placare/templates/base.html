@@ -1,6 +1,15 @@
 <!doctype html>
 <html class="no-js" lang="en">
     <head>
+         <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104850079-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-104850079-1');
+        </script>
         <!-- head bt inicio -->
         <title>Placare</title>
         <base href="{{ site_base }}/">
@@ -13,16 +22,6 @@
         <meta name="keywords" content="jquery, vertical, scrolling, scroll, smooth"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104850079-1"></script>
-        <script>
-         window.dataLayer = window.dataLayer || [];
-         function gtag(){dataLayer.push(arguments);}
-         gtag('js', new Date());
-
-         gtag('config', 'UA-104850079-1');
-        </script>
         {% include 'product/product_box.html' %}
         {% include 'product/product_home.html' %}
 
@@ -594,12 +593,6 @@
         <script>/*<![CDATA[*/window.zEmbed||function(e,t){var n,o,d,i,s,a=[],r=document.createElement("iframe");window.zEmbed=function(){a.push(arguments)},window.zE=window.zE||window.zEmbed,r.src="javascript:false",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="display: none",d=document.getElementsByTagName("script"),d=d[d.length-1],d.parentNode.insertBefore(r,d),i=r.contentWindow,s=i.document;try{o=s}catch(e){n=document.domain,r.src='javascript:var d=document.open();d.domain="'+n+'";void(0);',o=s}o.open()._l=function(){var e=this.createElement("script");n&&(this.domain=n),e.id="js-iframe-async",e.src="https://assets.zendesk.com/embeddable_framework/main.js",this.t=+new Date,this.zendeskHost="placarehelp.zendesk.com",this.zEQueue=a,this.body.appendChild(e)},o.write('<body onload="document._l();">'),o.close()}();
         /*]]>*/</script>
         <!-- End of placarehelp Zendesk Widget script -->
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-104850079-1"></script>
-        <script>
-        window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-104850079-1');
-        </script>
 
         <!-- <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.css?1"/> -->
 
@@ -809,16 +802,6 @@
         </script>
 
 
-
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js?1','ga');
-
-        ga('create', '{{ get_config("analytics") }}', 'auto');
-        ga('send', 'pageview');
-    </script>
     <script type="text/javascript">
     $('ul.nav div.dropdown').hover(function() 
     {
