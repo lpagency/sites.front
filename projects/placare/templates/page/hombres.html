@@ -95,6 +95,26 @@
       });
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+
+            $(document).on("click", ".boton-news", function()
+            {
+                console.log("aaaa");
+                $(this).html("ESPERE");
+                if($(this).hasClass("sus"))
+                {
+                    $("input[name=SingleLine]").val("Mujer");
+                }
+                if($(this).hasClass("sus-h"))
+                {
+                    $("input[name=SingleLine]").val("Hombre");
+                }
+            });
+        });
+    </script>
+
 
 {% end %}
 

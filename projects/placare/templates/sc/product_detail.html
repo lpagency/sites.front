@@ -318,7 +318,27 @@
     {
         $(this).find('.dropdown-menu').stop(true, true).delay(200).fadeOut(500);
     });
-    </script>
+</script>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+
+        $(document).on("click", ".boton-news", function()
+        {
+            console.log("aaaa");
+            $(this).html("ESPERE");
+            if($(this).hasClass("sus"))
+            {
+                $("input[name=SingleLine]").val("Mujer");
+            }
+            if($(this).hasClass("sus-h"))
+            {
+                $("input[name=SingleLine]").val("Hombre");
+            }
+        });
+    });
+</script>
 
 <script type="text/template" id="product_detail">
     <section>
