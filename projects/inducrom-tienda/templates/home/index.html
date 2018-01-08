@@ -284,12 +284,14 @@
 //             $('.scrollUp').fadeOut();
 //         }
 // });
-$(document).ready(function(){
-     $('.scrollUp').click(function(){
-         $("html, body").animate({ scrollTop: 0 }, 500);
-         // return false;
-     });
-})
+  $(document).ready(function(){
+      if($(window).width() > 800)
+      {
+           $(document).on('click', '.scrollUp', function(){
+               $("html, body").animate({ scrollTop: 0 }, 500);
+           });
+      }
+  });
 </script>
 {% end %}
 
