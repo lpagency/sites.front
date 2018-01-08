@@ -102,6 +102,10 @@ $(document).ready(function()
         'onLoad': function(products) 
         {
             var prod = $(".product-grid").html();
+            $(".add-to-cart").click(function()
+            {
+                $('#modal-vacaciones').modal('show');
+            });
         }
     };
 
