@@ -47,42 +47,146 @@
             <div class="row">
                 <div class="col-xs-12">
                     <div class="section-services-group">
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-mapa-lider.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-secondary">Mapa<br>de liderazgo</p>
+                        <a id="{{ site.name + '_met_1' }}" href="{{ read_link(site.name + '_met_1') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 720px;top: -40px;">
+                                    <label for="img_met_1">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_1" name="image" id="img_met_1" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_1" src="{{ read_image(site.name + '_met_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_1',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_met_1_1' }}">{{ read_text(site.name +  'text_met_1_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-visual-thinking.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-secondary">Visual<br>Thinking</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_1' }}" content="{{ read_link(site.name + '_met_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                        {% end %}
+                        <a id="{{ site.name + '_met_2' }}" href="{{ read_link(site.name + '_met_2') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 490px;top: -40px;">
+                                    <label for="img_met_2">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_2" name="image" id="img_met_2" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_2" src="{{ read_image(site.name + '_met_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_2',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_met_2_1' }}">{{ read_text(site.name +  'text_met_2_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-coaching-circle.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon section-services-item-icon-big">
-                            <p class="paragraph u-color-secondary"><br>Coaching</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_2' }}" content="{{ read_link(site.name + '_met_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 227px;">
+                        {% end %}
+                        <a id="{{ site.name + '_met_3' }}" href="{{ read_link(site.name + '_met_3') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 250px;top: -40px;">
+                                    <label for="img_met_3">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_3" name="image" id="img_met_3" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_3" src="{{ read_image(site.name + '_met_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_3',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_met_3_1' }}">{{ read_text(site.name +  'text_met_3_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-nikki.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-secondary">Nikki Wood</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_3' }}" content="{{ read_link(site.name + '_met_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 462px;">
+                        {% end %}
+                        <a id="{{ site.name + '_met_4' }}" href="{{ read_link(site.name + '_met_4') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 250px;top: -40px;">
+                                    <label for="img_met_4">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_4" name="image" id="img_met_4" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_4" src="{{ read_image(site.name + '_met_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_4',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_met_4_1' }}">{{ read_text(site.name +  'text_met_4_1') }}</div>
                         </a>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_4' }}" content="{{ read_link(site.name + '_met_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 698px;">
+                        {% end %}
                     </div>
                 </div>
                 <div class="col-xs-12 u-margin-top-big">
                     <div class="section-services-group">
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-hallos.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-primary">Hallos<br>Relacionales</p>
+                        <a id="{{ site.name + '_met_5' }}" href="{{ read_link(site.name + '_met_5') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 720px;top: -40px;">
+                                    <label for="img_met_5">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_5" name="image" id="img_met_5" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_5" src="{{ read_image(site.name + '_met_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_5',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_met_5_1' }}">{{ read_text(site.name +  'text_met_5_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-mindfullness.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-primary">Mindfullness</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_5' }}" content="{{ read_link(site.name + '_met_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';">
+                        {% end %}
+                        <a id="{{ site.name + '_met_6' }}" href="{{ read_link(site.name + '_met_6') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 490px;top: -40px;">
+                                    <label for="img_met_6">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_6" name="image" id="img_met_6" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_6" src="{{ read_image(site.name + '_met_6', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_6',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_met_6_1' }}">{{ read_text(site.name +  'text_met_6_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-neurofeedback.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-primary"><br>Neurofeedback</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_6' }}" content="{{ read_link(site.name + '_met_6') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 227px;">
+                        {% end %}
+                        <a id="{{ site.name + '_met_7' }}" href="{{ read_link(site.name + '_met_7') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 250px;top: -40px;">
+                                    <label for="img_met_7">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_7" name="image" id="img_met_7" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_7" src="{{ read_image(site.name + '_met_7', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_7',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_met_7_1' }}">{{ read_text(site.name +  'text_met_7_1') }}</div>
                         </a>
-                        <a href="#" class="section-services-item">
-                            <img src="../static/img/i-design-thinking.svg" alt="Icono" class="u-responsive-img u-margin-bottom-small section-services-item-icon">
-                            <p class="paragraph u-color-primary">Design<br>Thinking</p>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_7' }}" content="{{ read_link(site.name + '_met_7') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 462px;">
+                        {% end %}
+                        <a id="{{ site.name + '_met_8' }}" href="{{ read_link(site.name + '_met_8') }}" class="section-services-item">
+                            {% if is_admin %}
+                                <div class="image-upload lapiz visible-movil" style="right: 250px;top: -40px;">
+                                    <label for="img_met_8">
+                                        <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                    </label>
+                                    <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_met_8" name="image" id="img_met_8" >
+                                </div>
+                            {% end %}
+                            <div class="base-logo">
+                                <img id="{{ site.name }}_met_8" src="{{ read_image(site.name + '_met_8', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_met_8',) }}'" class="u-responsive-img u-margin-bottom-small section-services-item-icon" alt="item">
+                            </div>
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_met_8_1' }}">{{ read_text(site.name +  'text_met_8_1') }}</div>
                         </a>
+                        {% if is_admin %}
+                            <img class= "change-image editablelink" link-id="{{ site.name + '_met_8' }}" content="{{ read_link(site.name + '_met_8') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="left: 698px;">
+                        {% end %}
                     </div>
                 </div>
             </div>
