@@ -28,8 +28,29 @@ span {
 .header-item-arrow {
     max-width: 45px;
     position: absolute;
-    top: 18px;
-    right: 50px;
+}
+
+.margen{
+  margin-left: 2px !important;
+}
+
+.hyper{
+  position: relative;
+  top: -22px;
+  left: -43px;
+}
+
+.margen-portafolio{
+  margin-left: 0px !important;
+    margin-left: 0px !important;
+    left: 23px !important;
+    position: relative !important;
+}
+
+.footer-logo{
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
 }
 
 @media screen and (max-width: 414px)
@@ -606,6 +627,7 @@ img#cerrocastillo-english_footer_logo {
   .header-logo {
     width: 25%;
     max-width: none;
+    background-color: white;
   }
 }
 
@@ -703,7 +725,7 @@ img#cerrocastillo-english_footer_logo {
 
 @media screen and (min-width: 1200px) {
   .header-item + .header-item {
-    margin-left: 3.125rem;
+    margin-left: 4.3rem;
   }
 }
 
@@ -717,7 +739,7 @@ img#cerrocastillo-english_footer_logo {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
     -ms-flex-positive: 1;
-    flex-grow: 1;
+    flex-grow: 0.5;
   }
 }
 
