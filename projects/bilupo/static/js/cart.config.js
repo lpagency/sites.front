@@ -109,8 +109,6 @@ $(document).ready(function()
         }
     };
 
-    console.log(window.tag);
-
     if(window.tag[0] != "")
     {
         window.config.tag = window.tag.toString();
