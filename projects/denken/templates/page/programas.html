@@ -46,56 +46,111 @@
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <a href="#" class="section-programs-item">
+                    <a id="{{ site.name + '_pro_1' }}" href="{{ read_link(site.name + '_pro_1') }}" class="section-programs-item">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 800px;top: -14px;">
+                                <label for="img_pro_1">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_pro_1" name="image" id="img_pro_1" >
+                            </div>
+                        {% end %}
                         <div class="section-programs-item-left">
-                            <img src="../static/img/i-bus-sel.svg" alt="Icono" class="u-margin-bottom-smallest section-programs-item-icon">
-                            <p class="paragraph u-color-secondary">Nuevos<br>Colaboradores</p>
+                            <img id="{{ site.name }}_pro_1" src="{{ read_image(site.name + '_pro_1', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pro_1',) }}'" class="u-margin-bottom-smallest section-programs-item-icon" alt="item">
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_pro_1' }}">{{ read_text(site.name +  'text_pro_1') }}</div>
                         </div>
                         <div class="section-programs-item-right">
                             <img src="https://84static.loadingplay.com/static/images/e05b6789ecc524a9771c04498b82d74c_trianglesecondary.svg" alt="Icono" class="u-rotate-right section-programs-item-triangle">
-                            <p class="paragraph paragraph-font-accent">Búsqueda l Selección l Inserción l Acompañamiento</p>
+                            <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_pro_1_1' }}">{{ read_text(site.name +  'text_pro_1_1') }}</div>
                         </div>
                     </a>
-                    <a href="#" class="section-programs-item">
+                    {% if is_admin %}
+                        <img class= "change-image editablelink" link-id="{{ site.name + '_pro_1' }}" content="{{ read_link(site.name + '_pro_1') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 10px;left: 800px;">
+                    {% end %}
+                    <a id="{{ site.name + '_pro_2' }}" href="{{ read_link(site.name + '_pro_2') }}" class="section-programs-item">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 800px;top: 150px;">
+                                <label for="img_pro_2">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_pro_2" name="image" id="img_pro_2" >
+                            </div>
+                        {% end %}
                         <div class="section-programs-item-left">
-                            <img src="../static/img/i-form-equipos.svg" alt="Icono" class="u-margin-bottom-smallest section-programs-item-icon">
-                            <p class="paragraph u-color-primary">Desarrollo de<br>Equipos</p>
+                            <img id="{{ site.name }}_pro_2" src="{{ read_image(site.name + '_pro_2', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pro_2',) }}'" class="u-margin-bottom-smallest section-programs-item-icon" alt="item">
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_pro_2' }}">{{ read_text(site.name +  'text_pro_2') }}</div>
                         </div>
                         <div class="section-programs-item-right">
                             <img src="https://7static.loadingplay.com/static/images/14bc5a9fb98ed972cf7ff6704fdaa1eb_triangleprimary.svg" alt="Icono" class="u-rotate-right section-programs-item-triangle">
-                            <p class="paragraph paragraph-font-accent">Team Building l Team Coaching l Hallos Reaciones l Autogestión</p>
+                            <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_pro_2_1' }}">{{ read_text(site.name +  'text_pro_2_1') }}</div>
                         </div>
                     </a>
-                    <a href="#" class="section-programs-item">
+                    {% if is_admin %}
+                        <img class= "change-image editablelink" link-id="{{ site.name + '_pro_2' }}" content="{{ read_link(site.name + '_pro_2') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 200px;left: 800px;">
+                    {% end %}
+                    <a id="{{ site.name + '_pro_3' }}" href="{{ read_link(site.name + '_pro_3') }}" class="section-programs-item">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 800px;top: 310px;">
+                                <label for="img_pro_3">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_pro_3" name="image" id="img_pro_3" >
+                            </div>
+                        {% end %}
                         <div class="section-programs-item-left">
-                            <img src="../static/img/i-liderazgo.svg" alt="Icono" class="u-margin-bottom-smallest section-programs-item-icon">
-                            <p class="paragraph u-color-secondary">Liderazgo</p>
+                            <img id="{{ site.name }}_pro_3" src="{{ read_image(site.name + '_pro_3', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pro_3',) }}'" class="u-margin-bottom-smallest section-programs-item-icon" alt="item">
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_pro_3' }}">{{ read_text(site.name +  'text_pro_3') }}</div>
                         </div>
                         <div class="section-programs-item-right">
                             <img src="https://84static.loadingplay.com/static/images/e05b6789ecc524a9771c04498b82d74c_trianglesecondary.svg" alt="Icono" class="u-rotate-right section-programs-item-triangle">
-                            <p class="paragraph paragraph-font-accent">Competencias de liderazgo l Mapa de liderazgo l Coaching y Mentoring l Career Coaching l Adaptación Cultural</p>
+                            <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_pro_3_1' }}">{{ read_text(site.name +  'text_pro_3_1') }}</div>
                         </div>
                     </a>
-                    <a href="#" class="section-programs-item">
+                    {% if is_admin %}
+                        <img class= "change-image editablelink" link-id="{{ site.name + '_pro_3' }}" content="{{ read_link(site.name + '_pro_3') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 370px;left: 800px;">
+                    {% end %}
+                    <a id="{{ site.name + '_pro_4' }}" href="{{ read_link(site.name + '_pro_4') }}" class="section-programs-item">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 800px;top: 480px;">
+                                <label for="img_pro_4">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_pro_4" name="image" id="img_pro_4" >
+                            </div>
+                        {% end %}
                         <div class="section-programs-item-left">
-                            <img src="../static/img/i-des-org.svg" alt="Icono" class="u-margin-bottom-smallest section-programs-item-icon">
-                            <p class="paragraph u-color-primary">Desarrollo<br>Organizacional</p>
+                            <img id="{{ site.name }}_pro_4" src="{{ read_image(site.name + '_pro_4', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pro_4',) }}'" class="u-margin-bottom-smallest section-programs-item-icon" alt="item">
+                            <div class="{{editabletext}} paragraph u-color-primary" text-id="{{ site.name + 'text_pro_4' }}">{{ read_text(site.name +  'text_pro_4') }}</div>
                         </div>
                         <div class="section-programs-item-right">
                             <img src="https://7static.loadingplay.com/static/images/14bc5a9fb98ed972cf7ff6704fdaa1eb_triangleprimary.svg" alt="Icono" class="u-rotate-right section-programs-item-triangle">
-                            <p class="paragraph paragraph-font-accent">Descripciones de cargo l Levantamiento de competencias l Evaluación de desempeño l Gestión de talentos</p>
+                            <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_pro_4_1' }}">{{ read_text(site.name +  'text_pro_4_1') }}</div>
                         </div>
                     </a>
-                    <a href="#" class="section-programs-item">
+                    {% if is_admin %}
+                        <img class= "change-image editablelink" link-id="{{ site.name + '_pro_4' }}" content="{{ read_link(site.name + '_pro_4') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 540px;left: 800px;">
+                    {% end %}
+                    <a id="{{ site.name + '_pro_5' }}" href="{{ read_link(site.name + '_pro_5') }}" class="section-programs-item">
+                        {% if is_admin %}
+                            <div class="image-upload lapiz visible-movil" style="right: 800px;top: 650px;">
+                                <label for="img_pro_5">
+                                    <img class="change-image" src="https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png" onmouseover="this.src='https://7static.loadingplay.com/static/images/f2e626ad62e2c957b3708a27e55f4b03_btn-edit-hover.png';" onmouseout="this.src='https://7static.loadingplay.com/static/images/ef03c01fe39c6b7d1404e311adfe47ff_btn-edit.png'">
+                                </label>
+                                <input type="file" class="editableimage editar-header" image-id="{{ site.name }}_pro_5" name="image" id="img_pro_5" >
+                            </div>
+                        {% end %}
                         <div class="section-programs-item-left">
-                            <img src="../static/img/i-progs-cultura.png" alt="Icono" class="u-margin-bottom-smallest section-programs-item-icon">
-                            <p class="paragraph u-color-secondary">Cultura</p>
+                            <img id="{{ site.name }}_pro_5" src="{{ read_image(site.name + '_pro_5', 1) }}" onload="this.onload='';this.src='{{ read_image(site.name + '_pro_5',) }}'" class="u-margin-bottom-smallest section-programs-item-icon" alt="item">
+                            <div class="{{editabletext}} paragraph u-color-secondary" text-id="{{ site.name + 'text_pro_5' }}">{{ read_text(site.name +  'text_pro_5') }}</div>
                         </div>
                         <div class="section-programs-item-right">
                             <img src="https://84static.loadingplay.com/static/images/e05b6789ecc524a9771c04498b82d74c_trianglesecondary.svg" alt="Icono" class="u-rotate-right section-programs-item-triangle">
-                            <p class="paragraph paragraph-font-accent">Propósito Corporativo l Misión, Visión y Valores l Plani cación Estratégica</p>
+                            <div class="{{editabletext}} paragraph paragraph-font-accent" text-id="{{ site.name + 'text_pro_5_1' }}">{{ read_text(site.name +  'text_pro_5_1') }}</div>
                         </div>
                     </a>
+                    {% if is_admin %}
+                        <img class= "change-image editablelink" link-id="{{ site.name + '_pro_5' }}" content="{{ read_link(site.name + '_pro_5') }}" src="{{ site_base }}/static/img/link.png" onmouseover="this.src='{{ site_base }}/static/img/link.png';" onmouseout="this.src='{{ site_base }}/static/img/link.png';" style="top: 710px;left: 800px;">
+                    {% end %}
                 </div>
             </div>
         </div>
