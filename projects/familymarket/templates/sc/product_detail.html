@@ -83,15 +83,10 @@
             'site_name': site_name,
              onLoad: function(product)
             {
-
-                var res = [];
-
                 for( i in product.tags)
                 {
-                    if(product.tags[i].name.search("mat") != -1)
-                    {
-                        res.push(product.tags[i].name);
-                    }
+                    related_random(product.tags[0].name);
+                    related(product.tags[1].name);
                 }
 
                 var mainImage = $("#mainImage");
@@ -168,8 +163,6 @@
                 'tag' : tag,
                 'ignore_stock' : true,
                 'onLoad':function(){
-                    // $('.ellipsis').ellipsis();
-                    // $(".ellipsis").dotdotdot();
                  }
             };
             $('.product-related').ecommerce('product_box', config);
@@ -190,24 +183,6 @@
                  }
             };
             $('.product-random').ecommerce('product_box', config);
-        };
-
-        var related2 = function(tag)
-        {
-            var config = {
-                'app_public' : app_public,
-                'base_url' : base_url,
-                'maxProducts' : 6,
-                'templateOrigin' : '#product_template_home2',
-                'tag' : tag,
-                'ignore_stock' : true,
-                'onLoad':function(){
-                    // $('.ellipsis').ellipsis();
-                    // $(".ellipsis").dotdotdot();
-
-                 }
-            };
-            $('.product-related2').ecommerce('product_box', config);
         };
 
     });
@@ -570,7 +545,6 @@
             <div class="text-relac text-center {{editabletext}}" text-id="{{ site.name + '_pro_relacionados' }}"> {{ read_text(site.name +  '_pro_relacionados') }}</div>
         </div>
     <div class="product-related hidden-xs">
-
     </div>
     <br/>
     <div class="product-random hidden-xs">
