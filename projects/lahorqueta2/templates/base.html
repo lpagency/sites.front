@@ -332,7 +332,7 @@
             var cookieCart = getCookie('shopping-cart');
 
             $.ajax({
-                url: 'https://apibodegas.ondev.today/v1/cart/'+cookieCart,
+                url: 'https://apibodegas.loadingplay.com/v1/cart/'+cookieCart,
                 success: function(data)
                 {
                     console.log(data.cart.expired);
