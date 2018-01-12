@@ -66,6 +66,8 @@ $(document).ready(function () {
             mobileFirst: true,
             slidesToShow: 1,
             slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
             dots: false,
             prevArrow: "<img src='https://84static.loadingplay.com/static/images/52136545c310f5dd64f46619d8a873b7_sliderflecha.png' class='slider-flecha slider-flecha-prev'>",
             nextArrow: "<img src='https://84static.loadingplay.com/static/images/52136545c310f5dd64f46619d8a873b7_sliderflecha.png' class='slider-flecha slider-flecha-next'>"
